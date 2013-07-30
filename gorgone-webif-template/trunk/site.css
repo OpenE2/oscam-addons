@@ -421,6 +421,26 @@ table.status td.statuscol16 a.tooltip1{color:#ec373a}
 table.status a.tooltip span{display:none}
 table.status a.tooltip1 span{display:none}
 
+/* 8. DIV.LOG ELEMENTS in page status.html
+----------------------------------------------------------------------------- */
+DIV.log{
+  background-color:#fafafa;
+  border:1px dotted #aaa;
+  color:#333;
+  padding:10px;
+  font-family:"Courier New",monospace;
+  font-size:11px;
+  word-wrap:break-word;
+  text-align:left;
+  margin-top:-30px;
+  margin:0 auto;
+  width:97%;
+  line-height:1.7;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px
+  }
+
 /* 10. BASIC DISTRIBUTION PAGE 
 ----------------------------------------------------------------------------- */  
 /* Footer in bottom of the page */
@@ -552,7 +572,6 @@ TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier 
 TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
 TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
-DIV.log {border:1px dotted #AAAAAA; background-color: #FAFAFA; padding:10px; font-family:"Courier New", monospace; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left; }
 DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left;}
 DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;}
 DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right;}
