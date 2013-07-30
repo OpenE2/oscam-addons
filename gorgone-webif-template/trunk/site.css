@@ -343,6 +343,84 @@ TEXTAREA.bt {
   font-size:12px
   }
 
+/* 7. TOOLTIP
+----------------------------------------------------------------------------- */  
+.tooltip{
+  position:absolute;
+  z-index:1010;
+  display:block;
+  visibility:visible;
+  padding:5px;
+  font-size:12px;
+  opacity:0;
+  filter:alpha(opacity=0)
+  }
+table.status td.statuscol4 a{text-decoration:none;color:black}
+table.status td.statuscol5 a.tooltip:hover span,
+table.status td.statuscol5 a.tooltip1:hover span{
+  display:block;
+  position:absolute;
+  top:0;
+  right:100%;
+  margin:0;
+  margin-right:.2em;
+  padding:1px 4px 2px;
+  text-align:left;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  color:#fff;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  background:inherit
+  }
+table.status td.statuscol16 a.tooltip:hover span,
+table.status td.statuscol16 a.tooltip1:hover span{
+  display:block;
+  position:absolute;
+  top:0;
+  right:100%;
+  margin:0;
+  margin-right:.2em;
+  padding:1px 4px 2px;
+  text-align:left;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  color:#fff;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  background:inherit
+  }
+table.status td.statuscol16 a.tooltip:hover,
+table.status td.statuscol16 a.tooltip1:hover,
+table.status td.statuscol5 a.tooltip:hover,
+table.status td.statuscol5 a.tooltip1:hover{
+  color:#fd4f07
+  }
+table.status td.statuscol16 a.tooltip,
+table.status td.statuscol16 a.tooltip1,
+table.status td.statuscol5 a.tooltip{
+  background-color:#464646;
+  padding:1px 4px 2px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  font-size:10.5px;
+  line-height:14px;
+  color:white;
+  vertical-align:baseline;
+  white-space:nowrap;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  position:relative;
+  opacity:1;
+  cursor:pointer;
+  text-decoration:none;
+  display:block;
+  z-index:1000
+  }
+table.status td.statuscol16 a.tooltip1{color:#ec373a}
+table.status a.tooltip span{display:none}
+table.status a.tooltip1 span{display:none}
+
 /* 10. BASIC DISTRIBUTION PAGE 
 ----------------------------------------------------------------------------- */  
 /* Footer in bottom of the page */
