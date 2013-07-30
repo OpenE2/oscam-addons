@@ -355,7 +355,6 @@ TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier 
 TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
 TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 TABLE.menu {border-spacing:0px; border:0px; padding:0px; margin-left:auto; margin-right:auto;}
-TABLE.status {border-spacing:1px; border:0px; padding:0px; background-color:white; empty-cells:show;}
 TABLE.config {width:750px;}
 TABLE.configreader {width:850px;}
 TABLE.invisible TD {border:0px; font-family:Arial; font-size: 12px; padding:5px; background-color:#EEEEEE;}
@@ -364,7 +363,6 @@ TABLE.invisiblelb {border-spacing:0px; width:850px;}
 /* MODIFICATION GORGONE and SKYNDAS 
 ------------------------------------*/
 /* STATUS.HTML */
-
 TABLE.status {background-color:#95a4ab; border:3px solid #0f1517; empty-cells:show;width:99%;}
 TR.s TD{background-color:#c8c8e0}
 TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#97b6c2;color:black}
@@ -779,6 +777,15 @@ IMG.icon {
 
 /* 12. OTHER ELEMENTS
 ----------------------------------------------------------------------------- */
+/* class warning is in shutdown.html */
+DIV.warning UL {
+	font-family: Arial;
+	font-size: 12px;
+	text-align:left;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+  }
 DIV.filterform {margin: 10px;}
 HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
 DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left;}
