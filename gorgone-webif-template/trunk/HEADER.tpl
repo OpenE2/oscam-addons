@@ -10,4 +10,6 @@
 ##REFRESH##
 </HEAD>
 <BODY>
-	<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
+<DIV id="wrapper">
+<DIV class="margintop"></DIV><!-- Solution for footer, set margin from top -->
+<DIV id="content"><!-- Start Content of page -->

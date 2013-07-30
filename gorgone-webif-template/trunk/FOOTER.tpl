@@ -1,9 +1,11 @@
 <!--OSCam;3404829289;1.20-unstable_svn;8785;-->
-	<BR><HR><BR>
-	<DIV CLASS="footer">
-		<H4 CLASS="footline1">OSCAM Webinterface developed by Streamboard Team - ##CURDATE## ##CURTIME## | Access from ##CURIP##</H4>
-		<H4 CLASS="footline2">Start: ##STARTDATE## - ##STARTTIME## | UpTime: ##UPTIME## | Process ID: ##PROCESSID##</H4>
-		<H4 CLASS="styleauthor">WebIf Style by </H4>
-	</DIV>
+  </DIV><!-- End Content of page -->
+	<DIV id="footer">
+			<P>OSCAM Webinterface developed by <a href="http://streamboard.tv" target="_blank">Streamboard Team</a> - ##CURDATE## ##CURTIME## | Access from ##CURIP##</P>
+			<P>Start: ##STARTDATE## - ##STARTTIME## | UpTime: ##UPTIME## | Process ID: ##PROCESSID##</P>
+			<P CLASS="styleauthor">WebIf Style by Eneen (base html code) & Gorgone - Skyndas (modification)</P>
+			<P class="version"><b>Gorgone WebIf Template</b></P>
+	</DIV><!-- End footer -->
+  </DIV><!-- End wrapper -->
 </BODY>
 </HTML>
