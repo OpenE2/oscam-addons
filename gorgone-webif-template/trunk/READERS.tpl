@@ -2,7 +2,12 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<TABLE CLASS="configmenu"><TR><TD CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></TD><TD CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></TD></TR></TABLE>
+		<DIV class="subnav subnav-fixed">
+    <UL id="sub">
+      <LI CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></LI>
+      <LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
+    </UL>
+  </DIV>
 	<form action="readerconfig.html" method="get">
 		<TABLE CLASS="readers">
 			<TR>

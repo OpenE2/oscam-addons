@@ -2,14 +2,14 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<TABLE CLASS="configmenu">
-		<TR>
-			<TD CLASS="configmenu"><A HREF="userconfig.html?part=adduser">Add User</A></TD>
-			<TD CLASS="configmenu"><A HREF="userconfig.html?action=reinit">Reinit User DB</A></TD>
-			<TD CLASS="configmenu"><A HREF="userconfig.html?action=resetalluserstats">Reset Userstats</A></TD>
-			<TD CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></TD>
-		</TR>
-	</TABLE>
+	<DIV class="subnav subnav-fixed">
+		<UL id="sub">
+			<LI CLASS="configmenu"><A HREF="userconfig.html?part=adduser">Add User</A></LI>
+			<LI CLASS="configmenu"><A HREF="userconfig.html?action=reinit">Reinit User DB</A></LI>
+			<LI CLASS="configmenu"><A HREF="userconfig.html?action=resetalluserstats">Reset Userstats</A></LI>
+			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></LI>
+		</UL>
+	</DIV>
 	<TABLE CLASS="users">
 		<TR>
 			<TH>Enabled</TH>
