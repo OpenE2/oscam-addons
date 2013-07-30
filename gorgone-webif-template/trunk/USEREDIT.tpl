@@ -2,7 +2,6 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<BR><BR>
 	<form action="user_edit.html" method="get">
 		<input name="user" type="hidden" value="##USERNAME##">
 		<TABLE CLASS="config">
