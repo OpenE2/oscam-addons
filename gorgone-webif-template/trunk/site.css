@@ -7,6 +7,19 @@
 ----------------------------------------------------------------------------- */
 html, body, div, table, tbody, tfoot, thead, tr, th, td, ul, li {margin:0;padding:0;border:0;}
 
+/* 2. BASE CSS STYLE
+----------------------------------------------------------------------------- */
+BODY {background-color: #525252;color:#fff;font-family: Arial; font-size: 11px; text-align:center;}
+P {color: white; }
+P.blinking {text-decoration: blink; font-weight:bold; font-size:large; color:red;}
+P.styleauthor:after {content:"& Gorgone - Skyndas (modification)";}
+H2 {color: #AAAAAA; font-family: Arial; font-size: 32px; line-height: 32px; text-align:center; margin-top:0px; margin-bottom:0px}
+H4 {color: #AAAAAA; font-family: Arial; font-size: 12px; line-height: 9px; text-align:center}
+A:link {color: #DB2600;}
+A:visited {color: #DB2600;}
+A:active {color: #DB2600;}
+A:hover {color: #0056a1;}
+
 /* 3. MAIN NAVBAR
 ----------------------------------------------------------------------------- */
 #nav{
@@ -114,12 +127,6 @@ html,body {
 
 /* XX. ORIGINAL CSS STYLE
 ----------------------------------------------------------------------------- */  
-BODY {background-color: white; font-family: Arial; font-size: 11px; text-align:center}
-P {color: white; }
-P.blinking {text-decoration: blink; font-weight:bold; font-size:large; color:red;}
-H2 {color: #AAAAAA; font-family: Arial; font-size: 32px; line-height: 32px; text-align:center; margin-top:0px; margin-bottom:0px}
-H4 {color: #AAAAAA; font-family: Arial; font-size: 12px; line-height: 9px; text-align:center}
-H4.styleauthor:after {content:"Eneen";}
 TABLE {border-spacing:1px; border:0px; padding:0px; margin-left:auto; margin-right:auto;}
 TH {height:10px; border:0px; font-family: Arial; font-size: 11px; padding:5px; background-color:#CCCCCC; color:black;}
 TH.statuscol0 {text-align:center;width:10px;}
@@ -233,10 +240,6 @@ TEXTAREA.bt {font-family: Arial; font-size: 12px;}
 TEXTAREA.editor {width:99%; height:508px; border:1px dotted #AAAAAA; background-color: #FAFAFA; padding:8px 10px; font-family:"Courier New", monospace; color:black; font-size: 11px; word-wrap:break-word; text-align:left;}
 A.debugls:link {color: white;background-color:red;}
 A.debugls:visited {color: white;background-color:red;}
-A:link {color: #050840;}
-A:visited {color: #050840;}
-A:active {color: #050840;}
-A:hover {color: #ff9e5f;}
 A:hover IMG.icon {border: 1px solid yellow;width:20px;height:20px;}
 A.tooltip  {position: relative; text-decoration: none; cursor:default;}
 A.tooltip1 {position: relative; text-decoration: none; cursor:default;color:red;}
