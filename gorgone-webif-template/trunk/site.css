@@ -468,7 +468,7 @@ TABLE.statscacheex TH{padding:8px}
 TABLE.statscacheex TR:hover TD {background-color:#97b6c2;color: white;}
 
 /* TH for all tables*/ 
-TH{height:22px;font-family:Arial;font-size:11px;padding:3px;background-color:#0078a5;color:white}
+TH{height:22px;padding:3px;background-color:#0078a5;color:white}
 
 /* 6. TIMER
 ----------------------------------------------------------------------------- */
