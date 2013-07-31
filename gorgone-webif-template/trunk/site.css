@@ -270,9 +270,11 @@ A:hover {color: #0056a1;}
 
 /* 5. TABLES
 ----------------------------------------------------------------------------- */
-/* BASE STYLE FROM ENEEN */
-TABLE {border-spacing:1px; border:0px; padding:0px; margin-left:auto; margin-right:auto;}
-TH {height:10px; border:0px; font-family: Arial; font-size: 11px; padding:5px; background-color:#CCCCCC; color:black;}
+/* Settings Tables  */
+TABLE {border-spacing:1px;margin-left:auto; margin-right:auto;}
+TABLE.menu {border-spacing:0px;margin-left:auto; margin-right:auto;}
+
+/* Settings TH in Tables */
 TH.statuscol0 {text-align:center;width:10px;}
 TH.statuscol1 {text-align:center;}
 TH.statuscol2 {text-align:center;}
@@ -290,7 +292,9 @@ TH.statuscol13 {text-align:center;}
 TH.statuscol14 {text-align:center;}
 TH.statuscol15 {text-align:center;}
 TH.statuscol16 {text-align:center;}
-TD {height:10px; border:0px; font-family: Arial; font-size: 11px; padding:5px; background-color:#EEEEEE; color:black;text-align: left}
+
+/* Settings TD in Tables */
+TD {height:10px;padding:5px; background-color:#EEEEEE; color:black;text-align: left;}
 TD.centered {text-align:center;}
 TD.statuscol0 {text-align:center;width:10px;}
 TD.statuscol1 {text-align:center;}
@@ -335,6 +339,9 @@ TD.usercol20 {text-align:center;}
 TD.usercol21 {text-align:center;}
 TD.usercol22 {text-align:center;}
 TD.usercol23 {text-align:center;}
+
+/* New css from OSCAM svn8783 by "stefansat" 
+ * readerconfig.html?label=XXX */
 TH.withservices {width:200px; text-align:left; padding:5px;}
 TH.notservices {width:400px; text-align:left; padding:5px;}
 TH.lbservices {width:250px; text-align:left; padding:5px;}
@@ -342,22 +349,7 @@ TD.servicescol1 {width:200px; font-family:Arial; font-size: 12px; padding:3px; b
 TD.servicescol2 {width:400px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
 TD.servicescol3 {width:250px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
 TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal;}
-TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
-TD.subheadline {height:10px; border:0px; font-family: Arial; font-size: 11px; padding:5px; background-color:#CCCCCC; color:black;}
-TD.subheadline A {text-decoration: none;}
-TR.online TD {background-color:#BBFFAA;}
-TR.expired TD {background-color:#FFBBAA;}
-TR.connected TD {background-color:#FFFFAA;}
-TR.disabled TD:first-child IMG.icon {background-color:#00AA00;}
-TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00;}
-TR.scanusbsubhead TD {background-color:#fdfbe1;}
-TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
-TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
-TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
-TABLE.menu {border-spacing:0px; border:0px; padding:0px; margin-left:auto; margin-right:auto;}
-TABLE.config {width:750px;}
 TABLE.configreader {width:850px;}
-TABLE.invisible TD {border:0px; font-family:Arial; font-size: 12px; padding:5px; background-color:#EEEEEE;}
 TABLE.invisiblelb {border-spacing:0px; width:850px;}
 
 /* MODIFICATION GORGONE and SKYNDAS 
@@ -478,7 +470,8 @@ TABLE.statscacheex TR:hover TD {background-color:#97b6c2;color: white;}
 /* TH for all tables*/ 
 TH{height:22px;font-family:Arial;font-size:11px;padding:3px;background-color:#0078a5;color:white}
 
-/* TIMER */
+/* 6. TIMER
+----------------------------------------------------------------------------- */
 /* Base style */
 .settimer{
   position: fixed;
@@ -496,13 +489,13 @@ TH{height:22px;font-family:Arial;font-size:11px;padding:3px;background-color:#00
 .settimer SPAN B {
   color:red;
   }
-/* Refresh time - color settings */
+/* Refresh time - color settings in status.html */
 .timercolor SPAN{
   background-color:#333333;
   color:#e0e0e0;
 }
   
-/* 6. FORM, BUTTONS, TEXTAREA
+/* 7. FORM, BUTTONS, TEXTAREA
 ----------------------------------------------------------------------------- */
 select {
 	border: 1px solid #DDDDDD;
@@ -577,7 +570,7 @@ TEXTAREA.bt {
   font-size:12px
   }
 
-/* 7. TOOLTIP
+/* 8. TOOLTIP
 ----------------------------------------------------------------------------- */  
 .tooltip{
   position:absolute;
@@ -655,7 +648,7 @@ table.status td.statuscol16 a.tooltip1{color:#ec373a}
 table.status a.tooltip span{display:none}
 table.status a.tooltip1 span{display:none}
 
-/* 8. DIV.LOG ELEMENTS in page status.html
+/* 9. DIV.LOG ELEMENTS in page status.html
 ----------------------------------------------------------------------------- */
 DIV.log{
   background-color:#fafafa;
@@ -675,7 +668,7 @@ DIV.log{
   border-radius:5px
   }
   
-/* 9. DEBUG ELEMENTS
+/* 10. DEBUG ELEMENTS
 ----------------------------------------------------------------------------- */
 .debugt{
   color:white;
@@ -717,7 +710,7 @@ A.debugls:link,A.debugls:visited{
   background:#c50000
   }
 
-/* 10. BASIC DISTRIBUTION PAGE 
+/* 11. BASIC DISTRIBUTION PAGE 
 ----------------------------------------------------------------------------- */  
 /* Footer in bottom of the page */
 html,body {
@@ -753,7 +746,7 @@ html,body {
   color:#fff;
   }
 
-/* 11. IMG. ICON
+/* 12. IMG. ICON
 ----------------------------------------------------------------------------- */
 IMG {
   border:0px solid;
@@ -775,7 +768,7 @@ IMG.icon {
   -webkit-border-radius:3px;
   }
 
-/* 12. OTHER ELEMENTS
+/* 13. OTHER ELEMENTS
 ----------------------------------------------------------------------------- */
 /* class warning is in shutdown.html */
 DIV.warning UL {
@@ -802,16 +795,22 @@ SPAN.idlesec_normal {font-family: Arial; font-size: 9px;color: black}
 SPAN.idlesec_alert {font-family: Arial; font-size: 9px;color: red}
 SPAN.global_conf {color: blue; font-size: 12px; font-family: Arial; cursor: default; padding: 4px;}
 
-/* 13. GRAPH
+/* 14. GRAPH
 ----------------------------------------------------------------------------- */
 rect.graph_bg {fill:white;}
 text.graph_error {text-anchor:middle;fill:red}
 text.graph_grid_txt {fill:gray;text-anchor:end;style:font-size:12px}
 path.graph_grid {stroke:gray;stroke-opacity:0.5}
   
-/* 14. UNKNOWN CSS STYLE
+/* 15. UNKNOWN CSS STYLE
 ----------------------------------------------------------------------------- */  
 A:hover SPAN {display: block;position: absolute;top: 2em; right: 1em; margin: 0px;padding: 10px;color: #335500;font-weight: normal;background: #ffffdd;text-align: left;border: 1px solid #666;}
+TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
+TR.expired TD {background-color:#FFBBAA;}
+TR.scanusbsubhead TD {background-color:#fdfbe1;}
+TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
+TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
+TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 
-/* 15. CSS IN THE TEST
+/* 16. CSS IN THE TEST
 ----------------------------------------------------------------------------- */
