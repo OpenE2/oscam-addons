@@ -372,7 +372,7 @@ TABLE.sectionclient {width:99%;}
 TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#fff;} 
 TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517;} 
 
-/* CONFIG.HTML , USER_EDIT.HTML , READERCONFIG.HTML*/
+/* CONFIG.HTML , USER_EDIT.HTML */
 /* Table class "config" is in config.html?part=XXX and user_edit.html*/
 TABLE.config{border:3px solid #0f1517;width:810px;background-color:#95a4ab}
 TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
@@ -381,7 +381,7 @@ TABLE.config TD:first-child {width:160px;}
 TABLE.config TR:last-child:hover TD {background-color:#eeeeee;color:black;}
 /* For Table in last row with hover TABLE.config TR*/
 TABLE.invisible {margin-left: 0px;}
-TABLE.invisible TD {font-family:Arial; font-size: 12px; padding:5px; width:auto !important;}
+TABLE.invisible TD {font-size: 12px;width:auto !important;}
 TABLE.invisible TR:hover TD {background-color: #97b6c2 !important;}
 /* For row hover in Entitlements for Global - CCcam*/
 TABLE.statsglobal{border:3px solid #0f1517;background-color:#95a4ab}
@@ -400,7 +400,7 @@ TABLE.statsbalance{border:3px solid #0f1517;margin:auto auto;background-color:#9
 TABLE.statsbalance TD:last-child{line-height: 20px;}
 TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px;}
 TABLE.statsbalance TR:hover TD{background-color:#97b6c2;}
-TD.subheadline{height:10px;font-family:Arial;font-size:11px;padding:5px;background-color:#0078a5;color:#fff}
+TD.subheadline{height:10px;background-color:#0078a5;color:#fff}
 TD.subheadline A {color:#000033;}
 TD.subheadline A:hover {color:#fff1c3;}
 TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
@@ -410,30 +410,30 @@ TABLE.statsentitle TR:hover TD {background-color:#97b6c2}
 TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
 TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
-
+/* Table for scanusb.html */
+TR.scanusbsubhead TD {background-color:#fdfbe1;}
 
 /* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
- * readerconfig.html?label=XXX */
+ * Table in readerconfig.html?label=XXX */
 TABLE.configreader {border:3px solid #0f1517;width:850px;background-color:#95a4ab}
-TABLE.invisiblelb {border-spacing:0px; width:850px;}
-TH.withservices {width:200px; text-align:left; padding:5px;}
-TH.notservices {width:400px; text-align:left; padding:5px;}
-TH.lbservices {width:250px; text-align:left; padding:5px;}
-TD.servicescol1 {width:200px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
-TD.servicescol2 {width:400px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
-TD.servicescol3 {width:250px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
+/* Table for services */
+TABLE.invisiblelb {border-spacing:0px;width:100%}
+TABLE.invisiblelb TH {width:33%; text-align:left;background-color:#65c2f7}
+TABLE.invisiblelb TD {width:33%;border-spacing:0px;font-size:12px;text-align:left;background-color:#EEEEEE;padding:3px;white-space: nowrap}
+TH.withservices {}
+TH.notservices {}
+TH.lbservices {}
+TD.servicescol1 {}
+TD.servicescol2 {}
+TD.servicescol3 {}q
 
-
-TABLE.config{border:3px solid #0f1517;width:810px;background-color:#95a4ab}
-TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
-TABLE.config TD:first-child {width:160px;}
 /* USERCONFIG.HTML */
 /* Base table */
-TABLE.users{width:99%;border-bottom:3px solid #0f1517;}
+TABLE.users{width:99%;border-bottom:3px solid #0f1517}
 TABLE.users TH{border-bottom:3px solid #0f1517}
 TABLE.users TH:first-child{background-color:#525252;}
 TABLE.users TH:last-child{background-color:#525252;}
-TABLE.user_totals{border:3px solid #0f1517;margin-top:10px}
+TABLE.user_totals{border:3px solid #0f1517;margin-top:10px;background-color:#95a4ab}
 /* User is online */
 TR.online TD{background-color:#bfa}
 TR.online:hover TD{background-color:#97b6c2;color:black}
@@ -563,7 +563,7 @@ TEXTAREA.editor {
   border:1px dotted #aaa;
   background-color:#fafafa;
   color:#333;
-  width:95%;
+  width:97%;
   height:508px;
   padding:8px 10px;
   font-family:"Courier New",monospace;
@@ -812,10 +812,7 @@ path.graph_grid {stroke:gray;stroke-opacity:0.5}
 /* 15. UNKNOWN CSS STYLE
 ----------------------------------------------------------------------------- */  
 A:hover SPAN {display: block;position: absolute;top: 2em; right: 1em; margin: 0px;padding: 10px;color: #335500;font-weight: normal;background: #ffffdd;text-align: left;border: 1px solid #666;}
-TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal;}
-TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
 TR.expired TD {background-color:#FFBBAA;}
-TR.scanusbsubhead TD {background-color:#fdfbe1;}
 
 /* 16. CSS IN THE TEST
 ----------------------------------------------------------------------------- */
