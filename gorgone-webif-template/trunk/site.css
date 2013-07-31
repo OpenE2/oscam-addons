@@ -406,10 +406,10 @@ TD.subheadline A:hover {color:#fff1c3;}
 TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
 /* Table for entitlements readers - entitlements.html?label=XXXX */
 TABLE.statsentitle {border: 3px solid #0f1517;}
-TABLE.statsentitle TR:hover TD {background-color:#97b6c2;color: white;}
-TABLE.statsentitle TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
-TABLE.statsentitle TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
-TABLE.statsentitle TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
+TABLE.statsentitle TR:hover TD {background-color:#97b6c2}
+TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
+TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
+TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
 
 
 /* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
@@ -459,19 +459,19 @@ TABLE.filter TD{text-align:right;background-color:transparent;color:#FFF;}
 TABLE.stats{border:3px solid #0f1517;background-color:#95a4ab}
 TABLE.stats TH{padding:8px}
 TABLE.stats TR:hover TD{background-color:#97b6c2;}
-TABLE.stats TR:last-child:hover TD {background-color:#eeeeee;color:black;}
+TABLE.stats TR:last-child:hover TD {background-color:#eeeeee}
   
 /* FAILBAN.HTML */
 /* Table class "statsfailban" is in failban.html */
 TABLE.statsfailban {border: 3px solid #0f1517;}
 TABLE.statsfailban TH{padding:8px}
-TABLE.statsfailban TR:hover TD {background-color:#97b6c2;color: white;}
+TABLE.statsfailban TR:hover TD {background-color:#97b6c2}
 
 /* CACHEEX.HTML */
 /* Table class "statscacheex" is in cacheex.html */
 TABLE.statscacheex {border: 3px solid #0f1517;}
 TABLE.statscacheex TH{padding:8px}
-TABLE.statscacheex TR:hover TD {background-color:#97b6c2;color: white;}
+TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
 
 /* TH for all tables*/ 
 TH{height:22px;padding:3px;background-color:#0078a5;color:white}
