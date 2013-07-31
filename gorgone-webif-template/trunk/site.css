@@ -780,6 +780,7 @@ DIV.warning UL {
 	margin-right: auto;
   }
 DIV.filterform {margin: 10px;}
+DIV.statusfilterform {margin-bottom: -10px;margin-top: -23px;}
 HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
 DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left;}
 DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
