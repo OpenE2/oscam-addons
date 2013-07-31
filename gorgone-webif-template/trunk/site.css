@@ -322,7 +322,7 @@ TD.statuscol16 A {text-decoration:none}
 
 /* Settings TD in Tables in userconfig.html */
 TD.usercol0 {text-align:center}
-TD.usercol1 {white-space:normal}
+TD.usercol1 {}
 TD.usercol2 {text-align:center}
 TD.usercol3 {text-align:center}
 TD.usercol4 {text-align:center}
@@ -395,18 +395,18 @@ TABLE.statsglobal TR:hover TD{background-color:#97b6c2}
 /* Table in readers.html */ 
 TABLE.readers{border:3px solid #0f1517;background-color:#95a4ab}
 /* For row hover */
-TR.enabledreader:hover TD{background-color:#97b6c2;color:black}
-TR.disabledreader:hover TD{background-color:#97b6c2;color:black}
-TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00;}
-TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600;}
+TR.enabledreader:hover TD{background-color:#97b6c2}
+TR.disabledreader:hover TD{background-color:#97b6c2}
+TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00}
+TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600}
 /* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
 TABLE.statsbalance{border:3px solid #0f1517;margin:auto auto;background-color:#95a4ab}
-TABLE.statsbalance TD:last-child{line-height: 20px;}
-TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px;}
-TABLE.statsbalance TR:hover TD{background-color:#97b6c2;}
+TABLE.statsbalance TD:last-child{line-height: 20px}
+TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px}
+TABLE.statsbalance TR:hover TD{background-color:#97b6c2}
 TD.subheadline{height:10px;background-color:#0078a5;color:#fff}
-TD.subheadline A {color:#000033;}
-TD.subheadline A:hover {color:#fff1c3;}
+TD.subheadline A {color:#000033}
+TD.subheadline A:hover {color:#fff1c3}
 TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
 /* Table for entitlements readers - entitlements.html?label=XXXX */
 TABLE.statsentitle {border: 3px solid #0f1517;background-color:#95a4ab}
@@ -415,7 +415,7 @@ TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
 TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
 /* Table for scanusb.html */
-TR.scanusbsubhead TD {background-color:#fdfbe1;}
+TR.scanusbsubhead TD {background-color:#fdfbe1}
 
 /* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
  * Table in readerconfig.html?label=XXX */
@@ -438,34 +438,34 @@ TD.servicescol3 {}
 /* Base table */
 TABLE.users{width:99%;border-bottom:3px solid #0f1517}
 TABLE.users TH{border-bottom:3px solid #0f1517}
-TABLE.users TH:first-child{background-color:#525252;}
-TABLE.users TH:last-child{background-color:#525252;}
+TABLE.users TH:first-child{background-color:#525252}
+TABLE.users TH:last-child{background-color:#525252}
 TABLE.user_totals{border:3px solid #0f1517;margin-top:10px;background-color:#95a4ab}
 /* User is online */
 TR.online TD{background-color:#bfa}
-TR.online:hover TD{background-color:#97b6c2;color:black}
+TR.online:hover TD{background-color:#97b6c2}
 /* User is offline */ 
-TR.offline:hover TD{background-color:#97b6c2;color:black}
+TR.offline:hover TD{background-color:#97b6c2}
 /* User is disables */
-TR.disabled:hover TD{background-color:#97b6c2;color:black}
+TR.disabled:hover TD{background-color:#97b6c2}
 TR.disabled TD.usercol0 IMG.icon{background-color:#0a0}
 TR.disabled TD.usercol0 A:hover IMG.icon{background-color:#076600}
 /* Use is connected */
 TR.connected TD{background-color:#ffa}
-TR.connected:hover TD{background-color:#97b6c2;color:black}
+TR.connected:hover TD{background-color:#97b6c2}
 /* Title in Label column */
-TD.usercol1 SPAN{cursor: pointer;}
+TD.usercol1 SPAN{cursor:pointer}
 /* Style for Add New User */
-TABLE.newuser {border:2px solid #0f1517;}
+TABLE.newuser {border:2px solid #0f1517}
 /*  Search */
 TABLE.filter {width:80%}
-TABLE.filter TD{text-align:right;background-color:transparent;color:#FFF;}
+TABLE.filter TD{text-align:right;background-color:transparent;color:#FFF}
 
 /* ----------- SERVICES.HTML ----------- */
 /* Table class "stats" is in services.html */
 TABLE.stats{border:3px solid #0f1517;background-color:#95a4ab}
 TABLE.stats TH{padding:8px}
-TABLE.stats TR:hover TD{background-color:#97b6c2;}
+TABLE.stats TR:hover TD{background-color:#97b6c2}
 TABLE.stats TR:last-child:hover TD {background-color:#eeeeee}
   
 /* ----------- FAILBAN.HTML ----------- */
@@ -479,8 +479,6 @@ TABLE.statsfailban TR:hover TD {background-color:#97b6c2}
 TABLE.statscacheex {border: 3px solid #0f1517;background-color:#95a4ab}
 TABLE.statscacheex TH{padding:8px}
 TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
-
-
 
 /* 6. TIMER
 ----------------------------------------------------------------------------- */
