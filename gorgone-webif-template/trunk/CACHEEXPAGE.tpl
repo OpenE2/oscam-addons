@@ -2,7 +2,6 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<BR><BR>
 	<TABLE CLASS="stats">
 			<TR><TH COLSPAN="11">CacheEX Stats for ##OWN_CACHEEX_NODEID##</TH></TR>
 			<TR><TH>Direction</TH><TH>Type</TH><TH>Name</TH><TH>IP</TH><TH>NODE</TH><TH>Cache EX Mode</TH><TH>Push</TH><TH>Got</TH><TH>Hit</TH><TH>Err</TH><TH>CW Diff</TH></TR>

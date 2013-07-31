@@ -2,6 +2,6 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<BR><BR>Entitlements for ##READERNAME##<BR><BR>
+	<DIV CLASS="message">Entitlements for ##READERNAME##<BR></DIV>
 ##ENTITLEMENTCONTENT##
 ##TPLFOOTER##

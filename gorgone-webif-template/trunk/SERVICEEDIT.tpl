@@ -2,7 +2,6 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-	<BR><BR>
 	<form action="services_edit.html" method="get">
 		<input name="service" type="hidden" value="##LABEL##">
 		<TABLE CLASS="stats">
