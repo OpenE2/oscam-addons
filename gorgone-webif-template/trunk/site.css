@@ -407,7 +407,10 @@ TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;
 /* Table for entitlements readers - entitlements.html?label=XXXX */
 TABLE.statsentitle {border: 3px solid #0f1517;}
 TABLE.statsentitle TR:hover TD {background-color:#97b6c2;color: white;}
-/* Table in emm.html?label= have class "stats" */
+TABLE.statsentitle TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
+TABLE.statsentitle TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
+TABLE.statsentitle TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
+
 
 /* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
  * readerconfig.html?label=XXX */
@@ -813,9 +816,6 @@ TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px
 TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
 TR.expired TD {background-color:#FFBBAA;}
 TR.scanusbsubhead TD {background-color:#fdfbe1;}
-TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
-TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
-TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 
 /* 16. CSS IN THE TEST
 ----------------------------------------------------------------------------- */
