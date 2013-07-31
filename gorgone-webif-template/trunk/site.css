@@ -791,8 +791,8 @@ HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
 DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left;}
 DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
 DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right;}
-DIV.debugmenu {line-height: 20px;}
-DIV.logmenu {line-height: 20px;margin-top:10px;}
+DIV.debugmenu {line-height:30px}
+DIV.logmenu {line-height:20px}
 DIV.logmenu A {color:#fff1c3;}
 DIV.logmenu A:hover {color:#ff5c03;}
 SPAN.e_valid {background-color:#E6FEBF;}
