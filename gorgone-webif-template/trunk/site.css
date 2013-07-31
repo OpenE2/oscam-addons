@@ -340,18 +340,6 @@ TD.usercol21 {text-align:center;}
 TD.usercol22 {text-align:center;}
 TD.usercol23 {text-align:center;}
 
-/* New css from OSCAM svn8783 by "stefansat" 
- * readerconfig.html?label=XXX */
-TH.withservices {width:200px; text-align:left; padding:5px;}
-TH.notservices {width:400px; text-align:left; padding:5px;}
-TH.lbservices {width:250px; text-align:left; padding:5px;}
-TD.servicescol1 {width:200px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
-TD.servicescol2 {width:400px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
-TD.servicescol3 {width:250px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
-TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal;}
-TABLE.configreader {width:850px;}
-TABLE.invisiblelb {border-spacing:0px; width:850px;}
-
 /* MODIFICATION GORGONE and SKYNDAS 
 ------------------------------------*/
 /* STATUS.HTML */
@@ -385,7 +373,7 @@ TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;fo
 TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517;} 
 
 /* CONFIG.HTML , USER_EDIT.HTML , READERCONFIG.HTML*/
-/* Table class "config" is in config.html?part=XXX and user_edit.html and readerconfig.html?label=XXX */
+/* Table class "config" is in config.html?part=XXX and user_edit.html*/
 TABLE.config{border:3px solid #0f1517;width:810px;background-color:#95a4ab}
 TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
 TABLE.config TD:first-child {width:160px;}
@@ -419,8 +407,23 @@ TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;
 /* Table for entitlements readers - entitlements.html?label=XXXX */
 TABLE.statsentitle {border: 3px solid #0f1517;}
 TABLE.statsentitle TR:hover TD {background-color:#97b6c2;color: white;}
-/* Table in emm.html?label= have class "stats"
+/* Table in emm.html?label= have class "stats" */
 
+/* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
+ * readerconfig.html?label=XXX */
+TABLE.configreader {border:3px solid #0f1517;width:850px;background-color:#95a4ab}
+TABLE.invisiblelb {border-spacing:0px; width:850px;}
+TH.withservices {width:200px; text-align:left; padding:5px;}
+TH.notservices {width:400px; text-align:left; padding:5px;}
+TH.lbservices {width:250px; text-align:left; padding:5px;}
+TD.servicescol1 {width:200px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
+TD.servicescol2 {width:400px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
+TD.servicescol3 {width:250px; font-family:Arial; font-size: 12px; padding:3px; background-color:#EEEEEE; text-align:left;}
+
+
+TABLE.config{border:3px solid #0f1517;width:810px;background-color:#95a4ab}
+TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
+TABLE.config TD:first-child {width:160px;}
 /* USERCONFIG.HTML */
 /* Base table */
 TABLE.users{width:99%;border-bottom:3px solid #0f1517;}
@@ -806,6 +809,7 @@ path.graph_grid {stroke:gray;stroke-opacity:0.5}
 /* 15. UNKNOWN CSS STYLE
 ----------------------------------------------------------------------------- */  
 A:hover SPAN {display: block;position: absolute;top: 2em; right: 1em; margin: 0px;padding: 10px;color: #335500;font-weight: normal;background: #ffffdd;text-align: left;border: 1px solid #666;}
+TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal;}
 TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
 TR.expired TD {background-color:#FFBBAA;}
 TR.scanusbsubhead TD {background-color:#fdfbe1;}
