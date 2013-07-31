@@ -450,10 +450,10 @@ TR.offline:hover TD{background-color:#97b6c2}
 TR.disabled:hover TD{background-color:#97b6c2}
 TR.disabled TD.usercol0 IMG.icon{background-color:#0a0}
 TR.disabled TD.usercol0 A:hover IMG.icon{background-color:#076600}
-/* Use is connected */
+/* User is connected */
 TR.connected TD{background-color:#ffa}
 TR.connected:hover TD{background-color:#97b6c2}
-/* Title in Label column */
+/* Title in "Label" column */
 TD.usercol1 SPAN{cursor:pointer}
 /* Style for Add New User */
 TABLE.newuser {border:2px solid #0f1517}
@@ -499,7 +499,7 @@ TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
 .settimer SPAN B {
   color:red;
   }
-/* Refresh time - color settings in status.html */
+/* Color settings in status.html */
 .timercolor SPAN{
   background-color:#333333;
   color:#e0e0e0;
@@ -592,7 +592,6 @@ TEXTAREA.bt {
   opacity:0;
   filter:alpha(opacity=0)
   }
-table.status td.statuscol4 a{text-decoration:none;color:black}
 table.status td.statuscol5 a.tooltip:hover span,
 table.status td.statuscol5 a.tooltip1:hover span{
   display:block;
@@ -789,22 +788,22 @@ DIV.warning UL {
 	margin-left: auto;
 	margin-right: auto;
   }
-DIV.filterform {margin: 10px;}
-DIV.statusfilterform {margin-bottom: -10px;margin-top: -23px;}
+DIV.filterform {margin: 10px}
+DIV.statusfilterform {margin-bottom: -10px;margin-top: -23px}
 HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
-DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left;}
-DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
-DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right;}
+DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left}
+DIV.message {font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px}
+DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right}
 DIV.debugmenu {line-height:30px}
 DIV.logmenu {line-height:20px}
-DIV.logmenu A {color:#fff1c3;}
-DIV.logmenu A:hover {color:#ff5c03;}
-SPAN.e_valid {background-color:#E6FEBF;}
-SPAN.e_expired {background-color:#fff3e7;}
-SPAN.span_notifier {padding:1px 3px;border-radius:10px;color:#fff;margin-left:2px;background:#f00;}
+DIV.logmenu A {color:#fff1c3}
+DIV.logmenu A:hover {color:#ff5c03}
+SPAN.e_valid {background-color:#E6FEBF}
+SPAN.e_expired {background-color:#fff3e7}
+SPAN.span_notifier {padding:1px 3px;border-radius:10px;color:#fff;margin-left:2px;background:#f00}
 SPAN.idlesec_normal {font-family: Arial; font-size: 9px;color: black}
 SPAN.idlesec_alert {font-family: Arial; font-size: 9px;color: red}
-SPAN.global_conf {color: blue; font-size: 12px; font-family: Arial; cursor: default; padding: 4px;}
+SPAN.global_conf {color: blue; font-size: 12px; font-family: Arial; cursor: default; padding: 4px}
 
 /* 14. GRAPH
 ----------------------------------------------------------------------------- */
