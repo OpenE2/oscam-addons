@@ -1,9 +1,9 @@
 <!--OSCam;1777029975;1.20-unstable_svn;8785;-->
 			<TR CLASS ="##READERCLASS##">
 				<TD class="centered"><A HREF="readers.html?label=##READERNAMEENC##&amp;action=##SWITCH##" TITLE="##SWITCHTITLE##"><IMG CLASS="icon" SRC="##SWITCHICO##" ALT="##SWITCHTITLE##"></A></TD>
-				<TD>
-          <iframe name="myIFrame_##READERNAME##" src="readerconfig.html?label=##READERNAME##" width="0" height="0" style="visibility:hidden;display:none"  onload="getContent_##READERNAME##();"></iframe>
-    			<script language=javascript>
+        <TD>
+        <iframe name="myIFrame_##READERNAME##" src="readerconfig.html?label=##READERNAME##" width="0" height="0" style="visibility:hidden;display:none"  onload="getContent_##READERNAME##();"></iframe>
+        <script language=javascript>
       			function getContent_##READERNAME##()
       			{
       				var frame = window.frames["myIFrame_##READERNAME##"].document;
