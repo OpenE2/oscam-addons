@@ -270,80 +270,84 @@ A:hover {color: #0056a1;}
 
 /* 5. TABLES
 ----------------------------------------------------------------------------- */
-/* Settings Tables  */
-TABLE {border-spacing:1px;margin-left:auto; margin-right:auto;}
-TABLE.menu {border-spacing:0px;margin-left:auto; margin-right:auto;}
+/* Base settings for all Tables  */
+TABLE {border-spacing:1px;margin-left:auto; margin-right:auto}
 
-/* Settings TH in Tables */
-TH.statuscol0 {text-align:center;width:10px;}
-TH.statuscol1 {text-align:center;}
-TH.statuscol2 {text-align:center;}
-TH.statuscol3 {text-align:center;}
-TH.statuscol4 {text-align:center;}
-TH.statuscol5 {text-align:center;}
-TH.statuscol6 {text-align:center;}
-TH.statuscol7 {text-align:center;}
-TH.statuscol8 {text-align:center;}
-TH.statuscol9 {text-align:center;}
-TH.statuscol10 {text-align:center;}
-TH.statuscol11 {text-align:center;}
-TH.statuscol12 {text-align:center;}
-TH.statuscol13 {text-align:center;}
-TH.statuscol14 {text-align:center;}
-TH.statuscol15 {text-align:center;}
-TH.statuscol16 {text-align:center;}
+/* Base settings TH for all tables*/ 
+TH{height:22px;padding:3px;background-color:#0078a5}
 
-/* Settings TD in Tables */
-TD {height:10px;padding:5px; background-color:#EEEEEE; color:black;text-align: left;}
-TD.centered {text-align:center;}
-TD.statuscol0 {text-align:center;width:10px;}
-TD.statuscol1 {text-align:center;}
-TD.statuscol2 {text-align:center;}
-TD.statuscol3 {text-align:center;}
+/* Settings TH in Tables in status.html */
+TH.statuscol0 {text-align:center;width:10px}
+TH.statuscol1 {text-align:center}
+TH.statuscol2 {text-align:center}
+TH.statuscol3 {text-align:center}
+TH.statuscol4 {text-align:center}
+TH.statuscol5 {text-align:center}
+TH.statuscol6 {text-align:center}
+TH.statuscol7 {text-align:center}
+TH.statuscol8 {text-align:center}
+TH.statuscol9 {text-align:center}
+TH.statuscol10 {text-align:center}
+TH.statuscol11 {text-align:center}
+TH.statuscol12 {text-align:center}
+TH.statuscol13 {text-align:center}
+TH.statuscol14 {text-align:center}
+TH.statuscol15 {text-align:center}
+TH.statuscol16 {text-align:center}
+
+/* Base settings TD for all Tables */
+TD {height:10px;padding:5px; background-color:#EEEEEE; color:black;text-align: left}
+TD.centered {text-align:center}
+
+/* Settings TD in Tables in status.html */
+TD.statuscol0 {text-align:center;width:10px}
+TD.statuscol1 {text-align:center}
+TD.statuscol2 {text-align:center}
+TD.statuscol3 {text-align:center}
 TD.statuscol4 {}
-TD.statuscol5 {text-align:center;}
-TD.statuscol6 {text-align:center;}
-TD.statuscol7 {text-align:center;}
-TD.statuscol8 {text-align:center;}
+TD.statuscol5 {text-align:center}
+TD.statuscol6 {text-align:center}
+TD.statuscol7 {text-align:center}
+TD.statuscol8 {text-align:center}
 TD.statuscol9 {}
-TD.statuscol10 {text-align:center;}
-TD.statuscol11 {text-align:center;}
-TD.statuscol12 {text-align:center;}
-TD.statuscol13 {}
-TD.statuscol14 {text-align:center;}
-TD.statuscol14 A {text-decoration: none;}
-TD.statuscol15 {text-align:center;}
-TD.statuscol16 {text-align:center;}
-TD.statuscol16 A {text-decoration: none;}
-TD.usercol0 {text-align:center;}
-TD.usercol1 {white-space: normal;}
-TD.usercol2 {text-align:center;}
-TD.usercol3 {text-align:center;}
-TD.usercol4 {text-align:center;}
-TD.usercol5 {text-align:center;}
-TD.usercol6 {text-align:center;}
-TD.usercol7 {text-align:center;}
-TD.usercol8 {text-align:center;}
-TD.usercol9 {text-align:center;}
-TD.usercol10 {text-align:center;}
-TD.usercol11 {text-align:center;}
-TD.usercol12 {text-align:center;}
-TD.usercol13 {text-align:center;}
-TD.usercol14 {text-align:center;}
-TD.usercol15 {text-align:center;}
-TD.usercol16 {text-align:center;}
-TD.usercol17 {text-align:center;}
-TD.usercol18 {text-align:center;}
-TD.usercol19 {text-align:center;}
-TD.usercol20 {text-align:center;}
-TD.usercol21 {text-align:center;}
-TD.usercol22 {text-align:center;}
-TD.usercol23 {text-align:center;}
+TD.statuscol10 {text-align:center}
+TD.statuscol11 {text-align:center}
+TD.statuscol12 {text-align:center}
+TD.statuscol13 {}                
+TD.statuscol14 {text-align:center}
+TD.statuscol14 A {text-decoration:none}
+TD.statuscol15 {text-align:center}
+TD.statuscol16 {text-align:center}
+TD.statuscol16 A {text-decoration:none}
 
-/* MODIFICATION GORGONE and SKYNDAS 
-------------------------------------*/
-/* STATUS.HTML */
-TABLE.status {background-color:#95a4ab; border:3px solid #0f1517; empty-cells:show;width:99%;}
+/* Settings TD in Tables in userconfig.html */
+TD.usercol0 {text-align:center}
+TD.usercol1 {white-space:normal}
+TD.usercol2 {text-align:center}
+TD.usercol3 {text-align:center}
+TD.usercol4 {text-align:center}
+TD.usercol5 {text-align:center}
+TD.usercol6 {text-align:center}
+TD.usercol7 {text-align:center}
+TD.usercol8 {text-align:center}
+TD.usercol9 {text-align:center}
+TD.usercol10 {text-align:center}
+TD.usercol11 {text-align:center}
+TD.usercol12 {text-align:center}
+TD.usercol13 {text-align:center}
+TD.usercol14 {text-align:center}
+TD.usercol15 {text-align:center}
+TD.usercol16 {text-align:center}
+TD.usercol17 {text-align:center}
+TD.usercol18 {text-align:center}
+TD.usercol19 {text-align:center}
+TD.usercol20 {text-align:center}
+TD.usercol21 {text-align:center}
+TD.usercol22 {text-align:center}
+TD.usercol23 {text-align:center}
+
+/* ----------- STATUS.HTML ----------- */
+TABLE.status {background-color:#95a4ab; border:3px solid #0f1517; empty-cells:show;width:99%}
 TR.s TD{background-color:#c8c8e0}
 TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#97b6c2;color:black}
 TR.s IMG.icon{width:22px;height:22px;background-color:#0a0;border-radius:3px;-webkit-border-radius:3px}
@@ -358,7 +362,7 @@ TR.r TD{background-color:#f2d8bd}
 TR.r:hover TD,TR.r:hover TD SPAN,TR.r:hover TD SPAN A{background-color:#97b6c2;color:black}
 TR.r IMG.icon{width:22px;height:22px;background-color:#ffb31a;border-radius:3px;-webkit-border-radius:3px}
 TR.r A:hover IMG.icon{width:22px;height:22px;background-color:#b37700}
-TR.p TD{background-color:#edeac2;}
+TR.p TD{background-color:#edeac2}
 TR.p:hover TD,TR.p:hover TD SPAN,TR.p:hover TD SPAN A{background-color:#97b6c2;color:black}
 TR.p IMG.icon{width:22px;height:22px;background-color:#e00000;border-radius:3px;-webkit-border-radius:3px}
 TR.p A:hover IMG.icon{width:22px;height:22px;background-color:#7a0000}
@@ -366,28 +370,28 @@ TR.c TD{background-color:#ccdada}
 TR.c:hover TD,TR.c:hover TD SPAN,TR.c:hover TD SPAN A{background-color:#97b6c2;color:black}
 TR.c IMG.icon{width:22px;height:22px;background-color:#007ae6;border-radius:3px;-webkit-border-radius:3px}
 TR.c A:hover IMG.icon{width:22px;height:22px;background-color:#005aa8}
-TR.a TD {background-color:#33ff00;}
+TR.a TD {background-color:#33ff00}
 /* Settings header of section */
-TABLE.sectionclient {width:99%;}
-TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#fff;} 
-TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517;} 
+TABLE.sectionclient {width:99%}
+TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#fff} 
+TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517} 
 
-/* CONFIG.HTML , USER_EDIT.HTML */
+/* ----------- CONFIG.HTML , USER_EDIT.HTML ----------- */
 /* Table class "config" is in config.html?part=XXX and user_edit.html*/
 TABLE.config{border:3px solid #0f1517;width:850px;background-color:#95a4ab}
-TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
-TABLE.config TD:first-child {width:160px;}
+TABLE.config TR:hover TD{background-color:#97b6c2}
+TABLE.config TD:first-child {width:160px}
 /* Style for last row without hover */
-TABLE.config TR:last-child:hover TD {background-color:#eeeeee;color:black;}
+TABLE.config TR:last-child:hover TD {background-color:#eeeeee}
 /* For Table in last row with hover TABLE.config TR*/
-TABLE.invisible {margin-left: 0px;}
-TABLE.invisible TD {font-size: 12px;width:auto !important;}
-TABLE.invisible TR:hover TD {background-color: #97b6c2 !important;}
-/* For row hover in Entitlements for Global - CCcam*/
+TABLE.invisible {margin-left:0px}
+TABLE.invisible TD {font-size:12px;width:auto !important;}
+TABLE.invisible TR:hover TD {background-color:#97b6c2 !important;}
+/* For row hover in Entitlements for Global - CCcam */
 TABLE.statsglobal{border:3px solid #0f1517;background-color:#95a4ab}
-TABLE.statsglobal TR:hover TD{background-color:#97b6c2;color:black}
+TABLE.statsglobal TR:hover TD{background-color:#97b6c2}
 
-/* READERS.HTML */
+/* ----------- READERS.HTML ----------- */
 /* Table in readers.html */ 
 TABLE.readers{border:3px solid #0f1517;background-color:#95a4ab}
 /* For row hover */
@@ -420,7 +424,7 @@ TABLE.configreader TR:hover TD{background-color:#97b6c2;}
 TABLE.configreader TR:last-child:hover TD {background-color:#eeeeee}
 /* Table for services */
 TABLE.invisiblelb {border-spacing:0px;width:100%}
-TABLE.configreader TR:last-child:hover TD {background-color:#97b6c2}
+TABLE.invisiblelb TR:last-child:hover TD {background-color:#97b6c2}
 TABLE.invisiblelb TH {width:33%; text-align:left;background-color:#65c2f7}
 TABLE.invisiblelb TD {width:33%;border-spacing:0px;font-size:12px;text-align:left;background-color:#EEEEEE;padding:3px;white-space: nowrap}
 TH.withservices {}
@@ -430,7 +434,7 @@ TD.servicescol1 {}
 TD.servicescol2 {}
 TD.servicescol3 {}
 
-/* USERCONFIG.HTML */
+/* ----------- USERCONFIG.HTML ----------- */
 /* Base table */
 TABLE.users{width:99%;border-bottom:3px solid #0f1517}
 TABLE.users TH{border-bottom:3px solid #0f1517}
@@ -457,27 +461,26 @@ TABLE.newuser {border:2px solid #0f1517;}
 TABLE.filter {width:80%}
 TABLE.filter TD{text-align:right;background-color:transparent;color:#FFF;}
 
-/* SERVICES.HTML */
+/* ----------- SERVICES.HTML ----------- */
 /* Table class "stats" is in services.html */
 TABLE.stats{border:3px solid #0f1517;background-color:#95a4ab}
 TABLE.stats TH{padding:8px}
 TABLE.stats TR:hover TD{background-color:#97b6c2;}
 TABLE.stats TR:last-child:hover TD {background-color:#eeeeee}
   
-/* FAILBAN.HTML */
+/* ----------- FAILBAN.HTML ----------- */
 /* Table class "statsfailban" is in failban.html */
 TABLE.statsfailban {border: 3px solid #0f1517;background-color:#95a4ab}
 TABLE.statsfailban TH{padding:8px}
 TABLE.statsfailban TR:hover TD {background-color:#97b6c2}
 
-/* CACHEEX.HTML */
+/* ----------- CACHEEX.HTML ----------- */
 /* Table class "statscacheex" is in cacheex.html */
 TABLE.statscacheex {border: 3px solid #0f1517;background-color:#95a4ab}
 TABLE.statscacheex TH{padding:8px}
 TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
 
-/* TH for all tables*/ 
-TH{height:22px;padding:3px;background-color:#0078a5}
+
 
 /* 6. TIMER
 ----------------------------------------------------------------------------- */
