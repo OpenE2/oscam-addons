@@ -380,7 +380,7 @@ TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid 
 /* Table class "config" is in config.html?part=XXX and user_edit.html*/
 TABLE.config{border:3px solid #0f1517;width:850px;background-color:#95a4ab}
 TABLE.config TR:hover TD{background-color:#97b6c2}
-TABLE.config TD:first-child {width:160px}
+TABLE.config TD:first-child {width:170px}
 /* Style for last row without hover */
 TABLE.config TR:last-child:hover TD {background-color:#eeeeee}
 /* For Table in last row with hover TABLE.config TR*/
@@ -400,8 +400,8 @@ TR.disabledreader:hover TD{background-color:#97b6c2}
 TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00}
 TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600}
 /* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
-TABLE.statsbalance{border:3px solid #0f1517;margin:auto auto;background-color:#95a4ab}
-TABLE.statsbalance TD:last-child{line-height: 20px}
+TABLE.statsbalance{border:3px solid #0f1517;background-color:#95a4ab}
+TABLE.statsbalance TD:last-child{line-height: 20px;width: 125px}
 TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px}
 TABLE.statsbalance TR:hover TD{background-color:#97b6c2}
 TD.subheadline{height:10px;background-color:#0078a5;color:#fff}
