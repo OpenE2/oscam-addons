@@ -9,23 +9,23 @@ html, body, div, table, tbody, tfoot, thead, tr, th, td, ul, li {margin:0;paddin
 
 /* 2. BASE CSS STYLE
 ----------------------------------------------------------------------------- */
-BODY {background-color: #525252;color:#fff;font-family: Arial; font-size: 11px; text-align:center;}
-P {color: white; }
+BODY {background-color: #525252;color:#FFF;font-family: Arial; font-size: 11px; text-align:center;}
+P {color: #FFF; }
 P.blinking {text-decoration: blink; font-weight:bold; font-size:large; color:red;}
 P.styleauthor:after {content:"& Gorgone - Skyndas (modification)";}
-H2 {color: #AAAAAA; font-family: Arial; font-size: 32px; line-height: 32px; text-align:center; margin-top:0px; margin-bottom:0px}
-H4 {color: #AAAAAA; font-family: Arial; font-size: 12px; line-height: 9px; text-align:center}
+H2 {color: #AAA; font-family: Arial; font-size: 32px; line-height: 32px; text-align:center; margin-top:0px; margin-bottom:0px}
+H4 {color: #AAA; font-family: Arial; font-size: 12px; line-height: 9px; text-align:center}
 A:link {color: #DB2600;}
 A:visited {color: #DB2600;}
 A:active {color: #DB2600;}
-A:hover {color: #0056a1;}
+A:hover {color: #0056A1;}
 
 /* 3. MAIN NAVBAR
 ----------------------------------------------------------------------------- */
 #nav{
   background-color:#262626;
-  box-shadow:0 1px 10px #5e5e5e;
-  border-bottom:1px solid #fff;
+  box-shadow:0 1px 10px #5E5E5E;
+  border-bottom:1px solid #FFF;
   width:100%;
   height:45px;
   position:fixed;
@@ -51,19 +51,19 @@ A:hover {color: #0056a1;}
   padding:10px
   }
 #menu li a {
-  color:#ededed;
+  color:#EDEDED;
   font-family:Arial,Helvetica,sans-serif;
   font-size:12px;
   outline:0;
   text-decoration:none
   }
 #menu li.menu_selected A {
-  color:#007ae6;
+  color:#007AE6;
   text-decoration:underline;
   font-weight:bold
   }
 #menu li.menu_selected a:hover {
-  color:#007ae6;
+  color:#007AE6;
   font-weight:bold
   }
 #menu li.menu_selected:hover a {
@@ -74,16 +74,16 @@ A:hover {color: #0056a1;}
   }
 #menu li:hover a {
   text-decoration:underline
-  color:#007ae6
+  color:#007AE6
   }
 #menu li:hover a:hover {
-  color:#007ae6
+  color:#007AE6
   }
 #menu li.brand a,#menu li.brand a:hover {
   font-size:18px;
   font-weight:bold;
   text-decoration:none
-  color:#ededed
+  color:#EDEDED
   }
 #menu li.brand,#menu li.brand:hover {
   background:0;padding:7px
@@ -93,37 +93,37 @@ A:hover {color: #0056a1;}
 ----------------------------------------------------------------------------- */
 /* ============= SUBNAVBAR COLOR ONLY ============= */
 #sub a {
-	color: #2e2e2e;
-	border-left: 1px solid #e0e0e0;
-	border-right: 1px solid #fff;
+	color: #2E2E2E;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #FFF;
   }
 /* main level link hover */
 #sub li:hover > a {
-	color: #0098fc;
+	color: #0098FC;
   }
 #sub li.configmenu_selected > a:link,
 #sub li.configmenu_selected > a:visited,
 #sub li.configmenu_selected > a:active{
-	color: #0098fc;
+	color: #0098FC;
   }
 /* dropdown */
 #sub ul li.configmenu_selected > a:link,
 #sub ul li.configmenu_selected > a:visited,
 #sub ul li.configmenu_selected > a:active{
-	color: #0098fc;
+	color: #0098FC;
   }
 #sub ul li > a:hover {
-	background-color: #0098fc;
+	background-color: #0098FC;
   }
 .subnav {
-	background-color: #eee; /* Old browsers */
+	background-color: #EEE; /* Old browsers */
 	background-repeat: repeat-x; /* Repeat the gradient */
-	background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eee 100%); /* FF3.6+ */
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eee)); /* Chrome,Safari4+ */
-	background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eee 100%); /* Chrome 10+,Safari 5.1+ */
-	background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eee 100%); /* IE10+ */
-	background-image: -o-linear-gradient(top, #f5f5f5 0%,#eee 100%); /* Opera 11.10+ */
-	border-bottom: 1px solid #aeaeae;
+	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEE 100%); /* FF3.6+ */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F5F5F5), color-stop(100%,#EEE)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, #F5F5F5 0%,#EEE 100%); /* Chrome 10+,Safari 5.1+ */
+	background-image: -ms-linear-gradient(top, #F5F5F5 0%,#EEE 100%); /* IE10+ */
+	background-image: -o-linear-gradient(top, #F5F5F5 0%,#EEE 100%); /* Opera 11.10+ */
+	border-bottom: 1px solid #AEAEAE;
   }
 /* ======================= SUBNAVBAR ======================= */
 #sub {
@@ -185,7 +185,7 @@ A:hover {color: #0056a1;}
 
 /* level 2 list */
 #sub ul {
-	background-color: #ffffff; /* for non-css3 browsers */
+	background-color: #FFF; /* for non-css3 browsers */
 	display: none;
 	margin: 0;
 	padding: 0;
@@ -193,7 +193,7 @@ A:hover {color: #0056a1;}
 	position: absolute;
 	top: 33px;
 	right: 0px;
-	border: 1px solid #ccc;
+	border: 1px solid #CCC;
 	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -201,7 +201,7 @@ A:hover {color: #0056a1;}
 	border-radius: 0.2em 0.2em 0px 0px;
   }
 #sub ul.right {
-	background-color: #ffffff; /* for non-css3 browsers */
+	background-color: #FFF; /* for non-css3 browsers */
 	display: none;
 	margin: 0;
 	padding: 0;
@@ -209,7 +209,7 @@ A:hover {color: #0056a1;}
 	position: absolute;
 	top: 33px;
 	left: 0px;
-	border: 1px solid #ccc;
+	border: 1px solid #CCC;
 	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -227,7 +227,7 @@ A:hover {color: #0056a1;}
 	border:none;
   }
 #sub ul li > a:hover {
-	color: #ffffff;
+	color: #FFF;
 	text-decoration: none;
   }
 #sub ul li.configmenu_selected > a:link,
@@ -262,9 +262,9 @@ A:hover {color: #0056a1;}
     -webkit-border-radius: 0;
        -moz-border-radius: 0;
             border-radius: 0;
-    -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); /* WebKit */
-       -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); /* Firefox */
-            box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); /* Standard */
+    -webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,.1); /* WebKit */
+       -moz-box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,.1); /* Firefox */
+            box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,.1); /* Standard */
     }
   }
 
@@ -274,7 +274,7 @@ A:hover {color: #0056a1;}
 TABLE {border-spacing:1px;margin-left:auto; margin-right:auto}
 
 /* Base settings TH for all tables*/ 
-TH{height:22px;padding:3px;background-color:#0078a5}
+TH{height:22px;padding:3px;background-color:#0078A5}
 
 /* Settings TH in Tables in status.html */
 TH.statuscol0 {text-align:center;width:10px}
@@ -296,7 +296,7 @@ TH.statuscol15 {text-align:center}
 TH.statuscol16 {text-align:center}
 
 /* Base settings TD for all Tables */
-TD {height:10px;padding:5px; background-color:#EEEEEE; color:black;text-align: left}
+TD {height:10px;padding:5px; background-color:#EEE; color:black;text-align: left}
 TD.centered {text-align:center}
 
 /* Settings TD in Tables in status.html */
@@ -347,34 +347,34 @@ TD.usercol22 {text-align:center}
 TD.usercol23 {text-align:center}
 
 /* ----------- STATUS.HTML ----------- */
-TABLE.status {background-color:#95a4ab; border:3px solid #0f1517; empty-cells:show;width:99%}
-TR.s TD{background-color:#c8c8e0}
-TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#97b6c2;color:black}
-TR.s IMG.icon{width:22px;height:22px;background-color:#0a0;border-radius:3px;-webkit-border-radius:3px}
+TABLE.status {background-color:#95A4AB; border:3px solid #0F1517; empty-cells:show;width:99%}
+TR.s TD{background-color:#C8C8E0}
+TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#97B6C2;color:black}
+TR.s IMG.icon{width:22px;height:22px;background-color:#0A0;border-radius:3px;-webkit-border-radius:3px}
 TR.s A:hover IMG.icon{width:22px;height:22px;background-color:#076600}
-TR.l TD{background-color:#e1e1ef}
-TR.n TD{background-color:#e1e1ef}
-TR.h TD{background-color:#c8c8e0}
-TR.h:hover TD,TR.h:hover TD SPAN,TR.h:hover TD SPAN A{background-color:#97b6c2;color:black}
-TR.h IMG.icon{width:22px;height:22px;background-color:#0a0;border-radius:3px;-webkit-border-radius:3px}
+TR.l TD{background-color:#E1E1EF}
+TR.n TD{background-color:#E1E1EF}
+TR.h TD{background-color:#C8C8E0}
+TR.h:hover TD,TR.h:hover TD SPAN,TR.h:hover TD SPAN A{background-color:#97B6C2;color:black}
+TR.h IMG.icon{width:22px;height:22px;background-color:#0A0;border-radius:3px;-webkit-border-radius:3px}
 TR.h A:hover IMG.icon{width:22px;height:22px;background-color:#076600}
-TR.r TD{background-color:#f2d8bd}
-TR.r:hover TD,TR.r:hover TD SPAN,TR.r:hover TD SPAN A{background-color:#97b6c2;color:black}
-TR.r IMG.icon{width:22px;height:22px;background-color:#ffb31a;border-radius:3px;-webkit-border-radius:3px}
+TR.r TD{background-color:#F2D8BD}
+TR.r:hover TD,TR.r:hover TD SPAN,TR.r:hover TD SPAN A{background-color:#97B6C2;color:black}
+TR.r IMG.icon{width:22px;height:22px;background-color:#FFB31A;border-radius:3px;-webkit-border-radius:3px}
 TR.r A:hover IMG.icon{width:22px;height:22px;background-color:#b37700}
-TR.p TD{background-color:#edeac2}
-TR.p:hover TD,TR.p:hover TD SPAN,TR.p:hover TD SPAN A{background-color:#97b6c2;color:black}
-TR.p IMG.icon{width:22px;height:22px;background-color:#e00000;border-radius:3px;-webkit-border-radius:3px}
-TR.p A:hover IMG.icon{width:22px;height:22px;background-color:#7a0000}
-TR.c TD{background-color:#ccdada}
-TR.c:hover TD,TR.c:hover TD SPAN,TR.c:hover TD SPAN A{background-color:#97b6c2;color:black}
-TR.c IMG.icon{width:22px;height:22px;background-color:#007ae6;border-radius:3px;-webkit-border-radius:3px}
-TR.c A:hover IMG.icon{width:22px;height:22px;background-color:#005aa8}
-TR.a TD {background-color:#33ff00}
+TR.p TD{background-color:#EDEAC2}
+TR.p:hover TD,TR.p:hover TD SPAN,TR.p:hover TD SPAN A{background-color:#97B6C2;color:black}
+TR.p IMG.icon{width:22px;height:22px;background-color:#E00000;border-radius:3px;-webkit-border-radius:3px}
+TR.p A:hover IMG.icon{width:22px;height:22px;background-color:#7A0000}
+TR.c TD{background-color:#CCDADA}
+TR.c:hover TD,TR.c:hover TD SPAN,TR.c:hover TD SPAN A{background-color:#97B6C2;color:black}
+TR.c IMG.icon{width:22px;height:22px;background-color:#007AE6;border-radius:3px;-webkit-border-radius:3px}
+TR.c A:hover IMG.icon{width:22px;height:22px;background-color:#005AA8}
+TR.a TD {background-color:#33FF00}
 /* Settings header of section */
 TABLE.sectionclient {width:99%}
-TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#fff} 
-TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517} 
+TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#FFF} 
+TABLE.numclient {width:99%;border-top:3px solid #0F1517;border-bottom:3px solid #0F1517} 
 
 /* ----------- CONFIG.HTML , USER_EDIT.HTML ----------- */
 /* Table class "config" is in config.html?part=XXX and user_edit.html*/
@@ -680,10 +680,8 @@ DIV.log{
 /* 10. DEBUG ELEMENTS
 ----------------------------------------------------------------------------- */
 .debugt{
-  color:white;
   font-weight:bold;
   padding:10px;
-  font-size:11px;
   word-wrap:break-word;
   text-align:left;
   margin-top:-30px;
