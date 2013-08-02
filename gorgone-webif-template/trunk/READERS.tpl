@@ -2,10 +2,10 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-		<DIV class="subnav subnav-fixed">
+  <DIV class="subnav subnav-fixed">
     <UL id="sub">
-      <LI CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></LI>
-      <LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
+        <LI CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></LI>
+        <LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
     </UL>
   </DIV>
 	<form action="readerconfig.html" method="get">
@@ -26,7 +26,8 @@
 			</TR>
 ##READERLIST##
 			<TR>
-				<TD>&nbsp;</TD>				<TD COLSPAN="2" class="centered">New Reader</TD>
+				<TD>&nbsp;</TD>				
+                <TD COLSPAN="2" class="centered">New Reader</TD>
 				<TD COLSPAN="2" class="centered">Label:&nbsp;&nbsp;<input type="text" name="label" value="##NEXTREADER##"></TD>
 				<TD COLSPAN="2" class="centered">Protocol:&nbsp;&nbsp;
 					<select name="protocol">
