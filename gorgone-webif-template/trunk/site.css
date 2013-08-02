@@ -378,55 +378,55 @@ TABLE.numclient {width:99%;border-top:3px solid #0F1517;border-bottom:3px solid 
 
 /* ----------- CONFIG.HTML , USER_EDIT.HTML ----------- */
 /* Table class "config" is in config.html?part=XXX and user_edit.html*/
-TABLE.config{border:3px solid #0f1517;width:850px;background-color:#95a4ab}
-TABLE.config TR:hover TD{background-color:#97b6c2}
+TABLE.config{border:3px solid #0F1517;width:850px;background-color:#95A4AB}
+TABLE.config TR:hover TD{background-color:#97B6C2}
 TABLE.config TD:first-child {width:170px}
 /* Style for last row without hover */
-TABLE.config TR:last-child:hover TD {background-color:#eeeeee}
+TABLE.config TR:last-child:hover TD {background-color:#EEE}
 /* For Table in last row with hover TABLE.config TR*/
 TABLE.invisible {margin-left:0px}
 TABLE.invisible TD {font-size:12px;width:auto !important;}
-TABLE.invisible TR:hover TD {background-color:#97b6c2 !important;}
+TABLE.invisible TR:hover TD {background-color:#97B6C2 !important;}
 /* For row hover in Entitlements for Global - CCcam */
-TABLE.statsglobal{border:3px solid #0f1517;background-color:#95a4ab}
-TABLE.statsglobal TR:hover TD{background-color:#97b6c2}
+TABLE.statsglobal{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.statsglobal TR:hover TD{background-color:#97B6C2}
 
 /* ----------- READERS.HTML ----------- */
 /* Table in readers.html */ 
-TABLE.readers{border:3px solid #0f1517;background-color:#95a4ab}
+TABLE.readers{border:3px solid #0F1517;background-color:#95A4AB}
 /* For row hover */
-TR.enabledreader:hover TD{background-color:#97b6c2}
-TR.disabledreader:hover TD{background-color:#97b6c2}
+TR.enabledreader:hover TD{background-color:#97B6C2}
+TR.disabledreader:hover TD{background-color:#97B6C2}
 TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00}
 TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600}
 /* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
-TABLE.statsbalance{border:3px solid #0f1517;background-color:#95a4ab}
+TABLE.statsbalance{border:3px solid #0F1517;background-color:#95A4AB}
 TABLE.statsbalance TD:last-child{line-height: 20px;width: 125px}
 TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px}
-TABLE.statsbalance TR:hover TD{background-color:#97b6c2}
-TD.subheadline{height:10px;background-color:#0078a5;color:#fff}
+TABLE.statsbalance TR:hover TD{background-color:#97B6C2}
+TD.subheadline{height:10px;background-color:#0078A5;color:#FFF}
 TD.subheadline A {color:#000033}
-TD.subheadline A:hover {color:#fff1c3}
-TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
+TD.subheadline A:hover {color:#FFF1C3}
+TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078A5 !IMPORTANT;}
 /* Table for entitlements readers - entitlements.html?label=XXXX */
-TABLE.statsentitle {border: 3px solid #0f1517;background-color:#95a4ab}
-TABLE.statsentitle TR:hover TD {background-color:#97b6c2}
+TABLE.statsentitle {border: 3px solid #0F1517;background-color:#95A4AB}
+TABLE.statsentitle TR:hover TD {background-color:#97B6C2}
 TR.e_header TD {text-align:center; font-family:"Courier New", monospace;}
 TR.e_valid TD {background-color:#E6FEBF;text-align:center; font-family:"Courier New", monospace;}
-TR.e_expired TD {background-color:#fff3e7;text-align:center; font-family:"Courier New", monospace;}
+TR.e_expired TD {background-color:#FFF3E7;text-align:center; font-family:"Courier New", monospace;}
 /* Table for scanusb.html */
-TR.scanusbsubhead TD {background-color:#fdfbe1}
+TR.scanusbsubhead TD {background-color:#FDFBE1}
 
 /* New css from OSCAM svn8783 by "stefansat" - modification Skyndas 
  * Table in readerconfig.html?label=XXX */
-TABLE.configreader {border:3px solid #0f1517;width:850px;background-color:#95a4ab}
-TABLE.configreader TR:hover TD{background-color:#97b6c2;}
-TABLE.configreader TR:last-child:hover TD {background-color:#eeeeee}
+TABLE.configreader {border:3px solid #0F1517;width:850px;background-color:#95A4AB}
+TABLE.configreader TR:hover TD{background-color:#97B6C2;}
+TABLE.configreader TR:last-child:hover TD {background-color:#EEE}
 /* Table for services */
 TABLE.invisiblelb {border-spacing:0px;width:100%}
-TABLE.invisiblelb TR:last-child:hover TD {background-color:#97b6c2}
-TABLE.invisiblelb TH {width:33%; text-align:left;background-color:#65c2f7}
-TABLE.invisiblelb TD {width:33%;border-spacing:0px;font-size:12px;text-align:left;background-color:#EEEEEE;padding:3px;white-space: nowrap}
+TABLE.invisiblelb TR:last-child:hover TD {background-color:#97B6C2}
+TABLE.invisiblelb TH {width:33%; text-align:left;background-color:#65C2F7}
+TABLE.invisiblelb TD {width:33%;border-spacing:0px;font-size:12px;text-align:left;background-color:#EEE;padding:3px;white-space: nowrap}
 TH.withservices {}
 TH.notservices {}
 TH.lbservices {}
@@ -436,49 +436,49 @@ TD.servicescol3 {}
 
 /* ----------- USERCONFIG.HTML ----------- */
 /* Base table */
-TABLE.users{width:99%;border-bottom:3px solid #0f1517}
-TABLE.users TH{border-bottom:3px solid #0f1517}
+TABLE.users{width:99%;border-bottom:3px solid #0F1517}
+TABLE.users TH{border-bottom:3px solid #0F1517}
 TABLE.users TH:first-child{background-color:#525252}
 TABLE.users TH:last-child{background-color:#525252}
-TABLE.user_totals{border:3px solid #0f1517;margin-top:10px;background-color:#95a4ab}
+TABLE.user_totals{border:3px solid #0F1517;margin-top:10px;background-color:#95A4AB}
 /* User is online */
-TR.online TD{background-color:#bfa}
-TR.online:hover TD{background-color:#97b6c2}
+TR.online TD{background-color:#BFA}
+TR.online:hover TD{background-color:#97B6C2}
 /* User is offline */ 
-TR.offline:hover TD{background-color:#97b6c2}
+TR.offline:hover TD{background-color:#97B6C2}
 /* User is disables */
-TR.disabled:hover TD{background-color:#97b6c2}
-TR.disabled TD.usercol0 IMG.icon{background-color:#0a0}
+TR.disabled:hover TD{background-color:#97B6C2}
+TR.disabled TD.usercol0 IMG.icon{background-color:#0A0}
 TR.disabled TD.usercol0 A:hover IMG.icon{background-color:#076600}
 /* User is connected */
-TR.connected TD{background-color:#ffa}
-TR.connected:hover TD{background-color:#97b6c2}
+TR.connected TD{background-color:#FFA}
+TR.connected:hover TD{background-color:#97B6C2}
 /* Title in "Label" column */
 TD.usercol1 SPAN{cursor:pointer}
 /* Style for Add New User */
-TABLE.newuser {border:2px solid #0f1517}
+TABLE.newuser {border:2px solid #0F1517}
 /*  Search */
 TABLE.filter {width:80%}
 TABLE.filter TD{text-align:right;background-color:transparent;color:#FFF}
 
 /* ----------- SERVICES.HTML ----------- */
 /* Table class "stats" is in services.html */
-TABLE.stats{border:3px solid #0f1517;background-color:#95a4ab}
+TABLE.stats{border:3px solid #0F1517;background-color:#95A4AB}
 TABLE.stats TH{padding:8px}
-TABLE.stats TR:hover TD{background-color:#97b6c2}
-TABLE.stats TR:last-child:hover TD {background-color:#eeeeee}
+TABLE.stats TR:hover TD{background-color:#97B6C2}
+TABLE.stats TR:last-child:hover TD {background-color:#EEE}
   
 /* ----------- FAILBAN.HTML ----------- */
 /* Table class "statsfailban" is in failban.html */
-TABLE.statsfailban {border: 3px solid #0f1517;background-color:#95a4ab}
+TABLE.statsfailban {border: 3px solid #0F1517;background-color:#95A4AB}
 TABLE.statsfailban TH{padding:8px}
-TABLE.statsfailban TR:hover TD {background-color:#97b6c2}
-
+TABLE.statsfailban TR:hover TD {background-color:#97B6C2}
+                                                     
 /* ----------- CACHEEX.HTML ----------- */
 /* Table class "statscacheex" is in cacheex.html */
-TABLE.statscacheex {border: 3px solid #0f1517;background-color:#95a4ab}
+TABLE.statscacheex {border: 3px solid #0F1517;background-color:#95A4AB}
 TABLE.statscacheex TH{padding:8px}
-TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
+TABLE.statscacheex TR:hover TD {background-color:#97B6C2}
 
 /* 6. TIMER
 ----------------------------------------------------------------------------- */
@@ -501,14 +501,14 @@ TABLE.statscacheex TR:hover TD {background-color:#97b6c2}
   }
 /* Color settings in status.html */
 .timercolor SPAN{
-  background-color:#333333;
-  color:#e0e0e0;
+  background-color:#333;
+  color:#E0E0E0;
 }
   
 /* 7. FORM, BUTTONS, TEXTAREA
 ----------------------------------------------------------------------------- */
 select {
-	border: 1px solid #DDDDDD;
+	border: 1px solid #DDD;
 	padding: 0.25em 0.3em;
   }
 select:hover{
@@ -520,14 +520,14 @@ input[type="submit"] {
   font-size:13px;
   text-align:center;
   /* Background color */
-  background:#0095cc;
+  background:#0095CC;
   /* Border */
   border: 1px solid #438FAE;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
   /* Shadow */
-  text-shadow: 0px -1px 0px #00416a;
+  text-shadow: 0px -1px 0px #00416A;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   /* Other settings */
   margin-left:15px;
@@ -539,14 +539,14 @@ input[type="submit"]:hover {
   }
   
 input[type="submit"]:active {
-  background:#00698f;
+  background:#00698F;
   }
 input[type="submit"].button {
   width:146px;
   margin-left:0
   }
 input[type="text"] {
-  border:1px solid #ddd;
+  border:1px solid #DDD;
   padding:.25em .3em
   }
 input[type="text"]:hover,
@@ -555,7 +555,7 @@ input[type="text"]:active {
   cursor:text
   }
 textarea {
-  border:1px solid #ddd;
+  border:1px solid #DDD;
   padding:.25em .3em;
   width:350px
   }
@@ -564,8 +564,8 @@ textarea:hover,textarea:active {
   cursor:text
   }
 TEXTAREA.editor {
-  border:1px dotted #aaa;
-  background-color:#fafafa;
+  border:1px dotted #AAA;
+  background-color:#FAFAFA;
   color:#333;
   width:97%;
   height:508px;
@@ -605,7 +605,7 @@ table.status td.statuscol5 a.tooltip1:hover span{
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
-  color:#fff;
+  color:#FFF;
   text-shadow:0 -1px 0 rgba(0,0,0,0.25);
   background:inherit
   }
@@ -622,7 +622,7 @@ table.status td.statuscol16 a.tooltip1:hover span{
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
-  color:#fff;
+  color:#FFF;
   text-shadow:0 -1px 0 rgba(0,0,0,0.25);
   background:inherit
   }
@@ -630,7 +630,7 @@ table.status td.statuscol16 a.tooltip:hover,
 table.status td.statuscol16 a.tooltip1:hover,
 table.status td.statuscol5 a.tooltip:hover,
 table.status td.statuscol5 a.tooltip1:hover{
-  color:#fd4f07
+  color:#FD4F07
   }
 table.status td.statuscol16 a.tooltip,
 table.status td.statuscol16 a.tooltip1,
@@ -660,8 +660,8 @@ table.status a.tooltip1 span{display:none}
 /* 9. DIV.LOG ELEMENTS in page status.html
 ----------------------------------------------------------------------------- */
 DIV.log{
-  background-color:#fafafa;
-  border:1px dotted #aaa;
+  background-color:#FAFAFA;
+  border:1px dotted #AAA;
   color:#333;
   padding:10px;
   font-family:"Courier New",monospace;
@@ -696,17 +696,17 @@ A.debugl:link,A.debugl:visited{
   text-decoration:none;
   padding:1px 9px 2px;
   border-radius:10px;
-  color:#fff;
+  color:#FFF;
   white-space:nowrap;
-  background:#4096ee
+  background:#4096EE
   }
 A.debugl:hover{
   text-decoration:none;
   border-radius:10px;
   font-weight:bold;
-  color:#fff;
+  color:#FFF;
   white-space:nowrap;
-  background:#ff6400
+  background:#FF6400
   }
 A.debugls:link,A.debugls:visited{
   text-decoration:none;
@@ -714,7 +714,7 @@ A.debugls:link,A.debugls:visited{
   border-radius:10px;
   color:white;
   white-space:nowrap;
-  background:#c50000
+  background:#C50000
   }
 
 /* 11. BASIC DISTRIBUTION PAGE 
@@ -741,16 +741,16 @@ html,body {
 	left:0;
   /* Footer background */
   background-color: #292929;
-  border-top: 10px solid #005fb3;
+  border-top: 10px solid #005FB3;
   background: none repeat scroll 0% 0% rgb(16, 16, 16);
 }
 /* Footer text color */
 #footer P {
-	color: #a9a9a9;
+	color: #A9A9A9;
   }
 /* Footer text color for modern version */
 #footer P.version {
-  color:#fff;
+  color:#FFF;
   }
 
 /* 12. IMG. ICON
@@ -763,14 +763,14 @@ IMG.clientpicon {
   max-width:72px;
   }
 A:hover IMG.icon {
-  background-color:#005aa8;
+  background-color:#005AA8;
   width:22px;
   height:22px;
   }
 IMG.icon {
   width:22px;
   height:22px;
-  background-color:#007ae6;
+  background-color:#007AE6;
   border-radius:3px;
   -webkit-border-radius:3px;
   }
@@ -788,17 +788,17 @@ DIV.warning UL {
   }
 DIV.filterform {margin: 10px}
 DIV.statusfilterform {margin-bottom: -10px;margin-top: -23px}
-HR {height:1px; border-width:0; color:white; background-color:#AAAAAA}
-DIV.sidlist {border:1px dotted #AAAAAA; background-color: #fffdf5; padding:2px; font-family:"Courier New", monospace ; color:#666666; font-size: 11px; word-wrap:break-word; text-align:left}
+HR {height:1px; border-width:0; color:white; background-color:#AAA}
+DIV.sidlist {border:1px dotted #AAA; background-color: #FFFDF5; padding:2px; font-family:"Courier New", monospace ; color:#666; font-size: 11px; word-wrap:break-word; text-align:left}
 DIV.message {font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px}
 DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right}
 DIV.debugmenu {line-height:30px}
 DIV.logmenu {line-height:20px}
-DIV.logmenu A {color:#fff1c3}
-DIV.logmenu A:hover {color:#ff5c03}
+DIV.logmenu A {color:#FFF1C3}
+DIV.logmenu A:hover {color:#FF5C03}
 SPAN.e_valid {background-color:#E6FEBF}
-SPAN.e_expired {background-color:#fff3e7}
-SPAN.span_notifier {padding:1px 3px;border-radius:10px;color:#fff;margin-left:2px;background:#f00}
+SPAN.e_expired {background-color:#FFF3E7}
+SPAN.span_notifier {padding:1px 3px;border-radius:10px;color:#FFF;margin-left:2px;background:#F00}
 SPAN.idlesec_normal {font-family: Arial; font-size: 9px;color: black}
 SPAN.idlesec_alert {font-family: Arial; font-size: 9px;color: red}
 SPAN.global_conf {color: blue; font-size: 12px; font-family: Arial; cursor: default; padding: 4px}
@@ -812,7 +812,7 @@ path.graph_grid {stroke:gray;stroke-opacity:0.5}
   
 /* 15. UNKNOWN CSS STYLE
 ----------------------------------------------------------------------------- */  
-A:hover SPAN {display: block;position: absolute;top: 2em; right: 1em; margin: 0px;padding: 10px;color: #335500;font-weight: normal;background: #ffffdd;text-align: left;border: 1px solid #666;}
+A:hover SPAN {display: block;position: absolute;top: 2em; right: 1em; margin: 0px;padding: 10px;color: #335500;font-weight: normal;background: #FFFFDD;text-align: left;border: 1px solid #666;}
 TR.expired TD {background-color:#FFBBAA;}
 
 /* 16. CSS IN THE TEST
