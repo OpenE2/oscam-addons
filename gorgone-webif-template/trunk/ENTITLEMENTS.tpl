@@ -1,0 +1,7 @@
+<!--OSCam;2275529660;1.20-unstable_svn;8785;-->
+##TPLHEADER##
+##TPLMENU##
+##TPLMESSAGE##
+	<DIV CLASS="message">Entitlements for ##READERNAME##<BR></DIV>
+##ENTITLEMENTCONTENT##
+##TPLFOOTER##
