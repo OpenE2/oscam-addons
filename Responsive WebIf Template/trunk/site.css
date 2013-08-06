@@ -12,7 +12,7 @@ html, body, div, table, tbody, tfoot, thead, tr, th, td, ul, li {margin:0;paddin
 BODY {background-color: #525252;color:#FFF;font-family: Arial; font-size: 11px; text-align:center;}
 P {color: #FFF; }
 P.blinking {text-decoration: blink; font-weight:bold; font-size:large; color:red;}
-P.styleauthor:after {content:"& Gorgone - Skyndas (modification)";}
+P.styleauthor:after {content:"& - Skyndas (modification)";}
 H2 {color: #AAA; font-family: Arial; font-size: 32px; line-height: 32px; text-align:center; margin-top:0px; margin-bottom:0px}
 H4 {color: #AAA; font-family: Arial; font-size: 12px; line-height: 9px; text-align:center}
 A:link {color: #DB2600;}
