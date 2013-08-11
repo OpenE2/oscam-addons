@@ -1,5 +1,9 @@
 <!--OSCam;667563033;1.20-unstable_svn;8785;-->
   <DIV id="nav">
+    <label class="mobile_menu" for="mobile_menu">
+        <span>Menu</span>
+    </label>
+    <input id="mobile_menu" type="checkbox">
     <UL id="menu">
         <LI class="brand"><A HREF="http://www.streamboard.tv/oscam/timeline" target="_blank">OSCAM build r##CS_SVN_VERSION##</A></LI>
         <LI CLASS="##MENUACTIVE0##"><A HREF="status.html">STATUS</A></LI>

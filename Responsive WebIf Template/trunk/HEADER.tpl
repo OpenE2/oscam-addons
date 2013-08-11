@@ -7,7 +7,12 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-	<script type="text/javascript" src="oscam.js"></script>
+    
+    <!-- This meta viewport tag is required for our page to scale properly inside any screen size, particularly in the mobile viewport. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	
+    
+    <script type="text/javascript" src="oscam.js"></script>
 ##REFRESH##
 </HEAD>
 <BODY>
