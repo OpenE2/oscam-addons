@@ -828,52 +828,51 @@ TR.expired TD {background-color:#FFBBAA;}
 /* CSS specific for screen smaller than 800px 
 .......................................................*/ 
 @media screen and (max-width: 800px) {
-	label.mobile_menu {
-      position: relative;
-      display: block;
-      height: 25px;
-      width: 100%;
-      background-color: #D06503;
-      padding: 10px 0;
-      border-bottom: 1px solid white;
-      text-align: left;
-      cursor: pointer;
-	}
-    label.mobile_menu span {
-	   margin-left: 10px;
-	   color: white;
-       display: none;
-       font-size:1.5em;
-    }
-    label:after {
-        position: absolute;
-        top:2px;
-        right: 10px;
-        content: "\2261";
-        font-size: 30px;
-        color: white;
-    }
-    #mobile_menu:checked+#menu {
-		display: block
-	}
-    #nav label.mobile_menu span {
-		display: inline;
-	}
-    #menu,
-    .settimer {   
-        display: none;  
-    }
-    #menu li.brand {
-        display:none;
-    }
-   	#menu li {
-		width: 50%;
-        padding: 10px 0 10px 0;
-        background-color:#1B3647;
-	}
-    #menu li:hover {
-        padding: 10px 0 10px 0;
-        background:#152836;
-    }
-    
+  label.mobile_menu {
+    position: relative;
+    display: block;
+    height: 25px;
+    width: 100%;
+    background-color: #D06503;
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+    text-align: left;
+    cursor: pointer;
+  }
+  label.mobile_menu span {
+    margin-left: 10px;
+    color: white;
+    display: none;
+    font-size:1.5em;
+  }
+  label:after {
+    position: absolute;
+    top:2px;
+    right: 10px;
+    content: "\2261";
+    font-size: 30px;
+    color: white;
+  }
+  #mobile_menu:checked+#menu {
+    display: block
+  }
+  #nav label.mobile_menu span {
+    display: inline;
+  }
+  #menu,
+  .settimer {   
+    display: none;  
+  }
+  #menu li.brand {
+    display:none;
+  }
+  #menu li {
+    width: 50%;
+    padding: 10px 0 10px 0;
+    background-color:#1B3647;
+  }
+  #menu li:hover {
+    padding: 10px 0 10px 0;
+    background:#152836;
+  }  
 }
