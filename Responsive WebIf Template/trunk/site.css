@@ -867,14 +867,12 @@ TR.expired TD {background-color:#FFBBAA;}
         display:none;
     }
    	#menu li {
-		width: 44.4%;
-		display:block;
-        float:left;
-		text-align: left;
-		margin-left:0;
+		width: 50%;
+        padding: 10px 0 10px 0;
         background-color:#1B3647;
 	}
     #menu li:hover {
+        padding: 10px 0 10px 0;
         background:#152836;
     }
     
