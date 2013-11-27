@@ -67,10 +67,89 @@ html,body {
 	position:relative;
 }
 #content {
-	padding-bottom:160px; /* Height of the footer element */
+	padding-bottom:180px; /* Height of the footer element */
 }
-
-/* 4. FOOTER 
+.margintop {
+    height:90px
+}
+   
+/* 4. MAIN NAVBAR
+----------------------------------------------------------------------------- */
+#nav{
+    width:100%;
+    height:45px;
+    position:fixed;
+    right:0;
+    left:0;
+    top:0;
+    text-align:center;
+    z-index:1050;
+    /* Color settings */
+    background-color:#262626;
+	box-shadow: 0px 1px 10px #5E5E5E;
+	border-bottom: 1px solid #fff
+}
+#menu {
+    list-style-type:none;
+    margin:5px auto;
+    display: table
+}
+#menu li {
+    float:left;
+    display:block;
+    padding:10px;
+    text-align:center;
+    position:relative
+}
+#menu li:hover {
+    padding:10px
+}
+#menu li a {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    outline:0;
+    text-decoration:none;
+    /* Color settings */
+    color: #EDEDED
+}
+#menu li.menu_selected A {
+    text-decoration:underline;
+    font-weight:bold;
+    /* Color settings */
+    color: #D2070C
+}
+#menu li.menu_selected a:hover {
+    font-weight:bold;
+    /* Color settings */
+    color: #D2070C
+}
+#menu li.menu_selected:hover a {
+    font-weight:bold
+}
+#menu li:hover {
+    background:#373737
+}
+#menu li:hover a {
+    text-decoration:underline;
+    /* Color settings */
+    color: #D2070C
+}
+#menu li:hover a:hover {
+    /* Color settings */
+    color: #D2070C
+}
+#menu li.brand a,#menu li.brand a:hover {
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:none;
+    /* Color settings */
+    color:#EDEDED
+}
+#menu li.brand,#menu li.brand:hover {
+    background:0;padding:7px
+}
+  
+/* 5. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
 	width:100%;
@@ -114,7 +193,7 @@ html,body {
     background-color:#000000;
 }
   
-/* 5. CSS from original oscam svn
+/* 6. CSS from original oscam svn
 -------------------------------------------------------------------------------------------- */  
 HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
 TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
@@ -254,5 +333,5 @@ SPAN.idlesec_normal {font-size:9px;color:black}
 SPAN.idlesec_alert {font-size:9px;color:red}
 SPAN.global_conf {color:blue;font-size:12px;cursor:default;padding:4px}
 
-/* 5. CSS IN THE TEST
+/* 7. CSS IN THE TEST
 -------------------------------------------------------------------------------------------- */ 
