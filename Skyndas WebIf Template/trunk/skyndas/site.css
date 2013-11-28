@@ -348,6 +348,13 @@ TH {
     background-color:#182326;	
     color: white
 }
+
+/* FAILBAN.HTML */
+/* Table class "statsfailban" is in failban.html */
+TABLE.statsfailban {border: 3px solid #0F1517;}
+TABLE.statsfailban TH{padding:8px}
+TABLE.statsfailban TR:hover TD {background-color:#43636B;color: white;}
+
 /* CACHEEX.HTML */
 /* Table class "statscacheex" is in cacheex.html */
 TABLE.statscacheex {border: 3px solid #0F1517}
