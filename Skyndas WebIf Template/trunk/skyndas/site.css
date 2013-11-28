@@ -331,21 +331,21 @@ html,body {
 /* 6. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
-	width:100%;
-	height:130px;
-	position:absolute;
-	bottom:0;
-	left:0;
+    width:100%;
+    height:130px;
+    position:absolute;
+    bottom:0;
+    left:0;
     padding-top: 20px;
     /* Footer color settings */
     background-color: #424242;
     background: -moz-linear-gradient(top, #1f2f33, #0f1517); 							
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1f2f33), to(#0f1517)); 	
-	border-top: 10px solid #0f1517
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1f2f33), to(#0f1517)); 	
+    border-top: 10px solid #0f1517
 }
 #footer P {
     /* Color settings */
-	color: #A9A9A9
+    color: #A9A9A9
 }
 #footer P.version {
     /* Color settings */
