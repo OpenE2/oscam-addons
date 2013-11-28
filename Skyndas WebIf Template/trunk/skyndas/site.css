@@ -21,25 +21,25 @@ BODY {
 }
 P {
     /* Color settings */
-	color: white;
+    color: white;
 }
 P.blinking {
-	text-decoration: blink;
-	font-weight:bold;
-	font-size:large;
+    text-decoration: blink;
+    font-weight:bold;
+    font-size:large;
     /* Color settings */
-	color:red;
+    color:red;
 }
 P.styleauthor:after {
-	content:"Eneen (base html code) & Skyndas (modification)| Thanks: billyk and Streamboard Team";
+    content:"Eneen (base html code) & Skyndas (modification)| Thanks: billyk and Streamboard Team";
 }
 H2 {
-	font-family: Arial;
-	font-size: 32px;
-	line-height: 32px;
-	text-align:center;
-	margin-top:0px;
-	margin-bottom:0px;
+    font-family: Arial;
+    font-size: 32px;
+    line-height: 32px;
+    text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
     /* Color settings */
     color: #AAAAAA
 }
