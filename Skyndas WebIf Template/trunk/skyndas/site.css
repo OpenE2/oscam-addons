@@ -330,8 +330,31 @@ html,body {
             box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); /* Standard */
     }
   }
+
+/* 6. TABLES
+----------------------------------------------------------------------------- */
+/* BASE STYLE FROM ENEEN */
+
+/* MODIFICATION SKYNDAS */
+
+/* TH for all tables*/ 
+TH {
+    height:22px;
+    border:0px;
+    font-family: Arial;
+    font-size: 11px;
+    padding:3px;
+    /* Color settings */
+    background-color:#182326;	
+    color: white
+}
+/* CACHEEX.HTML */
+/* Table class "statscacheex" is in cacheex.html */
+TABLE.statscacheex {border: 3px solid #0F1517}
+TABLE.statscacheex TH{padding:8px}
+TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white;}
   
-/* 6. FOOTER 
+/* 7. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
     width:100%;
@@ -375,7 +398,7 @@ html,body {
     background-color:#000000
 }
 
-/* 7. OTHER ELEMENTS
+/* 8. OTHER ELEMENTS
 ----------------------------------------------------------------------------- */
 /* class warning is in shutdown.html */
 DIV.warning UL {
@@ -387,10 +410,10 @@ DIV.warning UL {
     margin-right: auto;
 }
 
-/* 8. CSS IN THE TEST
+/* 9. CSS IN THE TEST
 -------------------------------------------------------------------------------------------- */ 
  
-/* 9. CSS from original oscam svn
+/* 10. CSS from original oscam svn
 -------------------------------------------------------------------------------------------- */  
 HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
 TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
@@ -406,7 +429,6 @@ TABLE.invisiblelb TD {width:33%;font-size:12px;white-space: nowrap}
 TABLE.invisible {margin-left:0}
 TABLE.invisible TD {font-size:12px}
 TABLE.configmenu {line-height:16px}
-TH {height:10px;padding:5px;background-color:#CCCCCC;color:black}
 TH.statuscol0 {text-align:center;width:10px}
 TH.statuscol1 {text-align:center}
 TH.statuscol2 {text-align:center}
