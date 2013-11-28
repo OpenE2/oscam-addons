@@ -360,8 +360,22 @@ TABLE.statsfailban TR:hover TD {background-color:#43636B;color: white;}
 TABLE.statscacheex {border: 3px solid #0F1517}
 TABLE.statscacheex TH{padding:8px}
 TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white;}
-  
-/* 7. FOOTER 
+
+/* 7. FORM, BUTTONS, TEXTAREA
+----------------------------------------------------------------------------- */
+TEXTAREA.editor {
+    border:1px solid #000000;
+    background-color: #cddbda;
+    color:#000;
+    width:95%;
+    height:508px;
+    padding:8px 10px;
+    font-family:"Courier New",monospace;
+    font-size:11px;
+    word-wrap:break-word;
+    text-align:left
+}  
+/* 8. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
     width:100%;
@@ -405,7 +419,7 @@ TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white;}
     background-color:#000000
 }
 
-/* 8. OTHER ELEMENTS
+/* 9. OTHER ELEMENTS
 ----------------------------------------------------------------------------- */
 /* class warning is in shutdown.html */
 DIV.warning UL {
@@ -417,10 +431,10 @@ DIV.warning UL {
     margin-right: auto;
 }
 
-/* 9. CSS IN THE TEST
+/* 10. CSS IN THE TEST
 -------------------------------------------------------------------------------------------- */ 
  
-/* 10. CSS from original oscam svn
+/* 11. CSS from original oscam svn
 -------------------------------------------------------------------------------------------- */  
 HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
 TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
@@ -536,7 +550,6 @@ DIV.debugmenu {line-height:20px}
 DIV.logmenu {line-height:20px}
 DIV.filterform {margin:10px}
 TEXTAREA.bt {font-size: 12px}
-TEXTAREA.editor {font-size:11px;width:98%;height:508px;border:1px dotted #AAAAAA;background-color: #FAFAFA;padding:8px 10px;font-family:"Courier New", monospace; color:black;word-wrap:break-word;text-align:left}
 A.debugls:link {background-color:red}
 A.debugls:visited {background-color:red}
 A:hover IMG.icon {border: 1px solid yellow;width:20px;height:20px}
