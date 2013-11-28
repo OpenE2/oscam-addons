@@ -334,6 +334,16 @@ html,body {
 /* 6. TABLES
 ----------------------------------------------------------------------------- */
 /* BASE STYLE FROM ENEEN */
+/* Settings TD in Tables */
+TD {
+    height:10px;
+    padding:5px; 
+    background-color:#EEEEEE; 
+    text-align: left;
+    /* Color settings */
+    background-color:#CCDADA;
+    color:black;
+}
 
 /* MODIFICATION SKYNDAS */
 
@@ -348,6 +358,21 @@ TH {
     background-color:#182326;	
     color: white
 }
+
+TR:hover TD A:link,						
+TR:hover TD A:visited,					
+TR:hover TD A:active {					
+	color: #fff1c3;						
+}
+TR:hover TD A:hover {					
+	color: #ff5c03;						
+}
+/* SERVICES.HTML */
+/* Table class "stats" is in services.html */
+TABLE.stats{border:3px solid #0F1517}
+TABLE.stats TH{padding:8px}
+TABLE.stats TR:hover TD{background-color:#43636B;color: white}
+TABLE.stats TR:last-child:hover TD {background-color:#CCDADA;color:black}
 
 /* FAILBAN.HTML */
 /* Table class "statsfailban" is in failban.html */
@@ -470,7 +495,6 @@ TH.statuscol16 {text-align:center}
 TH.withservices {}
 TH.notservices {}
 TH.lbservices {}
-TD {height:10px;padding:5px;background-color:#EEEEEE;color:black;text-align:left}
 TD.centered {text-align:center}
 TD.statuscol0 {text-align:center;width:10px}
 TD.statuscol1 {text-align:center}
