@@ -336,7 +336,7 @@ html,body {
 /* BASE STYLE FROM ENEEN */
 /* Settings Tables  */
 TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
-TABLE.config {}
+TABLE.config {width: 810px}
 TABLE.configreader {width: 900px}
 /* Settings TD in Tables */
 TD {
@@ -373,16 +373,16 @@ TR:hover TD A:hover {
 }
 
 /* CONFIG.HTML , USER_EDIT.HTML */
-/* Table class "config" is in user_edit.html */
+/* Table class "config" */
 TABLE.config{border:3px solid #0F1517;background-color:#95A4AB}
-TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
+TABLE.config TR:hover TD{background-color:#43636B;color:white}
 TABLE.config TD:first-child {width:160px;}
 /* Style for last row without hover */
-TABLE.config TR:last-child:hover TD {background-color:#95A4AB;color:black;}
+TABLE.config TR:last-child:hover TD {background-color:#CCDADA;color:black;}
 /* For Table in last row with hover TABLE.config TR*/
 TABLE.invisible {margin-left: 0px;}
 TABLE.invisible TD {font-family:Arial; font-size: 12px; padding:5px; width:auto !important;}
-TABLE.invisible TR:hover TD {background-color: #43636B !important;}
+TABLE.invisible TR:hover TD {background-color: #43636B !important;color:white !important}
 /* For row hover in Entitlements for Global - CCcam*/
 TABLE.statsglobal{border:3px solid #0F1517;background-color:#95A4AB}
 TABLE.statsglobal TR:hover TD{background-color:#43636B;color:black}
@@ -436,6 +436,22 @@ TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white;}
 
 /* 7. FORM, BUTTONS, TEXTAREA
 ----------------------------------------------------------------------------- */
+select {
+	border: 1px solid #DDDDDD;
+	padding: 0.25em 0.3em;
+  }
+select:hover{
+  border:1px solid #000
+  }
+input[type="text"] {
+  border:1px solid #ddd;
+  padding:.25em .3em
+  }
+input[type="text"]:hover,
+input[type="text"]:active {
+  border:1px solid #000;
+  cursor:text
+  }
 TEXTAREA.editor {
     border:1px solid #000000;
     background-color: #cddbda;
@@ -447,7 +463,20 @@ TEXTAREA.editor {
     font-size:11px;
     word-wrap:break-word;
     text-align:left
-}  
+} 
+textarea {
+  border:1px solid #ddd;
+  padding:.25em .3em;
+  width:350px
+  }
+textarea:hover,textarea:active {
+  border:1px solid #000;
+  cursor:text
+  }
+TEXTAREA.bt {
+  font-family:Arial;
+  font-size:12px
+  } 
 /* 8. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
@@ -618,7 +647,6 @@ DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius
 DIV.debugmenu {line-height:20px}
 DIV.logmenu {line-height:20px}
 DIV.filterform {margin:10px}
-TEXTAREA.bt {font-size: 12px}
 A.debugls:link {background-color:red}
 A.debugls:visited {background-color:red}
 A:hover IMG.icon {border: 1px solid yellow;width:20px;height:20px}
