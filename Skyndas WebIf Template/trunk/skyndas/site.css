@@ -433,9 +433,6 @@ TR.e_header TD {font-family:"Courier New", monospace}
 /* TH for all tables*/ 
 TH {
     height:22px;
-    border:0px;
-    font-family: Arial;
-    font-size: 11px;
     padding:3px;
     /* Color settings */
     background-color:#182326;	
@@ -866,8 +863,10 @@ A.debugls:link,A.debugls:visited{
 /* 13. OTHER ELEMENTS
 ----------------------------------------------------------------------------- */
 /* class warning is in shutdown.html */
+DIV.warning {
+    margin-bottom:20px
+}
 DIV.warning UL {
-    font-family: Arial;
     font-size: 12px;
     text-align:left;
     width: 500px;

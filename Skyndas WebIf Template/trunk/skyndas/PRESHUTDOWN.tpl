@@ -11,7 +11,6 @@
       </UL>
     </P>
 	</DIV>
-	<BR/>
 	<FORM action="shutdown.html" method="get">
 		<INPUT type="submit" name="action" value="Shutdown" title="Shutdown OSCam" ##BTNDISABLED##>
 		<INPUT type="submit" name="action" value="Restart" title="Restart OSCam" ##BTNDISABLED##>
