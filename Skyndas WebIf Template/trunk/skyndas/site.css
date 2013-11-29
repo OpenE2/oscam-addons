@@ -334,6 +334,10 @@ html,body {
 /* 6. TABLES
 ----------------------------------------------------------------------------- */
 /* BASE STYLE FROM ENEEN */
+/* Settings Tables  */
+TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
+TABLE.config {}
+TABLE.configreader {width: 900px}
 /* Settings TD in Tables */
 TD {
     height:10px;
@@ -367,9 +371,53 @@ TR:hover TD A:active {
 TR:hover TD A:hover {					
 	color: #ff5c03;						
 }
+
+/* CONFIG.HTML , USER_EDIT.HTML */
+/* Table class "config" is in user_edit.html */
+TABLE.config{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.config TR:hover TD{background-color:#97b6c2;color:black}
+TABLE.config TD:first-child {width:160px;}
+/* Style for last row without hover */
+TABLE.config TR:last-child:hover TD {background-color:#95A4AB;color:black;}
+/* For Table in last row with hover TABLE.config TR*/
+TABLE.invisible {margin-left: 0px;}
+TABLE.invisible TD {font-family:Arial; font-size: 12px; padding:5px; width:auto !important;}
+TABLE.invisible TR:hover TD {background-color: #43636B !important;}
+/* For row hover in Entitlements for Global - CCcam*/
+TABLE.statsglobal{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.statsglobal TR:hover TD{background-color:#43636B;color:black}
+
+/* READERS.HTML */
+/* Table in readers.html */ 
+TABLE.readers{border:3px solid #0F1517;background-color:#95A4AB}
+/* For row hover */
+TR.enabledreader:hover TD{background-color:#43636B;color:white}
+TR.disabledreader:hover TD{background-color:#43636B;color:white}
+TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00;}
+TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600;}
+/* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
+TABLE.statsbalance{border:3px solid #0F1517;margin:auto auto;background-color:#95A4AB}
+TABLE.statsbalance TD:last-child{line-height: 20px;}
+TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px;}
+TABLE.statsbalance TR:hover TD{background-color:#43636B;color: white}
+TD.subheadline{height:10px;font-family:Arial;font-size:11px;padding:5px;background-color:#182326;color:#FFF}
+TD.subheadline A {color:#000033;}
+TD.subheadline A:hover {color:#fff1c3;}
+TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
+/* Table class "config" is in config.html?part=XXX */
+TABLE.configreader{border:3px solid #0f1517;background-color:#95A4AB}
+TABLE.configreader TR:hover TD{background-color:#43636B;color:white}
+TABLE.configreader TD:first-child {width:160px}
+/* Style for last row without hover */
+TABLE.configreader TR:last-child:hover TD {background-color:#CCDADA;color:black;}
+/* Table for entitlements readers - entitlements.html?label=XXXX */
+TABLE.statsentitle {border: 3px solid #0F1517;}
+TABLE.statsentitle TR:hover TD {background-color:#43636B;color: white;}
+/* Table in emm.html?label= have class "stats"
+
 /* SERVICES.HTML */
 /* Table class "stats" is in services.html */
-TABLE.stats{border:3px solid #0F1517}
+TABLE.stats{border:3px solid #0F1517;background-color:#95A4AB}
 TABLE.stats TH{padding:8px}
 TABLE.stats TR:hover TD{background-color:#43636B;color: white}
 TABLE.stats TR:last-child:hover TD {background-color:#CCDADA;color:black}
@@ -455,6 +503,7 @@ DIV.warning UL {
     margin-left: auto;
     margin-right: auto;
 }
+DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
 
 /* 10. CSS IN THE TEST
 -------------------------------------------------------------------------------------------- */ 
@@ -462,11 +511,8 @@ DIV.warning UL {
 /* 11. CSS from original oscam svn
 -------------------------------------------------------------------------------------------- */  
 HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
-TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
 TABLE.menu {border-spacing:0px}
 TABLE.status {border-spacing:1px;background-color:white;empty-cells:show}
-TABLE.config {width:750px}
-TABLE.configreader {width:850px}
 TABLE.statsbalance TD:last-child{line-height:20px;width:125px}
 TABLE.statsbalance TD:last-child IMG.icon{float:right;margin-left:10px}
 TABLE.invisiblelb {border-spacing:0px;width:100%}
@@ -568,7 +614,6 @@ TR.e_expired TD {background-color:#fff3e7;font-family:"Courier New", monospace}
 TR.e_header TD {font-family:"Courier New", monospace}
 DIV.log {border:1px dotted #AAAAAA;background-color:#FAFAFA;padding:10px;font-family:"Courier New", monospace;color:#666666;word-wrap:break-word; text-align:left}
 DIV.sidlist {border:1px dotted #AAAAAA;background-color:#fffdf5;padding:2px;font-family:"Courier New", monospace;color:#666666;word-wrap:break-word; text-align:left}
-DIV.message {font-size: 12px;font-weight:bold;}
 DIV.div_notifier {height:14px;width:14px;border-radius:7px;-webkit-border-radius:7px;background-color:red;margin-left:4px;text-align:center;float:right}
 DIV.debugmenu {line-height:20px}
 DIV.logmenu {line-height:20px}
