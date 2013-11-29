@@ -338,7 +338,7 @@ html,body {
 ----------------------------------------------------------------------------- */
 /* BASE STYLE FROM ENEEN */
 /* Basic settings Tables  */
-TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
+TABLE {border-spacing:1px;margin-left:auto;margin-right:auto;background-color:#95A4AB}
 TABLE.config {width: 810px}
 TABLE.configreader {width: 900px}
 TABLE.menu {border-spacing:0px}
@@ -451,7 +451,7 @@ TR:hover TD A:hover {
 TR.scanusbsubhead TD {}
 
 /* STATUS.HTML */
-TABLE.status {background-color:#95a4ab; border:3px solid #0f1517; empty-cells:show;width:99%;}
+TABLE.status {border:3px solid #0f1517; empty-cells:show;width:99%;}
 TR.s TD{background-color:#c8c8e0}
 TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#43636B;color:white}
 TR.s IMG.icon{width:22px;height:22px;background-color:#0a0;border-radius:3px;-webkit-border-radius:3px}
@@ -478,29 +478,33 @@ TR.a TD {background-color:#33ff00;}
 
 /* CONFIG.HTML , USER_EDIT.HTML */
 /* Table class "config" */
-TABLE.config{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.config{border:3px solid #0F1517}
 TABLE.config TR:hover TD{background-color:#43636B;color:white}
 TABLE.config TD:first-child {width:160px;}
 /* Style for last row without hover */
 TABLE.config TR:last-child:hover TD {background-color:#CCDADA;color:black;}
 /* For Table in last row with hover TABLE.config TR*/
-TABLE.invisible {margin-left: 0px;}
+TABLE.invisible {margin-left: 0px;background-color:transparent}
 TABLE.invisible TD {font-family:Arial; font-size: 12px; padding:5px; width:auto !important;}
 TABLE.invisible TR:hover TD {background-color: #43636B !important;color:white !important}
 /* For row hover in Entitlements for Global - CCcam*/
-TABLE.statsglobal{border:3px solid #0F1517;background-color:#95A4AB}
-TABLE.statsglobal TR:hover TD{background-color:#43636B;color:black}
+TABLE.statsglobal{border:3px solid #0F1517}
+TABLE.statsglobal TH{padding: 8px}
+TABLE.statsglobal TR:hover TD{background-color:#43636B;color:white}
+.cccamentitlementtotals {font-weight:bold}
 
 /* READERS.HTML */
 /* Table in readers.html */ 
-TABLE.readers{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.readers{border:3px solid #0F1517}
+TABLE.readers TH{padding: 8px}
 /* For row hover */
 TR.enabledreader:hover TD{background-color:#43636B;color:white}
 TR.disabledreader:hover TD{background-color:#43636B;color:white}
 TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00;}
 TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600;}
 /* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
-TABLE.statsbalance{border:3px solid #0F1517;margin:auto auto;background-color:#95A4AB}
+TABLE.statsbalance{border:3px solid #0F1517}
+TABLE.statsbalance TH{padding: 8px}
 TABLE.statsbalance TD:last-child{line-height: 20px;}
 TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px;}
 TABLE.statsbalance TR:hover TD{background-color:#43636B;color: white}
@@ -509,7 +513,7 @@ TD.subheadline A {color:#000033;}
 TD.subheadline A:hover {color:#fff1c3;}
 TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
 /* Table class "config" is in config.html?part=XXX */
-TABLE.configreader{border:3px solid #0f1517;background-color:#95A4AB}
+TABLE.configreader{border:3px solid #0f1517}
 TABLE.configreader TR:hover TD{background-color:#43636B;color:white}
 TABLE.configreader TD:first-child {width:160px}
 /* Style for last row without hover */
@@ -521,17 +525,18 @@ TABLE.statsentitle TR:hover TD {background-color:#43636B;color: white;}
 TABLE.invisiblelb {border-spacing:0px;width:100%}
 TABLE.invisiblelb TH {width:33%;text-align:left}
 TABLE.invisiblelb TD {width:33%;font-size:12px;white-space: nowrap}
+TABLE.invisiblelb TR:last-child:hover TD {background-color:#43636B;color:white}
 TH.withservices {}
 TH.notservices {}
 TH.lbservices {}
 TD.servicescol1 {}
 TD.servicescol2 {}
-TD.servicescol3 {border-left:2px solid #CCC}
+TD.servicescol3 {border-left:2px solid #182326}
 /* Table in emm.html?label= have class "stats" */
 
 /* USERCONFIG.HTML */
 /* Base table */
-TABLE.users{width:99%;border-bottom:3px solid #0F1517;}
+TABLE.users{width:99%;border-bottom:3px solid #0F1517;background-color: transparent}
 TABLE.users TH{border-bottom:3px solid #0F1517}
 TABLE.users TH:first-child{background-color:#525252;}
 TABLE.users TH:last-child{background-color:#525252;}
@@ -555,14 +560,14 @@ TABLE.newuser {border:2px solid #0F1517;}
 
 /* SERVICES.HTML */
 /* Table class "stats" is in services.html */
-TABLE.stats{border:3px solid #0F1517;background-color:#95A4AB}
+TABLE.stats{border:3px solid #0F1517}
 TABLE.stats TH{padding:8px}
 TABLE.stats TR:hover TD{background-color:#43636B;color: white}
 TABLE.stats TR:last-child:hover TD {background-color:#CCDADA;color:black}
 
 /* FAILBAN.HTML */
 /* Table class "statsfailban" is in failban.html */
-TABLE.statsfailban {border: 3px solid #0F1517;}
+TABLE.statsfailban {border: 3px solid #0F1517}
 TABLE.statsfailban TH{padding:8px}
 TABLE.statsfailban TR:hover TD {background-color:#43636B;color: white;}
 
