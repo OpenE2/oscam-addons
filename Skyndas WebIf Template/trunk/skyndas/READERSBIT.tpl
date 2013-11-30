@@ -2,20 +2,20 @@
 			<TR CLASS ="##READERCLASS##">
 				<TD class="centered"><A HREF="readers.html?label=##READERNAMEENC##&amp;action=##SWITCH##" TITLE="##SWITCHTITLE##"><IMG CLASS="icon" SRC="##SWITCHICO##" ALT="##SWITCHTITLE##"></A></TD>
 				<TD>
-                    <iframe name="myIFrame_##READERNAME##" src="readerconfig.html?label=##READERNAME##" width="0" height="0" style="visibility:hidden;display:none"  onload="getContent_##READERNAME##();"></iframe>
-                    <script language=javascript>
-                        function getContent_##READERNAME##()
-                        {
-                        var frame = window.frames["myIFrame_##READERNAME##"].document;
-                        var content = frame.getElementsByName("description")[0].value;
-                        if (content==""){ content = " - "; }
-                            else if (content != "") { content = content; }
-                        document.getElementById('yourdiv_##READERNAME##').title = content;
-                        content = "";
-                        }
-                    </script>
-                    <span id="yourdiv_##READERNAME##" title="" style="cursor:pointer;">##READERNAME##</span>
-                </TD>
+					<iframe name="myIFrame_##READERNAME##" src="readerconfig.html?label=##READERNAME##" width="0" height="0" style="visibility:hidden;display:none"  onload="getContent_##READERNAME##();"></iframe>
+					<script language=javascript>
+						function getContent_##READERNAME##()
+						{
+						var frame = window.frames["myIFrame_##READERNAME##"].document;
+						var content = frame.getElementsByName("description")[0].value;
+						if (content==""){ content = " - "; }
+							else if (content != "") { content = content; }
+						document.getElementById('yourdiv_##READERNAME##').title = content;
+						content = "";
+						}
+					</script>
+					<span id="yourdiv_##READERNAME##" title="" style="cursor:pointer;">##READERNAME##</span>
+				</TD>
 				<TD>##CTYP##</TD>
 				<TD class="centered">##EMMERRORUK## / ##EMMERRORG## / ##EMMERRORS## / ##EMMERRORUQ##</TD>
 				<TD class="centered">##EMMWRITTENUK## / ##EMMWRITTENG## / ##EMMWRITTENS## / ##EMMWRITTENUQ##</TD>
