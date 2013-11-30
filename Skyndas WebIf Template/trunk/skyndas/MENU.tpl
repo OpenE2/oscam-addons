@@ -1,5 +1,5 @@
 <!--OSCam;667563033;1.20-unstable_svn;9063;-->
-  <DIV id="nav">
+  <DIV id="nav"> 
     <UL id="menu">
       <LI class="brand"><A HREF="http://www.streamboard.tv/oscam/timeline" target="_blank">OSCAM build r##CS_SVN_VERSION##</A></LI>
       <LI CLASS="##MENUACTIVE0##"><A HREF="status.html">STATUS</A></LI>
@@ -13,4 +13,14 @@
 			<LI CLASS="##MENUACTIVE8##"><A HREF="script.html">SCRIPT</A></LI>
 			<LI CLASS="##MENUACTIVE9##"><A HREF="shutdown.html">SHUTDOWN</A></LI>
     </UL>
+    
+    <DIV id="navlogo"></DIV>
+    
+    <!-- START Server name -->
+    <DIV id="servername">
+        <SPAN>Server 2.</SPAN><BR/>
+        <SPAN>(VU+ Solo)</SPAN>
+    </DIV>
+    <!-- END Server name -->
+    
   </DIV>
