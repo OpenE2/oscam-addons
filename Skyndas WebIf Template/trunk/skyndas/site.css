@@ -498,12 +498,12 @@ TR.a TD {background-color:#33ff00;}
 /* Table class "config" */
 TABLE.config{border:3px solid #0F1517}
 TABLE.config TR:hover TD{background-color:#43636B;color:white}
-TABLE.config TD:first-child {width:160px;}
+TABLE.config TD:first-child {width:170px;}
 /* Style for last row without hover */
 TABLE.config TR:last-child:hover TD {background-color:#CCDADA;color:black;}
 /* For Table in last row with hover TABLE.config TR*/
 TABLE.invisible {margin-left: 0px;background-color:transparent}
-TABLE.invisible TD {font-family:Arial; font-size: 12px; padding:5px; width:auto !important;}
+TABLE.invisible TD {font-family:Arial;font-size: 12px;padding:5px; width:auto !important;}
 TABLE.invisible TR:hover TD {background-color: #43636B !important;color:white !important}
 /* For row hover in Entitlements for Global - CCcam*/
 TABLE.statsglobal{border:3px solid #0F1517}
@@ -533,7 +533,7 @@ TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;
 /* Table class "config" is in config.html?part=XXX */
 TABLE.configreader{border:3px solid #0f1517}
 TABLE.configreader TR:hover TD{background-color:#43636B;color:white}
-TABLE.configreader TD:first-child {width:160px}
+TABLE.configreader TD:first-child {width:180px}
 /* Style for last row without hover */
 TABLE.configreader TR:last-child:hover TD {background-color:#CCDADA;color:black;}
 /* Table for entitlements readers - entitlements.html?label=XXXX */
