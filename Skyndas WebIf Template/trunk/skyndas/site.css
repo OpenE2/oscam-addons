@@ -17,7 +17,7 @@ BODY {
     /* Color settings */
     background-color: #ececec;						
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAIVBMVEUwQUgvQEcxQkkuP0YyQ0otPkUzREs0RUwsPUQrPEM1Rk1Q9QeOAAAEFklEQVR4AQAVAOr/ABQAMAACAyAEUiEREBUxJCECIAGYABUA6v8AEhEAEEI4IiRQA1MkIRAAFTMwQhEAFQDq/wASEUAQIhMiAlETImdAESQgAQYzUwAVAOr/ABIQARAiRCICURBAAiAREAETMmIAABUA6v8AEhAQIiIiRAQQBCFRAiIkQkICQCAAFQDq/wASEAJAAgMiBBAUYgABEBIDAhMTRAAVAOr/ABIRAgMSIxASEVABERMSFAMEAxNEABUA6v8AIgESRAEQQxMANhMxETEABDNDMScAFQDq/wAxNQRkAREDEQBQMQATEjMSM0EDMAAVAOr/AEQgMQAiIjMRAjARAgESMxITYAMSABUA6v8AEBMAAAARAgMCAiExAAACBBFAECIAFQDq/wBGQiIAIgFGAQARQTMAAiICAUAyAwAVAOr/AEQiIAJGRBIQIBEBETMEADERIDJBABUA6v8AIgJCIiIBEFBBAgEQEQIAUwAgMEQAFQDq/wAgABMxAiB2MCUSITEiASJTACEDMAAVAOr/ACAEJAEAMQQgEAEAEUQmMhUEAyAUABUA6v8AIBMiEwACAAERM1MwYhBwUEEWZAEAFQDq/wBQRhAAIVgBAiAQETEgEiQFMQISYgAVAOr/ACRmMCanQhMSQAJCAAECUkMwAwADABUA6v8AQAQRMQAiNTABEEJEIRMDB0MUAxUAFQDq/wADFnQiEAEBERExQCITERECAQIVIAAVAOr/AEARFTAQASIBEAAhETMkUCNSRSEoABUA6v8AMAFBETBCMTVQIDUSAEQjBkARMWUAFQDq/wAwASNRRCAyBREUICAwISYkISFiAwAVAOr/ACQjMxABEBMSExBAATEgRBE1ETEQABUA6v8AEkIzEBMxRRQVECABMCAiBCEAAAAAFQDq/wAQIiAQIBFgAjUSACAAATMyIwAxMwAVAOr/AAABQgAgETARAkcCAQAAAFM1BAQmABUA6v8AEQIiIBMQF0AgMSIVMCQkAAMgEjAAFQDq/wABAkIBMxKDECJHAhUQBFAAARgmMAAVAOr/AEAzcjMAAEUSNQQyASIAUiACQVBSABUA6v8AA1AUE0QEQIMkJSEiMSJiEQABBhAAFQDq/wAgMzBVATIgEQARACIRAQAAARNAUgAVAOr/ACATADMgFCEhEDJQJGQkUxARESMQABUA6v8AEQBCEEIHIyMUEjIgIVMiATMzM2AAFQDq/wARAiARIAQDAxQEJiAgEiITEiFRYAAVAOr/AAIiABEAABAAEScAASJHEBEmQCMCABUA6v8AIgICIAIhFBADZAMzVTMkIRIDADAAFQDq/wAgFjAhEiUmgCNxIQIQITEVUneEEQEVAOr/ACQgIzMjCUVgAhAAVBQSAEMBBmJBXvthvUtCmvMAAAAASUVORK5CYII=);
-    color: #ffffff
+    color: #FFF
 }
 P {
     /* Color settings */
@@ -41,7 +41,7 @@ H2 {
     margin-top:0px;
     margin-bottom:0px;
     /* Color settings */
-    color: #AAAAAA
+    color: #AAA
 }
 H4 {
     font-family: Arial;
@@ -49,12 +49,12 @@ H4 {
     line-height: 9px;
     text-align:center;
     /* Color settings */
-    color: #AAAAAA
+    color: #AAA
 }
-A:link {color: #d2070c}
-A:visited {color: #d2070c}
-A:active {color: #d2070c}
-A:hover {color: #ff6400}
+A:link {color: #D2070C}
+A:visited {color: #D2070C}
+A:active {color: #D2070C}
+A:hover {color: #FF6400}
  
 /* 3. BASIC DISTRIBUTION PAGE 
 -------------------------------------------------------------------------------------------- */  
@@ -82,7 +82,7 @@ html,body {
     background-image: url(data:image/png;base64,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);
     position:relative;
     top:-45px;
-    left:10px;
+    left:10px
 }
 #servername{
     float:left;
@@ -91,7 +91,7 @@ html,body {
     left:25px;
     font-size:12px;
     font-weight:bold;
-    color:#FFF;
+    color:#FFF
 }
 #nav{
     width:100%;
@@ -197,7 +197,7 @@ html,body {
     background-color: #D2070C
 }
 .subnav {
-    background-color: #1f2f33; /* Old browsers */
+    background-color: #1F2F33; /* Old browsers */
     background-repeat: repeat-x; /* Repeat the gradient */
     background-image: -moz-linear-gradient(top, #cddbda 0%, #93b1b0 100%); /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cddbda), color-stop(100%,#93b1b0)); /* Chrome,Safari4+ */
@@ -206,7 +206,7 @@ html,body {
     background-image: -o-linear-gradient(top, #cddbda 0%,#93b1b0 100%); /* Opera 11.10+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cddbda', endColorstr='#93b1b0',GradientType=0 ); /* IE6-9 */
     background-image: linear-gradient(top, #cddbda 0%,#93b1b0 100%); /* W3C */
-    border: 1px solid #e5e5e5
+    border: 1px solid #E5E5E5
 }
 /* ======================= SUBNAVBAR ======================= */
 #sub {
@@ -389,7 +389,7 @@ TD {
     text-align: left;
     /* Color settings */
     background-color:#CCDADA;
-    color:black;
+    color:black
 }
 TD.centered {text-align:center}
 TD.statuscol0 {text-align:center;width:10px}
@@ -435,10 +435,10 @@ TD.usercol20 {text-align:center}
 TD.usercol21 {text-align:center}
 TD.usercol22 {text-align:center}
 TD.usercol23 {text-align:center}
-TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal;}
-TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic;}
-TD.configmenu {color:black; background-color:white; font-family: Arial; font-size:11px; font-weight:bold;}
-TD.configmenu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:11px; font-weight:bold;font-style:italic;}
+TD.menu {color:black; background-color:white; font-family: Arial; font-size:14px; font-weight:bold;white-space: normal}
+TD.menu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:14px; font-weight:bold;font-style:italic}
+TD.configmenu {color:black; background-color:white; font-family: Arial; font-size:11px; font-weight:bold}
+TD.configmenu_selected {color:black; background-color:#E6FEBF; font-family: Arial; font-size:11px; font-weight:bold;font-style:italic}
 
 /* Settings TR in Tables */
 TR.expired TD {background-color:#FFBBAA}
@@ -461,15 +461,15 @@ TH {
 TR:hover TD A:link,						
 TR:hover TD A:visited,					
 TR:hover TD A:active {					
-    color: #fff1c3;						
+    color: #FFF1C3					
 }
 TR:hover TD A:hover {					
-    color: #ff5c03;						
+    color: #FF5C03;						
 }
 TR.scanusbsubhead TD {}
 
 /* STATUS.HTML */
-TABLE.status {border:3px solid #0f1517; empty-cells:show;width:99%;}
+TABLE.status {border:3px solid #0f1517; empty-cells:show;width:99%}
 TR.s TD{background-color:#c8c8e0}
 TR.s:hover TD,TR.s:hover TD SPAN,TR.s:hover TD SPAN A{background-color:#43636B;color:white}
 TR.s IMG.icon{width:22px;height:22px;background-color:#0a0;border-radius:3px;-webkit-border-radius:3px}
@@ -484,7 +484,7 @@ TR.r TD{background-color:#f2d8bd}
 TR.r:hover TD,TR.r:hover TD SPAN,TR.r:hover TD SPAN A{background-color:#43636B;color:white}
 TR.r IMG.icon{width:22px;height:22px;background-color:#ffb31a;border-radius:3px;-webkit-border-radius:3px}
 TR.r A:hover IMG.icon{width:22px;height:22px;background-color:#b37700}
-TR.p TD{background-color:#edeac2;}
+TR.p TD{background-color:#edeac2}
 TR.p:hover TD,TR.p:hover TD SPAN,TR.p:hover TD SPAN A{background-color:#43636B;color:white}
 TR.p IMG.icon{width:22px;height:22px;background-color:#e00000;border-radius:3px;-webkit-border-radius:3px}
 TR.p A:hover IMG.icon{width:22px;height:22px;background-color:#7a0000}
@@ -492,7 +492,7 @@ TR.c TD{background-color:#ccdada}
 TR.c:hover TD,TR.c:hover TD SPAN,TR.c:hover TD SPAN A{background-color:#43636B;color:white}
 TR.c IMG.icon{width:22px;height:22px;background-color:#007ae6;border-radius:3px;-webkit-border-radius:3px}
 TR.c A:hover IMG.icon{width:22px;height:22px;background-color:#005aa8}
-TR.a TD {background-color:#33ff00;}
+TR.a TD {background-color:#33ff00}
 
 /* CONFIG.HTML , USER_EDIT.HTML */
 /* Table class "config" */
@@ -503,7 +503,7 @@ TABLE.config TD:first-child {width:160px;}
 TABLE.config TR:last-child:hover TD {background-color:#CCDADA;color:black;}
 /* For Table in last row with hover TABLE.config TR*/
 TABLE.invisible {margin-left: 0px;background-color:transparent}
-TABLE.invisible TD {font-family:Arial;font-size: 12px;padding:5px; width:auto !important;}
+TABLE.invisible TD {font-family:Arial;font-size: 12px;padding:5px; width:auto !important}
 TABLE.invisible TR:hover TD {background-color: #43636B !important;color:white !important}
 /* For row hover in Entitlements for Global - CCcam*/
 TABLE.statsglobal{border:3px solid #0F1517}
@@ -518,27 +518,27 @@ TABLE.readers TH{padding: 8px}
 /* For row hover */
 TR.enabledreader:hover TD{background-color:#43636B;color:white}
 TR.disabledreader:hover TD{background-color:#43636B;color:white}
-TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00;}
-TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600;}
+TR.disabledreader TD:first-child IMG.icon {background-color:#00AA00}
+TR.disabledreader TD:first-child A:hover IMG.icon {background-color:#076600}
 /* Table loadbalacer statistics - readerstats.html?label=XXXX */ 
 TABLE.statsbalance{border:3px solid #0F1517}
 TABLE.statsbalance TH{padding: 8px}
-TABLE.statsbalance TD:last-child{line-height: 20px;}
-TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px;}
+TABLE.statsbalance TD:last-child{line-height: 20px}
+TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px}
 TABLE.statsbalance TR:hover TD{background-color:#43636B;color: white}
 TD.subheadline{height:10px;font-family:Arial;font-size:11px;padding:5px;background-color:#182326;color:#FFF}
-TD.subheadline A {color:#000033;}
-TD.subheadline A:hover {color:#fff1c3;}
-TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT;}
+TD.subheadline A {color:#000033}
+TD.subheadline A:hover {color:#fff1c3}
+TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT}
 /* Table class "config" is in config.html?part=XXX */
 TABLE.configreader{border:3px solid #0f1517}
 TABLE.configreader TR:hover TD{background-color:#43636B;color:white}
 TABLE.configreader TD:first-child {width:180px}
 /* Style for last row without hover */
-TABLE.configreader TR:last-child:hover TD {background-color:#CCDADA;color:black;}
+TABLE.configreader TR:last-child:hover TD {background-color:#CCDADA;color:black}
 /* Table for entitlements readers - entitlements.html?label=XXXX */
-TABLE.statsentitle {border: 3px solid #0F1517;}
-TABLE.statsentitle TR:hover TD {background-color:#43636B;color: white;}
+TABLE.statsentitle {border: 3px solid #0F1517}
+TABLE.statsentitle TR:hover TD {background-color:#43636B;color: white}
 /* Table in section Reader services settings */
 TABLE.invisiblelb {border-spacing:0px;width:100%}
 TABLE.invisiblelb TH {width:33%;text-align:left}
@@ -573,9 +573,9 @@ TR.disabled TD.usercol0 A:hover IMG.icon{background-color:#076600}
 TR.connected TD{background-color:#ffa}
 TR.connected:hover TD{background-color:#43636B;color:white}
 /* Title in Label column */
-TD.usercol1 SPAN{cursor: pointer;}
+TD.usercol1 SPAN{cursor: pointer}
 /* Style for Add New User */
-TABLE.newuser {border:2px solid #0F1517;}
+TABLE.newuser {border:2px solid #0F1517}
 
 /* SERVICES.HTML */
 /* Table class "stats" is in services.html */
@@ -588,19 +588,19 @@ TABLE.stats TR:last-child:hover TD {background-color:#CCDADA;color:black}
 /* Table class "statsfailban" is in failban.html */
 TABLE.statsfailban {border: 3px solid #0F1517}
 TABLE.statsfailban TH{padding:8px}
-TABLE.statsfailban TR:hover TD {background-color:#43636B;color: white;}
+TABLE.statsfailban TR:hover TD {background-color:#43636B;color: white}
 
 /* CACHEEX.HTML */
 /* Table class "statscacheex" is in cacheex.html */
 TABLE.statscacheex {border: 3px solid #0F1517}
 TABLE.statscacheex TH{padding:8px}
-TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white;}
+TABLE.statscacheex TR:hover TD {background-color:#43636B;color: white}
 
 /* 7. FORM, BUTTONS, TEXTAREA
 ----------------------------------------------------------------------------- */
 select {
     border: 1px solid #DDDDDD;
-    padding: 0.25em 0.3em;
+    padding: 0.25em 0.3em
 }
 select:hover{
     border:1px solid #000
@@ -633,13 +633,13 @@ input[type="submit"] {
     /* Other settings */
     margin-left:15px;
     padding:3px 10px 2px 10px;
-    cursor:pointer;	
+    cursor:pointer
 }
 input[type="submit"]:hover {
-    background:#b20002;
+    background:#b20002
 }  
 input[type="submit"]:active {
-    background:#f50100;
+    background:#f50100
 }
 input[type="submit"].button {
     width:146px;
@@ -656,7 +656,7 @@ input[type="text"]:active {
 }
 input[type="checkbox"] {
     float: left;
-    margin: 0 5px;
+    margin: 0 5px
 } 
 TEXTAREA.editor {
     border:1px solid #000000;
@@ -764,23 +764,23 @@ table.status a.tooltip1 span{display:none}
 /* 9. IMG. ICON
 ----------------------------------------------------------------------------- */
 IMG {
-    border:0px solid;
+    border:0px solid
 }
 IMG.clientpicon {
     max-height:22px;
-    max-width:72px;
+    max-width:72px
 }
 A:hover IMG.icon {
     background-color:#005aa8;
     width:22px;
-    height:22px;
+    height:22px
 }
 IMG.icon {
     width:22px;
     height:22px;
     background-color:#007ae6;
     border-radius:3px;
-    -webkit-border-radius:3px;
+    -webkit-border-radius:3px
 }
   
 /* 10. DIV.LOG ELEMENTS in page status.html
@@ -800,7 +800,7 @@ DIV.log{
             border-radius: 5px;
     background-color: #cddbda;
     border:1px solid #000000;
-    color:#000000;
+    color:#000000
 }  
 /* 11. DEBUG ELEMENTS
 ----------------------------------------------------------------------------- */
@@ -898,20 +898,20 @@ DIV.warning UL {
     text-align:left;
     width: 500px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
 }
 HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
 DIV.debugmenu {line-height:20px}
 DIV.logmenu {line-height: 20px;margin-top: 10px}
 DIV.logmenu A {
-    color: #fff1c3;
+    color: #fff1c3
 }
 DIV.logmenu A:hover {
-    color: #ff5c03;
+    color: #ff5c03
 }
 DIV.filterform {margin:10px}
 DIV.sidlist {border:1px dotted #AAAAAA;background-color:#fffdf5;padding:2px;font-family:"Courier New", monospace;color:#666666;word-wrap:break-word; text-align:left}
-DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
+DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px}
 DIV.div_notifier {
     height:14px;
     width:14px;
@@ -920,7 +920,7 @@ DIV.div_notifier {
     background-color:red;
     margin-left:4px;
     text-align:center;
-    float:right;
+    float:right
 }
 A.debugls:link {background-color:red}
 A.debugls:visited {background-color:red}
@@ -931,7 +931,7 @@ SPAN.idlesec_normal {font-size:9px;color:black}
 SPAN.idlesec_alert {font-size:9px;color:red}
 SPAN.global_conf {color:blue;font-size:12px;cursor:default;padding:4px}
 SPAN.user_totals_headline {
-    font-weight:bold;
+    font-weight:bold
 }
 /* Settings for graph */
 rect.graph_bg {fill:white}
