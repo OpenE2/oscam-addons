@@ -618,7 +618,7 @@ input[type="submit"] {
     background: -o-linear-gradient(top, rgba(245,1,0,1) 0%,rgba(178,0,2,1) 100%); /* Opera11.10+ */
     background: -ms-linear-gradient(top, rgba(245,1,0,1) 0%,rgba(178,0,2,1) 100%); /* IE10+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f50100', endColorstr='#b20002',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, rgba(245,1,0,1) 0%,rgba(178,0,2,1) 100%); /* W3C */
+    background: linear-gradient(top, rgba(245,1,0,1) 0%,rgba(178,0,2,1) 100%); /* W3C */
     /* Border */
     border:none;
     -webkit-border-radius: 5px;
@@ -671,18 +671,18 @@ TEXTAREA.editor {
     text-align:left
 } 
 textarea {
-  border:1px solid #ddd;
-  padding:.25em .3em;
-  width:350px
-  }
+    border:1px solid #ddd;
+    padding:.25em .3em;
+    width:350px
+}
 textarea:hover,textarea:active {
-  border:1px solid #000;
-  cursor:text
-  }
+    border:1px solid #000;
+    cursor:text
+}
 TEXTAREA.bt {
-  font-family:Arial;
-  font-size:12px
-  }
+    font-family:Arial;
+    font-size:12px
+}
 /* 8. TOOLTIP
 ----------------------------------------------------------------------------- */  
 .tooltip{
@@ -786,63 +786,63 @@ IMG.icon {
 /* 10. DIV.LOG ELEMENTS in page status.html
 ----------------------------------------------------------------------------- */
 DIV.log{
-	padding:10px;
-	font-family:"Courier New", monospace;
-	font-size: 11px;
-	word-wrap:break-word;
-	text-align:left;
-	margin-top: -30px;
-	margin: 0 auto;
-	width:97%;
-	line-height: 1.7;
-	-webkit-border-radius: 5px;
-	   -moz-border-radius: 5px;
-	        border-radius: 5px;
+    padding:10px;
+    font-family:"Courier New", monospace;
+    font-size: 11px;
+    word-wrap:break-word;
+    text-align:left;
+    margin-top: -30px;
+    margin: 0 auto;
+    width:97%;
+    line-height: 1.7;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
     background-color: #cddbda;
-	border:1px solid #000000;
-	color:#000000;
-  }  
+    border:1px solid #000000;
+    color:#000000;
+}  
 /* 11. DEBUG ELEMENTS
 ----------------------------------------------------------------------------- */
 .debugt{
-  color:white;
-  font-weight:bold;
-  padding:10px;
-  font-size:11px;
-  word-wrap:break-word;
-  text-align:left;
-  margin-top:-30px;
-  margin:0 auto;
-  width:97%;
-  line-height:1.7;
-  -webkit-border-radius:5px;
-  -moz-border-radius:5px;
-  border-radius:5px
-  }
+    color:white;
+    font-weight:bold;
+    padding:10px;
+    font-size:11px;
+    word-wrap:break-word;
+    text-align:left;
+    margin-top:-30px;
+    margin:0 auto;
+    width:97%;
+    line-height:1.7;
+    -webkit-border-radius:5px;
+       -moz-border-radius:5px;
+            border-radius:5px
+}
 A.debugl:link,A.debugl:visited{
-  text-decoration:none;
-  padding:1px 9px 2px;
-  border-radius:10px;
-  color:#fff;
-  white-space:nowrap;
-  background:#4096ee
-  }
+    text-decoration:none;
+    padding:1px 9px 2px;
+    border-radius:10px;
+    color:#fff;
+    white-space:nowrap;
+    background:#4096ee
+}
 A.debugl:hover{
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
-  color:#fff;
-  white-space:nowrap;
-  background:#ff6400
-  }
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    color:#fff;
+    white-space:nowrap;
+    background:#ff6400
+}
 A.debugls:link,A.debugls:visited{
-  text-decoration:none;
-  padding:1px 9px 2px;
-  border-radius:10px;
-  color:white;
-  white-space:nowrap;
-  background:#c50000
-  }
+    text-decoration:none;
+    padding:1px 9px 2px;
+    border-radius:10px;
+    color:white;
+    white-space:nowrap;
+    background:#c50000
+}
 /* 12. FOOTER 
 -------------------------------------------------------------------------------------------- */ 
 #footer {
@@ -904,23 +904,23 @@ HR {height:1px;border-width:0;color:white;background-color:#AAAAAA}
 DIV.debugmenu {line-height:20px}
 DIV.logmenu {line-height: 20px;margin-top: 10px}
 DIV.logmenu A {
-	color: #fff1c3;
+    color: #fff1c3;
 }
 DIV.logmenu A:hover {
-	color: #ff5c03;
+    color: #ff5c03;
 }
 DIV.filterform {margin:10px}
 DIV.sidlist {border:1px dotted #AAAAAA;background-color:#fffdf5;padding:2px;font-family:"Courier New", monospace;color:#666666;word-wrap:break-word; text-align:left}
 DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px;}
 DIV.div_notifier {
-	height:14px;
-	width:14px;
-	border-radius:7px;
-	-webkit-border-radius:7px;
-	background-color:red;
-	margin-left:4px;
-	text-align:center;
-	float:right;
+    height:14px;
+    width:14px;
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    background-color:red;
+    margin-left:4px;
+    text-align:center;
+    float:right;
 }
 A.debugls:link {background-color:red}
 A.debugls:visited {background-color:red}
@@ -931,7 +931,7 @@ SPAN.idlesec_normal {font-size:9px;color:black}
 SPAN.idlesec_alert {font-size:9px;color:red}
 SPAN.global_conf {color:blue;font-size:12px;cursor:default;padding:4px}
 SPAN.user_totals_headline {
-	font-weight:bold;
+    font-weight:bold;
 }
 /* Settings for graph */
 rect.graph_bg {fill:white}
