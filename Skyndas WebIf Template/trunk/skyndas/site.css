@@ -577,6 +577,22 @@ TD.usercol1 SPAN{cursor: pointer}
 /* Style for Add New User */
 TABLE.newuser {border:2px solid #0F1517}
 
+/* TIMER */
+/* Base style */
+.timer{
+    position: fixed;
+    top: 45px;
+    right: 5%;
+    z-index:1040;
+    width:300px;
+    color:black;
+    padding: 10px 20px
+}
+.timerbtn {
+    float:right;
+    margin-top:-4px
+}
+
 /* SERVICES.HTML */
 /* Table class "stats" is in services.html */
 TABLE.stats{border:3px solid #0F1517}

@@ -10,6 +10,63 @@
 			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></LI>
 		</UL>
 	</DIV>
+    <DIV CLASS="timer">
+        <!-- Script for refresh page -->
+					<script language="JavaScript">
+					//configure refresh interval (in seconds)
+					var countDownInterval=##REFRESHTIME##;
+					//configure width of displayed text, in px (applicable only in NS4)
+					var c_reloadwidth=200
+
+					$('#timersub').click(function() {
+					// pauses countdown
+					clearTimeout(counter);
+					countDownTime = $('#timertxt').val();
+					countDown()
+					});
+					</script>
+					<script>
+					var countDownTime=countDownInterval+1;
+					function countDown(){
+					countDownTime--;
+					if (countDownTime <=0){
+					countDownTime=countDownInterval;
+					clearTimeout(counter)
+					window.location.href="userconfig.html"
+					return
+					}
+					if (document.all) //if IE 4+
+					document.all.countDownText.innerText = countDownTime+" ";
+					else if (document.getElementById) //else if NS6+
+					document.getElementById("countDownText").innerHTML=countDownTime+" "
+					else if (document.layers){ //CHANGE TEXT BELOW TO YOUR OWN
+					document.c_reload.document.c_reload2.document.write('Next <a href="userconfig.html">refresh</a> in <b id="countDownText">'+countDownTime+' </b> seconds')
+					document.c_reload.document.c_reload2.document.close()
+					}
+					counter=setTimeout("countDown()", 1000);
+					}
+
+					function startit(){
+					if (document.all||document.getElementById) //CHANGE TEXT BELOW TO YOUR OWN
+					document.write('Next <a href="userconfig.html">refresh</a> in <b id="countDownText">'+countDownTime+' </b> seconds')
+					countDown()
+					}
+
+					if (document.all||document.getElementById)
+					startit()
+					else
+					window.document.onload=startit
+
+					function cdpause() {
+						// pauses countdown
+						clearTimeout(counter);
+					};
+					</script>
+        <DIV CLASS="timerbtn">
+            <input type="submit" value="Stop" onclick="cdpause()" title="Stop refresh page">
+            <input type="submit" value="Start" onclick="countDown()" title="Start refresh page">
+        </DIV>
+    </DIV>
     <DIV class="filterform"><FORM action="user_edit.html" method="get">##NEWUSERFORM##</FORM></DIV>
 	<TABLE CLASS="users">
 		<TR>
