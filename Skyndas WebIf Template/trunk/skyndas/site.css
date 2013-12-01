@@ -552,6 +552,10 @@ TD.servicescol2 {}
 TD.servicescol3 {border-left:2px solid #182326}
 /* Table in emm.html?label= have class "stats" */
 
+/* Table in scanusb.html */ 
+TABLE.scanusb{border:3px solid #0F1517}
+TABLE.scanusb TH{padding: 8px}
+
 /* USERCONFIG.HTML */
 /* Base table */
 TABLE.users{width:99%;border-bottom:3px solid #0F1517;background-color: transparent}
