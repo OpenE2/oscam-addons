@@ -8,6 +8,37 @@
         <LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
       </UL>
    	</DIV>
+    <DIV CLASS="settimer">
+        <!-- Script for refresh page -->
+            <SPAN id="timer">Refreshing has been stopped!</SPAN>
+            <script language="JavaScript">
+            var countDownInterval=##REFRESHTIME##;
+            var countDownTime=countDownInterval+1;
+            function countDown(){
+            countDownTime--;
+            if (countDownTime <=0){
+            countDownTime=countDownInterval;
+            clearTimeout(counter)
+            window.location.href="userconfig.html"
+            return
+            }
+            document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
+            counter=setTimeout("countDown()", 1000);
+            }
+
+            function StartcountDown(){
+            document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text					   
+            countDown()
+            }
+                    
+            function StopcountDown() {
+            clearTimeout(counter);
+            document.getElementById("timer").innerHTML="Refreshing has been stopped!"; // info text
+            };
+          
+            window.onload=StartcountDown;                    
+            </script>
+    </DIV>
 	<form action="readerconfig.html" method="get">
 		<TABLE CLASS="readers">
 			<TR>
@@ -26,10 +57,11 @@
 			</TR>
 ##READERLIST##
 			<TR>
-				<TD>&nbsp;</TD>				<TD COLSPAN="2" class="centered">New Reader</TD>
-				<TD COLSPAN="2" class="centered">Label:&nbsp;&nbsp;<input type="text" name="label" value="##NEXTREADER##"></TD>
+				<TD>&nbsp;</TD>				
+                <TD COLSPAN="2" class="centered">New Reader</TD>
+				<TD COLSPAN="2" class="centered">Label:&nbsp;&nbsp;<input type="text" name="label" value="##NEXTREADER##" onClick="StopcountDown()" onBlur="StartcountDown()"></TD>
 				<TD COLSPAN="2" class="centered">Protocol:&nbsp;&nbsp;
-					<select name="protocol">
+					<select name="protocol"  onClick="StopcountDown()" onBlur="StartcountDown()">
 ##ADDPROTOCOL##
 					</select>
 				</TD>

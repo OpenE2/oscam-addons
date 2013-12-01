@@ -72,7 +72,7 @@
 			<TH colspan="3" class="centered">Action</TH>
 		</TR>
 ##USERCONFIGS##
-
+    
 	</TABLE><BR>
 	<SPAN CLASS = "user_totals_headline">Totals for the server:</SPAN>
 	<TABLE CLASS="user_totals">
