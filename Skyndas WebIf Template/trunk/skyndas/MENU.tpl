@@ -1,7 +1,7 @@
 <!--OSCam;667563033;1.20-unstable_svn;9063;-->
   <DIV id="nav"> 
     <UL id="menu">
-      <LI class="brand"><A HREF="http://www.streamboard.tv/oscam/timeline" target="_blank">OSCAM build r##CS_SVN_VERSION##</A></LI>
+      <LI class="brand"><A HREF="http://www.streamboard.tv/oscam/timeline" target="_blank" title="Streamboard Wiki">OSCAM build r##CS_SVN_VERSION##</A></LI>
       <LI CLASS="##MENUACTIVE0##"><A HREF="status.html">STATUS</A></LI>
 			<LI CLASS="##MENUACTIVE1##"><A HREF="config.html">CONFIGURATION</A></LI>
 			<LI CLASS="##MENUACTIVE2##"><A HREF="readers.html">READERS</A></LI>
