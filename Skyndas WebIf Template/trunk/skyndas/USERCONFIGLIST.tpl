@@ -10,6 +10,7 @@
 			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></LI>
 		</UL>
 	</DIV>
+    <DIV class="filterform"><FORM action="user_edit.html" method="get">##NEWUSERFORM##</FORM></DIV>
 	<TABLE CLASS="users">
 		<TR>
 			<TH>Enabled</TH>
@@ -36,7 +37,7 @@
 			<TH colspan="3" class="centered">Action</TH>
 		</TR>
 ##USERCONFIGS##
-##NEWUSERFORM##
+
 	</TABLE><BR>
 	<SPAN CLASS = "user_totals_headline">Totals for the server:</SPAN>
 	<TABLE CLASS="user_totals">
