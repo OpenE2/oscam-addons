@@ -598,6 +598,15 @@ TABLE.newuser {border:2px solid #0F1517}
     float:right;
     margin-top:-4px
 }
+/* Refresh time - color settings */
+.timercolor SPAN{
+  background-color:#333333;
+  color:#e0e0e0;
+  padding: 10px 20px;
+}
+.timercolor SPAN B{
+  color:red;
+}
 
 /* SERVICES.HTML */
 /* Table class "stats" is in services.html */
