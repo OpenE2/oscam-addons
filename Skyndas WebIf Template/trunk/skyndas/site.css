@@ -579,14 +579,20 @@ TABLE.newuser {border:2px solid #0F1517}
 
 /* TIMER */
 /* Base style */
-.timer{
+.settimer{
     position: fixed;
     top: 45px;
     right: 5%;
     z-index:1040;
+    padding: 10px 20px;
+}
+.settimer SPAN {
     width:300px;
     color:black;
-    padding: 10px 20px
+    font-weight:normal;
+}
+.settimer SPAN B {
+    color:#B20002;
 }
 .timerbtn {
     float:right;
