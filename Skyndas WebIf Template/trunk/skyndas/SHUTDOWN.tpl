@@ -6,7 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">	
     <script type="text/javascript" src="oscam.js"></script>
-##REFRESH##
+	<script type="text/javascript">
+	<!--
+	addUnloadHandler();
+	window.onload=setTimeout(function(){saveScroll();window.location.href="##REFRESHURL##";},##REFRESHTIME## * 1000)
+	//-->
+	</script>
 </HEAD>
 <BODY>
 <DIV id="wrapper">
