@@ -6,7 +6,8 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-	<script type="text/javascript" src="oscam.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="oscam.js"></script>
     <script type="text/javascript">
 	<!--
 	addUnloadHandler();
@@ -37,7 +38,7 @@
             if (countDownTime <=0){
             countDownTime=countDownInterval;
             clearTimeout(counter)
-            window.location.href="userconfig.html"
+            window.location.href="readers.html"
             return
             }
             document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
