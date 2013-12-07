@@ -8,22 +8,22 @@ function addUnloadHandler(){var a,e;if(window.attachEvent){a=window.attachEvent;
 * =========================================================== */
 !function ($) {
 $(function(){
-$('input[type="submit"]').tooltip({container: 'body',animation: false, placement: 'bottom'})
-$('li.brand a').tooltip({animation: false, placement: 'bottom'})
+$('input[type="submit"]').tooltip({container: 'body',animation: false, placement: 'bottom'})    /* for button */
+$('li.brand a').tooltip({animation: false, placement: 'bottom'})        /* in status.html */
 $('span.debugl a').tooltip({animation: false, placement: 'bottom'})
 $('table th').tooltip({container: 'body',animation: false, placement: 'bottom'})
-$('td span').tooltip({animation: false, placement: 'right'})
+$('td span').tooltip({animation: false, placement: 'right'})            /* in readers.html */
 $('table.stats a').tooltip({animation: false, placement: 'right'})
 $('table th span').tooltip({container: 'body',animation: false, placement: 'bottom'})
 $('td.centered a').tooltip({animation: false, placement: 'bottom'})
-$('td.usercol0 a').tooltip({animation: false, placement: 'right'})
-$('td.usercol1 span').tooltip({animation: false, placement: 'right'})
-$('td.usercol21 a').tooltip({animation: false, placement: 'left'})
-$('td.usercol22 a').tooltip({animation: false, placement: 'left'})
-$('td.usercol23 a').tooltip({animation: false, placement: 'left'})
-$('td.statuscol0 a').tooltip({animation: false, placement: 'right'})
-$('td.statuscol1 a').tooltip({animation: false, placement: 'right'})
-$('td.statuscol14 a').tooltip({animation: false, placement: 'left'})
+$('td.usercol0 a').tooltip({animation: false, placement: 'right'})      /* in userconfig.html */
+$('td.usercol1 span').tooltip({animation: false, placement: 'right'})   /* in userconfig.html */
+$('td.usercol21 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
+$('td.usercol22 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
+$('td.usercol23 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
+$('td.statuscol0 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
+$('td.statuscol1 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
+$('td.statuscol14 a').tooltip({animation: false, placement: 'left'})    /* in status.html */
 $('span a').tooltip({animation: false, placement: 'right'})
 
 document.title = "OSCam@" + location.host;

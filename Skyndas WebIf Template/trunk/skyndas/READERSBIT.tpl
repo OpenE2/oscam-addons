@@ -8,10 +8,10 @@
 						{
 						var frame = window.frames["myIFrame_##READERNAME##"].document;
 						var content = frame.getElementsByName("description")[0].value;
-						if (content==""){ content = " - "; }
-							else if (content != "") { content = content; }
-						document.getElementById('yourdiv_##READERNAME##').title = content;
-						content = "";
+						$(yourdiv_##READERNAME##).tooltip('hide')
+                                       .attr('data-original-title', content)
+                                       .tooltip('fixTitle')
+                        content = ""; 
 						}
 					</script>
 					<span id="yourdiv_##READERNAME##" title="" style="cursor:pointer;">##READERNAME##</span>
