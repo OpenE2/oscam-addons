@@ -25,6 +25,7 @@ $('td.statuscol0 a').tooltip({animation: false, placement: 'right'})    /* in st
 $('td.statuscol1 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
 $('td.statuscol14 a').tooltip({animation: false, placement: 'left'})    /* in status.html */
 $('span a').tooltip({animation: false, placement: 'right'})
+$('div.wrapper_left a').tooltip({animation: false, placement: 'right'})
 
 document.title = "OSCam@" + location.host;
 })
