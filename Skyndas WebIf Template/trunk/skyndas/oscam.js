@@ -1,11 +1,11 @@
 /* ===========================================================
- *					Javascript addUnloadHandler
+ * Javascript addUnloadHandler
  * =========================================================== */
 function addUnloadHandler(){var a,e;if(window.attachEvent){a=window.attachEvent;e='on';}else{a=window.addEventListener;e='';}a(e+'load',function(){loadScroll();if(typeof Sys!='undefined' && typeof Sys.WebForms!='undefined')Sys.WebForms.PageRequestManager.getInstance().add_endRequest(loadScroll);},false);}function loadScroll(){var c=document.cookie.split(';');for(var i=0;i<c.length;i++){var p=c[i].split('=');if(p[0]=='scrollPosition'){p=unescape(p[1]).split('/');for(var j=0;j<p.length;j++){var e=p[j].split(',');try{if(e[0]=='window'){window.scrollTo(e[1],e[2]);}}catch(ex){}}return;}}}function saveScroll(){var s='scrollPosition=';var l,t;if(window.pageXOffset!==undefined){l=window.pageXOffset;t=window.pageYOffset;}else if(document.documentElement&&document.documentElement.scrollLeft!==undefined){l=document.documentElement.scrollLeft;t=document.documentElement.scrollTop;}else{l=document.body.scrollLeft;t=document.body.scrollTop;}if(l||t){s+='window,'+l+','+t+'/';}document.cookie=s+';';}
 
 /* ===========================================================
-* 						Settings BOOTSTRAP TOOLTIP
-* =========================================================== */
+ * Settings BOOTSTRAP TOOLTIP
+ * =========================================================== */
 !function ($) {
 $(function(){
 $('input[type="submit"]').tooltip({container: 'body',animation: false, placement: 'bottom'})    /* for button */
@@ -25,7 +25,7 @@ $('td.statuscol0 a').tooltip({animation: false, placement: 'right'})    /* in st
 $('td.statuscol1 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
 $('td.statuscol14 a').tooltip({animation: false, placement: 'left'})    /* in status.html */
 $('span a').tooltip({animation: false, placement: 'right'})
-$('div.wrapper_left a').tooltip({animation: false, placement: 'right'})
+$('div.wrapper_left a').tooltip({animation: false, placement: 'top'})
 
 document.title = "OSCam@" + location.host;
 })
@@ -35,20 +35,6 @@ document.title = "OSCam@" + location.host;
  * bootstrap-tooltip.js v2.3.2
  * http://getbootstrap.com/2.3.2/javascript.html#tooltips
  * Inspired by the original jQuery.tipsy by Jason Frame
- * ===========================================================
- * Copyright 2013 Twitter, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  * ========================================================== */
 
 
