@@ -1064,14 +1064,17 @@ DIV.dataTables_filter {margin-left: 50%}
 .sorting_asc {
 	background: url("image?i=IC_SOAS") no-repeat right center #182326;
     padding-right: 17px;
+    cursor: pointer;
 }
 .sorting_desc {
 	background: url("image?i=IC_SODE") no-repeat right center #182326;
     padding-right: 17px;
+    cursor: pointer;
 }
 .sorting {
 	background: url("image?i=IC_SOBO") no-repeat right center #182326;
     padding-right: 17px;
+    cursor: pointer;
 }
 .sorting_asc_disabled {
 	background: url("image?i=IC_SOASDI") no-repeat right center #182326;
