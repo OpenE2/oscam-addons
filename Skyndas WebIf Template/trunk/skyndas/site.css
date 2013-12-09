@@ -559,7 +559,7 @@ TABLE.scanusb TH{padding: 8px}
 /* USERCONFIG.HTML */
 /* Base table */
 TABLE.users{width:99%;border-bottom:3px solid #0F1517;background-color: transparent}
-TABLE.users TH{border-bottom:3px solid #0F1517}
+TABLE.users TH{border-bottom:3px solid #0F1517;font-size: 0.95em}
 TABLE.users TH:first-child{}
 TABLE.users TH:last-child{}
 TABLE.user_totals{border:3px solid #0F1517;margin-top:10px}
@@ -1041,5 +1041,72 @@ text.graph_error {text-anchor:middle;fill:red}
 text.graph_grid_txt {fill:gray;text-anchor:end;style:font-size:12px}
 path.graph_grid {stroke:gray;stroke-opacity:0.5}
 
-/* 14. CSS IN THE TEST
+/* 14. CSS FOR DATATABLE
+-------------------------------------------------------------------------------------------- */
+.dataTables_length {
+        width: 35%;
+        float: left;
+}
+.dataTables_info {
+        width: 50%;
+        float: left;
+		text-align: left;
+		font-weight: bold;
+		margin-left: 40px;
+}
+/* ----------------- Extended for table ----------------- */
+TABLE.users{margin: 10px auto 10px;}
+/* ----------------- Setting for "Show Entries" ----------------- */
+DIV.dataTables_length select{width: 100px}
+/* ----------------- Setting for "Search" ----------------- */
+DIV.dataTables_filter {margin-left: 50%}
+/* ----------------- DataTables sorting ----------------- */
+.sorting_asc {
+	background: url("image?i=IC_SOAS") no-repeat right center #182326;
+    padding-right: 17px;
+}
+.sorting_desc {
+	background: url("image?i=IC_SODE") no-repeat right center #182326;
+    padding-right: 17px;
+}
+.sorting {
+	background: url("image?i=IC_SOBO") no-repeat right center #182326;
+    padding-right: 17px;
+}
+.sorting_asc_disabled {
+	background: url("image?i=IC_SOASDI") no-repeat right center #182326;
+}
+.sorting_desc_disabled {
+	background: url("image?i=IC_SODEDI") no-repeat right center #182326;
+}    
+/* ----------------- Pagination nested ----------------- */
+a.paginate_button,
+a.paginate_active {
+	padding: 2px 5px;
+	margin: 0 3px;
+	cursor: pointer;
+}
+a.paginate_button {
+	background-color: #ddd;
+	color: #333;
+}
+a.paginate_button:hover {
+    background-color: rgb(210, 7, 12);
+    color: #FFF;
+    text-decoration:none
+}
+a.paginate_active {
+	background-color: #d2070c;
+	color: #ffffff;
+}
+.dataTables_paginate {
+        float: right;
+		margin-right: 40px;
+        text-align: right;
+}
+.dataTables_paginate {
+        width: auto;
+}
+
+/* 15. CSS IN THE TEST
 -------------------------------------------------------------------------------------------- */ 

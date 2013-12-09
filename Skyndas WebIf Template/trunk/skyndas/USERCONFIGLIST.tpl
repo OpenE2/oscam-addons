@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="oscam.js"></script>
     <script type="text/javascript">
 	<!--
@@ -65,32 +65,53 @@
         </DIV>
     </DIV>
     <DIV class="filterform"><FORM action="user_edit.html" method="get">##NEWUSERFORM##</FORM></DIV>
-	<TABLE CLASS="users">
-		<TR>
-			<TH>Enabled</TH>
-			<TH>Label</TH>
-			<TH>Status</TH>
-			<TH>Address</TH>
-			<TH>Protocol</TH>
-			<TH>Last Channel</TH>
-			<TH>On Channel</TH>
-			<TH>Idle</TH>
-			<TH TITLE="Delivered ECM with status OK">OK</TH>
-			<TH TITLE="Delivered ECM with status not OK">NOK</TH>
-			<TH TITLE="Ignored ECM by filters, part of NOK">IGN</TH>
-			<TH TITLE="Timeout ECM, part of NOK">TOUT</TH>
-##TPLCWCYCLETHV##
-			<TH TITLE="Delivered ECM from cache, part of OK">CACHE</TH>
-			<TH TITLE="Delivered ECM from tunneled, part of OK">TUN</TH>
-			<TH TITLE="Last ECM Time">LTIME</TH>
-			<TH TITLE="Valid EMM delivered">EOK</TH>
-			<TH TITLE="Invalid EMM delivered">ENOK</TH>
-			<TH TITLE="CW rate since Server start (CW rate current Session)">CW Rate</TH>
-			<TH TITLE="Different services during last 60s">CASC USERS</TH>
-			<TH TITLE="Expiration date of account">Exp. Date</TH>
-			<TH colspan="3" class="centered">Action</TH>
-		</TR>
-##USERCONFIGS##
+        <script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$('#tableuser').dataTable( {
+				    "sPaginationType": "full_numbers",
+                    "sDom": 'T,C<"clear">lfrtip',
+                    "sSize": "css",
+                    "aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+				    "iDisplayLength": 25,
+					"aoColumnDefs": [
+                      { "bSortable": false, "aTargets": [ 0,5,6,7,11,12,13,14,15,18,19,20,21,22,23 ] }
+                    ],
+                    "aaSorting": [[ 1, "desc" ]]
+				} );
+			} );
+		</script>
+	<TABLE ID="tableuser" CLASS="users">
+        <THEAD>
+    		<TR>
+    			<TH style="background-color:transparent;"></TH>
+    			<TH>Label</TH>
+    			<TH>Status</TH>
+    			<TH>Address</TH>
+    			<TH>Protocol</TH>
+    			<TH>Last Channel</TH>
+    			<TH>On Channel</TH>
+    			<TH>Idle</TH>
+    			<TH TITLE="Delivered ECM with status OK">OK</TH>
+    			<TH TITLE="Delivered ECM with status not OK">NOK</TH>
+    			<TH TITLE="Ignored ECM by filters, part of NOK">IGN</TH>
+    			<TH TITLE="Timeout ECM, part of NOK">TOUT</TH>
+    ##TPLCWCYCLETHV##
+    			<TH TITLE="Delivered ECM from cache, part of OK">CACHE</TH>
+    			<TH TITLE="Delivered ECM from tunneled, part of OK">TUN</TH>
+    			<TH TITLE="Last ECM Time">LTIME</TH>
+    			<TH TITLE="Valid EMM delivered">EOK</TH>
+    			<TH TITLE="Invalid EMM delivered">ENOK</TH>
+    			<TH TITLE="CW rate since Server start (CW rate current Session)">CW Rate</TH>
+    			<TH TITLE="Different services during last 60s">CASC USERS</TH>
+    			<TH TITLE="Expiration date of account">Exp. Date</TH>
+    			<TH style="background-color:transparent;"></TH>
+    			<TH style="background-color:transparent;"></TH>
+    			<TH style="background-color:transparent;"></TH>
+    		</TR>
+        </THEAD>
+        <TBODY>
+    ##USERCONFIGS##
+        <TBODY>
     
 	</TABLE><BR>
 	<SPAN CLASS = "user_totals_headline">Totals for the server:</SPAN>

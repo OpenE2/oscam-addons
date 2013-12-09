@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="oscam.js"></script>
 ##REFRESH##
 </HEAD>
