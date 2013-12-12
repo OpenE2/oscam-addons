@@ -31,7 +31,7 @@
             if (countDownTime <=0){
             countDownTime=countDownInterval;
             clearTimeout(counter)
-            window.location.href="userconfig.html"
+            window.location.href="status.html"
             return
             }
             document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
