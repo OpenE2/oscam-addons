@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="oscam.js"></script>
     <script type="text/javascript">
 	<!--
@@ -68,13 +68,23 @@
         <script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#tableuser').dataTable( {
+				    "bStateSave": true,
+                    "sDom": 'C<"clear">lfrtip',
+                    "oColVis": {
+        				"aiExclude": [0,1,2,3,4,8,9,13,16,17,21,22,23,24],
+        				"sAlign": "right",
+        				"sSize": "css",
+        				"bRestore": true,
+        				"iOverlayFade": 200,
+                        "activate": "mouseover",
+        				},
 				    "sPaginationType": "full_numbers",
                     "sDom": 'T,C<"clear">lfrtip',
                     "sSize": "css",
                     "aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
 				    "iDisplayLength": 25,
 					"aoColumnDefs": [
-                      { "bSortable": false, "aTargets": [ 0,5,6,7,11,12,13,14,15,18,19,20,21,22,23 ] }
+                      { "bSortable": false, "aTargets": [ 0,5,6,7,11,12,13,14,15,18,19,20,21,22,23,24 ] }
                     ],
                     "aaSorting": [[ 1, "desc" ]]
 				} );
