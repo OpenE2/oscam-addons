@@ -4,3 +4,5 @@
     <TD>New User:&nbsp;&nbsp;<input name="user" type="text"><input type="submit" value=" Add User " ##BTNDISABLED##></TD>
   </TR>
 </TABLE>
+<BR />
+<HR />
