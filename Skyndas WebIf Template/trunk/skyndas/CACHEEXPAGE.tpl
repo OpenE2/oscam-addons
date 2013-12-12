@@ -13,24 +13,13 @@
             if (countDownTime <=0){
             countDownTime=countDownInterval;
             clearTimeout(counter)
-            window.location.href="readers.html"
             return
             }
             document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
             counter=setTimeout("countDown()", 1000);
             }
-
-            function StartcountDown(){
-            document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text					   
-            countDown()
-            }
-                    
-            function StopcountDown() {
-            clearTimeout(counter);
-            document.getElementById("timer").innerHTML="Refreshing has been stopped!"; // info text
-            };
           
-            window.onload=StartcountDown;                    
+            window.onload=countDown;                    
             </script>
     </DIV>
 	<TABLE CLASS="statscacheex">
