@@ -1,4 +1,4 @@
-<!--OSCam;383401885;1.20-unstable_svn;9063;-->
+<!--OSCam;383401885;1.20-unstable_svn;9093;-->
 	<TABLE CLASS="statsentitle">
 		<TR><TH colspan="3">Cardsystem</TH><TH colspan="2">Valid To</TH><TH>IRD ID (nagra)</TH><TH colspan="2">Provider</TH></TR>
 		<TR CLASS="e_header"><TD colspan="3">##READERCSYSTEM##</TD><TD colspan="2">##READERCARDVALIDTO##</TD><TD>##READERIRDID##</TD><TD colspan="2">##READERPROVIDS##</TD></TR>

@@ -1,4 +1,4 @@
-<!--OSCam;2489487885;1.20-unstable_svn;8864;-->
+<!--OSCam;49781718;1.20-unstable_svn;9093;-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML>
 <HEAD>
 	<TITLE>OSCAM build r##CS_SVN_VERSION##</TITLE>
@@ -83,7 +83,7 @@
 	<TABLE ID="tableuser" CLASS="users">
         <THEAD>
     		<TR>
-    			<TH style="background-color:transparent;"></TH>
+       			<TH style="background-color:transparent;"></TH>
     			<TH>Label</TH>
     			<TH>Status</TH>
     			<TH>Address</TH>
@@ -103,6 +103,7 @@
     			<TH TITLE="Invalid EMM delivered">ENOK</TH>
     			<TH TITLE="CW rate since Server start (CW rate current Session)">CW Rate</TH>
     			<TH TITLE="Different services during last 60s">CASC USERS</TH>
+    			<TH TITLE="Sum of ECM's in last 60s">ECMs(60s)</TH>
     			<TH TITLE="Expiration date of account">Exp. Date</TH>
     			<TH style="background-color:transparent;"></TH>
     			<TH style="background-color:transparent;"></TH>
@@ -135,6 +136,7 @@
 	</TABLE><BR>
 	<TABLE CLASS="ECM_totals">
 		<TR>
+			<TH TITLE="Sum of all ECM's in last 60s">ECMs(60s) ALL</TH>
 			<TH TITLE="SUM of all ECM's">ECMs ALL</TH>
 			<TH TITLE="Delivered ECM with status OK">ECMs OK</TH>
 			<TH TITLE="Delivered ECM from cache, part of OK">CACHE1,2,3</TH>
@@ -145,6 +147,7 @@
 			<TH>Action</TH>
 		</TR>
 		<TR>
+			<TD class="centered">##TOTAL_ECM_MIN##</TD>
 			<TD class="centered">##TOTAL_CW##</TD>
 			<TD class="centered">##TOTAL_CWOK## (##REL_CWOK##%)</TD>
 			<TD class="centered">##TOTAL_CWCACHE## (##REL_CWCACHE##%)</TD>
