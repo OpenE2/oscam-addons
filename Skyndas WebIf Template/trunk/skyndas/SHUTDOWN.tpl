@@ -2,10 +2,10 @@
 <HTML>
 <HEAD>
 	<TITLE>OSCAM build r##CS_SVN_VERSION##</TITLE>
-    <meta http-equiv="Content-Type" content="text/html; charset=##HTTP_CHARSET##">
+	<meta http-equiv="Content-Type" content="text/html; charset=##HTTP_CHARSET##">
 	<link rel="stylesheet" type="text/css" href="site.css">
-	<link href="favicon.ico" rel="icon" type="image/x-icon">	
-    <script type="text/javascript" src="oscam.js"></script>
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+	<script type="text/javascript" src="oscam.js"></script>
 ##REFRESH##
 </HEAD>
 <BODY>

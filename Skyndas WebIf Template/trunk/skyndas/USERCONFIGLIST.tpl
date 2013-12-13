@@ -6,9 +6,9 @@
 	<meta name="robots" content="noindex,nofollow">
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="oscam.js"></script>
-    <script type="text/javascript">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="oscam.js"></script>
+	<script type="text/javascript">
 	<!--
 	addUnloadHandler();
 	//-->
@@ -21,7 +21,7 @@
 
 ##TPLMENU##
 ##TPLMESSAGE##
-    <DIV class="subnav subnav-fixed">
+	<DIV class="subnav subnav-fixed">
 		<UL id="sub">
 			<LI CLASS="configmenu"><A HREF="userconfig.html?part=adduser">Add User</A></LI>
 			<LI CLASS="configmenu"><A HREF="userconfig.html?action=reinit">Reinit User DB</A></LI>
@@ -29,101 +29,99 @@
 			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></LI>
 		</UL>
 	</DIV>
-    <DIV CLASS="settimer">
-        <!-- Script for refresh page -->
-            <SPAN id="timer">Refreshing has been stopped!</SPAN>
-            <script language="JavaScript">
-            var countDownInterval=##REFRESHTIME##;
-            var countDownTime=countDownInterval+1;
-            function countDown(){
-            countDownTime--;
-            if (countDownTime <=0){
-            countDownTime=countDownInterval;
-            clearTimeout(counter)
-            window.location.href="userconfig.html"
-            return
-            }
-            document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
-            counter=setTimeout("countDown()", 1000);
-            }
+	<DIV CLASS="settimer">
+	<!-- Script for refresh page -->
+	<SPAN id="timer">Refreshing has been stopped!</SPAN>
+	<script language="JavaScript">
+		var countDownInterval=##REFRESHTIME##;
+		var countDownTime=countDownInterval+1;
+		function countDown(){
+		countDownTime--;
+		if (countDownTime <=0){
+		countDownTime=countDownInterval;
+		clearTimeout(counter)
+		window.location.href="userconfig.html"
+		return
+		}
+		document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text 
+		counter=setTimeout("countDown()", 1000);
+		}
 
-            function StartcountDown(){
-            document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text					   
-            countDown()
-            }
-                    
-            function StopcountDown() {
-            clearTimeout(counter);
-            document.getElementById("timer").innerHTML="Refreshing has been stopped!"; // info text
-            };
-          
-            window.onload=StartcountDown;                    
-            </script>
-        <DIV CLASS="timerbtn">
-            <input type="submit" value="Stop" onclick="StopcountDown()" title="Stop refresh page">
-            <input type="submit" value="Start" onclick="StartcountDown()" title="Start refresh page">
-        </DIV>
-    </DIV>
-    <DIV class="filterform"><FORM action="user_edit.html" method="get">##NEWUSERFORM##</FORM></DIV>
-        <script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$('#tableuser').dataTable( {
-				    "bStateSave": true,
-                    "sDom": 'C<"clear">lfrtip',
-                    "oColVis": {
-        				"aiExclude": [0,1,2,3,4,8,9,13,16,17,21,22,23,24],
-        				"sAlign": "right",
-        				"sSize": "css",
-        				"bRestore": true,
-        				"iOverlayFade": 200,
-                        "activate": "mouseover",
-        				},
-				    "sPaginationType": "full_numbers",
-                    "sDom": 'T,C<"clear">lfrtip',
-                    "sSize": "css",
-                    "aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
-				    "iDisplayLength": 25,
-					"aoColumnDefs": [
-                      { "bSortable": false, "aTargets": [ 0,5,6,7,11,12,13,14,15,18,19,20,21,22,23,24 ] }
-                    ],
-                    "aaSorting": [[ 1, "desc" ]]
-				} );
+		function StartcountDown(){
+		document.getElementById("timer").innerHTML="Next refresh page in <b> " + countDownTime + " </b> secs"; // info text					   
+		countDown()
+		}
+
+		function StopcountDown() {
+		clearTimeout(counter);
+		document.getElementById("timer").innerHTML="Refreshing has been stopped!"; // info text
+		};
+
+		window.onload=StartcountDown;
+	</script>
+		<DIV CLASS="timerbtn">
+			<input type="submit" value="Stop" onclick="StopcountDown()" title="Stop refresh page">
+			<input type="submit" value="Start" onclick="StartcountDown()" title="Start refresh page">
+		</DIV>
+	</DIV>
+	<DIV class="filterform"><FORM action="user_edit.html" method="get">##NEWUSERFORM##</FORM></DIV>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#tableuser').dataTable( {
+				"bStateSave": true,
+				"sDom": 'C<"clear">lfrtip',
+				"oColVis": {
+				"aiExclude": [0,1,2,3,4,8,9,13,16,17,21,22,23,24],
+				"sAlign": "right",
+				"sSize": "css",
+				"iOverlayFade": 200,
+				"activate": "mouseover",
+				},
+				"sPaginationType": "full_numbers",
+				"sSize": "css",
+				"aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+				"iDisplayLength": 25,
+				"aoColumnDefs": [
+					{ "bSortable": false, "aTargets": [ 0,5,6,7,11,12,13,14,15,18,19,20,21,22,23,24 ] }
+				],
+				"aaSorting": [[ 1, "desc" ]]
 			} );
-		</script>
+		} );
+	</script>
 	<TABLE ID="tableuser" CLASS="users">
-        <THEAD>
-    		<TR>
-       			<TH style="background-color:transparent;"></TH>
-    			<TH>Label</TH>
-    			<TH>Status</TH>
-    			<TH>Address</TH>
-    			<TH>Protocol</TH>
-    			<TH>Last Channel</TH>
-    			<TH>On Channel</TH>
-    			<TH>Idle</TH>
-    			<TH TITLE="Delivered ECM with status OK">OK</TH>
-    			<TH TITLE="Delivered ECM with status not OK">NOK</TH>
-    			<TH TITLE="Ignored ECM by filters, part of NOK">IGN</TH>
-    			<TH TITLE="Timeout ECM, part of NOK">TOUT</TH>
-    ##TPLCWCYCLETHV##
-    			<TH TITLE="Delivered ECM from cache, part of OK">CACHE</TH>
-    			<TH TITLE="Delivered ECM from tunneled, part of OK">TUN</TH>
-    			<TH TITLE="Last ECM Time">LTIME</TH>
-    			<TH TITLE="Valid EMM delivered">EOK</TH>
-    			<TH TITLE="Invalid EMM delivered">ENOK</TH>
-    			<TH TITLE="CW rate since Server start (CW rate current Session)">CW Rate</TH>
-    			<TH TITLE="Different services during last 60s">CASC USERS</TH>
-    			<TH TITLE="Sum of ECM's in last 60s">ECMs(60s)</TH>
-    			<TH TITLE="Expiration date of account">Exp. Date</TH>
-    			<TH style="background-color:transparent;"></TH>
-    			<TH style="background-color:transparent;"></TH>
-    			<TH style="background-color:transparent;"></TH>
-    		</TR>
-        </THEAD>
-        <TBODY>
-    ##USERCONFIGS##
-        <TBODY>
-    
+		<THEAD>
+			<TR>
+				<TH style="background-color:transparent;"></TH>
+				<TH>Label</TH>
+				<TH>Status</TH>
+				<TH>Address</TH>
+				<TH>Protocol</TH>
+				<TH>Last Channel</TH>
+				<TH>On Channel</TH>
+				<TH>Idle</TH>
+				<TH TITLE="Delivered ECM with status OK">OK</TH>
+				<TH TITLE="Delivered ECM with status not OK">NOK</TH>
+				<TH TITLE="Ignored ECM by filters, part of NOK">IGN</TH>
+				<TH TITLE="Timeout ECM, part of NOK">TOUT</TH>
+	##TPLCWCYCLETHV##
+				<TH TITLE="Delivered ECM from cache, part of OK">CACHE</TH>
+				<TH TITLE="Delivered ECM from tunneled, part of OK">TUN</TH>
+				<TH TITLE="Last ECM Time">LTIME</TH>
+				<TH TITLE="Valid EMM delivered">EOK</TH>
+				<TH TITLE="Invalid EMM delivered">ENOK</TH>
+				<TH TITLE="CW rate since Server start (CW rate current Session)">CW Rate</TH>
+				<TH TITLE="Different services during last 60s">CASC USERS</TH>
+				<TH TITLE="Sum of ECM's in last 60s">ECMs(60s)</TH>
+				<TH TITLE="Expiration date of account">Exp. Date</TH>
+				<TH style="background-color:transparent;"></TH>
+				<TH style="background-color:transparent;"></TH>
+				<TH style="background-color:transparent;"></TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+	##USERCONFIGS##
+		<TBODY>
+
 	</TABLE><BR>
 	<SPAN CLASS = "user_totals_headline">Totals for the server:</SPAN>
 	<TABLE CLASS="user_totals">

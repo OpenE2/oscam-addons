@@ -494,6 +494,10 @@ TR.c:hover TD,TR.c:hover TD SPAN,TR.c:hover TD SPAN A{background-color:#43636B;c
 TR.c IMG.icon{width:22px;height:22px;background-color:#007ae6;border-radius:3px;-webkit-border-radius:3px}
 TR.c A:hover IMG.icon{width:22px;height:22px;background-color:#005aa8}
 TR.a TD {background-color:#33ff00}
+/* Settings header of section */
+TABLE.sectionclient {width:99%;background-color:transparent;}
+TABLE.sectionclient TD {background-color:transparent;text-transform:uppercase;font-weight:bold;color:#fff;} 
+TABLE.numclient {width:99%;border-top:3px solid #0f1517;border-bottom:3px solid #0f1517;} 
 
 /* CONFIG.HTML , USER_EDIT.HTML */
 /* Table class "config" */
@@ -1013,6 +1017,7 @@ DIV.logmenu A:hover {
     color: #ff5c03
 }
 DIV.filterform {margin:10px}
+DIV.statusfilterform {margin-bottom: -10px;margin-top: -23px;}
 DIV.sidlist {border:1px dotted #AAAAAA;background-color:#fffdf5;padding:2px;font-family:"Courier New", monospace;color:#666666;word-wrap:break-word; text-align:left}
 DIV.message {font-family: Arial; font-size: 12px;font-weight:bold;margin-bottom: 10px;margin-top: -25px}
 DIV.div_notifier {
@@ -1057,6 +1062,15 @@ path.graph_grid {stroke:gray;stroke-opacity:0.5}
 }
 /* ----------------- Extended for table ----------------- */
 TABLE.users{margin: 10px auto 10px;}
+#tablestatus_filter.dataTables_filter {
+		text-align: right;
+		margin-right: 40px;
+		margin-top: 5px;
+}
+#tablestatus_info.dataTables_info {
+		margin-top: -20px;
+		margin-bottom: 10px;
+}
 /* ----------------- Setting for "Show Entries" ----------------- */
 DIV.dataTables_length select{width: 100px}
 /* ----------------- Setting for "Search" ----------------- */
@@ -1126,10 +1140,10 @@ a.paginate_active {
 	padding: 3px 10px 2px 10px;
 	height: 22px;
 	border: none;
-		-webkit-border-radius: 5px 5px 5px 5px; /* WebKit */
+	-webkit-border-radius: 5px 5px 5px 5px; /* WebKit */
 	-moz-border-radius: 5px 5px 5px 5px; /* Firefox */
 	border-radius: 5px 5px 5px 5px; /* Standard */
-		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.8);
 	-moz-box-shadow: 0 3px 3px  rgba(0, 0, 0, 0.8);
 	box-shadow: 0 3px 3px  rgba(0, 0, 0, 0.8);
 }
@@ -1158,10 +1172,6 @@ div.ColVis_collection > .ColVis_Button {
 	padding-top: 4px;
 	font-size: 13px;
 	cursor: pointer;
-}
-div.ColVis_collection > .ColVis_Button:last-child {
-	padding-left: 25px;
-	font-weight: bold;
 }
 div.ColVis_collection button.ColVis_Button {
 	width: 100%;

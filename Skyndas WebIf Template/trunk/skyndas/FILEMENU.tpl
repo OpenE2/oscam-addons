@@ -17,6 +17,6 @@
 					<LI CLASS="##CMENUACTIVE21##"><A HREF="files.html?file=userfile">userfile</A></LI>
 					##TPLFILEMENUANTICASC##
 				</UL>
-		  </LI>
+			</LI>
 		</UL>
 	</DIV>
