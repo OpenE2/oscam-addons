@@ -1,4 +1,4 @@
-<!--OSCam;1777029975;1.20-unstable_svn;9093;-->
+<!--OSCam;1777029975;1.20-unstable_svn;9102;-->
 			<TR CLASS ="##READERCLASS##">
 				<TD class="centered"><A HREF="readers.html?label=##READERNAMEENC##&amp;action=##SWITCH##" TITLE="##SWITCHTITLE##"><IMG CLASS="icon" SRC="##SWITCHICO##" ALT="##SWITCHTITLE##"></A></TD>
 				<TD>

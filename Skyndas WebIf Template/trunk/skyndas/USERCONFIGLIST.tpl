@@ -1,4 +1,4 @@
-<!--OSCam;49781718;1.20-unstable_svn;9093;-->
+<!--OSCam;1316855467;1.20-unstable_svn;9102;-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML>
 <HEAD>
 	<TITLE>OSCAM build r##CS_SVN_VERSION##</TITLE>
@@ -165,7 +165,7 @@
 			<TD class="centered">##TOTAL_CWNOK## (##REL_CWNOK##%)</TD>
 			<TD class="centered">##TOTAL_CWIGN## (##REL_CWIGN##%)</TD>
 			<TD class="centered">##TOTAL_CWTOUT## (##REL_CWTOUT##%)</TD>
-			<TD class="centered"><A HREF="userconfig.html?action=resetserverstats" TITLE="reset statistics for server"><IMG CLASS="icon" SRC="image?i=ICRES" ALT="Reset Server Stats"></A></TD>
+			<TD class="centered"><A HREF="userconfig.html?action=resetserverstats" TITLE="Reset statistics for server"><IMG CLASS="icon" SRC="image?i=ICRES" ALT="Reset Server Stats"></A></TD>
 		</TR>
 	</TABLE><BR>
 	<TABLE CLASS="ECM_totals">

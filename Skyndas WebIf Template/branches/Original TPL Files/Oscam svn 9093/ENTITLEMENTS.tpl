@@ -1,7 +1,0 @@
-<!--OSCam;2275529660;1.20-unstable_svn;9093;-->
-##TPLHEADER##
-##TPLMENU##
-##TPLMESSAGE##
-	<BR><BR>Entitlements for ##READERNAME##<BR><BR>
-##ENTITLEMENTCONTENT##
-##TPLFOOTER##
