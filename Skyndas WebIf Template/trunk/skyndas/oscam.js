@@ -18,9 +18,9 @@ $('table th span').tooltip({container: 'body',animation: false, placement: 'bott
 $('td.centered a').tooltip({animation: false, placement: 'bottom'})
 $('td.usercol0 a').tooltip({animation: false, placement: 'right'})      /* in userconfig.html */
 $('td.usercol1 span').tooltip({animation: false, placement: 'right'})   /* in userconfig.html */
-$('td.usercol21 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
 $('td.usercol22 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
 $('td.usercol23 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
+$('td.usercol24 a').tooltip({animation: false, placement: 'left'})      /* in userconfig.html */
 $('td.statuscol0 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
 $('td.statuscol1 a').tooltip({animation: false, placement: 'right'})    /* in status.html */
 $('td.statuscol14 a').tooltip({animation: false, placement: 'left'})    /* in status.html */
