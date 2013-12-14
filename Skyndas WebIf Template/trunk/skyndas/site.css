@@ -752,7 +752,7 @@ TEXTAREA.bt {
   padding: 5px 0;
 }
 .tooltip.left {
-  margin-left: -3px;
+  margin-left: -10px;
   padding: 0 5px;
 }
 .tooltip-inner {
