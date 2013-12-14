@@ -532,9 +532,9 @@ TABLE.statsbalance TD:last-child{line-height: 20px}
 TABLE.statsbalance TD:last-child IMG.icon{float: right;margin-left: 10px}
 TABLE.statsbalance TR:hover TD{background-color:#43636B;color: white}
 TD.subheadline{height:10px;font-family:Arial;font-size:11px;padding:5px;background-color:#182326;color:#FFF}
-TD.subheadline A {color:#000033}
+TD.subheadline A {color:#D2070C}
 TD.subheadline A:hover {color:#fff1c3}
-TABLE.statsbalance TR:hover TD.subheadline {background-color:#0078a5 !IMPORTANT}
+TABLE.statsbalance TR:hover TD.subheadline {background-color:#43636B !IMPORTANT}
 /* Table class "config" is in config.html?part=XXX */
 TABLE.configreader{border:3px solid #0f1517}
 TABLE.configreader TR:hover TD{background-color:#43636B;color:white}
