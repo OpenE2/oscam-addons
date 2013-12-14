@@ -50,7 +50,7 @@
 				<TD COLSPAN="2" class="centered">New Reader</TD>
 				<TD COLSPAN="2" class="centered">Label:&nbsp;&nbsp;<input type="text" name="label" value="##NEXTREADER##" onClick="StopcountDown()" onBlur="StartcountDown()"></TD>
 				<TD COLSPAN="2" class="centered">Protocol:&nbsp;&nbsp;
-					<select name="protocol"  onClick="StopcountDown()" onBlur="StartcountDown()">
+					<select name="protocol">
 ##ADDPROTOCOL##
 					</select>
 				</TD>
