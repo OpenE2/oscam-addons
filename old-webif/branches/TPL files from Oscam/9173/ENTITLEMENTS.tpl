@@ -1,0 +1,7 @@
+<!--OSCam;952831796;1.20-unstable_svn;9173;WITH_CARDREADER-->
+##TPLHEADER##
+##TPLMENU##
+##TPLMESSAGE##
+	<SPAN CLASS="text_entitle">Entitlements for ##READERNAME##</SPAN>
+##ENTITLEMENTCONTENT##
+##TPLFOOTER##

@@ -1,0 +1,15 @@
+<!--OSCam;2517467741;1.20-unstable_svn;9173;-->
+<HTML>
+<HEAD>
+	<TITLE>OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=##HTTP_CHARSET##">    
+	<link rel="stylesheet" type="text/css" href="site.css">
+	<link href="favicon.ico" rel="icon" type="image/x-icon"/>	
+	<script type="text/javascript" src="oscam.js"></script>
+##REFRESH##
+</HEAD>
+<BODY>
+	<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
+##TPLMENU##
+	<BR><P CLASS="blinking">OSCam Shutdown - Try Reconnect in ##SECONDS## Seconds</P><BR><BR>
+##TPLFOOTER##

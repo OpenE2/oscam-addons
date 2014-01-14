@@ -1,0 +1,9 @@
+<!--OSCam;2702314007;1.20-unstable_svn;9173;-->
+			<TR>
+				<TD>##LABEL##</TD>
+				<TD WIDTH="250" CLASS="centered">
+##SIDLIST##
+				</TD>
+				<TD><A HREF="services_edit.html?service=##LABELENC##&amp;action=edit" TITLE="Edit this Service"><IMG CLASS="icon" SRC="image?i=ICEDI" ALT="Edit Service"></A></TD>
+				<TD><A HREF="services.html?service=##LABELENC##&amp;action=delete" TITLE="Delete this Service"><IMG CLASS="icon" SRC="image?i=ICDEL" ALT="Delete Service"></A></TD>
+			</TR>

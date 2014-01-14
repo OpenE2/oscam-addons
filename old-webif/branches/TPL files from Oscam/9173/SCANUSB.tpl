@@ -1,0 +1,9 @@
+<!--OSCam;3270449035;1.20-unstable_svn;9173;-->
+##TPLHEADER##
+##TPLMENU##
+##TPLMESSAGE##
+	<TABLE CLASS="upspace" CELLPADDING="10">
+		<TR><TH>USB Devices</TH></TR>
+##USBBIT##
+	</TABLE>
+##TPLFOOTER##
