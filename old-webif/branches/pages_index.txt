@@ -1,0 +1,287 @@
+# This file contains a conversion table between HTML and Template TPL Files
+#
+# Last update 2014-01-16 from Oscam r9352
+#
+
+Poslední zkontrolovaný soubor STATUSRBUTTON.tpl
+
+# Folder API.JSON - 4 files
+	footer.json 									JSONFOOTER.tpl
+	header.json 									JSONHEADER.tpl
+	status.json 									JSONSTATUS.tpl
+	status_statusbits.json 							JSONSTATUSBIT.tpl
+
+# Folder API.XML - 21 files
+	cccamcardlist.xml 								APICCCAMCARDLIST.tpl
+	cccamcardlist_cardlist.xml 						APICCCAMCARDBIT.tpl
+	cccamcardlist_cardlist_nodelist.xml 			APICCCAMCARDNODEBIT.tpl
+	cccamcardlist_cardlist_providerlist.xml 		APICCCAMCARDPROVIDERBIT.tpl
+	confirmation.xml 								APICONFIRMATION.tpl
+	error.xml 										APIERROR.tpl
+	failban.xml 									APIFAILBAN.tpl
+	failban_failbanrow.xml 							APIFAILBANBIT.tpl
+	file.xml 										APIFILE.tpl
+	footer.xml 										APIFOOTER.tpl
+	header.xml 										APIHEADER.tpl
+	readers.xml 									APIREADERS.tpl
+	readers_readerlist.xml 							APIREADERSBIT.tpl
+	readerstats.xml 								APIREADERSTATS.tpl
+	readerstats_ecmstats.xml 						APIREADERSTATSECMBIT.tpl
+	readerstats_emmstats.xml 						APIREADERSTATSEMMBIT.tpl
+	status.xml 										APISTATUS.tpl
+	status_statusbits.xml 							APISTATUSBIT.tpl
+	userconfiglist.xml 								APIUSERCONFIGLIST.tpl
+	userconfiglist_userconfigs.xml 					APIUSERCONFIGLISTBIT.tpl
+	useredit.xml 									APIUSEREDIT.tpl
+
+# Folder CACHEEX - 2 files
+	cacheex.html 									CACHEEXPAGE.tpl
+	cacheex_tablerow.html 							CACHEEXTABLEROW.tpl
+
+# Folder CONFIG - 40 files
+	anticasc.html 									CONFIGANTICASC.tpl
+	cache.html 										CONFIGCACHE.tpl
+	cache_cacheexcsp.html 							CONFIGCACHEEXCSP.tpl
+	cache_cwcycle.html 								CONFIGCWCYCLE.tpl
+	camd33.html 									CONFIGCAMD33.tpl
+	camd35.html 									CONFIGCAMD35.tpl
+	camd35tcp.html 									CONFIGCAMD35TCP.tpl
+	cccam.html 										CONFIGCCCAM.tpl
+	dvbapi.html 									CONFIGDVBAPI.tpl
+	gbox.html 										CONFIGGBOX.tpl
+	global.html 									CONFIGGLOBAL.tpl
+	global_enableledbit.html 						ENABLELEDBIT.tpl
+	global_localcards.html 							LOCALCARDS.tpl
+	global_suppresscmd08.html 						SUPPRESSCMD08.tpl
+	global_unlockparental.html 						UNLOCKPARENTAL.tpl
+	lcd.html 										CONFIGLCD.tpl
+	loadbalancer.html 								CONFIGLOADBALANCER.tpl
+	menu.html 										CONFIGMENU.tpl
+	menu_anticasc.html 								CONFIGMENUANTICASC.tpl
+	menu_camd33.html 								CONFIGMENUCAMD33.tpl
+	menu_camd35.html 								CONFIGMENUCAMD35.tpl
+	menu_camd35tcp.html 							CONFIGMENUCAMD35TCP.tpl
+	menu_cccam.html 								CONFIGMENUCCCAM.tpl
+	menu_cmcaptioncwc.html 							CMCAPTIONCWC.tpl
+	menu_dvbapi.html 								CONFIGMENUDVBAPI.tpl
+	menu_lcd.html 									CONFIGMENULCD.tpl
+	menu_loadbalancer.html 							CONFIGMENULB.tpl
+	menu_monitor.html 								CONFIGMENUMONITOR.tpl
+	menu_newcamd.html 								CONFIGMENUNEWCAMD.tpl
+	menu_radegast.html 								CONFIGMENURADEGAST.tpl
+	menu_serial.html 								CONFIGMENUSERIAL.tpl
+	menu_webif.html 								CONFIGMENUWEBIF.tpl
+	monitor.html 									CONFIGMONITOR.tpl
+	newcamd.html 									CONFIGNEWCAMD.tpl
+	radegast.html 									CONFIGRADEGAST.tpl
+	serial.html 									CONFIGSERIAL.tpl
+	serial_devices.html 							CONFIGSERIALDEVICEBIT.tpl
+	webif.html 										CONFIGWEBIF.tpl
+	webif_httpforcesslv3.html 						HTTPFORCESSLV3.tpl
+	webif_showcacheexinfo.html 						SHOWCACHEEXINFO.tpl
+
+# Folder EMM - 1 files
+	emm.html 										ASKEMM.tpl
+
+# Folder EMM_RUNNING - 1 files
+	emm_running.html 								EMM_RUNNING.tpl
+
+# Folder ENTITLEMENTS - 6 files
+	entitlements.html 								ENTITLEMENTS.tpl
+	entitlements_bit.html 							ENTITLEMENTBIT.tpl
+	entitlements_cccambit.html 						ENTITLEMENTCCCAMBIT.tpl
+	entitlements_cccambit_statsentry.html 			ENTITLEMENTCCCAMENTRYBIT.tpl
+	entitlements_genericbit.html 					ENTITLEMENTGENERICBIT.tpl
+	entitlements_itembit.html 						ENTITLEMENTITEMBIT.tpl
+
+# Folder FAILBAN - 2 files
+	failban.html 									FAILBAN.tpl
+	failban_failbanrow.html 						FAILBANBIT.tpl
+
+# Folder FILES - 6 files
+	file.html 										FILE.tpl
+	file_filterform.html 							FILTERFORM.tpl
+	file_writeprotection.html 						WRITEPROTECTION.tpl
+	menu.html 										FILEMENU.tpl
+	menu_anticasc.html 								FILEMENUANTICASC.tpl
+	menu_dvbapi.html 								FILEMENUDVBAPI.tpl
+
+# Folder GHTTP - 2 files
+	autoconf.html 									AUTOCONF.tpl
+	pre_autoconf.html 								PREAUTOCONF.tpl
+
+# Folder GRAPH - 1 files
+	graph.svg 										GRAPH.tpl
+
+# Folder IMAGES - 17 files
+	favicon.ico 									
+	ICARRL.gif 										ICARRL.tpl
+	ICARRR.gif 										ICARRR.tpl
+	ICDEL.svg 										ICDEL.tpl
+	ICDIS.svg 										ICDIS.tpl
+	ICEDI.svg										ICEDI.tpl
+	ICEMM.svg 										ICEMM.tpl
+	ICENA.svg										ICENA.tpl
+	ICENT.svg										ICENT.tpl
+	ICKIL.svg										ICKIL.tpl
+	ICMLOGO.svg										ICMLOGO.tpl
+	ICREF.svg 										ICREF.tpl
+	ICRES.svg 										ICRES.tpl
+	ICSHW.svg
+	ICSPAC.gif										ICSPAC.tpl
+	ICSTA.svg										ICSTA.tpl
+	ICHID.svg										ICHID.tpl
+
+													ICMAI.tpl   // I don´t know what is it
+
+# Folder INCLUDE - 19 files
+	cccamentitlements.html 							CCENTITLEMENTS.tpl
+	cccamentitletooltip.html 						CCENTITLETOOLTIP.tpl
+	css.css 										CSS.tpl
+	footer.html 									FOOTER.tpl
+	foundentitlements.html 							FOUNDENTITLEMENTS.tpl
+	header.html 									HEADER.tpl
+	help_prefix.html 								HELPPREFIX.tpl
+	help_suffix.html 								HELPSUFFIX.tpl
+	jscript.js 										JSCRIPT.tpl
+	logobit.html 									LOGOBIT.tpl
+	menu.html 										MENU.tpl
+	menu_cacheexmenuitem.html 						CACHEEXMENUITEM.tpl
+	message.html 									MESSAGE.tpl
+	message_bit.html 								MESSAGEBIT.tpl
+	noentitlements.html 							NOENTITLEMENTS.tpl
+	protocccampic.html 								PROTOCCCAMPIC.tpl
+	protonewcamdpic.html 							PROTONEWCAMDPIC.tpl
+	protootherpic.html 								PROTOOTHERPIC.tpl
+	refresh.html 									REFRESH.tpl
+
+# Folder LOGMENU - 5 files
+	log_clearlog.html 								CLEARLOG.tpl
+	log_clearuserlog.html 							CLEARUSERLOG.tpl
+	log_disablelogmenu.html 						LOGMENUDISABLELOG.tpl
+	log_filterform.html 							LOGMENUFILTERFORM.tpl
+	log_logmenuonoff.html 							LOGMENUONOFF.tpl
+
+# Folder READERCONFIG - 25 files
+	readerconfig.html 								READERCONFIG.tpl
+	readerconfig_cacheexbit.html 					READEREDITCACHEEXBIT.tpl
+	readerconfig_camd35bit.html 					READERCONFIGCAMD35BIT.tpl
+	readerconfig_cccambit.html 						READERCONFIGCCCAMBIT.tpl
+	readerconfig_cs378xbit.html 					READERCONFIGCS378XBIT.tpl
+	readerconfig_ghttpbit.html 						READERCONFIGGHTTPBIT.tpl
+	readerconfig_hopbit.html 						READERCONFIGHOPBIT.tpl
+	readerconfig_hwreader.html 						READERCONFIGSTDHWREADERBIT.tpl
+	readerconfig_hwreader_boxkey.html 				READERCONFIGBOXKEY.tpl
+	readerconfig_hwreader_irdeto.html 				READERCONFIGIRDETO.tpl
+	readerconfig_hwreader_nagra.html 				READERCONFIGNAGRA.tpl
+	readerconfig_hwreader_nano.html 				READERCONFIGNANO.tpl
+	readerconfig_hwreader_pincode.html 				READERPINCODE.tpl 
+	readerconfig_hwreader_rsakey.html 				READERCONFIGRSAKEY.tpl
+	readerconfig_hwreader_sc8in1.html 				READERCONFIGSC8IN1.tpl
+	readerconfig_hwreader_smargo.html 				READERCONFIGSMARGO.tpl
+	readerconfig_hwreader_viaccess.html 			READERCONFIGVIACCESS.tpl
+	readerconfig_hwreader_videoguard.html 			READERCONFIGVIDEOGUARD.tpl
+	readerconfig_lbweight.html 						READERCONFIGLBWEIGHT.tpl
+	readerconfig_ncd524bit.html 					READERCONFIGNCD524BIT.tpl
+	readerconfig_ncd525bit.html 					READERCONFIGNCD525BIT.tpl
+	readerconfig_radegastbit.html 					READERCONFIGRADEGASTBIT.tpl
+	readerconfig_sidlbokbit.html 					READERCONFIGSIDLBOKBIT.tpl
+	readerconfig_sidnobit.html 						READERCONFIGSIDNOBIT.tpl
+	readerconfig_sidokbit.html 						READERCONFIGSIDOKBIT.tpl
+
+# Folder READERS - 10 files 
+	readerctypbit.html 								READERCTYPBIT.tpl
+	readerctypnoicon.html 							READERCTYPNOICON.tpl
+	readerlabel.html 								READERLABEL.tpl
+	readernamebit.html 								READERNAMEBIT.tpl
+	readernoicon.html 								READERNOICON.tpl
+	readers.html 									READERS.tpl
+	readers_readerlist.html 						READERSBIT.tpl
+	readers_readerlist_entitlement.html 			READERENTITLEBIT.tpl
+	readers_readerlist_refresh.html 				READERREFRESHBIT.tpl
+	readers_readerlist_writeemm.html 				READERWRITEEMMBIT.tpl
+
+# Folder READERSTATS - 6 files
+	readerstats.html 								READERSTATS.tpl
+	readerstats_nostats.html 						READERSTATSNOSTATS.tpl
+	readerstats_statsbit.html 						READERSTATSBIT.tpl
+	readerstatsnotfound.html 						READERSTATSROWNOTFOUNDBIT.tpl
+	readerstatsrowbit.html 							READERSTATSROWBIT.tpl
+	readerstatstimeoutbit.html 						READERSTATSROWTIMEOUTBIT.tpl
+
+# Folder SAVETEMPLATES - 1 file
+	savetemplates.html 								SAVETEMPLATES.tpl
+
+# Folder SCANUSB - 2 files
+	scanusb.html 									SCANUSB.tpl
+	scanusb_usbbit.html 							SCANUSBBIT.tpl
+
+# Folder SCRIPT - 1 files
+	script.html 									SCRIPT.tpl
+
+# Folder SERVICES - 3 files
+	services.html 									SERVICECONFIGLIST.tpl
+	services_servicetabs.html 						SERVICECONFIGLISTBIT.tpl
+	services_servicetabs_sidlist.html 				SERVICECONFIGSIDBIT.tpl
+
+# Folder SERVICES EDIT - 1 file
+	services_edit.html 								SERVICEEDIT.tpl
+
+# Folder SHUTDOWN - 2 files
+	pre_shutdown.html 								PRESHUTDOWN.tpl
+	shutdown.html 									SHUTDOWN.tpl
+
+# Folder STATUS - 22 files
+	status.html 									STATUS.tpl
+	status_cacheexinfo.html 						CACHEEXINFOBIT.tpl
+	status_clientheadlinebit.html 					CLIENTHEADLINEBIT.tpl
+	status_clientheadlinewith.html 					CLIENTHEADLINEWITH.tpl
+	status_clientstatusbit.html 					CLIENTSTATUSBIT.tpl
+	status_currentchannel.html 						CLIENTCURRENTCHANNEL.tpl
+	status_currentchannelbit.html 					CLIENTCURRENTCHANNELBIT.tpl
+	status_currentchannelpic.html 					CLIENTCURRENTCHANNELPIC.tpl
+	status_hidebutton.html 							STATUSHBUTTON.tpl
+	status_killbutton.html 							STATUSKBUTTON.tpl
+	status_lblvaluereaderbit.html 					CLIENTLBLVALUEBIT.tpl
+	status_lbvaluereaderproxy.html 					CLIENTLBLVALUERP.tpl
+	status_pheadline.html 							CLIENTPHEADLINE.tpl
+	status_reader.html 								SREADER.tpl
+	status_readericon.html 							SREADERICON.tpl
+	status_restartbutton.html 						STATUSRBUTTON.tpl
+	status_rheadline.html 							CLIENTRHEADLINE.tpl
+	status_sdebug.html 								DEBUGSELECT.tpl
+	status_systeminfo.html 							SYSTEMINFOBIT.tpl
+	status_user.html 								SUSER.tpl
+	status_usericon.html 							SUSERICON.tpl
+	status_userinfo.html 							USERINFOBIT.tpl
+
+# Folder TOUCH - 3 files
+	css.css 										TOUCH_CSS.tpl
+	jscript.js 										TOUCH_JSCRIPT.tpl
+	status.html 									TOUCH_STATUS.tpl
+
+# Folder USER EDIT - 7 files
+	user_edit.html 									USEREDIT.tpl
+	user_edit_anticasc.html 						USEREDITANTICASC.tpl
+	user_edit_cacheexbit.html 						USEREDITCACHEEXBIT.tpl
+	user_edit_cccam.html 							USEREDITCCCAM.tpl
+	user_edit_monlevel.html 						USEREDITMONLEVEL.tpl
+	user_edit_sidnobit.html 						USEREDITSIDNOBIT.tpl
+	user_edit_sidokbit.html 						USEREDITSIDOKBIT.tpl
+
+# Folder USERCONFIG - 14 files
+	userconfig.html 								USERCONFIGLIST.tpl
+	userconfig_anticascbit.html 					USERANTICASC.tpl
+	userconfig_cwanticascthv.html 					CWANTICASCTHV.tpl
+	userconfig_cwcyclebit.html 						USERCWCYCLE.tpl
+	userconfig_cwcyclethv.html 						CWCYCLETHV.tpl
+	userconfig_entry.html 							USERCONFIGLISTBIT.tpl
+	userconfig_entry_cwanticasctbv.html 			CWANTICASCTBV.tpl
+	userconfig_entry_cwcycletbv.html 				CWCYCLETBV.tpl
+	userconfig_lastchannelicon.html 				USERCONFIGLASTCHANEL.tpl
+	userconfig_newuserform.html 					ADDNEWUSER.tpl
+	userconfig_notify.html 							CLIENTCOUNTNOTIFIERBIT.tpl
+	userconfig_usericon.html 						USERICON.tpl
+	userconfig_userlabel.html  						USERLABEL.tpl
+	userconfig_usernoicon.html 						USERNOICON.tpl
+	
