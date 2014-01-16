@@ -1,6 +1,6 @@
 # This file contains a conversion table between HTML and Template TPL Files
 #
-# Last update 2014-01-16 from Oscam r9352
+# Last update 2014-01-16 from Oscam r9365
 #
 
 Poslední zkontrolovaný soubor STATUSRBUTTON.tpl
@@ -196,6 +196,9 @@ Poslední zkontrolovaný soubor STATUSRBUTTON.tpl
 	readernamebit.html 								READERNAMEBIT.tpl
 	readernoicon.html 								READERNOICON.tpl
 	readers.html 									READERS.tpl
+	readers_lblweightbit.html 						READERLBBIT.tpl
+	readers_lblweightd.html 						READERLBWD.tpl
+	readers_lblweightu.html 						READERLBWU.tpl
 	readers_readerlist.html 						READERSBIT.tpl
 	readers_readerlist_entitlement.html 			READERENTITLEBIT.tpl
 	readers_readerlist_refresh.html 				READERREFRESHBIT.tpl
