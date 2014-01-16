@@ -1,2 +1,0 @@
-<!--OSCam;382407563;1.20-unstable_svn;9340;-->
-<A HREF="readerconfig.html?label=##READERNAMEENC##"><IMG CLASS="statususericon" SRC="image?i=IC_##READERNAMEENC##" TITLE="Edit Reader: ##READERNAME##&#013;##CLIENTDESCRIPTION##"></A>

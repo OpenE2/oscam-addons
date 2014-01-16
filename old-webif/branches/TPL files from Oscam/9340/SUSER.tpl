@@ -1,2 +1,0 @@
-<!--OSCam;3286706654;1.20-unstable_svn;9340;-->
-<A CLASS="statususericon" HREF="user_edit.html?user=##USERENC##" TITLE="Edit User: ##USERNAME##&#013;##CLIENTDESCRIPTION##&#013;##UPICMISSING##">##USERNAME##</A>
