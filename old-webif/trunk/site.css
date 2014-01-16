@@ -1,42 +1,7 @@
 <!--OSCam;690217343;1.20-unstable_svn;9365;-->
-/* 0. RESET
+/* 1. RESET
 ------------------------------------------------------------------------------------*/
 HTML,DIV,TABLE,TBODY,TFOOT,THEAD,TR,TH,TD {margin:0;padding:0;border:0}
-
-/* 1. MENU
-------------------------------------------------------------------------------------*/
-/*shape*/
-#mainmenu{height:30px;}
-#nav{height:20px;}
-#mainmenu li, #nav li{display:inline;margin-left:2px;margin-right:2px;padding-top:5px;padding-bottom:3px;padding-left:3px;padding-right:3px;}
-#nav li{padding-top:0px;padding-bottom:0px;}
-ul#mainmenu.menu, ul#nav{padding-left:0px;margin:0;}
-ul#mainmenu.menu{padding-top:10px;}
-ul#nav{padding-top:0;}
-li.menu a, li.configmenu a, li.menu_selected a, li.configmenu_selected a{text-decoration:none;}
-
-/*size*/
-#mainmenu li{font-size: 18px;font-weight: bold;}
-#nav li{font-size: 14px;}
-
-/*font*/
-#mainmenu, #nav{font-family:arial, helvetica, sans-serif;}
-
-/*color*/
-#mainmenu, #nav{background-color:#FFFFFF;}
-li.menu:hover,
-li.menu_selected,
-li.configmenu:hover,
-li.configmenu_selected{background-color:#DDDDDD;}
-
-/* 2. FOOTER
-------------------------------------------------------------------------------------*/
-div.footer{padding-bottom:5px;padding-top:5px;margin-bottom:0px;}
-div.footer p{margin:2px;}
-
-/*color*/
-div.footer p{color:#000000;}
-div.footer{background-color:#EEEEEE;}
 
 /* 2. BASIC SETTINGS 
 ------------------------------------------------------------------------------------*/
@@ -44,8 +9,10 @@ BODY {background-color:white;font-family:Arial;font-size:11px;text-align:center}
 P {color:white}
 P.blinking {font-weight:bold;font-size:large;color:red;animation:blink 1000ms infinite;-webkit-animation:blink 1000ms infinite}
 H2 {color:#AAA;font-size:32px;line-height:32px;margin-top:0px; margin-bottom:0px}
-h4 {font-size:18px;line-height:9px;}
-h4 {color:#aaa;}
+H2.headline1 {}
+H4 {color:#AAA;font-size:12px;line-height:9px}
+H4.footline1 {}
+H4.footline2 {}
 H4.styleauthor:after {content:"Eneen"}
 
 /* 3. BLINKING TEXT - css3
@@ -61,7 +28,7 @@ TABLE.menu {border-spacing:0px}
 TABLE.status {width:100%;background-color:white;empty-cells:show}
 TABLE.config {width:760px}
 TABLE.configreader {width:850px}
-TABLE.readers {width:100%;}
+TABLE.readers {}
 TABLE.stats {}
 TABLE.statsbalance TD:last-child{line-height:20px;width:125px}
 TABLE.statsbalance TD:last-child IMG.icon{float:right;margin-left:10px}
@@ -75,7 +42,7 @@ TABLE.invisiblelb TD {width:33%;font-size:12px;white-space: nowrap}
 TABLE.invisibleservices {margin-left:0;width: 80%}
 TABLE.invisibleservices TD {font-size:12px}
 TABLE.configmenu {line-height:16px}
-TABLE.users {width:100%;}
+TABLE.users {}
 TABLE.user_totals {}
 TABLE.ECM_totals {margin-top:10px}
 
@@ -112,28 +79,28 @@ TD.statuscol0 {text-align:center;width:10px}
 TD.statuscol1 {text-align:center}
 TD.statuscol2 {text-align:center}
 TD.statuscol3 {text-align:center}
-TD.statuscol4,TD.statuscol4 A {text-align:center;text-decoration:none}
+TD.statuscol4 {}
 TD.statuscol5 {text-align:center}
 TD.statuscol6 {text-align:center}
 TD.statuscol7 {text-align:center}
 TD.statuscol8 {text-align:center}
-TD.statuscol9,TD.statuscol9 A {text-align:center;text-decoration:none}
+TD.statuscol9 {}
 TD.statuscol10 {text-align:center}
 TD.statuscol11 {text-align:center}
 TD.statuscol12 {text-align:center}
-TD.statuscol13,TD.statuscol13 A {text-align:center;text-decoration:none}
+TD.statuscol13 {}
 TD.statuscol14 {text-align:center}
 TD.statuscol14 A {text-decoration:none}
 TD.statuscol15 {text-align:center}
 TD.statuscol16 {text-align:center}
 TD.statuscol16 A {text-decoration:none}
 TD.usercol0 {text-align:center}
-TD.usercol1 {text-align:center;text-decoration:none}
+TD.usercol1 {}
 TD.usercol2 {text-align:center}
 TD.usercol3 {text-align:center}
 TD.usercol4 {text-align:center}
 TD.usercol5 {text-align:center}
-td.usercol6 {text-align:center}
+TD.usercol6 {text-align:center}
 TD.usercol7 {text-align:center}
 TD.usercol8 {text-align:center}
 TD.usercol9 {text-align:center}
@@ -174,6 +141,7 @@ TR.p TD {background-color:#FDFBE1}
 TR.c TD {background-color:#F1F5E6}
 TR.a TD {background-color:#3F0}
 TR.online TD {background-color:#BFA}
+TR.online TD.usercol6 {background-color:#646464}
 TR.offline TD {}
 TR.expired TD {background-color:#FBA}
 TR.connected TD {background-color:#FFA}
@@ -199,10 +167,11 @@ DIV.filterform {margin:10px}
 DIV.cccamentitlementtotals {margin-top:14px}
 DIV.cccamentitlementcontrols {margin-top:14px}
 DIV.warning {margin:42px 0 14px 0}
-DIV.logo {position:absolute;top:5px;left:5px}
+DIV.logo {}
 DIV.header {}
+DIV.footer {border-top:1px solid #AAA;margin-top:20px;padding-top:10px}
 DIV.groups {overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:40px;text-align:center;cursor:pointer;cursor:default}
-DIV.newuser {display:none}
+
 /* 9. TEXTAREA
 ------------------------------------------------------------------------------------*/
 TEXTAREA.bt {font-size:12px}
@@ -217,7 +186,7 @@ SELECT {padding:2px}
 SELECT {padding:1px}
 input[type="submit"] {padding:2px 6px;}
 }
-input[type='checkbox'] {width:18px;height:18px;position: relative;top: 5px;}
+input[type='checkbox'] {width:18px;height:18px;position: relative;top: 5px;} /* Bad solution for checkbox */
 
 /* 11. LINKS
 ------------------------------------------------------------------------------------*/
@@ -235,11 +204,32 @@ A.tooltip  SPAN {display:none;z-index:99}
 A.tooltip1 SPAN {display:none;z-index:99}
 A:hover SPAN {display:block;position:absolute;top:2em;right:1em;padding:10px;color:#350;font-weight:normal;background:#FFD;text-align: left;border: 1px solid #666}
 
+/* 11. LINKS
+------------------------------------------------------------------------------------*/
+A.debugl:link {margin:0 1px;}
+A.debugls:link {background-color:#A00;padding:1px 2px 2px;color:#FFF}
+A.debugls:visited {background-color:#A00;color:#FFF}
+A:link {color:#050840}
+A:visited {color:#050840}
+A:active {color:#050840}
+A:hover {color:#FF9E5F}
+A:hover IMG.icon {border: 1px solid yellow;width:20px;height:20px}
+A.tooltip  {position:relative;text-decoration:none;cursor:default}
+A.tooltip1 {position:relative;text-decoration:none;cursor:default;color:red}
+A.tooltip  SPAN {display:none;z-index:99}
+A.tooltip1 SPAN {display:none;z-index:99}
+A:hover SPAN {display:block;position:absolute;top:2em;right:1em;padding:10px;color:#350;font-weight:normal;background:#FFD;text-align: left;border: 1px solid #666}
+
 /* 12. IMAGE
 ------------------------------------------------------------------------------------*/
 IMG {border:0px solid}
-IMG.icon {border:0px solid;width:22px;height:22px;background-color:#A00;border-radius:3px;-webkit-border-radius:3px; max-height:22px;}
-IMG.statususericon, IMG.protoicon, IMG.usericon, IMG.readericon {min-height:22px;}
+IMG.icon {border:0px solid;width:22px;height:22px;background-color:#A00;border-radius:3px;-webkit-border-radius:3px}
+IMG.userpicon {max-height:22px;max-width:72px}
+/* Class for picon, which are used in basic webif, not in old webif */
+IMG.statususericon {}
+IMG.protoicon {}
+IMG.usericon {}
+IMG.readericon {}
 
 /* 13. SPAN Elements
 ------------------------------------------------------------------------------------*/
@@ -262,7 +252,7 @@ text.graph_error {text-anchor:middle;fill:red}
 text.graph_grid_txt {fill:gray;text-anchor:end;style:font-size:12px}
 path.graph_grid {stroke:gray;stroke-opacity:0.5}
 
-/* 15. OTHER CLASS
+/* 15. OTHER CLASS (Class for Info in status and other)
 ------------------------------------------------------------------------------------*/
 DIV.info {max-width:1300px;margin:20px auto;border-top:1px solid #AAA}
 TABLE.invisible TD:first-child {padding-left:0}
