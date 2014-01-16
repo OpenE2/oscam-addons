@@ -1,15 +1,16 @@
 <!--OSCam;4060798411;1.20-unstable_svn;9365;-->
-<DIV ID="main">
-	<UL ID="mainmenu" CLASS="menu">
-			<LI CLASS="##MENUACTIVE0##"><A HREF="status.html">Status</A></LI>
-			<LI CLASS="##MENUACTIVE1##"><A HREF="config.html">Config</A></LI>
-			<LI CLASS="##MENUACTIVE2##"><A HREF="readers.html">Readers</A></LI>
-			<LI CLASS="##MENUACTIVE3##"><A HREF="userconfig.html">Users</A></LI>
-			<LI CLASS="##MENUACTIVE4##"><A HREF="services.html">Services</A></LI>
-			<LI CLASS="##MENUACTIVE5##"><A HREF="files.html?file=oscam.version">Files</A></LI>
-			<LI CLASS="##MENUACTIVE6##"><A HREF="failban.html">Failban</A>##FAILBANNOTIFIER##</LI>
+	<TABLE CLASS="menu">
+		<TR>
+			<TD CLASS="##MENUACTIVE0##"><A HREF="status.html">STATUS</A></TD>
+			<TD CLASS="##MENUACTIVE1##"><A HREF="config.html">CONFIGURATION</A></TD>
+			<TD CLASS="##MENUACTIVE2##"><A HREF="readers.html">READERS</A></TD>
+			<TD CLASS="##MENUACTIVE3##"><A HREF="userconfig.html">USERS</A></TD>
+			<TD CLASS="##MENUACTIVE4##"><A HREF="services.html">SERVICES</A></TD>
+			<TD CLASS="##MENUACTIVE5##"><A HREF="files.html?file=oscam.version">FILES</A></TD>
+			<TD CLASS="##MENUACTIVE6##"><A HREF="failban.html">FAILBAN</A>##FAILBANNOTIFIER##</TD>
 ##TPLCACHEEXMENUITEM##
-			<LI CLASS="##MENUACTIVE8##"><A HREF="script.html">Script</A></LI>
-			<LI CLASS="##MENUACTIVE9##"><A HREF="shutdown.html">Reset</A></LI>
-	</UL>
-</DIV>
+			<TD CLASS="##MENUACTIVE8##"><A HREF="script.html">SCRIPT</A></TD>
+			<TD CLASS="##MENUACTIVE9##"><A HREF="shutdown.html">SHUTDOWN</A></TD>
+		</TR>
+	</TABLE>
+	
