@@ -2,43 +2,37 @@
 ##TPLHEADER##
 ##TPLMENU##
 ##TPLMESSAGE##
-<DIV ID="subnav">
-	<UL ID="nav" CLASS="configmenu">
-		<LI CLASS="configmenu"><A HREF="userconfig.html?part=adduser">Add User</A></LI>
-		<LI CLASS="configmenu"><A HREF="userconfig.html?action=reinit">Reinit User DB</A></LI>
-		<LI CLASS="configmenu"><A HREF="userconfig.html?action=resetalluserstats">Reset Userstats</A></LI>
-		<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&amp;hidelabels=1">Show Graphs</A></LI>
-	</UL>
-</DIV>
+	<TABLE CLASS="configmenu">
+		<TR>
+			<TD CLASS="configmenu"><A HREF="userconfig.html?part=adduser">Add User</A></TD>
+			<TD CLASS="configmenu"><A HREF="userconfig.html?action=reinit">Reinit User DB</A></TD>
+			<TD CLASS="configmenu"><A HREF="userconfig.html?action=resetalluserstats">Reset Userstats</A></TD>
+			<TD CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=users&hidelabels=1">Show Graphs</A></TD>
+		</TR>
+	</TABLE>
 	<TABLE CLASS="users">
 		<TR>
-			<TH COLSPAN="7"></TH>
-			<TH COLSPAN="8">ECM</TH>
-			<TH COLSPAN="2">EMM</TH>
-##TPLUSERCWCYCLE##
-##TPLUSERANTICASC##
-			<TH COLSPAN="5"></TH>
-		</TR>
-		<TR>
-			<TH>On/Off</TH>
+			<TH>Enabled</TH>
 			<TH>Label</TH>
-			<TH TITLE="Idle Info">Status<BR>On Channel</TH>
+			<TH>Status</TH>
 			<TH>Address</TH>
 			<TH>Protocol</TH>
 			<TH>Groups</TH>
-			<TH>Last Channel<BR>Idle</TH>
-			<TH TITLE="Last ECM Time">LTIME</TH>
+			<TH>Last Channel</TH>
+			<TH>On Channel</TH>
+			<TH>Idle</TH>
 			<TH TITLE="Delivered ECM with status OK">OK</TH>
 			<TH TITLE="Delivered ECM with status not OK">NOK</TH>
 			<TH TITLE="Ignored ECM by filters, part of NOK">IGN</TH>
 			<TH TITLE="Timeout ECM, part of NOK">TOUT</TH>
+##TPLCWCYCLETHV##
 			<TH TITLE="Delivered ECM from cache, part of OK">CACHE</TH>
 			<TH TITLE="Delivered ECM from tunneled, part of OK">TUN</TH>
-			<TH TITLE="Sum of ECM's in last 60s">last 60s</TH>
-			<TH TITLE="Valid EMM delivered">OK</TH>
-			<TH TITLE="Invalid EMM delivered">NOK</TH>
-##TPLCWCYCLETHV##
+			<TH TITLE="Last ECM Time">LTIME</TH>
+			<TH TITLE="Valid EMM delivered">EOK</TH>
+			<TH TITLE="Invalid EMM delivered">ENOK</TH>
 ##TPLCWANTICASCTHV##
+			<TH TITLE="Sum of ECM's in last 60s">ECMs(60s)</TH>
 			<TH TITLE="Expiration date of account">Exp. Date</TH>
 			<TH COLSPAN="3" CLASS="centered">Action</TH>
 		</TR>
