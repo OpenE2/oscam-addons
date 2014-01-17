@@ -1,9 +1,16 @@
-<!--OSCam;690217343;1.20-unstable_svn;9365;-->
 /* 1. RESET
 ------------------------------------------------------------------------------------*/
-HTML,DIV,TABLE,TBODY,TFOOT,THEAD,TR,TH,TD {margin:0;padding:0;border:0}
+HTML,BODY,DIV,TABLE,TBODY,TFOOT,THEAD,TR,TH,TD {margin:0;padding:0;border:0}
 
-/* 2. BASIC SETTINGS 
+/* 2. BASIC DIVISION PAGES for footer at the bottom
+------------------------------------------------------------------------------------*/
+HTML,BODY {height:100%}
+#wrapper {min-height:100%;position:relative}
+#header {padding:10px}
+#content {padding-bottom:130px}
+#footer {width:100%;height:100px;position:absolute;bottom:0;left:0}
+
+/* 3. BASIC SETTINGS 
 ------------------------------------------------------------------------------------*/
 BODY {background-color:white;font-family:Arial;font-size:11px;text-align:center}
 P {color:white}
@@ -15,12 +22,12 @@ H4.footline1 {}
 H4.footline2 {}
 H4.styleauthor:after {content:"Eneen"}
 
-/* 3. BLINKING TEXT - css3
+/* 4. BLINKING TEXT - css3
 ------------------------------------------------------------------------------------*/
 /* Standard (Mozilla) */@keyframes blink{from{opacity:1}to{opacity:0}}
 /* Chrome & Safari */   @-webkit-keyframes blink{from{opacity:1}to{opacity:0}}
 
-/* 4. TABLES
+/* 5. TABLES
 ------------------------------------------------------------------------------------*/
 TABLE {border-spacing:1px;margin-left:auto;margin-right:auto}
 TABLE.upspace {margin-top:28px}
@@ -46,7 +53,7 @@ TABLE.users {}
 TABLE.user_totals {}
 TABLE.ECM_totals {margin-top:10px}
 
-/* 5. TABLE HEADER - TH
+/* 6. TABLE HEADER - TH
 ------------------------------------------------------------------------------------*/
 TH {height:10px;padding:5px;background-color:#CCC;color:black}
 TH.statuscol0 {text-align:center;width:10px}
@@ -70,7 +77,7 @@ TH.withservices {}
 TH.notservices {}
 TH.lbservices {}
 
-/* 6. TABLE CELLS - TD
+/* 7. TABLE CELLS - TD
 ------------------------------------------------------------------------------------*/
 TD {height:10px;padding:5px;background-color:#EEE;color:black;text-align:left}
 TD.centered {text-align:center}
@@ -130,7 +137,7 @@ TD.configmenu_selected {color:black; background-color:#E6FEBF;font-weight:bold;f
 TD.subheadline {height:10px;border:0px;padding:5px;background-color:#CCC;color:black}
 TD.subheadline A {text-decoration:none}
 
-/* 7. TABLE ROW - TR
+/* 8. TABLE ROW - TR
 ------------------------------------------------------------------------------------*/
 TR.s TD {background-color:#E1E1EF}
 TR.l TD {background-color:#E1E1EF}
@@ -153,7 +160,7 @@ TR.e_valid TD {background-color:#E6FEBF;font-family:"Courier New", monospace}
 TR.e_expired TD {background-color:#FFF3E7;font-family:"Courier New", monospace}
 TR.e_header TD {font-family:"Courier New", monospace}
 
-/* 8. DIV Elements
+/* 9. DIV Elements
 ------------------------------------------------------------------------------------*/
 DIV.log {margin:20px 0;border:1px dotted #AAA;background-color:#FAFAFA;padding:10px;font-family:"Courier New", monospace;color:#666;word-wrap:break-word; text-align:left}
 DIV.sidlist {border:1px dotted #AAA;background-color:#fffdf5;padding:2px;font-family:"Courier New", monospace;color:#666;word-wrap:break-word; text-align:left}
@@ -169,15 +176,15 @@ DIV.cccamentitlementcontrols {margin-top:14px}
 DIV.warning {margin:42px 0 14px 0}
 DIV.logo {}
 DIV.header {}
-DIV.footer {border-top:1px solid #AAA;margin-top:20px;padding-top:10px}
+DIV.footer {border-top:1px solid #AAA;padding-top:10px}
 DIV.groups {overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;width:40px;text-align:center;cursor:pointer;cursor:default}
 
-/* 9. TEXTAREA
+/* 10. TEXTAREA
 ------------------------------------------------------------------------------------*/
 TEXTAREA.bt {font-size:12px}
 TEXTAREA.editor {font-size:11px;width:98%;height:508px;border:1px dotted #AAA;background-color: #FAFAFA;padding:8px 10px;font-family:"Courier New", monospace; color:black;word-wrap:break-word;text-align:left}
 
-/* 10. BUTTON,INPUT,SELECT
+/* 11. BUTTON,INPUT,SELECT
 ------------------------------------------------------------------------------------*/
 /* Firefox */
 SELECT {padding:2px}
@@ -188,7 +195,7 @@ input[type="submit"] {padding:2px 6px;}
 }
 input[type='checkbox'] {width:18px;height:18px;position: relative;top: 5px;} /* Bad solution for checkbox */
 
-/* 11. LINKS
+/* 12. LINKS
 ------------------------------------------------------------------------------------*/
 A.debugl:link {margin:0 1px;}
 A.debugls:link {background-color:#A00;padding:1px 2px 2px;color:#FFF}
@@ -204,7 +211,7 @@ A.tooltip  SPAN {display:none;z-index:99}
 A.tooltip1 SPAN {display:none;z-index:99}
 A:hover SPAN {display:block;position:absolute;top:2em;right:1em;padding:10px;color:#350;font-weight:normal;background:#FFD;text-align: left;border: 1px solid #666}
 
-/* 11. LINKS
+/* 13. LINKS
 ------------------------------------------------------------------------------------*/
 A.debugl:link {margin:0 1px;}
 A.debugls:link {background-color:#A00;padding:1px 2px 2px;color:#FFF}
@@ -220,7 +227,7 @@ A.tooltip  SPAN {display:none;z-index:99}
 A.tooltip1 SPAN {display:none;z-index:99}
 A:hover SPAN {display:block;position:absolute;top:2em;right:1em;padding:10px;color:#350;font-weight:normal;background:#FFD;text-align: left;border: 1px solid #666}
 
-/* 12. IMAGE
+/* 14. IMAGE
 ------------------------------------------------------------------------------------*/
 IMG {border:0px solid}
 IMG.icon {border:0px solid;width:22px;height:22px;background-color:#A00;border-radius:3px;-webkit-border-radius:3px}
@@ -231,7 +238,7 @@ IMG.protoicon {}
 IMG.usericon {}
 IMG.readericon {}
 
-/* 13. SPAN Elements
+/* 15. SPAN Elements
 ------------------------------------------------------------------------------------*/
 SPAN.e_valid {background-color:#E6FEBF}
 SPAN.e_expired {background-color:#FFF3E7}
@@ -245,14 +252,14 @@ SPAN.text_script {display:inline-block;margin:28px;font-weight:bold}
 SPAN.text_entitle {display:inline-block;margin:14px;font-weight:bold}
 SPAN.text_totalecm {display:inline-block;margin:14px;font-weight:bold}
 
-/* 14. GRAPH
+/* 16. GRAPH
 ------------------------------------------------------------------------------------*/
 rect.graph_bg {fill:white}
 text.graph_error {text-anchor:middle;fill:red}
 text.graph_grid_txt {fill:gray;text-anchor:end;style:font-size:12px}
 path.graph_grid {stroke:gray;stroke-opacity:0.5}
 
-/* 15. OTHER CLASS (Class for Info in status and other)
+/* 17. OTHER CLASS (Class for Info in status and other)
 ------------------------------------------------------------------------------------*/
 DIV.info {max-width:1300px;margin:20px auto;border-top:1px solid #AAA}
 TABLE.invisible TD:first-child {padding-left:0}

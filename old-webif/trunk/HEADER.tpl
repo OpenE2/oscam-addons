@@ -9,8 +9,17 @@
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 	<script type="text/javascript" src="oscam.js"></script>
 	<style type="text/css">##HTTPPICONSIZE##</style>
+	<!--[if lt IE 7]> <!-- for older browser -->
+	    <style type="text/css">
+			#wrapper { height:100%; }
+		</style>
+    <![endif]-->
 ##REFRESH##
 </HEAD>
 <BODY>
-	<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
-	##LOGOBIT##
+<DIV ID="wrapper">
+	<DIV ID="header">
+		<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
+		##LOGOBIT##
+	</DIV> <!-- End wrapper -->
+	<DIV ID="content">
