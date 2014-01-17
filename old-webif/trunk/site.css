@@ -182,7 +182,7 @@ DIV.groups {overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;whi
 /* 10. TEXTAREA
 ------------------------------------------------------------------------------------*/
 TEXTAREA.bt {font-size:12px}
-TEXTAREA.editor {font-size:11px;width:98%;height:508px;border:1px dotted #AAA;background-color: #FAFAFA;padding:8px 10px;font-family:"Courier New", monospace; color:black;word-wrap:break-word;text-align:left}
+TEXTAREA.editor {font-size:11px;width:95%;height:508px;border:1px dotted #AAA;background-color: #FAFAFA;padding:8px 10px;font-family:"Courier New", monospace; color:black;word-wrap:break-word;text-align:left}
 
 /* 11. BUTTON,INPUT,SELECT
 ------------------------------------------------------------------------------------*/

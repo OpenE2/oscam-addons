@@ -9,7 +9,11 @@
 ##REFRESH##
 </HEAD>
 <BODY>
-	<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
+<DIV ID="wrapper">
+	<DIV ID="header">
+		<DIV CLASS="header"><H2 CLASS="headline1">OSCAM ##CS_VERSION## build r##CS_SVN_VERSION##</H2></DIV>
+	</DIV> <!-- End wrapper -->
+	<DIV ID="content">
 ##TPLMENU##
-	<BR><P CLASS="blinking">OSCam Shutdown - Try Reconnect in ##SECONDS## Seconds</P><BR><BR>
+		<BR><P CLASS="blinking">OSCam Shutdown - Try Reconnect in ##SECONDS## Seconds</P><BR><BR>
 ##TPLFOOTER##
