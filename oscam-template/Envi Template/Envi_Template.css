@@ -556,9 +556,12 @@ textarea.bt {
 
 /* generaly settings for all select */
 select {
-	padding:2px
+	padding:2px;
+	border: 1px solid #CCC
 }
-
+select:hover{
+    border:1px solid #000
+}
 /* solution for align vertical checkbox with text */
 input[type=checkbox] {
 	vertical-align:text-bottom;
