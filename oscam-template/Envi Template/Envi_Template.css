@@ -787,7 +787,8 @@ div.sidlistclose a {
 }
 div.footer {
 	background: rgba(23,22,22,0.5);
-	color:#AEAEAE;
+	border-top: 7px solid #000;
+	color:#1C1C1C
 }
 
 /* TEXTAREA */
