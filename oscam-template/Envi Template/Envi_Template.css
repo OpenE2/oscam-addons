@@ -566,7 +566,7 @@ select:hover{
 /* settings for select and first option in select 
  * otherdropdown	- in script.html
  */
-#otherdropdown {
+#otherdropdown select{
 	color:gray
 }
 #otherdropdown option:first-child{
