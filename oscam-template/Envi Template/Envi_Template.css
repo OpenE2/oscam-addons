@@ -560,8 +560,16 @@ select {
 	border: 1px solid #CCC
 }
 select:hover{
-    border:1px solid #000
+	border:1px solid #000
 }
+/* settings for first option in select 
+ * otherdropdown	- in script.html
+ */
+#otherdropdown option:first-child{
+    font-weight:bold;
+}
+
+
 /* solution for align vertical checkbox with text */
 input[type=checkbox] {
 	vertical-align:text-bottom;
