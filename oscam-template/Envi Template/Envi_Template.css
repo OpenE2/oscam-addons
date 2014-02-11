@@ -91,9 +91,10 @@ a:hover span {
 /* ******** 5. MAIN MENU */
 
 /* ID are for creating main menu in menu.html */
-#main {}
-#mainmenu {
+#main {
 	height:70px;
+}
+#mainmenu {
 	padding-top:10px
 }
 #mainmenu li {
