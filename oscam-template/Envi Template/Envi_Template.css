@@ -725,8 +725,8 @@ div.sidlistclose a {
 	color:#FFF
 }
 div.footer {
-	background-color:#EEE;
-	border-top:3px solid #CCC
+	background-image: url(data:image/gif;base64,R0lGODlhKAAnAKIAAC0pNiklMi4qNywoNSomMysnNAAAAAAAACH5BAAAAAAALAAAAAAoACcAAAP/SDNV2qQxNyIsK9jQMFtEGHpKpVjSwHWXhTqeJBFAdD4ABuuwK3eRz0QWqOyGrAKAYQvuOrWJrTVFMVmlRQdJ461spmGFkds2ZaHceHSh3HQPiHaL4Vgf7LblE19dP3SAPEY8GHgjFjUzT0NpLAtlZT0OTUwnMkhbC2NPKZstSXcXgiEcE6dcUE6UHkxIAqMiiVVyhilFQXZmllhtfBN+nSmGrlQiJC2bPke2bTCnSYPRPYIgPyVZy3CInS/cgCFiXZ6OJ43OEZJ/k6AoatDcvmjYRc90z+PEdUaZ0XOYhWIAiXOiDIMVHDQUEfIDxBVuYPQIg/CiECJSOlxxerQtn8iYMHH+xHHz4tyVZicFrQAyrRcFlnzYhUsE5A+4Yw2WpHARRgmcazv29NISZMTKPTFFaIghBsQqNNGmdGNaTIsUWS+hifkB8B/LRZ9mqHOaw5wZYlP4oFjbkAUuZV4HsSkqcGOgpl1czBwh5RwlnkLlUZhDsG24CvWeSjFU1pbVi4MI9f1IyMpfdlmLEi1xj8eSilHTbhM31kRZu0YSAAA7);
+	border-top:7px solid #14151B
 }
 
 /* TEXTAREA */
