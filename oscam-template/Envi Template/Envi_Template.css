@@ -92,8 +92,7 @@ h4 {
 	font-size:18px;
 	line-height:9px;
 	margin-top:20px;
-	margin-bottom:20px;
-	color:#F00423
+	margin-bottom:20px
 }
 
 /* ******** 4. LINKS */
@@ -707,10 +706,13 @@ body {
 p.text-large-red {
 	color:red
 }
-h2, h4 {
+h2 {
 	color:#AAA
 }
-
+h4 {
+	color:#F00423
+}
+	
 /* LINKS */
 a.debugls:link, a.debugls:visited {
 	background-color:#A00;
