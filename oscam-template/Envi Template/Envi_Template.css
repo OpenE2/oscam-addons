@@ -675,9 +675,10 @@ a:link, a:visited, a:active {
 	text-shadow:1px 1px 1px #000
 }
 #nav {}
-li.menu:hover, li.menu_selected, 
+li.menu:hover a, li.menu_selected a, 
 li.configmenu:hover, li.configmenu_selected {
-	color:#F00423
+	color:#F00423;
+	transition:all 0.5s ease 0s
 }
 
 /* TABLE */
