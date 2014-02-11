@@ -21,7 +21,7 @@ html,body,* html #wrapper {height:100%}
  * Color setting in COLOR section
  */
 body {
-	font-family:Arial;
+	font-family:Arial,Helvetica,sans-serif;
 	font-size:11px;
 	text-align:center
 }
@@ -631,8 +631,8 @@ li.menu a,li.configmenu a,li.menu_selected a,li.configmenu_selected a,td.statusc
 /* BASIC SETTINGS */
 
 body {
-	background-color:#FFF;
-	color:#000
+	background-color:#EEE;
+	color:#404040
 }
 p.text-large-red {
 	color:red
