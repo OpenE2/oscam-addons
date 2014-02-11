@@ -95,14 +95,16 @@ a:hover span {
 	height:60px;
 }
 #mainmenu {
-	padding-top:13px;
+	padding-top:20px;
 }
 #mainmenu li {
 	display:inline;
-	margin-left:2px;
-	margin-right:2px;
+	margin-left:5px;
+	margin-right:5px;
 	padding:5px 3px 3px;
-	font-size:18px;
+	font-size:14px;
+	font-weight:400;
+	text-transform:uppercase
 }
 
 /* ******** 6. SUBNAV */
@@ -675,7 +677,7 @@ a:link, a:visited, a:active {
 #nav {}
 li.menu:hover, li.menu_selected, 
 li.configmenu:hover, li.configmenu_selected {
-	background-color:#DDD
+	color:#F00423
 }
 
 /* TABLE */
