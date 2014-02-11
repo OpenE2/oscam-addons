@@ -5,6 +5,42 @@
  *
  */
 
+/* Table of Content
+============================================================================================
+# GENERALY CSS SETTINGS
+	# 1. RESET
+	# 2. BASIC DIVISION PAGES
+	# 3. BASIC SETTINGS
+	# 4. LINKS
+	# 5. MAIN MENU
+	# 6. SUBNAV
+	# 7. TABLE
+	# 8. TABLE TR
+	# 9. TABLE TH
+	# 10. TABLE TD
+	# 11. DIV
+	# 12. TEXTAREA,SELECT,INPUT
+	# 13. IMAGE
+	# 14. SPAN
+	# 15. GRAPH
+	# 16. SORTING IN TABLE
+	# 17. OTHER SETTINGS
+
+# COLORS
+	# BASIC SETTINGS
+	# LINKS
+	# MAIN MENU & SUBNAV
+	# TABLE
+	# TABLE TR
+	# TABLE TH
+	# TABLE TD
+	# DIV
+	# TEXTAREA
+	# IMAGE
+	# SPAN
+	# GRAPH
+*/
+
 /* ================================= GENERALY CSS SETTINGS ================================= */
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
@@ -583,7 +619,7 @@ text.graph_error {text-anchor:middle;}
 text.graph_grid_txt {text-anchor:end;style:font-size:12px;}
 path.graph_grid {stroke-opacity:0.5;}
 
-/* ******** 17. SORTING IN TABLE */
+/* ******** 16. SORTING IN TABLE */
 
 /* Classes are for sorting  */
 .users th {
@@ -617,7 +653,7 @@ path.graph_grid {stroke-opacity:0.5;}
 	padding-right:8px
 }
 
-/* ******** 18. OTHER SETTINGS */
+/* ******** 17. OTHER SETTINGS */
 /* margin top from previous table */
 .margintop {
 	margin-top:30px
@@ -662,7 +698,7 @@ a:link, a:visited, a:active {
 	color:#B3B3B3
 }
 
-/* MAIN MENU & SUBNAV*/
+/* MAIN MENU & SUBNAV */
 #main {
 	background: -moz-linear-gradient(left,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
