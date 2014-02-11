@@ -92,7 +92,8 @@ h4 {
 	font-size:18px;
 	line-height:9px;
 	margin-top:20px;
-	margin-bottom:20px
+	margin-bottom:20px;
+	color:#F00423
 }
 
 /* ******** 4. LINKS */
@@ -564,7 +565,7 @@ select:hover{
 }
 
 /* settings for select and first option in select 
- * otherdropdown	- in script.html
+ * otherdropdown	- in script.html, menu.html
  */
 #otherdropdown select{
 	color:gray
