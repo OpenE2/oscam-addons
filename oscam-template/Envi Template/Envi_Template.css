@@ -95,7 +95,8 @@ a:hover span {
 	height:70px;
 }
 #mainmenu {
-	padding-top:10px
+	padding-top:20px;
+	text-shadow:1px 1px 1px #000
 }
 #mainmenu li {
 	display:inline;
@@ -103,7 +104,6 @@ a:hover span {
 	margin-right:2px;
 	padding:5px 3px 3px;
 	font-size:18px;
-	font-weight:700
 }
 
 /* ******** 6. SUBNAV */
@@ -658,7 +658,7 @@ a:hover span {
 	border:1px solid #000
 }
 a:link, a:visited, a:active {
-	color:#050840
+	color:#B3B3B3
 }
 
 /* MAIN MENU & SUBNAV*/
