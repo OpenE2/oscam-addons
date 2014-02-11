@@ -562,11 +562,18 @@ select {
 select:hover{
 	border:1px solid #000
 }
-/* settings for first option in select 
+
+/* settings for select and first option in select 
  * otherdropdown	- in script.html
  */
+#otherdropdown {
+	color:gray
+}
 #otherdropdown option:first-child{
-    font-weight:bold;
+    display:none
+}
+#otherdropdown option { 
+	color:#000
 }
 
 
