@@ -622,7 +622,7 @@ td#in.centered img {
 /* in module-webif.c and userconfig_notify.html */
 span.span_notifier {
 	margin-left:2px;
-	padding:1px 3px
+	padding:1px 4px
 }
 
 /* in module-webif.c value for STATUS item ( more info in Changeset 6668 by alno )
