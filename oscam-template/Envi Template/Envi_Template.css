@@ -162,9 +162,11 @@ a:hover span {
  * cacheex.html, config\menu.html, entitlements.html, failban.html,
  * files\menu.html, readerconfig.html, readers.html, readerstats.html, script.html, 
  * services.html, services_edit.html, status.html, user_edit.html, userconfig.html */
-#subnav {}
+#subnav {
+	height:30px
+}
 #nav {
-	height:20px;
+	padding-top:5px
 }
 #nav li {
 	display:inline;
@@ -807,9 +809,12 @@ div.sidlistclose a {
 	color:#FFF
 }
 div.footer {
-	background: rgba(23,22,22,0.5);
-	border-top: 7px solid #000;
+	background-color:#17191B;
+	border-top:7px solid #1A1A1A;
 	color:#1C1C1C
+}
+div.footer p {
+	color:#656565
 }
 
 /* TEXTAREA */
