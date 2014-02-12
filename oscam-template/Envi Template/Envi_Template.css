@@ -824,6 +824,34 @@ textarea.editor {
 	color:#000
 }
 
+input[type="submit"] {
+	background: #ff4a45;
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ff4a45), to(#bd0000));
+	background-image: -webkit-linear-gradient(top, #ff4a45, 0%, #bd0000, 100%);
+	background-image: -moz-linear-gradient(top, #ff4a45 0%, #bd0000 100%);
+	background-image: linear-gradient(to bottom, #ff4a45 0%, #bd0000 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff4a45', endColorstr='#ffbd0000', GradientType=0);
+	border-color: #bd0000 #bd0000 #710000;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	*background-color: #ff4a45;
+	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	border-color: #bd0000;
+	border:none;
+	padding: 3px
+
+}
+input[type="submit"]:hover {
+	background: #232527 !important; 
+	color: #fff !important; 
+	text-decoration: none; 
+	-webkit-transition: all .01s ease-out; 
+	-moz-transition: all .01s linear; 
+	transition: all .01s linear;
+}
 /* IMAGE */
 img.icon {
 	background-color:#A00
