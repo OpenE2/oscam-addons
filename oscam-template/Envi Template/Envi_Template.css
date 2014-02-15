@@ -85,7 +85,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:"Skyndas for Streamboard Team | Envi Template - Last update 2014-02-12"}
+p.styleauthor:after {content:"Skyndas for Streamboard Team | Envi Template - Last update 2014-02-15"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -783,7 +783,8 @@ th.nameinfo {
 
 /* TABLE TD */
 td {
-	background-color:#EEE
+	background-color:#C7C7C7;
+	color:#333
 }
 td.subheadline {
 	background-color:#CCC
