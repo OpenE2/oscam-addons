@@ -1,5 +1,5 @@
 <!--OSCam;3273795308;1.20-unstable_svn;9535;-->
-		<TR CLASS="##CLIENTTYPE##">
+		<TR class="##CLIENTTYPE##" onmouseenter="highliteLogLine(this)">
 			<TD CLASS="statuscol0">##HIDEIDX##</TD>
 			<TD CLASS="statuscol1">##CSIDX##</TD>
 			<TD CLASS="statuscol4">##STATUSUSERICON##</TD>

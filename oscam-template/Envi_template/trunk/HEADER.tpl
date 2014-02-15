@@ -11,6 +11,19 @@
 	<script type="text/javascript" src="oscam.js"></script>
 	<style type="text/css">##HTTPPICONSIZE##</style>
 ##REFRESH##
+	<script type="text/javascript">
+	function highliteLogLine(value) {
+	    var src = value.getElementsByTagName('span')[0];
+	    var loglines = document.getElementsByClassName('log')[0].getElementsByTagName('span');
+	    for (var i = 0; i < loglines.length; i++) {
+	        if(loglines[i].getAttribute('class') == src.innerHTML) {
+	            loglines[i].style.background='#aaaaaa';
+	        } else {
+	            loglines[i].style.background='#ffffff';
+	        }
+	    }
+	}
+	</script>
 </HEAD>
 <BODY>
 <DIV ID="wrapper"> <!-- Start wrapper -->
