@@ -774,7 +774,8 @@ tr.p td,tr.scanusbsubhead td{background-color:#FDFBE1}
 
 /* TABLE TH */
 th {
-	background-color:#CCC
+	background-color:#2F3133;
+	color:#FFF
 }
 th.nameinfo {
 	background-color:#999
@@ -825,24 +826,24 @@ textarea.editor {
 }
 
 input[type="submit"] {
-	background: #ff4a45;
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ff4a45), to(#bd0000));
-	background-image: -webkit-linear-gradient(top, #ff4a45, 0%, #bd0000, 100%);
-	background-image: -moz-linear-gradient(top, #ff4a45 0%, #bd0000 100%);
-	background-image: linear-gradient(to bottom, #ff4a45 0%, #bd0000 100%);
+	background:#FF4A45;
+	color:#FFF;
+	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#FF4A45), to(#BD0000));
+	background-image: -webkit-linear-gradient(top, #FF4A45, 0%, #BD0000, 100%);
+	background-image: -moz-linear-gradient(top, #FF4A45 0%, #BD0000 100%);
+	background-image: linear-gradient(to bottom, #FF4A45 0%, #BD0000 100%);
 	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff4a45', endColorstr='#ffbd0000', GradientType=0);
-	border-color: #bd0000 #bd0000 #710000;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	*background-color: #ff4a45;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF4A45', endColorstr='#BD0000', GradientType=0);
+	border-color:#BD0000 #BD0000 #710000;
+	border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	*background-color:#FF4A45;
 	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-	border-color: #bd0000;
+	border-color:#BD0000;
 	border:none;
-	padding: 3px
-
+	padding:3px;
+	cursor:pointer
 }
 input[type="submit"]:hover {
 	background: #232527 !important; 
