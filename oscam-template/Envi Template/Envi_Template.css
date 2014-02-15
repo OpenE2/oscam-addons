@@ -235,6 +235,9 @@ table.user_totals {
 table.cacheex, table#dataTable.stats {
 	width:80%
 }
+table.cacheex input {
+	margin:1px 5px
+}
 
 /* Table in savetemplates.html 
  * OLD DESIGN FOR MENU IN savetemplates.html !!!
@@ -559,10 +562,12 @@ textarea.bt {
 /* generaly settings for all select */
 select {
 	padding:2px;
-	border: 1px solid #CCC
 }
-select:hover{
-	border:1px solid #000
+
+/* generaly settings for all input */
+input[type="text"] {
+	padding:2px;
+	border:1px solid #CCC
 }
 
 /* settings for select and first option in select 
@@ -826,6 +831,13 @@ textarea.editor {
 	color:#000
 }
 
+select {
+	border: 1px solid #CCC
+}
+select:hover{
+	border:1px solid #000
+}
+
 input[type="submit"] {
 	background:#FF4A45;
 	color:#FFF;
@@ -852,7 +864,14 @@ input[type="submit"]:hover {
 	text-decoration: none; 
 	-webkit-transition: all .01s ease-out; 
 	-moz-transition: all .01s linear; 
-	transition: all .01s linear;
+	transition: all .01s linear
+}
+
+input[type="text"] {
+	border:1px solid #CCC
+}
+input[type="text"]:hover{
+	border:1px solid #000
 }
 /* IMAGE */
 img.icon {
