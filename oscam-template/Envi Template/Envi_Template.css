@@ -840,14 +840,14 @@ input[type="submit"] {
 	*background-color:#FF4A45;
 	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-	border-color:#BD0000;
-	border:none;
+	border:2px solid #BD0000;
 	padding:3px;
 	cursor:pointer
 }
 input[type="submit"]:hover {
 	background: #232527 !important; 
-	color: #fff !important; 
+	color: #fff !important;
+	border:2px solid #000;
 	text-decoration: none; 
 	-webkit-transition: all .01s ease-out; 
 	-moz-transition: all .01s linear; 
