@@ -203,6 +203,9 @@ table.config {
 table.readers {
 	width:100%
 }
+table.readers input {
+	margin:1px 5px
+}
 
 /* Table in readerconfig.html */
 table.configreader {
@@ -222,6 +225,9 @@ table.statsbalance td:last-child img.icon {
 /* Table in USERS in userconfig.html */
 table.users {
 	width:100%
+}
+table.users input {
+	margin:1px 5px
 }
 table.ECM_totals {
 	margin-bottom:20px
@@ -280,6 +286,9 @@ table#cachexstats {
 #addnewservice,#servicesedit {
 	width:35%;
 	text-align:center
+}
+#addnewservice input{
+	margin:1px 5px
 }
 #servicesedit td {
 	text-align:center
@@ -854,7 +863,7 @@ input[type="submit"] {
 	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	border:2px solid #BD0000;
-	padding:3px;
+	padding:0px 3px;
 	cursor:pointer
 }
 input[type="submit"]:hover {
