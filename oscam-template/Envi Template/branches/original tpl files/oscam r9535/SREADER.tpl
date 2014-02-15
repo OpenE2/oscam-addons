@@ -1,0 +1,2 @@
+<!--OSCam;4197483843;1.20-unstable_svn;9535;-->
+<A CLASS="statususericon" HREF="readerconfig.html?label=##READERNAMEENC##" TITLE="Edit Reader: ##READERNAME##&#013;##CLIENTDESCRIPTION##&#013;##UPICMISSING##">##READERNAME##</A>

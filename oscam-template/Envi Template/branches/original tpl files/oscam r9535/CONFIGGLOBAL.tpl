@@ -1,0 +1,82 @@
+<!--OSCam;1892538991;1.20-unstable_svn;9535;-->
+##TPLHEADER##
+##TPLMENU##
+##TPLCONFIGMENU##
+##TPLMESSAGE##
+	<form action="config.html" method="get">
+		<input name="part" type="hidden" value="global">
+		<input name="action" type="hidden" value="execute">
+		<input name="suppresscmd08" type="hidden" value="0">
+		<TABLE CLASS="config">
+			<TR><TH COLSPAN="2">Edit Global Config</TH></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#serverip##TPLHELPSUFFIX##Serverip:</A></TD><TD><input name="serverip" type="text" size="15" maxlength="15" value="##SERVERIP##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#nice##TPLHELPSUFFIX##Nice:</A></TD><TD><input name="nice" type="text" size="5" maxlength="3" value="##NICE##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#netprio##TPLHELPSUFFIX##Net prio:</A></TD><TD><input name="netprio" type="text" size="5" maxlength="3" value="##NETPRIO##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#bindwait##TPLHELPSUFFIX##Bind wait:</A></TD><TD><input name="bindwait" type="text" size="5" maxlength="5" value="##BINDWAIT##"> s</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#resolvegethostbyname##TPLHELPSUFFIX##Resolver:</A></TD>
+				<TD>
+					<select name="resolvegethostbyname">
+						<option value="0" ##RESOLVER0##>0 - getadressinfo()</option>
+						<option value="1" ##RESOLVER1##>1 - gethostbyname()</option>
+					</select>
+				</TD>
+			</TR>
+##TPLLOCALCARDS##
+##TPLUNLOCKPARENTAL##
+			<TR><TD>##TPLHELPPREFIX##conf#block_same_ip##TPLHELPSUFFIX##Simple block:</A></TD>
+				<TD>
+					<input name="block_same_ip" type="hidden" value="0"><input name="block_same_ip" type="checkbox" value="1" ##BLOCKSAMEIPCHECKED##>&nbsp;same IP&nbsp;&nbsp;&nbsp;
+					<input name="block_same_name" type="hidden" value="0"><input name="block_same_name" type="checkbox" value="1" ##BLOCKSAMENAMECHECKED##>&nbsp;same Name
+				</TD>
+			</TR>
+			<TR><TD>##TPLHELPPREFIX##conf#dropdups##TPLHELPSUFFIX##Drop duplicate users:</A></TD>
+				<TD>
+					<input name="dropdups" value="0" type="hidden"><input name="dropdups" value="1" type="checkbox" ##DROPDUPSCHECKED##>
+				</TD>
+			</TR>
+			<TR><TH COLSPAN="2">Logging</TH></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#disableuserfile##TPLHELPSUFFIX##Usr file:</A></TD>
+				<TD>
+					<input name="usrfile" type="text" size="55" maxlength="128" value="##USERFILE##">&nbsp;
+					<input name="disableuserfile" type="hidden" value="1"><input name="disableuserfile" type="checkbox" value="0" ##DISABLEUSERFILECHECKED##>&nbsp;enabled&nbsp;
+					<select name="usrfileflag"><option VALUE="0">0 - just join/leave</option><option VALUE="1" ##USERFILEFLAGCHECKED##>1 - each zap</option></select>
+				</TD>
+			</TR>
+			<TR><TD>##TPLHELPPREFIX##conf#disablemail##TPLHELPSUFFIX##Mail file:</A></TD>
+				<TD>
+					<input name="mailfile" type="text" size="55" maxlength="128" value="##MAILFILE##">&nbsp;
+					<input name="disablemail" type="hidden" value="1"><input name="disablemail" type="checkbox" value="0" ##DISABLEMAILCHECKED##>&nbsp;enabled&nbsp;
+				</TD>
+			</TR>
+			<TR><TD>##TPLHELPPREFIX##conf#logfile##TPLHELPSUFFIX##Log file / max size:</A></TD>
+				<TD>
+					<input name="logfile" type="text" size="55" maxlength="128" value="##LOGFILE##">&nbsp;
+					<input name="disablelog" type="hidden" value="1"><input name="disablelog" type="checkbox" value="0" ##DISABLELOGCHECKED##>&nbsp;enabled&nbsp;
+					<input name="maxlogsize" type="text" size="5" maxlength="5" value="##MAXLOGSIZE##">kB
+				</TD>
+			</TR>
+			<TR><TD>##TPLHELPPREFIX##conf#logduplicatelines##TPLHELPSUFFIX##Log duplicated lines:</A></TD><TD><input name="logduplicatelines" value="0" type="hidden"><input name="logduplicatelines" value="1" type="checkbox" ##LOGDUPSCHECKED##></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#pidfile##TPLHELPSUFFIX##Pid file:</A></TD><TD><input name="pidfile" type="text" size="55" maxlength="128" value="##PIDFILE##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#cwlogdir##TPLHELPSUFFIX##CW log dir:</A></TD><TD><input name="cwlogdir" type="text" size="55" maxlength="128" value="##CWLOGDIR##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#emmlogdir##TPLHELPSUFFIX##EMM log dir:</A></TD><TD><input name="emmlogdir" type="text" size="55" maxlength="128" value="##EMMLOGDIR##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#ecmfmt##TPLHELPSUFFIX##ECM log format:</A></TD><TD><input name="ecmfmt" type="text" size="55" maxlength="128" value="##ECMFMT##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#loghistorysize##TPLHELPSUFFIX##Loghistory Size:</A></TD><TD><input name="loghistorysize" type="text" size="5" maxlength="4" value="##LOGHISTORYSIZE##"></TD></TR>
+			<TR><TH COLSPAN="2">Failban</TH></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#failbantime##TPLHELPSUFFIX##Failban time:</A></TD><TD><input name="failbantime" type="text" size="5" maxlength="6" value="##FAILBANTIME##"> min blocking IP based</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#failbancount##TPLHELPSUFFIX##Failban count:</A></TD><TD><input name="failbancount" type="text" size="5" maxlength="2" value="##FAILBANCOUNT##"> chances with wrong credentials</TD></TR>
+			<TR><TH COLSPAN="2">Timeouts / Times</TH></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#clienttimeout##TPLHELPSUFFIX##Client timeout:</A></TD><TD><input name="clienttimeout" type="text" size="5" maxlength="5" value="##CLIENTTIMEOUT##"> ms to give up and return timeout</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#fallbacktimeout##TPLHELPSUFFIX##Fallback timeout:</A></TD><TD><input name="fallbacktimeout" type="text" size="5" maxlength="5" value="##FALLBACKTIMEOUT##"> ms to switch to fallback reader</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#fallbacktimeout_percaid##TPLHELPSUFFIX##Fallback timeout per caid:</A></TD><TD><input name="fallbacktimeout_percaid" type="text" size="63" maxlength="320" value="##FALLBACKTIMEOUT_PERCAID##"></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#clientmaxidle##TPLHELPSUFFIX##Client max idle:</A></TD><TD><input name="clientmaxidle" type="text" size="5" maxlength="5" value="##CLIENTMAXIDLE##"> s to disconnect idle clients</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#sleep##TPLHELPSUFFIX##Global sleep:</A></TD><TD><input name="sleep" type="text" size="5" maxlength="5" value="##SLEEP##"> min to switch a client in sleepmode</TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#readerrestartseconds##TPLHELPSUFFIX##Reader restart seconds:</A></TD><TD><input name="readerrestartseconds" type="text" size="5" maxlength="5" value="##READERRESTARTSECONDS##"> s waittime to restart a reader</TD></TR>
+			<TR><TH COLSPAN="2">Doublecheck</TH></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#double_check##TPLHELPSUFFIX##ECM Doublecheck:</A></TD><TD><input name="double_check" value="0" type="hidden"><input name="double_check" value="1" type="checkbox" ##DCHECKCSELECTED##></TD></TR>
+			<TR><TD>##TPLHELPPREFIX##conf#double_check_caid##TPLHELPSUFFIX##Doublecheck caids:</A></TD><TD><input name="double_check_caid" type="text" size="55" maxlength="160" value="##DOUBLECHECKCAID##"></TD></TR>
+##TPLSUPPRESSCMD08##
+##TPLENABLELEDBIT##
+			<TR><TD COLSPAN="2"><input type="submit" value="Save" title="Save settings" ##BTNDISABLED##></TD></TR>
+		</TABLE>
+	</form>
+##TPLFOOTER##
