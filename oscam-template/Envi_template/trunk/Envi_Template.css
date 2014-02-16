@@ -608,7 +608,7 @@ INPUT[type=submit]:disabled {
 }
 INPUT[type=submit]:disabled:hover {
 	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat-x scroll 0 0 #FFFFFF;
-	border: 1px solid #CCCCCC;
+	border: 2px solid #CCC;
 	color: #656565;
 	cursor: pointer;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)	
@@ -832,7 +832,7 @@ th.nameinfo {
 
 /* TABLE TD */
 td {
-	background-color:#C7C7C7;
+	background-color:#D0D0D0;
 	color:#333
 }
 td.subheadline {
@@ -843,7 +843,7 @@ td.subheadline {
 
 /* in entitlements_genericbit.html */
 div.log {
-	border:1px dotted #AAA;
+	border:1px dashed #AAA;
 	background-color:#FAFAFA;
 	color:#666
 }
@@ -870,7 +870,7 @@ div.footer p {
 
 /* TEXTAREA */
 textarea.editor {
-	border:1px dotted #AAA;
+	border:1px dashed #AAA;
 	background-color:#FAFAFA;
 	color:#000
 }
