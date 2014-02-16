@@ -883,8 +883,8 @@ input[type="submit"] {
 	cursor:pointer
 }
 input[type="submit"]:hover {
-	background: #232527 !important; 
-	color: #fff !important;
+	background: #232527; 
+	color: #fff;
 	border:2px solid #000;
 	text-decoration: none; 
 	-webkit-transition: all .01s ease-out; 
