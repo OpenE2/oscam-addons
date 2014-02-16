@@ -521,6 +521,9 @@ div.footer {
 div.footer p {
 	margin:5px
 }
+div.footer B {
+	color:#999
+}
 
 /* in status.html, main DIV for statistics info */
 div.info {
