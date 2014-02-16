@@ -5,7 +5,7 @@
 		<P><B>Current Time:</B> ##CURDATE## | ##CURTIME## <B>Start Time:</B> ##STARTDATE## | ##STARTTIME## <B>Up Time:</B> ##UPTIME##</P>
 		<P><B>Process ID:</B> ##PROCESSID## <B>Access from:</B> ##CURIP## <B>Run as:</B> ##RUNAS## </P>
 		<P><B>OSCAM:</B> ##CS_VERSION## <B>Build:</B> r##CS_SVN_VERSION## <B>Compiler:</B> ##CS_TARGET##</P>
-		<P CLASS="styleauthor"><i class="fa fa-android"></i> 2014 Designed by : <B>Skyndas for Streamboard Team</B></P>
+		<P CLASS="styleauthor"><i class="fa fa-linux"></i> 2014 Designed by : <B>Skyndas for Streamboard Team</B></P>
 		<A NAME="statusfooter"></A>
 	</DIV>
 </DIV> <!-- End wrapper -->

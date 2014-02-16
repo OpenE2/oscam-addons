@@ -747,6 +747,10 @@ path.graph_grid {stroke-opacity:0.5;}
 
 li.menu a,li.configmenu a,li.menu_selected a,li.configmenu_selected a,td.statuscol14 a,td.statuscol16 a,td.subheadline a{text-decoration:none}
 
+.fa {
+	font-size: 15px;
+	margin-right: 6px;
+}
 
 /* ================================= COLORS ================================= */
 /* BASIC SETTINGS */
