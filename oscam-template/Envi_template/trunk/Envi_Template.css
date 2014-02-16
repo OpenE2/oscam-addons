@@ -598,10 +598,14 @@ INPUT[type=submit]:disabled {
 	border: 1px solid #CCCCCC;
 	color: #656565;
 	cursor: pointer;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
 }
 INPUT[type=submit]:disabled:hover {
-	
+	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat-x scroll 0 0 #FFFFFF;
+	border: 1px solid #CCCCCC;
+	color: #656565;
+	cursor: pointer;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)	
 }
 
 
