@@ -524,7 +524,8 @@ div.footer b {
 	color:#999
 }
 div.footer p.styleauthor b {
-	color:#BD0000
+	color:#BD0000;
+	text-shadow:1px 1px 1px #000
 }
 
 /* in status.html, main DIV for statistics info */
@@ -765,9 +766,15 @@ h4 {
 }
 	
 /* LINKS */
+a.debugl:hover {
+	background-color:#BD0000;
+	color:#FFF;
+	text-shadow:1px 1px 1px #000
+}
 a.debugls:link, a.debugls:visited {
-	background-color:#A00;
-	color:#FFF
+	background-color:#BD0000;
+	color:#FFF;
+	text-shadow:1px 1px 1px #000
 }
 a:hover {
 	color:#FF9E5F
