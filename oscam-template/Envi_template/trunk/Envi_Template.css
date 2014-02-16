@@ -99,7 +99,7 @@ h4 {
 
 /* in status_sdebug.html */
 a.debugl:link {
-	margin:0 1px
+	padding:1px 2px 2px
 }
 
 /* in module-webif.c for debug selection in STATUS item and FILES item -> part logfile */
