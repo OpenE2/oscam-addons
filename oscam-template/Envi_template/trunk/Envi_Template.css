@@ -46,7 +46,6 @@
 
 /* ******** 0. FONT  */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
@@ -63,7 +62,7 @@ html,body,* html #wrapper {height:100%}
  * Color setting in COLOR section
  */
 body {
-	font-family:'Droid Sans',Arial,Helvetica,sans-serif;
+	font-family:Arial,Helvetica,sans-serif;
 	font-size:11px;
 	text-align:center
 }
@@ -86,7 +85,8 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:"Skyndas for Streamboard Team | Envi Template - Last update 2014-02-15"}
+p.styleauthor:after {content:" | Envi Template - Last update 2014-02-15"}
+p.styleauthor b {color:#BD0000}
 
 /* in pre_shutdown.html */
 h4 {
