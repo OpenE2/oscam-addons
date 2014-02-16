@@ -85,8 +85,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:" | Envi Template - Last update 2014-02-15"}
-p.styleauthor b {color:#BD0000}
+p.styleauthor:after {content:" | Envi Template - Last update 2014-02-16"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -521,8 +520,11 @@ div.footer {
 div.footer p {
 	margin:5px
 }
-div.footer B {
+div.footer b {
 	color:#999
+}
+div.footer p.styleauthor b {
+	color:#BD0000
 }
 
 /* in status.html, main DIV for statistics info */
