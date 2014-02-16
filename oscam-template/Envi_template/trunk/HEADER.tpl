@@ -10,7 +10,10 @@
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 	<script type="text/javascript" src="oscam.js"></script>
 	<style type="text/css">##HTTPPICONSIZE##</style>
+<!--
 	<link href="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/trunk/font/font-awesome.css" rel="stylesheet">
+-->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 ##REFRESH##
 </HEAD>
 <BODY>
