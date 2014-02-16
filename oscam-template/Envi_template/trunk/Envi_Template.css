@@ -47,6 +47,25 @@
 /* ******** 0. FONT  */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template/trunk/font/fontawesome-webfont.woff?v=4.0.3') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* FontAwesone offline */
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-linux:before {
+  content: "\f17c";
+}
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
 
