@@ -46,6 +46,7 @@
 
 /* ******** 0. FONT  */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
@@ -62,7 +63,7 @@ html,body,* html #wrapper {height:100%}
  * Color setting in COLOR section
  */
 body {
-	font-family:Arial,Helvetica,sans-serif;
+	font-family:'Droid Sans',Arial,Helvetica,sans-serif;
 	font-size:11px;
 	text-align:center
 }
@@ -595,7 +596,7 @@ input[type="text"] {
 /* settings for which is disabled - in files.html?file=oscam.version */
 INPUT[type=submit]:disabled {
 	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat-x scroll 0 0 #FFFFFF;
-	border: 1px solid #CCCCCC;
+	border: 2px solid #CCC;
 	color: #656565;
 	cursor: pointer;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
