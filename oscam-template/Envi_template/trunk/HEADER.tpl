@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="site.css">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 	<script type="text/javascript" src="oscam.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
 	<style type="text/css">##HTTPPICONSIZE##</style>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 ##REFRESH##

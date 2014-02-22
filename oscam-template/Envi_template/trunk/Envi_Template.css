@@ -155,6 +155,10 @@ a:hover span {
 	font-weight:400;
 	text-transform:uppercase
 }
+li.menu a, li.menu_selected a {
+	text-decoration:none
+}
+
 
 /* ******** 6. SUBNAV */
 
@@ -176,6 +180,9 @@ a:hover span {
 	padding-top:0;
 	padding-bottom:0;
 	font-size:14px
+}
+li.configmenu a, li.configmenu_selected a {
+	text-decoration:none
 }
 
 /* ******** 7. TABLE */
@@ -433,6 +440,10 @@ td.usercol21, td.usercol22,
 td.usercol23, td.usercol24,
 td.usercol25 {
 	text-align:center
+}
+
+td.statuscol14 a, td.statuscol16 a, td.subheadline a {
+	text-decoration:none
 }
 
 /* in readerconfig_sidokbit.html */
@@ -745,11 +756,23 @@ path.graph_grid {stroke-opacity:0.5;}
 	margin-top:15px
 }
 
-li.menu a,li.configmenu a,li.menu_selected a,li.configmenu_selected a,td.statuscol14 a,td.statuscol16 a,td.subheadline a{text-decoration:none}
-
 .fa {
 	font-size: 15px;
 	margin-right: 6px;
+}
+
+/*  for UL in logpoll.html */
+#livelog {
+	height:500px;
+	max-width:1500px;
+	overflow-y:scroll;
+	list-style:none;
+	text-align:left;
+	margin:15px auto 0;
+	border:1px dotted #AAA;
+	background-color:#FAFAFA;
+	color:#666;
+	font-family: "Courier New",monospace
 }
 
 /* ================================= COLORS ================================= */
