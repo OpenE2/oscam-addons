@@ -810,7 +810,7 @@ a.debugls:link, a.debugls:visited {
 	text-shadow:1px 1px 1px #000
 }
 a:hover {
-	color:#F00423
+	color:#000
 }
 a:hover img.icon {
 	background:red
@@ -820,7 +820,7 @@ a:hover span {
 	border:1px solid #000
 }
 a, a:visited, a:active {
-	color:#535353
+	color:#C40000
 }
 
 /* MAIN MENU & SUBNAV */
