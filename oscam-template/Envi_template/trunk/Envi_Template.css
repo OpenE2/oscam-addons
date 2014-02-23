@@ -846,6 +846,16 @@ li.menu:hover a, li.menu_selected a {
 	color:#F00423;
 	transition:all 0.5s ease 0s
 }
+li.configmenu a:link,
+li.configmenu a:visited,
+li.configmenu_selected a:link,
+li.configmenu_selected a:visited {
+	color:#B3B3B3
+}
+li.configmenu:hover a, li.configmenu_selected a {
+	color:#F00423;
+	transition:all 0.5s ease 0s
+}
 
 /* TABLE */
 table.status {
