@@ -836,9 +836,9 @@ a, a:visited, a:active {
 	text-shadow:1px 1px 1px #000
 }
 #nav {}
-li.menu a:link,
+li.menu a,
 li.menu a:visited,
-li.menu_selected a:link,
+li.menu_selected a,
 li.menu_selected a:visited {
 	color:#B3B3B3
 }
@@ -846,9 +846,9 @@ li.menu:hover a, li.menu_selected a {
 	color:#F00423;
 	transition:all 0.5s ease 0s
 }
-li.configmenu a:link,
+li.configmenu a,
 li.configmenu a:visited,
-li.configmenu_selected a:link,
+li.configmenu_selected a,
 li.configmenu_selected a:visited {
 	color:#B3B3B3
 }
