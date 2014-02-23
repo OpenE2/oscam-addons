@@ -842,9 +842,12 @@ li.menu_selected a,
 li.menu_selected a:visited {
 	color:#B3B3B3
 }
-li.menu:hover a, li.menu_selected a {
+li.menu:hover a {
 	color:#F00423;
 	transition:all 0.5s ease 0s
+}
+li.menu_selected a {
+	color:#F00423
 }
 li.configmenu a,
 li.configmenu a:visited,
