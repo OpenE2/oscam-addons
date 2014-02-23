@@ -85,7 +85,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:" | Envi Template - Last update 2014-02-16"}
+p.styleauthor:after {content:" | Envi Template - Last update 2014-02-23"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -762,18 +762,19 @@ path.graph_grid {stroke-opacity:0.5;}
 }
 
 
-/* SPACIAL SETTINGS FOR LOGPOLL */
-/*  for UL in logpoll.html */
+/* SPECIAL SETTINGS FOR LOGPOLL */
 h3 {
 	line-height:25px
 }
+
+/*  for UL in logpoll.html */
 #livelog {
 	height:500px;
 	max-width:1500px;
 	overflow-y:scroll;
 	list-style:none;
 	text-align:left;
-	margin:5px auto 0;
+	margin:5px auto 15px;
 	border:1px dotted #AAA;
 	background-color:#FAFAFA;
 	color:#666;
