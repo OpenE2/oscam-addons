@@ -819,7 +819,7 @@ a:hover span {
 	background:#FFC;
 	border:1px solid #000
 }
-a:link, a:visited, a:active {
+a, a:visited, a:active {
 	color:#535353
 }
 
