@@ -820,7 +820,7 @@ a:hover span {
 	border:1px solid #000
 }
 a:link, a:visited, a:active {
-	color:#B3B3B3
+	color:#535353
 }
 
 /* MAIN MENU & SUBNAV */
@@ -836,8 +836,13 @@ a:link, a:visited, a:active {
 	text-shadow:1px 1px 1px #000
 }
 #nav {}
-li.menu:hover a, li.menu_selected a, 
-li.configmenu:hover, li.configmenu_selected {
+li.menu a:link,
+li.menu a:visited,
+li.menu_selected a:link,
+li.menu_selected a:visited {
+	color:#B3B3B3
+}
+li.menu:hover a, li.menu_selected a {
 	color:#F00423;
 	transition:all 0.5s ease 0s
 }
