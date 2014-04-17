@@ -1,2 +1,0 @@
-<!--OSCam;3622723722;1.20-unstable_svn;9535;-->
-<SPAN>card_count=##CCCOUNT##<BR>hop1=##CCCHOP1##<BR>hop2=##CCCHOP2##<BR>hopx=##CCCHOPX##<BR>currenthops=##CCCCURR##<BR><BR>reshare0=##CCCRES0##<BR>reshare1=##CCCRES1##<BR>reshare2=##CCCRES2##<BR>resharex=##CCCRESX##</SPAN>
