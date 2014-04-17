@@ -499,9 +499,6 @@ static const struct config_list webif_opts[] =
 	DEF_OPT_INT32("aulow"                   , OFS(aulow),                   30),
 	DEF_OPT_INT32("hideclient_to"           , OFS(hideclient_to),           25),
 	DEF_OPT_STR("httposcamlabel"            , OFS(http_oscam_label),        "Oscam"),
-#ifndef WEBIF_JQUERY
-	DEF_OPT_STR("http_extern_jquery"        , OFS(http_extern_jquery),      "//code.jquery.com/jquery-1.11.0.min.js"),
-#endif
 	DEF_LAST_OPT
 };
 #else
@@ -886,7 +883,6 @@ static const struct config_list dvbapi_opts[] =
 	DEF_OPT_INT8("au"                       , OFS(dvbapi_au),           0),
 	DEF_OPT_INT8("pmt_mode"                 , OFS(dvbapi_pmtmode),      0),
 	DEF_OPT_INT8("request_mode"             , OFS(dvbapi_requestmode),  0),
-	DEF_OPT_INT32("listen_port"             , OFS(dvbapi_listenport),   0),
 	DEF_OPT_INT32("delayer"                 , OFS(dvbapi_delayer),      0),
 	DEF_OPT_STR("user"                      , OFS(dvbapi_usr),          NULL),
 	DEF_OPT_FUNC("boxtype"                  , OFS(dvbapi_boxtype),      dvbapi_boxtype_fn),

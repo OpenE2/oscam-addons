@@ -1627,9 +1627,6 @@ struct s_config
 	char            *http_jscript;
 	char            *http_tpl;
 	char            *http_script;
-#ifndef WEBIF_JQUERY
-  char            *http_extern_jquery;
-#endif
 	int32_t         http_refresh;
 	int8_t          http_hide_idle_clients;
 	char            *http_hide_type;
@@ -1752,7 +1749,6 @@ struct s_config
 	int8_t      dvbapi_boxtype;
 	int8_t      dvbapi_pmtmode;
 	int8_t      dvbapi_requestmode;
-	int32_t     dvbapi_listenport;                  // TCP port to listen instead of camd.socket (network mode, default=0 -> disabled)
 	SIDTABS     dvbapi_sidtabs;
 	int32_t     dvbapi_delayer;                     // delayer ms, minimum time to write cw
 #endif
