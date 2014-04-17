@@ -917,6 +917,9 @@ static char *send_oscam_config_webif(struct templatevars *vars, struct uriparams
 	tpl_addVar(vars, TPLADD, "HTTPTPL", cfg.http_tpl);
 	tpl_addVar(vars, TPLADD, "HTTPSCRIPT", cfg.http_script);
 	tpl_addVar(vars, TPLADD, "HTTPJSCRIPT", cfg.http_jscript);
+#ifndef WEBIF_JQUERY
+	tpl_addVar(vars, TPLADD, "HTTPEXTERNJQUERY", cfg.http_extern_jquery);
+#endif
 	tpl_printf(vars, TPLADD, "HTTPPICONSIZE", "%d", cfg.http_picon_size);
 
 	if(cfg.http_hide_idle_clients > 0) { tpl_addVar(vars, TPLADD, "CHECKED", "checked"); }
@@ -947,7 +950,10 @@ static char *send_oscam_config_webif(struct templatevars *vars, struct uriparams
 #ifdef WITH_SSL
 	tpl_addVar(vars, TPLADD, "HTTPFORCESSLV3SELECT", (cfg.http_force_sslv3 == 1) ? "checked" : "");
 #endif
-
+#ifndef WEBIF_JQUERY
+	tpl_addVar(vars, TPLADDONCE, "CONFIGWEBIFJQUERY", tpl_getTpl(vars, "CONFIGWEBIFJQUERYBIT"));
+#endif
+	
 	tpl_printf(vars, TPLADD, "AULOW", "%d", cfg.aulow);
 	tpl_printf(vars, TPLADD, "HIDECLIENTTO", "%d", cfg.hideclient_to);
 
@@ -6929,6 +6935,12 @@ static int32_t process_request(FILE * f, IN_ADDR_T in)
 				tpl_addVar(vars, TPLADD, "REFRESHURL", "status.html");
 				tpl_addVar(vars, TPLADD, "REFRESH", tpl_getTpl(vars, "REFRESH"));
 			}
+
+#ifdef WEBIF_JQUERY
+			tpl_addVar(vars, TPLADD, "SRCJQUERY", "jquery.js");
+#else
+			tpl_addVar(vars, TPLADD, "SRCJQUERY", cfg.http_extern_jquery);
+#endif
 
 			tpl_printf(vars, TPLADD, "CURDATE", "%02d.%02d.%02d", lt.tm_mday, lt.tm_mon + 1, lt.tm_year % 100);
 			tpl_printf(vars, TPLADD, "CURTIME", "%02d:%02d:%02d", lt.tm_hour, lt.tm_min, lt.tm_sec);
