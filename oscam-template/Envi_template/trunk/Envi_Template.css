@@ -39,6 +39,9 @@
 	# IMAGE
 	# SPAN
 	# GRAPH
+
+# RESPONSIVE DESIGN
+	# DESKTOPS
 */
 
 
@@ -1063,4 +1066,16 @@ div.bar {
 	position: relative;
 	background-color: #aeaeae;
 	vertical-align: baseline;
+}
+
+/* ================================= RESPONSIVE DESIGN ================================= */
+/* #### DESKTOPS #### */
+
+@media screen and (min-width: 1024px) and (max-width: 1360px) {
+	/* CSS here */
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+	/* CSS here */
 }
