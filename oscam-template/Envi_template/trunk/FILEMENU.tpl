@@ -11,7 +11,7 @@
 ##TPLFILEMENUANTICASC##
 		<LI CLASS="##CMENUACTIVE20##"><A HREF="files.html?file=logfile">logfile</A></LI>
 		<LI CLASS="##CMENUACTIVE21##"><A HREF="files.html?file=userfile">userfile</A></LI>
-		<LI CLASS="##CMENUACTIVE18## ##CMENUACTIVE19## ##CMENUACTIVE25## ##CMENUACTIVE26##"><A HREF="#"  class="drop">other file<b class="subcaret"></b></A>
+		<LI CLASS="##CMENUACTIVE18## ##CMENUACTIVE19## ##CMENUACTIVE25## ##CMENUACTIVE26## ##CMENUACTIVE27##"><A HREF="#"  class="drop">other file<b class="subcaret"></b></A>
 			<UL CLASS="dropdown_nav">
 				<LI CLASS="##CMENUACTIVE18##"><A HREF="files.html?file=oscam.provid">oscam.provid</A></LI>
 				<LI CLASS="##CMENUACTIVE19##"><A HREF="files.html?file=oscam.tiers">oscam.tiers</A></LI>
