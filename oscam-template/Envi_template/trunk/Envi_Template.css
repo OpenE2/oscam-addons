@@ -1082,3 +1082,11 @@ div.bar {
 @media screen and (max-device-width: 640px){
 	/* CSS here */
 }
+
+/* #### Samsung Galaxy S4 mini (pixel ratio ? - test 3)#### */ 
+@media screen and (device-width: 540px) and (device-height: 960px) and (-webkit-device-pixel-ratio: 3) {
+	#mainmenu li {
+    	font-size: 3em;
+    	font-weight: 700;
+	}
+}
