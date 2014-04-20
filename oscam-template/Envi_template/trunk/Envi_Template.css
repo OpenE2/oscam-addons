@@ -1119,7 +1119,7 @@ div.bar {
 		background-image: linear-gradient(to left, #000000 40%, #45484D 100%);
 	}
 	.toggle:hover:after{
-		background: #45ABD6;
+		background: #000;
 	}
 	#toggle:checked + .toggle:after{
 		content: 'Close Menu';
@@ -1136,6 +1136,7 @@ div.bar {
 		position:absolute;
 		right:0;
 		border-top: 1px solid #51C1F1;
+		text-shadow: 1px 1px 1px #000;
 	}
 	#mainmenu > li {
 		display:block;
@@ -1143,8 +1144,13 @@ div.bar {
 		margin:0;
 		background:white;
 		font-size:1.5em;
-		padding:10px
+		padding:10px;
+		text-transform:uppercase
 	}
+	li.menu_selected a {
+		color: #F00423;
+	}
+
 	#mainmenu > li:last-child {
 		border-bottom: 2px solid black;
 		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
