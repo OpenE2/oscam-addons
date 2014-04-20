@@ -10,3 +10,4 @@
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 	<script type="text/javascript" src="##SRCJQUERY##"></script>
 	<script type="text/javascript" src="oscam.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Viewport to device-width for Responsive design -->
