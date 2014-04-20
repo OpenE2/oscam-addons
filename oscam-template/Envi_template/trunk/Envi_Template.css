@@ -1078,8 +1078,33 @@ div.bar {
 }
 
 @media screen and (device-width: 540px) and (device-height: 960px) {
-	#mainmenu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; }
-	#toggle:checked ~ #mainmenu { display: block; opacity: 1;}	
+	/* Logo */
+	div.logo {
+		display: none;
+	}
+
+	/* MAIN MENU */
+	/* checkbox for show/hide main menu */
+	/* #toggle {display:none} */
+	.toggle {
+		display:block;
+		position:relative;
+		cursor:pointer;
+		-webkit-touch-callout:none;
+		-webkit-user-select:none;
+		user-select:none
+	}
+	#toggle:checked ~ #mainmenu {display:block;opacity:1}	
+
+	/* main menu */
+	#mainmenu { 
+		display:none;
+		opacity:0;
+		width:100%;
+		position:absolute;
+		right:0
+	}
+	
 }
 
 /* Mobile Phones PORTRAIT:
