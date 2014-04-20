@@ -1142,7 +1142,10 @@ div.bar {
 		padding-top:10px
 	}
 	#mainmenu > li:last-child {
-		border-bottom: 2px solid black
+		border-bottom: 2px solid black;
+		-webkit-box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.32);
+		-moz-box-shadow:    0px 5px 10px 0px rgba(50, 50, 50, 0.32);
+		box-shadow:         0px 5px 10px 0px rgba(50, 50, 50, 0.32);
 	}
 	
 }
