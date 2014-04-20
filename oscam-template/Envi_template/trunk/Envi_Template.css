@@ -1071,7 +1071,7 @@ div.bar {
 /* ================================= RESPONSIVE DESIGN ================================= */
 /* #### DESKTOPS #### */
 
-@media screen and (min-width: 1024px) and (max-width: 1360px) {
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
 	div.groups {
 		text-overflow: ellipsis;
 		-o-text-overflow: ellipsis;
@@ -1084,7 +1084,7 @@ div.bar {
 }
 
 /* #### Samsung Galaxy S4 mini #### */ 
-@media screen and (device-width: 540px) and (device-height: 960px) {
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
 	#mainmenu li {
     	font-size: 40px;
     	font-weight: 700;
