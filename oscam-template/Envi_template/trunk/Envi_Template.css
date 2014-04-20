@@ -849,7 +849,7 @@ div.colorPicker-swatch {
 #inc:hover,#dec:hover {
 	background-color:red;
 }
-li.pollselect {
+#nav li.pollselect {
 	display:inline;
 	list-style:none;
 	position: absolute;
