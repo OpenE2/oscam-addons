@@ -1101,6 +1101,7 @@ div.bar {
 		display:block;
 		width:100%;
 		padding:13px 50px;
+		background-color:#45484D;
 		text-align:center;
 		font-size:1.5em;
 		font-weight:700;
@@ -1112,11 +1113,6 @@ div.bar {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		background-image: -o-linear-gradient(left, #000000 40%, #45484D 100%);
-		background-image: -moz-linear-gradient(left, #000000 40%, #45484D 100%);
-		background-image: -webkit-linear-gradient(left, #000000 40%, #45484D 100%);
-		background-image: -ms-linear-gradient(left, #000000 40%, #45484D 100%);
-		background-image: linear-gradient(to left, #000000 40%, #45484D 100%);
 	}
 	.toggle:hover:after{
 		background: #000;
@@ -1136,7 +1132,6 @@ div.bar {
 		position:absolute;
 		right:0;
 		border-top: 1px solid #51C1F1;
-		text-shadow: 1px 1px 1px #000;
 	}
 	#mainmenu > li {
 		display:block;
@@ -1145,12 +1140,13 @@ div.bar {
 		background:white;
 		font-size:1.5em;
 		padding:10px;
-		text-transform:uppercase
+	}
+	li.menu a {
+		color: #B3B3B3;
 	}
 	li.menu_selected a {
 		color: #F00423;
 	}
-
 	#mainmenu > li:last-child {
 		border-bottom: 2px solid black;
 		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
