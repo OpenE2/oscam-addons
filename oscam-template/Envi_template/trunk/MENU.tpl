@@ -1,5 +1,7 @@
 <!--OSCam;4104161285;1.20-unstable_svn;9665;-->
 		<DIV ID="main">
+			<input id="toggle" type="checkbox"></input>
+			<label class="toggle" onclick="" for="toggle"></label>
 			<UL ID="mainmenu">
 				<LI CLASS="##MENUACTIVE0##"><A HREF="status.html">Status</A></LI>
 ##LOGPAGEMENU##
