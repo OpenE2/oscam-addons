@@ -1,4 +1,4 @@
-<!--OSCam;1191950046;1.20-unstable_svn;9546;-->
+<!--OSCam;2532972423;1.20-unstable_svn;9665;-->
 <DIV ID="subnav">
 	<UL ID="nav">
 		<LI CLASS="##CMENUACTIVE12##"><A HREF="files.html?file=oscam.version">oscam.version</A></LI>
@@ -17,22 +17,8 @@
 				<LI CLASS="##CMENUACTIVE19##"><A HREF="files.html?file=oscam.tiers">oscam.tiers</A></LI>
 				<LI CLASS="##CMENUACTIVE25##"><A HREF="files.html?file=oscam.whitelist">oscam.whitelist</A></LI>
 				<LI CLASS="##CMENUACTIVE26##"><A HREF="files.html?file=oscam.ratelimit">oscam.ratelimit</A></LI>
+##FILEEDITCSS_SHOW##
 			</UL>
 		</LI>
 	</UL>
 </DIV>
-<!--
-<DIV ID="otherdropdown">
-	<form name="gotoform" method="post" action="">
-		<noscript><input type="submit" name="submit_button" value="Go"></noscript>
-		<select name="url_list" size="1" onChange="gotosite()">
-			<option value="">select other file</option>
-			<option value="files.html?file=oscam.services">oscam.services</option>
-			<option value="files.html?file=oscam.provid">oscam.provid</option>
-			<option value="files.html?file=oscam.tiers">oscam.tiers</option>
-			<option value="files.html?file=oscam.ratelimit">oscam.ratelimit</option>
-			<option value="files.html?file=oscam.whitelist">oscam.whitelist</option>
-		</select>
-	</form>
-</DIV>
--->

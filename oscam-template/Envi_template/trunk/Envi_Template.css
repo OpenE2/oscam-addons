@@ -5,10 +5,9 @@
  *
  */
 
-/* Table of Content
+ /* Table of Content
 ============================================================================================
 # GENERALY CSS SETTINGS
-	# 0. FONT
 	# 1. RESET
 	# 2. BASIC DIVISION PAGES
 	# 3. BASIC SETTINGS
@@ -42,18 +41,15 @@
 	# GRAPH
 */
 
+
 /* ================================= GENERALY CSS SETTINGS ================================= */
-
-/* ******** 0. FONT  */
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
 
 /* ******** 2. BASIC DIVISION PAGES */
 html,body,* html #wrapper {height:100%}
 #wrapper {position:relative;min-height:100%}
-#content {margin-bottom:0;padding:60px 8px 150px}
+#content {margin-bottom:0;padding:0 8px 120px}
 #footer {position:absolute;bottom:0;width:100%}
 
 /* ******** 3. BASIC SETTINGS */
@@ -62,7 +58,7 @@ html,body,* html #wrapper {height:100%}
  * Color setting in COLOR section
  */
 body {
-	font-family:Arial,Helvetica,sans-serif;
+	font-family:Arial;
 	font-size:11px;
 	text-align:center
 }
@@ -75,7 +71,7 @@ p.text-large-red {
 	font-size:large
 }
 /* in file.html, script.html */
-#filename {
+#filename,#filesubmit {
 	font-weight:700;
 	font-size:14px;
 	margin: 10px 0
@@ -85,7 +81,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:" | Envi Template - Last update 2014-02-23"}
+p.styleauthor:after {content:"Streamboard Team"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -99,14 +95,17 @@ h4 {
 
 /* in status_sdebug.html */
 a.debugl:link {
-	padding:1px 2px 2px
+	margin:0 1px
+}
+a.debugl:hover{
+	background-color:#A00;
+	color:#FFF
 }
 
 /* in module-webif.c for debug selection in STATUS item and FILES item -> part logfile */
 a.debugls:link {
 	padding:1px 2px 2px
 }
-
 /* Tooltip in cccamentitletooltip.html, foundentitlements.html, noentitlements.html and module-webif.c */
 a.tooltip,
 a.tooltip1 {
@@ -132,33 +131,24 @@ a:hover span {
 /* ******** 5. MAIN MENU */
 
 /* ID are for creating main menu in menu.html */
-#main {
-	width:100%;
-	height:60px;
-	position:fixed;
-	right:0;
-	left:0;
-	top:0;
-	z-index:1050
-
-}
+#main {}
 #mainmenu {
-	padding-top:20px;
+	height:30px;
+	padding-top:10px;
+	display:inline-block;
+	position:relative
 }
 #mainmenu li {
 	display:inline;
-	margin-left:5px;
-	margin-right:5px;
+	margin-left:2px;
+	margin-right:2px;
 	padding:5px 3px 3px;
-	font-family: 'Roboto', sans-serif;
-	font-size:14px;
-	font-weight:400;
-	text-transform:uppercase
+	font-size:18px;
+	font-weight:700
 }
 li.menu a, li.menu_selected a {
 	text-decoration:none
 }
-
 
 /* ******** 6. SUBNAV */
 
@@ -166,11 +156,9 @@ li.menu a, li.menu_selected a {
  * cacheex.html, config\menu.html, entitlements.html, failban.html,
  * files\menu.html, readerconfig.html, readers.html, readerstats.html, script.html, 
  * services.html, services_edit.html, status.html, user_edit.html, userconfig.html */
-#subnav {
-	height:30px
-}
+#subnav {}
 #nav {
-	padding-top:5px
+	height:22px;
 }
 #nav li {
 	display:inline;
@@ -182,7 +170,6 @@ li.menu a, li.menu_selected a {
 	font-size:14px
 }
 li.configmenu a, li.configmenu_selected a {
-	font-family:'Roboto',sans-serif;
 	text-decoration:none
 }
 
@@ -211,9 +198,6 @@ table.config {
 table.readers {
 	width:100%
 }
-table.readers input {
-	margin:1px 5px
-}
 
 /* Table in readerconfig.html */
 table.configreader {
@@ -234,9 +218,6 @@ table.statsbalance td:last-child img.icon {
 table.users {
 	width:100%
 }
-table.users input {
-	margin:1px 5px
-}
 table.ECM_totals {
 	margin-bottom:20px
 }
@@ -248,9 +229,6 @@ table.user_totals {
 /* Tables in CACHEEX in cacheex.html */
 table.cacheex, table#dataTable.stats {
 	width:80%
-}
-table.cacheex input {
-	margin:1px 5px
 }
 
 /* Table in savetemplates.html 
@@ -294,9 +272,6 @@ table#cachexstats {
 #addnewservice,#servicesedit {
 	width:35%;
 	text-align:center
-}
-#addnewservice input{
-	margin:1px 5px
 }
 #servicesedit td {
 	text-align:center
@@ -345,7 +320,7 @@ th.nameinfo {
 /* in STATUS item (FIND OUT MORE) */
 th.statuscol0 {
 	text-align:center;
-	width:10px
+	width:0
 }
 th.statuscol1, th.statuscol2, 
 th.statuscol3, th.statuscol4, 
@@ -357,8 +332,8 @@ th.statuscol13, th.statuscol14,
 th.statuscol15, th.statuscol16 {
 	text-align:center
 }
-th.statuscol0 {
-	width:0
+th.statuscol15 {
+	cursor:pointer
 }
 
 /* OTHER TABLEs TH */
@@ -439,7 +414,16 @@ td.usercol17, td.usercol18,
 td.usercol19, td.usercol20,
 td.usercol21, td.usercol22,
 td.usercol23, td.usercol24,
-td.usercol25 {
+td.usercol25, td.readercol0,
+td.readercol1,td.readercol2,
+td.readercol3,td.readercol4,
+td.readercol5,td.readercol6,
+td.readercol7,td.readercol8,
+td.readercol9,td.readercol10,
+td.readercol11,td.readercol12,
+td.readercol13,td.readercol14,
+td.readercol15,td.readercol16,
+td.readercol17 {
 	text-align:center
 }
 
@@ -507,8 +491,9 @@ div.warning {
 /* in logobit.html - Logo for Oscam */
 div.logo {
 	position:absolute;
-	top:5px;
-	left:5px
+	top:10px;
+	left:10px;
+	z-index:0
 }
 
 /* in READERS and USERS items */
@@ -532,13 +517,6 @@ div.footer {
 div.footer p {
 	margin:5px
 }
-div.footer b {
-	color:#999
-}
-div.footer p.styleauthor b {
-	color:#BD0000;
-	text-shadow:1px 1px 1px #000
-}
 
 /* in status.html, main DIV for statistics info */
 div.info {
@@ -549,8 +527,9 @@ div.info {
 /* debugmenu	- status_sdebug.html 
  * logmenu		- file.html
 */
-div.debugmenu,div.logmenu {
-	line-height:20px
+div.debugmenu, div.logmenu {
+	line-height:20px;
+	margin-bottom:8px
 }
 
 /* in entitlements_cccambit.html */
@@ -562,10 +541,10 @@ div.cccamentitlementcontrols {
 /* definition only for show or hide columns or DIV
  * #newuser		- in userconfig.html
  * #newreader	- in readers.html
- * #exp, #cwc, #acasc, #grp	- only in module-webif.c for show/hide columns in userconfig.html
+ * #exp, #cwc, #acasc - only in module-webif.c for show/hide columns in userconfig.html
  */
 #newuser, #newreader,
-#exp, #cwc, #acasc, #grp,
+.exp, .cwc, .acas, .grp,
 .hidden {
 	display:none
 }
@@ -589,44 +568,15 @@ textarea.bt {
 
 /* generaly settings for all select */
 select {
-	padding:2px;
+	padding:2px
 }
 
-/* generaly settings for all input */
-input[type="text"] {
-	padding:2px;
-	border:1px solid #CCC
-}
-
-/* settings for select and first option in select 
+/* settings for first option in select 
  * otherdropdown	- in script.html, menu.html
  */
-#otherdropdown select{
-	color:gray
-}
-#otherdropdown option:first-child{
+#otherdropdown option:first-child {
     display:none
 }
-#otherdropdown option { 
-	color:#000
-}
-
-/* settings for which is disabled - in files.html?file=oscam.version */
-INPUT[type=submit]:disabled {
-	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat-x scroll 0 0 #FFFFFF;
-	border: 2px solid #CCC;
-	color: #656565;
-	cursor: pointer;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
-}
-INPUT[type=submit]:disabled:hover {
-	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat-x scroll 0 0 #FFFFFF;
-	border: 2px solid #CCC;
-	color: #656565;
-	cursor: pointer;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)	
-}
-
 
 /* solution for align vertical checkbox with text */
 input[type=checkbox] {
@@ -644,24 +594,11 @@ img {
 
 /* for icons with following Action */
 img.icon {
-	background:#FF4A45;
-	color:#FFF;
-	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#F00), to(#BD0000));
-	background-image: -webkit-linear-gradient(top, #F00, 0%, #BD0000, 100%);
-	background-image: -moz-linear-gradient(top, #F00 0%, #BD0000 100%);
-	background-image: linear-gradient(to bottom, #F00 0%, #BD0000 100%);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F00', endColorstr='#BD0000', GradientType=0);
-	border-color:#F00 #BD0000 #710000;
-	*background-color:#F00;
-	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-	border:1px solid #BD0000;
-	border-radius: 3px;
-	width:20px;
-	height:20px;
-	max-height:20px
+	border-radius:4px;
+	border:0 solid;
+	width:22px;
+	height:22px;
+	max-height:22px
 }
 
 /* statususericon	- in STATUS item
@@ -672,6 +609,11 @@ img.icon {
 img.statususericon, img.protoicon,
 img.usericon, img.readericon {
 	min-height:15px
+}
+
+/* logo IC_LOGO.tpl */
+div.logo img {
+	max-height:44px
 }
 
 td#out.centered img,
@@ -686,7 +628,7 @@ td#in.centered img {
 /* in module-webif.c and userconfig_notify.html */
 span.span_notifier {
 	margin-left:2px;
-	padding:1px 4px
+	padding:1px 3px
 }
 
 /* in module-webif.c value for STATUS item ( more info in Changeset 6668 by alno )
@@ -711,7 +653,7 @@ span.text_entitle {
 
 /* ******** 15. GRAPH */
 text.graph_error {text-anchor:middle;}
-text.graph_grid_txt {text-anchor:end;style:font-size:12px;}
+text.graph_grid_txt {text-anchor:end;font-size:12px;}
 path.graph_grid {stroke-opacity:0.5;}
 
 /* ******** 16. SORTING IN TABLE */
@@ -721,7 +663,7 @@ path.graph_grid {stroke-opacity:0.5;}
 	font-size:11px
 }
 .users .head {
-	background-image: url(data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///4CAgP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
+	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
 	background-repeat:no-repeat;
 	background-position:4px center;
 	cursor:pointer;
@@ -755,34 +697,6 @@ path.graph_grid {stroke-opacity:0.5;}
 }
 .smallmargintop {
 	margin-top:15px
-}
-
-/* For Awesome font in Footer */
-.fa {
-	font-size: 15px;
-	margin-right: 6px;
-}
-
-/* SPECIAL SETTINGS FOR LOGPOLL - Logpoll is patch from Streamboard.tv
- * This classes and ID´s are not use when logpol is not installed
- * http://www.streamboard.tv/wbb2/thread.php?goto=firstnew&threadid=40425 
- */
-h3 {
-	line-height:25px
-}
-
-/*  for UL in logpoll.html */
-#livelog {
-	height:500px;
-	max-width:1500px;
-	overflow-y:scroll;
-	list-style:none;
-	text-align:left;
-	margin:5px auto 15px;
-	border:1px dotted #AAA;
-	background-color:#FAFAFA;
-	color:#666;
-	font-family: "Courier New",monospace
 }
 
 /* For FILEMENU.tpl - change dropdown menu */
@@ -848,33 +762,136 @@ h3 {
 	display:block
 }
 
+/*  for UL in logpoll.html */
+#livelog {
+	resize:vertical;
+	height:580px;
+	max-width:1500px;
+	overflow-y:auto;
+	list-style:none;
+	text-align:left;
+	margin:5px auto 15px;
+	border:1px dotted #AAA;
+	background-color:#FAFAFA;
+	color:#666;
+	font-family: "Courier New",monospace
+}
+#livelogdata {
+	list-style:none;
+}
+li.regex, li.regexdata_nav, li.regexdata_save{
+	list-style-type:none;
+	white-space:nowrap
+}
+input.regexinput {
+	cursor:text;
+	padding:2px;
+	margin: 3px 15px 1px 3px;
+	width:400px;
+}
+.regexdata_nav input {
+	width:100px;
+	margin-bottom:8px
+}
+.regexdata_save input {
+	width:90px;
+	margin-top:10px
+}
+div.colorPicker-picker {
+	height: 16px;
+	width: 16px;
+	display: inline;
+	margin: 3px;
+	padding: 4px 8px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 16px;
+	font-size:0.75em;
+	font-weight:bold;
+	text-align: center;
+}
+
+div.colorPicker-palette {
+	width: 110px;
+	position: absolute;
+	border: 1px solid #598FEF;
+	background-color: #EFEFEF;
+	padding: 2px;
+	z-index: 9999;
+}
+	div.colorPicker_hexWrap {width: 100%; float:left }
+	div.colorPicker_hexWrap label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
+	div.colorPicker_hexWrap input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
+
+div.colorPicker-swatch {
+	height: 12px;
+	width: 12px;
+	border: 1px solid #000;
+	margin: 2px;
+	float: left;
+	cursor: pointer;
+	line-height: 12px;
+}
+
+/* User-Page polling */
+#inc,#dec {
+	padding:0 3px;
+	margin: -3px 3px;
+	border:none;
+	background-color:#A00;
+	color:#FFF;
+	border-radius:4px;
+	font-size:14px;
+	font-weight:700;
+	width: 22px;
+	height: 22px;
+}
+#inc:hover,#dec:hover {
+	background-color:red;
+}
+li.pollselect {
+	display:inline;
+	list-style:none;
+	position: absolute;
+	right: 10px;
+}
+input.pintervall {
+	font-size:14px;
+	font-weight:500;
+	width:18px;
+	height:18px;
+	color:#000;
+	background-color:transparent;
+	border:none;
+	border-radius:4px;
+	text-align:right;
+	margin: 0 4px;
+}
+
+/* polling heartbeat */
+#picolor {
+	background-color:#A00; 
+}
+
+
 /* ================================= COLORS ================================= */
 /* BASIC SETTINGS */
 
 body {
-	background-image: url(data:image/png;base64,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);
-	color:#404040
+	background-color:#FFF;
+	color:#000
 }
 p.text-large-red {
 	color:red
 }
-h2 {
+h2, h4 {
 	color:#AAA
 }
-h4 {
-	color:#F00423
-}
-	
+
 /* LINKS */
-a.debugl:hover {
-	background-color:#BD0000;
-	color:#FFF;
-	text-shadow:1px 1px 1px #000
-}
 a.debugls:link, a.debugls:visited {
-	background-color:#BD0000;
-	color:#FFF;
-	text-shadow:1px 1px 1px #000
+	background-color:#A00;
+	color:#FFF
 }
 a:hover {
 	color:#FF9E5F
@@ -886,44 +903,18 @@ a:hover span {
 	background:#FFC;
 	border:1px solid #000
 }
-a, a:visited, a:active {
-	color:#535353
+a:link, a:visited, a:active {
+	color:#050840
 }
-
-/* MAIN MENU & SUBNAV */
-#main {
-	background: -moz-linear-gradient(left,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+#savelog {
+	text-decoration:none
 }
-#mainmenu {
-	text-shadow:1px 1px 1px #000
+/* MAIN MENU & SUBNAV*/
+#mainmenu, #nav {
+	background-color:#FFF
 }
-#nav {}
-li.menu a {
-	color:#B3B3B3
-}
-li.menu:hover a {
-	color:#F00423;
-	transition:all 0.5s ease 0s
-}
-li.menu_selected a {
-	color:#F00423
-}
-li.configmenu:hover a {
-	color:#F00423;
-	transition:all 0.2s ease 0s
-}
-li.configmenu:hover {
-	background-color:#DDD
-}
-li.configmenu_selected a {
-	color:#F00423
-}
-li.configmenu_selected:hover {
+li.menu:hover, li.menu_selected, 
+li.configmenu:hover, li.configmenu_selected {
 	background-color:#DDD
 }
 
@@ -933,23 +924,39 @@ table.status {
 }
 
 /* TABLE TR */
-tr.online td#lastchannel.usercol6{background-color:#949494;color:#FFF}
-tr.online td{background-color:#BFA}
-tr.expired td{background-color:#FBA}
-tr.connected td{background-color:#FFA}
-tr.disabled td:first-child img.icon,tr.disabledreader td:first-child img.icon{background-color:#0A0}
-tr.a td{background-color:#3F0}
-tr.c td{background-color:#F1F5E6}
-tr.e_valid td{background-color:#E6FEBF}
-tr.e_expired td{background-color:#FFF3E7}
-tr.s td,tr.l td,tr.n td,tr.h td{background-color:#E1E1EF}
-tr.r td,span.e_expired{background-color:#FFF3E7}
-tr.p td,tr.scanusbsubhead td{background-color:#FDFBE1}
+tr.online td.usercol6 {background-color:#949494;color:#FFF}
+tr.online td {background-color:#BFA}
+tr.offline td {}
+tr.expired td {background-color:#FBA}
+tr.connected td {background-color:#FFA}
+tr.disabled td {}
+
+tr.disabled td:first-child img.icon,
+tr.disabledreader td:first-child img.icon {
+	background-color:#0A0
+}
+
+tr.enabledreader {}
+tr.disabledreader {}
+
+tr.a td {background-color:#3F0}
+tr.c td {background-color:#F1F5E6}
+tr.e_valid td {background-color:#E6FEBF}
+tr.e_expired td {background-color:#FFF3E7}
+
+tr.s td, 
+tr.l td,
+tr.n td,
+tr.h td {
+	background-color:#E1E1EF
+}
+
+tr.r td, span.e_expired {background-color:#FFF3E7}
+tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
 
 /* TABLE TH */
 th {
-	background-color:#2F3133;
-	color:#FFF
+	background-color:#CCC
 }
 th.nameinfo {
 	background-color:#999
@@ -957,8 +964,7 @@ th.nameinfo {
 
 /* TABLE TD */
 td {
-	background-color:#D0D0D0;
-	color:#333
+	background-color:#EEE
 }
 td.subheadline {
 	background-color:#CCC
@@ -968,7 +974,7 @@ td.subheadline {
 
 /* in entitlements_genericbit.html */
 div.log {
-	border:1px dashed #AAA;
+	border:1px dotted #AAA;
 	background-color:#FAFAFA;
 	color:#666
 }
@@ -985,63 +991,17 @@ div.sidlistclose a {
 	color:#FFF
 }
 div.footer {
-	background-color:#17191B;
-	border-top:10px solid #000;
-	color:#1C1C1C
-}
-div.footer p {
-	color:#656565
+	background-color:#EEE;
+	border-top:3px solid #CCC
 }
 
 /* TEXTAREA */
 textarea.editor {
-	border:1px dashed #AAA;
+	border:1px dotted #AAA;
 	background-color:#FAFAFA;
 	color:#000
 }
 
-select {
-	border: 1px solid #CCC
-}
-select:hover{
-	border:1px solid #000
-}
-
-input[type="submit"] {
-	background:#FF4A45;
-	color:#FFF;
-	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#FF4A45), to(#BD0000));
-	background-image: -webkit-linear-gradient(top, #FF4A45, 0%, #BD0000, 100%);
-	background-image: -moz-linear-gradient(top, #FF4A45 0%, #BD0000 100%);
-	background-image: linear-gradient(to bottom, #FF4A45 0%, #BD0000 100%);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF4A45', endColorstr='#BD0000', GradientType=0);
-	border-color:#BD0000 #BD0000 #710000;
-	border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	*background-color:#FF4A45;
-	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-	border:2px solid #BD0000;
-	padding:0px 3px;
-	cursor:pointer
-}
-input[type="submit"]:hover {
-	background: #232527; 
-	color: #fff;
-	border:2px solid #000;
-	text-decoration: none; 
-	-webkit-transition: all .01s ease-out; 
-	-moz-transition: all .01s linear; 
-	transition: all .01s linear
-}
-
-input[type="text"] {
-	border:1px solid #CCC
-}
-input[type="text"]:hover{
-	border:1px solid #000
-}
 /* IMAGE */
 img.icon {
 	background-color:#A00
@@ -1067,3 +1027,31 @@ rect.graph_bg {fill:white;}
 text.graph_error {fill:red;}
 text.graph_grid_txt {fill:gray;}
 path.graph_grid {stroke:gray;}
+
+#chart {
+	position:absolute;
+	width: 150px;
+	height: 90px;
+	border: 1px dotted #ff0000;
+	background-color: #eaeaea;
+	padding:3px;	
+}
+#charthead {
+	background-color: transparent;
+	width:100%;
+	height:5px;
+	font-size:3;
+}
+#graph {
+	width:98%;
+	bottom:0;
+	position:absolute;
+}
+div.bar {
+	width: 5px;
+	margin: 2px;
+	display: inline-block;
+	position: relative;
+	background-color: #aeaeae;
+	vertical-align: baseline;
+}
