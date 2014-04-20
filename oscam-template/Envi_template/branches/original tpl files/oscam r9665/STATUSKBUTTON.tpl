@@ -1,0 +1,2 @@
+<!--OSCam;3620492984;1.20-unstable_svn;9665;-->
+<A HREF="status.html?action=kill&amp;threadid=##CID##" TITLE="Kill this ##TARGET## ##LBL##"><IMG CLASS="icon" SRC="image?i=ICKIL" ALT="Kill this ##TARGET## ##LBL##"></A>
