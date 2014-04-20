@@ -1101,7 +1101,6 @@ div.bar {
 		display:block;
 		width:100%;
 		padding:13px 50px;
-		background:#51C1F1;
 		text-align:center;
 		font-size:1.5em;
 		font-weight:700;
@@ -1112,7 +1111,12 @@ div.bar {
 		transition: all 0.5s linear;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
-		box-sizing: border-box
+		box-sizing: border-box;
+		background-image: -o-linear-gradient(left, #000000 40%, #45484D 100%);
+		background-image: -moz-linear-gradient(left, #000000 40%, #45484D 100%);
+		background-image: -webkit-linear-gradient(left, #000000 40%, #45484D 100%);
+		background-image: -ms-linear-gradient(left, #000000 40%, #45484D 100%);
+		background-image: linear-gradient(to left, #000000 40%, #45484D 100%);
 	}
 	.toggle:hover:after{
 		background: #45ABD6;
@@ -1156,6 +1160,7 @@ div.bar {
 	}
 }
 
+/* #### MOBILE PHONES #### */
 /* Mobile Phones PORTRAIT:
  * -----------------------
  * Samsung Galaxy S4 mini
