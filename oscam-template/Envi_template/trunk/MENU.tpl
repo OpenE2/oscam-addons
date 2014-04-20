@@ -1,7 +1,7 @@
 <!--OSCam;4104161285;1.20-unstable_svn;9665;-->
 		<DIV ID="main">
 			<UL ID="mainmenu">
-					<LI CLASS="##MENUACTIVE0##"><A HREF="status.html">Status</A></LI>
+				<LI CLASS="##MENUACTIVE0##"><A HREF="status.html">Status</A></LI>
 ##LOGPAGEMENU##
 				<LI CLASS="##MENUACTIVE1##"><A HREF="config.html">Config</A></LI>
 				<LI CLASS="##MENUACTIVE2##"><A HREF="readers.html">Readers</A></LI>

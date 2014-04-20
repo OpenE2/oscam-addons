@@ -1070,7 +1070,6 @@ div.bar {
 
 /* ================================= RESPONSIVE DESIGN ================================= */
 /* #### DESKTOPS #### */
-
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 	div.groups {
 		text-overflow: ellipsis;
@@ -1078,15 +1077,19 @@ div.bar {
 	}
 }
 
-/* #### Mobile Phones Portrait or Landscape #### */
-@media screen and (max-device-width: 640px){
-	/* CSS here */
-}
-
-/* #### Samsung Galaxy S4 mini #### */ 
+/* Mobile Phones PORTRAIT:
+ * -----------------------
+ * Samsung Galaxy S4 mini
+ *
+ *
+ */ 
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
+	#mainmenu {
+		overflow: hidden
+	}
+
 	#mainmenu li {
-    	font-size: 40px;
-    	font-weight: 700;
+		font-size: 40px;
+		font-weight: 700;
 	}
 }
