@@ -1072,7 +1072,10 @@ div.bar {
 /* #### DESKTOPS #### */
 
 @media screen and (min-width: 1024px) and (max-width: 1360px) {
-	/* CSS here */
+	div.groups {
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+	}
 }
 
 /* #### Mobile Phones Portrait or Landscape #### */
