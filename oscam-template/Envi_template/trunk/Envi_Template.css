@@ -1112,7 +1112,13 @@ div.bar {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box
-	}	
+	}
+	.toggle:hover:after{
+		background: #45ABD6;
+	}
+	#toggle:checked + .toggle:after{
+		content: 'Close Menu';
+	}
 
 	/* main menu */
 	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
