@@ -1123,7 +1123,7 @@ div.bar {
 
 	/* main menu */
 	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
-	height: 100%; 
+	height: auto; 
 	}
 	#mainmenu { 
 		display:none;
@@ -1139,7 +1139,7 @@ div.bar {
 		margin:0;
 		background:white;
 		font-size:1.5em;
-		padding-top:10px
+		padding:10px
 	}
 	#mainmenu > li:last-child {
 		border-bottom: 2px solid black;
@@ -1148,7 +1148,6 @@ div.bar {
 		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32);
 	}
 	#mainmenu > li > a {
-		display:block;
 		width:100%;
 		text-decoration:none;
 		-webkit-box-sizing:border-box;
@@ -1189,7 +1188,8 @@ div.bar {
 		padding:13px 50px;
 		background:#51C1F1;
 		text-align:center;
-		font-size:12px;
+		font-size:1.5em;
+		font-weight:700;
 		color:#FFF;
 		-webkit-transition: all 0.5s linear;
 		-moz-transition: all 0.5s linear;
@@ -1208,7 +1208,7 @@ div.bar {
 
 	/* main menu */
 	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
-	height: 100%; 
+	height: auto; 
 	}
 	#mainmenu { 
 		display:none;
@@ -1222,6 +1222,21 @@ div.bar {
 		display:block;
 		width:100%;
 		margin:0;
-		background: white;
+		background:white;
+		font-size:1.5em;
+		padding:10px
+	}
+	#mainmenu > li:last-child {
+		border-bottom: 2px solid black;
+		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+	}
+	#mainmenu > li > a {
+		width:100%;
+		text-decoration:none;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box; 
+		box-sizing:border-box
 	}
 }
