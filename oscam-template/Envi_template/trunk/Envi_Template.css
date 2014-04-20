@@ -1077,13 +1077,7 @@ div.bar {
 	}
 }
 
-/* Mobile Phones PORTRAIT:
- * -----------------------
- * Samsung Galaxy S4 mini
- *
- *
- */ 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
+@media screen and (device-width: 540px) and (device-height: 960px) {
 	.toggle:after {
 		content: 'Main Menu';
 		display: block;
@@ -1108,4 +1102,14 @@ div.bar {
 	#toggle:checked + .toggle:after {
     	content: "Close Menu";
 	}
+}
+
+/* Mobile Phones PORTRAIT:
+ * -----------------------
+ * Samsung Galaxy S4 mini
+ *
+ *
+ */ 
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
+
 }
