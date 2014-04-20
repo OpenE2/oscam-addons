@@ -49,7 +49,7 @@
 /* ******** 2. BASIC DIVISION PAGES */
 html,body,* html #wrapper {height:100%}
 #wrapper {position:relative;min-height:100%}
-#content {margin-bottom:0;padding:0 8px 120px}
+#content {margin-bottom:0;padding:40px 8px 120px}
 #footer {position:absolute;bottom:0;width:100%}
 
 /* ******** 3. BASIC SETTINGS */
@@ -63,7 +63,7 @@ body {
 	text-align:center
 }
 
-/* Large red text in shutdown.html, autoconf.html 
+/* Large red text in shutdown.html, autoconf.html, savetemplates.html 
  * Color setting in COLOR section
  */
 p.text-large-red {
@@ -131,7 +131,16 @@ a:hover span {
 /* ******** 5. MAIN MENU */
 
 /* ID are for creating main menu in menu.html */
-#main {}
+#main {
+	width:100%;
+	height:40px;
+	position:fixed;
+	right:0;
+	left:0;
+	top:0;
+	z-index:1050;
+	background-color:gray
+}
 #mainmenu {
 	height:30px;
 	padding-top:10px;
@@ -493,7 +502,7 @@ div.logo {
 	position:absolute;
 	top:10px;
 	left:10px;
-	z-index:0
+	z-index:1060
 }
 
 /* in READERS and USERS items */
