@@ -541,8 +541,11 @@ div.footer {
 	margin-bottom:0;
 	margin-top:40px
 }
-div.footer li ul {
+div.footer ul {
 	margin:5px
+}
+ul.textfooter {
+	margin:5px 0
 }
 ul.textfooter,  ul.textfooter ul {
 	list-style-type:none
@@ -1214,6 +1217,15 @@ div.bar {
 	span.span_notifier {
 		margin-left:5px;
 		font-weight:700;
+	}
+
+	/* FOOTER */
+	div.footer ul ul li {
+		margin:5px
+	}
+	ul.textfooter ul li,ul.textfooter ul li:last-child {
+		display: list-item;
+		list-style-type: square;
 	}
 }
 
