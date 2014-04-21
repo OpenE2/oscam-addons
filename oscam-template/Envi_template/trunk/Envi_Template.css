@@ -212,16 +212,7 @@ li.menu a, li.menu_selected a {
 }
 #nav a {
 	color: #2e2e2e;
-	border-left: 1px solid #e0e0e0;
-	border-right: 1px solid #fff;
-    margin:-6.5px;
-    padding: 11px 5px;
-}
-#nav li:first-child > a {
-	border-left: 0;
-}
-#nav li:last-child > a {
-	border-right: 0;
+    padding: 8px 6px;
 }
 li.configmenu a, li.configmenu_selected a {
 	text-decoration:none
