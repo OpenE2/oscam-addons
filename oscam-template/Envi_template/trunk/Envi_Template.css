@@ -160,15 +160,17 @@ a:hover span {
 	height:30px;
 	padding-top:10px;
 	display:inline-block;
-	position:relative
+	position:relative;
+	margin-top:10px
 }
 #mainmenu li {
 	display:inline;
 	margin-left:2px;
 	margin-right:2px;
 	padding:5px 3px 3px;
-	font-size:18px;
-	font-weight:700
+	font-size:14px;
+	font-weight:700;
+	text-transform:uppercase
 }
 li.menu a, li.menu_selected a {
 	text-decoration:none
@@ -934,8 +936,8 @@ a:link, a:visited, a:active {
 	text-decoration:none
 }
 /* MAIN MENU & SUBNAV*/
-#mainmenu, #nav {
-	background-color:#FFF
+#mainmenu {
+	text-shadow:1px 1px 1px #000
 }
 #main {
 	background-image: -webkit-gradient(linear,left top,right top,color-stop(0.4, #45484D),color-stop(1, #000000));
@@ -945,7 +947,17 @@ a:link, a:visited, a:active {
 	background-image: -ms-linear-gradient(right, #45484D 40%, #000000 100%);
 	background-image: linear-gradient(to right, #45484D 40%, #000000 100%);
 }
-
+#nav {}
+li.menu a {
+    color:#B3B3B3
+}
+li.menu:hover a {
+    color:#F00423;
+    transition:all 0.5s ease 0s
+}
+li.menu_selected a {
+    color: #F00423;
+}
 li.menu:hover, li.menu_selected, 
 li.configmenu:hover, li.configmenu_selected {
 	background-color:#DDD
