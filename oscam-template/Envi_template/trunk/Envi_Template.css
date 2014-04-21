@@ -1235,6 +1235,13 @@ div.bar {
 		margin:auto;
 		width:45%
 	}
+	li.developed {
+		font-size:1.3em
+	}
+	li.styleauthor {
+		background-color: black;
+		padding:5px
+	}
 }
 
 /* #### MOBILE PHONES #### */

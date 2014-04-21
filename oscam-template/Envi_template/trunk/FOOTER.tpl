@@ -2,7 +2,7 @@
 	</DIV> <!-- End content -->
 	<DIV CLASS="footer" ID="footer">
 		<UL CLASS="textfooter">
-			<LI><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
+			<LI CLASS="developed"><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
 			<LI>
 				<UL>
 					<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
