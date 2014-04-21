@@ -187,7 +187,7 @@ li.menu a, li.menu_selected a {
  * services.html, services_edit.html, status.html, user_edit.html, userconfig.html */
 #subnav {
 	position: fixed;
-	top: 60px;
+	top: 58px;
 	left: 0;
 	right: 0;
 	border: 1px solid #e5e5e5;
@@ -199,7 +199,7 @@ li.menu a, li.menu_selected a {
 	z-index:1040
 }
 #nav {
-	height:22px;
+	height:20px;
 }
 #nav li {
 	display:inline;
@@ -214,7 +214,7 @@ li.menu a, li.menu_selected a {
 	color: #2e2e2e;
 	border-left: 1px solid #e0e0e0;
 	border-right: 1px solid #fff;
-    margin:-6px;
+    margin:-6.5px;
     padding: 11px 5px;
 }
 #nav li:first-child > a {
