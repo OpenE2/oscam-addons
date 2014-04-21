@@ -211,7 +211,7 @@ li.menu a, li.menu_selected a {
 	font-size:14px
 }
 #nav a {
-	padding:8px 4px;
+	padding:8px 5px;
 	margin:-5px
 }
 li.configmenu a, li.configmenu_selected a {
@@ -999,7 +999,8 @@ a:link, a:visited, a:active {
 }
 #nav {}
 #nav a {
-	color: #2e2e2e
+	color: #2e2e2e;
+	font-size:12px
 }
 #nav li.configmenu_selected > a:link,
 #nav li.configmenu_selected > a:visited,
