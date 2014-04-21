@@ -1173,6 +1173,9 @@ div.bar {
 	}
 
 	/* main menu */
+	#main {
+		height:46px
+	}
 	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
 	height: auto; 
 	}
@@ -1226,6 +1229,11 @@ div.bar {
 	ul.textfooter ul li,ul.textfooter ul li:last-child {
 		display: list-item;
 		list-style-type: square;
+	}
+	ul.textfooter ul {
+		text-align:left;
+		margin:auto;
+		width:45%
 	}
 }
 
