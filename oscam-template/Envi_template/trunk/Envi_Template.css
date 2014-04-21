@@ -1127,6 +1127,17 @@ div.bar {
 }
 
 @media screen and (device-width: 540px) and (device-height: 960px) {
+	
+}
+
+/* #### MOBILE PHONES #### */
+/* Mobile Phones PORTRAIT:
+ * -----------------------
+ * Samsung Galaxy S4 mini
+ *
+ *
+ */ 
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
 	/* Logo */
 	div.logo {
 		display: none;
@@ -1242,15 +1253,4 @@ div.bar {
 		background-color: black;
 		padding:5px
 	}
-}
-
-/* #### MOBILE PHONES #### */
-/* Mobile Phones PORTRAIT:
- * -----------------------
- * Samsung Galaxy S4 mini
- *
- *
- */ 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
-	
 }
