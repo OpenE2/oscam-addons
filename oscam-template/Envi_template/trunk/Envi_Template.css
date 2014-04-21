@@ -59,7 +59,7 @@
 /* ******** 2. BASIC DIVISION PAGES */
 html,body,* html #wrapper {height:100%}
 #wrapper {position:relative;min-height:100%}
-#content {margin-bottom:0;padding:70px 8px 120px}
+#content {margin-bottom:0;padding:70px 8px 150px}
 #footer {position:absolute;bottom:0;width:100%}
 
 /* ******** 3. BASIC SETTINGS */
@@ -517,7 +517,7 @@ div.warning {
 
 /* in logobit.html - Logo for Oscam */
 div.logo {
-	position:absolute;
+	position:fixed;
 	top:10px;
 	left:10px;
 	z-index:1060
@@ -1024,18 +1024,21 @@ tr.p:hover td,
 tr.p:hover td a,
 tr.c:hover td,						
 tr.c:hover td a{					
-	background-color: #BC7E26;
+	background-color: #373F46;
 	color: white;						
 }
 .config tr:hover td,
 .readers tr:hover td,
 .users tr:hover td,
 .servicesedit tr:hover td,
-.stats tr:hover td {
-	background-color: #BC7E26;
+.stats tr:hover td,
+.configreader tr:hover td,
+.statsbalance tr:hover td {
+	background-color: #373F46;
 	color: white;						
 }
-.config tr:last-child:hover td {
+.config tr:last-child:hover td,
+.configreader tr::last-child:hover td {
 	background-color: #D0D0D0;				
 }
 
