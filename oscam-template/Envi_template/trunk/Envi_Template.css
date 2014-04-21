@@ -619,7 +619,11 @@ input[type=checkbox] {
 	_vertical-align:middle;
 	margin-right:5px
 }
-
+/* for all button */
+input[type="submit"] {
+	padding:0px 3px;
+	cursor:pointer
+}
 /* ******** 13. IMAGE */
 
 /* generaly settings for images */
@@ -1071,8 +1075,27 @@ input[type="text"] {
 input[type="text"]:hover{
 	border:1px solid #000
 }
+input[type="submit"] {
+	background:#FF4A45;
+	background-image: -o-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
+	background-image: -moz-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
+	background-image: -webkit-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
+	background-image: -ms-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
+	background-image: linear-gradient(to bottom, #FF4B45 0%, #BD0000 100%);
+	border-color:#BD0000;
+	border:2px solid #BD0000
+}	
 #otherdropdown select{
 	color:gray
+}
+#otherdropdown option { 
+	color:#000
+}
+select {
+	border: 1px solid #CCC
+}
+select:hover {
+    border:1px solid #000
 }
 /* IMAGE */
 img.icon {
