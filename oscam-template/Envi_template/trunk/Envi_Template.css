@@ -7,6 +7,7 @@
 
  /* Table of Content
 ============================================================================================
+###### GENERAL SETTINGS FOR DESKTOPS AND MOBILE
 # GENERALY CSS SETTINGS
 	# 1. RESET
 	# 2. BASIC DIVISION PAGES
@@ -40,11 +41,17 @@
 	# SPAN
 	# GRAPH
 
-# RESPONSIVE DESIGN
-	# DESKTOPS
+###### RESPONSIVE DESIGN FOR DESKTOPS AND MOBILE DEVICE
+# DESKTOPS 1024px - 1366px
+
+# DESKTOPS 540px - 960px
+
+# MOBILE PHONES 360x540px - pixel ratio 1.5
+
+
 */
 
-
+/* ################################# GENERAL SETTINGS FOR DESKTOPS AND MOBILE ################################# */
 /* ================================= GENERALY CSS SETTINGS ================================= */
 /* ******** 1. RESET  */
 * {margin:0;padding:0}
@@ -132,6 +139,12 @@ a:hover span {
 }
 
 /* ******** 5. MAIN MENU */
+
+/* checkbox for show/hide main menu 
+ * (it is used only for showing main menu on mobile device) 
+ * for desktops browser is not used
+ */
+#toggle {display:none}
 
 /* ID are for creating main menu in menu.html */
 #main {
@@ -1067,8 +1080,7 @@ div.bar {
 	background-color: #aeaeae;
 	vertical-align: baseline;
 }
-
-/* ================================= RESPONSIVE DESIGN ================================= */
+/* ################################# RESPONSIVE DESIGN FOR DESKTOPS AND MOBILE DEVICE ################################# */
 /* #### DESKTOPS #### */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 	div.groups {
@@ -1085,7 +1097,6 @@ div.bar {
 
 	/* MAIN MENU */
 	/* checkbox for show/hide main menu */
-	#toggle {display:none}
 	#toggle:checked ~ #mainmenu {display:block;opacity:1}
 	/* label for checkbox */
 	.toggle {
@@ -1180,96 +1191,5 @@ div.bar {
  *
  */ 
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5) {
-	/* Logo */
-	div.logo {
-		display: none;
-	}
-
-	/* MAIN MENU */
-	/* checkbox for show/hide main menu */
-	#toggle {display:none}
-	#toggle:checked ~ #mainmenu {display:block;opacity:1}
-	/* label for checkbox */
-	.toggle {
-		display:block;
-		position:relative;
-		cursor:pointer;
-		-webkit-touch-callout:none;
-		-webkit-user-select:none;
-		user-select:none
-	}
-	.toggle:after {
-		content:'Main menu';
-		display:block;
-		width:100%;
-		padding:13px 50px;
-		background-color:#1E1F21;
-		text-align:center;
-		font-size:1.5em;
-		font-weight:700;
-		color:#FFF;
-		-webkit-transition: all 0.5s linear;
-		-moz-transition: all 0.5s linear;
-		-o-transition: all 0.5s linear;
-		transition: all 0.5s linear;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	.toggle:hover:after{
-		background: #000;
-	}
-	#toggle:checked + .toggle:after{
-		content: 'Close Menu';
-	}
-
-	/* main menu */
-	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
-	height: auto; 
-	}
-	#mainmenu { 
-		display:none;
-		opacity:0;
-		width:100%;
-		position:absolute;
-		right:0;
-		padding-top:0px
-	}
-	#mainmenu > li {
-		display:block;
-		width:100%;
-		margin:0;
-		background:#666;
-		font-size:1.5em;
-		font-weight:400;
-		padding:10px;
-	}
-	li.menu a {
-		color: #FFF;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	li.menu_selected a {
-		color: #F00;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	#mainmenu > li:last-child {
-		border-bottom: 2px solid black;
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-	}
-	#mainmenu > li > a {
-		width:100%;
-		text-decoration:none;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box; 
-		box-sizing:border-box
-	}
-	span.span_notifier {
-		margin-left:5px;
-		font-weight:700;
-	}
+	
 }
