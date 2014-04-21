@@ -91,7 +91,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:"Streamboard Team"}
+p.styleauthor:after {content:"| Envi Template - Last update 2014-04-21"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -1035,8 +1035,18 @@ div.sidlistclose a {
 	color:#FFF
 }
 div.footer {
-	background-color:#EEE;
-	border-top:3px solid #CCC
+	background-color:#17191B;
+	border-top:10px solid #000
+}
+div.footer p {
+    color:#656565
+}
+div.footer b {
+    color:#999
+}
+div.footer p.styleauthor b {
+    color:#BD0000;
+    text-shadow:1px 1px 1px #000
 }
 
 /* TEXTAREA */
