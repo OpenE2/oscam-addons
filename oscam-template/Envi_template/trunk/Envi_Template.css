@@ -1059,13 +1059,21 @@ div.footer li.styleauthor b {
     text-shadow:1px 1px 1px #000
 }
 
-/* TEXTAREA */
+/* TEXTAREA,SELECT,INPUT */
 textarea.editor {
 	border:1px dotted #AAA;
 	background-color:#FAFAFA;
 	color:#000
 }
-
+input[type="text"] {
+	border:1px solid #CCC
+}
+input[type="text"]:hover{
+	border:1px solid #000
+}
+#otherdropdown select{
+	color:gray
+}
 /* IMAGE */
 img.icon {
 	background:#FF4A45;
