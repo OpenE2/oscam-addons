@@ -171,7 +171,7 @@ a:hover span {
 	font-size:16px;
 	font-weight:400;
 	text-transform:uppercase;
-	font-family:Calibri
+	font-family:Calibri,Arial,Verdana
 }
 li.menu a, li.menu_selected a {
 	text-decoration:none
@@ -1185,7 +1185,8 @@ div.bar {
 		width:100%;
 		position:absolute;
 		right:0;
-		padding-top:0px
+		padding-top:0;
+		margin-top:0
 	}
 	#mainmenu > li {
 		display:block;
@@ -1233,7 +1234,7 @@ div.bar {
 	ul.textfooter ul {
 		text-align:left;
 		margin:auto;
-		width:45%
+		width:60%
 	}
 	li.developed {
 		font-size:1.3em
@@ -1241,6 +1242,9 @@ div.bar {
 	li.styleauthor {
 		background-color: black;
 		padding:5px
+	}
+	li.styleauthor:after {
+		content: ""
 	}
 }
 
