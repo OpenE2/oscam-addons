@@ -211,8 +211,8 @@ li.menu a, li.menu_selected a {
 	font-size:14px
 }
 #nav a {
-	color: #2e2e2e;
-    padding: 8px 6px;
+	padding:8px 4px;
+	margin:-5px
 }
 li.configmenu a, li.configmenu_selected a {
 	text-decoration:none
@@ -995,8 +995,19 @@ a:link, a:visited, a:active {
 	background-image: -webkit-linear-gradient(right, #45484D 0%, #000000 100%);
 	background-image: -ms-linear-gradient(right, #45484D 0%, #000000 100%);
 	background-image: linear-gradient(to right, #45484D 0%, #000000 100%);
+	box-shadow:0px 1px 4px #5e5e5e
 }
 #nav {}
+#nav a {
+	color: #2e2e2e
+}
+#nav li.configmenu_selected > a:link,
+#nav li.configmenu_selected > a:visited,
+#nav li.configmenu_selected > a:active,
+#nav li.configmenu > a:hover {
+	color: #D80320;
+	background-color: #EDEDED;
+}
 li.menu a {
     color:#B3B3B3
 }
