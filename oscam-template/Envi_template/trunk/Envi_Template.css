@@ -908,10 +908,11 @@ input.pintervall {
 	height:18px;
 	color:#000;
 	background-color:transparent;
-	border:none;
+	border:none !important;
 	border-radius:4px;
-	text-align:right;
-	margin: 0 4px;
+	text-align:center;
+	margin:0 4px;
+	padding:0
 }
 
 /* polling heartbeat */
@@ -1016,6 +1017,27 @@ tr.h td {
 
 tr.r td, span.e_expired {background-color:#FFF3E7}
 tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
+
+tr.r:hover td,						
+tr.r:hover td a,
+tr.p:hover td,						
+tr.p:hover td a,
+tr.c:hover td,						
+tr.c:hover td a{					
+	background-color: #BC7E26;
+	color: white;						
+}
+.config tr:hover td,
+.readers tr:hover td,
+.users tr:hover td,
+.servicesedit tr:hover td,
+.stats tr:hover td {
+	background-color: #BC7E26;
+	color: white;						
+}
+.config tr:last-child:hover td {
+	background-color: #D0D0D0;				
+}
 
 /* TABLE TH */
 th {
