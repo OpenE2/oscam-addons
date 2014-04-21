@@ -629,11 +629,11 @@ img {
 
 /* for icons with following Action */
 img.icon {
-	border-radius:4px;
-	border:0 solid;
-	width:22px;
-	height:22px;
-	max-height:22px
+	border-radius:3px;
+	border:1px solid #BD0000;
+	width:20px;
+	height:20px;
+	max-height:20px
 }
 
 /* statususericon	- in STATUS item
@@ -663,7 +663,7 @@ td#in.centered img {
 /* in module-webif.c and userconfig_notify.html */
 span.span_notifier {
 	margin-left:2px;
-	padding:1px 3px
+	padding:1px 4px
 }
 
 /* in module-webif.c value for STATUS item ( more info in Changeset 6668 by alno )
@@ -1066,7 +1066,13 @@ textarea.editor {
 
 /* IMAGE */
 img.icon {
-	background-color:#A00
+	background:#FF4A45;
+	background-image: -o-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
+	background-image: -moz-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
+	background-image: -webkit-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
+	background-image: -ms-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
+	background-image: linear-gradient(to bottom, #FF0000 0%, #BD0000 100%);
+	border-color:#F00 #BD0000 #710000;
 }
 
 /* SPAN */
