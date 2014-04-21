@@ -1008,7 +1008,8 @@ tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
 
 /* TABLE TH */
 th {
-	background-color:#CCC
+	background-color:#2F3133;
+	color:#FFF
 }
 th.nameinfo {
 	background-color:#999
@@ -1016,7 +1017,8 @@ th.nameinfo {
 
 /* TABLE TD */
 td {
-	background-color:#EEE
+	background-color:#D0D0D0;
+	color:#333
 }
 td.subheadline {
 	background-color:#CCC
@@ -1072,7 +1074,7 @@ img.icon {
 	background-image: -webkit-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
 	background-image: -ms-linear-gradient(bottom, #FF0000 0%, #BD0000 100%);
 	background-image: linear-gradient(to bottom, #FF0000 0%, #BD0000 100%);
-	border-color:#F00 #BD0000 #710000;
+	border-color:#BD0000
 }
 
 /* SPAN */
