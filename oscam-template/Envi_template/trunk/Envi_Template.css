@@ -137,7 +137,9 @@ a:hover span {
 	font-weight:normal;
 	text-align:left
 }
-
+#savelog {
+	text-decoration:none
+}
 /* ******** 5. MAIN MENU */
 
 /* checkbox for show/hide main menu 
@@ -631,6 +633,17 @@ input[type="submit"] {
 input[type=submit]:disabled {
 	cursor: pointer
 }
+/* for button in STATUS */
+td.subheadline input {
+	float:right;
+	border-width:0;
+	font-size:12px;
+	margin-left:5px;
+	margin-right:5px;
+	padding:1px;
+	cursor:pointer
+}
+
 /* ******** 13. IMAGE */
 
 /* generaly settings for images */
@@ -953,9 +966,6 @@ a:hover span {
 a:link, a:visited, a:active {
 	color:#050840
 }
-#savelog {
-	text-decoration:none
-}
 /* MAIN MENU & SUBNAV*/
 #mainmenu {
 	text-shadow:1px 1px 1px #000
@@ -1152,6 +1162,11 @@ select {
 }
 select:hover {
     border:1px solid #000
+}
+/* for button in STATUS */
+td.subheadline input:hover {
+	color:#FFF;
+	background-color:#232527
 }
 /* IMAGE */
 img.icon {
@@ -1352,8 +1367,6 @@ div.bar {
 /* Mobile Phones PORTRAIT:
  * -----------------------
  * Samsung Galaxy S4 mini
- * 
- *
  */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5){
 	/* Logo */
