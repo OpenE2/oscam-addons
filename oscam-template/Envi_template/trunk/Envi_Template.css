@@ -91,7 +91,7 @@ p.text-large-red {
 #text_totalecm {}
 
 /* in footer.html */
-p.styleauthor:after {content:"| Envi Template - Last update 2014-04-21"}
+p.styleauthor:after {content:" | Envi Template - Last update 2014-04-21"}
 
 /* in pre_shutdown.html */
 h4 {
