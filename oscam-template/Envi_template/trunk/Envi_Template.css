@@ -541,11 +541,14 @@ div.footer {
 	margin-bottom:0;
 	margin-top:40px
 }
-div.footer li {
+div.footer li ul {
 	margin:5px
 }
-ul.textfooter {
+ul.textfooter,  ul.textfooter ul {
 	list-style-type:none
+}
+ul.textfooter li {
+    display: inline
 }
 /* in status.html, main DIV for statistics info */
 div.info {
