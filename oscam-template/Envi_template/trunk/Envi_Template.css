@@ -165,11 +165,11 @@ a:hover span {
 }
 #mainmenu li {
 	display:inline;
-	margin-left:2px;
-	margin-right:2px;
+	margin-left:5px;
+	margin-right:5px;
 	padding:5px 3px 3px;
-	font-size:14px;
-	font-weight:700;
+	font-size:16px;
+	font-weight:400;
 	text-transform:uppercase;
 	font-family:Calibri
 }
