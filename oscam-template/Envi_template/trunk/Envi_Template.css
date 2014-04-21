@@ -170,7 +170,8 @@ a:hover span {
 	padding:5px 3px 3px;
 	font-size:14px;
 	font-weight:700;
-	text-transform:uppercase
+	text-transform:uppercase;
+	font-family:Calibri
 }
 li.menu a, li.menu_selected a {
 	text-decoration:none
@@ -940,12 +941,12 @@ a:link, a:visited, a:active {
 	text-shadow:1px 1px 1px #000
 }
 #main {
-	background-image: -webkit-gradient(linear,left top,right top,color-stop(0.4, #45484D),color-stop(1, #000000));
-	background-image: -o-linear-gradient(right, #45484D 40%, #000000 100%);
-	background-image: -moz-linear-gradient(right, #45484D 40%, #000000 100%);
-	background-image: -webkit-linear-gradient(right, #45484D 40%, #000000 100%);
-	background-image: -ms-linear-gradient(right, #45484D 40%, #000000 100%);
-	background-image: linear-gradient(to right, #45484D 40%, #000000 100%);
+	background-image: -webkit-gradient(linear,left top,right top,color-stop(0, #45484D),color-stop(1, #000000));
+	background-image: -o-linear-gradient(right, #45484D 0%, #000000 100%);
+	background-image: -moz-linear-gradient(right, #45484D 0%, #000000 100%);
+	background-image: -webkit-linear-gradient(right, #45484D 0%, #000000 100%);
+	background-image: -ms-linear-gradient(right, #45484D 0%, #000000 100%);
+	background-image: linear-gradient(to right, #45484D 0%, #000000 100%);
 }
 #nav {}
 li.menu a {
@@ -959,9 +960,7 @@ li.menu_selected a {
     color: #F00423;
 }
 li.menu:hover, li.menu_selected, 
-li.configmenu:hover, li.configmenu_selected {
-	background-color:#DDD
-}
+li.configmenu:hover, li.configmenu_selected {}
 
 /* TABLE */
 table.status {
