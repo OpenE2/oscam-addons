@@ -624,6 +624,10 @@ input[type="submit"] {
 	padding:0px 3px;
 	cursor:pointer
 }
+/* settings for which is disabled - in files.html?file=oscam.version */
+input[type=submit]:disabled {
+	cursor: pointer
+}
 /* ******** 13. IMAGE */
 
 /* generaly settings for images */
@@ -1076,6 +1080,8 @@ input[type="text"]:hover{
 	border:1px solid #000
 }
 input[type="submit"] {
+	color: #FFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
 	background:#FF4A45;
 	background-image: -o-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
 	background-image: -moz-linear-gradient(bottom, #FF4B45 0%, #BD0000 100%);
@@ -1084,7 +1090,30 @@ input[type="submit"] {
 	background-image: linear-gradient(to bottom, #FF4B45 0%, #BD0000 100%);
 	border-color:#BD0000;
 	border:2px solid #BD0000
-}	
+}
+input[type="submit"]:hover {
+	background: #232527; 
+	color: #FFF;
+	border:2px solid #000;
+	text-decoration: none; 
+	-webkit-transition: all .01s ease-out; 
+	-moz-transition: all .01s linear; 
+	transition: all .01s linear
+}
+
+/* settings for which is disabled - in files.html?file=oscam.version */
+input[type=submit]:disabled,
+input[type=submit]:disabled:hover {
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #E6E6E6 100%);
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #E6E6E6 100%);
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #E6E6E6 100%);
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #E6E6E6 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%);
+	border: 2px solid #CCC;
+	color: #656565
+}
+
 #otherdropdown select{
 	color:gray
 }
