@@ -1,14 +1,9 @@
 <!--OSCam;2496003198;1.20-unstable_svn;9665;-->
 <TR>
-	<TD CLASS="subheadline" COLSPAN="11">
+	<TD CLASS="subheadline" COLSPAN="10">
 		<P>Proxies <span id="pcc">##PCC##</span>/##PCA##</P>
 	</TD>
-	<TD CLASS="subheadline">
-		<form name="gotoform" method="post" action="">
-		<select size="1" onChange="gotosite(this.value)">
-			<option value=''>-- select Action --</option>
-			<option value='status.html?hideidle=4'>Show Hidden Proxy</option>
-		</select>
-		</form>
+	<TD CLASS="subheadline" COLSPAN="2">
+		<input type="button" onclick="window.location.href='status.html?hideidle=4';" value="Show Hidden Proxy">
 	</TD>
 </TR>
