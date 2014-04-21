@@ -59,7 +59,7 @@
 /* ******** 2. BASIC DIVISION PAGES */
 html,body,* html #wrapper {height:100%}
 #wrapper {position:relative;min-height:100%}
-#content {margin-bottom:0;padding:45px 8px 120px}
+#content {margin-bottom:0;padding:70px 8px 120px}
 #footer {position:absolute;bottom:0;width:100%}
 
 /* ******** 3. BASIC SETTINGS */
@@ -612,7 +612,10 @@ select {
 #otherdropdown option:first-child {
     display:none
 }
-
+/* generaly settings for all input */
+input[type="text"] {
+	padding:2px
+}
 /* solution for align vertical checkbox with text */
 input[type=checkbox] {
 	vertical-align:text-bottom;
