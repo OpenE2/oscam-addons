@@ -1126,7 +1126,7 @@ div.bar {
 	}
 }
 
-@media screen and (device-width: 540px) and (device-height: 960px) {
+@media screen and (device-width: 360px) and (device-height: 640px) {
 	/* Logo */
 	div.logo {
 		display: none;
