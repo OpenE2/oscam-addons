@@ -988,7 +988,6 @@ table.status {
 }
 
 /* TABLE TR */
-tr.online td.usercol6 {background-color:#949494;color:#FFF}
 tr.online td {background-color:#BFA}
 tr.offline td {}
 tr.expired td {background-color:#FBA}
@@ -1030,7 +1029,7 @@ tr.c:hover td a{
 .config tr:hover td,
 .readers tr:hover td,
 .users tr:hover td,
-.servicesedit tr:hover td,
+#servicesedit tr:hover td,
 .stats tr:hover td,
 .configreader tr:hover td,
 .statsbalance tr:hover td {
