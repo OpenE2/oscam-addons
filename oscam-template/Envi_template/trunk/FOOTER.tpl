@@ -3,9 +3,27 @@
 	<DIV CLASS="footer" ID="footer">
 		<UL CLASS="textfooter">
 			<LI><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
-			<LI><B>Current Time:</B><span ID="curtime"> ##CURDATE## | ##CURTIME## </span><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## <B>Up Time:</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
-			<LI><B>Process ID:</B> ##PROCESSID## <B>Access from:</B> ##CURIP## <B>Run as:</B> ##RUNAS## </LI>
-			<LI><B>OSCAM:</B> ##CS_VERSION## <B>Build:</B> r##CS_SVN_VERSION## <B>Compiler:</B> ##CS_TARGET##</LI>
+			<LI>
+				<UL>
+					<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
+					<LI><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## </LI>
+					<LI><B>Up Time:</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
+				</UL>	
+			</LI>
+			<LI>
+				<UL>
+					<LI><B>Process ID:</B> ##PROCESSID## </LI>
+					<LI><B>Access from:</B> ##CURIP## </LI>
+					<LI><B>Run as:</B> ##RUNAS##</LI>
+				</UL>	
+			</LI>
+			<LI>
+				<UL>
+					<LI><B>OSCAM:</B> ##CS_VERSION## </LI>
+					<LI><B>Build:</B> r##CS_SVN_VERSION## </LI>
+					<LI><B>Compiler:</B> ##CS_TARGET##</LI>
+				</UL>
+			</LI>
 			<LI CLASS="styleauthor">2014 Designed by : <B>Skyndas for Streamboard Team</B></LI>
 			<LI><A NAME="statusfooter"></A></LI>
 		</UL>	
