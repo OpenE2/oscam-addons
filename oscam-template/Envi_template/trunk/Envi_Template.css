@@ -1491,9 +1491,34 @@ div.bar {
 		top: 45px;
 		padding:0
 	}
-	#nav {
+	#nav { 
 		display:none;
+		opacity:0;
+		width:100%;
+		position:absolute;
+		right:0;
+		padding-top:0;
+		margin-top:0
 	}
+	#nav > li {
+		display:block;
+		width:100%;
+		margin:0;
+		background:#EDEDED;
+		font-size:1.5em;
+		font-weight:400;
+		padding:10px;
+	}
+	#nav > li:last-child {
+		border-bottom: 2px solid black;
+		border-top: 2px solid #6E6E6E;
+
+		/* BOX SHADOW */
+		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+	}
+
 	/* FOOTER */
 	div.footer ul ul li {
 		margin:5px
