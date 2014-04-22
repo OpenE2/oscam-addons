@@ -1682,7 +1682,7 @@ div.bar {
 		content:'SubMenu';
 		display:block;
 		width:100%;
-		padding:8px 50px;
+		padding:13px 50px;
 		background-color:#707070;
 		text-align:center;
 		font-size:1.5em;
@@ -1709,7 +1709,8 @@ div.bar {
 	}
 	/* subnav */
 	#subnav {
-		top: 45px;
+		top:45px;
+		height:46px;
 		padding:0;
 		border:none;
 	}
