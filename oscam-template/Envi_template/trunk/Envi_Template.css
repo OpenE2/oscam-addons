@@ -147,7 +147,7 @@ a:hover span {
  * (it is used only for showing main menu on mobile device) 
  * for desktops browser is not used
  */
-#toggle {display:none}
+#toggle, #subtoggle {display:none}
 
 /* ID are for creating main menu in menu.html */
 #main {
@@ -1458,11 +1458,11 @@ div.bar {
 		user-select:none
 	}
 	.subtoggle:after {
-		content:'Main menu';
+		content:'SubMenu';
 		display:block;
 		width:100%;
-		padding:13px 50px;
-		background-color:#1E1F21;
+		padding:8px 50px;
+		background-color:#707070;
 		text-align:center;
 		font-size:1.5em;
 		font-weight:700;
@@ -1481,14 +1481,17 @@ div.bar {
 		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 	}
 	.subtoggle:hover:after{
-		background: #000;
+		background: #2E2E2E;
 	}
 	#subtoggle:checked + .subtoggle:after{
-		content: 'Close Menu';
+		content: 'Close SubMenu';
 	}
 	/* subnav */
 	#subnav {
 		top: 45px;
+		padding:0
+	}
+	#nav {
 		display:none;
 	}
 	/* FOOTER */
