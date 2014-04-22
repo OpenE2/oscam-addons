@@ -30,7 +30,8 @@
 # COLORS
 	# BASIC SETTINGS
 	# LINKS
-	# MAIN MENU & SUBNAV
+	# MAIN MENU
+	# SUBNAV
 	# TABLE
 	# TABLE TR
 	# TABLE TH
@@ -979,10 +980,7 @@ a:hover span {
 a:link, a:visited, a:active {
 	color:#050840
 }
-/* MAIN MENU & SUBNAV*/
-#mainmenu {
-	text-shadow:1px 1px 1px #000
-}
+/* MAIN MENU*/
 #main {
 	background-image: -webkit-gradient(linear,left top,right top,color-stop(0, #45484D),color-stop(1, #000000));
 	background-image: -o-linear-gradient(right, #45484D 0%, #000000 100%);
@@ -991,6 +989,47 @@ a:link, a:visited, a:active {
 	background-image: -ms-linear-gradient(right, #45484D 0%, #000000 100%);
 	background-image: linear-gradient(to right, #45484D 0%, #000000 100%);
 	box-shadow:0px 1px 4px #5e5e5e
+}
+#mainmenu {
+	text-shadow:1px 1px 1px #000
+}
+li.menu a {
+	color:#B3B3B3
+}
+li.menu:hover a {
+	color:#F00423;
+	transition:all 0.5s ease 0s
+}
+li.menu_selected a {
+	color: #F00423;
+}
+li.menu:hover, li.menu_selected, 
+li.configmenu:hover, li.configmenu_selected {}
+
+/* SUBNAV*/
+#subnav {
+	border: 1px solid #e5e5e5;
+
+	/* GRADIENT */
+	/* Old browsers */
+	background: #EEEEEE;
+	/* Webkit (Chrome/Safari4+) */
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #F5F5F5),color-stop(1, #EEEEEE));
+	/* Opera */
+	background-image: -o-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
+
+
+	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
+	-moz-box-shadow: 	inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
+	box-shadow: 		inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
 }
 #nav {}
 #nav a {
@@ -1003,30 +1042,6 @@ a:link, a:visited, a:active {
 #nav li.configmenu > a:hover {
 	color: #D80320;
 	background-color: #EDEDED;
-}
-li.menu a {
-    color:#B3B3B3
-}
-li.menu:hover a {
-    color:#F00423;
-    transition:all 0.5s ease 0s
-}
-li.menu_selected a {
-    color: #F00423;
-}
-li.menu:hover, li.menu_selected, 
-li.configmenu:hover, li.configmenu_selected {}
-
-#subnav {
-	border: 1px solid #e5e5e5;
-	background-image: -o-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
-	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
-	background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
-	background-image: -ms-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
-	background-image: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
-	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-	-moz-box-shadow: 	inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-	box-shadow: 		inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
 }
 
 /* TABLE */
