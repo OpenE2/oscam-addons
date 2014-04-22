@@ -10,6 +10,10 @@ cd /etc/tuxbox/config/tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
 [ -f FILEMENU.tpl ] && rm -f FILEMENU.tpl
 [ -f FILEEDITCSS.tpl ] && rm -f FILEEDITCSS.tpl
+[ -f CLIENTHEADLINEBIT.tpl ] && rm -f CLIENTHEADLINEBIT.tpl
+[ -f CLIENTHEADLINEWITH.tpl ] && rm -f CLIENTHEADLINEWITH.tpl
+[ -f CLIENTPHEADLINE.tpl ] && rm -f CLIENTPHEADLINE.tpl
+[ -f CLIENTRHEADLINE.tpl ] && rm -f CLIENTRHEADLINE.tpl
 tar -xzvf Envi_Template.tgz
 mv -f Envi_Template.css /etc/tuxbox/config/Envi_Template.css
 rm -if Envi_Template.tgz || exit 1
