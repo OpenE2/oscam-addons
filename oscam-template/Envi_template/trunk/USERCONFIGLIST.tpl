@@ -36,7 +36,7 @@
 	</script>
 ##TPLBODY##
 ##TPLMENU##
-	<DIV ID="subnav"
+	<DIV ID="subnav">
 		<input id="subtoggle" type="checkbox"></input>
 		<label class="subtoggle" onclick="" for="subtoggle"></label>
 		<UL ID="nav">
