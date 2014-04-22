@@ -1443,6 +1443,11 @@ div.bar {
 		font-weight:700;
 	}
 
+	/* Subnav */
+	#subnav {
+		top: 45px;
+	}
+
 	/* FOOTER */
 	div.footer ul ul li {
 		margin:5px
@@ -1577,6 +1582,11 @@ div.bar {
 	span.span_notifier {
 		margin-left:5px;
 		font-weight:700;
+	}
+
+	/* Subnav */
+	#subnav {
+		top: 45px;
 	}
 
 	/* FOOTER */
