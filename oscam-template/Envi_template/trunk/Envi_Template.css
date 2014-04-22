@@ -1519,6 +1519,16 @@ div.bar {
 		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32);
 	}
 
+	/* set pollsetting in repsonsive design */
+	#nav li.pollselect {
+		display:block;
+		list-style:none;
+		position:static;
+		right:0;
+		font-size:1.3em;
+	}
+
+
 	/* FOOTER */
 	div.footer ul ul li {
 		margin:5px

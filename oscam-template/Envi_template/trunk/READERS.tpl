@@ -21,8 +21,8 @@
 			<LI CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></LI>
 			<LI CLASS="configmenu"><A HREF="readers.html?action=resetallrdrstats">Reset Readerstats</A></LI>
 			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
-			<LI ID="poll" CLASS="pollselect" style="display: none;">Pollintervall:<input type="text" name="pintervall" class="pintervall" value="" readonly>sec.<button id="dec">&ndash;</button><button id="inc">+</button></LI>
 			<LI ID="nopoll" CLASS="pollselect" style="display: none;">httprefresh no set - polling disabled</LI>
+			<LI ID="poll" CLASS="pollselect" style="display: none;">Pollintervall:<input type="text" name="pintervall" class="pintervall" value="" readonly>sec.<button id="dec">&ndash;</button><button id="inc">+</button></LI>
 		</UL>
 	</DIV>
 	<DIV ID="newreader">
