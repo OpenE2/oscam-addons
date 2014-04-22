@@ -1337,6 +1337,8 @@ div.bar {
 	}
 }
 
+
+/* For test in PC */
 @media screen and (device-width: 360px) and (device-height: 640px) {
 	/* Logo */
 	div.logo {
@@ -1443,11 +1445,52 @@ div.bar {
 		font-weight:700;
 	}
 
-	/* Subnav */
+	/* SUBNAV */
+	/* checkbox for show/hide subnav */
+	#subtoggle:checked ~ #nav {display:block;opacity:1}
+	/* label for checkbox */
+	.subtoggle {
+		display:block;
+		position:relative;
+		cursor:pointer;
+		-webkit-touch-callout:none;
+		-webkit-user-select:none;
+		user-select:none
+	}
+	.subtoggle:after {
+		content:'Main menu';
+		display:block;
+		width:100%;
+		padding:13px 50px;
+		background-color:#1E1F21;
+		text-align:center;
+		font-size:1.5em;
+		font-weight:700;
+		color:#FFF;
+		-webkit-transition: all 0.5s linear;
+		-moz-transition: all 0.5s linear;
+		-o-transition: all 0.5s linear;
+		transition: all 0.5s linear;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/* BOX SHADOW */
+		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+	}
+	.subtoggle:hover:after{
+		background: #000;
+	}
+	#subtoggle:checked + .subtoggle:after{
+		content: 'Close Menu';
+	}
+	/* subnav */
 	#subnav {
 		top: 45px;
+		display:none;
 	}
-
 	/* FOOTER */
 	div.footer ul ul li {
 		margin:5px
