@@ -1311,7 +1311,8 @@ path.graph_grid {stroke:gray;}
 	height: 90px;
 	border: 1px dotted #ff0000;
 	background-color: #eaeaea;
-	padding:3px;	
+	padding:3px;
+	z-index:1000;
 }
 #charthead {
 	background-color: transparent;
