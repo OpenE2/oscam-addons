@@ -18,6 +18,7 @@
 		<label class="subtoggle" onclick="" for="subtoggle"></label>
 		<UL ID="nav">
 			<LI CLASS="configmenu"><A HREF="#" onclick="addreader();">Add Reader</A></LI>
+			<LI CLASS="configmenu"><A HREF="readers.html?action=reloadreaders">Reload Readers</A></LI>
 			<LI CLASS="configmenu"><A HREF="scanusb.html">Scan USB</A></LI>
 			<LI CLASS="configmenu"><A HREF="readers.html?action=resetallrdrstats">Reset Readerstats</A></LI>
 			<LI CLASS="configmenu"><A TARGET="_blank" HREF="graph.svg?type=servers">Show Graphs</A></LI>
