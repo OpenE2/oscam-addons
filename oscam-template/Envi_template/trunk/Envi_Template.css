@@ -980,6 +980,10 @@ a:hover span {
 a:link, a:visited, a:active {
 	color:#050840
 }
+a.tooltip span,
+a.tooltip1 span {
+	color: #000
+}
 
 /* MAIN MENU*/
 #main {
@@ -1099,15 +1103,6 @@ tr.c:hover td,
 tr.c:hover td a{					
 	background-color:#373F46;
 	color:white						
-}
-tr.r:hover td,						
-tr.r:hover td a.tooltip span,
-tr.r:hover td a.tooltip1 span,
-tr.p:hover td,						
-tr.p:hover td a.tooltip span,
-tr.p:hover td a.tooltip1 span,
-{					
-	color:black						
 }
 .config tr:hover td,
 .readers tr:hover td,
