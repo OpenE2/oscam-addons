@@ -639,6 +639,10 @@ input[type="submit"] {
 	padding:0px 3px;
 	cursor:pointer
 }
+/* only for button in SERVICES */
+#addnewservice input[type="submit"] {
+	margin-left:10px
+}
 /* settings for which is disabled - in files.html?file=oscam.version */
 input[type=submit]:disabled {
 	cursor: pointer
@@ -1209,7 +1213,7 @@ input[type="submit"] {
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25)
 }
 input[type="submit"]:hover {
-	background:#232527; 
+	background:#0B1219; 
 	color:#FFF;
 	border:2px solid #000;
 	text-decoration:none; 
