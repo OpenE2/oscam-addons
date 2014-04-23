@@ -1,4 +1,4 @@
-<!--OSCam;2717642603;1.20-unstable_svn;9665;-->
+<!--OSCam;2717642603;1.20-unstable_svn;9673;-->
 <TR id="clientsubheadline">
 	<TD CLASS="subheadline" COLSPAN="10">
 		<P>Clients <span id="ucs">##UCS##</span>/<span id="uca">##UCA##</span> (<span id="ucac">##UCAC##</span> with ECM within last <span id="cfgh">##CFGH##</span> seconds)</P>
