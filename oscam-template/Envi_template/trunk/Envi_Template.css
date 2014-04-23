@@ -1100,6 +1100,15 @@ tr.c:hover td a{
 	background-color:#373F46;
 	color:white						
 }
+tr.r:hover td,						
+tr.r:hover td a.tooltip span,
+tr.r:hover td a.tooltip1 span,
+tr.p:hover td,						
+tr.p:hover td a.tooltip span,
+tr.p:hover td a.tooltip1 span,
+{					
+	color:black						
+}
 .config tr:hover td,
 .readers tr:hover td,
 .users tr:hover td,
