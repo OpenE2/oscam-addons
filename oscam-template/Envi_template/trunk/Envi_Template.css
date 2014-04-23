@@ -1119,7 +1119,7 @@ tr.c:hover td a{
 	color:white						
 }
 .config tr:last-child:hover td,
-.configreader tr::last-child:hover td {
+.configreader tr:last-child:hover td {
 	background-color:#D0D0D0				
 }
 
