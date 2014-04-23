@@ -88,7 +88,7 @@ p.text-large-red {
 }
 
 /* in readerstats.html for P */
-#text_totalecm {}
+#text_totalecm {margin-top:10px}
 
 /* in footer.html */
 li.styleauthor:after {content:" | Envi Template - Last update 2014-04-23"}
@@ -324,11 +324,17 @@ table.subservicetable {
 
 /* OTHER TABLES */
 
-/* in emm.html, emm_running.html,
- * entitlements_bit.html, entitlements_cccambit.html
- * failban.html, 
- */
+/* entitlements_bit.html, entitlements_cccambit.html */
 table.stats {}
+
+/* in emm.html */
+table.writeemm {}
+
+/* in emm_running.html */
+table.emmrunning {}
+
+/* in failban.html */
+table.failban {}
 
 /* ******** 8. TABLE TR */
 
@@ -1067,6 +1073,10 @@ li.configmenu:hover, li.configmenu_selected {}
 /* TABLE */
 table.status {
 	background-color:#FFF
+}
+table.invisible tr:hover td {
+	background-color: #373F46 !important; 
+	color: white !important
 }
 
 /* TABLE TR */
