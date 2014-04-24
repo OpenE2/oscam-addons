@@ -527,16 +527,7 @@ td.usercol17, td.usercol18,
 td.usercol19, td.usercol20,
 td.usercol21, td.usercol22,
 td.usercol23, td.usercol24,
-td.usercol25, td.readercol0,
-td.readercol1,td.readercol2,
-td.readercol3,td.readercol4,
-td.readercol5,td.readercol6,
-td.readercol7,td.readercol8,
-td.readercol9,td.readercol10,
-td.readercol11,td.readercol12,
-td.readercol13,td.readercol14,
-td.readercol15,td.readercol16,
-td.readercol17 {
+td.usercol25, td[class*='readercol'] {
 	text-align:center
 }
 
