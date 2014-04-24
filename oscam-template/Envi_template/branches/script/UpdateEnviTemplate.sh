@@ -15,8 +15,12 @@ cd /etc/tuxbox/config/tpl
 [ -f FILEMENU.tpl ] && rm -f FILEMENU.tpl
 [ -f FOOTER.tpl ] && rm -f FOOTER.tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
+[ -f LOGPAGE.tpl ] && rm -f LOGPAGE.tpl
 [ -f MENU.tpl ] && rm -f MENU.tpl
 [ -f READERS.tpl ] && rm -f READERS.tpl
+[ -f SCANUSB.tpl ] && rm -f SCANUSB.tpl
+[ -f SCRIPT.tpl ] && rm -f SCRIPT.tpl
+[ -f SERVICECONFIGLIST.tpl ] && rm -f SERVICECONFIGLIST.tpl
 [ -f STATUS.tpl ] && rm -f STATUS.tpl
 [ -f USERCONFIGLIST.tpl ] && rm -f USERCONFIGLIST.tpl
 tar -xzvf Envi_Template.tgz

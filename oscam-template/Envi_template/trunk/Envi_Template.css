@@ -91,7 +91,7 @@ p.text-large-red {
 #text_totalecm {margin-top:10px}
 
 /* in footer.html */
-li.styleauthor:after {content:" | Envi Template - Last update 2014-04-24"}
+li.styleauthor:after {content:" | Envi Template - Last update 2014-04-25"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -508,6 +508,10 @@ td.usercol1, .span, span, span a {
 	text-align:center;
 	text-decoration:none
 }
+
+/* shorthand notation td[class*='readercol'] for  td.readercol0 -  td.readercol16.
+ *
+ */
 td.centered, td.statuscol1,
 td.statuscol2, td.statuscol3,
 td.statuscol5, td.statuscol6,
