@@ -16,8 +16,8 @@
 	</script>
 ##TPLBODY##
 ##TPLMENU##
-<DIV ID="subnav">
-	<UL ID="nav" style="display:none"><LI></LI></UL>
+<DIV ID="subnav" style="display:none">
+	<UL ID="nav"><LI></LI></UL>
 </DIV>
 ##TPLMESSAGE##
 	<DIV ID="livelog">
