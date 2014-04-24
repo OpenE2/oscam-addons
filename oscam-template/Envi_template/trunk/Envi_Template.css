@@ -91,7 +91,7 @@ p.text-large-red {
 #text_totalecm {margin-top:10px}
 
 /* in footer.html */
-li.styleauthor:after {content:" | Envi Template - Last update 2014-04-23"}
+li.styleauthor:after {content:" | Envi Template - Last update 2014-04-24"}
 
 /* in pre_shutdown.html */
 h4 {
@@ -646,8 +646,16 @@ input[type="submit"] {
 	padding:0px 3px;
 	cursor:pointer
 }
-/* only for button in SERVICES */
+/* only for button in services.html */
 #addnewservice input[type="submit"] {
+	margin-left:10px
+}
+/* only for button in userconfig.html for addnewuser */
+.users input[type="submit"] {
+	margin-left:10px
+}
+/* only for button in readers.html for addnewreaders */
+.readers input[type="submit"] {
 	margin-left:10px
 }
 /* settings for which is disabled - in files.html?file=oscam.version */
