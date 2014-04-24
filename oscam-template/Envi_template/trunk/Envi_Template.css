@@ -1097,7 +1097,30 @@ tr.disabled td {}
 
 tr.disabled td:first-child img.icon,
 tr.disabledreader td:first-child img.icon {
-	background-color:#0A0
+	border:1px solid #002600;
+
+	/* GRADIENT */
+	/* Old browsers */
+	background: #004D00;
+	/* Webkit (Chrome/Safari4+) */
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #009D00),color-stop(1, #004D00));
+	/* Opera */
+	background-image: -o-linear-gradient(bottom, #009D00 0%, #004D00 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(bottom, #009D00 0%, #004D00 100%);
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-linear-gradient(bottom, #009D00 0%, #004D00 100%);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(bottom, #009D00 0%, #004D00 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #009D00 0%, #004D00 100%);
+
+}
+
+tr.disabled td:first-child a:hover img.icon,
+tr.disabledreader td:first-child a:hover img.icon {
+	background:#009D00
+
 }
 
 tr.enabledreader {}
