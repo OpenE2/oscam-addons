@@ -232,6 +232,12 @@ table.config {
 	width:60%;
 	margin-bottom:20px
 }
+table.config td:first-child {
+	width:200px
+}
+table.invisible td:first-child {
+	width:auto
+}
 
 /* Tables in readers.html */
 table.readers {
@@ -828,7 +834,8 @@ path.graph_grid {stroke-opacity:0.5;}
 	display:inline-block
 }
 #nav li ul.dropdown_nav li a:hover {
-	color:#F00423
+	color:#F00423;
+	background:none
 }
 #nav li ul.dropdown_nav li.configmenu:hover {
 	background-color:#DDD
@@ -1355,8 +1362,8 @@ path.graph_grid {stroke:gray;}
 	position:absolute;
 	width: 150px;
 	height: 90px;
-	border: 1px dotted #ff0000;
-	background-color: #eaeaea;
+	border: 3px solid #BD0000;
+	background-color: #EAEAEA;
 	padding:3px;
 	z-index:1000;
 }
