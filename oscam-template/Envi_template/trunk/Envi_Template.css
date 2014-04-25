@@ -479,6 +479,8 @@ th.statuscol15 {
 
 /* in readerconfig.html */
 th.withservices, th.notservices, th.lbservices {}
+th.withservices td a, th.notservices a, th.lbservices a {color:#FFCB80 !important}
+th.withservices td a:hover, th.notservices a:hover, th.lbservices a:hover {color:#FFF !important}
 
 /* ******** 10. TABLE TD */
 
@@ -1169,15 +1171,10 @@ tr.r td, span.e_expired {background-color:#FFF3E7}
 tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
 
 tr.s:hover td,
-tr.s:hover td a,
 tr.h:hover td,
-tr.h:hover td a,
 tr.r:hover td,
-tr.r:hover td a,
 tr.p:hover td,
-tr.p:hover td a,
-tr.c:hover td,
-tr.c:hover td a {
+tr.c:hover td {
 	background-color:#373F46;
 	color:white
 }
@@ -1204,6 +1201,7 @@ tr:hover td a:hover {
 }
 
 .config tr:last-child:hover td,
+.configuser tr:last-child:hover td,
 .configreader tr:last-child:hover td,
 .writeemm tr:last-child:hover td, 
 .stats tr:last-child:hover td {
