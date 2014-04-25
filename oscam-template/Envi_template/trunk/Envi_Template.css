@@ -479,8 +479,8 @@ th.statuscol15 {
 
 /* in readerconfig.html */
 th.withservices, th.notservices, th.lbservices {}
-th.withservices td a, th.notservices a, th.lbservices a {color:#FFCB80 !important}
-th.withservices td a:hover, th.notservices a:hover, th.lbservices a:hover {color:#FFF !important}
+th.withservices a, th.notservices a, th.lbservices a {color:#FFCB80 !important}
+th.withservices a:hover, th.notservices a:hover, th.lbservices a:hover {color:#FFF !important}
 
 /* ******** 10. TABLE TD */
 
