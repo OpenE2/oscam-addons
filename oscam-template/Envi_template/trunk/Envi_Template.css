@@ -290,7 +290,8 @@ table.status {
 }
 
 /* Tables for all part in CONFIGURATION item and in user_edit.html */
-table.config {
+table.config,
+table.configuser {
 	width:60%;
 	margin-bottom:20px
 }
@@ -313,7 +314,7 @@ table.configreader {
 
 /* Solution for hover in table subservicetable in readerconfig.html and user_edit.html */
 table.configreader tr:nth-child(30):hover td,
-table.config tr:nth-child(25):hover td {
+table.configuser tr:nth-child(25):hover td {
 	background-color: #D0D0D0;
 	color: #333;
 }
@@ -957,7 +958,8 @@ div.colorPicker-swatch {
 	display:inline;
 	list-style:none;
 	position:absolute;
-	right:10px
+	right:10px;
+	top:7px
 }
 input.pintervall {
 	font-size:14px;
