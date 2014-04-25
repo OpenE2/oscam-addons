@@ -332,6 +332,20 @@ table.statsbalance td:last-child img.icon {
 	float:right;
 	margin-left:10px
 }
+table.statsbalance td.subheadline {
+	background-color:#2F3133;
+	color:#FFF;
+	font-weight:bold
+}
+table.statsbalance td.subheadline a {
+	color:#FF9700;
+}
+table.statsbalance td.subheadline a:hover {
+	color:#FFCB80;
+}
+table.statsbalance tr:hover td.subheadline {
+	background-color:#2F3133
+}
 
 /* Table in USERS in userconfig.html */
 table.users {
