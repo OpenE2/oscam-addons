@@ -311,6 +311,16 @@ table.configreader {
 	width:850px
 }
 
+/* Solution for hover in table subservicetable in readerconfig.html  */
+table.configreader tr:nth-child(30):hover td {
+  background-color: #D0D0D0;
+  color: #333;
+}
+table.subservicetable tr:hover td {
+	background-color: #373F46 !important;
+    color: #FFF !important;
+}
+
 /* Table in readerstats.html */
 table.statsbalance td:last-child {
 	line-height:20px;
