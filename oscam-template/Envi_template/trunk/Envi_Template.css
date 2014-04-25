@@ -498,19 +498,23 @@ td {
 td.subheadline {
 	height:10px;
 	border:0;
-	padding:5px
+	padding:5px;
+	text-align:center
 }
 
 /* in status_clientheadlinebit.html, status_clientheadlinewith.html
  * status_pheadline.html, status_rheadline.html
  */
-td.subheadline form select {
-	width:100px;
+td.subheadline select {
 	text-align:center;
-	font-size:10px;
-	padding:0
+	font-size:10px
 }
-
+td.subheadline option {
+    margin: 5px 0
+}
+td.subheadline option:first-child {
+    display: none;
+}
 /* other settings for seubheadline */
 td.subheadline a {
 	text-decoration:none
@@ -1104,8 +1108,7 @@ li.configmenu:hover, li.configmenu_selected {}
 #nav li.configmenu_selected > a:visited,
 #nav li.configmenu_selected > a:active,
 #nav li.configmenu > a:hover {
-	color: #D80320;
-	background-color: #EDEDED
+	color: #D80320
 }
 
 /* TABLE */
