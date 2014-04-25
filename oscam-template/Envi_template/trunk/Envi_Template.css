@@ -1184,6 +1184,7 @@ tr.c:hover td a {
 .config tr:hover td,
 .readers tr:hover td,
 .users tr:hover td,
+.configuser tr:hover td,
 #servicesedit tr:hover td,
 .stats tr:hover td,
 .configreader tr:hover td,
@@ -1194,9 +1195,18 @@ tr.c:hover td a {
 	background-color:#373F46;
 	color:white
 }
+
+tr:hover td a {
+	color:#FFCB80
+}
+tr:hover td a:hover {
+	color:#FFF
+}
+
 .config tr:last-child:hover td,
 .configreader tr:last-child:hover td,
-.writeemm tr:last-child:hover td{
+.writeemm tr:last-child:hover td, 
+.stats tr:last-child:hover td {
 	background-color:#D0D0D0
 }
 
