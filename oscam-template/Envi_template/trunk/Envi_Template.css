@@ -1187,12 +1187,16 @@ tr.c:hover td a {
 #servicesedit tr:hover td,
 .stats tr:hover td,
 .configreader tr:hover td,
-.statsbalance tr:hover td {
+.statsbalance tr:hover td,
+.writeemm tr:hover td,
+.emmrunning tr:hover td,
+.failban tr:hover td {
 	background-color:#373F46;
 	color:white
 }
 .config tr:last-child:hover td,
-.configreader tr:last-child:hover td {
+.configreader tr:last-child:hover td,
+.writeemm tr:last-child:hover td{
 	background-color:#D0D0D0
 }
 
