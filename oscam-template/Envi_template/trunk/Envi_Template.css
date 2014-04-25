@@ -311,14 +311,15 @@ table.configreader {
 	width:850px
 }
 
-/* Solution for hover in table subservicetable in readerconfig.html  */
-table.configreader tr:nth-child(30):hover td {
-  background-color: #D0D0D0;
-  color: #333;
+/* Solution for hover in table subservicetable in readerconfig.html and user_edit.html */
+table.configreader tr:nth-child(30):hover td,
+table.config tr:nth-child(25):hover td {
+	background-color: #D0D0D0;
+	color: #333;
 }
 table.subservicetable tr:hover td {
 	background-color: #373F46 !important;
-    color: #FFF !important;
+	color: #FFF !important;
 }
 
 /* Table in readerstats.html */
