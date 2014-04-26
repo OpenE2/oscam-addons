@@ -1177,7 +1177,7 @@ input.pintervall {
 	position:absolute;
 	width: 150px;
 	height: 90px;
-	border: 1px dotted #F00;
+	border: 3px solid #BD0000;
 	background-color: #EAEAEA;
 	padding:3px;
 	z-index:1000;	
