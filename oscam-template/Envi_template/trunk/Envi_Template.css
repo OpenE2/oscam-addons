@@ -640,8 +640,7 @@ table.config td:first-child {
 .config tr:last-child:hover td,
 .configuser tr:last-child:hover td,
 .configreader tr:last-child:hover td,
-.writeemm tr:last-child:hover td, 
-.stats tr:last-child:hover td {
+.writeemm tr:last-child:hover td {
 	background-color:#D0D0D0
 }
 .config tr:hover td,
