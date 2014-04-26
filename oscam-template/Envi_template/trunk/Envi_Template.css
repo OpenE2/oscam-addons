@@ -600,14 +600,6 @@ td {
 	background-color:#D0D0D0;
 	color:#333
 }
-/* for settings in configuration of readers and users */
-table.invisible td { 
-	font-size:12px
-}
-table.invisible td:first-child {
-	padding-left:0;
-	width:auto
-}
 /* services.html */
 #servicesedit td {
 	text-align:center
@@ -666,6 +658,15 @@ table.config td:first-child {
 	background-color:#373F46;
 	color:white
 }
+/* for settings in configuration of readers and users */
+table.invisible td { 
+	font-size:12px
+}
+table.invisible td:first-child {
+	padding-left:0;
+	width:auto
+}
+/* ??? */
 tr:hover td a {
 	color:#FFCB80
 }
