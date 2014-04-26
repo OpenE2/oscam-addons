@@ -1,5 +1,5 @@
-<!--OSCam;813058455;1.20-unstable_svn;9681;CS_CACHEEX-->
-##TPLHEADERSHORT##
+<!--OSCam;813058455;1.20-unstable_svn;9687;CS_CACHEEX-->
+##TPLHEADER##
 	<script type="text/javascript">
 	
 	var page = 'cacheex';
@@ -10,7 +10,7 @@
 	var httprefresh = '##POLLREFRESHTIME##';
 
 	</script>
-##TPLBODY##
+
 ##TPLMENU##
 ##TPLMESSAGE##
 	<DIV ID="subnav">

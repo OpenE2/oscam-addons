@@ -1,4 +1,4 @@
-<!--OSCam;2532972423;1.20-unstable_svn;9681;-->
+<!--OSCam;2532972423;1.20-unstable_svn;9687;-->
 <DIV ID="subnav">
 	<UL ID="nav">
 		<LI CLASS="##CMENUACTIVE12##"><A HREF="files.html?file=oscam.version">oscam.version</A></LI>
@@ -17,7 +17,7 @@
 				<LI CLASS="##CMENUACTIVE19##"><A HREF="files.html?file=oscam.tiers">oscam.tiers</A></LI>
 				<LI CLASS="##CMENUACTIVE25##"><A HREF="files.html?file=oscam.whitelist">oscam.whitelist</A></LI>
 				<LI CLASS="##CMENUACTIVE26##"><A HREF="files.html?file=oscam.ratelimit">oscam.ratelimit</A></LI>
-##FILEEDITCSS_SHOW##
+				##FILEEDITCSS_SHOW##
 			</UL>
 		</LI>
 	</UL>
