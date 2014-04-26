@@ -5,10 +5,6 @@ wget -q http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/
 [ -f Envi_Template.tgz ] && mv -f Envi_Template.tgz /etc/tuxbox/config/tpl/Envi_Template.tgz
 cd /etc/tuxbox/config/tpl
 [ -f CACHEEXPAGE.tpl ] && rm -f CACHEEXPAGE.tpl
-[ -f CLIENTHEADLINEBIT.tpl ] && rm -f CLIENTHEADLINEBIT.tpl
-[ -f CLIENTHEADLINEWITH.tpl ] && rm -f CLIENTHEADLINEWITH.tpl
-[ -f CLIENTPHEADLINE.tpl ] && rm -f CLIENTPHEADLINE.tpl
-[ -f CLIENTRHEADLINE.tpl ] && rm -f CLIENTRHEADLINE.tpl
 [ -f CONFIGMENU.tpl ] && rm -f CONFIGMENU.tpl
 [ -f FAILBAN.tpl ] && rm -f FAILBAN.tpl
 [ -f FILEEDITCSS.tpl ] && rm -f FILEEDITCSS.tpl
