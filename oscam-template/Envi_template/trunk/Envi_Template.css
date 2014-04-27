@@ -36,7 +36,9 @@
 	# 19. OTHER SETTINGS
 
 ###### RESPONSIVE DESIGN FOR DESKTOPS AND MOBILE DEVICE
-# DESKTOPS 1024px - 1366px
+# DESKTOPS min width 1024px - max width 1366px
+
+# DESKTOPS max width 1024px
 
 # DESKTOPS 360x540px
 
@@ -1217,6 +1219,7 @@ div.bar {
 
 /* ################################# RESPONSIVE DESIGN FOR DESKTOPS AND MOBILE DEVICE ################################# */
 /* #### DESKTOPS #### */
+/* For monitor with resolution 1366x768 */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 	div.groups {
 		text-overflow:ellipsis;
@@ -1224,6 +1227,40 @@ div.bar {
 	}
 }
 
+/* For monitor with resolution 1024x768 */
+@media screen and (max-width: 1024px) {
+
+/* NOTE: In userconfig.html is hidden columns for "CW Cycle" and "Idle Time / On Channel"  */
+
+
+        /* Settings for displaying groups in readers and users */
+	div.groups {
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis
+	}
+        /* livelog in logpoll.htm */
+        #livelog {
+                font-size: 10px;
+        }
+        /* change width for table config for readers and users*/
+        table.config,
+        table.configuser  {
+                width: 80%;
+        }
+
+        /* table in userconfig - hide whole columns CW Cycle */
+        table.users tbody td:nth-child(18) {display: none;} /* for TD in TBODY */
+        table.users thead th:nth-child(6) {display: none;} /* for TH in THEAD */
+        table.users thead #headline th:nth-child(6) {display: table-cell;} /* for TH in THEAD - special for TR #headline */
+        table.users thead #headline th:nth-child(18) {display: none;} /* for TH in THEAD - special for TR #headline */
+
+        /* table in userconfig - hide whole columns Idle Time / On Channel */
+        table.users tbody td:nth-child(6) {display: none;} /* for TD in TBODY */
+        table.users thead th:nth-child(2) {display: none;} /* for TH in THEAD */
+        table.users thead #headline th:nth-child(2) {display: table-cell;} /* for TH in THEAD - special for TR #headline */
+        table.users thead #headline th:nth-child(6) {display: none;} /* for TH in THEAD - special for TR #headline */ 
+
+}
 
 /* #### For test in PC #### */
 @media screen and (device-width: 360px) and (device-height: 640px) {
