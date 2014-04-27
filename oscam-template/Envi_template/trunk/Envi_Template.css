@@ -1227,197 +1227,193 @@ div.bar {
 
 /* #### For test in PC #### */
 @media screen and (device-width: 360px) and (device-height: 640px) {
-	/* Logo */
-	div.logo {
-		display:none
-	}
 
-	/* BASIC DIVISION PAGES */
+/* **************** 1. BASIC DIVISION PAGES */
 	#content {
 		padding:100px 8px 300px
 	}
 
-	/* MAIN MENU */
+/* **************** 2. MAIN MENU */
 	/* checkbox for show/hide main menu */
-	#toggle:checked ~ #mainmenu {display:block;opacity:1}
+		#toggle:checked ~ #mainmenu {display:block;opacity:1}
 	/* label for checkbox */
-	.toggle {
-		display:block;
-		position:relative;
-		cursor:pointer;
-		-webkit-touch-callout:none;
-		-webkit-user-select:none;
-		user-select:none
-	}
-	.toggle:after {
-		content:'Main menu';
-		display:block;
-		width:100%;
-		padding:13px 50px;
-		background-color:#1E1F21;
-		text-align:center;
-		font-size:1.5em;
-		font-weight:700;
-		color:#FFF;
-		-webkit-transition: all 0.5s linear;
-		-moz-transition: all 0.5s linear;
-		-o-transition: all 0.5s linear;
-		transition: all 0.5s linear;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+		.toggle {
+			display:block;
+			position:relative;
+			cursor:pointer;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			user-select:none
+		}
+		.toggle:after {
+			content:'Main menu';
+			display:block;
+			width:100%;
+			padding:13px 50px;
+			background-color:#1E1F21;
+			text-align:center;
+			font-size:1.5em;
+			font-weight:700;
+			color:#FFF;
+			-webkit-transition: all 0.5s linear;
+			-moz-transition: all 0.5s linear;
+			-o-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	.toggle:hover:after{
-		background: #000
-	}
-	#toggle:checked + .toggle:after{
-		content:'Close Menu'
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		.toggle:hover:after{
+			background: #000
+		}
+		#toggle:checked + .toggle:after{
+			content:'Close Menu';
+			color: #F00;
+			text-shadow: 1px 1px 2px #000;
+		}
 
 	/* main menu */
-	#main {
-		height:46px
-	}
-	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
-		height: auto
-	}
-	#mainmenu { 
-		display:none;
-		opacity:0;
-		width:100%;
-		position:absolute;
-		right:0;
-		padding-top:0;
-		margin-top:0
-	}
-	#mainmenu > li {
-		display:block;
-		width:100%;
-		margin:0;
-		background:#666;
-		font-size:1.5em;
-		font-weight:400;
-		padding:10px
-	}
-	li.menu a {
-		color:#FFF;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	li.menu_selected a {
-		color:#F00;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	#mainmenu > li:last-child {
-		border-bottom:2px solid black;
+		#main {
+			height:46px
+		}
+		#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
+			height: auto
+		}
+		#mainmenu { 
+			display:none;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			right:0;
+			padding-top:0;
+			margin-top:0
+		}
+		#mainmenu > li {
+			display:block;
+			width:100%;
+			margin:0;
+			background:#666;
+			font-size:1.5em;
+			font-weight:400;
+			padding:10px
+		}
+		li.menu a {
+			color:#FFF;
+			text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
+		}
+		li.menu_selected a {
+			color:#F00;
+			text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
+		}
+		#mainmenu > li:last-child {
+			border-bottom:2px solid black;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	#mainmenu > li > a {
-		width:100%;
-		text-decoration:none;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box; 
-		box-sizing:border-box
-	}
-	span.span_notifier {
-		margin-left:5px;
-		font-weight:700
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		#mainmenu > li > a {
+			width:100%;
+			text-decoration:none;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box; 
+			box-sizing:border-box
+		}
+		span.span_notifier {
+			margin-left:5px;
+			font-weight:700
+		}
 
-	/* SUBNAV */
+/* **************** 3. SUBNAV */
 	/* checkbox for show/hide subnav */
-	#subtoggle:checked ~ #nav {display:block;opacity:1}
+		#subtoggle:checked ~ #nav {display:block;opacity:1}
 	/* label for checkbox */
-	.subtoggle {
-		display:block;
-		position:relative;
-		cursor:pointer;
-		-webkit-touch-callout:none;
-		-webkit-user-select:none;
-		user-select:none
-	}
-	.subtoggle:after {
-		content:'SubMenu';
-		display:block;
-		width:100%;
-		padding:13px 50px;
-		background-color:#707070;
-		text-align:center;
-		font-size:1.5em;
-		font-weight:700;
-		color:#FFF;
-		-webkit-transition: all 0.5s linear;
-		-moz-transition: all 0.5s linear;
-		-o-transition: all 0.5s linear;
-		transition: all 0.5s linear;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+		.subtoggle {
+			display:block;
+			position:relative;
+			cursor:pointer;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			user-select:none
+		}
+		.subtoggle:after {
+			content:'SubMenu';
+			display:block;
+			width:100%;
+			padding:13px 50px;
+			background-color:#707070;
+			text-align:center;
+			font-size:1.5em;
+			font-weight:700;
+			color:#FFF;
+			-webkit-transition: all 0.5s linear;
+			-moz-transition: all 0.5s linear;
+			-o-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	.subtoggle:hover:after{
-		background: #2E2E2E
-	}
-	#subtoggle:checked + .subtoggle:after{
-		content:'Close SubMenu'
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		.subtoggle:hover:after{}
+		#subtoggle:checked + .subtoggle:after{
+			content:'Close SubMenu'
+		}
 
 	/* subnav */
-	#subnav {
-		top:45px;
-		padding:0;
-		border:none
-	}
-	#nav { 
-		display:none;
-		opacity:0;
-		width:100%;
-		position:absolute;
-		right:0;
-		padding-top:0;
-		margin-top:0
-	}
-	#nav > li {
-		display:block;
-		width:100%;
-		margin:0;
-		background:#EDEDED;
-		font-size:1.5em;
-		font-weight:400;
-		padding:10px
-	}
-	#nav > li:last-child {
-		border-bottom: 2px solid black;
-		border-top: 1px solid #CFCFCF;
+		#subnav {
+			top:45px;
+			padding:0;
+			border:none
+		}
+		#nav { 
+			display:none;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			right:0;
+			padding-top:0;
+			margin-top:0
+		}
+		#nav > li {
+			display:block;
+			width:100%;
+			margin:0;
+			background:#EDEDED;
+			font-size:1.5em;
+			font-weight:400;
+			padding:10px
+		}
+		#nav > li:last-child {
+			border-bottom: 2px solid black;
+			border-top: 1px solid #CFCFCF;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
 
 	/* set pollsetting in repsonsive design */
-	#nav li.pollselect {
-		display:block;
-		list-style:none;
-		position:static;
-		right:0;
-		font-size:1.3em
-	}
+		#nav li.pollselect {
+			display:block;
+			list-style:none;
+			position:static;
+			right:0;
+			font-size:1.3em
+		}
 
-	/* FOOTER */
+/* **************** 4. FOOTER */
 	div.footer ul ul li {
 		margin:5px
 	}
@@ -1441,6 +1437,13 @@ div.bar {
 		content:""
 	}
 
+/* **************** 5. TEXTAREA,SELECT,INPUT */
+	/* generaly settings for all input */
+		input[type="text"] {
+			padding:6px
+		}	
+
+/* **************** 6. TABLES */
 	/* TABLE - TEST IN readers.html */
 	/* Force table to not be like tables anymore */
 		table.readers,table.readers thead,table.readers tbody,table.readers th,table.readers td,table.readers tr { 
@@ -1473,6 +1476,21 @@ div.bar {
 			width: 45%; 
 			padding-right: 10px; 
 			white-space: nowrap;
+		}
+		/* For tr hover */
+		.readers tr:nth-child(odd):hover td {
+			background-color:#D3D3D3;
+			color:#333
+		}
+		.readers tr:nth-child(even):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.readers tr:nth-child(odd):hover a {
+			color:#050840
+		}
+		.readers tr:nth-child(even):hover a {
+			color:#050840
 		}
 		/* For each odd "row" */
 		table.readers tr:nth-child(odd) td {background-color: #D3D3D3}
@@ -1511,7 +1529,6 @@ div.bar {
 			height:1.5em; 
 			position: relative;
 			padding-left: 50%;
-			background-color: #E7E7E7;
 		}
 		
 		table.users td:before { 
@@ -1524,8 +1541,23 @@ div.bar {
 			padding-right: 10px; 
 			white-space: nowrap;
 		}
+		/* For tr hover */
+		.users tr:nth-child(odd):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.users tr:nth-child(even):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.users tr:nth-child(odd):hover a {
+			color:#050840
+		}
+		.users tr:nth-child(even):hover a {
+			color:#050840
+		}
 		/* For each odd "row" */
-		table.users tr:nth-child(odd) td {background-color: #D3D3D3}
+		table.users tr:nth-child(odd) td {}
 		/* Label the data for table in users */
 		table.users th:nth-child(1){height:30px;margin-bottom:5px}
 		table.users td:nth-of-type(2):before { content: "User";font-weight:bold }
@@ -1545,11 +1577,11 @@ div.bar {
 		table.users td:nth-child(21),table.users td:nth-child(22),table.users td:nth-child(23),
 		table.users td:nth-child(24), table.users td:nth-child(25), table.users td:nth-child(26){ display:none }
 
-	/* TEXTAREA,SELECT,INPUT */
-	/* generaly settings for all input */
-	input[type="text"] {
-		padding:6px
-	}
+/* **************** 7. OTHER SETTINGS */
+	/* Logo */
+		div.logo {
+			display:none
+		}
 }
 
 /* #### MOBILE PHONES #### */
@@ -1558,197 +1590,193 @@ div.bar {
  * Samsung Galaxy S4 mini
  */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 1.5){
-	/* Logo */
-	div.logo {
-		display:none
-	}
 
-	/* BASIC DIVISION PAGES */
+/* **************** 1. BASIC DIVISION PAGES */
 	#content {
 		padding:100px 8px 300px
 	}
 
-	/* MAIN MENU */
+/* **************** 2. MAIN MENU */
 	/* checkbox for show/hide main menu */
-	#toggle:checked ~ #mainmenu {display:block;opacity:1}
+		#toggle:checked ~ #mainmenu {display:block;opacity:1}
 	/* label for checkbox */
-	.toggle {
-		display:block;
-		position:relative;
-		cursor:pointer;
-		-webkit-touch-callout:none;
-		-webkit-user-select:none;
-		user-select:none
-	}
-	.toggle:after {
-		content:'Main menu';
-		display:block;
-		width:100%;
-		padding:13px 50px;
-		background-color:#1E1F21;
-		text-align:center;
-		font-size:1.5em;
-		font-weight:700;
-		color:#FFF;
-		-webkit-transition: all 0.5s linear;
-		-moz-transition: all 0.5s linear;
-		-o-transition: all 0.5s linear;
-		transition: all 0.5s linear;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+		.toggle {
+			display:block;
+			position:relative;
+			cursor:pointer;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			user-select:none
+		}
+		.toggle:after {
+			content:'Main menu';
+			display:block;
+			width:100%;
+			padding:13px 50px;
+			background-color:#1E1F21;
+			text-align:center;
+			font-size:1.5em;
+			font-weight:700;
+			color:#FFF;
+			-webkit-transition: all 0.5s linear;
+			-moz-transition: all 0.5s linear;
+			-o-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	.toggle:hover:after{
-		background: #000
-	}
-	#toggle:checked + .toggle:after{
-		content:'Close Menu'
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		.toggle:hover:after{
+			background: #000
+		}
+		#toggle:checked + .toggle:after{
+			content:'Close Menu';
+			color: #F00;
+			text-shadow: 1px 1px 2px #000;
+		}
 
 	/* main menu */
-	#main {
-		height:46px
-	}
-	#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
-		height: auto
-	}
-	#mainmenu { 
-		display:none;
-		opacity:0;
-		width:100%;
-		position:absolute;
-		right:0;
-		padding-top:0;
-		margin-top:0
-	}
-	#mainmenu > li {
-		display:block;
-		width:100%;
-		margin:0;
-		background:#666;
-		font-size:1.5em;
-		font-weight:400;
-		padding:10px
-	}
-	li.menu a {
-		color:#FFF;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	li.menu_selected a {
-		color:#F00;
-		text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
-	}
-	#mainmenu > li:last-child {
-		border-bottom:2px solid black;
+		#main {
+			height:46px
+		}
+		#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
+			height: auto
+		}
+		#mainmenu { 
+			display:none;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			right:0;
+			padding-top:0;
+			margin-top:0
+		}
+		#mainmenu > li {
+			display:block;
+			width:100%;
+			margin:0;
+			background:#666;
+			font-size:1.5em;
+			font-weight:400;
+			padding:10px
+		}
+		li.menu a {
+			color:#FFF;
+			text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
+		}
+		li.menu_selected a {
+			color:#F00;
+			text-shadow:1px 1px 2px rgba(0, 0, 0, 1)
+		}
+		#mainmenu > li:last-child {
+			border-bottom:2px solid black;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	#mainmenu > li > a {
-		width:100%;
-		text-decoration:none;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box; 
-		box-sizing:border-box
-	}
-	span.span_notifier {
-		margin-left:5px;
-		font-weight:700
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		#mainmenu > li > a {
+			width:100%;
+			text-decoration:none;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box; 
+			box-sizing:border-box
+		}
+		span.span_notifier {
+			margin-left:5px;
+			font-weight:700
+		}
 
-	/* SUBNAV */
+/* **************** 3. SUBNAV */
 	/* checkbox for show/hide subnav */
-	#subtoggle:checked ~ #nav {display:block;opacity:1}
+		#subtoggle:checked ~ #nav {display:block;opacity:1}
 	/* label for checkbox */
-	.subtoggle {
-		display:block;
-		position:relative;
-		cursor:pointer;
-		-webkit-touch-callout:none;
-		-webkit-user-select:none;
-		user-select:none
-	}
-	.subtoggle:after {
-		content:'SubMenu';
-		display:block;
-		width:100%;
-		padding:13px 50px;
-		background-color:#707070;
-		text-align:center;
-		font-size:1.5em;
-		font-weight:700;
-		color:#FFF;
-		-webkit-transition: all 0.5s linear;
-		-moz-transition: all 0.5s linear;
-		-o-transition: all 0.5s linear;
-		transition: all 0.5s linear;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+		.subtoggle {
+			display:block;
+			position:relative;
+			cursor:pointer;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			user-select:none
+		}
+		.subtoggle:after {
+			content:'SubMenu';
+			display:block;
+			width:100%;
+			padding:13px 50px;
+			background-color:#707070;
+			text-align:center;
+			font-size:1.5em;
+			font-weight:700;
+			color:#FFF;
+			-webkit-transition: all 0.5s linear;
+			-moz-transition: all 0.5s linear;
+			-o-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
-	.subtoggle:hover:after{
-		background: #2E2E2E
-	}
-	#subtoggle:checked + .subtoggle:after{
-		content:'Close SubMenu'
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		.subtoggle:hover:after{}
+		#subtoggle:checked + .subtoggle:after{
+			content:'Close SubMenu'
+		}
 
 	/* subnav */
-	#subnav {
-		top:45px;
-		padding:0;
-		border:none
-	}
-	#nav { 
-		display:none;
-		opacity:0;
-		width:100%;
-		position:absolute;
-		right:0;
-		padding-top:0;
-		margin-top:0
-	}
-	#nav > li {
-		display:block;
-		width:100%;
-		margin:0;
-		background:#EDEDED;
-		font-size:1.5em;
-		font-weight:400;
-		padding:10px
-	}
-	#nav > li:last-child {
-		border-bottom: 2px solid black;
-		border-top: 1px solid #CFCFCF;
+		#subnav {
+			top:45px;
+			padding:0;
+			border:none
+		}
+		#nav { 
+			display:none;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			right:0;
+			padding-top:0;
+			margin-top:0
+		}
+		#nav > li {
+			display:block;
+			width:100%;
+			margin:0;
+			background:#EDEDED;
+			font-size:1.5em;
+			font-weight:400;
+			padding:10px
+		}
+		#nav > li:last-child {
+			border-bottom: 2px solid black;
+			border-top: 1px solid #CFCFCF;
 
-		/* BOX SHADOW */
-		-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-		box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
-	}
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
 
 	/* set pollsetting in repsonsive design */
-	#nav li.pollselect {
-		display:block;
-		list-style:none;
-		position:static;
-		right:0;
-		font-size:1.3em
-	}
+		#nav li.pollselect {
+			display:block;
+			list-style:none;
+			position:static;
+			right:0;
+			font-size:1.3em
+		}
 
-	/* FOOTER */
+/* **************** 4. FOOTER */
 	div.footer ul ul li {
 		margin:5px
 	}
@@ -1772,6 +1800,13 @@ div.bar {
 		content:""
 	}
 
+/* **************** 5. TEXTAREA,SELECT,INPUT */
+	/* generaly settings for all input */
+		input[type="text"] {
+			padding:6px
+		}	
+
+/* **************** 6. TABLES */
 	/* TABLE - TEST IN readers.html */
 	/* Force table to not be like tables anymore */
 		table.readers,table.readers thead,table.readers tbody,table.readers th,table.readers td,table.readers tr { 
@@ -1805,6 +1840,21 @@ div.bar {
 			padding-right: 10px; 
 			white-space: nowrap;
 		}
+		/* For tr hover */
+		.readers tr:nth-child(odd):hover td {
+			background-color:#D3D3D3;
+			color:#333
+		}
+		.readers tr:nth-child(even):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.readers tr:nth-child(odd):hover a {
+			color:#050840
+		}
+		.readers tr:nth-child(even):hover a {
+			color:#050840
+		}
 		/* For each odd "row" */
 		table.readers tr:nth-child(odd) td {background-color: #D3D3D3}
 		/* Label the data for table in readers */
@@ -1814,7 +1864,7 @@ div.bar {
 		table.readers td:nth-of-type(4):before { content: "Groups";font-weight:bold }
 		table.readers td:nth-of-type(5):before { content: "ECM OK";font-weight:bold }
 		table.readers td:nth-of-type(6):before { content: "ECM NOK";font-weight:bold }
-
+		
 		table.readers td:nth-child(1),table.readers td:nth-child(7),table.readers td:nth-child(8),
 		table.readers td:nth-child(9),table.readers td:nth-child(10),table.readers td:nth-child(11),
 		table.readers td:nth-child(12),table.readers td:nth-child(13),table.readers td:nth-child(14),
@@ -1842,7 +1892,6 @@ div.bar {
 			height:1.5em; 
 			position: relative;
 			padding-left: 50%;
-			background-color: #E7E7E7;
 		}
 		
 		table.users td:before { 
@@ -1855,8 +1904,23 @@ div.bar {
 			padding-right: 10px; 
 			white-space: nowrap;
 		}
+		/* For tr hover */
+		.users tr:nth-child(odd):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.users tr:nth-child(even):hover td {
+			background-color:#E7E7E7;
+			color:#333
+		}
+		.users tr:nth-child(odd):hover a {
+			color:#050840
+		}
+		.users tr:nth-child(even):hover a {
+			color:#050840
+		}
 		/* For each odd "row" */
-		table.users tr:nth-child(odd) td {background-color: #D3D3D3}
+		table.users tr:nth-child(odd) td {}
 		/* Label the data for table in users */
 		table.users th:nth-child(1){height:30px;margin-bottom:5px}
 		table.users td:nth-of-type(2):before { content: "User";font-weight:bold }
@@ -1876,10 +1940,9 @@ div.bar {
 		table.users td:nth-child(21),table.users td:nth-child(22),table.users td:nth-child(23),
 		table.users td:nth-child(24), table.users td:nth-child(25), table.users td:nth-child(26){ display:none }
 
-
-	/* TEXTAREA,SELECT,INPUT */
-	/* generaly settings for all input */
-	input[type="text"] {
-		padding:6px
-	}
+/* **************** 7. OTHER SETTINGS */
+	/* Logo */
+		div.logo {
+			display:none
+		}	
 }
