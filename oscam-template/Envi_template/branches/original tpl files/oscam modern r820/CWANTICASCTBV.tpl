@@ -1,0 +1,3 @@
+<!--OSCam;1444705821;1.20-unstable_svn;983;CS_ANTICASC-->
+			<TD CLASS="usercol19" ID="##ANTICASCVIEW##">##CWRATE####CWRATE2##</TD>
+			<TD CLASS="usercol22" ID="##ANTICASCVIEW##">##CASCUSERSCOMB##</TD>

@@ -1,0 +1,11 @@
+<!--OSCam;574029610;1.20-unstable_svn;983;WITH_CARDREADER,MODULE_CCCAM-->
+##TPLHEADER##
+##TPLMENU##
+##TPLMESSAGE##
+<DIV ID="subnav">
+	<UL ID="nav">
+		<SPAN CLASS="text_entitle">Entitlements for ##READERNAME##</SPAN>
+	</UL>
+</DIV>
+##ENTITLEMENTCONTENT##
+##TPLFOOTER##
