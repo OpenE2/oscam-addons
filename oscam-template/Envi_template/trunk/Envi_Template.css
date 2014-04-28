@@ -541,12 +541,14 @@ tr.s td, tr.l td,
 tr.n td,tr.h td {background-color:#E1E1EF}
 tr.r td {background-color:#FFF3E7}
 tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
+tr.m td {background-color:#DBB}
 
 tr.s:hover td,
 tr.h:hover td,
 tr.r:hover td,
 tr.p:hover td,
-tr.c:hover td {
+tr.c:hover td,
+tr.m:hover td {
 	background-color:#373F46;
 	color:white
 }
@@ -568,7 +570,6 @@ tr.disabledreader td:first-child a:hover img.icon {
 	background:#009D00
 
 }
-
 
 /* **************** 9. TABLE TH */
 th {
@@ -684,10 +685,10 @@ tr:hover td a {
 tr:hover td a:hover {
 	color:#FFF
 }
-
-table.status #tbodyc tr:last-child td {
+table.status tr:last-child td {
 	border-bottom:2px solid #000
 }
+
 /* **************** 11. DIV */
 /* status.html, entitlements_genericbit.html */
 div.log {
@@ -824,7 +825,8 @@ textarea.bt {
 /* generaly settings for all select */
 select {
 	padding:2px;
-	border: 1px solid #CCC
+	border: 1px solid #CCC;
+	background-color: white; /* For Firefox in Linux */
 }
 select:hover {
 	border:1px solid #000
