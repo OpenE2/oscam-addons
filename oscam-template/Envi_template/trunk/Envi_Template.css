@@ -403,6 +403,9 @@ table.config {
 	width:60%;
 	margin-bottom:20px
 }
+table.config:nth-child(2) td:first-child{
+	width:auto;
+}
 
 /* ------- READERS ------- */
 /* readers.html */
