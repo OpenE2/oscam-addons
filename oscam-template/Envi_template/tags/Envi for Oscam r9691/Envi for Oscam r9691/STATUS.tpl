@@ -1,0 +1,69 @@
+<!--OSCam;8118846;1.20-unstable_svn;9687;-->
+##TPLHEADERSHORT##
+	<script type="text/javascript">
+	
+	var page = 'status';
+	var jsonurl = 'oscamapi.json';
+	var parameters = '?part=status';
+	var stoppoll = 0;
+	var pollintervall = 0;
+	var httprefresh = '##POLLREFRESHTIME##';
+
+	</script>
+##TPLBODY##
+##TPLMENU##
+<div id = "chart">
+	<div id = "charthead" ></div>
+	<div id = "graph" ></div>
+</div>
+<DIV ID="subnav">
+	<input id="subtoggle" type="checkbox"></input>
+	<label class="subtoggle" onclick="" for="subtoggle"></label>
+	<UL ID="nav">
+		<LI><B>##HTTPOSCAMLABEL## r##CS_SVN_VERSION##</B></LI>
+		<LI CLASS="configmenu"><A HREF="http://www.streamboard.tv/oscam/timeline" TARGET="_blank">Timeline</A></LI>
+		<LI CLASS="configmenu"><A HREF="#statusfooter">Status</A></LI>
+		<LI ID="nopoll" CLASS="pollselect" style="display: none;">Pollrefresh no set - Polling disabled</LI>
+		<LI ID="poll" CLASS="pollselect" style="display: none;">Pollintervall:<input type="text" name="pintervall" class="pintervall" value="" readonly>sec.<button id="dec">&ndash;</button><button id="inc">+</button></LI>
+	</UL>
+</DIV>
+##TPLMESSAGE##
+<TABLE CLASS="status">
+	<TR>
+		<TH COLSPAN="2" CLASS="statuscol0">Hide/Reset</TH>
+		<TH CLASS="statuscol4">Reader/User</TH>
+		<TH CLASS="statuscol5">AU</TH>
+		<TH CLASS="statuscol7">Address</TH>
+		<TH CLASS="statuscol8">Port</TH>
+		<TH CLASS="statuscol9">Protocol</TH>
+		<TH CLASS="statuscol12">CAID:SRVID</TH>
+		<TH CLASS="statuscol13">Current Channel</TH>
+		<TH CLASS="statuscol14">LB Value/Reader</TH>
+		<TH ID="onlineidle" TITLE="Online &amp; Idle Info" CLASS="statuscol15">Login*</TH>
+		<TH CLASS="statuscol16">Status</TH>
+	</TR>
+<tbody id = "tbodys">
+##SERVERHEADLINE##
+##SERVERSTATUS##
+</tbody>
+<tbody id = "tbodyr">
+##READERHEADLINE##
+##READERSTATUS##
+</tbody>
+<tbody id = "tbodyp">
+##PROXYHEADLINE##
+##PROXYSTATUS##
+</tbody>
+<tbody id = "tbodyc">
+##CLIENTHEADLINE##
+##CLIENTSTATUS##
+</tbody>
+</TABLE>
+##LOG_HISTORY##
+<DIV CLASS="info ##DISPLAYINFO##">
+##SYSTEM_INFO##
+##USER_INFO##
+##CACHEEX_INFO##
+</DIV>
+<DIV id="picolor"></DIV>
+##TPLFOOTER##
