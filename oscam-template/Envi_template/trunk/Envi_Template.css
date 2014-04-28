@@ -1260,9 +1260,13 @@ div.bar {
 		}
 		.config tr:hover td input[type=checkbox] + label,
 		.subservicetable tr:hover td input[type=checkbox] + label,
-		.configreader tr:hover td input[type=checkbox] + label,
-		.configuser tr:hover td input[type=checkbox] + label {
+		.configreader tr:hover input[type=checkbox] + label,
+		.configuser tr:hover input[type=checkbox] + label {
 			color: #FFF;
+		}
+		.configreader tr:nth-child(30) input[type=checkbox] + label,
+		.configuser tr:nth-child(25) input[type=checkbox] + label {
+			color: #333;
 		}
 }
 
