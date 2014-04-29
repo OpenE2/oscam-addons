@@ -1,2 +1,0 @@
-<!--OSCam;4006274952;1.20-unstable_svn;983;-->
-<DIV CLASS="mlogo"><A HREF="http://www.streamboard.tv/oscam/" TARGET="_blank" TITLE="Oscam Streamboard"><IMG class="mlogo" SRC="image?i=IC_LOGO" ALT="Oscam Streamboard" TITLE="Oscam Streamboard"></A></DIV>

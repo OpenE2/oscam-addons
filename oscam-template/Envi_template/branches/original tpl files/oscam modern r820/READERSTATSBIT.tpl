@@ -1,2 +1,0 @@
-<!--OSCam;289711265;1.20-unstable_svn;983;-->
-		<TR><TD>##CHANNEL##</TD><TD>##CHANNELNAME##</TD><TD CLASS="centered">##ECMLEN##</TD><TD CLASS="centered">##RC##</TD><TD CLASS="centered">##TIME##</TD><TD CLASS="centered">##TIMELAST##</TD><TD CLASS="centered">##COUNT##</TD><TD CLASS="centered">##LAST## <A HREF="readerstats.html?label=##ENCODEDLABEL##&amp;action=deleterecord&amp;record=##CHANNEL##:##ECMLEN##"><IMG CLASS="icon" SRC="image?i=ICDEL" ALT="Delete Entry"/></A></TD></TR>

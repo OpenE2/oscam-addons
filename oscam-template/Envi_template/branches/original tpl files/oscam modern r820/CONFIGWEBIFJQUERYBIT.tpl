@@ -1,2 +1,0 @@
-<!--OSCam;1529342099;1.20-unstable_svn;983;-->
-			<TR><TD>##TPLHELPPREFIX##conf#http_extern_jquery##TPLHELPSUFFIX##jQuery Source:</A></TD><TD><input name="http_extern_jquery" type="text" size="63" maxlength="127" value="##HTTPEXTERNJQUERY##"></TD></TR>
