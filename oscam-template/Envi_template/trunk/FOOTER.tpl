@@ -5,23 +5,23 @@
 			<LI CLASS="developed"><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
 			<LI>
 				<UL>
-					<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
-					<LI><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## </LI>
-					<LI><B>Up Time:</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
+					<LI><B>Current Time:</B><SPAN ID="curtime">&nbsp;##CURDATE##&nbsp;|&nbsp;##CURTIME##&nbsp;</SPAN></LI>
+					<LI><B>Start Time:</B>&nbsp;##STARTDATE##&nbsp;|&nbsp;##STARTTIME##&nbsp;</LI>
+					<LI><B>Up Time:</B><SPAN ID="uptime">&nbsp;##UPTIME##</SPAN></LI>
 				</UL>	
 			</LI>
 			<LI>
 				<UL>
-					<LI><B>Process ID:</B> ##PROCESSID## </LI>
-					<LI><B>Access from:</B> ##CURIP## </LI>
-					<LI><B>Run as:</B> ##RUNAS##</LI>
+					<LI><B>Process ID:</B>&nbsp;##PROCESSID##&nbsp;</LI>
+					<LI><B>Access from:</B>&nbsp;##CURIP##&nbsp;</LI>
+					<LI><B>Run as:</B>&nbsp;##RUNAS##</LI>
 				</UL>	
 			</LI>
 			<LI>
 				<UL>
-					<LI><B>OSCAM:</B> ##CS_VERSION## </LI>
-					<LI><B>Build:</B> r##CS_SVN_VERSION## </LI>
-					<LI><B>Compiler:</B> ##CS_TARGET##</LI>
+					<LI><B>OSCAM:</B>&nbsp;##CS_VERSION##&nbsp;</LI>
+					<LI><B>Build:</B>&nbsp;r##CS_SVN_VERSION##&nbsp;</LI>
+					<LI><B>Compiler:</B>&nbsp;##CS_TARGET##</LI>
 				</UL>
 			</LI>
 			<LI CLASS="styleauthor">2014 Designed by : <B>Skyndas for Streamboard Team</B></LI>
