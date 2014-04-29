@@ -1527,7 +1527,15 @@ h4 {
 			font-size:1.3em
 		}
 
-/* **************** 5. FOOTER */
+/* **************** 5. TABLE */
+
+/* ------- CACHEEX ------- */
+/* cacheex.html */
+table#cachexstats {
+	width:100%;
+}
+
+/* **************** 6. FOOTER */
 	div.footer ul ul li {
 		margin:5px
 	}
@@ -1551,13 +1559,13 @@ h4 {
 		content:""
 	}
 
-/* **************** 6. TEXTAREA,SELECT,INPUT */
+/* **************** 7. TEXTAREA,SELECT,INPUT */
 	/* generaly settings for all input */
 		input[type="text"] {
 			padding:6px
 		}	
 
-/* **************** 7. TABLES */
+/* **************** 8. TABLES */
 	/* TABLE - TEST IN readers.html */
 	/* Force table to not be like tables anymore */
 		table.readers,table.readers thead,table.readers tbody,table.readers th,table.readers td,table.readers tr { 
@@ -1691,15 +1699,15 @@ h4 {
 		table.users td:nth-child(21),table.users td:nth-child(22),table.users td:nth-child(23),
 		table.users td:nth-child(24), table.users td:nth-child(25), table.users td:nth-child(26){ display:none }
 
-/* **************** 8. DIV */
-/* pre_autoconf.html */
+/* **************** 9. DIV */
+/* pre_autoconf.html, pre_shutdown.html */
 div.warning {
 	font-size:1.1em
 }
 div.warning br {
 	display:none
 }
-/* **************** 9. OTHER SETTINGS */
+/* **************** 10. OTHER SETTINGS */
 	/* Logo */
 		div.logo {
 			display:none
