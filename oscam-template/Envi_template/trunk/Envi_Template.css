@@ -1341,7 +1341,13 @@ screen and (device-width: 360px) and (device-height: 640px) {
 		padding:100px 8px 300px
 	}
 
-/* **************** 2. MAIN MENU */
+/* **************** 2. BASIC SETTINGS - BODY,P,H4 */
+/* pre_shutdown.html */
+h4 {
+	line-height:20px;
+}
+
+/* **************** 3. MAIN MENU */
 	/* checkbox for show/hide main menu */
 		#toggle:checked ~ #mainmenu {display:block;opacity:1}
 	/* label for checkbox */
@@ -1438,7 +1444,7 @@ screen and (device-width: 360px) and (device-height: 640px) {
 			font-weight:700
 		}
 
-/* **************** 3. SUBNAV */
+/* **************** 4. SUBNAV */
 	/* checkbox for show/hide subnav */
 		#subtoggle:checked ~ #nav {display:block;opacity:1}
 	/* label for checkbox */
@@ -1521,7 +1527,7 @@ screen and (device-width: 360px) and (device-height: 640px) {
 			font-size:1.3em
 		}
 
-/* **************** 4. FOOTER */
+/* **************** 5. FOOTER */
 	div.footer ul ul li {
 		margin:5px
 	}
@@ -1545,13 +1551,13 @@ screen and (device-width: 360px) and (device-height: 640px) {
 		content:""
 	}
 
-/* **************** 5. TEXTAREA,SELECT,INPUT */
+/* **************** 6. TEXTAREA,SELECT,INPUT */
 	/* generaly settings for all input */
 		input[type="text"] {
 			padding:6px
 		}	
 
-/* **************** 6. TABLES */
+/* **************** 7. TABLES */
 	/* TABLE - TEST IN readers.html */
 	/* Force table to not be like tables anymore */
 		table.readers,table.readers thead,table.readers tbody,table.readers th,table.readers td,table.readers tr { 
@@ -1685,7 +1691,15 @@ screen and (device-width: 360px) and (device-height: 640px) {
 		table.users td:nth-child(21),table.users td:nth-child(22),table.users td:nth-child(23),
 		table.users td:nth-child(24), table.users td:nth-child(25), table.users td:nth-child(26){ display:none }
 
-/* **************** 7. OTHER SETTINGS */
+/* **************** 8. DIV */
+/* pre_autoconf.html */
+div.warning {
+	font-size:1.1em
+}
+div.warning br {
+	display:none
+}
+/* **************** 9. OTHER SETTINGS */
 	/* Logo */
 		div.logo {
 			display:none
