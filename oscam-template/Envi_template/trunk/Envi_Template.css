@@ -1563,7 +1563,11 @@ table#cachexstats {
 	/* generaly settings for all input */
 		input[type="text"] {
 			padding:6px
-		}	
+		}
+	/* texteditor in file.html */
+		textarea.editor {
+			width:90%
+		}
 
 /* **************** 8. TABLES */
 	/* TABLE - TEST IN readers.html */
