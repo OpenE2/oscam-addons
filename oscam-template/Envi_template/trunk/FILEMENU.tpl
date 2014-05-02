@@ -1,5 +1,7 @@
 <!--OSCam;2532972423;1.20-unstable_svn;9687;-->
 <DIV ID="subnav">
+	<input id="subtoggle" type="checkbox"></input>
+	<label class="subtoggle" onclick="" for="subtoggle"></label>
 	<UL ID="nav">
 		<LI CLASS="##CMENUACTIVE12##"><A HREF="files.html?file=oscam.version">oscam.version</A></LI>
 		<LI CLASS="##CMENUACTIVE13##"><A HREF="files.html?file=oscam.conf">oscam.conf</A></LI>
