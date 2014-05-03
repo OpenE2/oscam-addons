@@ -685,7 +685,7 @@ tr:hover td a {
 tr:hover td a:hover {
 	color:#FFF
 }
-table.status tr:last-child td {
+table.status #tbodyc tr:last-child td {
 	border-bottom:2px solid #000
 }
 
