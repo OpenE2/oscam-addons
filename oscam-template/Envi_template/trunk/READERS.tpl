@@ -1,4 +1,4 @@
-<!--OSCam;153911440;1.20-unstable_svn;9687;-->
+<!--OSCam;914351843;1.20-unstable_svn;9705;-->
 ##TPLHEADERSHORT##
 	<script type="text/javascript">
 	
@@ -29,7 +29,7 @@
 	<DIV ID="newreader">
 		<form action="readerconfig.html" method="get">
 			<TABLE CLASS="readers">
-				<TR><TH>NEW Reader Label: <input type="text" name="label" value="##NEXTREADER##">  Protocol: <select name="protocol">##ADDPROTOCOL##</select><input type="submit" name="action" value="Add"></TH></TR>
+				<TR><TH>NEW Reader Label: <input type="text" name="label" value="##NEXTREADER##">  Protocol: <select name="protocol">##ADDPROTOCOL##</select><input type="submit" name="action" value="Add" title="Add New Reader"></TH></TR>
 			</TABLE>
 		</form>
 	</DIV>
@@ -45,7 +45,7 @@
 			<TH COLSPAN="3">ECM</TH>
 			<TH COLSPAN="4">EMM</TH>
 ##TPLREADERLBWU##
-			<TH COLSPAN="6"></TH>
+			<TH COLSPAN="##READERACTIONCOLS##"></TH>
 		</TR>
 		<TR id="headline">
 			<TH>On/Off</TH>
@@ -60,7 +60,7 @@
 			<TH>skipped<BR><SPAN TITLE="unknown EMM"> UK </SPAN>/<SPAN TITLE="global EMM"> G </SPAN>/<SPAN TITLE="shared EMM"> S </SPAN>/<SPAN TITLE="unique EMM"> UQ </SPAN></TH>
 			<TH>blocked<BR><SPAN TITLE="unknown EMM"> UK </SPAN>/<SPAN TITLE="global EMM"> G </SPAN>/<SPAN TITLE="shared EMM"> S </SPAN>/<SPAN TITLE="unique EMM"> UQ </SPAN></TH>
 ##TPLREADERLBWD##
-			<TH COLSPAN="6">Action</TH>
+			<TH COLSPAN="##READERACTIONCOLS##"></TH>
 		</TR>
 	</THEAD>
 	<TBODY>

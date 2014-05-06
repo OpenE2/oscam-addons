@@ -1,4 +1,4 @@
-<!--OSCam;3169973744;1.20-unstable_svn;9687;-->
+<!--OSCam;2091122299;1.20-unstable_svn;9705;-->
 ##TPLHEADERSHORT##
 	<script type="text/javascript">
 	
@@ -52,7 +52,7 @@
 	<DIV ID="newuser">
 		<form action="user_edit.html" method="get">
 		<TABLE CLASS="users">
-			<TR><TH>New User: <input name="user" type="text"><input type="submit" value="Add User"></TH></TR>
+			<TR><TH>New User: <input name="user" type="text"><input type="submit" value="Add" title="Add New User"></TH></TR>
 		</TABLE>
 		</form>
 	</DIV>
@@ -75,12 +75,12 @@
 			<TH COLSPAN="3">Action</TH>
 		</TR>
 		<TR id="headline" onClick="cdpause()"> <!--  Resolve  -->
-			<TH CLASS="nosort">On/Off</TH>
-			<TH data-sort="string-ins" data-sort-default ="asc" class="sortable">User</TH>
-			<TH data-sort="string-ins" data-sort-default ="asc" class="sortable">Status<BR>Address</TH>
-			<TH data-sort="string-ins" data-sort-default ="asc" class="sortable">Protocol</TH>
+			<TH>On/Off</TH>
+			<TH data-sort="string-ins" data-sort-default="asc" class="sortable">User</TH>
+			<TH data-sort="string-ins" data-sort-default="asc" class="sortable">Status<BR>Address</TH>
+			<TH data-sort="string-ins" data-sort-default="asc" class="sortable">Protocol</TH>
 			<TH CLASS="##GRPVIEW##">Groups</TH>
-			<TH CLASS="nosort">Idle Time<BR>On Channel</TH>
+			<TH>Idle Time<BR>On Channel</TH>
 			<TH data-sort="string" class="sortable">Last Channel</TH>
 			<TH data-sort="int" class="sortable" TITLE="Last ECM Time">LTIME</TH>
 			<TH data-sort="int" class="sortable" TITLE="Delivered ECM with status OK">OK</TH>
@@ -94,10 +94,8 @@
 			<TH data-sort="int" class="sortable" TITLE="Invalid EMM delivered">NOK</TH>
 ##TPLCWCYCLETHV##
 ##TPLCWANTICASCTHV##
-			<TH CLASS="nosort ##EXPIREVIEW##" TITLE="Expiration date of account">Exp. Date</TH>
-			<TH CLASS="nosort"></TH>
-			<TH CLASS="nosort"></TH>
-			<TH CLASS="nosort"></TH>
+			<TH CLASS="##EXPIREVIEW##" TITLE="Expiration date of account">Exp. Date</TH>
+			<TH COLSPAN="3"></TH>
 		</TR>
 	</THEAD>
 	<TBODY class="content">

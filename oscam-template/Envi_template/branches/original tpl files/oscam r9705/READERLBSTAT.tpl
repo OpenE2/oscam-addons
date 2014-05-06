@@ -1,0 +1,2 @@
+<!--OSCam;1241580375;1.20-unstable_svn;9705;WITH_LB-->
+				<TD CLASS="readercol16"><A HREF="readerstats.html?label=##READERNAMEENC##&amp;hide=4" TITLE="Show loadbalancer statistics"><IMG CLASS="icon" SRC="image?i=ICSTA" ALT="Loadbalancer statistics"></A></TD>

@@ -1,4 +1,4 @@
-<!--OSCam;4110958595;1.20-unstable_svn;9687;-->
+<!--OSCam;3033371472;1.20-unstable_svn;9705;-->
 ##TPLHEADER##
 ##TPLMENU##
 	<DIV ID="subnav" style="display:none">
@@ -9,7 +9,7 @@
 		<form action="services_edit.html" method="get">
 		<TABLE ID="addnewservice">
 			<TR>
-				<TH>Service Name: <input name="service" type="text"><input type="submit" value="Add" title="Add new Service" ##BTNDISABLED##></TH>
+				<TH>Service Name: <input name="service" type="text"><input type="submit" value="Add" title="Add New Service" ##BTNDISABLED##></TH>
 			</TR>
 		</TABLE>
 		</form>

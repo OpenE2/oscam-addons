@@ -1,0 +1,18 @@
+<!--OSCam;1675975059;1.20-unstable_svn;9705;MODULE_CCCSHARE-->
+	<TABLE CLASS="config">
+		<TR><TH COLSPAN="2">Control</TH></TR>
+		<TR CLASS="configcontrol">
+			<TD CLASS="centered">				
+				<form action="config.html" method="get">
+					<input name="part" type="hidden" value="cccam">
+					<input type="submit" name="button" title="Refresh global list" value="Refresh global list" ##BTNDISABLED##>
+				</form>
+			</TD>
+			<TD CLASS="centered">				
+				<form action="entitlements.html" method="get">
+					<input name="globallist" type="hidden" value="1">
+					<input type="submit" name="button" title="Show global list" value="Show global list" ##BTNDISABLED##>
+				</form>
+			</TD>
+		</TR>
+	</TABLE>

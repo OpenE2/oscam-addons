@@ -1,0 +1,924 @@
+<!--OSCam;1495505918;1.20-unstable_svn;9705;-->
+/* Table of Content
+=====================================
+	# 1. RESET
+	# 2. BASIC DIVISION PAGES
+	# 3. BASIC SETTINGS
+	# 4. LINKS
+	# 5. MAIN MENU
+	# 6. SUBNAV
+	# 7. TABLE
+		- STATUS
+		- CONFIG
+		- READERS
+		- USERS
+		- SERVICES
+		- FAILBAN
+		- CACHEEX
+		- OTHER TABLES
+	# 8. TABLE TR
+	# 9. TABLE TH
+	# 10. TABLE TD
+	# 11. DIV
+	# 12. TEXTAREA,SELECT,INPUT
+	# 13. IMAGE
+	# 14. SPAN
+	# 15. GRAPH
+	# 16. SORTING IN TABLE
+	# 17. POLLING
+	# 18. ECM BAR HISTORY
+	# 19. FILE MENU
+	# 20. OTHER SETTINGS
+===================================== */
+
+/* **************** 1. RESET  */
+* {margin:0;padding:0}
+
+/* **************** 2. BASIC DIVISION PAGES */
+html,body,* html #wrapper {height:100%}
+#wrapper {position:relative;min-height:100%}
+#content {margin-bottom:0;padding:0 8px 120px}
+#footer {position:absolute;bottom:0;width:100%}
+
+/* **************** 3. BASIC SETTINGS - BODY,P,H4 */
+body {
+	font-family:Arial;
+	font-size:11px;
+	text-align:center;
+	background-color:#FFF;
+	color:#000;
+	text-decoration:none;
+}
+/* pre_shutdown.html */
+h4 {
+	font-size:18px;
+	line-height:9px;
+	margin-top:20px;
+	margin-bottom:20px;
+	color:#AAA
+}
+/* shutdown.html, autoconf.html */
+p.text-large-red {
+	font-weight:700;
+	font-size:large;
+	color:red
+}
+/* file.html, script.html */
+#filename,#filesubmit {
+	font-weight:700;
+	font-size:14px;
+	margin: 10px 0
+}
+/* readerstats.html for P */
+#text_totalecm {}
+/* footer.html */
+li.styleauthor:after {
+	content:"Streamboard Team"
+}
+
+/* **************** 4. LINKS */
+a {
+	text-decoration:none;
+}
+a:link, a:visited, a:active {
+	color:#050840
+}
+a:hover {
+	color:#FF9E5F
+}
+/* logpage_debugmenu.html */
+a.debugl:link {
+	margin:0 1px
+}
+a.debugl:hover{
+	background-color:#A00;color:#FFF
+}
+/* module-webif.c  */
+a.debugls:link {
+	padding:1px 2px 2px
+}
+a.debugls:link, a.debugls:visited {
+	background-color:#A00;
+	color:#FFF
+}
+/* cccamentitletooltip.html, foundentitlements.html, noentitlements.html and module-webif.c */
+a.tooltip,
+a.tooltip1 {
+	position:relative;
+	cursor:default
+}
+a.tooltip span,
+a.tooltip1 span {
+	display:none;
+	z-index:99
+}
+a:hover span {
+	display:block;
+	position:absolute;
+	top:1em;
+	right:2em;
+	padding:4px;
+	font-weight:normal;
+	text-align:left;
+	background-color:#FFC;
+	border:1px solid #000;
+	color:#000
+}
+a img.icon {
+	background-color:#A00
+}
+a:hover img.icon {
+	background-color:red
+}
+span a {
+	text-align:center;
+}
+td.statuscol4 a,
+td.statuscol9 a,
+td.statuscol13 a {
+	text-align:center;
+}
+/* module-webif.c class for services.html */
+div.sidlistclose a {
+	padding:0 3px;
+	color:#FFF
+}
+/* help link readers/useredit/config.html */
+table.config a {
+	cursor:pointer
+}
+
+/* **************** 5. MAIN MENU */
+#main {}
+#mainmenu {
+	height:30px;
+	padding-top:10px;
+	display:inline-block;
+	position:relative;
+	background-color:#FFF
+}
+#mainmenu li {
+	display:inline;
+	margin-left:2px;
+	margin-right:2px;
+	padding:5px 3px 3px;
+	font-size:18px;
+	font-weight:700
+}
+li.menu a,li.menu a:hover,
+li.menu_selected a,li.menu_selected a:hover {
+	color:#050840
+}
+li.menu:hover, li.menu_selected, 
+li.configmenu:hover, li.configmenu_selected {
+	background-color:#DDD
+}
+
+/* **************** 6. SUBNAV */
+#subnav {}
+#nav {
+	height:22px;
+	background-color:#FFF
+}
+#nav li {
+	display:inline-block;
+	margin-left:2px;
+	margin-right:2px;
+	padding:5px 3px 3px;
+	padding-top:0;
+	padding-bottom:0;
+	font-size:14px
+}
+li.configmenu a, li.configmenu a:hover,
+li.configmenu_selected a, li.configmenu_selected a:hover {
+	color:#050840
+}
+
+/* **************** 7. TABLE */
+table {
+	border-spacing:1px;
+	border:0;
+	margin-left:auto;
+	margin-right:auto
+}
+
+/* ------- STATUS ------- */
+/* status.html */
+table.status {
+	width:100%;
+	empty-cells:show;
+	background-color:#FFF
+}
+/* Table statusmeminfo	- in status_systeminfo.html
+ * Table statususerinfo	- in status_userinfo.html
+ * Table statuscacheexinfo	- in status_cacheexinfo.html
+ */
+table.statusmeminfo, table.statususerinfo, 
+table.statuscacheexinfo {
+	width:60%;
+	white-space:nowrap;
+	margin-top:0px;
+	margin-bottom:0px
+}
+
+/* ------- CONFIG ------- */
+/* for all part in CONFIGURATION item */
+/* include readerconfig.html & user_edit.html */
+table.config {
+	width:80%;
+	max-width:750px;
+ 	margin-bottom:20px
+}
+
+/* ------- READERS ------- */
+/* readers.html */
+table.readers {
+	width:100%
+}
+#newreader table, #searchTable table.readers {
+	border-spacing:1px 0px;
+}
+/* readerconfig.html */
+table.configreader {}
+/* entitlements_bit.html, entitlements_cccambit.html */
+table.stats {}
+/* emm.html */
+table.writeemm {}
+/* emm_running.html */
+table.emmrunning {}
+/* readerstats.html */
+table.statsbalance td:last-child {
+	line-height:20px;
+	width:125px
+}
+table.statsbalance td:last-child img.icon {
+	float:right;
+	margin-left:10px
+}
+
+/* ------- USERS ------- */
+/* userconfig.html */
+table.users {
+	width:100%
+}
+#newuser table, #searchTable table.users {
+	border-spacing:1px 0px;
+}
+table.ECM_totals {
+	margin-bottom:20px
+}
+table.ECM_totals,
+table.user_totals {
+	width:50%
+}
+/* user_edit.html */
+table.configuser {}
+
+/* ------- SERVICES ------- */
+/* services.html */
+#addnewservice,#servicesedit {
+	width:35%;
+	text-align:center
+}
+#addnewservice {
+	border-spacing:1px 0px;
+}
+/* services_edit.html */
+table.configservices {}
+
+/* ------- FAILBAN ------- */
+/* failban.html */
+table.failban {}
+
+/* ------- CACHEEX ------- */
+/* cacheex.html */
+table.cacheex, table#dataTable.stats {
+	width:80%
+}
+table#cachexstats {
+	width:60%;
+	white-space:nowrap;
+	margin-bottom:0px
+}
+
+/* ------- OTHER TABLES ------- */
+/* for settings in configuration of readers and users */
+table.invisible {
+	margin-left:0
+}
+/* user_edit.html, readerconfig.html */
+td.subservice {
+	padding:0px;
+}
+table.subservicetable {
+	width:100%;
+	background-color:#FFF
+}
+
+/* **************** 8. TABLE TR */
+/* for entitlement of readers */
+tr.e_valid td, tr.e_expired td, tr.e_header td {
+	font-family:"Courier New", monospace
+}
+/* rowcolors for cacheex rows in cachex depend on status */
+tr.e_valid td {background-color:#E6FEBF}
+tr.e_expired td {background-color:#FFF3E7}
+/* rowcolors for users rows in unserconfig.html depend on status */
+tr.online td.usercol6 {background-color:#949494;color:#FFF}
+tr.online td {background-color:#BFA}
+tr.offline td {}
+tr.expired td {background-color:#FBA}
+tr.connected td {background-color:#FFA}
+tr.disabled td {}
+tr.disabled td:first-child img.icon,
+tr.disabledreader td:first-child img.icon {
+	background-color:#0A0
+}
+/* colors for status rows in status.html depend on status */
+tr.a td {background-color:#3F0}
+tr.c td {background-color:#F1F5E6}
+tr.s td, tr.l td,
+tr.n td,tr.h td {background-color:#E1E1EF}
+tr.r td {background-color:#FFF3E7}
+tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
+
+/* **************** 9. TABLE TH */
+th {
+	height:10px;
+	padding:5px;
+	background-color:#CCC
+}
+/* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
+th.nameinfo {
+	text-transform:uppercase;
+	text-align:left;
+	background-color:#999
+}
+/* status.html */
+th.statuscol0 {
+	width:0
+}
+th.statuscol15 {
+	cursor:pointer
+}
+/* readerconfig.html */
+th.withservices, th.notservices, th.lbservices {}
+
+/* **************** 10. TABLE TD */
+td {
+	height:10px;
+	text-align:left;
+	padding:5px;
+	background-color:#EEE
+}
+/* for settings in configuration of readers and users */
+table.invisible td { 
+	font-size:12px
+}
+table.invisible td:first-child {
+	padding-left:0
+}
+/* services.html */
+#servicesedit td {
+	text-align:center
+}
+/* readerstatsnotfound.html, readerstatstimeoutbit.html
+ * status_*headline.html */ 
+td.subheadline {
+	height:10px;
+	padding:5px;
+	background-color:#CCC;
+	text-align:center
+}
+td.subheadline p {
+	float:left;
+	text-align:left;
+	font-weight:bold;
+	margin-top:4px
+}
+/* default alignment for all rows status.html/userconfig.html/readers.html */
+td.centered,
+td[class*='statuscol'],		/* shorthand notation td[class*='statuscol'] for  td.statuscol0 -  td.statuscol16 */
+td[class*='usercol'],		/* shorthand notation td[class*='usercol'] for  td.usercol0 -  td.usercol25 */
+td[class*='readercol'] {	/* shorthand notation td[class*='readercol'] for  td.readercol0 -  td.readercol17 */
+	text-align:center
+}
+td.statuscol0 {
+	width:10px
+}
+td.statuscol1 {
+	width:0
+}
+/* readerconfig_sidokbit.html */
+td.servicescol1, td.servicescol2, td.servicescol3 {
+	width:30%;
+}
+/* Actionbutton readers.html */
+td.readercol13,td.readercol14,
+td.readercol15 {
+	min-width:22px
+}
+
+/* **************** 11. DIV */
+/* status.html, entitlements_genericbit.html */
+div.log {
+	font-family:"Courier New", monospace;
+	text-align:left;
+	margin:20px 0;
+	padding:10px;
+	border:1px dotted #AAA;
+	background-color:#FAFAFA;
+	color:#666
+}
+/* module-webif.c class for services.html */
+div.sidlist {
+	font-family:"Courier New", monospace;
+	text-align:left;
+	padding:2px;
+	border:1px dotted #AAA;
+	background-color:#FFFDF5;
+	color:#666
+}
+div.sidlistclose {
+	float:right;
+	background-color:red;
+	color:#FFF
+}
+/* message.html */
+div.message {
+	font-size:12px;
+	font-weight:700;
+	margin:5px 0
+}
+/* file.html */
+div.filterform {
+	margin:10px
+}
+/* pre_autoconf.html, pre_shutdown.html */
+div.warning {
+	margin:42px 0 14px
+}
+/* logobit.html - Logo for Oscam */
+div.logo {
+	position:absolute;
+	top:10px;
+	left:10px;
+	z-index:0
+}
+/* READERS and USERS items */
+div.groups {
+	cursor:default;
+	overflow:hidden;
+	margin:0 auto;
+	text-align:center;
+	word-wrap:normal;
+	position:relative;
+	width:40px
+}
+/* footer.html */
+div.footer {
+	padding-bottom:5px;
+	padding-top:5px;
+	margin-bottom:0;
+	margin-top:40px;
+	background-color:#EEE;
+	border-top:3px solid #CCC
+}
+div.footer li {
+	margin:5px;
+	list-style-type:none
+}
+/* status.html, main DIV for statistics info */
+div.info {
+	max-width:1300px;
+	margin:20px auto
+}
+/* debugmenu	- status_sdebug.html 
+ * logmenu		- file.html
+*/
+div.debugmenu, div.logmenu {
+	font-size:12px;
+	line-height:16px;
+	margin-bottom:8px
+}
+/* entitlements_cccambit.html */
+div.cccamentitlementtotals,
+div.cccamentitlementcontrols {
+	margin-top:14px
+}
+/* definition only for show or hide columns or DIV
+ * #newuser		- in userconfig.html
+ * #newreader	- in readers.html
+ * #exp, #cwc, #acasc - only in module-webif.c for show/hide columns in userconfig.html
+ */
+#newuser, #newreader,
+.exp, .cwc, .acas, .grp,
+.hidden {
+	display:none
+}
+
+/* **************** 12. TEXTAREA,SELECT,INPUT */
+/* texteditor in file.html */
+textarea.editor {
+	font-size:11px;
+	width:98%;
+	height:508px;
+	font-family:"Courier New", monospace;
+	text-align:left;
+	padding:8px 10px;
+	border:1px dotted #AAA;
+	background-color:#FAFAFA;
+	color:#000
+}
+/* class for textarea */
+textarea.bt {
+	font-size:12px
+}
+/* generaly settings for all select */
+select {
+	padding:2px
+}
+/* generaly settings for all input */
+input[type="text"] {
+	padding:2px
+}
+.readers input[type="text"],
+.users input[type="text"]{
+	text-align:center;
+	background-color:#F8F8F8;
+}
+/* all config input they are with units e.g. sec or min in config.html */
+input.withunit{
+	text-align:left;
+}
+/* solution for align vertical checkbox with text */
+input[type=checkbox] {
+	vertical-align:text-bottom;
+	_vertical-align:middle;
+	margin-right:5px
+}
+/* generaly settings for all buttons/submits */
+input[type="button"], input[type="submit"]{
+	-webkit-appearance:none;
+	border-radius:3px;
+	border:1px solid #AAA;
+	text-align:center;
+	padding:0 2px;
+	margin:0 3px;
+	display:inline-block;
+	width:70px;
+	height:20px;
+	color:#333;
+	background-color:#F8F8F8;
+}
+
+/* generaly hover settings for all buttons/submits */
+input[type="button"]:hover, input[type="submit"]:hover{
+	background-color:#F2F2F2;
+	box-shadow: inset 1px 1px #555;
+	padding:0px 1px 0px 3px;
+	
+}
+/* only for statusheadline button in status.html */
+td.subheadline input[type="button"] {
+	float:right;
+	margin:0 0 0 2px;
+	width:95px;
+	font-weight:normal
+}
+/* only for save button lb/cccam control in config.html */
+.configcontrol input[type="submit"] {
+	width:115px;
+}
+/* only for button in readers.html/userconfig.html/services.html for addnew */
+.users input[type="submit"], .readers input[type="submit"], #addnewservice input[type="submit"] {
+	margin-left:10px;
+}
+/* only for diasabled button in file.html*/
+#filesubmit input[type="submit"]:disabled {
+	box-shadow: 10px 0px transparent;
+	padding:0px 2px;
+	background-color:transparent;
+	text-decoration:line-through;
+	font-weight:normal
+}
+/* only save button in config.html/readerconfig.html/services.html */
+td.configcolsave {
+	text-align:center
+}
+/* settings for first option in select 
+ * otherdropdown	- in script.html, menu.html
+ */
+#otherdropdown option:first-child {
+    display:none
+}
+
+/* **************** 13. IMAGE */
+/* generaly settings for images */
+img {
+	border:0 solid
+}
+/* for icons with following Action */
+img.icon {
+	border-radius:4px;
+	width:22px;
+	height:22px;
+	max-height:22px;
+	background-color:#A00
+}
+/* statususericon	- in STATUS item
+ * protoicon		- in STATUS, READERS item
+ * usericon			- in USERS item
+ * readericon		- in READERS item
+ */
+img.statususericon, img.protoicon,
+img.usericon, img.readericon {
+	min-height:15px;
+	height:auto;
+	max-height:22px;
+	max-width:150px
+}
+/* logo IC_LOGO.tpL */
+div.logo img {
+	max-height:44px
+}
+
+td#out.centered img,
+td#in.centered img {
+	margin-bottom:-2px;
+	margin-right:10px;
+	margin-left: 10px
+}
+
+/* **************** 14. SPAN */
+/* module-webif.c and userconfig_notify.html */
+span.span_notifier {
+	margin-left:2px;
+	padding:1px 3px;
+	color:#FFF;
+	background-color:red
+}
+/* module-webif.c value for STATUS item ( more info in Changeset 6668 by alno )
+ * Class for formating values in statusview column "Idle" 
+ * In new WebIf column Idle is not used. Info about Idle is in title */
+span.idlesec_normal, span.idlesec_alert {
+	font-size:9px;
+	color:red
+}
+/* readerconfig_cccambit.html, user_edit_anticasc.html and user_edit_cccam.html */
+span.global_conf {
+	font-size:12px;
+	cursor:default;
+	padding:4px;
+	color:blue
+}
+/* entitlements.html, readerconfig.html and user_edit.html */
+span.text_entitle {
+	display:inline-block;
+	font-weight:700
+}
+/* cachex status */
+span.e_expired {background-color:#FFF3E7}
+.span, span {
+	text-align:center;
+}
+
+/* **************** 15. GRAPH */
+rect.graph_bg {fill:white;}
+text.graph_error {text-anchor:middle;fill:red;}
+text.graph_grid_txt {text-anchor:end;font-size:12px;fill:gray;}
+path.graph_grid {stroke-opacity:0.5;stroke:gray;}
+
+/* **************** 16. SORTING IN TABLE */
+.users th {
+	font-size:11px
+}
+.sortable {
+	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
+	background-repeat:no-repeat;
+	background-position:4px center;
+	cursor:pointer;
+	padding-left:12px;
+	padding-right:8px
+}
+.sorting-asc, .sorting-desc{
+	background-color:#999
+}
+.sorting-desc{
+	background-image: url(data:image/png;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIFlD03K1sAOw==);
+	background-repeat:no-repeat;
+	background-position:4px center;
+	cursor:pointer;
+	padding-left:10px;
+	padding-right:8px
+}
+.sorting-asc{
+	background-image: url(data:image/png;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIF3GQnuF0AOw==);
+	background-repeat:no-repeat;
+	background-position:4px center;
+	cursor:pointer;
+	padding-left:10px;
+	padding-right:8px
+}
+
+/* **************** 17. POLLING */
+/*  for UL in logpoll.html */
+#livelog {
+	resize:vertical;
+	height:580px;
+	max-width:1500px;
+	overflow-y:auto;
+	list-style:none;
+	text-align:left;
+	margin:5px auto 15px;
+	border:1px dotted #AAA;
+	background-color:#FAFAFA;
+	color:#666;
+	font-family: "Courier New",monospace
+}
+#livelogdata {
+	list-style:none;
+}
+li.regex, li.regexdata_nav, li.regexdata_save{
+	list-style-type:none;
+	white-space:nowrap
+}
+input.regexinput {
+	cursor:text;
+	padding:2px;
+	margin: 3px 15px 1px 3px;
+	width:400px;
+}
+.regexdata_nav input {
+	width:100px;
+	margin-bottom:8px
+}
+.regexdata_save input {
+	width:90px;
+	margin-top:10px
+}
+div.colorPicker-picker {
+	height: 16px;
+	width: 16px;
+	display: inline;
+	margin: 3px;
+	padding: 4px 8px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	line-height: 16px;
+	font-size:0.75em;
+	font-weight:bold;
+	text-align: center;
+}
+div.colorPicker-palette {
+	width: 110px;
+	position: absolute;
+	border: 1px solid #598FEF;
+	background-color: #EFEFEF;
+	padding: 2px;
+	z-index: 9999;
+}
+div.colorPicker_hexWrap {width: 100%; float:left }
+div.colorPicker_hexWrap label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
+div.colorPicker_hexWrap input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
+
+div.colorPicker-swatch {
+	height: 12px;
+	width: 12px;
+	border: 1px solid #000;
+	margin: 2px;
+	float: left;
+	cursor: pointer;
+	line-height: 12px;
+}
+/* User-Page polling */
+#inc,#dec {
+	padding:0 3px;
+	margin: -3px 3px;
+	border:none;
+	background-color:#A00;
+	color:#FFF;
+	border-radius:4px;
+	font-size:14px;
+	font-weight:700;
+	width: 22px;
+	height: 22px;
+}
+#inc:hover,#dec:hover {
+	background-color:red;
+}
+#nav li.pollselect {
+	display:inline;
+	list-style:none;
+	position: absolute;
+	right: 10px;
+}
+input.pintervall {
+	font-size:14px;
+	font-weight:500;
+	width:18px;
+	height:18px;
+	color:#000;
+	background-color:transparent;
+	border:none;
+	border-radius:4px;
+	text-align:center;
+	margin: 0 4px;
+	padding: 0;
+}
+/* polling heartbeat */
+#picolor {
+	background-color:#A00; 
+}
+
+/* **************** 18. ECM BAR HISTORY */
+#chart {
+	position:absolute;
+	width: 150px;
+	height: 90px;
+	border: 1px dotted #F00;
+	background-color: #EAEAEA;
+	padding:3px;	
+	z-index:1000;
+}
+#charthead {
+	background-color:transparent;
+	width:100%;
+	height:5px;
+}
+#graph {
+	width:98%;
+	bottom:0;
+	position:absolute;
+}
+.disabledtable {
+    opacity: 0.5;
+}
+/* Statuspage Functions: Generate a Bar for Barchart */
+div.bar {
+	width: 5px;
+	margin: 2px;
+	display: inline-block;
+	position: relative;
+	background-color: #aeaeae;
+	vertical-align: baseline;
+}
+
+/* **************** 19. FILE MENU */
+/* For filemenu - change dropdown menu */
+.drop .subcaret {
+	margin-top:7px;
+	margin-left:7px
+}
+.subcaret {
+	display:inline-block;
+	width:0;
+	height:0;
+	vertical-align:top;
+	border-top:4px solid #606060;
+	border-right:4px solid transparent;
+	border-left:4px solid transparent;
+	content:"";
+	opacity:1;
+	filter:alpha(opacity=100)
+}
+#nav ul.dropdown_nav {
+	padding:0;
+	margin:0
+}
+#nav ul.dropdown_nav li {
+	list-style-type:none;
+	margin:0;
+	padding:1px 0;
+	width:100%
+}
+#nav li ul.dropdown_nav li a {
+	color:#000;
+	padding:0 5px;
+        display: block;
+}
+#nav li {
+	position:relative
+}
+#nav li ul.dropdown_nav {
+	display:none;
+	position:absolute;
+	text-align:left;
+	top:16px;
+	right:0;
+	width:auto;
+	background-color:#FFF;
+	border:1px solid #DDD;
+}
+#nav li:hover ul.dropdown_nav {
+	display:block
+}
+
+/* **************** 20. OTHER SETTINGS */
+/* margin top from previous table */
+.margintop {
+	margin-top:30px
+}
+.smallmargintop {
+	margin-top:15px
+}

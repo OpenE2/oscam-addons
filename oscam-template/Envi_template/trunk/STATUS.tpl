@@ -1,4 +1,4 @@
-<!--OSCam;8118846;1.20-unstable_svn;9687;-->
+<!--OSCam;2474787100;1.20-unstable_svn;9705;-->
 ##TPLHEADERSHORT##
 	<script type="text/javascript">
 	
@@ -38,7 +38,7 @@
 		<TH CLASS="statuscol9">Protocol</TH>
 		<TH CLASS="statuscol12">CAID:SRVID</TH>
 		<TH CLASS="statuscol13">Current Channel</TH>
-		<TH CLASS="statuscol14">LB Value/Reader</TH>
+		<TH CLASS="statuscol14">##STATUSCOL14HEAD##Reader</TH>
 		<TH ID="onlineidle" TITLE="Online &amp; Idle Info" CLASS="statuscol15">Login*</TH>
 		<TH CLASS="statuscol16">Status</TH>
 	</TR>
