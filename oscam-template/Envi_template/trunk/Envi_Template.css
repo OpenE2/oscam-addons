@@ -99,6 +99,7 @@ p.text-large-red {
 li.styleauthor:after {content:" | Envi Template - Last update 2014-04-28"}
 /* other settings for seubheadline */
 td.subheadline p {
+	float: left;
 	text-align:left;
 	font-weight:bold;
 	margin-left:5px
@@ -110,7 +111,8 @@ div.footer p {
 
 /* **************** 4. LINKS */
 a {
-	text-decoration:none
+	text-decoration:none;
+	color:#050840
 }
 a:link, a:visited, a:active {
 	color:#050840
@@ -402,7 +404,7 @@ table.statuscacheexinfo {
 /* include readerconfig.html & user_edit.html */
 table.config {
 	width:60%;
-	max-width:750px;
+	max-width:800px;
 	margin-bottom:20px
 }
 table.config:nth-child(2) td:first-child{
@@ -849,6 +851,10 @@ input[type="text"] {
 input[type="text"]:hover{
 	border:1px solid #000
 }
+input[type="button"], input[type="submit"]{
+	padding:0 2px;
+	margin:0 3px;
+}
 input[type="submit"] {
 	padding:0px 3px;
 	cursor:pointer;
@@ -883,6 +889,10 @@ input[type="submit"]:hover {
 	-webkit-transition: all .01s ease-out; 
 	-moz-transition: all .01s linear; 
 	transition: all .01s linear
+}
+/* all config input they are with units e.g. sec or min in config.html */
+input.withunit{
+	text-align:left;
 }
 /* solution for align vertical checkbox with text */
 input[type=checkbox] {
@@ -929,37 +939,27 @@ input[type=submit]:disabled:hover {
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
 	
 }
-/* status_clientheadlinebit.html, status_clientheadlinewith.html
- * status_pheadline.html, status_rheadline.html
- */
-td.subheadline select {
-	text-align:center;
-	font-size:10px
-}
-td.subheadline option {
-    font-size:11px;
-    margin: 5px 0
-}
-td.subheadline option:first-child {
-	display: none
-}
-td.subheadline input:hover {
-	color:#FFF;
-	background-color:#232527
-}
-#otherdropdown select{
-	color:gray
-}
-#otherdropdown option { 
-	color:#000
-}
+
 /* settings for first option in select 
  * otherdropdown	- in script.html, menu.html
  */
 #otherdropdown option:first-child {
     display:none
 }
-
+/* only for statusheadline button in status.html */
+td.subheadline input[type="button"] {
+	float:right;
+	margin:0 0 0 2px;
+	width:95px;
+	font-weight:normal;
+	-webkit-appearance:none;
+	border-radius:3px;
+	border:1px solid #AAA;
+	text-align:center;    	
+	height:20px;
+	color:#333;
+	background-color:#F8F8F8;
+}
 /* **************** 13. IMAGE */
 /* generaly settings for images */
 img {
