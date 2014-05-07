@@ -112,10 +112,10 @@ div.footer p {
 /* **************** 4. LINKS */
 a {
 	text-decoration:none;
-	color:#050840
+	color:#005BB2
 }
 a:link, a:visited, a:active {
-	color:#050840
+	color:#005BB2
 }
 a:hover {
 	color:#FF9E5F
@@ -258,7 +258,7 @@ li.menu_selected a {
 	top: 58px;
 	left: 0;
 	right: 0;
-	padding: 5px;
+	padding:6px 0px 4px 0px;
 	z-index:1040;
 	border: 1px solid #e5e5e5;
 
@@ -634,7 +634,7 @@ table.invisible td:first-child {
 }
 /* ??? */
 tr:hover td a {
-	color:#FFCB80
+	color:#FFE180
 }
 tr:hover td a:hover {
 	color:#FFF
