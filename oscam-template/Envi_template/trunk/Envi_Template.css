@@ -1249,10 +1249,9 @@ div.bar {
 #nav li ul.dropdown_nav li.configmenu_selected:hover {
 	background-color:#DDD
 }
-li.configmenu:last-child:hover {
+#nav li.configmenu:last-child:hover a.drop {
 	background-color:#DDD
 }
-
 /* **************** 20. OTHER SETTINGS */
 /* margin top from previous table */
 .margintop {
