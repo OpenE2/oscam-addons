@@ -72,7 +72,7 @@
 ##TPLUSERCWCYCLE##
 ##TPLUSERANTICASC##
 			<TH CLASS="##EXPIREVIEW##"></TH>
-			<TH COLSPAN="3">Action</TH>
+			<TH COLSPAN="3"></TH>
 		</TR>
 		<TR id="headline" onClick="cdpause()"> <!--  Resolve  -->
 			<TH>On/Off</TH>
@@ -95,7 +95,7 @@
 ##TPLCWCYCLETHV##
 ##TPLCWANTICASCTHV##
 			<TH CLASS="##EXPIREVIEW##" TITLE="Expiration date of account">Exp. Date</TH>
-			<TH COLSPAN="3"></TH>
+			<TH COLSPAN="3">Action</TH>
 		</TR>
 	</THEAD>
 	<TBODY class="content">

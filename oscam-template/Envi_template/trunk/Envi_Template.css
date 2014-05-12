@@ -346,7 +346,7 @@ table.statuscacheexinfo {
 /* for all part in CONFIGURATION item */
 /* include readerconfig.html & user_edit.html */
 table.config {
-	width:60%;
+	width:80%;
 	max-width:800px;
 	margin-bottom:20px
 }
@@ -361,7 +361,8 @@ table.readers {
 }
 /* readerconfig.html */
 table.configreader {
-	width:850px
+	width:80%;
+	max-width:850px
 }
 /* entitlements_bit.html, entitlements_cccambit.html */
 table.stats {}
@@ -407,7 +408,8 @@ table.user_totals {
 }
 /* user_edit.html */
 table.configuser {
-	width:60%;
+	width:80%;
+	max-width:850px;
 	margin-bottom:20px
 }
 

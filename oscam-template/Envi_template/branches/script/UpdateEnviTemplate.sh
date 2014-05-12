@@ -13,12 +13,14 @@ cd /etc/tuxbox/config/tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
 [ -f LOGPAGE.tpl ] && rm -f LOGPAGE.tpl
 [ -f MENU.tpl ] && rm -f MENU.tpl
+[ -f READERCONFIG.tpl ] && rm -f READERCONFIG.tpl
 [ -f READERS.tpl ] && rm -f READERS.tpl
 [ -f SCANUSB.tpl ] && rm -f SCANUSB.tpl
 [ -f SCRIPT.tpl ] && rm -f SCRIPT.tpl
 [ -f SERVICECONFIGLIST.tpl ] && rm -f SERVICECONFIGLIST.tpl
 [ -f STATUS.tpl ] && rm -f STATUS.tpl
 [ -f USERCONFIGLIST.tpl ] && rm -f USERCONFIGLIST.tpl
+[ -f USEREDIT.tpl ] && rm -f USEREDIT.tpl
 tar -xzvf Envi_Template.tgz
 mv -f Envi_Template.css /etc/tuxbox/config/Envi_Template.css
 rm -if Envi_Template.tgz || exit 1

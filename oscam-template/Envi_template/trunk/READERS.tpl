@@ -60,7 +60,7 @@
 			<TH>skipped<BR><SPAN TITLE="unknown EMM"> UK </SPAN>/<SPAN TITLE="global EMM"> G </SPAN>/<SPAN TITLE="shared EMM"> S </SPAN>/<SPAN TITLE="unique EMM"> UQ </SPAN></TH>
 			<TH>blocked<BR><SPAN TITLE="unknown EMM"> UK </SPAN>/<SPAN TITLE="global EMM"> G </SPAN>/<SPAN TITLE="shared EMM"> S </SPAN>/<SPAN TITLE="unique EMM"> UQ </SPAN></TH>
 ##TPLREADERLBWD##
-			<TH COLSPAN="##READERACTIONCOLS##"></TH>
+			<TH COLSPAN="##READERACTIONCOLS##">Action</TH>
 		</TR>
 	</THEAD>
 	<TBODY>
