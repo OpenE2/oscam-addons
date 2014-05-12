@@ -14,6 +14,7 @@ cd /etc/tuxbox/config/tpl
 [ -f LOGPAGE.tpl ] && rm -f LOGPAGE.tpl
 [ -f MENU.tpl ] && rm -f MENU.tpl
 [ -f READERCONFIG.tpl ] && rm -f READERCONFIG.tpl
+[ -f READERCONFIGIRDETO.tpl ] && rm -f READERCONFIGIRDETO.tpl
 [ -f READERS.tpl ] && rm -f READERS.tpl
 [ -f SCANUSB.tpl ] && rm -f SCANUSB.tpl
 [ -f SCRIPT.tpl ] && rm -f SCRIPT.tpl
