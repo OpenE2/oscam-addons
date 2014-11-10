@@ -1,0 +1,2 @@
+<!--OSCam;2586344375;1.20-unstable_svn;9989;-->
+<DIV CLASS="logo"><A HREF="http://www.streamboard.tv/wbb2/portal.php" TARGET="_blank" TITLE="OSCam Streamboard"><IMG SRC="image?i=IC_LOGO" ALT="OSCam Streamboard" TITLE="OSCam Streamboard"></A></DIV>
