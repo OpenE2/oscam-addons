@@ -106,10 +106,6 @@
 	    if(window.location.href.indexOf("emm_running.html") > -1) {
 	        $('#subnav').hide();
 	    }
-	    // Hidden Subnav in emm_running.html
-	    if(window.location.href.indexOf("emm_running.html") > -1) {
-	        $('.subnav').hide();
-	    }
 
 	});
 
