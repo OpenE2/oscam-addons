@@ -56,7 +56,7 @@ html,body,* html #wrapper {height:100%}
 #content {margin-bottom:0;padding:0 8px 115px}
 #footer {position:absolute;bottom:0;width:100%}
 
-/* **************** 3. BASIC SETTINGS - BODY,P,H4,LI */
+/* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
 body {
 	font-family:Arial;
 	font-size:11px;
@@ -97,6 +97,11 @@ li {
 /* footer.html */
 li.styleauthor:after {
 	content:"Streamboard Team"
+}
+/* Solutin for vertical align in table.statusecminfo */
+tbody.statusecminfo tr:nth-child(5) td:last-child b {
+	position:relative;
+	top:1px
 }
 
 /* **************** 4. LINKS */
@@ -1280,7 +1285,10 @@ body.envi {
 .envi table.users td:last-child {
 	border-right: none;
 }
-
+.envi tbody.statusecminfo tr:nth-child(2) b {
+	position: relative;
+	top: 1px
+}
 /* **************** 9. TABLE TH */
 /* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
 .envi th.nameinfo {
