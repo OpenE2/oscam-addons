@@ -1,7 +1,6 @@
 <!--OSCam;1299768664;1.20-unstable_svn;9989;-->
 	</DIV> <!-- End content -->
 	<DIV CLASS="footer" ID="footer">
-		<DIV>
 			<UL CLASS="textfooter">
 				<LI CLASS="developed"><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
 				<LI>
@@ -28,7 +27,6 @@
 				<LI CLASS="styleauthor">2014 Designed by : <B>Skyndas for </B></LI>
 				<LI><A NAME="statusfooter"></A></LI>
 			</UL>
-		</DIV>
 		<DIV CLASS="styleswitcher">
 			<H3>STYLE SWITCHER</H3>
 			<UL CLASS="addClass">
@@ -109,6 +107,7 @@
 
 	});
 
+	/* Styleswitcher */
 	$(function() {
 		$(".addClass a").click(function() {
 			var countryswitch = $(this).attr('href');
