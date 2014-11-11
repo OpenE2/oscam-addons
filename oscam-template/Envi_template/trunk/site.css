@@ -1065,7 +1065,7 @@ div.infopage:hover div.infopagedetail {
 	width: 500px
 }
 div.infopagedetail table{
-	width: 100%;
+	width: 100%
 }
 
 /* ==================================================================  ENVI TEMPLATE */
@@ -1227,25 +1227,25 @@ body.envi {
 /* userconfig.html */
 .envi table.users {
 	border-spacing:0;
-	border-bottom: 1px solid #222;
+	border-bottom: 1px solid #222
 }
 .envi #newuser table,
 .envi #searchTable table.users {
 	border-spacing:0px;
-	border-bottom: none;
+	border-bottom: none
 }
 .envi table.infotable {
 	border-bottom: 1px solid #222;
-	background-color: #FFF;
+	background-color: #FFF
 }
 /* cacheex.html */ 
 .envi table.cacheex {
     border-spacing: 0px;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #222
 }
 .envi table.stats {
     border-spacing: 0px;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #222
 }
 
 /* **************** 8. TABLE TR */
@@ -1266,20 +1266,20 @@ body.envi {
 	border-right: 1px dotted #666;
 	background-color: #222;
 	color: #FFF;
-	border-top: 1px solid #FFF;
+	border-top: 1px solid #FFF
 }
 .envi table.users th:last-child {
-	border-right: none;
+	border-right: none
 }
 /* cacheex.html */
 .envi table.stats th {
 	border-right: 1px dotted #666;
 	background-color: #222;
 	color: #FFF;
-	border-top: 1px solid #FFF;
+	border-top: 1px solid #FFF
 }
 .envi table.stats th:last-child {
-	border-right: none;
+	border-right: none
 }
 /* Background color for th */
 .envi table.config th,
@@ -1296,7 +1296,7 @@ body.envi {
 /* **************** 10. TABLE TD */
 /* userconfig.html */
 .envi table.users td {
-	border-right: 1px dotted #999;
+	border-right: 1px dotted #999
 }
 .envi table.users td:last-child {
 	border-right: none;
@@ -1306,29 +1306,29 @@ body.envi {
 .envi table.config td:first-child,
 .envi table.configreader td:first-child,
 .envi table.configuser td:first-child {
-    background-color: #CCC;
+    background-color: #CCC
 }
 .envi table.config tr:nth-last-child(-n+2) td:first-child,
 .envi table.configreader tr:nth-last-child(-n+2) td:first-child,
 .envi table.configuser tr:nth-last-child(-n+2) td:first-child {
-    background-color: #EEE;
+    background-color: #EEE
 }
 .envi table.subservicetable td:first-child {
-    background-color: #EEE;
+    background-color: #EEE
 }
 /* Border bottom for whole TR in .config, configreader, .configuser */
 .envi table.config td,
 .envi table.configreader td,
 .envi table.configuser td {
-    border-bottom: 1px dotted #999;
+    border-bottom: 1px dotted #999
 }
 .envi table.subservicetable td {
-    border-bottom:none;
+    border-bottom:none
 }
 .envi table.config tr:nth-last-child(-n+3) td,
 .envi table.configreader tr:nth-last-child(-n+3) td,
 .envi table.configuser tr:nth-last-child(-n+3) td {
-    border-bottom: none;
+    border-bottom: none
 }
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
@@ -1365,23 +1365,23 @@ body.envi {
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
-    max-height: 28px;
+    max-height: 28px
 }
 
 /* **************** 16. SORTING IN TABLE */
-.sortable {
+.envi .sortable {
 	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///4CAgP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
 }
-.sorting-desc{
+.envi .sorting-desc{
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdj+MFQwKAAAAZOAYkOHHR7AAAAAElFTkSuQmCC);
 }
-.sorting-asc{
+.envi .sorting-asc{
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjUGAoYPgBAALuAYlvcnaaAAAAAElFTkSuQmCC);
 }
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
-	margin:0;
+	margin:0
 }
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
@@ -1463,7 +1463,7 @@ screen and (device-width: 360px) and (device-height: 640px) {
 		#toggle:checked + .toggle:after{
 			content:'Close Menu';
 			color: #F00;
-			text-shadow: 1px 1px 2px #000;
+			text-shadow: 1px 1px 2px #000
 		}
 
 	/* main menu */
@@ -1547,9 +1547,9 @@ screen and (device-width: 360px) and (device-height: 640px) {
 		padding:2px
 	}
 	div.styleswitcher {
-		display: none;
+		display: none
 	}
 	div.infopage {
-		display: none;
+		display: none
 	}
 }
