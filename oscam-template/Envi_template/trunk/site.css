@@ -1007,36 +1007,6 @@ only screen and (min-device-width : 320px) and (max-device-width : 568px) and (o
 #content {margin-bottom:0;padding:0px 8px 150px}
 
 /* **************** 2. BASIC SETTINGS - BODY,P,H4,LI */
-/* file.html, script.html */
-#filename {
-	/* correction because jquery in footer.tpl remove div "subnav" */
-	margin-top: 22px
-}
-
-/* **************** 7. TABLE */
-/* ------- SERVICES ------- */
-/* services.html */
-#newservice {
-	/* correction because jquery in footer.tpl remove div "subnav" */
-	margin-top:22px	
-}
-/* ------- READERS ------- */
-/* emm.html */
-table.writeemm {
-	/* correction because jquery in footer.tpl remove div "subnav" */
-	margin-top:22px
-}
-/* emm_running.html */
-table.emmrunning {
-	/* correction because jquery in footer.tpl remove div "subnav" */
-	margin-top:22px
-}
-/* **************** 11. DIV */
-/* Log status.html, livelog.html, file.html */
-div#livelog {
-	/* correction because jquery in footer.tpl remove div "subnav" */
-	margin-top:22px
-}
 /* footer.html */
 div.footer {
 	padding-bottom:5px;

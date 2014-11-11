@@ -86,23 +86,23 @@
 	$(document).ready(function () {
 		// Hidden Subnav in script.html - SCRIPTS ITEM
 	    if(window.location.href.indexOf("script.html") > -1) {
-			$('#subnav').hide();
+			$('#subnav').css('visibility', 'hidden');
 	    }
 	    // Hidden Subnav in services.html - SERVICES ITEM
 	    if(window.location.href.indexOf("services.html") > -1) {
-	        $('#subnav').hide();
+	        $('#subnav').css('visibility', 'hidden');
 	    }
 	    // Hidden Subnav in logpoll.html - LIVELOG ITEM
 	    if(window.location.href.indexOf("logpoll.html") > -1) {
-	        $('#subnav').hide();
+	        $('#subnav').css('visibility', 'hidden');
 	    }
 	    // Hidden Subnav in emm.html
 	    if(window.location.href.indexOf("emm.html") > -1) {
-	        $('#subnav').hide();
+	        $('#subnav').css('visibility', 'hidden');
 	    }
 	    // Hidden Subnav in emm_running.html
 	    if(window.location.href.indexOf("emm_running.html") > -1) {
-	        $('#subnav').hide();
+	        $('#subnav').css('visibility', 'hidden');
 	    }
 
 	    // Add checkbox and label for responsive design
