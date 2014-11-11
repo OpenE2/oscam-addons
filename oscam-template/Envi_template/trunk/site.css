@@ -1269,6 +1269,15 @@ body.envi {
 	border-bottom: 1px solid #222;
 	background-color: #FFF;
 }
+/* cacheex.html */ 
+.envi table.cacheex {
+    border-spacing: 0px;
+    border-bottom: 1px solid #222;
+}
+.envi table.stats {
+    border-spacing: 0px;
+    border-bottom: 1px solid #222;
+}
 
 /* **************** 8. TABLE TR */
 /* rowcolors for users rows in unserconfig.html depend on status */
@@ -1283,10 +1292,34 @@ body.envi {
 	background-color:#222;
 	color: #FFF
 }
-/* other th */
+/* userconfig.html */
+.envi table.users th {
+	border-right: 1px dotted #666;
+	background-color: #222;
+	color: #FFF;
+	border-top: 1px solid #FFF;
+}
+.envi table.users th:last-child {
+	border-right: none;
+}
+/* cacheex.html */
+.envi table.stats th {
+	border-right: 1px dotted #666;
+	background-color: #222;
+	color: #FFF;
+	border-top: 1px solid #FFF;
+}
+.envi table.stats th:last-child {
+	border-right: none;
+}
+/* Background color for th */
 .envi table.config th,
 .envi table.configreader th,
-.envi table.configuser th {
+.envi table.configuser th,
+.envi table.cacheex th,
+.envi table.failban th,
+.envi #servicesedit th,
+.envi #addnewservice th {
     background-color: #222;
     color: #FFF
 }
@@ -1299,10 +1332,7 @@ body.envi {
 .envi table.users td:last-child {
 	border-right: none;
 }
-.envi tbody.statusecminfo tr:nth-child(2) b {
-	position: relative;
-	top: 1px
-}
+
 /* Solution for coloring first TD in table .config, .configreader, .configuser */
 .envi table.config td:first-child,
 .envi table.configreader td:first-child,
@@ -1370,15 +1400,6 @@ body.envi {
 }
 
 /* **************** 16. SORTING IN TABLE */
-.envi table.users th {
-	border-right: 1px dotted #666;
-	background-color: #222;
-	color: #FFF;
-	border-top: 1px solid #FFF;
-}
-.envi table.users th:last-child {
-	border-right: none;
-}
 .sortable {
 	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///4CAgP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
 }
