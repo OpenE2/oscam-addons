@@ -105,6 +105,10 @@
 	        $('#subnav').hide();
 	    }
 
+	    // Add checkbox and label for responsive design
+	    $("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
+	    $("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");	
+
 	});
 
 	/* Styleswitcher */
