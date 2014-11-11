@@ -98,7 +98,7 @@ li {
 li.styleauthor:after {
 	content:"Streamboard Team"
 }
-/* Solutin for vertical align in table.statusecminfo */
+/* Solutin for vertical align in tbody.statusecminfo */
 tbody.statusecminfo tr:nth-child(5) td:last-child b {
 	position:relative;
 	top:1px
@@ -1277,6 +1277,20 @@ body.envi {
 	color: #000
 }
 
+/* **************** 9. TABLE TH */
+/* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
+.envi th.nameinfo {
+	background-color:#222;
+	color: #FFF
+}
+/* other th */
+.envi table.config th,
+.envi table.configreader th,
+.envi table.configuser th {
+    background-color: #222;
+    color: #FFF
+}
+
 /* **************** 10. TABLE TD */
 /* userconfig.html */
 .envi table.users td {
@@ -1289,13 +1303,34 @@ body.envi {
 	position: relative;
 	top: 1px
 }
-/* **************** 9. TABLE TH */
-/* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
-.envi th.nameinfo {
-	background-color:#222;
-	color: #FFF
+/* Solution for coloring first TD in table .config, .configreader, .configuser */
+.envi table.config td:first-child,
+.envi table.configreader td:first-child,
+.envi table.configuser td:first-child {
+    background-color: #CCC;
 }
-
+.envi table.config tr:nth-last-child(-n+2) td:first-child,
+.envi table.configreader tr:nth-last-child(-n+2) td:first-child,
+.envi table.configuser tr:nth-last-child(-n+2) td:first-child {
+    background-color: #EEE;
+}
+.envi table.subservicetable td:first-child {
+    background-color: #EEE;
+}
+/* Border bottom for whole TR in .config, configreader, .configuser */
+.envi table.config td,
+.envi table.configreader td,
+.envi table.configuser td {
+    border-bottom: 1px dotted #999;
+}
+.envi table.subservicetable td {
+    border-bottom:none;
+}
+.envi table.config tr:nth-last-child(-n+3) td,
+.envi table.configreader tr:nth-last-child(-n+3) td,
+.envi table.configuser tr:nth-last-child(-n+3) td {
+    border-bottom: none;
+}
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
 .envi div#livelog {
