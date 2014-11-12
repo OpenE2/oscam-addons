@@ -98,7 +98,7 @@ li {
 li.styleauthor:after {
 	content:"Streamboard Team"
 }
-/* Solutin for vertical align in tbody.statusecminfo */
+/* Solution for vertical align in tbody.statusecminfo */
 tbody.statusecminfo tr:nth-child(5) td:last-child b {
 	position:relative;
 	top:1px
@@ -505,7 +505,7 @@ div.warning {
 div.logo {
 	position:absolute;
 	top:6px;
-	left:8px;
+	left:9px;
 	z-index:0
 }
 /* READERS and USERS items */
@@ -1023,7 +1023,7 @@ div.footer li {
 	margin:0
 }
 div.footer b {}
-div.footer li.styleauthor b {}
+
 ul.textfooter {
 	margin:5px 0
 }
@@ -1350,10 +1350,6 @@ body.envi {
 }
 .envi div.footer b {
 	color:#999
-}
-.envi div.footer li.styleauthor b {
-	color:#BD0000;
-	text-shadow:1px 1px 1px #000
 }
 .envi div.styleswitcher a {
 	color:#999
