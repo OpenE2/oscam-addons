@@ -1080,6 +1080,16 @@ body.envi {
 .envi #filename {
 	margin-top: 0
 }
+
+/* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
+/* footer.html */
+.envi div.footer li.styleauthor b:after {
+	content:"Skyndas"
+}
+.envi li.styleauthor:after {
+	content:" for Streamboard Team"
+}
+
 /* **************** 5. MAIN MENU */
 .envi #main {
 	width:100%;
@@ -1351,6 +1361,10 @@ body.envi {
 .envi div.footer b {
 	color:#999
 }
+.envi div.footer li.styleauthor b {
+	color:#BD0000;
+	text-shadow:1px 1px 1px #000
+}
 .envi div.styleswitcher a {
 	color:#999
 }
@@ -1463,8 +1477,7 @@ body.envi {
 
  @media
 only screen and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5),
-only screen and (orientation: portrait) and (-webkit-device-pixel-ratio: 2),
-only screen and (min-width: 360px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3.0), {
+only screen and (min-resolution: 144dpi) {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
