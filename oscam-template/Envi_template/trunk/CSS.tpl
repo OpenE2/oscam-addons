@@ -710,6 +710,9 @@ img.usericon, img.readericon {
 div.logo img {
 	max-height:44px
 }
+div.logo svg.OSCam_logo {
+	fill:#111111
+}
 
 td#out.centered img,
 td#in.centered img {
@@ -1376,6 +1379,11 @@ body.envi {
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
     max-height: 28px
+}
+.envi div.logo svg.OSCam_logo {
+	fill:#ffffff;
+	height:28px;
+	width:28px
 }
 
 /* **************** 16. SORTING IN TABLE */
