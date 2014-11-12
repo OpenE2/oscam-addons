@@ -24,7 +24,7 @@
 						<LI><B>Compiler:</B> ##CS_TARGET##</LI>
 					</UL>
 				</LI>
-				<LI CLASS="styleauthor">2014 Designed by : <B>Skyndas for </B></LI>
+				<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
 				<LI><A NAME="statusfooter"></A></LI>
 			</UL>
 		<DIV CLASS="styleswitcher">
