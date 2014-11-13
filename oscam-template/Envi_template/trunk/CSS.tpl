@@ -1414,7 +1414,7 @@ body.envi {
 
 /* ################ MOBILE PHONES ################ */
 
- @media screen and (max-width: 360px) and (orientation : portrait) {
+@media screen and (max-width: 360px) and (orientation : portrait) {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
@@ -1571,4 +1571,42 @@ body.envi {
 		display: none
 	}
 
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait) {
+
+/* **************** 1. BASIC DIVISION PAGES */
+	#content {
+		padding: 0px 0px 225px;
+	}
+
+/* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
+		/* pre_shutdown.html */
+		h4 {
+			line-height:1.2em;
+		}
+
+/* **************** 5. MAIN MENU */
+		#mainmenu > li {
+			line-height: 1.2em;
+			font-size: 1.2em;
+		}
+
+/* **************** 11. DIV */
+	/* pre_autoconf.html, pre_shutdown.html */
+	div.warning {
+		margin: 16px 0 14px;
+		padding: 0 10px;
+		line-height: 1.2em;
+	}
+
+/* **************** X. FOOTER */
+	div.footer  {
+		height: 188px;
+		padding-bottom: 0;
+		font-size: 0.9em
+	}
+	li.developed {
+		font-size:1em
+	}
 }
