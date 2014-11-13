@@ -1,0 +1,74 @@
+	
+	LIST OF DEVICE MOBILE SMARTPHONES and PHABLETS
+	=========================================================================
+
+	* Online list of device
+		http://internetfunke.de/html-css/uebersicht-viewport-sizes-von-mobilen-endgeraeten/
+
+	* Google mobile emulator
+ 		https://developer.chrome.com/devtools/docs/device-mode
+
+ 	* Test your screen
+ 		http://www.mydevice.io/
+
+			DEVICE					   REAL RESOLUTION		CSS RESOLUTION		PIXEL RATIO
+										width x height		width x height	
+	-------------------------------------------------------------------------------------------------
+
+	APPLE -------------------------------------------------------------------------------
+		- iPhone 4 							640x960				320x480				2
+		- iPhone 4S							640x960				320x480				2
+		- iPhone 5 							640x1136			320x568				2
+		- iPhone 5C							640x1136			320x568				2
+		- iPhone 5S							640x1136			320x568				2
+		- iPhone 6 							750x1334			375x667				2
+		- iPhone 6 plus						1080x1920			414x736				2.6 (maybey 3)
+
+	HTC ---------------------------------------------------------------------------------
+		- HTC 7 Mozart						480x800				320x480				1.7
+		- HTC 7 Trophy						480x800				320x480				1.7
+		- HTC Evo							480x800				320x533				1.5
+		- HTC Evo 3D						540x960				360x640				1.5
+		- HTC Evo LTE						720x1280			360x640				2
+		- HTC Desire 						480x800				320x533				1.5
+		- HTC Desire C 						320x480				320x480				1
+		- HTC Desire HD 					480x800				320x533				1.5
+		- HTC Desire Z						480x800				320x533				1.5
+		- HTC HD2							480x800				320x533				1.5
+		- HTC J Butterfly					1080x1920			360x640				3
+		- HTC Legend						320x480				320x480				1
+		- HTC Sensation						540x960				360x640				1.5
+		- HTC Sensation XL					480x800				360x640				1.3
+		- HTC Sensation XE					540x960				360x640				1.5
+		- HTC Thunderbolt					480x800				320x533				1.5
+		- HTC Titan II						480x800				320x480				1.7
+		- HTC Touch HD 						480x800				320x533				1.5
+		- HTC One							1080x1920			360x640				3
+		- HTC One S 						540x960				360x640				1.5
+		- HTC One SV 						480x800				320x533				1.5
+		- HTC One V 						480x800				320x533				1.5
+		- HTC One X 						720x1280			360x640				2
+		- HTC One X+						720x1280			360x640				2
+		- HTC One XL						720x1280			360x640				2
+		- HTC Velocity 4G					540x960				360x640				1.5
+		- HTC Wildfire S 					320x480				320x480				1
+		- HTC Windows Phone 8X				480x800				320x480				1.7
+
+	NEXUS -------------------------------------------------------------------------------
+		- Nexus 5 							1080x1920			360x640				3
+		- Nexus 7 v2 (2013)					1200x1920			600x960				2
+		- Nexus One 						480x800				320x533				1.5
+		- Nexus S 							480x800				320x533				1.5
+
+	SAMSUNG -----------------------------------------------------------------------------
+		
+		- Samsung Galaxy Note	N700 		800x1280			400x640				2
+		- Samsung Galaxy Note 2 N7100		720x1280			360x640				2
+		- Samsung Galaxy Note 3 N9005		1080x1920			360x640				3
+		- Samsung Galaxy S3					420x1280			360x640				2
+		- Samsung Galaxy S3 mini			480x800				320x533				1.5
+		- Samsung Galaxy S4					1080x1920			360x640				3
+		- Samsung Galaxy S4 mini			540x960				360x640				1.5
+		- Samsung Galaxy S5					1080x1920			360x640				3
+
+
