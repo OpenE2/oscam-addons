@@ -1004,21 +1004,9 @@ only screen and (min-device-width : 320px) and (max-device-width : 568px) and (o
 }
 
 /* ################################# ENVI TEMPLATE WEBIF for STREAMBOARD ################################# */
-/* ================================================================== CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE */
+/* ============================= CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE ============================= */
 
-/* **************** 1. BASIC DIVISION PAGES */
-#content {margin-bottom:0;padding:0px 8px 125px}
-
-/* **************** 2. BASIC SETTINGS - BODY,P,H4,LI */
 /* footer.html */
-div.footer {
-	padding-bottom:5px;
-	padding-top:5px;
-	margin-bottom:0;
-	margin-top:40px;
-	background-color:#EEE;
-	border-top:3px solid #CCC
-}
 div.footer ul {
 	margin:5px
 }
@@ -1038,14 +1026,20 @@ ul.textfooter li {
 }
 div.styleswitcher {
 	position: absolute;
-	bottom: 40px;
+	bottom: 34px;
 	right: 30px;
 	color:#656565
 }
+div.footer ul.addClass {
+	margin:3px;
+}
+div.footer ul.addClass li {
+	margin-bottom:5px;
+}
 div.infopage {
 	position: absolute;
-	bottom: 10px;
-	right: 30px;
+	bottom: 5px;
+	right: 35px;
 	color:#656565
 }
 div.infopage:hover {
@@ -1073,7 +1067,7 @@ div.infopagedetail table{
 
 /* ==================================================================  ENVI TEMPLATE */
 /* **************** 1. BASIC DIVISION PAGES */
-.envi #content {margin-bottom:0;padding:80px 8px 150px}
+.envi #content {padding:80px 8px 125px}
 
 /* **************** 2. BASIC SETTINGS - BODY,P,H4,LI */
 body.envi {
