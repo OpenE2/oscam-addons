@@ -1404,13 +1404,13 @@ body.envi {
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
 
-/* ################ DESKTOPS ################ */
-
 /* **************** 5. MAIN MENU */
 /* checkbox for show/hide main menu 
  * (it is used only for showing main menu on mobile device) 
  * for desktops browser is not used */
 #toggle, #subtoggle {display:none}
+
+/* ################ DESKTOPS ################ */
 
 /* ################ MOBILE PHONES ################ */
 
@@ -1528,7 +1528,21 @@ body.envi {
 			font-weight:700
 		}
 
-/* **************** 6. FOOTER */
+/* **************** 11. DIV */
+	/* logobit.html - Logo for Oscam */
+	div.logo {
+		top:9px;
+		z-index:1060
+	}
+
+/* **************** 13. IMAGE */
+	div.logo svg.OSCam_logo {
+		fill:#ffffff;
+		height:28px;
+		width:28px;
+	}
+
+/* **************** X. FOOTER */
 	div.footer  {
 		height: 200px
 	}
@@ -1556,4 +1570,5 @@ body.envi {
 	div.infopage {
 		display: none
 	}
+
 }
