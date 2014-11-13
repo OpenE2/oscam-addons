@@ -1480,9 +1480,9 @@ body.envi {
 		#mainmenu { 
 			display:none;
 			opacity:0;
-			width:100%;
+			width:60%;
 			position:absolute;
-			right:0;
+			left:0;
 			padding-top:0;
 			margin-top:0
 		}
@@ -1491,8 +1491,9 @@ body.envi {
 			width:100%;
 			margin:0;
 			background:#DDD;
+			border-bottom: 1px solid #CCC;
 			font-size:1.5em;
-			font-weight:400;
+			font-weight:700;
 			padding: 0
 		}
 		#mainmenu > li:hover {
