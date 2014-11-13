@@ -1007,7 +1007,7 @@ only screen and (min-device-width : 320px) and (max-device-width : 568px) and (o
 /* ================================================================== CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE */
 
 /* **************** 1. BASIC DIVISION PAGES */
-#content {margin-bottom:0;padding:0px 8px 150px}
+#content {margin-bottom:0;padding:0px 8px 125px}
 
 /* **************** 2. BASIC SETTINGS - BODY,P,H4,LI */
 /* footer.html */
