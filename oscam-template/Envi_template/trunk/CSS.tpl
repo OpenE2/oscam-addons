@@ -1426,7 +1426,11 @@ body.envi {
 		h4 {
 			line-height:1.2em;
 		}
-		
+		/* file.html, script.html */
+		#filename,#filesubmit {
+			font-size:1.5em
+		}
+
 /* **************** 5. MAIN MENU */
 	/* checkbox for show/hide main menu */
 		#toggle:checked ~ #mainmenu {
@@ -1535,6 +1539,22 @@ body.envi {
 			font-weight:700
 		}
 
+/* **************** 7. TABLE */
+	/* ------- SERVICES ------- */
+	#addnewservice {
+		width: 100%;
+		padding: 0 10px;
+		border-bottom: 1px solid #CCC;
+		margin-bottom: 20px
+	}
+
+/* **************** 9. TABLE TH */
+	#addnewservice th {
+		font-size: 1.5em;
+		text-align: left;
+		padding-bottom: 16px;
+		background-color: transparent
+	}
 /* **************** 11. DIV */
 	/* logobit.html - Logo for Oscam */
 	div.logo {
@@ -1545,6 +1565,24 @@ body.envi {
 	div.warning {
 		line-height: 1.5em;
 		font-size: 1.2em;
+	}
+
+/* **************** 12. TEXTAREA,SELECT,INPUT */
+	#addnewservice input[type=text] {
+		height: 35px;
+		float: left;
+		width: 100%;
+		margin: 15px 0
+	}
+	#addnewservice input[type=submit] {
+		float: left;
+		margin-left: 0
+	}
+	/* script.html */
+	#scriptselect {
+		height: 35px;
+		margin: 15px 0;
+		width: 80%
 	}
 
 /* **************** 13. IMAGE */
