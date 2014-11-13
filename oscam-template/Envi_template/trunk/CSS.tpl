@@ -1414,78 +1414,7 @@ body.envi {
 
 /* ################ MOBILE PHONES ################ */
 
-
-/* Mobile Phones PORTRAIT:
- * -----------------------
- * LIST OF PIXEL RATIO 
- 	http://christopheraue.net/2014/02/16/physical-size-of-css-units-on-smartphones-tablets/
- 	http://www.h3xed.com/web-and-internet/mobile-device-resolution-and-pixel-ratio-list
- 	http://www.canbike.org/CSSpixels/
-
- * GOOGLE MOBILE EMULATOR
- 	https://developer.chrome.com/devtools/docs/device-mode
-
- * only screen and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5)
- 	- Samsung Galaxy S4 mini 	(portrait )
- 	- HTC Evo, HD2, Thunderbolt	(portrait )
- 	- HTC Desire HD				(portrait )
- 	- HTC Desire, Nexus One 	(portrait )
- 	- HTC Sensation, Evo 3D		(portrait )
- 	- HTC Sensation XE			(portrait )
- 	- HTC Velocity				(portrait )
- 	- HTC One SV				(portrait )
- 	- LG Optimus One 			(portrait )
- 	- LG Optimus 2X				(portrait )
- 	- LG Optimus 3D				(portrait )
- 	- LG Optimus Black			(portrait )
- 	- Samsung Epic (D700)		(portrait )
- 	- Samsung Nexus S SAMOLED	(portrait )
- 	- Samsung Nexus S LCD		(portrait )
- 	- Samsung Galaxy S Plus		(portrait )
- 	- Samsung Galaxy S II 		(portrait )
- 	- Samsung Galaxy W 			(portrait )
- 	- Sony Xperia U 			(portrait )
- 	- Nokia Lumia 7X0 			(portrait )
- 	- Nokia Lumia 8XX			(portrait )
- 	- Nokia Lumia 900			(portrait )
- 	- Nokia N800				(portrait )
- 	- Nokia N810				(portrait )
- 	- Nokia N900				(portrait )
-
- * only screen and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)
- 	- Apple iPhone 4, 4S		(portrait )
- 	- Apple iPhone 5			(portrait )
- 	- Apple iPhone 5C, 5S		(portrait )
- 	- Apple iPhone 6			(portrait )
- 	- Samsung Galaxy S3			(portrait )
- 	- Samsung Galaxy Note II 	(portrait )
- 	- Samsung Galaxy Nexus		(portrait )
- 	- HTC One X, EVO LTE 		(portrait )
- 	- LG Optimus G				(portrait )
- 	- LG Nexus 4				(portrait )
- 	- Google Nexus 4			(portrait )
- 	- Google Nexus 7 2			(portrait )
- 	- Google Nexus 10			(portrait )
-	- Sony Xperia S, P			(portrait )
-	- Sony Xperia Ion			(portrait )
- 
- * only screen and (min-width: 360px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3.0)
- 	- Apple iPhone 6 Plus		(portrait )
- 	- Google Nexus 5 			(portrait )
- 	- Samsung Galaxy S4 		(portrait )
- 	- Samsung Galaxy Note 3		(portrait )
-	- Sony Experia Z, Z1 		(portrait )
-	- HTC One 					(portrait )
-	- HTC Butterfly 			(portrait )
-	- LG Optimus G Pro 			(portrait )
-	- LG Nexus 5				(portrait )
-	- LG G2, G3					(portrait )
-
- */
-
- @media
-only screen and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 144dpi) {
+ @media screen and (max-width: 360px) and (orientation : portrait) {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
