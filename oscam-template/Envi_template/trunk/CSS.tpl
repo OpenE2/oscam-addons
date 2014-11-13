@@ -1408,7 +1408,7 @@ body.envi {
 
 /* ################ MOBILE PHONES ################ */
 
-@media screen and (max-width: 360px) and (orientation : portrait) {
+@media screen and (max-width: 360px) and (max-aspect-ratio: 13/9) {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
@@ -1532,7 +1532,93 @@ body.envi {
 			margin-left:5px;
 			font-weight:700
 		}
+/* **************** 6. SUBNAV */
+	/* checkbox for show/hide subnav */
+		#subtoggle:checked ~ #nav {display:block;opacity:1}
+	/* label for checkbox */
+		.subtoggle {
+			display:block;
+			position:relative;
+			cursor:pointer;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			user-select:none
+		}
+		.subtoggle:after {
+			content:'SubMenu';
+			display:block;
+			width:100%;
+			padding:13px 50px;
+			background-color:#707070;
+			text-align:center;
+			font-size:1.5em;
+			font-weight:700;
+			color:#FFF;
+			-webkit-transition: all 0.5s linear;
+			-moz-transition: all 0.5s linear;
+			-o-transition: all 0.5s linear;
+			transition: all 0.5s linear;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		.subtoggle:hover:after{}
+		#subtoggle:checked + .subtoggle:after{
+			content:'Close SubMenu'
+		}
+
+	/* subnav */
+		#subnav {
+			padding: 0;
+			border: none;
+			z-index: 1050;
+		}
+		#nav { 
+			display:none;
+			opacity:0;
+			width:80%;
+			position:absolute;
+			right:0;
+			padding-top:0;
+			margin-top:0
+		}
+		#nav > li {
+			display:block;
+			width:100%;
+			margin:0;
+			background:#EDEDED;
+			font-size:1.5em;
+			font-weight:400;
+			padding:10px
+		}
+		#nav > li > a {
+			width:100%;
+			text-decoration:none;
+			display: block;
+			padding: 10px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box; 
+			box-sizing:border-box
+		}
+		#nav > li:last-child {
+			border-bottom: 2px solid black;
+			border-top: 1px solid #CFCFCF;
+
+			/* BOX SHADOW */
+			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+		}
+		#nav li.pollselect {
+			display: block;
+			position: relative;
+			right: 0;
+		}
 /* **************** 7. TABLE */
 	/* ------- SERVICES ------- */
 	#addnewservice {
@@ -1586,6 +1672,11 @@ body.envi {
 		width:28px;
 	}
 
+/* **************** 17. POLLING */
+	#inc,#dec {
+		width: 27px;
+		height: 27px;
+	}
 /* **************** X. FOOTER */
 	div.footer  {
 		height: 200px
