@@ -1421,6 +1421,12 @@ body.envi {
 		padding: 0px 0px 280px;
 	}
 
+/* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
+		/* pre_shutdown.html */
+		h4 {
+			line-height:1.2em;
+		}
+		
 /* **************** 5. MAIN MENU */
 	/* checkbox for show/hide main menu */
 		#toggle:checked ~ #mainmenu {
@@ -1534,6 +1540,11 @@ body.envi {
 	div.logo {
 		top:9px;
 		z-index:1060
+	}
+	/* pre_autoconf.html, pre_shutdown.html */
+	div.warning {
+		line-height: 1.5em;
+		font-size: 1.2em;
 	}
 
 /* **************** 13. IMAGE */
