@@ -387,6 +387,10 @@ th.nameinfo {
 	text-align:left;
 	background-color:#999
 }
+th .nameinfo_second {
+	text-transform:none;
+	font-weight:normal
+}
 table.infotable th:first-child {
 	width:100px
 }
@@ -515,7 +519,6 @@ div.groups {
 	margin:0 auto;
 	text-align:center;
 	word-wrap:normal;
-	position:relative;
 	width:40px
 }
 /* footer.html */
@@ -753,10 +756,14 @@ span.e_expired {background-color:#FFF3E7}
 }
 
 /* **************** 15. GRAPH */
+svg.graph {background-color:#F0F0F0;font-family:Arial;font-size:9px}
 rect.graph_bg {fill:white}
+rect.graph_button {fill:#A9D0F5}
 text.graph_error {text-anchor:middle;fill:red}
-text.graph_grid_txt {text-anchor:end;font-size:12px;fill:gray}
-path.graph_grid {stroke-opacity:0.5;stroke:gray}
+text.graph_top_txt {text-anchor:end}
+text.graph_grid_txt {text-anchor:end;fill:gray}
+path.graph_grid {stroke-opacity:0.5;stroke-width:0.7px;stroke:gray}
+path.graph_curve {stroke-opacity:0.8;stroke-width:0.7px;fill:none}
 
 /* **************** 16. SORTING IN TABLE */
 .users th {
@@ -1027,7 +1034,7 @@ ul.textfooter li {
 div.styleswitcher {
 	position: absolute;
 	bottom: 34px;
-	right: 30px;
+	right: 52px;
 	color:#656565
 }
 div.footer ul.addClass {
@@ -1036,33 +1043,75 @@ div.footer ul.addClass {
 div.footer ul.addClass li {
 	margin-bottom:5px;
 }
-div.infopage {
+
+/* Popup info about Envi Template*/
+div.envi_info {
 	position: absolute;
 	bottom: 5px;
 	right: 35px;
-	color:#656565
 }
-div.infopage:hover {
-	text-decoration: underline;
-	cursor: pointer
-}
-div.infopagedetail {
-	display: none
-}
-div.infopage:hover div.infopagedetail {
-	display: block;
-	z-index: 1050;
-	position: absolute;
-	top: -150px;
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
 	right: 0;
-	background: white;
-	padding: 10px;
-	border: 1px solid black;
-	color: black;
-	width: 500px
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
 }
-div.infopagedetail table{
-	width: 100%
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 13px 20px;
+	background-color: #FFF;
+}
+.modalDialog > div > table {
+	width: 90%;
+	margin: 10px auto
+}
+.modalDialog p {
+	text-align: left;
+	line-height: 16px
+}
+.modalDialog p.thanks {
+	color: #BBB
+}
+.modalDialog hr {
+	margin: 5px 0px
+}
+.close {
+	background: #606061;
+	color: #FFF !important;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+	background-color: #000;
+	color: #FFF
 }
 
 /* ==================================================================  ENVI TEMPLATE */
@@ -1424,6 +1473,13 @@ body.envi {
 		#filename,#filesubmit {
 			font-size:1.5em
 		}
+		/* footer.html */
+		div.footer li.styleauthor b:after {
+			content:"Skyndas"
+		}
+		li.styleauthor:after {
+			content:" for Streamboard Team"
+		}
 
 /* **************** 5. MAIN MENU */
 	/* checkbox for show/hide main menu */
@@ -1443,7 +1499,7 @@ body.envi {
 			z-index: 1050
 		}
 		.toggle:after {
-			content:'Main menu';
+			content:'\2261 \00a0 \00a0 Main menu';
 			display:block;
 			width:100%;
 			padding:13px 50px;
@@ -1545,13 +1601,13 @@ body.envi {
 			user-select:none
 		}
 		.subtoggle:after {
-			content:'SubMenu';
+			content:'Submenu \25bc';
 			display:block;
 			width:100%;
-			padding:13px 50px;
+			padding:10px 50px;
 			background-color:#707070;
 			text-align:center;
-			font-size:1.5em;
+			font-size:1.3em;
 			font-weight:700;
 			color:#FFF;
 			-webkit-transition: all 0.5s linear;
@@ -1569,32 +1625,33 @@ body.envi {
 		}
 		.subtoggle:hover:after{}
 		#subtoggle:checked + .subtoggle:after{
-			content:'Close SubMenu'
+			content:'Close Submenu \25b2'
 		}
 
 	/* subnav */
 		#subnav {
 			padding: 0;
 			border: none;
-			z-index: 1050;
+			z-index: 1050
 		}
 		#nav { 
 			display:none;
 			opacity:0;
-			width:80%;
+			width:65%;
 			position:absolute;
 			right:0;
 			padding-top:0;
-			margin-top:0
+			margin-top:0;
+			z-index: 1040
 		}
 		#nav > li {
 			display:block;
 			width:100%;
 			margin:0;
 			background:#EDEDED;
-			font-size:1.5em;
+			font-size:1.3em;
 			font-weight:400;
-			padding:10px
+			padding: 0
 		}
 		#nav > li > a {
 			width:100%;
@@ -1608,6 +1665,7 @@ body.envi {
 		#nav > li:last-child {
 			border-bottom: 2px solid black;
 			border-top: 1px solid #CFCFCF;
+			margin-bottom: 20px;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
@@ -1618,6 +1676,10 @@ body.envi {
 			display: block;
 			position: relative;
 			right: 0;
+			padding: 10px 0
+		}
+		#nav > li > b {
+			line-height:2em
 		}
 /* **************** 7. TABLE */
 	/* ------- SERVICES ------- */
@@ -1638,8 +1700,11 @@ body.envi {
 /* **************** 11. DIV */
 	/* logobit.html - Logo for Oscam */
 	div.logo {
-		top:9px;
-		z-index:1060
+		top: 0;
+		left: 0;
+		z-index: 1060;
+		padding: 8px;
+		background-color: #2C2C2C
 	}
 	/* pre_autoconf.html, pre_shutdown.html */
 	div.warning {
@@ -1664,7 +1729,18 @@ body.envi {
 		margin: 15px 0;
 		width: 80%
 	}
-
+	/* generaly settings for all buttons/submits */
+	input[type=button], input[type=submit] {
+		width: auto;
+		height: auto;
+		background-color: #F0F0F0;
+		padding: 0.75em 1.2em
+	}
+	/* generaly hover settings for all buttons/submits */
+	input[type=button]:hover, input[type=submit]:hover {
+		background-color: #DDD;
+		padding: 0.75em 1.2em
+	}
 /* **************** 13. IMAGE */
 	div.logo svg.OSCam_logo {
 		fill:#ffffff;
@@ -1679,7 +1755,7 @@ body.envi {
 	}
 /* **************** X. FOOTER */
 	div.footer  {
-		height: 200px
+		height: auto
 	}
 	div.footer ul ul li {
 		margin:5px
@@ -1702,10 +1778,21 @@ body.envi {
 	div.styleswitcher {
 		display: none
 	}
-	div.infopage {
-		display: none
+	/* Popup info about Envi Template*/
+	div.envi_info {
+		position: static;
 	}
-
+	.modalDialog > div {
+		width: 80%;
+	}
+	.envi_info a {
+		font-weight: bold;
+		font-size:1.2em
+	}
+	.modalDialog a {
+		font-weight: normal;
+		font-size:1em
+	}
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait) {

@@ -7,7 +7,7 @@
 					<UL>
 						<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
 						<LI><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## </LI>
-						<LI><B>Up Time:</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
+						<LI><B>Run Time:</B><SPAN ID="runtime"> ##RUNTIME##</SPAN></LI>
 					</UL>	
 				</LI>
 				<LI>
@@ -15,6 +15,7 @@
 						<LI><B>Process ID:</B> ##PROCESSID## </LI>
 						<LI><B>Access from:</B> ##CURIP## </LI>
 						<LI><B>Run as:</B> ##RUNAS##</LI>
+						<LI><B>##UPTIMETXT##</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
 					</UL>	
 				</LI>
 				<LI>
@@ -34,30 +35,39 @@
 				<LI><A HREF="envi">Envi Template</A></LI>
 			</UL>
 		</DIV>
-		<DIV CLASS="infopage">Show info about page
-			<DIV CLASS="infopagedetail">
-				<TABLE>
-					<TR>
-						<TD><B>Current page title:</B></TD>
-						<TD><SPAN id="current_title">Title</SPAN></TD>
-					</TR>
-					<TR>
-						<TD><B>Current page URL:</B></TD>
-						<TD><SPAN id="current_url">URL</SPAN></TD>
-					</TR>
-					<TR>
-						<TD><B>Current protocol:</B></TD>
-						<TD><SPAN id="current_protocol">Protocol</SPAN></TD>
-					</TR>
-					<TR>
-						<TD><B>Current page pathname:</B></TD>
-						<TD><SPAN id="current_pathname">Pathname</SPAN></TD>
-					</TR>
-					<TR>
-						<TD><B>Current page size:</B></TD>
-						<TD><SPAN id="current_kbytes">Size</SPAN> kb</TD>
-					</TR>
-				</TABLE>
+		<DIV CLASS="envi_info">
+			<A HREF="#openModal">Show info about Envi Template</A>
+			<DIV ID="openModal" CLASS="modalDialog">
+				<DIV>
+					<A HREF="#close" TITLE="Close" CLASS="close">X</A>
+					<H2>Info about Envi Template</H2>
+					<HR>
+					<P><B>Envi revision:</B> 1160</P>
+					<P><B>For oscam revision:</B> 10000 until to changes in html and css in revision Oscam</P>
+					<TABLE>
+						<TR>
+							<TD>Wiki:</TD>
+							<TD><A HREF="http://www.streamboard.tv/oscam-addons/wiki/Envi_WebIf_Template" TARGET="_blank">Wiki Envi Template</A></TD>
+						</TR>
+						<TR>
+							<TD>Forum:</TD>
+							<TD><A HREF="http://www.streamboard.tv/wbb2/thread.php?threadid=40859&threadview=0&hilight=&hilightuser=0&page=1" TARGET="_blank">Forum about Envi</A></TD>
+						</TR>
+						<TR>
+							<TD>Revision log:</TD>
+							<TD><A HREF="http://www.streamboard.tv/oscam-addons/log/oscam-template/Envi_template" TARGET="_blank">Revision log of Envi</A></TD>
+						</TR>
+						<TR>
+							<TD>Script for download:</TD>
+							<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template/branches/script" TARGET="_blank">Script to download Envi</A></TD>
+						</TR>
+						<TR>
+							<TD>Source:</TD>
+							<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template" TARGET="_blank">Source files of Envi</A></TD>
+						</TR>
+					</TABLE>
+					<P CLASS="thanks">Special thanks for the development:<BR>ultra47</P>
+				</DIV>
 			</DIV>
 		</DIV>
 	</DIV>
@@ -108,6 +118,9 @@
 	    // Add checkbox and label for responsive design
 	    $("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
 	    $("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");
+	    $("#subnav").prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
+	    $("#subnav").prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
+
 
 	});
 
