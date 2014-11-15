@@ -1398,7 +1398,7 @@ body.envi {
 }
 /* footer.html */
 .envi div.footer {
-	background-color:#17191B;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEUYGBgRERGrUlCvAAAADklEQVQI12M4AIQGDAYACcgB4WUKpxgAAAAASUVORK5CYII=);
 	border-top:10px solid #000
 }
 .envi div.footer li {
@@ -1411,11 +1411,26 @@ body.envi {
 	color:#BD0000;
 	text-shadow:1px 1px 1px #000
 }
-.envi div.styleswitcher a {
+.envi div.styleswitcher a,
+.envi div.envi_info a {
 	color:#999
 }
-.envi div.styleswitcher a:hover {
-	color:#FF9E5F
+.envi div.styleswitcher a:hover,
+.envi div.envi_info a:hover {
+	color:#FF6D00
+}
+.envi ul.addClass li:hover {
+	margin-left: 9px;
+}
+.envi ul.addClass li {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAANlBMVEUAAACqqqqtra2tra2tra2tra2tra2tra2tra2tra2tra2qqqqtra2tra2tra2np6ehoaGqqqq1QjfFAAAAD3RSTlMA42dYPS4R0sm6sap1dApEb6miAAAALElEQVQI1xXFxxEAIAwEsSWZzJn+m2XQR5zVRoZ9pVCoclek/xI5SNOgxGQ8HhUBSH0yaNIAAAAASUVORK5CYII=);
+	background-repeat:no-repeat;
+	background-position:4px center;
+	transition: margin 0.3s ease 0s;
+}
+.envi ul.addClass li:hover {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGBAMAAAAS4vJ7AAAALVBMVEUAAAD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQDHfYnyAAAADnRSTlMA4650WD0uEdLJumxjChibx84AAAAhSURBVAjXY7g8KYDB7p0YQ9+71wzr3j1hCHynzsB2pAAAgZwKf742iVIAAAAASUVORK5CYII=);
+	background-repeat:no-repeat;
 }
 
 /* **************** 13. IMAGE */
@@ -1445,6 +1460,92 @@ body.envi {
 	margin:0
 }
 
+/* **************** 21. TOOLTIP */
+.envi .tooltip {
+	position: absolute;
+	z-index: 1010;
+	display: block;
+	visibility: visible;
+	padding: 5px;
+	font-size: 12px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.envi .tooltip.in {
+	opacity: 1;									/* In Light version - opacity: 0.8; */
+	filter: alpha(opacity=100);					/* In Light version - filter: alpha(opacity=80); */
+}
+.envi .tooltip.top {
+	margin-top: -2px;
+}
+.envi .tooltip.right {
+	margin-left: 2px;
+}
+.envi .tooltip.bottom {
+	margin-top: 2px;
+}
+.envi .tooltip.left {
+	margin-left: -2px;
+}
+.envi .tooltip.top .tooltip-arrow {
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+.envi .tooltip.left .tooltip-arrow {
+	top: 50%;
+	right: 0;
+	margin-top: -5px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+}
+.envi .tooltip.bottom .tooltip-arrow {
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+.envi .tooltip.right .tooltip-arrow {
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+}
+.envi .tooltip-inner {
+	max-width: 200px;
+	padding: 3px 8px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.envi .tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+/* TOOLTIP COLOR */
+.envi .tooltip-inner {
+	color: #fff;	
+	background-color: #333;
+}
+.envi .tooltip.top .tooltip-arrow {
+	border-top: 5px solid #333;
+}
+.envi .tooltip.left .tooltip-arrow {
+	border-left: 5px solid #333;
+}
+.envi .tooltip.bottom .tooltip-arrow {
+	border-bottom: 5px solid #333;
+}
+.envi .tooltip.right .tooltip-arrow {
+	border-right: 5px solid #333;
+}
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
 
 /* **************** 5. MAIN MENU */
@@ -1755,7 +1856,8 @@ body.envi {
 	}
 /* **************** X. FOOTER */
 	div.footer  {
-		height: auto
+		height: auto;
+		padding-bottom: 10px
 	}
 	div.footer ul ul li {
 		margin:5px
@@ -1799,7 +1901,7 @@ body.envi {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
-		padding: 0px 0px 225px;
+		padding: 0px 0px 250px;
 	}
 
 /* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
@@ -1824,8 +1926,8 @@ body.envi {
 
 /* **************** X. FOOTER */
 	div.footer  {
-		height: 188px;
-		padding-bottom: 0;
+		height: auto;
+		padding-bottom: 10px;
 		font-size: 0.9em
 	}
 	li.developed {
