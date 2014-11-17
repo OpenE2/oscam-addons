@@ -1114,6 +1114,70 @@ div.envi_info {
 	color: #FFF
 }
 
+/* jQuery Style Switcher for Designers */
+.demo_changer{ 
+	z-index: 900; 
+	position: absolute;
+	left: -180px;
+	bottom: 10px; 
+}
+
+.line {
+	border-bottom: 1px solid #efefef;
+	clear: both;
+	margin: 10px !important;
+}
+
+.demo_changer .demo_icon{
+	background-color: rgba(255, 255, 255, 0.8);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAe1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC9eBywAAAAKHRSTlMA/gH9fNt0CcyV9/GNggXr4cWlnG5lXUU+JA+yqx0Y1b8zKxPWubhPEAQz+gAAAPlJREFUKM9lkdd2wyAQRBmKepfVFZc4Zf7/CyMRRzF4Dg+cuewyLMLTKRYi11K8KII+qcp3pZBXbooKDwSmJpQC6kg7IFdgM4ctiNi7mmoWIkyo/V54gMD1M4BNGMYgsoc1NfFecKnJJCEjk/+mFD1UaOPWABEVuyfir/PcAL0czbe4IAhgbJcbWKYEWClUUm/Ns1xa0vJPanCyjAQ+8jgFK2d495W8FluwlOzDf78EiNG+goBqD8AdvO87TQDLAYbA0I6miMi1244c6gilp9sCJncnVU/ALpbnZ/8t5aFP+QxM2nUGWIYWq3RKpu2HgK3NWAhfA0vP+QEgfhM0m072cgAAAABJRU5ErkJggg==);
+	background-repeat:no-repeat;
+	background-position: center;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	float: right;
+	height: 40px;
+	width: 40px;
+	border-radius: 0px 2px 2px 0px;
+	-moz-border-radius: 0px 2px 2px 0px;
+	-webkit-border-radius: 0px 2px 2px 0px;
+	top: 35px;
+	position: relative;
+}
+
+.form_holder p {color:#7F7F7F;}
+.demo_changer .form_holder {
+	background: #fff;
+	float: right;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	width: 178px;
+	padding: 10px 0;
+}
+
+.demo_changer .form_holder p{
+	padding:0 20px;
+	font-size: 11px;
+}
+
+.demo_changer .form_holder input{
+	width: 55px;
+	border-radius: 0 10px 10px 0;
+	box-shadow: none;
+}
+
+.demo_changer .form_holder form{
+	padding: 0 20px;
+}
+div.styleswitcher {
+	position: static;
+}
+div.envi_info {
+	position: static;
+}
+div.footer ul.addClass {
+	margin: 3px auto;
+	width: 60%;
+}
 /* ==================================================================  ENVI TEMPLATE */
 /* **************** 1. BASIC DIVISION PAGES */
 .envi #content {padding:80px 8px 125px}
@@ -1461,7 +1525,7 @@ body.envi {
 }
 
 /* **************** 21. TOOLTIP */
-.envi .tooltip {
+.envi .boot_tooltip {
 	position: absolute;
 	z-index: 1010;
 	display: block;
@@ -1471,51 +1535,51 @@ body.envi {
 	opacity: 0;
 	filter: alpha(opacity=0);
 }
-.envi .tooltip.in {
+.envi .boot_tooltip.in {
 	opacity: 1;									/* In Light version - opacity: 0.8; */
 	filter: alpha(opacity=100);					/* In Light version - filter: alpha(opacity=80); */
 }
-.envi .tooltip.top {
+.envi .boot_tooltip.top {
 	margin-top: -2px;
 }
-.envi .tooltip.right {
+.envi .boot_tooltip.right {
 	margin-left: 2px;
 }
-.envi .tooltip.bottom {
+.envi .boot_tooltip.bottom {
 	margin-top: 2px;
 }
-.envi .tooltip.left {
+.envi .boot_tooltip.left {
 	margin-left: -2px;
 }
-.envi .tooltip.top .tooltip-arrow {
+.envi .boot_tooltip.top .boot_tooltip-arrow {
 	bottom: 0;
 	left: 50%;
 	margin-left: -5px;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 }
-.envi .tooltip.left .tooltip-arrow {
+.envi .boot_tooltip.left .boot_tooltip-arrow {
 	top: 50%;
 	right: 0;
 	margin-top: -5px;
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
 }
-.envi .tooltip.bottom .tooltip-arrow {
+.envi .boot_tooltip.bottom .boot_tooltip-arrow {
 	top: 0;
 	left: 50%;
 	margin-left: -5px;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 }
-.envi .tooltip.right .tooltip-arrow {
+.envi .boot_tooltip.right .boot_tooltip-arrow {
 	top: 50%;
 	left: 0;
 	margin-top: -5px;
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
 }
-.envi .tooltip-inner {
+.envi .boot_tooltip-inner {
 	max-width: 200px;
 	padding: 3px 8px;
 	text-align: center;
@@ -1524,26 +1588,26 @@ body.envi {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-.envi .tooltip-arrow {
+.envi .boot_tooltip-arrow {
 	position: absolute;
 	width: 0;
 	height: 0;
 }
 /* TOOLTIP COLOR */
-.envi .tooltip-inner {
+.envi .boot_tooltip-inner {
 	color: #fff;	
 	background-color: #333;
 }
-.envi .tooltip.top .tooltip-arrow {
+.envi .boot_tooltip.top .boot_tooltip-arrow {
 	border-top: 5px solid #333;
 }
-.envi .tooltip.left .tooltip-arrow {
+.envi .boot_tooltip.left .boot_tooltip-arrow {
 	border-left: 5px solid #333;
 }
-.envi .tooltip.bottom .tooltip-arrow {
+.envi .boot_tooltip.bottom .boot_tooltip-arrow {
 	border-bottom: 5px solid #333;
 }
-.envi .tooltip.right .tooltip-arrow {
+.envi .boot_tooltip.right .boot_tooltip-arrow {
 	border-right: 5px solid #333;
 }
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
