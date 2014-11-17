@@ -1,6 +1,6 @@
 #!/bin/sh
 TempFolder="/var/volatile/tmp"
-OscamTplFolder=$(awk -F= '/^.*httptpl/{gsub(/ /,"",$2);print $2}' /etc/tuxbox/config/oscam.conf)
+OscamTplFolder=$(grep -r httptpl /etc/tuxbox/config/oscam.conf | cut -d= -f2 | xargs)
 TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/Envi_Template.tgz"
 cd $TempFolder
 [ -f Envi_Template.tgz ] && rm -f Envi_Template.tgz
