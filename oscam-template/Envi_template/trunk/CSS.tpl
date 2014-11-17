@@ -1115,17 +1115,17 @@ div.envi_info {
 }
 
 /* jQuery Style Switcher for Designers */
-.demo_changer{ 
-	z-index: 900; 
+.demo_changer {
+	z-index: 900;
 	position: absolute;
 	left: -180px;
-	bottom: 10px; 
+	bottom: 10px
 }
 
 .line {
 	border-bottom: 1px solid #efefef;
 	clear: both;
-	margin: 10px !important;
+	margin: 10px !important
 }
 
 .demo_changer .demo_icon{
@@ -1142,7 +1142,7 @@ div.envi_info {
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
 	top: 35px;
-	position: relative;
+	position: relative
 }
 
 .form_holder p {color:#7F7F7F;}
@@ -1151,33 +1151,20 @@ div.envi_info {
 	float: right;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	width: 178px;
-	padding: 10px 0;
+	padding: 10px 0
 }
 
-.demo_changer .form_holder p{
-	padding:0 20px;
-	font-size: 11px;
-}
-
-.demo_changer .form_holder input{
-	width: 55px;
-	border-radius: 0 10px 10px 0;
-	box-shadow: none;
-}
-
-.demo_changer .form_holder form{
-	padding: 0 20px;
-}
 div.styleswitcher {
-	position: static;
+	position: static
 }
 div.envi_info {
-	position: static;
+	position: static
 }
 div.footer ul.addClass {
 	margin: 3px auto;
-	width: 60%;
+	width: 60%
 }
+
 /* ==================================================================  ENVI TEMPLATE */
 /* **************** 1. BASIC DIVISION PAGES */
 .envi #content {padding:80px 8px 125px}
