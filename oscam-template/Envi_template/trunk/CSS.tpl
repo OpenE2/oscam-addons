@@ -981,34 +981,12 @@ div.bar {
 }
 
 /* **************** 20. OTHER SETTINGS */
-/* iPhone */
-@media
-only screen and (min-device-width : 320px) and (max-device-width : 480px),
-only screen and (min-device-width : 320px) and (max-device-width : 568px){
-	div.footer {
-		height:92px
-	}
-}
-/* iPhone Landscape */
-@media
-only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape),
-only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
-	#livelog {
-		height:382px
-	}
-	textarea.editor {
-		height:400px
-	}
-}
-/* iPad Landscape */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-	#livelog {
-		height:494px
-	}
-	textarea.editor {
-		height:508px
- 	}
-}
+
+/* REMOVE MEDIA QUERIES FROM ORGINAL CSS STYLE - IT IS STUPID SETTINGS ONLY FOR IPHONE 
+ * iPhone
+ * iPhone Landscape
+ * iPad Landscape
+ */
 
 /* ################################# ENVI TEMPLATE WEBIF for STREAMBOARD ################################# */
 /* ============================= CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE ============================= */
@@ -1130,7 +1108,7 @@ div.envi_info {
 
 .demo_changer .demo_icon{
 	background-color: rgba(255, 255, 255, 0.8);
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAe1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC9eBywAAAAKHRSTlMA/gH9fNt0CcyV9/GNggXr4cWlnG5lXUU+JA+yqx0Y1b8zKxPWubhPEAQz+gAAAPlJREFUKM9lkdd2wyAQRBmKepfVFZc4Zf7/CyMRRzF4Dg+cuewyLMLTKRYi11K8KII+qcp3pZBXbooKDwSmJpQC6kg7IFdgM4ctiNi7mmoWIkyo/V54gMD1M4BNGMYgsoc1NfFecKnJJCEjk/+mFD1UaOPWABEVuyfir/PcAL0czbe4IAhgbJcbWKYEWClUUm/Ns1xa0vJPanCyjAQ+8jgFK2d495W8FluwlOzDf78EiNG+goBqD8AdvO87TQDLAYbA0I6miMi1244c6gilp9sCJncnVU/ALpbnZ/8t5aFP+QxM2nUGWIYWq3RKpu2HgK3NWAhfA0vP+QEgfhM0m072cgAAAABJRU5ErkJggg==);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADmYDp0AAAAGHRSTlMAB3Laye98qCGVEPeNgkfhvJxlXT4vshgFDlz8AAAAxklEQVQYGWXBB5LCMAAEwVWWc4b5/0tPhsInQ7e+2EYaon55omXSr5nCG91Z53nxPqo2AKk1C9DoxkIrmY6oOwutZDqsbnogGdMAvd5yaiRZ56HrwLtBbxsYnTyFNzo187NNsGl3oxzW4nQ6IASKCSbFXuoHvSxcRtV2wA1NgEm1NsFspBxgM7oEil1FT7Hog9OhIlI89DFaB1GS8ZDWQ/9WIObjAV2r2sZHeKqSA5dZlezCujp4jAtJtZwlC09pN/o2EnT3B9qZEIrL4gjtAAAAAElFTkSuQmCC);
 	background-repeat:no-repeat;
 	background-position: center;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -1145,7 +1123,6 @@ div.envi_info {
 	position: relative
 }
 
-.form_holder p {color:#7F7F7F;}
 .demo_changer .form_holder {
 	background: #fff;
 	float: right;
@@ -1171,7 +1148,7 @@ div.footer ul.addClass {
 
 /* **************** 2. BASIC SETTINGS - BODY,P,H4,LI */
 body.envi {
-	background-image: url('data:image/png;base64,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');
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMAQMAAABRKa/CAAAABlBMVEXy8vLk5OTQOLQ5AAAAD0lEQVQI12Po6GCAAVxsAEfcAzFIfEGeAAAAAElFTkSuQmCC');
 }
 /* file.html, script.html */
 .envi #filename {
@@ -1484,6 +1461,10 @@ body.envi {
 	background-repeat:no-repeat;
 }
 
+/* **************** 12. TEXTAREA,SELECT,INPUT */
+.envi #otherdropdown option {
+    margin:5px
+}
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
@@ -1520,51 +1501,51 @@ body.envi {
 	padding: 5px;
 	font-size: 12px;
 	opacity: 0;
-	filter: alpha(opacity=0);
+	filter: alpha(opacity=0)
 }
 .envi .boot_tooltip.in {
-	opacity: 1;									/* In Light version - opacity: 0.8; */
-	filter: alpha(opacity=100);					/* In Light version - filter: alpha(opacity=80); */
+	opacity: 1;
+	filter: alpha(opacity=100)
 }
 .envi .boot_tooltip.top {
-	margin-top: -2px;
+	margin-top: -2px
 }
 .envi .boot_tooltip.right {
-	margin-left: 2px;
+	margin-left: 2px
 }
 .envi .boot_tooltip.bottom {
-	margin-top: 2px;
+	margin-top: 2px
 }
 .envi .boot_tooltip.left {
-	margin-left: -2px;
+	margin-left: -2px
 }
 .envi .boot_tooltip.top .boot_tooltip-arrow {
 	bottom: 0;
 	left: 50%;
 	margin-left: -5px;
 	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
+	border-right: 5px solid transparent
 }
 .envi .boot_tooltip.left .boot_tooltip-arrow {
 	top: 50%;
 	right: 0;
 	margin-top: -5px;
 	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
+	border-bottom: 5px solid transparent
 }
 .envi .boot_tooltip.bottom .boot_tooltip-arrow {
 	top: 0;
 	left: 50%;
 	margin-left: -5px;
 	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
+	border-right: 5px solid transparent
 }
 .envi .boot_tooltip.right .boot_tooltip-arrow {
 	top: 50%;
 	left: 0;
 	margin-top: -5px;
 	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
+	border-bottom: 5px solid transparent
 }
 .envi .boot_tooltip-inner {
 	max-width: 200px;
@@ -1573,29 +1554,29 @@ body.envi {
 	text-decoration: none;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	border-radius: 4px;
+	border-radius: 4px
 }
 .envi .boot_tooltip-arrow {
 	position: absolute;
 	width: 0;
-	height: 0;
+	height: 0
 }
-/* TOOLTIP COLOR */
+/* Tooltip color */
 .envi .boot_tooltip-inner {
 	color: #fff;	
-	background-color: #333;
+	background-color: #333
 }
 .envi .boot_tooltip.top .boot_tooltip-arrow {
-	border-top: 5px solid #333;
+	border-top: 5px solid #333
 }
 .envi .boot_tooltip.left .boot_tooltip-arrow {
-	border-left: 5px solid #333;
+	border-left: 5px solid #333
 }
 .envi .boot_tooltip.bottom .boot_tooltip-arrow {
-	border-bottom: 5px solid #333;
+	border-bottom: 5px solid #333
 }
 .envi .boot_tooltip.right .boot_tooltip-arrow {
-	border-right: 5px solid #333;
+	border-right: 5px solid #333
 }
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
 
@@ -1855,7 +1836,7 @@ body.envi {
 		top: 0;
 		left: 0;
 		z-index: 1060;
-		padding: 8px;
+		padding: 9px;
 		background-color: #2C2C2C
 	}
 	/* pre_autoconf.html, pre_shutdown.html */
@@ -1908,7 +1889,7 @@ body.envi {
 /* **************** X. FOOTER */
 	div.footer  {
 		height: auto;
-		padding-bottom: 10px
+		padding-bottom: 10px;
 	}
 	div.footer ul ul li {
 		margin:5px
@@ -1922,21 +1903,25 @@ body.envi {
 		margin:auto;
 		width:60%
 	}
+	div.footer ul.addClass li {
+		font-size: 1.2em
+	}
 	li.developed {
 		font-size:1.1em
 	}
 	li.styleauthor {
 		padding:2px
 	}
-	div.styleswitcher {
-		display: none
+	div.styleswitcher h3 {
+		font-size: 1.5em
 	}
 	/* Popup info about Envi Template*/
 	div.envi_info {
-		position: static;
+		position: static
 	}
 	.modalDialog > div {
-		width: 80%;
+		width: 75%;
+		margin: 20% auto
 	}
 	.envi_info a {
 		font-weight: bold;

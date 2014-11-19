@@ -7,7 +7,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=##HTTP_CHARSET##">
 	<meta name="robots" content="noindex,nofollow">
 	<meta http-equiv="language" content="##LANGUAGE##">
-	<meta name="viewport" content="width=device-width, user-scalable=no"> <!-- Viewport to device-width for Responsive design -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Viewport to device-width for Responsive design -->
+	
 	<link rel="stylesheet" type="text/css" href="site.css?v=##CS_SVN_VERSION##">
 	<link href="favicon.ico" rel="icon" type="image/x-icon">
 	<script type="text/javascript" src="##SRCJQUERY##"></script>
