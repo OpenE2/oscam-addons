@@ -1,0 +1,2 @@
+<!--OSCam;1651457165;1.20-unstable_svn;10020;-->
+		<TR><TD class="centered">##VIOLATIONUSER##</TD><TD>##IPADDRESS##</TD><TD class="centered">##VIOLATIONDATE##</TD><TD class="centered">##VIOLATIONCOUNT##</TD><TD class="centered">##LEFTTIME##</TD>	<TD class="centered"><A HREF="failban.html?action=delete&amp;intip=##INTIP##" TITLE="Delete Entry"><IMG CLASS="icon" SRC="image?i=ICDEL" ALT="Delete Entry" onclick="return confirm('Delete \'##VIOLATIONUSER##\' Entry ?')"></A></TD></TR>

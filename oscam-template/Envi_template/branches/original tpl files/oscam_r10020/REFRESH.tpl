@@ -1,0 +1,2 @@
+<!--OSCam;3813750259;1.20-unstable_svn;10020;-->
+	<SCRIPT TYPE="text/javascript">var counter=##REFRESHTIME##;var counterfull=##REFRESHTIME##;var withquery=##WITHQUERY##;window.onload=initDoc();</SCRIPT>

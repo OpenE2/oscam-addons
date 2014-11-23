@@ -1,0 +1,2 @@
+<!--OSCam;34069789;1.20-unstable_svn;10020;CS_ANTICASC-->
+			<TH COLSPAN="2" CLASS="##ANTICASCVIEW##">AntiCasc</TH>
