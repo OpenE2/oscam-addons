@@ -3,7 +3,7 @@
 ############################################
 # Set manually downloaded file
 
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/Envi_Template.tgz"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/Envi_Template.zip"
 
 ############################################
 
@@ -21,13 +21,13 @@ OscamTplFolder=$(grep -r httptpl $ConfigPath/oscam.conf | cut -d= -f2 | xargs)
 cd $TempFolder
 
 # Remove the previous downloaded file
-[ -f Envi_Template.tgz ] && rm -f Envi_Template.tgz
+[ -f Envi_Template.zip ] && rm -f Envi_Template.zip
 
 # Download new files
 wget -q $TrunkUrl
 
 # Move the downloaded file to a oscam TPL folder
-[ -f Envi_Template.tgz ] && mv -f Envi_Template.tgz $OscamTplFolder
+[ -f Envi_Template.zip ] && mv -f Envi_Template.zip $OscamTplFolder
 
 # Go to TPL folder
 cd $OscamTplFolder
@@ -38,7 +38,7 @@ cd $OscamTplFolder
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
 
 #  Decompression, remove a compressed file and exit
-tar -xzvf Envi_Template.tgz
-rm -if Envi_Template.tgz || exit 1
+unzip Envi_Template.zip
+rm -if Envi_Template.zip || exit 1
 #done all OK
 exit 0

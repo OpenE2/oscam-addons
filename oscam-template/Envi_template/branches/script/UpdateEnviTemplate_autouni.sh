@@ -10,7 +10,7 @@
 ############################################
 # Set manually downloaded file
 
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/Envi_Template.tgz"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/Envi_Template.zip"
 
 ############################################
 
@@ -39,7 +39,7 @@ OscamTplFolder=$(grep -r httptpl $ConfigPath/oscam.conf | cut -d= -f2 | xargs)
 cd $OscamTplFolder
 
 # Remove the previous downloaded file
-[ -f Envi_Template.tgz ] && rm -f Envi_Template.tgz
+[ -f Envi_Template.zip ] && rm -f Envi_Template.zip
 
 # Download new files
 wget -q $TrunkUrl
@@ -55,7 +55,7 @@ echo "\nMachine hardware name:"$MachineHardwareName
 echo "\nConfig Path:"$ConfigPath
 echo "Oscam template folder:"$OscamTplFolder
 
-file="$OscamTplFolder/Envi_Template.tgz"
+file="$OscamTplFolder/Envi_Template.zip"
 if [ -f "$file" ]
 then
 	echo "Downloaded file: $file was successfully downloaded"
@@ -66,7 +66,7 @@ echo "\n"
 echo "Decompressed files:"
 
 #  Decompression, remove a compressed file and exit
-tar -xzvf Envi_Template.tgz
-rm -if Envi_Template.tgz || exit 1
+unzip Envi_Template.zip
+rm -if Envi_Template.zip || exit 1
 #done all OK
 exit 0
