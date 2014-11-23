@@ -1110,7 +1110,7 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	left: --165px;
+	left: -165px;
 	bottom: 10px;
 }
 
