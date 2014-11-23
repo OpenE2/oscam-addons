@@ -679,6 +679,20 @@ td.configcolsave {
 #otherdropdown option:first-child {
     display:none
 }
+/* for extract in script.html */ 
+div.extract {
+        width: 750px;
+        margin: 10px auto;
+	text-align: left;
+}
+div.extract pre {
+        min-height: 100px;
+	margin: 10px 0;
+        padding: 10px;
+	font-family: courier,monospace;
+        border:1px dotted #AAA;
+	white-space: pre
+}
 
 /* **************** 13. IMAGE */
 /* generaly settings for images */
@@ -1096,7 +1110,7 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	left: -205px;
+	left: --165px;
 	bottom: 10px;
 }
 
@@ -1131,7 +1145,7 @@ div.envi_info {
 	background: #fff;
 	float: right;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 200px;
+	width: 160px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
 }
@@ -1167,9 +1181,9 @@ ul.backchange li {
     list-style:none;
     cursor: pointer;
    	margin: 0px 4px;
-	padding: 3px 9px;
+	padding: 1px 7px;
     display:inline-block;
-    border: 4px solid #E1E1E1;
+    border: 3px solid #E1E1E1;
     display:inline;
     box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -1183,9 +1197,9 @@ ul.patchange li {
     list-style:none;
     cursor: pointer;
     margin: 0px 4px;
-	padding: 3px 9px;
+	padding: 1px 7px;
     display:inline-block;
-    border: 4px solid #E1E1E1;
+    border: 3px solid #E1E1E1;
     display:inline;
     box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -1199,9 +1213,9 @@ ul.colchange li {
     list-style:none;
     cursor: pointer;
     margin: 0px 4px;
-	padding: 3px 9px;
+	padding: 1px 7px;
     display:inline-block;
-    border: 4px solid #E1E1E1;
+    border: 3px solid #E1E1E1;
     display:inline;
     box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -1224,10 +1238,10 @@ ul.colchange li {
     
 }
 .patchange_2 {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEXv7+/+/v7q6ur09PTj4+P4+Pjn5+f6+vrd3d1CAj5+AAAD3UlEQVQ4yyWSva+bMBTFr/lIOlqOazFiKElHh69kxEGIlQIhb8SPpumICE07Fj2l79+uqw62ZEv36J5zfoDRYlBbpnd/S8nOIwezZY0JmxL4q7Mpe7r/bUVqsQj3q0hew4obYDg8qIX/u67yVzYuW5GYKUtULGBUWdv1wZz4Vm0PLbHNulIuxQMsq8lWX9k+gPkJwlQwJoVR8bIGp7J7Vqk/DrptcZTHeO2mjWn8agDeY3LOHvrD+qdyL4Gs5WpGT/BfXJ53FzWE0WIQVRiY5y+jzDqYov5I0fDL4Xm7CT5Rwg1m5w6zYQBmSm+OCq/9UoS1XAyGsgcqXdhGyRWmm9xO8hRG/jfaSIuttVcQNsQkcEkXuF1jrqq121bcpaMNV6ht6dGf+uz/peLqZ86QBDAifk3JUqST+kMTtaqa8sjQME8QFQZNhg9O8uZg1TuNVmqWFbELuMUYFQaRRS2WnFZS+3muRp7HQEZpOYflEz0UFlFvx/pqPTpZsTuYPb0vW7LRG5zVp7Yp05CXsUADDCtxNcMkqMRQpk7QdwfbDcXNGqGD0qL2LU5tu8Yyi8WunsQQEhsgr36i03zQagf5SiNeCzswBOrBDVEeCu7PlcxfGD+x/VXbUBYGLKG9mECSPqV7GZNd9uusPV3egRvTXgmCZPyQeSpU7oD0RvR0YTLtnkbFd5osK7ZXR6aeR82UM2ooImJnL/flRM/SpYnUXOp+eQZXffuiGlyIgjDM3vTgaWpubgyjCR45c4slZVybfruRQ2zbITMh8oXuPNxIIBel9+XevH8XWBVQtmeZTegZN3xgd5m9EO3pcvWYpivQ9OnIg9V0CTqWyCPZ+XSzhnX2aN4NvC9WI7qFFcq7RpY6hAHAQXq1oCe6tDmSnym6tvq8aLXFn/FtdT8MFO/9FktDt+2RyxvoqA6+IWSQAverHwFoerc1z2J4YOm6NfdIVKzqaGcRBC0JvHaEw3IkP2wDR0E97c34hwK65kC/LOA6pnJNjNwJyR5/KTss37XOyQHGB+08r1kJdLOz2nPQsqZ8YQOYZt0oz/nX9kUTiJaUoLd2zwvdtn1t76o4ViqjjdqSS2FRVLRUp3N9CFuQyjemxI9xYOJz6emQYC2EZhjvOTDkiuhmNk3g1fxqAIDvthF352jn1VFgYD1Idu5MgJhZKnyjFf6227kxvsEk9DZ3CTIkXK4IX6xZvtb2ApWZx1gWMdD/dFrsh/zAdq8tQWb7z08DIlixQ05HddI59/PHJdTspTpWyFok/e7wZlFtkKwz9kO9Erx8dqCCvp3MoMXLqW14rvHpiBlM1fMvyQv+4FrkNX0AAAAASUVORK5CYII=) !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGAQMAAADaAn0LAAAABlBMVEUAAAA1NTVzRZghAAAAAnRSTlMACpZGJCYAAAAUSURBVAjXY2hgYGHgYBBgUGBwAAAG2AD9kGTj9QAAAABJRU5ErkJggg==) !important;
 }
 .patchange_3 {
-    background: #7f7f7f !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUbGxsfHx8kJCQYGBgnJychISG0pNZmAAAAt0lEQVQI1w2OPXLGIAxEl79eMRxAGOjBE3pwkp6xyf2v8qmQCs3T7gMK/txoQ/0Q7Ar+8BtPI8w2lcw1HIOOFGib29wV7WzTDZfsS7goC5/rUEP4obkvvazwgTJKlXfhZWvWPtDCQZsKCubFmH328f1KIUDZ3K2o6FKFHFmnYB4wHskuiI01Y1hhg9k4IQ49Si7bJc6vGPtt/uvCraaLna83EMix8L64BdTfJpk22S/gNJkeOhHBH1B8H/+/MylCAAAAAElFTkSuQmCC) !important;
 }
 .patchange_4 {
     background: #222 !important;
@@ -1567,19 +1581,6 @@ body.envi {
 .envi div.styleswitcher a:hover,
 .envi div.envi_info a:hover {
 	color:#FF6D00
-}
-.envi ul.addClass li:hover {
-	margin-left: 9px;
-}
-.envi ul.addClass li {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAANlBMVEUAAACqqqqtra2tra2tra2tra2tra2tra2tra2tra2tra2qqqqtra2tra2tra2np6ehoaGqqqq1QjfFAAAAD3RSTlMA42dYPS4R0sm6sap1dApEb6miAAAALElEQVQI1xXFxxEAIAwEsSWZzJn+m2XQR5zVRoZ9pVCoclek/xI5SNOgxGQ8HhUBSH0yaNIAAAAASUVORK5CYII=);
-	background-repeat:no-repeat;
-	background-position:4px center;
-	transition: margin 0.3s ease 0s;
-}
-.envi ul.addClass li:hover {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGBAMAAAAS4vJ7AAAALVBMVEUAAAD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQD/bQDHfYnyAAAADnRSTlMA4650WD0uEdLJumxjChibx84AAAAhSURBVAjXY7g8KYDB7p0YQ9+71wzr3j1hCHynzsB2pAAAgZwKf742iVIAAAAASUVORK5CYII=);
-	background-repeat:no-repeat;
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT */

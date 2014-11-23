@@ -40,27 +40,27 @@
 				</DIV>
 				<DIV CLASS="section-label">Background color</DIV>
 				<UL CLASS="backchange">
-					<LI CLASS='background_1'></LI>
-					<LI CLASS='background_2'></LI>
-					<LI CLASS='background_3'></LI>
-					<LI CLASS='background_4'></LI>
-					<LI CLASS='background_5'></LI>
+					<LI CLASS='background_1' TITLE="Basic background"></LI>
+					<LI CLASS='background_2' TITLE=""></LI>
+					<LI CLASS='background_3' TITLE=""></LI>
+					<LI CLASS='background_4' TITLE=""></LI>
+					<LI CLASS='background_5' TITLE=""></LI>
 				</UL>
 				<DIV CLASS="section-label">Patterns</DIV>
 				<UL CLASS="patchange">
-					<LI CLASS='patchange_1'></LI>
-					<LI CLASS='patchange_2'></LI>
-					<LI CLASS='patchange_3'></LI>
-					<LI CLASS='patchange_4'></LI>
-					<LI CLASS='patchange_5'></LI>
+					<LI CLASS='patchange_1' TITLE="Basic pattern"></LI>
+					<LI CLASS='patchange_2' TITLE="Diagonal line"></LI>
+					<LI CLASS='patchange_3' TITLE=""></LI>
+					<LI CLASS='patchange_4' TITLE=""></LI>
+					<LI CLASS='patchange_5' TITLE=""></LI>
 				</UL>
 				<DIV CLASS="section-label">Text and links color</DIV>
 				<UL CLASS="colchange">
-					<LI CLASS='colchange_1'></LI>
-					<LI CLASS='colchange_2'></LI>
-					<LI CLASS='colchange_3'></LI>
-					<LI CLASS='colchange_4'></LI>
-					<LI CLASS='colchange_5'></LI>
+					<LI CLASS='colchange_1' TITLE="Basic color"></LI>
+					<LI CLASS='colchange_2' TITLE=""></LI>
+					<LI CLASS='colchange_3' TITLE=""></LI>
+					<LI CLASS='colchange_4' TITLE=""></LI>
+					<LI CLASS='colchange_5' TITLE=""></LI>
 				</UL>
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
@@ -70,8 +70,8 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1167</P>
-							<P><B>For oscam revision:</B> 10000 until to changes in html and css in revision Oscam</P>
+							<P><B>Envi revision:</B> 1171</P>
+							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
 									<TD>Wiki:</TD>
