@@ -1,6 +1,0 @@
-<!--OSCam;3023138009;1.20-unstable_svn;9989;CS_CACHEEX-->
-##TPLJSONHEADER##
-"rows":[
-    ##JSONCACHEEXBITS##
-]
-##TPLJSONFOOTER##

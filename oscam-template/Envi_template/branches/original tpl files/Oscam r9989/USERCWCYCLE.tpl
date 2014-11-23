@@ -1,2 +1,0 @@
-<!--OSCam;3800653628;1.20-unstable_svn;9989;CW_CYCLE_CHECK-->
-			<TH CLASS="##CWCCYCVIEW##">CW Cycle</TH>

@@ -1,2 +1,0 @@
-<!--OSCam;1133362797;1.20-unstable_svn;9989;-->
-<A HREF="files.html?file=oscam.srvid" TITLE="##CLIENTSRVPROVIDER####CLIENTSRVNAME##"><IMG CLASS="statususericon" SRC="image?i=IC_##PICONNAME##" ALT=""></A>
