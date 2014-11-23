@@ -44,12 +44,7 @@ cd $OscamTplFolder
 # Download new files
 wget -q $TrunkUrl
 
-# Remove the previous files
-[ -f CSS.tpl ] && rm -f CSS.tpl
-[ -f FOOTER.tpl ] && rm -f FOOTER.tpl
-[ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
-
-# Print to display 
+# Print to display
 echo "START SCRIPT DO DOWNLOAD THE FILE"
 echo "\nMachine hardware name:"$MachineHardwareName
 echo "\nConfig Path:"$ConfigPath
@@ -61,7 +56,15 @@ then
 	echo "Downloaded file: $file was successfully downloaded"
 else
 	echo "Downloaded file: $file was not downloaded!!!"
+	exit 0
 fi
+
+# Remove the previous files
+[ -f CSS.tpl ] && rm -f CSS.tpl
+[ -f FOOTER.tpl ] && rm -f FOOTER.tpl
+[ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
+
+# Print to display
 echo "\n"
 echo "Decompressed files:"
 

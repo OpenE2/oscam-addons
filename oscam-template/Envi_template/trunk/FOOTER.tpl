@@ -1,4 +1,4 @@
-<!--OSCam;1299768664;1.20-unstable_svn;9989;-->
+<!--OSCam;1560086352;1.20-unstable_svn;10020;-->
 	</DIV> <!-- End content -->
 	<DIV CLASS="footer" ID="footer">
 			<UL CLASS="textfooter">
@@ -50,9 +50,9 @@
 				<UL CLASS="patchange">
 					<LI CLASS='patchange_1' TITLE="Basic pattern"></LI>
 					<LI CLASS='patchange_2' TITLE="Diagonal line"></LI>
-					<LI CLASS='patchange_3' TITLE=""></LI>
-					<LI CLASS='patchange_4' TITLE=""></LI>
-					<LI CLASS='patchange_5' TITLE=""></LI>
+					<LI CLASS='patchange_3' TITLE="Big squares light"></LI>
+					<LI CLASS='patchange_4' TITLE="Small squares dark"></LI>
+					<LI CLASS='patchange_5' TITLE="Wild oliva"></LI>
 				</UL>
 				<DIV CLASS="section-label">Text and links color</DIV>
 				<UL CLASS="colchange">
@@ -62,6 +62,9 @@
 					<LI CLASS='colchange_4' TITLE=""></LI>
 					<LI CLASS='colchange_5' TITLE=""></LI>
 				</UL>
+				<DIV>
+					<input id="reset" value="Reset" type="reset">
+				</DIV>
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
 					<A HREF="#openModal">Show info about Envi Template</A>
@@ -70,7 +73,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 11714</P>
+							<P><B>Envi revision:</B> 1184</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -106,6 +109,7 @@
 <!-- ========================== SCRIPT FILES ========================== -->
 	<script type="text/javascript">
 
+	/* -------------- BASIC SETTINGS for HTML  -------------- */
 	$(document).ready(function () {
 		// Hidden Subnav in script.html - SCRIPTS ITEM
 	    if(window.location.href.indexOf("script.html") > -1) {
@@ -177,18 +181,18 @@
 		createCookie(name,"",-1);
 	}
 
+	/* Switch styleswitcher with cookies */
 	function setMyCookie() {
 	    myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
 	    $.cookie('myCookieName', myCookieVal, { path: '/' });    
 	}
 
 	$(document).ready(function () {
-
-	if ($.cookie('myCookieName') == 'isActive') {
-	    $('.demo_changer').addClass('active');    
-	} else {
-	    $('.demo_changer').removeClass('active');
-	}
+		if ($.cookie('myCookieName') == 'isActive') {
+		    $('.demo_changer').addClass('active');    
+		} else {
+		    $('.demo_changer').removeClass('active');
+		}
 	});
 
 	$("#demo_icon").click(function () {
@@ -196,22 +200,37 @@
 	    setMyCookie();
 	});
 
+	/* Function for change color */
 	jQuery(function ($) {
-	    var color = $.cookie('color');
+		/* Change background color */
+	    var backcolor = $.cookie('backcolor');
 	    $('.backchange li').on('click', function (e) {
-	        color = $(this).attr('class')
-	        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(color)
-	        $.cookie('color', color, {
+	        backcolor = $(this).attr('class')
+	        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
+	        $.cookie('backcolor', backcolor, {
 	            expires: 365,
 	            path: '/'
 	        });
 	        return false;
 	    }).filter(function () {
-	        return $(this).attr('class') === color
+	        return $(this).attr('class') === backcolor
 	    }).click()
-	});
 
-	jQuery(function ($) {
+	    /* Change background pattern */
+	    var patcolor = $.cookie('patcolor');
+	    $('.patchange li').on('click', function (e) {
+	        patcolor = $(this).attr('class')
+	        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5").addClass(patcolor)
+	        $.cookie('patcolor', patcolor, {
+	            expires: 365,
+	            path: '/'
+	        });
+	        return false;
+	    }).filter(function () {
+	        return $(this).attr('class') === patcolor
+	    }).click()
+
+	    /* Change color text and links */
 	    var color = $.cookie('color');
 	    $('.colchange li').on('click', function (e) {
 	        color = $(this).attr('class')
@@ -226,19 +245,21 @@
 	    }).click()
 	});
 
-	jQuery(function ($) {
-	    var color = $.cookie('color');
-	    $('.patchange li').on('click', function (e) {
-	        color = $(this).attr('class')
-	        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5").addClass(color)
-	        $.cookie('color', color, {
-	            expires: 365,
-	            path: '/'
-	        });
-	        return false;
-	    }).filter(function () {
-	        return $(this).attr('class') === color
-	    }).click()
+	/* Reset button */
+	$(function() {
+		$("#reset").click(function () {
+		    if($("body").hasClass("envi")) {
+				$('body').removeClass().addClass('envi');
+				$.cookie('backcolor', null);
+				$.cookie('patcolor', null);
+				$.cookie('color', null);
+			} else {
+				$('body').removeClass();
+				$.cookie('backcolor', null);
+				$.cookie('patcolor', null);
+				$.cookie('color', null);
+			}
+		});
 	});
 
 	/*! jquery.cookie v1.4.1 | MIT */
