@@ -1096,12 +1096,16 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	left: -180px;
-	bottom: 10px
+	left: -205px;
+	bottom: 10px;
+}
+
+.demo_changer.active {
+    left: 0px;
 }
 
 .line {
-	border-bottom: 1px solid #efefef;
+	border-bottom: 1px solid #E0E0E0;
 	clear: both;
 	margin: 10px !important
 }
@@ -1119,7 +1123,7 @@ div.envi_info {
 	border-radius: 0px 2px 2px 0px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 35px;
+	top: 275px;
 	position: relative
 }
 
@@ -1127,19 +1131,136 @@ div.envi_info {
 	background: #fff;
 	float: right;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 178px;
-	padding: 10px 0
+	width: 200px;
+	padding: 0 0 10px 0;
+	border: 1px solid #DDD;
 }
 
 div.styleswitcher {
-	position: static
+	position: static;
+	color:#212121
 }
 div.envi_info {
 	position: static
 }
 div.footer ul.addClass {
 	margin: 3px auto;
-	width: 60%
+	width: 50%
+}
+.section-label {
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0px 0px 5px;
+    background: none repeat scroll 0% 0% #EEE;
+    color: #333;
+    text-shadow: 1px 1px 0px #FFF;
+    border-bottom: 1px solid #DDD;
+    text-align: left;
+}
+ul.backchange {
+    width:auto;
+    height:40px;
+    line-height:40px;
+    padding: 0 10px;
+}
+ul.backchange li {
+    list-style:none;
+    cursor: pointer;
+   	margin: 0px 4px;
+	padding: 3px 9px;
+    display:inline-block;
+    border: 4px solid #E1E1E1;
+    display:inline;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+}
+ul.patchange {
+    width:auto;
+    height:40px;
+    line-height:40px;
+    padding: 0 10px;
+}
+ul.patchange li {
+    list-style:none;
+    cursor: pointer;
+    margin: 0px 4px;
+	padding: 3px 9px;
+    display:inline-block;
+    border: 4px solid #E1E1E1;
+    display:inline;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+}
+ul.colchange {
+    width:auto;
+    height:40px;
+    line-height:40px;
+    padding: 0 10px;
+}
+ul.colchange li {
+    list-style:none;
+    cursor: pointer;
+    margin: 0px 4px;
+	padding: 3px 9px;
+    display:inline-block;
+    border: 4px solid #E1E1E1;
+    display:inline;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+}
+.background_1 {
+    
+}
+.background_2 {
+    background: #a5a5a5 !important;
+}
+.background_3 {
+    background: #7f7f7f !important;
+}
+.background_4 {
+    background: #222 !important;
+}
+.background_5 {
+    background: #0c0c0c !important;
+}
+.patchange_1 {
+    
+}
+.patchange_2 {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEXv7+/+/v7q6ur09PTj4+P4+Pjn5+f6+vrd3d1CAj5+AAAD3UlEQVQ4yyWSva+bMBTFr/lIOlqOazFiKElHh69kxEGIlQIhb8SPpumICE07Fj2l79+uqw62ZEv36J5zfoDRYlBbpnd/S8nOIwezZY0JmxL4q7Mpe7r/bUVqsQj3q0hew4obYDg8qIX/u67yVzYuW5GYKUtULGBUWdv1wZz4Vm0PLbHNulIuxQMsq8lWX9k+gPkJwlQwJoVR8bIGp7J7Vqk/DrptcZTHeO2mjWn8agDeY3LOHvrD+qdyL4Gs5WpGT/BfXJ53FzWE0WIQVRiY5y+jzDqYov5I0fDL4Xm7CT5Rwg1m5w6zYQBmSm+OCq/9UoS1XAyGsgcqXdhGyRWmm9xO8hRG/jfaSIuttVcQNsQkcEkXuF1jrqq121bcpaMNV6ht6dGf+uz/peLqZ86QBDAifk3JUqST+kMTtaqa8sjQME8QFQZNhg9O8uZg1TuNVmqWFbELuMUYFQaRRS2WnFZS+3muRp7HQEZpOYflEz0UFlFvx/pqPTpZsTuYPb0vW7LRG5zVp7Yp05CXsUADDCtxNcMkqMRQpk7QdwfbDcXNGqGD0qL2LU5tu8Yyi8WunsQQEhsgr36i03zQagf5SiNeCzswBOrBDVEeCu7PlcxfGD+x/VXbUBYGLKG9mECSPqV7GZNd9uusPV3egRvTXgmCZPyQeSpU7oD0RvR0YTLtnkbFd5osK7ZXR6aeR82UM2ooImJnL/flRM/SpYnUXOp+eQZXffuiGlyIgjDM3vTgaWpubgyjCR45c4slZVybfruRQ2zbITMh8oXuPNxIIBel9+XevH8XWBVQtmeZTegZN3xgd5m9EO3pcvWYpivQ9OnIg9V0CTqWyCPZ+XSzhnX2aN4NvC9WI7qFFcq7RpY6hAHAQXq1oCe6tDmSnym6tvq8aLXFn/FtdT8MFO/9FktDt+2RyxvoqA6+IWSQAverHwFoerc1z2J4YOm6NfdIVKzqaGcRBC0JvHaEw3IkP2wDR0E97c34hwK65kC/LOA6pnJNjNwJyR5/KTss37XOyQHGB+08r1kJdLOz2nPQsqZ8YQOYZt0oz/nX9kUTiJaUoLd2zwvdtn1t76o4ViqjjdqSS2FRVLRUp3N9CFuQyjemxI9xYOJz6emQYC2EZhjvOTDkiuhmNk3g1fxqAIDvthF352jn1VFgYD1Idu5MgJhZKnyjFf6227kxvsEk9DZ3CTIkXK4IX6xZvtb2ApWZx1gWMdD/dFrsh/zAdq8tQWb7z08DIlixQ05HddI59/PHJdTspTpWyFok/e7wZlFtkKwz9kO9Erx8dqCCvp3MoMXLqW14rvHpiBlM1fMvyQv+4FrkNX0AAAAASUVORK5CYII=) !important;
+}
+.patchange_3 {
+    background: #7f7f7f !important;
+}
+.patchange_4 {
+    background: #222 !important;
+}
+.patchange_5 {
+    background: #0c0c0c !important;
+}
+.colchange_1 {
+    
+}
+li.colchange_2 {
+    background: #a5a5a5 !important;
+}
+.colchange_2 {
+    color: #a5a5a5 !important;
+}
+li.colchange_3 {
+    background: #7f7f7f !important;
+}
+.colchange_3 {
+    color: #7f7f7f !important;
+}
+li.colchange_4 {
+    background: #222 !important;
+}
+.colchange_4 {
+    color: #222 !important;
+}
+li.colchange_5 {
+    background: #0c0c0c !important;
+}
+.colchange_5 {
+    color: #0c0c0c !important;
 }
 
 /* ==================================================================  ENVI TEMPLATE */

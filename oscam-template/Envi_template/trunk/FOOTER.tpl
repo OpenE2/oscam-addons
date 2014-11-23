@@ -32,12 +32,36 @@
 			<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
 			<DIV CLASS="form_holder">
 				<DIV CLASS="styleswitcher">
-					<H3>STYLE SWITCHER</H3>
+					<DIV CLASS="section-label">STYLE SWITCHER</DIV>
 					<UL CLASS="addClass">
-						<LI><A HREF="" TITLE="Show original WebIf">Original WebIf</A></LI>
-						<LI><A HREF="envi" TITLE="Show Envi Template">Envi Template</A></LI>
+						<LI><A HREF="">Original WebIf</A></LI>
+						<LI><A HREF="envi">Envi Template</A></LI>
 					</UL>
 				</DIV>
+				<DIV CLASS="section-label">Background color</DIV>
+				<UL CLASS="backchange">
+					<LI CLASS='background_1'></LI>
+					<LI CLASS='background_2'></LI>
+					<LI CLASS='background_3'></LI>
+					<LI CLASS='background_4'></LI>
+					<LI CLASS='background_5'></LI>
+				</UL>
+				<DIV CLASS="section-label">Patterns</DIV>
+				<UL CLASS="patchange">
+					<LI CLASS='patchange_1'></LI>
+					<LI CLASS='patchange_2'></LI>
+					<LI CLASS='patchange_3'></LI>
+					<LI CLASS='patchange_4'></LI>
+					<LI CLASS='patchange_5'></LI>
+				</UL>
+				<DIV CLASS="section-label">Text and links color</DIV>
+				<UL CLASS="colchange">
+					<LI CLASS='colchange_1'></LI>
+					<LI CLASS='colchange_2'></LI>
+					<LI CLASS='colchange_3'></LI>
+					<LI CLASS='colchange_4'></LI>
+					<LI CLASS='colchange_5'></LI>
+				</UL>
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
 					<A HREF="#openModal">Show info about Envi Template</A>
@@ -81,23 +105,6 @@
 
 <!-- ========================== SCRIPT FILES ========================== -->
 	<script type="text/javascript">
-
-	jQuery(document).ready(function() {
-	    var url = jQuery(location).attr('href');			// get full url
-	    var title = jQuery(this).attr('title');				// get title of page
-	    var protocol = jQuery(location).attr('protocol');	// get path only
-	    var pathname = jQuery(location).attr('pathname');	// get path only
-
-	    var pagebytes = $('html').html().length;
-        var kbytes = pagebytes / 1024;						// returns height of HTML document
-
-	    jQuery('#current_title').html(title);
-	    jQuery('#current_url').html(url);				
-	    jQuery('#current_protocol').html(protocol);
-	    jQuery('#current_pathname').html(pathname);
-	    jQuery('#current_kbytes').html(kbytes);
-
-	});;
 
 	$(document).ready(function () {
 		// Hidden Subnav in script.html - SCRIPTS ITEM
@@ -170,17 +177,72 @@
 		createCookie(name,"",-1);
 	}
 
-	$("#demo_icon").click(function () {
-	    if($('.demo_changer').hasClass('active')){
-	        $('.demo_changer').animate({'left':'-180px'},function(){
-	            $('.demo_changer').toggleClass('active');
-			});
-		}else{
-	        $('.demo_changer').animate({'left':'0px'},function(){
-	            $('.demo_changer').toggleClass('active');
-	        });			
-	    }	
+	function setMyCookie() {
+	    myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
+	    $.cookie('myCookieName', myCookieVal, { path: '/' });    
+	}
+
+	$(document).ready(function () {
+
+	if ($.cookie('myCookieName') == 'isActive') {
+	    $('.demo_changer').addClass('active');    
+	} else {
+	    $('.demo_changer').removeClass('active');
+	}
 	});
+
+	$("#demo_icon").click(function () {
+	    $('.demo_changer').toggleClass('active');
+	    setMyCookie();
+	});
+
+	jQuery(function ($) {
+	    var color = $.cookie('color');
+	    $('.backchange li').on('click', function (e) {
+	        color = $(this).attr('class')
+	        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(color)
+	        $.cookie('color', color, {
+	            expires: 365,
+	            path: '/'
+	        });
+	        return false;
+	    }).filter(function () {
+	        return $(this).attr('class') === color
+	    }).click()
+	});
+
+	jQuery(function ($) {
+	    var color = $.cookie('color');
+	    $('.colchange li').on('click', function (e) {
+	        color = $(this).attr('class')
+	        $("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
+	        $.cookie('color', color, {
+	            expires: 365,
+	            path: '/'
+	        });
+	        return false;
+	    }).filter(function () {
+	        return $(this).attr('class') === color
+	    }).click()
+	});
+
+	jQuery(function ($) {
+	    var color = $.cookie('color');
+	    $('.patchange li').on('click', function (e) {
+	        color = $(this).attr('class')
+	        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5").addClass(color)
+	        $.cookie('color', color, {
+	            expires: 365,
+	            path: '/'
+	        });
+	        return false;
+	    }).filter(function () {
+	        return $(this).attr('class') === color
+	    }).click()
+	});
+
+	/*! jquery.cookie v1.4.1 | MIT */
+	!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});
 
 	/* -------------- TOOLTIP -------------- */
 	!function ($) {
