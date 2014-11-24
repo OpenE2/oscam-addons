@@ -65,9 +65,12 @@
 					<LI CLASS='colchange_2' TITLE=""></LI>
 					<LI CLASS='colchange_3' TITLE=""></LI>
 					<LI CLASS='colchange_4' TITLE=""></LI>
-					<LI CLASS='colchange_5' TITLE=""></LI>
+					<LI CLASS='colchange_5' TITLE="Black"></LI>
 				</UL>
 				<DIV>
+					<input id="rotatelogo" type="checkbox" class="rotatelogo" name="1">
+					<label for="rotatelogo">Rotate Oscam logo</label>
+					<BR><BR>
 					<input id="reset" value="Reset" type="reset">
 				</DIV>
 				<DIV CLASS="line"></DIV>
@@ -80,7 +83,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1191</P>
+							<P><B>Envi revision:</B> 1192</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -104,7 +107,7 @@
 									<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template" TARGET="_blank">Source files of Envi</A></TD>
 								</TR>
 							</TABLE>
-							<P CLASS="thanks">Special thanks for the development:<BR>ultra47</P>
+							<P CLASS="thanks">Special thanks for the development:<BR>ultra47 - and all the testers.</P>
 						</DIV>
 					</DIV>
 				</DIV>
@@ -256,6 +259,31 @@
 	    }).filter(function () {
 	        return $(this).attr('class') === color
 	    }).click()
+	});
+
+	/* Checkbox */
+	$(window).load(function(){
+	$("input.rotatelogo").each(function() {
+	    var mycookie = $.cookie($(this).attr('name'));
+	    if (mycookie && mycookie == "true") {
+	        $(this).prop('checked', mycookie);
+	        $('body').addClass('rotatelogo');
+	    }
+	});
+	$("input.rotatelogo").change(function() {
+		if ($("body").hasClass('envi')) {
+		    $.cookie($(this).attr("name"), $(this).prop('checked'), {
+		        path: '/',
+		        expires: 365
+		    });
+		    if ( $('input[name="1"]').is(':checked') ) {
+			    $('body').addClass('rotatelogo');
+			} 
+			else {
+			    $('body').removeClass('rotatelogo');
+			}
+		};
+	});
 	});
 
 	/* Reset button */

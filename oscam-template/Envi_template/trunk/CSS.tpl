@@ -1155,7 +1155,7 @@ div.envi_info {
 	border-radius: 0px 2px 2px 0px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 275px;
+	top: 390px;
 	position: relative
 }
 .demo_changer .form_holder {
@@ -1303,7 +1303,7 @@ ul.colchange li.active {
 	    background: #a5a5a5 !important;
 	}
 	.colchange_2 {
-	    color: #FFF !important;
+	    color: #a5a5a5 !important;
 	}
 	li.colchange_3 {
 	    background: #7f7f7f !important;
@@ -1318,11 +1318,20 @@ ul.colchange li.active {
 	    color: #222 !important;
 	}
 	li.colchange_5 {
-	    background: #0c0c0c !important;
+	    background: #000 !important;
 	}
 	.colchange_5 {
-	    color: #0c0c0c !important;
+	    color: #000 !important;
 	}
+	.rotatelogo div.logo svg.OSCam_logo {
+		height:45px !important;
+		width:45px !important;
+		
+		/* ROTATE IMAGE */
+		 -webkit-transform: rotate(350deg);
+		-moz-transform: rotate(350deg);
+
+}
 
 /* ==================================================================  ENVI TEMPLATE */
 /* **************** 2. BASIC DIVISION PAGES */
