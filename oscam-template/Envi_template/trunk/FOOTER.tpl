@@ -40,23 +40,28 @@
 				</DIV>
 				<DIV CLASS="section-label">Background color</DIV>
 				<UL CLASS="backchange">
-					<LI CLASS='background_1' TITLE="Basic background"></LI>
-					<LI CLASS='background_2' TITLE=""></LI>
-					<LI CLASS='background_3' TITLE=""></LI>
-					<LI CLASS='background_4' TITLE=""></LI>
-					<LI CLASS='background_5' TITLE=""></LI>
+					<LI CLASS='background_1' TITLE="White"></LI>
+					<LI CLASS='background_2' TITLE="5% Black"></LI>
+					<LI CLASS='background_3' TITLE="35% Black"></LI>
+					<LI CLASS='background_4' TITLE="80% Black"></LI>
+					<LI CLASS='background_5' TITLE="90% Black"></LI>
 				</UL>
 				<DIV CLASS="section-label">Patterns</DIV>
 				<UL CLASS="patchange">
-					<LI CLASS='patchange_1' TITLE="Basic pattern"></LI>
-					<LI CLASS='patchange_2' TITLE="Diagonal line"></LI>
-					<LI CLASS='patchange_3' TITLE="Big squares light"></LI>
-					<LI CLASS='patchange_4' TITLE="Small squares dark"></LI>
-					<LI CLASS='patchange_5' TITLE="Wild oliva"></LI>
+					<LI CLASS='patchange_1' TITLE="Diagonal line - transparent"></LI>
+					<LI CLASS='patchange_2' TITLE="Diamond - transparent"></LI>
+					<LI CLASS='patchange_3' TITLE="Dots - transparent"></LI>
+					<LI CLASS='patchange_4' TITLE="Squares 1 - transparent"></LI>
+					<LI CLASS='patchange_5' TITLE="Squares 2 - transparent"></LI>
+					<LI CLASS='patchange_6' TITLE=""></LI>
+					<LI CLASS='patchange_7' TITLE=""></LI>
+					<LI CLASS='patchange_8' TITLE=""></LI>
+					<LI CLASS='patchange_9' TITLE=""></LI>
+					<LI CLASS='patchange_10' TITLE=""></LI>
 				</UL>
 				<DIV CLASS="section-label">Text and links color</DIV>
 				<UL CLASS="colchange">
-					<LI CLASS='colchange_1' TITLE="Basic color"></LI>
+					<LI CLASS='colchange_1' TITLE="White"></LI>
 					<LI CLASS='colchange_2' TITLE=""></LI>
 					<LI CLASS='colchange_3' TITLE=""></LI>
 					<LI CLASS='colchange_4' TITLE=""></LI>
@@ -65,6 +70,8 @@
 				<DIV>
 					<input id="reset" value="Reset" type="reset">
 				</DIV>
+				<DIV CLASS="line"></DIV>
+				<P CLASS="info">Styleswitcher used cookie system. Predefined colors and patterns are available only for Envi not Original.</P>
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
 					<A HREF="#openModal">Show info about Envi Template</A>
@@ -206,11 +213,13 @@
 	    var backcolor = $.cookie('backcolor');
 	    $('.backchange li').on('click', function (e) {
 	        backcolor = $(this).attr('class')
-	        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
-	        $.cookie('backcolor', backcolor, {
-	            expires: 365,
-	            path: '/'
-	        });
+	        if ($("body").hasClass('envi')) {
+		        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
+		        $.cookie('backcolor', backcolor, {
+		            expires: 365,
+		            path: '/'
+	        	});
+	        };
 	        return false;
 	    }).filter(function () {
 	        return $(this).attr('class') === backcolor
@@ -220,11 +229,13 @@
 	    var patcolor = $.cookie('patcolor');
 	    $('.patchange li').on('click', function (e) {
 	        patcolor = $(this).attr('class')
-	        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5").addClass(patcolor)
-	        $.cookie('patcolor', patcolor, {
-	            expires: 365,
-	            path: '/'
-	        });
+	        if ($("body").hasClass('envi')) {
+		        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9 patchange_10").addClass(patcolor)
+		        $.cookie('patcolor', patcolor, {
+		            expires: 365,
+		            path: '/'
+		        });
+			};
 	        return false;
 	    }).filter(function () {
 	        return $(this).attr('class') === patcolor
@@ -234,11 +245,13 @@
 	    var color = $.cookie('color');
 	    $('.colchange li').on('click', function (e) {
 	        color = $(this).attr('class')
-	        $("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
-	        $.cookie('color', color, {
-	            expires: 365,
-	            path: '/'
-	        });
+	        if ($("body").hasClass('envi')) {
+		        $("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
+		        $.cookie('color', color, {
+		            expires: 365,
+		            path: '/'
+		        });
+			};
 	        return false;
 	    }).filter(function () {
 	        return $(this).attr('class') === color
