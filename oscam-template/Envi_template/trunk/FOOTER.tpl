@@ -83,7 +83,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1192</P>
+							<P><B>Envi revision:</B> 1193</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -264,9 +264,9 @@
 	/* Checkbox */
 	$(window).load(function(){
 	$("input.rotatelogo").each(function() {
-	    var mycookie = $.cookie($(this).attr('name'));
-	    if (mycookie && mycookie == "true") {
-	        $(this).prop('checked', mycookie);
+	    var rotate = $.cookie($(this).attr('name'));
+	    if (rotate && rotate == "true") {
+	        $(this).prop('checked', rotate);
 	        $('body').addClass('rotatelogo');
 	    }
 	});
@@ -294,11 +294,15 @@
 				$.cookie('backcolor', null);
 				$.cookie('patcolor', null);
 				$.cookie('color', null);
+				$('#rotatelogo').prop('checked', false);
+				$.cookie('1', null);
 			} else {
 				$('body').removeClass();
 				$.cookie('backcolor', null);
 				$.cookie('patcolor', null);
 				$.cookie('color', null);
+				$('#rotatelogo').prop('checked', false);
+				$.cookie('1', null);
 			}
 		});
 	});
