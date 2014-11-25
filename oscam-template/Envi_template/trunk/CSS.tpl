@@ -1023,6 +1023,9 @@ div.bar {
 
 /* ################################# ENVI TEMPLATE WEBIF for STREAMBOARD ################################# */
 /* ============================= CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE ============================= */
+body {
+	overflow-x:hidden
+}
 
 /* footer.html */
 div.footer ul {
@@ -1130,11 +1133,11 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	left: -175px;
+	right: -175px;
 	bottom: 10px;
 }
 .demo_changer.active {
-    left: 0px;
+    right: 0px;
 }
 .line {
 	border-bottom: 1px solid #E0E0E0;
@@ -1147,12 +1150,12 @@ div.envi_info {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADmYDp0AAAAGHRSTlMAB3Laye98qCGVEPeNgkfhvJxlXT4vshgFDlz8AAAAxklEQVQYGWXBB5LCMAAEwVWWc4b5/0tPhsInQ7e+2EYaon55omXSr5nCG91Z53nxPqo2AKk1C9DoxkIrmY6oOwutZDqsbnogGdMAvd5yaiRZ56HrwLtBbxsYnTyFNzo187NNsGl3oxzW4nQ6IASKCSbFXuoHvSxcRtV2wA1NgEm1NsFspBxgM7oEil1FT7Hog9OhIlI89DFaB1GS8ZDWQ/9WIObjAV2r2sZHeKqSA5dZlezCujp4jAtJtZwlC09pN/o2EnT3B9qZEIrL4gjtAAAAAElFTkSuQmCC);
 	background-repeat:no-repeat;
 	background-position: center;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: -2px -2px -2px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
-	float: right;
+	float: left;
 	height: 40px;
 	width: 40px;
-	border-radius: 0px 2px 2px 0px;
+	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
 	top: 390px;
@@ -1160,7 +1163,7 @@ div.envi_info {
 }
 .demo_changer .form_holder {
 	background: #fff;
-	float: right;
+	float: left;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	width: 170px;
 	padding: 0 0 10px 0;
@@ -1238,12 +1241,12 @@ ul.colchange li {
 ul.backchange li:hover,
 ul.patchange li:hover,
 ul.colchange li:hover {
-    border: 3px solid #000;
+    border: 3px solid #F02;
 }
 ul.backchange li.active,
 ul.patchange li.active,
 ul.colchange li.active {
-    border: 3px solid #000;
+    border: 3px solid #F02;
 }
 
 	/* Advanced color settings template */

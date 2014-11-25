@@ -4,8 +4,9 @@
 # Automatic script for find folder and downloaded file
 #
 # This script will be it tested on:
-#	Vu+ Solo, i686 (Xubuntu).....
+#	Vu+ Solo, i686 (Xubuntu), x86_64, .....
 #
+# NOTES: Dont use \n for new line. \n dont works on enigma 2
 
 ############################################
 # Set manually downloaded file
@@ -20,11 +21,19 @@ MachineHardwareName=$(uname -m)
 # Find PATH with config files by CPU type
 	if [ "$MachineHardwareName" = "mips" ]; then
 	# Mips - Vu+ Solo, .... (write other type)
-		ConfigPath=$(find /etc -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')
-
-	elif [ "$MachineHardwareName" = "i686" ]; then
+	# oscam.conf is still in folder /etc
+		ConfigPath=$(find /etc -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')	
+	
+	elif [ "$MachineHardwareName" = "x86_64" ]; then
 	# i686 - .... (write other type)
-		ConfigPath=$(find /usr -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')
+		# Find file which contains word "global".File oscam.conf does not contain this word
+		FindPath=$(find / -name "oscam.conf" -print | xargs grep "global")
+		# Only echo
+		echo "Found path with oscam.conf: "$FindPath
+		# Only directory from whole path
+		ConfigPath=$(echo "$FindPath" |sed -r 's/.{19}$//')
+		# Only echo
+		echo "Found folder with oscam.conf: "$ConfigPath
 
 	elif [ "$MachineHardwareName" = "unknown" ]; then
 	echo "unknown"
@@ -45,12 +54,16 @@ cd $OscamTplFolder
 wget -q $TrunkUrl
 
 # Print to display
-echo "START SCRIPT DO DOWNLOAD THE FILE"
-echo "\nMachine hardware name:"$MachineHardwareName
-echo "\nConfig Path:"$ConfigPath
-echo "Oscam template folder:"$OscamTplFolder
+echo ""
+echo "START SCRIPT TO DOWNLOAD THE FILE"
+echo "---------------------------------"
+echo ""
+echo "Machine hardware name: "$MachineHardwareName
+echo "Config Path: "$ConfigPath
+echo "Oscam template folder: "$OscamTplFolder
 
-file="$OscamTplFolder/Envi_Template.zip"
+tmpfile=$(echo "$OscamTplFolder" |sed 's/.$//')
+file="$tmpfile/Envi_Template.zip"
 if [ -f "$file" ]
 then
 	echo "Downloaded file: $file was successfully downloaded"
@@ -65,7 +78,7 @@ fi
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
 
 # Print to display
-echo "\n"
+echo ""
 echo "Decompressed files:"
 
 #  Decompression, remove a compressed file and exit

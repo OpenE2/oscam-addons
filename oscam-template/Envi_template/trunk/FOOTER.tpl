@@ -83,7 +83,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1193</P>
+							<P><B>Envi revision:</B> 1194</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -107,7 +107,7 @@
 									<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template" TARGET="_blank">Source files of Envi</A></TD>
 								</TR>
 							</TABLE>
-							<P CLASS="thanks">Special thanks for the development:<BR>ultra47 - and all the testers.</P>
+							<P CLASS="thanks">Special thanks for the development:<BR>ultra47,gismo2004 - and all the testers.</P>
 						</DIV>
 					</DIV>
 				</DIV>
@@ -210,6 +210,67 @@
 	    setMyCookie();
 	});
 
+	/* List LI active */
+	function setBackCookie() {
+	    BackCookieVal = $('.backchange li').hasClass('active') ? 'isActive' : 'notActive';
+	    $.cookie('BackCookieName', BackCookieVal, { path: '/' });    
+	}
+
+	$(document).ready(function () {
+		if ($.cookie('BackCookieName') == 'isActive') {
+		    $('.backchange li').addClass('active');    
+		} else {
+		    $('.backchange li').removeClass('active');
+		}
+	});
+
+	$(".backchange li").click(function () {
+	    $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+	    setBackCookie();
+	});
+
+	function setPatCookie() {
+	    PatCookieVal = $('.patchange li').hasClass('active') ? 'isActive' : 'notActive';
+	    $.cookie('PatCookieName', PatCookieVal, { path: '/' });    
+	}
+
+	$(document).ready(function () {
+		if ($.cookie('PatCookieName') == 'isActive') {
+		    $('.patchange li').addClass('active');    
+		} else {
+		    $('.patchange li').removeClass('active');
+		}
+	});
+
+	$(".patchange li").click(function () {
+	    $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+	    setPatCookie();
+	});
+
+	function setColCookie() {
+	    ColCookieVal = $('.colchange li').hasClass('active') ? 'isActive' : 'notActive';
+	    $.cookie('ColCookieName', ColCookieVal, { path: '/' });    
+	}
+
+	$(document).ready(function () {
+		if ($.cookie('ColCookieName') == 'isActive') {
+		    $('.colchange li').addClass('active');    
+		} else {
+		    $('.colchange li').removeClass('active');
+		}
+	});
+
+	$(".colchange li").click(function () {
+	    $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+	    setColCookie();
+	});
+
+
+
+
 	/* Function for change color */
 	jQuery(function ($) {
 		/* Change background color */
@@ -296,6 +357,12 @@
 				$.cookie('color', null);
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
+				$.cookie('BackCookieName', null);
+				$('.backchange li').removeClass('active');
+				$.cookie('PatCookieName', null);
+				$('.patchange li').removeClass('active');
+				$.cookie('ColCookieName', null);
+				$('.colchange li').removeClass('active');
 			} else {
 				$('body').removeClass();
 				$.cookie('backcolor', null);
@@ -303,6 +370,12 @@
 				$.cookie('color', null);
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
+				$.cookie('BackCookieName', null);
+				$('.backchange li').removeClass('active');
+				$.cookie('PatCookieName', null);
+				$('.patchange li').removeClass('active');
+				$.cookie('ColCookieName', null);
+				$('.colchange li').removeClass('active');
 			}
 		});
 	});
