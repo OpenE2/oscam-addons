@@ -24,7 +24,7 @@ MachineHardwareName=$(uname -m)
 	# oscam.conf is still in folder /etc
 		ConfigPath=$(find /etc -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')	
 	
-	elif [ "$MachineHardwareName" = "x86_64" ]; then
+	elif [ "$MachineHardwareName" = "i686" ]; then
 	# i686 - .... (write other type)
 		# Find file which contains word "global".File oscam.conf does not contain this word
 		FindPath=$(find / -name "oscam.conf" -print | xargs grep "global")
@@ -35,9 +35,29 @@ MachineHardwareName=$(uname -m)
 		# Only echo
 		echo "Found folder with oscam.conf: "$ConfigPath
 
-	elif [ "$MachineHardwareName" = "unknown" ]; then
-	echo "unknown"
-	:
+	elif [ "$MachineHardwareName" = "x86_64" ]; then
+	# x86_64 - .... (write other type)
+		# Find file which contains word "global".File oscam.conf does not contain this word
+		FindPath=$(find / -name "oscam.conf" -print | xargs grep "global")
+		# Only echo
+		echo "Found path with oscam.conf: "$FindPath
+		# Only directory from whole path
+		ConfigPath=$(echo "$FindPath" |sed -r 's/.{19}$//')
+		# Only echo
+		echo "Found folder with oscam.conf: "$ConfigPath
+
+	else
+	# For other type
+	# Works on CPU type: 	Mips - VU+ Solo		(write other type)
+
+		# Find file which contains word "global".File oscam.conf does not contain this word
+		FindPath=$(find / -name "oscam.conf" -print | xargs grep "global")
+		# Only echo
+		echo "Found path with oscam.conf: "$FindPath
+		# Only directory from whole path
+		ConfigPath=$(echo "$FindPath" |sed -r 's/.{19}$//')
+		# Only echo
+		echo "Found folder with oscam.conf: "$ConfigPath
 
 	fi
 

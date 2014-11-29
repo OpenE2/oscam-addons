@@ -83,7 +83,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1194</P>
+							<P><B>Envi revision:</B> 1197</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -122,232 +122,231 @@
 	/* -------------- BASIC SETTINGS for HTML  -------------- */
 	$(document).ready(function () {
 		// Hidden Subnav in script.html - SCRIPTS ITEM
-	    if(window.location.href.indexOf("script.html") > -1) {
+		if(window.location.href.indexOf("script.html") > -1) {
 			$('#subnav').css('visibility', 'hidden');
-	    }
-	    // Hidden Subnav in services.html - SERVICES ITEM
-	    if(window.location.href.indexOf("services.html") > -1) {
-	        $('#subnav').css('visibility', 'hidden');
-	    }
-	    // Hidden Subnav in logpoll.html - LIVELOG ITEM
-	    if(window.location.href.indexOf("logpoll.html") > -1) {
-	        $('#subnav').css('visibility', 'hidden');
-	    }
-	    // Hidden Subnav in emm.html
-	    if(window.location.href.indexOf("emm.html") > -1) {
-	        $('#subnav').css('visibility', 'hidden');
-	    }
-	    // Hidden Subnav in emm_running.html
-	    if(window.location.href.indexOf("emm_running.html") > -1) {
-	        $('#subnav').css('visibility', 'hidden');
-	    }
+		}
+		
+		// Hidden Subnav in services.html - SERVICES ITEM
+		if(window.location.href.indexOf("services.html") > -1) {
+			$('#subnav').css('visibility', 'hidden');
+		}
+		
+		// Hidden Subnav in logpoll.html - LIVELOG ITEM
+		if(window.location.href.indexOf("logpoll.html") > -1) {
+			$('#subnav').css('visibility', 'hidden');
+		}
+		
+		// Hidden Subnav in emm.html
+		if(window.location.href.indexOf("emm.html") > -1) {
+			$('#subnav').css('visibility', 'hidden');
+		}
+		
+		// Hidden Subnav in emm_running.html
+		if(window.location.href.indexOf("emm_running.html") > -1) {
+			$('#subnav').css('visibility', 'hidden');
+		}
 
-	    // Add checkbox and label for responsive design
-	    $("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
-	    $("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");
-	    $("#subnav").prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
-	    $("#subnav").prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
+		// Add checkbox and label for responsive design
+		$("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
+		$("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");
+		$("#subnav").prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
+		$("#subnav").prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
 	});
 
 	/* -------------- STYLESWITCHER with COOKIES -------------- */
-	$(function() {
-		$(".addClass a").click(function() {
-			var countryswitch = $(this).attr('href');
-			$('body').removeClass().addClass(countryswitch);
-			createCookie("countryswitch",countryswitch);
-			location.reload();
-			return false;
-		});
-		if (readCookie("countryswitch") != null) {
-			$('body').removeClass().addClass(readCookie("countryswitch"));
-		}
-		else {
+	
+	/* Read cookie after run or restart browser */
+	$(document).ready(function () {
+		/* Cookie - Change template */
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			$('body').addClass('envi');    
+		} else {
 			$('body').removeClass();
 		}
-	});
-	
-	function createCookie(name,value,days) {
-		if (days) {
-			var date = new Date();
-			date.setTime(date.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+date.toGMTString();
-		}
-		else var expires = "";
-		document.cookie = name+"="+value+expires+"; path=/";
-	}
-	
-	function readCookie(name) {
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-		}
-		return null;
-	}
-	
-	function eraseCookie(name) {
-		createCookie(name,"",-1);
-	}
 
-	/* Switch styleswitcher with cookies */
-	function setMyCookie() {
-	    myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
-	    $.cookie('myCookieName', myCookieVal, { path: '/' });    
-	}
-
-	$(document).ready(function () {
+		/* Cookie - Show/hide StyleSwitcher */
 		if ($.cookie('myCookieName') == 'isActive') {
-		    $('.demo_changer').addClass('active');    
+			$('.demo_changer').addClass('active');    
 		} else {
-		    $('.demo_changer').removeClass('active');
+			$('.demo_changer').removeClass('active');
+		}
+
+		/* Cookie - isActive/notActive background color */
+		if ($.cookie('BackCookieName') == 'isActive') {
+			$('.backchange li').addClass('active');    
+		} else {
+			$('.backchange li').removeClass('active');
+		}
+
+		/* Cookie - isActive/notActive background pattern */
+		if ($.cookie('PatCookieName') == 'isActive') {
+			$('.patchange li').addClass('active');    
+		} else {
+			$('.patchange li').removeClass('active');
+		}
+
+		/* Cookie - isActive/notActive text color */
+		if ($.cookie('ColCookieName') == 'isActive') {
+			$('.colchange li').addClass('active');
+		} else {
+			$('.colchange li').removeClass('active');
 		}
 	});
+
+	/* Change template */
+	jQuery(function ($) {
+		var TemplateSwitch = $.cookie('TemplateSwitch');
+		$('.addClass a').on('click', function (e) {
+			TemplateSwitch = $(this).attr('href')
+			$('body').removeClass().addClass(TemplateSwitch)
+			$.cookie('TemplateSwitch', TemplateSwitch, {
+					expires: 365,
+					path: '/'
+				});
+			return false;
+		}).filter(function () {
+			return $(this).attr('class') === TemplateSwitch
+		}).click()
+	});
+
+	/* Show/hide StyleSwitcher - It is OK*/
+	function setMyCookie() {
+		myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
+		$.cookie('myCookieName', myCookieVal, {
+			expires: 365,
+			path: '/'
+		});
+	}
 
 	$("#demo_icon").click(function () {
-	    $('.demo_changer').toggleClass('active');
-	    setMyCookie();
+		$('.demo_changer').toggleClass('active');
+		setMyCookie();
 	});
 
-	/* List LI active */
+	/* List LI active 
+		NOTE: Sometimes all they LI have class "active". But I dont know why :-(
+		Meybe, $('.patchange li').addClass('active'); means you're adding class active to all LI.
+		I need to keep reference of the clicked LI.
+	*/
 	function setBackCookie() {
-	    BackCookieVal = $('.backchange li').hasClass('active') ? 'isActive' : 'notActive';
-	    $.cookie('BackCookieName', BackCookieVal, { path: '/' });    
+		BackCookieVal = $('.backchange li').hasClass('active') ? 'isActive' : 'notActive';
+		$.cookie('BackCookieName', BackCookieVal, {
+			expires: 365,
+			path: '/'
+		});   
 	}
 
-	$(document).ready(function () {
-		if ($.cookie('BackCookieName') == 'isActive') {
-		    $('.backchange li').addClass('active');    
-		} else {
-		    $('.backchange li').removeClass('active');
-		}
-	});
-
 	$(".backchange li").click(function () {
-	    $(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-	    setBackCookie();
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		setBackCookie();
 	});
 
 	function setPatCookie() {
-	    PatCookieVal = $('.patchange li').hasClass('active') ? 'isActive' : 'notActive';
-	    $.cookie('PatCookieName', PatCookieVal, { path: '/' });    
+		PatCookieVal = $('.patchange li').hasClass('active') ? 'isActive' : 'notActive';
+		$.cookie('PatCookieName', PatCookieVal, {
+			expires: 365,
+			path: '/'
+		});    
 	}
 
-	$(document).ready(function () {
-		if ($.cookie('PatCookieName') == 'isActive') {
-		    $('.patchange li').addClass('active');    
-		} else {
-		    $('.patchange li').removeClass('active');
-		}
-	});
-
 	$(".patchange li").click(function () {
-	    $(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-	    setPatCookie();
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		setPatCookie();
 	});
 
 	function setColCookie() {
-	    ColCookieVal = $('.colchange li').hasClass('active') ? 'isActive' : 'notActive';
-	    $.cookie('ColCookieName', ColCookieVal, { path: '/' });    
+		ColCookieVal = $('.colchange li').hasClass('active') ? 'isActive' : 'notActive';
+		$.cookie('ColCookieName', ColCookieVal, {
+			expires: 365,
+			path: '/'
+		});    
 	}
 
-	$(document).ready(function () {
-		if ($.cookie('ColCookieName') == 'isActive') {
-		    $('.colchange li').addClass('active');    
-		} else {
-		    $('.colchange li').removeClass('active');
-		}
-	});
-
 	$(".colchange li").click(function () {
-	    $(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-	    setColCookie();
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		setColCookie();
 	});
 
-
-
-
-	/* Function for change color */
+	/* Function for change color - It is OK*/
 	jQuery(function ($) {
 		/* Change background color */
-	    var backcolor = $.cookie('backcolor');
-	    $('.backchange li').on('click', function (e) {
-	        backcolor = $(this).attr('class')
-	        if ($("body").hasClass('envi')) {
-		        $("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
-		        $.cookie('backcolor', backcolor, {
-		            expires: 365,
-		            path: '/'
-	        	});
-	        };
-	        return false;
-	    }).filter(function () {
-	        return $(this).attr('class') === backcolor
-	    }).click()
-
-	    /* Change background pattern */
-	    var patcolor = $.cookie('patcolor');
-	    $('.patchange li').on('click', function (e) {
-	        patcolor = $(this).attr('class')
-	        if ($("body").hasClass('envi')) {
-		        $("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9 patchange_10").addClass(patcolor)
-		        $.cookie('patcolor', patcolor, {
-		            expires: 365,
-		            path: '/'
-		        });
+		var backcolor = $.cookie('backcolor');
+		$('.backchange li').on('click', function (e) {
+			backcolor = $(this).attr('class')
+			if ($("body").hasClass('envi')) {
+				$("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
+				$.cookie('backcolor', backcolor, {
+					expires: 365,
+					path: '/'
+				});
 			};
-	        return false;
-	    }).filter(function () {
-	        return $(this).attr('class') === patcolor
-	    }).click()
+			return false;
+		}).filter(function () {
+			return $(this).attr('class') === backcolor
+		}).click()
 
-	    /* Change color text and links */
-	    var color = $.cookie('color');
-	    $('.colchange li').on('click', function (e) {
-	        color = $(this).attr('class')
-	        if ($("body").hasClass('envi')) {
-		        $("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
-		        $.cookie('color', color, {
-		            expires: 365,
-		            path: '/'
-		        });
+		/* Change background pattern */
+		var patcolor = $.cookie('patcolor');
+		$('.patchange li').on('click', function (e) {
+			patcolor = $(this).attr('class')
+			if ($("body").hasClass('envi')) {
+				$("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9 patchange_10").addClass(patcolor)
+				$.cookie('patcolor', patcolor, {
+					expires: 365,
+					path: '/'
+				});
 			};
-	        return false;
-	    }).filter(function () {
-	        return $(this).attr('class') === color
-	    }).click()
+			return false;
+		}).filter(function () {
+			return $(this).attr('class') === patcolor
+		}).click()
+
+		/* Change color text and links */
+		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
+		$('.colchange li').on('click', function (e) { 	// function for colchange li click
+			color = $(this).attr('class')				// Rename value "color" with class in colchange li
+			if ($("body").hasClass('envi')) {			
+				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
+				$.cookie('color', color, {				// Set cookie
+					expires: 365,
+					path: '/'
+				});
+			};
+			return false;
+		}).filter(function () {
+			return $(this).attr('class') === color
+		}).click()
 	});
 
 	/* Checkbox */
 	$(window).load(function(){
 	$("input.rotatelogo").each(function() {
-	    var rotate = $.cookie($(this).attr('name'));
-	    if (rotate && rotate == "true") {
-	        $(this).prop('checked', rotate);
-	        $('body').addClass('rotatelogo');
-	    }
+		var rotate = $.cookie($(this).attr('name'));
+		if (rotate && rotate == "true") {
+			$(this).prop('checked', rotate);
+			$('body').addClass('rotatelogo');
+		}
 	});
 	$("input.rotatelogo").change(function() {
 		if ($("body").hasClass('envi')) {
-		    $.cookie($(this).attr("name"), $(this).prop('checked'), {
-		        path: '/',
-		        expires: 365
-		    });
-		    if ( $('input[name="1"]').is(':checked') ) {
-			    $('body').addClass('rotatelogo');
-			} 
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="1"]').is(':checked') ) {
+				$('body').addClass('rotatelogo');
+			}
 			else {
-			    $('body').removeClass('rotatelogo');
+				$('body').removeClass('rotatelogo');
 			}
 		};
 	});
 	});
 
-	/* Reset button */
+	/* Reset button - It is OK */
 	$(function() {
 		$("#reset").click(function () {
 		    if($("body").hasClass("envi")) {
@@ -358,11 +357,11 @@
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
 				$.cookie('BackCookieName', null);
-				$('.backchange li').removeClass('active');
+				$('.backchange li').removeClass();
 				$.cookie('PatCookieName', null);
-				$('.patchange li').removeClass('active');
+				$('.patchange li').removeClass();
 				$.cookie('ColCookieName', null);
-				$('.colchange li').removeClass('active');
+				$('.colchange li').removeClass();
 			} else {
 				$('body').removeClass();
 				$.cookie('backcolor', null);
@@ -371,11 +370,11 @@
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
 				$.cookie('BackCookieName', null);
-				$('.backchange li').removeClass('active');
+				$('.backchange li').removeClass();
 				$.cookie('PatCookieName', null);
-				$('.patchange li').removeClass('active');
+				$('.patchange li').removeClass();
 				$.cookie('ColCookieName', null);
-				$('.colchange li').removeClass('active');
+				$('.colchange li').removeClass();
 			}
 		});
 	});
