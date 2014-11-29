@@ -83,7 +83,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1197</P>
+							<P><B>Envi revision:</B> 1198</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -357,11 +357,11 @@
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
 				$.cookie('BackCookieName', null);
-				$('.backchange li').removeClass();
+				$('.backchange li').removeClass('active');
 				$.cookie('PatCookieName', null);
-				$('.patchange li').removeClass();
+				$('.patchange li').removeClass('active');
 				$.cookie('ColCookieName', null);
-				$('.colchange li').removeClass();
+				$('.colchange li').removeClass('active');
 			} else {
 				$('body').removeClass();
 				$.cookie('backcolor', null);
@@ -370,11 +370,11 @@
 				$('#rotatelogo').prop('checked', false);
 				$.cookie('1', null);
 				$.cookie('BackCookieName', null);
-				$('.backchange li').removeClass();
+				$('.backchange li').removeClass('active');
 				$.cookie('PatCookieName', null);
-				$('.patchange li').removeClass();
+				$('.patchange li').removeClass('active');
 				$.cookie('ColCookieName', null);
-				$('.colchange li').removeClass();
+				$('.colchange li').removeClass('active');
 			}
 		});
 	});
