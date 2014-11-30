@@ -67,11 +67,12 @@
 					<LI CLASS='colchange_4' TITLE=""></LI>
 					<LI CLASS='colchange_5' TITLE="Black"></LI>
 				</UL>
+				<DIV CLASS="line"></DIV>
 				<DIV>
 					<input id="rotatelogo" type="checkbox" class="rotatelogo" name="1">
 					<label for="rotatelogo">Rotate Oscam logo</label>
 					<BR><BR>
-					<input id="reset" value="Reset" type="reset">
+					<input id="reset" value="Reset all value" type="reset">
 				</DIV>
 				<DIV CLASS="line"></DIV>
 				<P CLASS="info">Styleswitcher used cookie system. Predefined colors and patterns are available only for Envi not Original.</P>
@@ -83,7 +84,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1198</P>
+							<P><B>Envi revision:</B> 1200</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>

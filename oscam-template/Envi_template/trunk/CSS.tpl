@@ -23,7 +23,7 @@
 			# 9. TABLE TH
 			# 10. TABLE TD
 			# 11. DIV
-			# 12. TEXTAREA,SELECT,INPUT
+			# 12. TEXTAREA,SELECT,INPUT,PRE
 			# 13. IMAGE
 			# 16. SORTING IN TABLE
 			# 19. FILE MENU
@@ -1158,7 +1158,7 @@ div.envi_info {
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 390px;
+	top: 417px;
 	position: relative
 }
 .demo_changer .form_holder {
@@ -1168,14 +1168,38 @@ div.envi_info {
 	width: 170px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
+	color: #AAA;
 }
 .demo_changer .form_holder p {
-	color: #AAA;
 	padding: 0 10px;
 }
 div.styleswitcher {
 	position: static;
 	color:#212121
+}
+.rotatelogo div.logo svg.OSCam_logo {
+	height:45px !important;
+	width:45px !important;
+	
+	/* ROTATE IMAGE */
+	-webkit-transform: rotate(350deg);
+	-moz-transform: rotate(350deg);
+}
+.form_holder #reset {
+	font-weight: 700;
+	font-size: 1em;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	transition: all 0.25s ease 0s;
+	border-radius: 3px;
+	color: #FFF;
+	background: #7E7E7E;
+	border: medium none;
+	padding: 1px 6px;
+	cursor:pointer;
+	border: 1px solid #333;
+}
+.form_holder #reset:hover {
+	background: #B40705;
 }
 div.envi_info {
 	position: static
@@ -1190,53 +1214,39 @@ div.envi_info {
     border-bottom: 1px solid #DDD;
     text-align: left;
 }
-ul.backchange {
+ul.backchange,
+ul.patchange,
+ul.colchange {
     width:auto;
-    height:40px;
     line-height:40px;
     padding: 0 10px;
 }
-ul.backchange li {
-    list-style:none;
-    cursor: pointer;
-   	margin: 0px 4px;
-	padding: 1px 7px;
-    display:inline-block;
-    border: 3px solid #E1E1E1;
-    display:inline;
-    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+ul.backchange,
+ul.colchange {
+    height:40px;
 }
 ul.patchange {
-    width:auto;
     height: 55px;
-    line-height:40px;
-    padding: 0 10px;
 }
-ul.patchange li {
+ul.backchange li,
+ul.patchange li,
+ul.colchange li  {
     list-style:none;
     cursor: pointer;
+    border: 3px solid #E1E1E1;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+}
+ul.backchange li,
+ul.colchange li {
+   	margin: 0px 4px;
+	padding: 1px 7px;
+    display:inline;
+}
+ul.patchange li {
     margin: 4px;
 	padding: 7px;
     display:block;
-    border: 3px solid #E1E1E1;
     float: left;
-    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
-}
-ul.colchange {
-    width:auto;
-    height:40px;
-    line-height:40px;
-    padding: 0 10px;
-}
-ul.colchange li {
-    list-style:none;
-    cursor: pointer;
-    margin: 0px 4px;
-	padding: 1px 7px;
-    display:inline-block;
-    border: 3px solid #E1E1E1;
-    display:inline;
-    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
 ul.backchange li:hover,
 ul.patchange li:hover,
@@ -1326,15 +1336,6 @@ ul.colchange li.active {
 	.colchange_5 {
 	    color: #000 !important;
 	}
-	.rotatelogo div.logo svg.OSCam_logo {
-		height:45px !important;
-		width:45px !important;
-		
-		/* ROTATE IMAGE */
-		 -webkit-transform: rotate(350deg);
-		-moz-transform: rotate(350deg);
-
-}
 
 /* ==================================================================  ENVI TEMPLATE */
 /* **************** 2. BASIC DIVISION PAGES */
@@ -1637,12 +1638,16 @@ body.envi {
 }
 .envi div.styleswitcher a:hover,
 .envi div.envi_info a:hover {
-	color:#FF6D00
+	color:#F00423
 }
 
-/* **************** 12. TEXTAREA,SELECT,INPUT */
+/* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
 .envi #otherdropdown option {
     margin:5px
+}
+/* for extract in script.html */ 
+div.extract pre {
+	background-color: #FAFAFA;
 }
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
@@ -1772,6 +1777,10 @@ body.envi {
 @media screen and (max-width: 360px) and (max-aspect-ratio: 13/9) {
 
 /* **************** 1. BASIC DIVISION PAGES */
+	body {
+		position:relative;
+		overflow-x:hidden;
+	}
 	#content {
 		padding: 0px 0px 280px;
 	}
