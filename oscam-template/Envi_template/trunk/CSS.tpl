@@ -1177,6 +1177,9 @@ div.styleswitcher {
 	position: static;
 	color:#212121
 }
+div.styleswitcher a.active {
+	color: #FF9E5F
+}
 .rotatelogo div.logo svg.OSCam_logo {
 	height:45px !important;
 	width:45px !important;
@@ -1638,6 +1641,9 @@ body.envi {
 }
 .envi div.styleswitcher a:hover,
 .envi div.envi_info a:hover {
+	color:#F00423
+}
+.envi div.styleswitcher a.active {
 	color:#F00423
 }
 

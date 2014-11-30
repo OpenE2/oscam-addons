@@ -160,9 +160,11 @@
 	$(document).ready(function () {
 		/* Cookie - Change template */
 		if ($.cookie('TemplateSwitch') == 'envi') {
-			$('body').addClass('envi');    
+			$('body').addClass('envi');
+			$('.addClass a[href$="envi"]').addClass("active");
 		} else {
 			$('body').removeClass();
+			$('.addClass a[href=""]').addClass("active");
 		}
 
 		/* Cookie - Show/hide StyleSwitcher */
@@ -204,13 +206,15 @@
 					expires: 365,
 					path: '/'
 				});
+			$('ul.addClass a.active').removeClass('active');
+        	$(this).addClass('active');
 			return false;
 		}).filter(function () {
 			return $(this).attr('class') === TemplateSwitch
 		}).click()
 	});
 
-	/* Show/hide StyleSwitcher - It is OK*/
+	/* Show/hide StyleSwitcher - It is OK */
 	function setMyCookie() {
 		myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
 		$.cookie('myCookieName', myCookieVal, {
@@ -271,7 +275,7 @@
 		setColCookie();
 	});
 
-	/* Function for change color - It is OK*/
+	/* Function for change color - It is OK */
 	jQuery(function ($) {
 		/* Change background color */
 		var backcolor = $.cookie('backcolor');
