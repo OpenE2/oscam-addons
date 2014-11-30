@@ -36,6 +36,7 @@ cd $OscamTplFolder
 [ -f CSS.tpl ] && rm -f CSS.tpl
 [ -f FOOTER.tpl ] && rm -f FOOTER.tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
+[ -f info.txt ] && rm -f info.txt
 
 #  Decompression, remove a compressed file and exit
 unzip Envi_Template.zip
