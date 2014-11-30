@@ -22,7 +22,7 @@ MachineHardwareName=$(uname -m)
 	if [ "$MachineHardwareName" = "mips" ]; then
 	# Mips - Vu+ Solo, .... (write other type)
 	# oscam.conf is still in folder /etc
-		ConfigPath=$(find /etc -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')	
+		ConfigPath=$(find /etc -name oscam.conf -type f |sed 's#\(.*\)/.*#\1#')
 	
 	elif [ "$MachineHardwareName" = "i686" ]; then
 	# i686 - .... (write other type)
@@ -79,7 +79,7 @@ echo "START SCRIPT TO DOWNLOAD THE FILE"
 echo "---------------------------------"
 echo ""
 echo "Machine hardware name: "$MachineHardwareName
-echo "Config Path: "$ConfigPath
+echo "Config path: "$ConfigPath
 echo "Oscam template folder: "$OscamTplFolder
 
 tmpfile=$(echo "$OscamTplFolder" |sed 's/.$//')
@@ -96,13 +96,30 @@ fi
 [ -f CSS.tpl ] && rm -f CSS.tpl
 [ -f FOOTER.tpl ] && rm -f FOOTER.tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
+[ -f info.txt ] && rm -f info.txt
 
 # Print to display
 echo ""
+echo "Old files have been deleted"
+echo ""
 echo "Decompressed files:"
 
-#  Decompression, remove a compressed file and exit
+#  Decompression
 unzip Envi_Template.zip
+
+# Print to display info about Envi
+InfoRevision=$(grep -r Revision $OscamTplFolder/info.txt | cut -d':' -f2 | xargs)
+InfoAuthors=$(grep -r Authors $OscamTplFolder/info.txt | cut -d':' -f2 | xargs)
+InfoDate=$(grep -r Date $OscamTplFolder/info.txt | cut -d':' -f2 | xargs)
+
+echo ""
+echo "INFO ABOUT ENVI"
+echo "---------------"
+echo "Envi Revision: $InfoRevision"
+echo "Authors: $InfoAuthors"
+echo "Last Changed Date: $InfoDate"
+
+#  Remove a compressed file and exit
 rm -if Envi_Template.zip || exit 1
 #done all OK
 exit 0
