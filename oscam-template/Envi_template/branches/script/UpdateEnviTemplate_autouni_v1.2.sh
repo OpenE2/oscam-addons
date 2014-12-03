@@ -3,7 +3,7 @@
 # Automatic script for find folder and downloaded file
 #
 # This script will be it tested on:
-#	Vu+ Solo, i686 (Xubuntu), x86_64, .....
+#       Vu+ Solo, i686 (Xubuntu), x86_64, raspberry pi, .....
 #
 # NOTES: Dont use \n for new line. \n dont works on enigma 2
 
@@ -27,29 +27,43 @@ die() {
 # Detecting operating system and CPU type
 MachineHardwareName=$(uname -m)
 
+# Print to display
+echo ""
+echo "Preparation before downloading the file"
+echo "---------------------------------------"
+
 # Find PATH with config files
-	# Find file oscam.version which contains path with config files
-	FindPath=$(find / -name "oscam.version" -print | xargs |sed -r 's/.{14}$//' )
-	
-		# Validate FindPath
-		[ ! -d "$FindPath" ] && die "Directory FindPath \"$FindPath\" not found!"
-	
-	# Find path with config files
-	ConfigPath=$(grep -r ConfigDir $FindPath/oscam.version | cut -d':' -f2 | xargs)
-	ConfigPath=$(echo "$ConfigPath" |sed 's/.$//')
+        # Find file oscam.version which contains path with config files
+        FindPath=$(find / -name "oscam.version" -print | xargs |sed -r 's/.{14}$//' )
 
-		# Validate ConfigPath
-		[ ! -d "$ConfigPath" ] && die "Directory ConfigPath \"$ConfigPath\" not found!"
+                # Validate FindPath
+                [ ! -d "$FindPath" ] && die "Directory FindPath \"$FindPath\" not found!"
 
-	# Print to display
-	echo "Found path with oscam.version: "$FindPath
-	echo "Found folder with oscam.conf: "$ConfigPath
+        # Find path with config files
+        ConfigPath=$(grep -r ConfigDir $FindPath/oscam.version | cut -d':' -f2 | xargs)
+        ConfigPath=$(echo "$ConfigPath" |sed 's/.$//')
 
-# Find setting for oscam httptpl folder in file oscam.conf 
+                # Validate ConfigPath
+                [ ! -d "$ConfigPath" ] && die "Directory ConfigPath \"$ConfigPath\" not found!"
+
+        # Print to display
+        echo "Found path with oscam.version: "$FindPath
+        echo "Found folder with oscam.conf: "$ConfigPath
+
+# Find setting for oscam httptpl folder in file oscam.conf
 OscamTplFolder=$(grep -r httptpl $ConfigPath/oscam.conf | cut -d= -f2 | xargs)
 
-	# Validate OscamTplFolder
-	[ ! -d "$OscamTplFolder" ] && die "Directory OscamTplFolder \"$OscamTplFolder\" not found!"
+        # Validate OscamTplFolder
+        [ ! -d "$OscamTplFolder" ] && die "Directory OscamTplFolder \"$OscamTplFolder\" not found!"
+
+        # Correction if last character of OscamTplFolder is blank
+        stringvar=$(echo $OscamTplFolder | tail -c 2)
+        if [ $stringvar = "/" ]; then
+                echo "Oscam template folder is in the right format"
+        else
+                OscamTplFolder="$OscamTplFolder/"
+                echo "Path of oscam template folder was corrected to the right format: "$OscamTplFolder
+        fi
 
 # Go to TPL folder
 cd $OscamTplFolder
@@ -59,12 +73,12 @@ cd $OscamTplFolder
 
 # Download new files
 url(){
-	if [ ! -z "$1" ]; then
-		wget -q --no-check-certificate "$1"
-		[ "$?" -eq 0 ] && echo "Check Url: $1 exists..." || echo "Check Url: $1 doesn't exists.."
-	else
-		echo "No Arguments..exiting" & exit
-	fi
+        if [ ! -z "$1" ]; then
+                wget -q --no-check-certificate "$1"
+                [ "$?" -eq 0 ] && echo "Check Url: $1 exists..." || echo "Check Url: $1 doesn't exists.."
+        else
+                echo "No Arguments..exiting" & exit 1
+        fi
 }
 
 url "$TrunkUrl/$TrunkFile"
@@ -82,10 +96,10 @@ tmpfile=$(echo "$OscamTplFolder" |sed 's/.$//')
 file="$tmpfile/Envi_Template.zip"
 if [ -f "$file" ]
 then
-	echo "Downloaded file: $file was successfully downloaded"
+        echo "Downloaded file: $file was successfully downloaded"
 else
-	echo "Downloaded file: $file was not downloaded!!!"
-	exit 0
+        echo "Downloaded file: $file was not downloaded!!!"
+        exit 1
 fi
 
 # Remove the previous files
