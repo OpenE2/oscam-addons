@@ -3,7 +3,7 @@
 # Automatic script for find folder and downloaded file
 #
 # This script will be it tested on:
-#       Vu+ Solo, i686 (Xubuntu), x86_64, raspberry pi, .....
+#       Vu+ Solo (mips), i686 (Xubuntu), x86_64, raspberry pi (armv6l), .....
 #
 # NOTES: Dont use \n for new line. \n dont works on enigma 2
 
