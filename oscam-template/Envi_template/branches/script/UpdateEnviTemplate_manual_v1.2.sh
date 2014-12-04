@@ -32,16 +32,10 @@ die() {
 # Detecting operating system and CPU type
 MachineHardwareName=$(uname -m)
 
-# Print to display
-echo ""
-echo "Preparation before downloading the file"
-echo "---------------------------------------"
-
 # Validate ConfigPath
 [ ! -d "$ConfigPath" ] && die "Directory ConfigPath \"$ConfigPath\" not found!"
 # Validate TempFolder
 [ ! -d "$TempFolder" ] && die "Directory TempFolder \"$TempFolder\" not found!"
-
 
 # Find setting for oscam httptpl folder in file oscam.conf 
 OscamTplFolder=$(grep -r httptpl $ConfigPath/oscam.conf | cut -d= -f2 | xargs)
