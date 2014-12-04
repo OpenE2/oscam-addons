@@ -11,11 +11,11 @@
 # Set manually PATH to config files without trailing "/"
 ConfigPath="/etc/tuxbox/config"
 
-# Set manually downloaded file
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/"
+# Set manually downloaded file without trailing "/"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files"
 TrunkFile='Envi_Template.zip'
 
-# Set TEMP folder
+# Set TEMP folder without trailing "/"
 TempFolder="/tmp"
 
 # END USER SETUP ###########################################

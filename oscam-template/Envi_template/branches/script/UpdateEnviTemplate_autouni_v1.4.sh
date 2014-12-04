@@ -10,9 +10,9 @@
 #			- Set manually only way to download the file in USER SETUP
 
 # USER SETUP ###############################################
-# Set manually downloaded file
+# Set manually downloaded file without trailing "/"
 
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files/"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files"
 TrunkFile='Envi_Template.zip'
 
 # END USER SETUP ###########################################
