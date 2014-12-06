@@ -3,5 +3,18 @@
 #
 # CT 1
 IC_0000_1F43.tpl
+
 # CT 2
 IC_0000_1F44.tpl
+
+# Nova
+IC_0000_3352.tpl
+
+# Nova Cinema
+IC_0000_36F9.tpl
+
+# Prima
+IC_0000_1F42.tpl
+
+# Prima Cool
+IC_0000_3351.tpl
