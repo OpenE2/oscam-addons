@@ -1133,11 +1133,8 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	right: -175px;
+	right: 0;
 	bottom: 10px;
-}
-.demo_changer.active {
-    right: 0px;
 }
 .line {
 	border-bottom: 1px solid #E0E0E0;
@@ -1158,8 +1155,12 @@ div.envi_info {
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 417px;
-	position: relative
+	top: 429px;
+	position: relative;
+	display: block;
+}
+.demo_changer.active .demo_icon {
+	top: -20px;
 }
 .demo_changer .form_holder {
 	background: #fff;
@@ -1169,6 +1170,9 @@ div.envi_info {
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
 	color: #AAA;
+}
+.demo_changer.active .form_holder {
+	display: none
 }
 .demo_changer .form_holder p {
 	padding: 0 10px;
