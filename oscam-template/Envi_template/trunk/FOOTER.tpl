@@ -130,7 +130,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1220</P>
+							<P><B>Envi revision:</B> 1221</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -230,25 +230,36 @@
 		$('#' + $.cookie("ColCookieName")).addClass('active');
 
 		/* Cookie - for Body Font Family */
-		$("#enviBodyFontFamily").html(
-				'body { font-family: '+ $.cookie("BodyFontFamily") +'}'
-			)
-
-		$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+			//Check if cookie exists
+			if (typeof $.cookie('BodyFontFamily') === 'undefined'){
+				//no cookie
+			} else {
+				//have cookie
+				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+			}
 
 		/* Cookie - for Menu Font Family */
-		$("#enviFontFamily").html(
-				'.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}'
-			)
-
-		$("#menufontfamily").val($.cookie("FontFamily"));
+			//Check if cookie exists
+			if (typeof $.cookie('FontFamily') === 'undefined'){
+				//no cookie
+			} else {
+				//have cookie
+				$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}')
+				$("#menufontfamily").val($.cookie("FontFamily"));
+			}
 
 		/* Cookie - for Menu Font Size */
-		$("#enviFontSize").html(
-				'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
-				'.envi #mainmenu { margin-top: 11px;}'
-			)
-		$("#menufontsize").val($.cookie("FontSize") +'px');
+		//Check if cookie exists
+			if (typeof $.cookie('FontSize') === 'undefined'){
+				//no cookie
+			} else {
+				//have cookie
+				$("#enviFontSize").html(
+					'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
+					'.envi #mainmenu { margin-top: 11px;}')
+				$("#menufontsize").val($.cookie("FontSize") +'px');
+			}
 	});
 
 	/* Change template */
@@ -262,7 +273,7 @@
 					path: '/'
 				});
 			$('ul.addClass a.active').removeClass('active');
-        	$(this).addClass('active');
+			$(this).addClass('active');
 			return false;
 		}).filter(function () {
 			return $(this).attr('class') === TemplateSwitch
@@ -393,7 +404,7 @@
 	$("head").append("<style type='text/css' id='enviFontSize'></style>");
 
 	$(function() {
-	  	$('#bodyfontfamily').change(function() {
+		$('#bodyfontfamily').change(function() {
 			font_weight = false;
 			font_picked = $(this).val();
 			var split_font_name = font_picked.split(":");
@@ -431,7 +442,7 @@
 	});
 
 	$(function() {
-	  	$('#menufontsize').change(function() {
+		$('#menufontsize').change(function() {
 			fontsize_picked = $(this).val();
 			var split_fontsize_int = fontsize_picked.split("px");
 			if(split_fontsize_int.length > 0){
@@ -452,7 +463,7 @@
 	/* Reset button */
 	$(function() {
 		$("#reset").click(function () {
-		    if($("body").hasClass("envi")) {
+			if($("body").hasClass("envi")) {
 				$('body').removeClass().addClass('envi');
 				$.cookie('backcolor', null);
 				$.cookie('patcolor', null);
@@ -493,21 +504,21 @@
 
 	/* -------------- SCROLL TO TOP -------------- */
 	$(function() {
-	    $('a.link-top').click(function () {
-	            jQuery('body').animate({
-	                scrollTop: 0
-	            }, {
-	                queue: false,
-	                duration: 1200
-	            });
-	        jQuery('html').animate({
-	            scrollTop: 0
-	        }, {
-	            queue: false,
-	            duration: 1200
-	        });
-	        return false
-	    });
+		$('a.link-top').click(function () {
+			jQuery('body').animate({
+				scrollTop: 0
+			}, {
+				queue: false,
+				duration: 1200
+			});
+			jQuery('html').animate({
+				scrollTop: 0
+			}, {
+				queue: false,
+				duration: 1200
+			});
+			return false
+		});
 	});
 
 	/* -------------- TOOLTIP -------------- */

@@ -1203,16 +1203,16 @@ div.envi_info {
 	display: none
 }
 .form_holder select {
-    border: 1px solid #CCC;
-    border-radius: 2px;
-    font: 13px Arial,sans-serif;
-    color: #777;
-    width: 80px;
-    background: #FFF;
-    padding: 0;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	font: 13px Arial,sans-serif;
+	color: #777;
+	width: 80px;
+	background: #FFF;
+	padding: 0;
 }
 .form_holder td {
-    background: #FFF;
+	background: #FFF;
 }
 div.styleswitcher {
 	position: static;
@@ -1249,135 +1249,135 @@ div.envi_info {
 	position: static
 }
 .section-label {
-    font-weight: bold;
-    padding: 5px 10px;
-    margin: 0px 0px 5px;
-    background: none repeat scroll 0% 0% #EEE;
-    color: #333;
-    text-shadow: 1px 1px 0px #FFF;
-    border-bottom: 1px solid #DDD;
-    text-align: left;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin: 0px 0px 5px;
+	background: none repeat scroll 0% 0% #EEE;
+	color: #333;
+	text-shadow: 1px 1px 0px #FFF;
+	border-bottom: 1px solid #DDD;
+	text-align: left;
 }
 ul.backchange,
 ul.patchange,
 ul.colchange {
-    width:auto;
-    line-height:30px;
-    padding: 0 10px;
+	width:auto;
+	line-height:30px;
+	padding: 0 10px;
 }
 ul.backchange,
 ul.colchange {
-    height:30px;
+	height:30px;
 }
 ul.patchange {
-    height: 55px;
+	height: 55px;
 }
 ul.backchange li,
 ul.patchange li,
 ul.colchange li  {
-    list-style:none;
-    cursor: pointer;
-    border: 3px solid #E1E1E1;
+	list-style:none;
+	cursor: pointer;
+	border: 3px solid #E1E1E1;
 }
 ul.backchange li,
 ul.colchange li {
-   	margin: 0px 4px;
+	margin: 0px 4px;
 	padding: 1px 7px;
-    display:inline;
+	display:inline;
 }
 ul.patchange li {
-    margin: 4px 5px;
+	margin: 4px 5px;
 	padding: 7px;
-    display:block;
-    float: left;
+	display:block;
+	float: left;
 }
 ul.backchange li:hover,
 ul.patchange li:hover,
 ul.colchange li:hover {
-    border: 3px solid #F02;
+	border: 3px solid #F02;
 }
 ul.backchange li.active,
 ul.patchange li.active,
 ul.colchange li.active {
-    border: 3px solid #F02;
+	border: 3px solid #F02;
 }
 
 	/* Advanced color settings template */
 	.background_1 {
-	    background: #FFF !important;
+		background: #FFF !important;
 	}
 	.background_2 {
-	    background: #f2f2f2 !important;
+		background: #f2f2f2 !important;
 	}
 	.background_3 {
-	    background: #a6a6a6 !important;
+		background: #a6a6a6 !important;
 	}
 	.background_4 {
-	    background: #333 !important;
+		background: #333 !important;
 	}
 	.background_5 {
-	    background: #1a1a1a !important;
+		background: #1a1a1a !important;
 	}
 	.patchange_1 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important;
 	}
 	.patchange_2 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important;
 	}
 	.patchange_3 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important;
 	}
 	.patchange_4 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important;
 	}
 	.patchange_5 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important;
 	}
 	.patchange_6 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important;
 	}
 	.patchange_7 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important;
 	}
 	.patchange_8 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important;
 	}
 	.patchange_9 {
-	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important;
 	}
 	.patchange_10 {
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important;
-	    
+
 	}
 	li.colchange_1 {
-	    background: #FFF !important;
+		background: #FFF !important;
 	}
 	.colchange_1 {
-	    color: #FFF !important;
+		color: #FFF !important;
 	}
 	li.colchange_2 {
-	    background: #a5a5a5 !important;
+		background: #a5a5a5 !important;
 	}
 	.colchange_2 {
-	    color: #a5a5a5 !important;
+		color: #a5a5a5 !important;
 	}
 	li.colchange_3 {
-	    background: #7f7f7f !important;
+		background: #7f7f7f !important;
 	}
 	.colchange_3 {
-	    color: #7f7f7f !important;
+		color: #7f7f7f !important;
 	}
 	li.colchange_4 {
-	    background: #222 !important;
+		background: #222 !important;
 	}
 	.colchange_4 {
-	    color: #222 !important;
+		color: #222 !important;
 	}
 	li.colchange_5 {
-	    background: #000 !important;
+		background: #000 !important;
 	}
 	.colchange_5 {
-	    color: #000 !important;
+		color: #000 !important;
 	}
 
 /* ==================================================================  ENVI TEMPLATE */
@@ -1560,12 +1560,12 @@ body.envi {
 }
 /* cacheex.html */ 
 .envi table.cacheex {
-    border-spacing: 0px;
-    border-bottom: 1px solid #222
+	border-spacing: 0px;
+	border-bottom: 1px solid #222
 }
 .envi table.stats {
-    border-spacing: 0px;
-    border-bottom: 1px solid #222
+	border-spacing: 0px;
+	border-bottom: 1px solid #222
 }
 
 /* **************** 8. TABLE TR */
@@ -1609,8 +1609,8 @@ body.envi {
 .envi table.failban th,
 .envi #servicesedit th,
 .envi #addnewservice th {
-    background-color: #222;
-    color: #FFF
+	background-color: #222;
+	color: #FFF
 }
 
 /* **************** 10. TABLE TD */
@@ -1626,29 +1626,29 @@ body.envi {
 .envi table.config td:first-child,
 .envi table.configreader td:first-child,
 .envi table.configuser td:first-child {
-    background-color: #CCC
+	background-color: #CCC
 }
 .envi table.config tr:nth-last-child(-n+2) td:first-child,
 .envi table.configreader tr:nth-last-child(-n+2) td:first-child,
 .envi table.configuser tr:nth-last-child(-n+2) td:first-child {
-    background-color: #EEE
+	background-color: #EEE
 }
 .envi table.subservicetable td:first-child {
-    background-color: #EEE
+	background-color: #EEE
 }
 /* Border bottom for whole TR in .config, configreader, .configuser */
 .envi table.config td,
 .envi table.configreader td,
 .envi table.configuser td {
-    border-bottom: 1px dotted #999
+	border-bottom: 1px dotted #999
 }
 .envi table.subservicetable td {
-    border-bottom:none
+	border-bottom:none
 }
 .envi table.config tr:nth-last-child(-n+3) td,
 .envi table.configreader tr:nth-last-child(-n+3) td,
 .envi table.configuser tr:nth-last-child(-n+3) td {
-    border-bottom: none
+	border-bottom: none
 }
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
@@ -1696,7 +1696,7 @@ body.envi {
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
 .envi #otherdropdown option {
-    margin:5px
+	margin:5px
 }
 /* for extract in script.html */ 
 div.extract pre {
@@ -1705,7 +1705,7 @@ div.extract pre {
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
-    max-height: 28px
+	max-height: 28px
 }
 .envi div.logo svg.OSCam_logo {
 	fill:#ffffff;
@@ -1800,7 +1800,7 @@ div.extract pre {
 }
 /* Tooltip color */
 .envi .boot_tooltip-inner {
-	color: #fff;	
+	color: #fff;
 	background-color: #333
 }
 .envi .boot_tooltip.top .boot_tooltip-arrow {
