@@ -131,7 +131,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1223</P>
+							<P><B>Envi revision:</B> 1224</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -238,8 +238,14 @@
 				//no cookie
 			} else {
 				//have cookie
-				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
-				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+				// For original WebIf remove style
+				if ($.cookie('TemplateSwitch') === 'envi'){
+					$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+					$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+				} else {
+					$("#enviBodyFontFamily").html('')
+				}
+				
 			}
 
 		/* Cookie - for Menu Font Family */
@@ -280,11 +286,18 @@
 
 			// Hide StyleSwitcher settings for original WebIF
 			if ($.cookie('TemplateSwitch') == 'envi') {
+				// Show StyleSwitcher for Envi
 				$('#switchersettings').css('display', 'initial');
 				$('#demo_icon').css('top', '440px');
+				// For Envi add style
+				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
 			} else {
+				// Hide StyleSwitcher settings
 				$('#switchersettings').css('display', 'none');
 				$('#demo_icon').css('top', '45px');
+				// For original WebIf remove style 
+				$("#enviBodyFontFamily").html('')
 			}
 
 			// (Re-)enable or Disable tooltips 
