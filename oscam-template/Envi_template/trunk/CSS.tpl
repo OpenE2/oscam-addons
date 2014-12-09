@@ -1060,7 +1060,34 @@ div.footer ul.addClass li {
 	padding: 9px 5px;
 }
 
-/* Popup info about Envi Template*/
+/* Go to top link */
+a.link-top {
+	padding: 3px 0 0 17px;
+	font-size: 12px;
+	margin: -10px 2px 15px 0;
+}
+a.link-top:before {
+	content: "\25b2";
+	font-weight: normal;
+	position: absolute;
+	left: 1px;
+}
+.top-footer a.link-top {
+	color: #050840;;
+	font-weight: bold;
+	text-decoration: none;
+	margin-top: -9px;
+}
+.top-footer {
+	position: absolute;
+	top: 70px;
+	right: 220px;
+}
+.top-footer a.link-top:hover {
+	color: #FF9E5F;
+}
+
+/* Popup info about Envi Template */
 div.envi_info {
 	position: absolute;
 	bottom: 5px;
@@ -1135,6 +1162,7 @@ div.envi_info {
 	position: absolute;
 	right: 0;
 	bottom: 10px;
+	font-family: Arial;
 }
 .line {
 	border-bottom: 1px solid #E0E0E0;
@@ -1155,7 +1183,7 @@ div.envi_info {
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 0px 2px 2px 0px;
 	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 429px;
+	top: 440px;
 	position: relative;
 	display: block;
 }
@@ -1163,10 +1191,10 @@ div.envi_info {
 	top: -20px;
 }
 .demo_changer .form_holder {
-	background: #fff;
+	background: #FFF;
 	float: left;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 170px;
+	width: 180px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
 	color: #AAA;
@@ -1174,8 +1202,17 @@ div.envi_info {
 .demo_changer.active .form_holder {
 	display: none
 }
-.demo_changer .form_holder p {
-	padding: 0 10px;
+.form_holder select {
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    font: 13px Arial,sans-serif;
+    color: #777;
+    width: 80px;
+    background: #FFF;
+    padding: 0;
+}
+.form_holder td {
+    background: #FFF;
 }
 div.styleswitcher {
 	position: static;
@@ -1225,12 +1262,12 @@ ul.backchange,
 ul.patchange,
 ul.colchange {
     width:auto;
-    line-height:40px;
+    line-height:30px;
     padding: 0 10px;
 }
 ul.backchange,
 ul.colchange {
-    height:40px;
+    height:30px;
 }
 ul.patchange {
     height: 55px;
@@ -1241,7 +1278,6 @@ ul.colchange li  {
     list-style:none;
     cursor: pointer;
     border: 3px solid #E1E1E1;
-    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
 ul.backchange li,
 ul.colchange li {
@@ -1250,7 +1286,7 @@ ul.colchange li {
     display:inline;
 }
 ul.patchange li {
-    margin: 4px;
+    margin: 4px 5px;
 	padding: 7px;
     display:block;
     float: left;
@@ -1649,6 +1685,13 @@ body.envi {
 }
 .envi div.styleswitcher a.active {
 	color:#F00423
+}
+/* Go to top link */
+.envi .top-footer a.link-top {
+	color: #FFF;
+}
+.envi .top-footer a.link-top:hover {
+	color: #F00423;
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
@@ -2113,6 +2156,7 @@ div.extract pre {
 	div.styleswitcher h3 {
 		font-size: 1.5em
 	}
+
 	/* Popup info about Envi Template*/
 	div.envi_info {
 		position: static
@@ -2128,6 +2172,13 @@ div.extract pre {
 	.modalDialog a {
 		font-weight: normal;
 		font-size:1em
+	}
+	/* Go to top link */
+	a.link-top:before {
+		position: relative;
+	}
+	.top-footer {
+		position: static;
 	}
 }
 

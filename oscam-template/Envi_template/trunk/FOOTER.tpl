@@ -28,6 +28,9 @@
 				<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
 				<LI><A NAME="statusfooter"></A></LI>
 			</UL>
+		<DIV CLASS="top-footer">
+			<A HREF="#" CLASS="link-top">Go to Top</A>
+		</DIV>
 		<DIV CLASS="demo_changer">
 			<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
 			<DIV CLASS="form_holder">
@@ -40,42 +43,85 @@
 				</DIV>
 				<DIV CLASS="section-label">Background color</DIV>
 				<UL CLASS="backchange">
-					<LI CLASS='background_1' TITLE="White"></LI>
-					<LI CLASS='background_2' TITLE="5% Black"></LI>
-					<LI CLASS='background_3' TITLE="35% Black"></LI>
-					<LI CLASS='background_4' TITLE="80% Black"></LI>
-					<LI CLASS='background_5' TITLE="90% Black"></LI>
+					<LI ID="back_1" CLASS='background_1' TITLE="White"></LI>
+					<LI ID="back_2" CLASS='background_2' TITLE="5% Black"></LI>
+					<LI ID="back_3" CLASS='background_3' TITLE="35% Black"></LI>
+					<LI ID="back_4" CLASS='background_4' TITLE="80% Black"></LI>
+					<LI ID="back_5" CLASS='background_5' TITLE="90% Black"></LI>
 				</UL>
 				<DIV CLASS="section-label">Patterns</DIV>
 				<UL CLASS="patchange">
-					<LI CLASS='patchange_1' TITLE="Diagonal line - transparent"></LI>
-					<LI CLASS='patchange_2' TITLE="Diamond - transparent"></LI>
-					<LI CLASS='patchange_3' TITLE="Dots - transparent"></LI>
-					<LI CLASS='patchange_4' TITLE="Squares 1 - transparent"></LI>
-					<LI CLASS='patchange_5' TITLE="Squares 2 - transparent"></LI>
-					<LI CLASS='patchange_6' TITLE=""></LI>
-					<LI CLASS='patchange_7' TITLE=""></LI>
-					<LI CLASS='patchange_8' TITLE=""></LI>
-					<LI CLASS='patchange_9' TITLE=""></LI>
-					<LI CLASS='patchange_10' TITLE=""></LI>
+					<LI ID="pat_1" CLASS='patchange_1' TITLE="Diagonal line - transparent"></LI>
+					<LI ID="pat_2" CLASS='patchange_2' TITLE="Diamond - transparent"></LI>
+					<LI ID="pat_3" CLASS='patchange_3' TITLE="Dots - transparent"></LI>
+					<LI ID="pat_4" CLASS='patchange_4' TITLE="Squares 1 - transparent"></LI>
+					<LI ID="pat_5" CLASS='patchange_5' TITLE="Squares 2 - transparent"></LI>
+					<LI ID="pat_6" CLASS='patchange_6' TITLE=""></LI>
+					<LI ID="pat_7" CLASS='patchange_7' TITLE=""></LI>
+					<LI ID="pat_8" CLASS='patchange_8' TITLE=""></LI>
+					<LI ID="pat_9" CLASS='patchange_9' TITLE=""></LI>
+					<LI ID="pat_10" CLASS='patchange_10' TITLE=""></LI>
 				</UL>
 				<DIV CLASS="section-label">Text and links color</DIV>
 				<UL CLASS="colchange">
-					<LI CLASS='colchange_1' TITLE="White"></LI>
-					<LI CLASS='colchange_2' TITLE=""></LI>
-					<LI CLASS='colchange_3' TITLE=""></LI>
-					<LI CLASS='colchange_4' TITLE=""></LI>
-					<LI CLASS='colchange_5' TITLE="Black"></LI>
+					<LI ID="col_1" CLASS='colchange_1' TITLE="White"></LI>
+					<LI ID="col_2" CLASS='colchange_2' TITLE=""></LI>
+					<LI ID="col_3" CLASS='colchange_3' TITLE=""></LI>
+					<LI ID="col_4" CLASS='colchange_4' TITLE=""></LI>
+					<LI ID="col_5" CLASS='colchange_5' TITLE="Black"></LI>
 				</UL>
-				<DIV CLASS="line"></DIV>
-				<DIV>
+				<DIV CLASS="section-label">Other settings</DIV>
+				<TABLE>
+					<TR>
+						<TD>Menu font:</TD>
+						<TD>
+							<select id="menufontfamily">
+								<option value="Arial">Default</option>
+								<option value="Courier New">Courier New</option>
+								<option value="Droid Sans">Droid Sans</option>
+								<option value="Garamond">Garamond</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Lucida Sans Unicode">Lucida</option>
+								<option value="Palatino Linotype">Palatino</option>
+								<option value="Tahoma">Tahoma</option>
+								<option value="Trebuchet MS">Trebuchet</option>
+								<option value="Verdana">Verdana</option>
+								
+							</select>
+						</TD>
+					</TR>
+					<TR>
+						<TD>Menu font size:</TD>
+						<TD>
+							<select id="menufontsize">
+								<option value="12px">Default</option>
+								<option value="13px">13px</option>
+								<option value="14px">14px</option>
+							</select>
+						</TD>
+					</TR>
+					<TR>
+						<TD>Body font:</TD>
+						<TD>
+							<select id="bodyfontfamily">
+								<option value="Arial">Default</option>
+								<option value="Droid Sans">Droid Sans</option>
+								<option value="Garamond">Garamond</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Lucida Sans Unicode">Lucida</option>
+								<option value="Palatino Linotype">Palatino</option>
+								<option value="Tahoma">Tahoma</option>
+								<option value="Trebuchet MS">Trebuchet</option>
+							</select>
+						</TD>
+					</TR>
+				</TABLE>
+
 					<input id="rotatelogo" type="checkbox" class="rotatelogo" name="1">
 					<label for="rotatelogo">Rotate Oscam logo</label>
 					<BR><BR>
 					<input id="reset" value="Reset all value" type="reset">
-				</DIV>
-				<DIV CLASS="line"></DIV>
-				<P CLASS="info">Styleswitcher used cookie system. Predefined colors and patterns are available only for Envi not Original.</P>
+
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
 					<A HREF="#openModal">Show info about Envi Template</A>
@@ -84,7 +130,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1204</P>
+							<P><B>Envi revision:</B> 1220</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -113,7 +159,7 @@
 					</DIV>
 				</DIV>
 			</DIV>
-		</DIV>		
+		</DIV>
 	</DIV>
 </DIV> <!-- End wrapper -->
 
@@ -174,26 +220,35 @@
 			$('.demo_changer').removeClass('active');
 		}
 
-		/* Cookie - isActive/notActive background color */
-		if ($.cookie('BackCookieName') == 'isActive') {
-			$('.backchange li').addClass('active');    
-		} else {
-			$('.backchange li').removeClass('active');
-		}
+		/* Cookie - isActive/notActive Background color */
+		$('#' + $.cookie("BackCookieName")).addClass('active');
 
-		/* Cookie - isActive/notActive background pattern */
-		if ($.cookie('PatCookieName') == 'isActive') {
-			$('.patchange li').addClass('active');    
-		} else {
-			$('.patchange li').removeClass('active');
-		}
+		/* Cookie - isActive/notActive Background pattern */
+		$('#' + $.cookie("PatCookieName")).addClass('active');
 
-		/* Cookie - isActive/notActive text color */
-		if ($.cookie('ColCookieName') == 'isActive') {
-			$('.colchange li').addClass('active');
-		} else {
-			$('.colchange li').removeClass('active');
-		}
+		/* Cookie - isActive/notActive Text and Links color */
+		$('#' + $.cookie("ColCookieName")).addClass('active');
+
+		/* Cookie - for Body Font Family */
+		$("#enviBodyFontFamily").html(
+				'body { font-family: '+ $.cookie("BodyFontFamily") +'}'
+			)
+
+		$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+
+		/* Cookie - for Menu Font Family */
+		$("#enviFontFamily").html(
+				'.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}'
+			)
+
+		$("#menufontfamily").val($.cookie("FontFamily"));
+
+		/* Cookie - for Menu Font Size */
+		$("#enviFontSize").html(
+				'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
+				'.envi #mainmenu { margin-top: 11px;}'
+			)
+		$("#menufontsize").val($.cookie("FontSize") +'px');
 	});
 
 	/* Change template */
@@ -228,54 +283,35 @@
 		setMyCookie();
 	});
 
-	/* List LI active 
-		NOTE: Sometimes all they LI have class "active". But I dont know why :-(
-		Meybe, $('.patchange li').addClass('active'); means you're adding class active to all LI.
-		I need to keep reference of the clicked LI.
-	*/
-	function setBackCookie() {
-		BackCookieVal = $('.backchange li').hasClass('active') ? 'isActive' : 'notActive';
-		$.cookie('BackCookieName', BackCookieVal, {
-			expires: 365,
-			path: '/'
-		});   
-	}
-
+	/* List LI active */
 	$(".backchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
-		setBackCookie();
-	});
-
-	function setPatCookie() {
-		PatCookieVal = $('.patchange li').hasClass('active') ? 'isActive' : 'notActive';
-		$.cookie('PatCookieName', PatCookieVal, {
+		$.cookie('BackCookieName', $(this).attr('id'), {
 			expires: 365,
 			path: '/'
-		});    
-	}
+		});
+	});
 
 	$(".patchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
-		setPatCookie();
-	});
-
-	function setColCookie() {
-		ColCookieVal = $('.colchange li').hasClass('active') ? 'isActive' : 'notActive';
-		$.cookie('ColCookieName', ColCookieVal, {
+		$.cookie('PatCookieName', $(this).attr('id'), {
 			expires: 365,
 			path: '/'
-		});    
-	}
+		});
+	});
 
 	$(".colchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
-		setColCookie();
+		$.cookie('ColCookieName', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
 	});
 
-	/* Function for change color - It is OK */
+	/* Function for change color*/
 	jQuery(function ($) {
 		/* Change background color */
 		var backcolor = $.cookie('backcolor');
@@ -351,7 +387,69 @@
 	});
 	});
 
-	/* Reset button - It is OK */
+	/*  Font family and size  */
+	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
+	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
+	$("head").append("<style type='text/css' id='enviFontSize'></style>");
+
+	$(function() {
+	  	$('#bodyfontfamily').change(function() {
+			font_weight = false;
+			font_picked = $(this).val();
+			var split_font_name = font_picked.split(":");
+			if(split_font_name.length > 0){
+				font_picked = split_font_name[0];
+				font_weight = split_font_name[1];
+				$.cookie('BodyFontFamily', font_picked, {
+						expires: 365,
+						path: '/'
+					});
+			}
+			
+			$("#enviBodyFontFamily").html(
+					'body { font-family: '+ font_picked +';}'
+				)
+		});
+	});
+
+	$('#menufontfamily').change(function() {
+		font_weight = false;
+		font_picked = $(this).val();
+		var split_font_name = font_picked.split(":");
+		if(split_font_name.length > 0){
+			font_picked = split_font_name[0];
+			font_weight = split_font_name[1];
+			$.cookie('FontFamily', font_picked, {
+					expires: 365,
+					path: '/'
+				});
+		}
+		
+		$("#enviFontFamily").html(
+				'.envi #mainmenu li { font-family: '+ font_picked +';}'
+			)
+	});
+
+	$(function() {
+	  	$('#menufontsize').change(function() {
+			fontsize_picked = $(this).val();
+			var split_fontsize_int = fontsize_picked.split("px");
+			if(split_fontsize_int.length > 0){
+				fontsize_picked_int = split_fontsize_int[0];
+				$.cookie('FontSize', fontsize_picked_int, {
+					expires: 365,
+					path: '/'
+				});
+			}
+
+			$("#enviFontSize").html(
+				'.envi #mainmenu li { font-size: '+ fontsize_picked_int +'px;}' +
+				'.envi #mainmenu { margin-top: 11px;}'
+			)
+		});
+	});
+
+	/* Reset button */
 	$(function() {
 		$("#reset").click(function () {
 		    if($("body").hasClass("envi")) {
@@ -367,6 +465,12 @@
 				$('.patchange li').removeClass('active');
 				$.cookie('ColCookieName', null);
 				$('.colchange li').removeClass('active');
+				$.cookie('BodyFontFamily', 'Arial');
+				$("#bodyfontfamily")[0].selectedIndex = 0;
+				$.cookie('FontFamily', 'Arial');
+				$("#menufontfamily")[0].selectedIndex = 0;
+				$.cookie('FontSize', '12');
+				$("#menufontsize")[0].selectedIndex = 0;
 			} else {
 				$('body').removeClass();
 				$.cookie('backcolor', null);
@@ -386,6 +490,25 @@
 
 	/*! jquery.cookie v1.4.1 | MIT */
 	!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});
+
+	/* -------------- SCROLL TO TOP -------------- */
+	$(function() {
+	    $('a.link-top').click(function () {
+	            jQuery('body').animate({
+	                scrollTop: 0
+	            }, {
+	                queue: false,
+	                duration: 1200
+	            });
+	        jQuery('html').animate({
+	            scrollTop: 0
+	        }, {
+	            queue: false,
+	            duration: 1200
+	        });
+	        return false
+	    });
+	});
 
 	/* -------------- TOOLTIP -------------- */
 	!function ($) {
