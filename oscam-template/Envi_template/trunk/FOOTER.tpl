@@ -37,8 +37,8 @@
 				<DIV CLASS="styleswitcher">
 					<DIV CLASS="section-label">STYLE SWITCHER</DIV>
 					<UL CLASS="addClass">
-						<LI><A HREF="">Original WebIf</A></LI>
-						<LI><A HREF="envi">Envi Template</A></LI>
+						<LI><A HREF="#" VALUE="original">Original WebIf</A></LI>
+						<LI><A HREF="#" VALUE="envi">Envi Template</A></LI>
 					</UL>
 				</DIV>
 				<DIV CLASS="section-label">Background color</DIV>
@@ -117,7 +117,7 @@
 					</TR>
 				</TABLE>
 
-					<input id="rotatelogo" type="checkbox" class="rotatelogo" name="1">
+					<input id="rotatelogo" type="checkbox" class="rotatelogo" name="rotatelogo">
 					<label for="rotatelogo">Rotate Oscam logo</label>
 					<BR><BR>
 					<input id="reset" value="Reset all value" type="reset">
@@ -130,7 +130,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1221</P>
+							<P><B>Envi revision:</B> 1222</P>
 							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -207,10 +207,10 @@
 		/* Cookie - Change template */
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			$('body').addClass('envi');
-			$('.addClass a[href$="envi"]').addClass("active");
+			$('.addClass a[value$="envi"]').addClass("active");
 		} else {
 			$('body').removeClass();
-			$('.addClass a[href=""]').addClass("active");
+			$('.addClass a[value="original"]').addClass("active");
 		}
 
 		/* Cookie - Show/hide StyleSwitcher */
@@ -266,7 +266,7 @@
 	jQuery(function ($) {
 		var TemplateSwitch = $.cookie('TemplateSwitch');
 		$('.addClass a').on('click', function (e) {
-			TemplateSwitch = $(this).attr('href')
+			TemplateSwitch = $(this).attr('value')
 			$('body').removeClass().addClass(TemplateSwitch)
 			$.cookie('TemplateSwitch', TemplateSwitch, {
 					expires: 365,
@@ -274,13 +274,16 @@
 				});
 			$('ul.addClass a.active').removeClass('active');
 			$(this).addClass('active');
+			// (Re-)enable or Disable tooltips 
+			// NOTE: I dont know how disabled Bootstrap tooltip, solution is throught reload page.
+			location.reload();
 			return false;
 		}).filter(function () {
 			return $(this).attr('class') === TemplateSwitch
 		}).click()
 	});
 
-	/* Show/hide StyleSwitcher - It is OK */
+	/* Show/hide StyleSwitcher */
 	function setMyCookie() {
 		myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
 		$.cookie('myCookieName', myCookieVal, {
@@ -388,7 +391,7 @@
 				path: '/',
 				expires: 365
 			});
-			if ( $('input[name="1"]').is(':checked') ) {
+			if ( $('input[name="rotatelogo"]').is(':checked') ) {
 				$('body').addClass('rotatelogo');
 			}
 			else {
@@ -464,36 +467,31 @@
 	$(function() {
 		$("#reset").click(function () {
 			if($("body").hasClass("envi")) {
+				// Remove all cookie
+				var cookies = $.cookie();
+				for(var cookie in cookies) {
+					$.removeCookie(cookie);
+				}
+				// Set default 
 				$('body').removeClass().addClass('envi');
-				$.cookie('backcolor', null);
-				$.cookie('patcolor', null);
-				$.cookie('color', null);
 				$('#rotatelogo').prop('checked', false);
-				$.cookie('1', null);
-				$.cookie('BackCookieName', null);
 				$('.backchange li').removeClass('active');
-				$.cookie('PatCookieName', null);
 				$('.patchange li').removeClass('active');
-				$.cookie('ColCookieName', null);
 				$('.colchange li').removeClass('active');
-				$.cookie('BodyFontFamily', 'Arial');
 				$("#bodyfontfamily")[0].selectedIndex = 0;
-				$.cookie('FontFamily', 'Arial');
 				$("#menufontfamily")[0].selectedIndex = 0;
-				$.cookie('FontSize', '12');
 				$("#menufontsize")[0].selectedIndex = 0;
 			} else {
+				// Remove all cookie
+				var cookies = $.cookie();
+				for(var cookie in cookies) {
+					$.removeCookie(cookie);
+				}
+				// Set default 
 				$('body').removeClass();
-				$.cookie('backcolor', null);
-				$.cookie('patcolor', null);
-				$.cookie('color', null);
 				$('#rotatelogo').prop('checked', false);
-				$.cookie('1', null);
-				$.cookie('BackCookieName', null);
 				$('.backchange li').removeClass('active');
-				$.cookie('PatCookieName', null);
 				$('.patchange li').removeClass('active');
-				$.cookie('ColCookieName', null);
 				$('.colchange li').removeClass('active');
 			}
 		});
