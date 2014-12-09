@@ -131,8 +131,8 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1224</P>
-							<P><B>For oscam revision:</B> 10020 until to changes in html and css in revision Oscam</P>
+							<P><B>Envi revision:</B> 1225</P>
+							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
 									<TD>Wiki:</TD>
