@@ -128,8 +128,8 @@ InfoDate=$(grep -r Date $OscamTplFolder/info.txt | cut -d':' -f2 | xargs)
 echo ""
 echo "INFO ABOUT ENVI"
 echo "---------------"
-echo "Envi Revision: $InfoRevision"
-echo "Authors: $InfoAuthors"
+echo "Envi Revision:     $InfoRevision"
+echo "Authors:           $InfoAuthors"
 echo "Last Changed Date: $InfoDate"
 
 #  Remove a compressed file
