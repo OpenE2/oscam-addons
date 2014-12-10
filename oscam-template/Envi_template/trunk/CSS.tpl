@@ -1193,7 +1193,6 @@ div.envi_info {
 	width: 180px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
-	color: #AAA;
 	display: table-cell;
 }
 .demo_changer.active .form_holder {
@@ -1354,7 +1353,6 @@ ul.colchange li.active {
 	}
 	.patchange_10 {
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important;
-
 	}
 	li.colchange_1 {
 		background: #16b6c6 !important;
@@ -1660,19 +1658,14 @@ body.envi {
 .envi div.footer li {
 	color:#656565
 }
-.envi div.footer b {
-	color:#999
-}
 .envi div.footer li.styleauthor b {
 	color:#BD0000;
 	text-shadow:1px 1px 1px #000
 }
-.envi div.styleswitcher a,
-.envi div.envi_info a {
+.envi div.styleswitcher a {
 	color:#999
 }
-.envi div.styleswitcher a:hover,
-.envi div.envi_info a:hover {
+.envi div.styleswitcher a:hover {
 	color:#F00423
 }
 .envi div.styleswitcher a.active {
@@ -1842,6 +1835,13 @@ div.extract pre {
 .colchange_1 ul.colchange li:hover {
 	border-color: #16b6c6;
 }
+.colchange_1 #inc,
+.colchange_1 #dec {
+	background-color: #16b6c6;
+}
+.colchange_1 div.sidlistclose {
+	background-color: #16b6c6;
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
@@ -1876,6 +1876,13 @@ div.extract pre {
 .colchange_2 ul.patchange li:hover,
 .colchange_2 ul.colchange li:hover {
 	border-color: #ff9c00;
+}
+.colchange_2 #inc,
+.colchange_2 #dec {
+	background-color: #ff9c00;
+}
+.colchange_2 div.sidlistclose {
+	background-color: #ff9c00;
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
@@ -1912,6 +1919,13 @@ div.extract pre {
 .colchange_3 ul.colchange li:hover {
 	border-color: #ffe400;
 }
+.colchange_3 #inc,
+.colchange_3 #dec {
+	background-color: #ffe400;
+}
+.colchange_3 div.sidlistclose {
+	background-color: #ffe400;
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 4 */
 /* Settings for Template color style "colchange_4" */
@@ -1947,6 +1961,13 @@ div.extract pre {
 .colchange_4 ul.colchange li:hover {
 	border-color: #7cb600;
 }
+.colchange_4 #inc,
+.colchange_4 #dec {
+	background-color: #7cb600;
+}
+.colchange_4 div.sidlistclose {
+	background-color: #7cb600;
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 5 */
 /* Settings for Template color style "colchange_5" */
@@ -1981,6 +2002,13 @@ div.extract pre {
 .colchange_5 ul.patchange li:hover,
 .colchange_5 ul.colchange li:hover {
 	border-color: #C71C77;
+}
+.colchange_5 #inc,
+.colchange_5 #dec {
+	background-color: #C71C77;
+}
+.colchange_5 div.sidlistclose {
+	background-color: #C71C77;
 }
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
