@@ -32,7 +32,9 @@
 			<A HREF="#" CLASS="link-top">Go to Top</A>
 		</DIV>
 		<DIV CLASS="demo_changer">
-			<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
+			<DIV style="display: table-cell;">
+				<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
+			</DIV>
 			<DIV CLASS="form_holder">
 				<DIV CLASS="styleswitcher">
 					<DIV CLASS="section-label">STYLE SWITCHER</DIV>
@@ -131,7 +133,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1225</P>
+							<P><B>Envi revision:</B> 1226</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -213,7 +215,6 @@
 			$('body').removeClass();
 			$('.addClass a[value="original"]').addClass("active");
 			$('#switchersettings').css('display', 'none');
-			$('#demo_icon').css('top', '45px');
 		}
 
 		/* Cookie - Show/hide StyleSwitcher */
@@ -288,14 +289,12 @@
 			if ($.cookie('TemplateSwitch') == 'envi') {
 				// Show StyleSwitcher for Envi
 				$('#switchersettings').css('display', 'initial');
-				$('#demo_icon').css('top', '440px');
 				// For Envi add style
 				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
 				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
 			} else {
 				// Hide StyleSwitcher settings
 				$('#switchersettings').css('display', 'none');
-				$('#demo_icon').css('top', '45px');
 				// For original WebIf remove style 
 				$("#enviBodyFontFamily").html('')
 			}

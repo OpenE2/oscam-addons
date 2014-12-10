@@ -1162,6 +1162,7 @@ div.envi_info {
 	right: 0;
 	bottom: 10px;
 	font-family: Arial;
+	display: table;
 }
 .line {
 	border-bottom: 1px solid #E0E0E0;
@@ -1176,15 +1177,16 @@ div.envi_info {
 	background-position: center;
 	box-shadow: -2px -2px -2px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
-	float: left;
+
 	height: 40px;
 	width: 40px;
 	border-radius: 2px 0 0 2px;
-	-moz-border-radius: 0px 2px 2px 0px;
-	-webkit-border-radius: 0px 2px 2px 0px;
-	top: 440px;
-	position: relative;
-	display: block;
+	-moz-border-radius: 2px 0 0 2px;
+	-webkit-border-radius: 2px 0 0 2px;
+
+
+
+	bottom: 0;
 }
 .demo_changer.active .demo_icon {
 	top: -20px;
@@ -1197,6 +1199,7 @@ div.envi_info {
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
 	color: #AAA;
+	display: table-cell;
 }
 .demo_changer.active .form_holder {
 	display: none
