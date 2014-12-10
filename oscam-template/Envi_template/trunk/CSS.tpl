@@ -1079,8 +1079,8 @@ a.link-top:before {
 }
 .top-footer {
 	position: absolute;
-	top: 70px;
-	right: 220px;
+	bottom: 40px;
+	right: 20%;
 }
 .top-footer a.link-top:hover {
 	color: #FF9E5F;
@@ -1175,21 +1175,16 @@ div.envi_info {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADmYDp0AAAAGHRSTlMAB3Laye98qCGVEPeNgkfhvJxlXT4vshgFDlz8AAAAxklEQVQYGWXBB5LCMAAEwVWWc4b5/0tPhsInQ7e+2EYaon55omXSr5nCG91Z53nxPqo2AKk1C9DoxkIrmY6oOwutZDqsbnogGdMAvd5yaiRZ56HrwLtBbxsYnTyFNzo187NNsGl3oxzW4nQ6IASKCSbFXuoHvSxcRtV2wA1NgEm1NsFspBxgM7oEil1FT7Hog9OhIlI89DFaB1GS8ZDWQ/9WIObjAV2r2sZHeKqSA5dZlezCujp4jAtJtZwlC09pN/o2EnT3B9qZEIrL4gjtAAAAAElFTkSuQmCC);
 	background-repeat:no-repeat;
 	background-position: center;
-	box-shadow: -2px -2px -2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
+	-moz-box-shadow: 	-2px -2px 6px -2px rgba(0,0,0,0.3);
+	box-shadow: 		-2px -2px 6px -2px rgba(0,0,0,0.3);
 	cursor: pointer;
-
 	height: 40px;
 	width: 40px;
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 2px 0 0 2px;
 	-webkit-border-radius: 2px 0 0 2px;
-
-
-
 	bottom: 0;
-}
-.demo_changer.active .demo_icon {
-	top: -20px;
 }
 .demo_changer .form_holder {
 	background: #FFF;
@@ -1203,6 +1198,13 @@ div.envi_info {
 }
 .demo_changer.active .form_holder {
 	display: none
+}
+.otherchange tr:nth-child(4n) td,
+.otherchange tr:last-child td {
+	text-align: center;
+}
+.demo_changer tr:nth-child(4n) label {
+	cursor: pointer;
 }
 .form_holder select {
 	border: 1px solid #CCC;
@@ -1293,6 +1295,9 @@ ul.patchange li {
 	display:block;
 	float: left;
 }
+ul.colchange li {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPAQMAAADu2mw3AAAABlBMVEUAAABDR01g7m65AAAAAXRSTlMAQObYZgAAAC1JREFUCNcFwVEGgEAAQMFJ0U90gegi0cWiiz92Z8DGwcXDR5as2XPmzps/owmXowu3KS6gJQAAAABJRU5ErkJggg==) !important;
+}
 ul.backchange li:hover,
 ul.patchange li:hover,
 ul.colchange li:hover {
@@ -1304,7 +1309,7 @@ ul.colchange li.active {
 	border: 3px solid #F02;
 }
 
-	/* Advanced color settings template */
+/* Advanced color settings template */
 	.background_1 {
 		background: #FFF !important;
 	}
@@ -1352,37 +1357,22 @@ ul.colchange li.active {
 
 	}
 	li.colchange_1 {
-		background: #FFF !important;
-	}
-	.colchange_1 {
-		color: #FFF !important;
+		background: #16b6c6 !important;
 	}
 	li.colchange_2 {
-		background: #a5a5a5 !important;
-	}
-	.colchange_2 {
-		color: #a5a5a5 !important;
+		background: #ff9c00 !important;
 	}
 	li.colchange_3 {
-		background: #7f7f7f !important;
-	}
-	.colchange_3 {
-		color: #7f7f7f !important;
+		background: #ffe400 !important;
 	}
 	li.colchange_4 {
-		background: #222 !important;
-	}
-	.colchange_4 {
-		color: #222 !important;
+		background: #7cb600 !important;
 	}
 	li.colchange_5 {
-		background: #000 !important;
-	}
-	.colchange_5 {
-		color: #000 !important;
+		background: #C71C77 !important;
 	}
 
-/* ==================================================================  ENVI TEMPLATE */
+/* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
 /* **************** 2. BASIC DIVISION PAGES */
 .envi #content {padding:80px 8px 125px}
 
@@ -1817,6 +1807,182 @@ div.extract pre {
 .envi .boot_tooltip.right .boot_tooltip-arrow {
 	border-right: 5px solid #333
 }
+
+/* ==================================================================  ENVI TEMPLATE - STYLE 1 */
+/* Settings for Template color style "colchange_1" */
+
+.colchange_1 h4 {
+	color: #16b6c6;
+}
+.colchange_1 li.menu_selected a {
+	color: #16b6c6;
+}
+.colchange_1 li.menu:hover a {
+	color: #16b6c6;
+}
+.colchange_1 #nav li.configmenu_selected > a:link,
+.colchange_1 #nav li.configmenu_selected > a:visited,
+.colchange_1 #nav li.configmenu_selected > a:active,
+.colchange_1 #nav li.configmenu > a:hover {
+	color: #16b6c6;
+}
+.colchange_1 div.footer li.styleauthor b {
+	color: #16b6c6;
+}
+.colchange_1 .top-footer a.link-top:hover {
+	color: #16b6c6;
+}
+.colchange_1 ul.backchange li.active,
+.colchange_1 ul.patchange li.active,
+.colchange_1 ul.colchange li.active {
+	border-color: #16b6c6;
+}
+.colchange_1 ul.backchange li:hover,
+.colchange_1 ul.patchange li:hover,
+.colchange_1 ul.colchange li:hover {
+	border-color: #16b6c6;
+}
+
+/* ==================================================================  ENVI TEMPLATE - STYLE 2 */
+/* Settings for Template color style "colchange_2" */
+
+.colchange_2 h4 {
+	color: #ff9c00;
+}
+.colchange_2 li.menu_selected a {
+	color: #ff9c00;
+}
+.colchange_2 li.menu:hover a {
+	color: #ff9c00;
+}
+.colchange_2 #nav li.configmenu_selected > a:link,
+.colchange_2 #nav li.configmenu_selected > a:visited,
+.colchange_2 #nav li.configmenu_selected > a:active,
+.colchange_2 #nav li.configmenu > a:hover {
+	color: #ff9c00;
+}
+.colchange_2 div.footer li.styleauthor b {
+	color: #ff9c00;
+}
+.colchange_2 .top-footer a.link-top:hover {
+	color: #ff9c00;
+}
+.colchange_2 ul.backchange li.active,
+.colchange_2 ul.patchange li.active,
+.colchange_2 ul.colchange li.active {
+	border-color: #ff9c00;
+}
+.colchange_2 ul.backchange li:hover,
+.colchange_2 ul.patchange li:hover,
+.colchange_2 ul.colchange li:hover {
+	border-color: #ff9c00;
+}
+
+/* ==================================================================  ENVI TEMPLATE - STYLE 3 */
+/* Settings for Template color style "colchange_3" */
+
+.colchange_3 h4 {
+	color: #ffe400;
+}
+.colchange_3 li.menu_selected a {
+	color: #ffe400;
+}
+.colchange_3 li.menu:hover a {
+	color: #ffe400;
+}
+.colchange_3 #nav li.configmenu_selected > a:link,
+.colchange_3 #nav li.configmenu_selected > a:visited,
+.colchange_3 #nav li.configmenu_selected > a:active,
+.colchange_3 #nav li.configmenu > a:hover {
+	color: #ffe400;
+}
+.colchange_3 div.footer li.styleauthor b {
+	color: #ffe400;
+}
+.colchange_3 .top-footer a.link-top:hover {
+	color: #ffe400;
+}
+.colchange_3 ul.backchange li.active,
+.colchange_3 ul.patchange li.active,
+.colchange_3 ul.colchange li.active {
+	border-color: #ffe400;
+}
+.colchange_3 ul.backchange li:hover,
+.colchange_3 ul.patchange li:hover,
+.colchange_3 ul.colchange li:hover {
+	border-color: #ffe400;
+}
+
+/* ==================================================================  ENVI TEMPLATE - STYLE 4 */
+/* Settings for Template color style "colchange_4" */
+
+.colchange_4 h4 {
+	color: #7cb600;
+}
+.colchange_4 li.menu_selected a {
+	color: #7cb600;
+}
+.colchange_4 li.menu:hover a {
+	color: #7cb600;
+}
+.colchange_4 #nav li.configmenu_selected > a:link,
+.colchange_4 #nav li.configmenu_selected > a:visited,
+.colchange_4 #nav li.configmenu_selected > a:active,
+.colchange_4 #nav li.configmenu > a:hover {
+	color: #7cb600;
+}
+.colchange_4 div.footer li.styleauthor b {
+	color: #7cb600;
+}
+.colchange_4 .top-footer a.link-top:hover {
+	color: #7cb600;
+}
+.colchange_4 ul.backchange li.active,
+.colchange_4 ul.patchange li.active,
+.colchange_4 ul.colchange li.active {
+	border-color: #7cb600;
+}
+.colchange_4 ul.backchange li:hover,
+.colchange_4 ul.patchange li:hover,
+.colchange_4 ul.colchange li:hover {
+	border-color: #7cb600;
+}
+
+/* ==================================================================  ENVI TEMPLATE - STYLE 5 */
+/* Settings for Template color style "colchange_5" */
+
+.colchange_5 h4 {
+	color: #C71C77;
+}
+.colchange_5 li.menu_selected a {
+	color: #C71C77;
+}
+.colchange_5 li.menu:hover a {
+	color: #C71C77;
+}
+.colchange_5 #nav li.configmenu_selected > a:link,
+.colchange_5 #nav li.configmenu_selected > a:visited,
+.colchange_5 #nav li.configmenu_selected > a:active,
+.colchange_5 #nav li.configmenu > a:hover {
+	color: #C71C77;
+}
+.colchange_5 div.footer li.styleauthor b {
+	color: #C71C77;
+}
+.colchange_5 .top-footer a.link-top:hover {
+	color: #C71C77;
+}
+.colchange_5 ul.backchange li.active,
+.colchange_5 ul.patchange li.active,
+.colchange_5 ul.colchange li.active {
+	border-color: #C71C77;
+}
+.colchange_5 ul.backchange li:hover,
+.colchange_5 ul.patchange li:hover,
+.colchange_5 ul.colchange li:hover {
+	border-color: #C71C77;
+}
+
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
 
 /* **************** 5. MAIN MENU */

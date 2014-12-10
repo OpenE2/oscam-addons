@@ -44,6 +44,14 @@
 					</UL>
 				</DIV>
 				<DIV ID="switchersettings">
+					<DIV CLASS="section-label">Template color style</DIV>
+					<UL CLASS="colchange">
+						<LI ID="col_1" CLASS='colchange_1' TITLE="Teal"></LI>
+						<LI ID="col_2" CLASS='colchange_2' TITLE="Orange"></LI>
+						<LI ID="col_3" CLASS='colchange_3' TITLE="Yellow"></LI>
+						<LI ID="col_4" CLASS='colchange_4' TITLE="Green"></LI>
+						<LI ID="col_5" CLASS='colchange_5' TITLE="Pink"></LI>
+					</UL>
 					<DIV CLASS="section-label">Background color</DIV>
 					<UL CLASS="backchange">
 						<LI ID="back_1" CLASS='background_1' TITLE="White"></LI>
@@ -65,16 +73,8 @@
 						<LI ID="pat_9" CLASS='patchange_9' TITLE=""></LI>
 						<LI ID="pat_10" CLASS='patchange_10' TITLE=""></LI>
 					</UL>
-					<DIV CLASS="section-label">Text and links color</DIV>
-					<UL CLASS="colchange">
-						<LI ID="col_1" CLASS='colchange_1' TITLE="White"></LI>
-						<LI ID="col_2" CLASS='colchange_2' TITLE=""></LI>
-						<LI ID="col_3" CLASS='colchange_3' TITLE=""></LI>
-						<LI ID="col_4" CLASS='colchange_4' TITLE=""></LI>
-						<LI ID="col_5" CLASS='colchange_5' TITLE="Black"></LI>
-					</UL>
 					<DIV CLASS="section-label">Other settings</DIV>
-					<TABLE>
+					<TABLE CLASS="otherchange">
 						<TR>
 							<TD>Menu font:</TD>
 							<TD>
@@ -118,12 +118,18 @@
 								</select>
 							</TD>
 						</TR>
+						<TR>
+							<TD COLSPAN="2">
+								<input id="rotatelogo" type="checkbox" class="rotatelogo" name="rotatelogo">
+								<label for="rotatelogo">Rotate Oscam logo</label>
+							</TD>
+						</TR>
+						<TR>
+							<TD COLSPAN="2">
+								<input id="reset" value="Reset all value" type="reset">
+							</TD>
+						</TR>
 					</TABLE>
-
-						<input id="rotatelogo" type="checkbox" class="rotatelogo" name="rotatelogo">
-						<label for="rotatelogo">Rotate Oscam logo</label>
-						<BR><BR>
-						<input id="reset" value="Reset all value" type="reset">
 				</DIV>
 				<DIV CLASS="line"></DIV>
 				<DIV CLASS="envi_info">
@@ -133,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1226</P>
+							<P><B>Envi revision:</B> 1228</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -205,7 +211,7 @@
 
 	/* -------------- STYLESWITCHER with COOKIES -------------- */
 	
-	/* Read cookie after run or restart browser */
+	/* READ COOKIE AFTER RUN or RESTART BROWSER */
 	$(document).ready(function () {
 		/* Cookie - Change template */
 		if ($.cookie('TemplateSwitch') == 'envi') {
@@ -230,7 +236,7 @@
 		/* Cookie - isActive/notActive Background pattern */
 		$('#' + $.cookie("PatCookieName")).addClass('active');
 
-		/* Cookie - isActive/notActive Text and Links color */
+		/* Cookie - isActive/notActive Template color style */
 		$('#' + $.cookie("ColCookieName")).addClass('active');
 
 		/* Cookie - for Body Font Family */
@@ -246,7 +252,6 @@
 				} else {
 					$("#enviBodyFontFamily").html('')
 				}
-				
 			}
 
 		/* Cookie - for Menu Font Family */
@@ -272,7 +277,7 @@
 			}
 	});
 
-	/* Change template */
+	/* CHANGE TEMPLATE (original/Envi) */
 	jQuery(function ($) {
 		var TemplateSwitch = $.cookie('TemplateSwitch');
 		$('.addClass a').on('click', function (e) {
@@ -290,8 +295,14 @@
 				// Show StyleSwitcher for Envi
 				$('#switchersettings').css('display', 'initial');
 				// For Envi add style
-				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
-				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+					if (typeof $.cookie('BodyFontFamily') === 'undefined'){
+					//no cookie
+						$("#enviBodyFontFamily").html('')
+					} else {
+						//have cookie
+						$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+						$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+					}
 			} else {
 				// Hide StyleSwitcher settings
 				$('#switchersettings').css('display', 'none');
@@ -309,7 +320,7 @@
 		}).click()
 	});
 
-	/* Show/hide StyleSwitcher */
+	/* SHOW/HIDE STYLESWITCHER */
 	function setMyCookie() {
 		myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
 		$.cookie('myCookieName', myCookieVal, {
@@ -323,7 +334,8 @@
 		setMyCookie();
 	});
 
-	/* List LI active */
+	/* SETTINGS for LI for CHANGE COLOR and PATTERNS */
+	// Background color
 	$(".backchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
@@ -333,6 +345,7 @@
 		});
 	});
 
+	// Background pattern
 	$(".patchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
@@ -342,6 +355,7 @@
 		});
 	});
 
+	// Template color style
 	$(".colchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
@@ -351,7 +365,7 @@
 		});
 	});
 
-	/* Function for change color*/
+	/* FUNCTION for CHANGE COLOR */
 	jQuery(function ($) {
 		/* Change background color */
 		var backcolor = $.cookie('backcolor');
@@ -385,7 +399,7 @@
 			return $(this).attr('class') === patcolor
 		}).click()
 
-		/* Change color text and links */
+		/* Change Template color style */
 		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
 		$('.colchange li').on('click', function (e) { 	// function for colchange li click
 			color = $(this).attr('class')				// Rename value "color" with class in colchange li
@@ -402,15 +416,22 @@
 		}).click()
 	});
 
-	/* Checkbox */
+	/* CHECKBOX - ROTATE LOGO */
+	// Function for load page
 	$(window).load(function(){
 	$("input.rotatelogo").each(function() {
-		var rotate = $.cookie($(this).attr('name'));
-		if (rotate && rotate == "true") {
-			$(this).prop('checked', rotate);
-			$('body').addClass('rotatelogo');
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var rotate = $.cookie($(this).attr('name'));
+			if (rotate && rotate == "true") {
+				$(this).prop('checked', rotate);
+				$('body').addClass('rotatelogo');
+			}
+		} else {
+			$('body').removeClass('rotatelogo');
 		}
 	});
+
+	// Function if checkbox is changed
 	$("input.rotatelogo").change(function() {
 		if ($("body").hasClass('envi')) {
 			$.cookie($(this).attr("name"), $(this).prop('checked'), {
@@ -419,21 +440,23 @@
 			});
 			if ( $('input[name="rotatelogo"]').is(':checked') ) {
 				$('body').addClass('rotatelogo');
-			}
-			else {
+			} else {
 				$('body').removeClass('rotatelogo');
 			}
 		};
 	});
 	});
 
-	/*  Font family and size  */
+	/*  FONT FAMILY and SIZE  */
+	// Create <style> in <head>
 	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
 	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
 	$("head").append("<style type='text/css' id='enviFontSize'></style>");
 
+	// Change font family for body
 	$(function() {
 		$('#bodyfontfamily').change(function() {
+			// value and cookie
 			font_weight = false;
 			font_picked = $(this).val();
 			var split_font_name = font_picked.split(":");
@@ -445,14 +468,17 @@
 						path: '/'
 					});
 			}
-			
+
+			// write into <style>
 			$("#enviBodyFontFamily").html(
 					'body { font-family: '+ font_picked +';}'
 				)
 		});
 	});
 
+	// Change font family for main menu
 	$('#menufontfamily').change(function() {
+		// value and cookie
 		font_weight = false;
 		font_picked = $(this).val();
 		var split_font_name = font_picked.split(":");
@@ -464,14 +490,17 @@
 					path: '/'
 				});
 		}
-		
+
+		// write into <style> (I dont use "font_weight")
 		$("#enviFontFamily").html(
 				'.envi #mainmenu li { font-family: '+ font_picked +';}'
 			)
 	});
 
+	// Change font size for main menu
 	$(function() {
 		$('#menufontsize').change(function() {
+			// value and cookie
 			fontsize_picked = $(this).val();
 			var split_fontsize_int = fontsize_picked.split("px");
 			if(split_fontsize_int.length > 0){
@@ -482,6 +511,7 @@
 				});
 			}
 
+			// write into <style>
 			$("#enviFontSize").html(
 				'.envi #mainmenu li { font-size: '+ fontsize_picked_int +'px;}' +
 				'.envi #mainmenu { margin-top: 11px;}'
@@ -489,7 +519,7 @@
 		});
 	});
 
-	/* Reset button */
+	/* Reset button - only for Envi (not for original)*/
 	$(function() {
 		$("#reset").click(function () {
 			if($("body").hasClass("envi")) {
@@ -498,27 +528,20 @@
 				for(var cookie in cookies) {
 					$.removeCookie(cookie);
 				}
-				// Set default 
+				// Set default class and checkbox
 				$('body').removeClass().addClass('envi');
-				$('#rotatelogo').prop('checked', false);
 				$('.backchange li').removeClass('active');
 				$('.patchange li').removeClass('active');
 				$('.colchange li').removeClass('active');
+				$('#rotatelogo').prop('checked', false);
+				// Set default input
 				$("#bodyfontfamily")[0].selectedIndex = 0;
 				$("#menufontfamily")[0].selectedIndex = 0;
 				$("#menufontsize")[0].selectedIndex = 0;
-			} else {
-				// Remove all cookie
-				var cookies = $.cookie();
-				for(var cookie in cookies) {
-					$.removeCookie(cookie);
-				}
-				// Set default 
-				$('body').removeClass();
-				$('#rotatelogo').prop('checked', false);
-				$('.backchange li').removeClass('active');
-				$('.patchange li').removeClass('active');
-				$('.colchange li').removeClass('active');
+				// Set default style
+				$("#enviBodyFontFamily").html('')
+				$("#enviFontFamily").html('')
+				$("#enviFontSize").html('')
 			}
 		});
 	});
@@ -533,13 +556,13 @@
 				scrollTop: 0
 			}, {
 				queue: false,
-				duration: 1200
+				duration: 1000
 			});
 			jQuery('html').animate({
 				scrollTop: 0
 			}, {
 				queue: false,
-				duration: 1200
+				duration: 1000
 			});
 			return false
 		});
