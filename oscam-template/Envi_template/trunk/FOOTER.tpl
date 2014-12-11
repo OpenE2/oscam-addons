@@ -139,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1230</P>
+							<P><B>Envi revision:</B> 1233</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>

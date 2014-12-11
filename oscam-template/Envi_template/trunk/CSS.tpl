@@ -29,6 +29,12 @@
 			# 19. FILE MENU
 			# 21. TOOLTIP
 
+		== ENVI TEMPLATE - STYLE 1
+		== ENVI TEMPLATE - STYLE 2
+		== ENVI TEMPLATE - STYLE 3
+		== ENVI TEMPLATE - STYLE 4
+		== ENVI TEMPLATE - STYLE 5
+
 	###### RESPONSIVE DESIGN for STREAMBOARD
 */
 
@@ -1825,11 +1831,15 @@ div.extract pre {
 .colchange_1 .top-footer a.link-top:hover {
 	color: #16B6C6;
 }
-.colchange_1 #inc,
-.colchange_1 #dec {
+.colchange_1 div.sidlistclose {
 	background-color: #16B6C6;
 }
-.colchange_1 div.sidlistclose {
+/* Polling */
+.colchange_1 #picolor {
+	background-color:#16B6C6
+}
+.colchange_1 #inc,
+.colchange_1 #dec {
 	background-color: #16B6C6;
 }
 /* StyleSwitcher */
@@ -1880,11 +1890,15 @@ div.extract pre {
 .colchange_2 .top-footer a.link-top:hover {
 	color: #FF9C00;
 }
-.colchange_2 #inc,
-.colchange_2 #dec {
+.colchange_2 div.sidlistclose {
 	background-color: #FF9C00;
 }
-.colchange_2 div.sidlistclose {
+/* Polling */
+.colchange_2 #picolor {
+	background-color:#FF9C00
+}
+.colchange_2 #inc,
+.colchange_2 #dec {
 	background-color: #FF9C00;
 }
 /* StyleSwitcher */
@@ -1936,11 +1950,15 @@ div.extract pre {
 .colchange_3 .top-footer a.link-top:hover {
 	color: #FFE400;
 }
-.colchange_3 #inc,
-.colchange_3 #dec {
+.colchange_3 div.sidlistclose {
 	background-color: #FFE400;
 }
-.colchange_3 div.sidlistclose {
+/* Polling */
+.colchange_3 #picolor {
+	background-color:#FFE400
+}
+.colchange_3 #inc,
+.colchange_3 #dec {
 	background-color: #FFE400;
 }
 /* StyleSwitcher */
@@ -1992,11 +2010,15 @@ div.extract pre {
 .colchange_4 .top-footer a.link-top:hover {
 	color: #7CB600;
 }
-.colchange_4 #inc,
-.colchange_4 #dec {
+.colchange_4 div.sidlistclose {
 	background-color: #7CB600;
 }
-.colchange_4 div.sidlistclose {
+/* Polling */
+.colchange_4 #picolor {
+	background-color:#7CB600
+}
+.colchange_4 #inc,
+.colchange_4 #dec {
 	background-color: #7CB600;
 }
 /* StyleSwitcher */
@@ -2048,11 +2070,15 @@ div.extract pre {
 .colchange_5 .top-footer a.link-top:hover {
 	color: #C71C77;
 }
-.colchange_5 #inc,
-.colchange_5 #dec {
+.colchange_5 div.sidlistclose {
 	background-color: #C71C77;
 }
-.colchange_5 div.sidlistclose {
+/* Polling */
+.colchange_5 #picolor {
+	background-color:#C71C77
+}
+.colchange_5 #inc,
+.colchange_5 #dec {
 	background-color: #C71C77;
 }
 /* StyleSwitcher */
