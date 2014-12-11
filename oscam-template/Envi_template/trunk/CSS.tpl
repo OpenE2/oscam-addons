@@ -1355,7 +1355,7 @@ ul.colchange li.active {
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important;
 	}
 	li.colchange_1 {
-		background: #16b6c6 !important;
+		background: #16B6C6 !important;
 	}
 	li.colchange_2 {
 		background: #ff9c00 !important;
@@ -1662,13 +1662,13 @@ body.envi {
 	color:#BD0000;
 	text-shadow:1px 1px 1px #000
 }
-.envi div.styleswitcher a {
+.envi div.form_holder a {
 	color:#999
 }
-.envi div.styleswitcher a:hover {
+.envi div.form_holder a:hover {
 	color:#F00423
 }
-.envi div.styleswitcher a.active {
+.envi div.form_holder a.active {
 	color:#F00423
 }
 /* Go to top link */
@@ -1676,7 +1676,7 @@ body.envi {
 	color: #FFF;
 }
 .envi .top-footer a.link-top:hover {
-	color: #F00423;
+	color: #BD0000;
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
@@ -1805,168 +1805,223 @@ div.extract pre {
 /* Settings for Template color style "colchange_1" */
 
 .colchange_1 h4 {
-	color: #16b6c6;
+	color: #16B6C6;
 }
 .colchange_1 li.menu_selected a {
-	color: #16b6c6;
+	color: #16B6C6;
 }
 .colchange_1 li.menu:hover a {
-	color: #16b6c6;
+	color: #16B6C6;
 }
 .colchange_1 #nav li.configmenu_selected > a:link,
 .colchange_1 #nav li.configmenu_selected > a:visited,
 .colchange_1 #nav li.configmenu_selected > a:active,
 .colchange_1 #nav li.configmenu > a:hover {
-	color: #16b6c6;
+	color: #16B6C6;
 }
 .colchange_1 div.footer li.styleauthor b {
-	color: #16b6c6;
+	color: #16B6C6;
 }
 .colchange_1 .top-footer a.link-top:hover {
-	color: #16b6c6;
+	color: #16B6C6;
+}
+.colchange_1 #inc,
+.colchange_1 #dec {
+	background-color: #16B6C6;
+}
+.colchange_1 div.sidlistclose {
+	background-color: #16B6C6;
+}
+/* StyleSwitcher */
+.colchange_1 div.form_holder a {
+    color: #999;
+}
+.colchange_1 div.form_holder a.active {
+	color: #16B6C6;
+}
+.colchange_1 div.form_holder a:hover {
+	color: #16B6C6;
 }
 .colchange_1 ul.backchange li.active,
 .colchange_1 ul.patchange li.active,
 .colchange_1 ul.colchange li.active {
-	border-color: #16b6c6;
+	border-color: #16B6C6;
 }
 .colchange_1 ul.backchange li:hover,
 .colchange_1 ul.patchange li:hover,
 .colchange_1 ul.colchange li:hover {
-	border-color: #16b6c6;
+	border-color: #16B6C6;
 }
-.colchange_1 #inc,
-.colchange_1 #dec {
-	background-color: #16b6c6;
+.colchange_1 .form_holder #reset:hover {
+	background-color: #16B6C6;
+	color: #000;
 }
-.colchange_1 div.sidlistclose {
-	background-color: #16b6c6;
-}
-
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
 
 .colchange_2 h4 {
-	color: #ff9c00;
+	color: #FF9C00;
 }
 .colchange_2 li.menu_selected a {
-	color: #ff9c00;
+	color: #FF9C00;
 }
 .colchange_2 li.menu:hover a {
-	color: #ff9c00;
+	color: #FF9C00;
 }
 .colchange_2 #nav li.configmenu_selected > a:link,
 .colchange_2 #nav li.configmenu_selected > a:visited,
 .colchange_2 #nav li.configmenu_selected > a:active,
 .colchange_2 #nav li.configmenu > a:hover {
-	color: #ff9c00;
+	color: #FF9C00;
 }
 .colchange_2 div.footer li.styleauthor b {
-	color: #ff9c00;
+	color: #FF9C00;
 }
 .colchange_2 .top-footer a.link-top:hover {
-	color: #ff9c00;
+	color: #FF9C00;
+}
+.colchange_2 #inc,
+.colchange_2 #dec {
+	background-color: #FF9C00;
+}
+.colchange_2 div.sidlistclose {
+	background-color: #FF9C00;
+}
+/* StyleSwitcher */
+.colchange_2 div.form_holder a {
+    color: #999;
+}
+.colchange_2 div.form_holder a.active {
+	color: #FF9C00;
+}
+.colchange_2 div.form_holder a:hover {
+	color: #FF9C00;
 }
 .colchange_2 ul.backchange li.active,
 .colchange_2 ul.patchange li.active,
 .colchange_2 ul.colchange li.active {
-	border-color: #ff9c00;
+	border-color: #FF9C00;
 }
 .colchange_2 ul.backchange li:hover,
 .colchange_2 ul.patchange li:hover,
 .colchange_2 ul.colchange li:hover {
-	border-color: #ff9c00;
+	border-color: #FF9C00;
 }
-.colchange_2 #inc,
-.colchange_2 #dec {
-	background-color: #ff9c00;
-}
-.colchange_2 div.sidlistclose {
-	background-color: #ff9c00;
+.colchange_2 .form_holder #reset:hover {
+	background-color: #FF9C00;
+	color: #000;
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
 /* Settings for Template color style "colchange_3" */
 
 .colchange_3 h4 {
-	color: #ffe400;
+	color: #FFE400;
 }
 .colchange_3 li.menu_selected a {
-	color: #ffe400;
+	color: #FFE400;
 }
 .colchange_3 li.menu:hover a {
-	color: #ffe400;
+	color: #FFE400;
 }
 .colchange_3 #nav li.configmenu_selected > a:link,
 .colchange_3 #nav li.configmenu_selected > a:visited,
 .colchange_3 #nav li.configmenu_selected > a:active,
 .colchange_3 #nav li.configmenu > a:hover {
-	color: #ffe400;
+	color: #FFE400;
 }
 .colchange_3 div.footer li.styleauthor b {
-	color: #ffe400;
+	color: #FFE400;
 }
 .colchange_3 .top-footer a.link-top:hover {
-	color: #ffe400;
+	color: #FFE400;
+}
+.colchange_3 #inc,
+.colchange_3 #dec {
+	background-color: #FFE400;
+}
+.colchange_3 div.sidlistclose {
+	background-color: #FFE400;
+}
+/* StyleSwitcher */
+.colchange_3 div.form_holder a {
+    color: #999;
+}
+.colchange_3 div.form_holder a.active {
+	color: #FFE400;
+}
+.colchange_3 div.form_holder a:hover {
+	color: #FFE400;
 }
 .colchange_3 ul.backchange li.active,
 .colchange_3 ul.patchange li.active,
 .colchange_3 ul.colchange li.active {
-	border-color: #ffe400;
+	border-color: #FFE400;
 }
 .colchange_3 ul.backchange li:hover,
 .colchange_3 ul.patchange li:hover,
 .colchange_3 ul.colchange li:hover {
-	border-color: #ffe400;
+	border-color: #FFE400;
 }
-.colchange_3 #inc,
-.colchange_3 #dec {
-	background-color: #ffe400;
-}
-.colchange_3 div.sidlistclose {
-	background-color: #ffe400;
+.colchange_3 .form_holder #reset:hover {
+	background-color: #FFE400;
+	color: #000;
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 4 */
 /* Settings for Template color style "colchange_4" */
 
 .colchange_4 h4 {
-	color: #7cb600;
+	color: #7CB600;
 }
 .colchange_4 li.menu_selected a {
-	color: #7cb600;
+	color: #7CB600;
 }
 .colchange_4 li.menu:hover a {
-	color: #7cb600;
+	color: #7CB600;
 }
 .colchange_4 #nav li.configmenu_selected > a:link,
 .colchange_4 #nav li.configmenu_selected > a:visited,
 .colchange_4 #nav li.configmenu_selected > a:active,
 .colchange_4 #nav li.configmenu > a:hover {
-	color: #7cb600;
+	color: #7CB600;
 }
 .colchange_4 div.footer li.styleauthor b {
-	color: #7cb600;
+	color: #7CB600;
 }
 .colchange_4 .top-footer a.link-top:hover {
-	color: #7cb600;
+	color: #7CB600;
+}
+.colchange_4 #inc,
+.colchange_4 #dec {
+	background-color: #7CB600;
+}
+.colchange_4 div.sidlistclose {
+	background-color: #7CB600;
+}
+/* StyleSwitcher */
+.colchange_4 div.form_holder a {
+    color: #999;
+}
+.colchange_4 div.form_holder a.active {
+	color: #7CB600;
+}
+.colchange_4 div.form_holder a:hover {
+	color: #7CB600;
 }
 .colchange_4 ul.backchange li.active,
 .colchange_4 ul.patchange li.active,
 .colchange_4 ul.colchange li.active {
-	border-color: #7cb600;
+	border-color: #7CB600;
 }
 .colchange_4 ul.backchange li:hover,
 .colchange_4 ul.patchange li:hover,
 .colchange_4 ul.colchange li:hover {
-	border-color: #7cb600;
+	border-color: #7CB600;
 }
-.colchange_4 #inc,
-.colchange_4 #dec {
-	background-color: #7cb600;
-}
-.colchange_4 div.sidlistclose {
-	background-color: #7cb600;
+.colchange_4 .form_holder #reset:hover {
+	background-color: #7CB600;
+	color: #000;
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 5 */
@@ -1993,6 +2048,23 @@ div.extract pre {
 .colchange_5 .top-footer a.link-top:hover {
 	color: #C71C77;
 }
+.colchange_5 #inc,
+.colchange_5 #dec {
+	background-color: #C71C77;
+}
+.colchange_5 div.sidlistclose {
+	background-color: #C71C77;
+}
+/* StyleSwitcher */
+.colchange_5 div.form_holder a {
+    color: #999;
+}
+.colchange_5 div.form_holder a.active {
+	color: #C71C77;
+}
+.colchange_5 div.form_holder a:hover {
+	color: #C71C77;
+}
 .colchange_5 ul.backchange li.active,
 .colchange_5 ul.patchange li.active,
 .colchange_5 ul.colchange li.active {
@@ -2003,12 +2075,9 @@ div.extract pre {
 .colchange_5 ul.colchange li:hover {
 	border-color: #C71C77;
 }
-.colchange_5 #inc,
-.colchange_5 #dec {
+.colchange_5 .form_holder #reset:hover {
 	background-color: #C71C77;
-}
-.colchange_5 div.sidlistclose {
-	background-color: #C71C77;
+	color: #000;
 }
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
