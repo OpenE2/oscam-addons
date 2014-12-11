@@ -1028,9 +1028,6 @@ div.bar {
 
 /* ################################# ENVI TEMPLATE WEBIF for STREAMBOARD ################################# */
 /* ============================= CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE ============================= */
-body {
-	overflow-x:hidden
-}
 
 /* footer.html */
 div.footer ul {
@@ -1039,7 +1036,9 @@ div.footer ul {
 div.footer li {
 	margin:0
 }
-div.footer b {}
+div.footer b {
+	color: #A3A3A3;
+}
 
 ul.textfooter {
 	margin:5px 0
@@ -1525,12 +1524,23 @@ body.envi {
 }
 
 /* **************** 7. TABLE */
+/* ------- STATUS ------- */
+/* status.html */
+.envi table.status {
+	border-spacing: 0px;
+	border-bottom: 1px solid #222;
+}
 /* ------- SERVICES ------- */
 /* services.html */
 .envi #newservice {
 	margin-top:0
 }
 /* ------- READERS ------- */
+/* readers.html */
+.envi table.readers {
+	border-spacing: 0px;
+	border-bottom: 1px solid #222;
+}
 /* emm.html */
 .envi table.writeemm {
 	margin-top:0
@@ -1539,13 +1549,18 @@ body.envi {
 .envi table.emmrunning {
 	margin-top:0
 }
+.envi #newinsert table,
+.envi #searchTable table.readers {
+	border-spacing:0px;
+	border-bottom: none
+}
 /* ------- USERS ------- */
 /* userconfig.html */
 .envi table.users {
 	border-spacing:0;
 	border-bottom: 1px solid #222
 }
-.envi #newuser table,
+.envi #newinsert table,
 .envi #searchTable table.users {
 	border-spacing:0px;
 	border-bottom: none
@@ -1572,6 +1587,16 @@ body.envi {
 }
 
 /* **************** 9. TABLE TH */
+/* status.html */
+.envi table.status th {
+	border-right: 1px dotted #666;
+	background-color: #222;
+	color: #FFF;
+	border-top: 1px solid #FFF;
+}
+.envi table.status th:last-child {
+    border-right: medium none;
+}
 /* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
 .envi th.nameinfo {
 	background-color:#222;
@@ -1586,6 +1611,13 @@ body.envi {
 }
 .envi table.users th:last-child {
 	border-right: none
+}
+/* userconfig.html */
+.envi table.readers th {
+	border-right: 1px dotted #666;
+	background-color: #222;
+	color: #FFF;
+	border-top: 1px solid #FFF
 }
 /* cacheex.html */
 .envi table.stats th {
@@ -1604,12 +1636,43 @@ body.envi {
 .envi table.cacheex th,
 .envi table.failban th,
 .envi #servicesedit th,
-.envi #addnewservice th {
+.envi #addnewservice th,
+.envi table.readers th,
+.envi table.writeemm th,
+.envi table.statsbalance th,
+.envi table.status th,
+.envi table.status td.subheadline {
 	background-color: #222;
 	color: #FFF
 }
+/* Color for sorting */
+.envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
+.envi table.users .sorting-asc, .envi table.users .sorting-desc {
+	background-color: #5E5E5E;
+}
 
 /* **************** 10. TABLE TD */
+/* status.html */
+.envi table.status td.subheadline {
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+}
+.envi table.status td {
+    border-right: 1px dotted #999;
+}
+.envi table.status td:last-child {
+	border-right: none;
+}
+/* readers.html */
+.envi table.readers td {
+	border-right: 1px dotted #999
+}
+.envi table.readers td:last-child {
+	border-right: none;
+}
+.envi table.readers tr:hover td {
+    background-color: #E8B1B1
+}
 /* userconfig.html */
 .envi table.users td {
 	border-right: 1px dotted #999
@@ -1627,7 +1690,7 @@ body.envi {
 .envi table.config tr:nth-last-child(-n+2) td:first-child,
 .envi table.configreader tr:nth-last-child(-n+2) td:first-child,
 .envi table.configuser tr:nth-last-child(-n+2) td:first-child {
-	background-color: #EEE
+	background-color: transparent;
 }
 .envi table.subservicetable td:first-child {
 	background-color: #EEE
@@ -1866,6 +1929,21 @@ div.extract pre {
 	background-color: #16B6C6;
 	color: #000;
 }
+/* Color for links of icons */
+.colchange_1 a img.icon {
+	background-color: #13A2AE;
+}
+.colchange_1 a:hover img.icon {
+	background-color: #30D9E8;
+}
+/* Color for links */
+.colchange_1 a:hover {
+	color: #13A2AE;
+}
+/* Color for Table */
+.colchange_1 table.readers tr:hover td {
+	background-color: #ACF0F6
+}
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
 
@@ -1924,6 +2002,21 @@ div.extract pre {
 .colchange_2 .form_holder #reset:hover {
 	background-color: #FF9C00;
 	color: #000;
+}
+/* Color for links of icons */
+.colchange_2 a img.icon {
+	background-color: #FF9C00;
+}
+.colchange_2 a:hover img.icon {
+	background-color: #FFB53D;
+}
+/* Color for links */
+.colchange_2 a:hover {
+	color: #FF9C00;
+}
+/* Color for Table */
+.colchange_2 table.readers tr:hover td {
+	background-color: #FFE2B3
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
@@ -1985,6 +2078,21 @@ div.extract pre {
 	background-color: #FFE400;
 	color: #000;
 }
+/* Color for links of icons */
+.colchange_3 a img.icon {
+	background-color: #FFCC00;
+}
+.colchange_3 a:hover img.icon {
+	background-color: #FFE400;
+}
+/* Color for links */
+.colchange_3 a:hover {
+	color: #FFE400;
+}
+/* Color for Table */
+.colchange_3 table.readers tr:hover td {
+	background-color: #FFFACC
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 4 */
 /* Settings for Template color style "colchange_4" */
@@ -2045,6 +2153,14 @@ div.extract pre {
 	background-color: #7CB600;
 	color: #000;
 }
+/* Color for links */
+.colchange_4 a:hover {
+	color: #7CB600;
+}
+/* Color for Table */
+.colchange_4 table.readers tr:hover td {
+	background-color: #85FFAB
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 5 */
 /* Settings for Template color style "colchange_5" */
@@ -2104,6 +2220,21 @@ div.extract pre {
 .colchange_5 .form_holder #reset:hover {
 	background-color: #C71C77;
 	color: #000;
+}
+/* Color for links of icons */
+.colchange_5 a img.icon {
+	background-color: #C71C77;
+}
+.colchange_5 a:hover img.icon {
+	background-color: #E43F97;
+}
+/* Color for links */
+.colchange_5 a:hover {
+	color: #C71C77;
+}
+/* Color for Table */
+.colchange_5 table.readers tr:hover td {
+	background-color: #F5BCDC
 }
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
