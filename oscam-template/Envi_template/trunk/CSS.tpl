@@ -25,9 +25,12 @@
 			# 11. DIV
 			# 12. TEXTAREA,SELECT,INPUT,PRE
 			# 13. IMAGE
+			# 14. SPAN
 			# 16. SORTING IN TABLE
+			# 17. POLLING
 			# 19. FILE MENU
 			# 21. TOOLTIP
+			# 22. OTHER SETTINGS
 
 		== ENVI TEMPLATE - STYLE 1
 		== ENVI TEMPLATE - STYLE 2
@@ -1036,9 +1039,7 @@ div.footer ul {
 div.footer li {
 	margin:0
 }
-div.footer b {
-	color: #A3A3A3;
-}
+div.footer b {}
 
 ul.textfooter {
 	margin:5px 0
@@ -1138,7 +1139,7 @@ div.envi_info {
 	margin: 5px 0px
 }
 .close {
-	background: #606061;
+	background: #2D2D2E;
 	color: #FFF !important;
 	line-height: 25px;
 	position: absolute;
@@ -1147,13 +1148,14 @@ div.envi_info {
 	top: -10px;
 	width: 24px;
 	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
+	font-weight: 800;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	border-radius: 14px;
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
+	border: 2px solid #FFF;
 }
 .close:hover {
 	background-color: #000;
@@ -1239,19 +1241,21 @@ div.styleswitcher a.active {
 }
 .form_holder #reset {
 	font-weight: 700;
-	font-size: 1em;
+	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	transition: all 0.25s ease 0s;
-	border-radius: 3px;
+	transition: all 0.5s ease 0s;
+	border-radius: 0;
 	color: #FFF;
-	background: #7E7E7E;
-	border: medium none;
+	background: #BD0000;
 	padding: 1px 6px;
 	cursor:pointer;
-	border: 1px solid #333;
+	border: 1px solid transparent;
+	width: 115px;
+	height: 23px;
+	text-transform: uppercase;
 }
 .form_holder #reset:hover {
-	background: #B40705;
+	background: #000;
 }
 div.envi_info {
 	position: static
@@ -1407,6 +1411,12 @@ body.envi {
 
 	/* BACKGROUND COLOR */
 	background: #131517;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #212121),color-stop(1, #000000));
+	background-image: -o-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background-image: -moz-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background-image: -webkit-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background-image: -ms-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background-image: linear-gradient(to bottom, #212121 0%, #000000 100%);
 
 	/* BOX SHADOW */
 	box-shadow:0px 1px 4px #5e5e5e
@@ -1423,7 +1433,7 @@ body.envi {
 }
 .envi #mainmenu li {
 	display:inline;
-	padding:3px 8px 3px;
+	padding:3px 0;
 	font-size:12px;
 	font-weight:700;
 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
@@ -1452,13 +1462,17 @@ body.envi {
 
 .envi li.menu a {
 	color:#FFF;
+	padding: 0px 7px 9px;
 }
 .envi li.menu:hover a {
 	color:#F00423;
-	transition:all 0.5s ease 0s
+	border-bottom: 2px solid #F00423;
+	transition:color 0.5s ease 0s
 }
 .envi li.menu_selected a {
-	color: #F00423
+	color: #F00423;
+	border-bottom: 2px solid #F00423;
+	padding: 0px 7px 9px;
 }
 
 /* **************** 6. SUBNAV */
@@ -1504,7 +1518,8 @@ body.envi {
 	font-size:14px
 }
 .envi #nav li.pollselect {
-    position: absolute
+	position: absolute;
+	font-size: 12px;
 }
 .envi li.configmenu a,.envi li.configmenu a:hover,
 .envi li.configmenu_selected a,.envi li.configmenu_selected a:hover {
@@ -1615,7 +1630,6 @@ body.envi {
 /* userconfig.html */
 .envi table.readers th {
 	border-right: 1px dotted #666;
-	background-color: #222;
 	color: #FFF;
 	border-top: 1px solid #FFF
 }
@@ -1645,6 +1659,22 @@ body.envi {
 	background-color: #222;
 	color: #FFF
 }
+.envi table.readers th {
+	background-color: #a4a4a4;
+	background: -moz-linear-gradient(top,#CCC,#A4A4A4);
+	background: -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
+	-moz-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+	-webkit-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #828282;
+}
+.envi #searchTable table.readers th {
+	background: -moz-linear-gradient(top, #303135, #3c3d42 6%, #404447 18%, #34383b 50%, #25292c 50%, #1a1b1f 63%, black);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3c3d42), color-stop(.18, #404447), color-stop(.5, #34383b), color-stop(.5, #25292c), color-stop(.63, #1a1b1f));
+}
 /* Color for sorting */
 .envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
 .envi table.users .sorting-asc, .envi table.users .sorting-desc {
@@ -1672,6 +1702,12 @@ body.envi {
 }
 .envi table.readers tr:hover td {
     background-color: #E8B1B1
+}
+.readers tr:nth-child(odd) td {
+	background-color: #F2F2F2;
+}
+.readers tr:nth-child(even) td {
+	background-color: #E6E6E6;
 }
 /* userconfig.html */
 .envi table.users td {
@@ -1735,10 +1771,13 @@ body.envi {
 	color:#999
 }
 .envi div.form_holder a:hover {
-	color:#F00423
+	color:#BD0000
 }
 .envi div.form_holder a.active {
-	color:#F00423
+	color:#BD0000
+}
+.envi div.footer b {
+	color: #A3A3A3;
 }
 /* Go to top link */
 .envi .top-footer a.link-top {
@@ -1752,10 +1791,64 @@ body.envi {
 .envi #otherdropdown option {
 	margin:5px
 }
+.envi #otherdropdown option:hover {
+	background-color:;
+}
 /* for extract in script.html */ 
-div.extract pre {
+.envi div.extract pre {
 	background-color: #FAFAFA;
 }
+/* generaly settings for all buttons/submits */
+.envi input[type=button],
+.envi input[type=submit] {
+	-webkit-appearance:none;
+	border-radius:0;
+	border:1px solid transparent;
+	width:90px;
+	height:23px;
+	color:#FFF;
+	background-color:#BD0000;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 700;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/* generaly hover settings for all buttons/submits */
+.envi input[type=button]:hover,
+.envi input[type=submit]:hover {
+	background-color:#000;
+	color:#FFF;
+	box-shadow:none;
+	padding: 0px 2px;
+	transition:all 0.5s ease 0s;
+}
+
+.envi input[type="text"] {
+	border: 1px solid #666;
+}
+.envi .readers input[type="text"] {
+    border: 1px solid #000;
+    box-shadow: 0px 0px 7px #000;
+}
+.envi .pollselect input[type="text"] {
+    border: 1px solid transparent;
+}
+.envi select {
+    padding: 1px;
+    border: 1px solid #666;
+}
+.envi td.subheadline input[type="button"] {
+	margin: 0px 0px 0px 15px;
+	font-weight: 700;
+}
+.envi #otherdropdown input.short[type="text"] {
+    margin: 0 5px;
+}
+.envi #nav li.pollselect input[type="text"].pintervall{
+	font-weight: bold;
+	font-size: 12px;
+}
+
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
@@ -1765,6 +1858,12 @@ div.extract pre {
 	fill:#ffffff;
 	height:28px;
 	width:28px
+}
+
+/* **************** 14. SPAN */
+.envi span.span_notifier {
+	background-color: #BD0000;
+	margin-right: 5px;
 }
 
 /* **************** 16. SORTING IN TABLE */
@@ -1777,6 +1876,17 @@ div.extract pre {
 .envi .sorting-asc{
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjUGAoYPgBAALuAYlvcnaaAAAAAElFTkSuQmCC);
 }
+
+/* **************** 17. POLLING */
+/* User-Page polling */
+.envi #inc, .envi #dec {
+	background-color:#BD0000;
+}
+.envi #inc:hover, .envi #dec:hover {
+	background-color:#000;
+	transition:all 0.5s ease 0s;
+}
+
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
@@ -1870,6 +1980,9 @@ div.extract pre {
 	border-right: 5px solid #333
 }
 
+/* **************** 22. OTHER SETTINGS */
+
+
 /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1" */
 
@@ -1878,9 +1991,11 @@ div.extract pre {
 }
 .colchange_1 li.menu_selected a {
 	color: #16B6C6;
+	border-bottom: 2px solid #13A2AE;
 }
 .colchange_1 li.menu:hover a {
 	color: #16B6C6;
+	border-bottom: 2px solid #13A2AE;
 }
 .colchange_1 #nav li.configmenu_selected > a:link,
 .colchange_1 #nav li.configmenu_selected > a:visited,
@@ -1897,13 +2012,34 @@ div.extract pre {
 .colchange_1 div.sidlistclose {
 	background-color: #16B6C6;
 }
-/* Polling */
+/* Span Notifier */
+.colchange_1 span.span_notifier {
+	background-color: #16B6C6;
+}
+/* generaly settings for all buttons/submits */
+.colchange_1 input[type=button],
+.colchange_1 input[type=submit] {
+	background-color:#16B6C6;
+}
+/* generaly hover settings for all buttons/submits */
+.colchange_1 input[type=button]:hover,
+.colchange_1 input[type=submit]:hover {
+	background-color:#000;
+	color:#16B6C6;
+	transition:all 0.5s ease 0s;
+}
+/* User-Page polling */
 .colchange_1 #picolor {
 	background-color:#16B6C6
 }
 .colchange_1 #inc,
 .colchange_1 #dec {
 	background-color: #16B6C6;
+}
+.colchange_1 #inc:hover,
+.colchange_1 #dec:hover {
+	background-color: #000;
+	transition:all 0.5s ease 0s;
 }
 /* StyleSwitcher */
 .colchange_1 div.form_holder a {
@@ -1925,9 +2061,13 @@ div.extract pre {
 .colchange_1 ul.colchange li:hover {
 	border-color: #16B6C6;
 }
+.colchange_1 .form_holder #reset{
+	background-color:#16B6C6;
+}
 .colchange_1 .form_holder #reset:hover {
-	background-color: #16B6C6;
-	color: #000;
+	background-color:#000;
+	color:#16B6C6;
+	transition:all 0.5s ease 0s;
 }
 /* Color for links of icons */
 .colchange_1 a img.icon {

@@ -139,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1234</P>
+							<P><B>Envi revision:</B> 1235</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -181,6 +181,7 @@
 
 	/* -------------- BASIC SETTINGS for HTML  -------------- */
 	$(document).ready(function () {
+
 		// Hidden Subnav in script.html - SCRIPTS ITEM
 		if(window.location.href.indexOf("script.html") > -1) {
 			$('#subnav').css('visibility', 'hidden');
