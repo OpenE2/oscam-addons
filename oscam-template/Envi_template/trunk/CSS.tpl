@@ -553,6 +553,20 @@ div.footer {
 	background-color:#EEE;
 	border-top:3px solid #CCC
 }
+div.footer .top_link {
+	padding-left:12px;
+	position:absolute;
+	font-weight:bold;
+	bottom:5px;
+	left:7px;
+	z-index:0
+}
+div.footer .top_link a:before {
+	content:"\25b2";
+	font-weight:normal;
+	position:absolute;
+	left:1px
+}
 div.footer li {
 	margin:5px
 }
@@ -1066,16 +1080,11 @@ div.footer ul.addClass li {
 }
 
 /* Go to top link */
-a.link-top {
-	padding: 3px 0 0 17px;
-	font-size: 12px;
-	margin: -10px 2px 15px 0;
+.envi .top_link a {
+	color: #FFF;
 }
-a.link-top:before {
-	content: "\25b2";
-	font-weight: normal;
-	position: absolute;
-	left: 1px;
+.envi .top_link a:hover {
+	color: #BD0000;
 }
 
 /* Popup info about Envi Template */
@@ -2136,6 +2145,10 @@ body.envi {
 /* Color for links */
 .colchange_1 a:hover {
 	color: #13A2AE;
+}
+/* Go to top link */
+.colchange_1 .top_link a:hover {
+	color: #16B6C6;
 }
 /* Color for Table */
 .colchange_1 table.readers tr:hover td,

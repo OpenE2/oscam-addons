@@ -7,7 +7,7 @@
 		</DIV>
 
 ---- CSS
-		
+		/* Basic setting for "Go to top" link */
 		.top-footer a.link-top {
 			color: #050840;;
 			font-weight: bold;
@@ -21,6 +21,14 @@
 		}
 		.top-footer a.link-top:hover {
 			color: #FF9E5F;
+		}
+
+		/* Go to top link */
+		.envi .top-footer a.link-top {
+			color: #FFF;
+		}
+		.envi .top-footer a.link-top:hover {
+			color: #BD0000;
 		}
 
 ---- JQEURY CODE

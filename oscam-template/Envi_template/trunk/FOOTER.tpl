@@ -1,33 +1,34 @@
 <!--OSCam;1560086352;1.20-unstable_svn;10020;-->
 	</DIV> <!-- End content -->
 	<DIV CLASS="footer" ID="footer">
-			<UL CLASS="textfooter">
-				<LI CLASS="developed"><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
-				<LI>
-					<UL>
-						<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
-						<LI><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## </LI>
-						<LI><B>Run Time:</B><SPAN ID="runtime"> ##RUNTIME##</SPAN></LI>
-					</UL>	
-				</LI>
-				<LI>
-					<UL>
-						<LI><B>Process ID:</B> ##PROCESSID## </LI>
-						<LI><B>Access from:</B> ##CURIP## </LI>
-						<LI><B>Run as:</B> ##RUNAS##</LI>
-						<LI><B>##UPTIMETXT##</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
-					</UL>	
-				</LI>
-				<LI>
-					<UL>
-						<LI><B>OSCAM:</B> ##CS_VERSION## </LI>
-						<LI><B>Build:</B> r##CS_SVN_VERSION## </LI>
-						<LI><B>Compiler:</B> ##CS_TARGET##</LI>
-					</UL>
-				</LI>
-				<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
-				<LI><A NAME="statusfooter"></A></LI>
-			</UL>
+		<DIV CLASS="top_link"><a href="#_top">TOP</a></DIV>
+		<UL CLASS="textfooter">
+			<LI CLASS="developed"><B>OSCAM Webinterface developed by Streamboard Team</B></LI>
+			<LI>
+				<UL>
+					<LI><B>Current Time:</B><SPAN ID="curtime"> ##CURDATE## | ##CURTIME## </SPAN></LI>
+					<LI><B>Start Time:</B> ##STARTDATE## | ##STARTTIME## </LI>
+					<LI><B>Run Time:</B><SPAN ID="runtime"> ##RUNTIME##</SPAN></LI>
+				</UL>	
+			</LI>
+			<LI>
+				<UL>
+					<LI><B>Process ID:</B> ##PROCESSID## </LI>
+					<LI><B>Access from:</B> ##CURIP## </LI>
+					<LI><B>Run as:</B> ##RUNAS##</LI>
+					<LI><B>##UPTIMETXT##</B><SPAN ID="uptime"> ##UPTIME##</SPAN></LI>
+				</UL>	
+			</LI>
+			<LI>
+				<UL>
+					<LI><B>OSCAM:</B> ##CS_VERSION## </LI>
+					<LI><B>Build:</B> r##CS_SVN_VERSION## </LI>
+					<LI><B>Compiler:</B> ##CS_TARGET##</LI>
+				</UL>
+			</LI>
+			<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
+			<LI><A NAME="statusfooter"></A></LI>
+		</UL>
 		<DIV CLASS="demo_changer">
 			<DIV style="display: table-cell;">
 				<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
@@ -136,8 +137,8 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1239</P>
-							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
+							<P><B>Envi revision:</B> 1240</P>
+							<P><B>For oscam revision:</B> 10081 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
 									<TD>Wiki:</TD>
