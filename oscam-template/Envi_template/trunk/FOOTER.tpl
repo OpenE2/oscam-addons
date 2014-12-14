@@ -28,9 +28,6 @@
 				<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
 				<LI><A NAME="statusfooter"></A></LI>
 			</UL>
-		<DIV CLASS="top-footer">
-			<A HREF="#" CLASS="link-top">Go to Top</A>
-		</DIV>
 		<DIV CLASS="demo_changer">
 			<DIV style="display: table-cell;">
 				<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
@@ -139,7 +136,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1238</P>
+							<P><B>Envi revision:</B> 1239</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -575,6 +572,8 @@
 	});
 
 	/* -------------- CLICK FUNCTION FOR TH - gray layer over sorting column -------------- */
+	/* I don´t know I this code is OK
+	 */
 	$("#dataTable th.sortable").click(function () {
 		var colIndex = $(this).parent().children().index($(this));
 
@@ -602,6 +601,7 @@
 			$('.envi td.centered a').boot_tooltip({animation: false, placement: 'right'})
 			/* Tables in Users */
 			$('.envi table.users th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+			$('.envi table.users th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 			$('.envi td.usercol0 a').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi td.usercol1 a').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi td.usercol23 a').boot_tooltip({animation: false, placement: 'left'})
@@ -625,6 +625,8 @@
 			$('.envi td.statuscol1 a').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi td.statuscol4 a').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi table.infotable td').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+			/* For Parameter input in script.html */
+			$('#scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
 		})
 	}(window.jQuery)
 

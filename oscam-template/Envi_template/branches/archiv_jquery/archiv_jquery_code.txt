@@ -1,0 +1,45 @@
+1. SCROLL TO TOP FUNCTION
+
+---- HTML
+	
+		<DIV CLASS="top-footer">
+			<A HREF="#" CLASS="link-top">Go to Top</A>
+		</DIV>
+
+---- CSS
+		
+		.top-footer a.link-top {
+			color: #050840;;
+			font-weight: bold;
+			text-decoration: none;
+			margin-top: -9px;
+		}
+		.top-footer {
+			position: absolute;
+			bottom: 40px;
+			right: 20%;
+		}
+		.top-footer a.link-top:hover {
+			color: #FF9E5F;
+		}
+
+---- JQEURY CODE
+
+		/* -------------- SCROLL TO TOP -------------- */
+		$(function() {
+			$('a.link-top').click(function () {
+				jQuery('body').animate({
+					scrollTop: 0
+				}, {
+					queue: false,
+					duration: 1000
+				});
+				jQuery('html').animate({
+					scrollTop: 0
+				}, {
+					queue: false,
+					duration: 1000
+				});
+				return false
+			});
+		});

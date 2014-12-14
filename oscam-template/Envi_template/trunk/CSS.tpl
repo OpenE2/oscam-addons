@@ -1077,20 +1077,6 @@ a.link-top:before {
 	position: absolute;
 	left: 1px;
 }
-.top-footer a.link-top {
-	color: #050840;;
-	font-weight: bold;
-	text-decoration: none;
-	margin-top: -9px;
-}
-.top-footer {
-	position: absolute;
-	bottom: 40px;
-	right: 20%;
-}
-.top-footer a.link-top:hover {
-	color: #FF9E5F;
-}
 
 /* Popup info about Envi Template */
 div.envi_info {
@@ -1744,8 +1730,14 @@ body.envi {
 	border-right: none;
 }
 .envi table.readers tr:hover td,
-.envi table.users tr:hover td {
+.envi table.users tr:hover td,
+.envi table.statsbalance tr:hover td {
     background-color: #fcd7d7 !important;
+}
+.envi table.readers tr:hover td.td-sorting,
+.envi table.users tr:hover td.td-sorting,
+.envi table.statsbalance tr:hover td.td-sorting {
+	background-color: #f2cece !important;
 }
 .envi .readers tr:nth-child(odd) td,
 .envi .statsbalance tr:nth-child(odd) td {
@@ -1850,13 +1842,6 @@ body.envi {
 }
 .envi div.footer b {
 	color: #A3A3A3;
-}
-/* Go to top link */
-.envi .top-footer a.link-top {
-	color: #FFF;
-}
-.envi .top-footer a.link-top:hover {
-	color: #BD0000;
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
@@ -2081,9 +2066,6 @@ body.envi {
 .colchange_1 div.footer li.styleauthor b {
 	color: #16B6C6;
 }
-.colchange_1 .top-footer a.link-top:hover {
-	color: #16B6C6;
-}
 .colchange_1 div.sidlistclose {
 	background-color: #16B6C6;
 }
@@ -2157,8 +2139,14 @@ body.envi {
 }
 /* Color for Table */
 .colchange_1 table.readers tr:hover td,
-.colchange_1 table.users tr:hover td {
+.colchange_1 table.users tr:hover td,
+.colchange_1 table.statsbalance tr:hover td {
 	background-color: #D1E5EF !important;
+}
+.colchange_1 table.readers tr:hover td.td-sorting,
+.colchange_1 table.users tr:hover td.td-sorting,
+.colchange_1 table.statsbalance tr:hover td.td-sorting {
+	background-color: #c5d9e3 !important;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
@@ -2179,9 +2167,6 @@ body.envi {
 	color: #FF9C00;
 }
 .colchange_2 div.footer li.styleauthor b {
-	color: #FF9C00;
-}
-.colchange_2 .top-footer a.link-top:hover {
 	color: #FF9C00;
 }
 .colchange_2 div.sidlistclose {
@@ -2256,9 +2241,6 @@ body.envi {
 .colchange_3 div.footer li.styleauthor b {
 	color: #FFE400;
 }
-.colchange_3 .top-footer a.link-top:hover {
-	color: #FFE400;
-}
 .colchange_3 div.sidlistclose {
 	background-color: #FFE400;
 }
@@ -2331,9 +2313,6 @@ body.envi {
 .colchange_4 div.footer li.styleauthor b {
 	color: #7CB600;
 }
-.colchange_4 .top-footer a.link-top:hover {
-	color: #7CB600;
-}
 .colchange_4 div.sidlistclose {
 	background-color: #7CB600;
 }
@@ -2397,9 +2376,6 @@ body.envi {
 	color: #C71C77;
 }
 .colchange_5 div.footer li.styleauthor b {
-	color: #C71C77;
-}
-.colchange_5 .top-footer a.link-top:hover {
 	color: #C71C77;
 }
 .colchange_5 div.sidlistclose {
@@ -2810,13 +2786,6 @@ body.envi {
 	.modalDialog a {
 		font-weight: normal;
 		font-size:1em
-	}
-	/* Go to top link */
-	a.link-top:before {
-		position: relative;
-	}
-	.top-footer {
-		position: static;
 	}
 }
 
