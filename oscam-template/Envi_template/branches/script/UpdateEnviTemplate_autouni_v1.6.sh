@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# Author: Skyndas 2014/12/15
+#
 # Automatic script for find folder and downloaded file.
 # It works without the use of a temporary directory
 #
@@ -24,6 +26,23 @@ die() {
 	echo "$msg"
 	exit 1
 }
+
+case "$1" in
+	# unknown or empty parameter or parameter 'h' = show help *****************
+	'h')
+		echo ''
+		echo 'Automatic Script for downloaded Envi Template from SVN.'
+		echo ''
+		echo 'This script automatic find folder with config files of OSCAM.'
+		echo 'Is necessary to set only the path of the downloaded file into the script.'
+		echo ''
+		echo 'TrunkUrl="http://path/to/folder"'
+		echo 'TrunkFile="downloaded file"'
+		echo ''
+		exit 0
+	;;
+	esac
+
 
 # UPDATE ***************************************************
 # Detecting operating system and CPU type

@@ -28,6 +28,24 @@ die() {
 	exit 1
 }
 
+case "$1" in
+	# unknown or empty parameter or parameter 'h' = show help *****************
+	'h')
+		echo ''
+		echo 'Manual script with the use temporary directory for downloaded Envi Template from SVN.'
+		echo ''
+		echo 'For ensure correct operation the script You must be set paths manually in the script.'
+		echo ''
+		echo 'ConfigPath="/path/to/oscam/config"'
+		echo 'TrunkUrl="http://path/to/folder"'
+		echo 'TrunkFile="downloaded file"'
+		echo 'TempFolder=""'
+		echo ''
+		echo ''
+		exit 0
+	;;
+	esac
+
 # UPDATE ***************************************************
 # Detecting operating system and CPU type
 MachineHardwareName=$(uname -m)
