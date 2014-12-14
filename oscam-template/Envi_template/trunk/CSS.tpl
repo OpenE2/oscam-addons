@@ -1380,6 +1380,7 @@ ul.colchange li.active {
 	}
 
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
+
 /* **************** 2. BASIC DIVISION PAGES */
 .envi #content {padding:80px 8px 125px}
 
@@ -1556,6 +1557,14 @@ body.envi {
 	border-spacing: 0px;
 	border-bottom: 1px solid #222;
 }
+.envi #dataTable {
+	border-spacing: 0px;
+	margin-top: 12px;
+	background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
+	border: 6px solid rgba(255, 255, 255, 0.2);
+	outline: 1px solid #FFF;
+}
 /* emm.html */
 .envi table.writeemm {
 	margin-top:0
@@ -1671,6 +1680,24 @@ body.envi {
 	border-right: 1px solid #999;
 	border-bottom: 1px solid #828282;
 }
+.envi table.readers th.sortable {
+	/* FF 3.6+ */
+	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
+	/* Safari 4+, Chrome 2+ */
+	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
+}
+.envi table.readers th.sorting-desc {
+	/* FF 3.6+ */
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
+	/* Safari 4+, Chrome 2+ */
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
+}
+.envi table.readers th.sorting-asc {
+	/* FF 3.6+ */
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
+	/* Safari 4+, Chrome 2+ */
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
+}
 .envi #searchTable table.readers th {
 	background: -moz-linear-gradient(top, #303135, #3c3d42 6%, #404447 18%, #34383b 50%, #25292c 50%, #1a1b1f 63%, black);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3c3d42), color-stop(.18, #404447), color-stop(.5, #34383b), color-stop(.5, #25292c), color-stop(.63, #1a1b1f));
@@ -1744,6 +1771,13 @@ body.envi {
 .envi table.configreader tr:nth-last-child(-n+3) td,
 .envi table.configuser tr:nth-last-child(-n+3) td {
 	border-bottom: none
+}
+/* Background color for TD if TH have class sorting-asc, sorting-desc */
+.readers tr:nth-child(odd) .td-sorting {
+	background-color: #E6E6E6;
+}
+.readers tr:nth-child(even) .td-sorting {
+	background-color: #d9d9d9;
 }
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */

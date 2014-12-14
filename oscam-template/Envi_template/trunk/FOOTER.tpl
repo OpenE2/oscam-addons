@@ -139,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1235</P>
+							<P><B>Envi revision:</B> 1236</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -215,9 +215,10 @@
 	});
 
 	/* -------------- STYLESWITCHER with COOKIES -------------- */
-	
+
 	/* READ COOKIE AFTER RUN or RESTART BROWSER */
 	$(document).ready(function () {
+		 
 		/* Cookie - Change template */
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			$('body').addClass('envi');
@@ -571,6 +572,26 @@
 			});
 			return false
 		});
+	});
+
+	/* -------------- CLICK FUNCTION FOR TH - now only for readers -------------- */
+	/* I need better found - call function after teble is sorting 
+	 */
+	$("#dataTable th").click(function () {
+		if ($("th").hasClass("sorting-asc")) {
+			// has specialclass 
+			var colIndex = $(this).parent().children().index($(this));
+
+			$('tr').find('td.td-sorting').removeClass('td-sorting');
+			$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
+		}
+		if ($("th").hasClass("sorting-desc")) {
+			// has specialclass 
+			var colIndex = $(this).parent().children().index($(this));
+
+			$('tr').find('td.td-sorting').removeClass('td-sorting');
+			$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
+		}
 	});
 
 	/* -------------- TOOLTIP -------------- */
