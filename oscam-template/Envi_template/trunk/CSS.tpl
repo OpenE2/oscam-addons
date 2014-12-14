@@ -1669,7 +1669,8 @@ body.envi {
 	color: #FFF
 }
 .envi table.readers th,
-.envi table.users th {
+.envi table.users th,
+.envi table.statsbalance th {
 	background-color: #a4a4a4;
 	background: -moz-linear-gradient(top,#CCC,#A4A4A4);
 	background: -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
@@ -1682,21 +1683,24 @@ body.envi {
 	border-bottom: 1px solid #828282;
 }
 .envi table.readers th.sortable,
-.envi table.users th.sortable {
+.envi table.users th.sortable,
+.envi table.statsbalance th.sortable {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
 	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
 }
 .envi table.readers th.sorting-desc,
-.envi table.users th.sorting-desc {
+.envi table.users th.sorting-desc,
+.envi table.statsbalance th.sorting-desc {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
 }
 .envi table.readers th.sorting-asc,
-.envi table.users th.sorting-asc {
+.envi table.users th.sorting-asc,
+.envi table.statsbalance th.sorting-asc {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
@@ -1713,11 +1717,13 @@ body.envi {
 }
 /* Color for sorting */
 .envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
-.envi table.users .sorting-asc, .envi table.users .sorting-desc {
+.envi table.users .sorting-asc, .envi table.users .sorting-desc,
+.envi table.statsbalance .sorting-asc, .envi table.statsbalance .sorting-desc {
 	background-color: #5E5E5E;
 }
 
 /* **************** 10. TABLE TD */
+/* ------- STATUS ------- */
 /* status.html */
 .envi table.status td.subheadline {
 	border-top: 1px solid #FFF;
@@ -1729,6 +1735,7 @@ body.envi {
 .envi table.status td:last-child {
 	border-right: none;
 }
+/* ------- READERS ------- */
 /* readers.html */
 .envi table.readers td {
 	border-right: 1px dotted #999
@@ -1740,10 +1747,12 @@ body.envi {
 .envi table.users tr:hover td {
     background-color: #fcd7d7 !important;
 }
-.envi .readers tr:nth-child(odd) td {
+.envi .readers tr:nth-child(odd) td,
+.envi .statsbalance tr:nth-child(odd) td {
 	background-color: #F2F2F2;
 }
-.envi .readers tr:nth-child(even) td {
+.envi .readers tr:nth-child(even) td,
+.envi .statsbalance tr:nth-child(even) td {
 	background-color: #E6E6E6;
 }
 .envi .users tr.offline:nth-child(odd) td {
@@ -1752,6 +1761,7 @@ body.envi {
 .envi .users tr.offline:nth-child(even) td {
 	background-color: #E6E6E6;
 }
+/* ------- USERS ------- */
 /* userconfig.html */
 .envi table.users td {
 	border-right: 1px dotted #999
@@ -1759,7 +1769,7 @@ body.envi {
 .envi table.users td:last-child {
 	border-right: none;
 }
-
+/* ------- CONFIG ------- */
 /* Solution for coloring first TD in table .config, .configreader, .configuser */
 .envi table.config td:first-child,
 .envi table.configreader td:first-child,
@@ -1788,13 +1798,16 @@ body.envi {
 .envi table.configuser tr:nth-last-child(-n+3) td {
 	border-bottom: none
 }
+/* ------- OTHER SETTINGS ------- */
 /* Background color for TD if TH have class sorting-asc, sorting-desc */
 .envi .readers tr:nth-child(odd) .td-sorting,
-.envi .users tr.offline:nth-child(odd) .td-sorting {
+.envi .users tr.offline:nth-child(odd) .td-sorting,
+.envi .statsbalance tr:nth-child(odd) .td-sorting {
 	background-color: #E6E6E6;
 }
 .envi .readers tr:nth-child(even) .td-sorting,
-.envi .users tr.offline:nth-child(even) .td-sorting {
+.envi .users tr.offline:nth-child(even) .td-sorting,
+.envi .statsbalance tr:nth-child(even) .td-sorting {
 	background-color: #d9d9d9;
 }
 .envi .users tr.connected .td-sorting {
@@ -1882,6 +1895,9 @@ body.envi {
 	transition:all 0.5s ease 0s;
 }
 
+.envi .regexdata_nav input {
+    width: 100px;
+}
 .envi input[type="text"] {
 	border: 1px solid #666;
 }

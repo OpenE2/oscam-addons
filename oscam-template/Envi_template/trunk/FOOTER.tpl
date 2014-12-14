@@ -139,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1237</P>
+							<P><B>Envi revision:</B> 1238</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -574,9 +574,7 @@
 		});
 	});
 
-	/* -------------- CLICK FUNCTION FOR TH - now only for readers -------------- */
-	/* I need found better solution - call function after table is sorting 
-	 */
+	/* -------------- CLICK FUNCTION FOR TH - gray layer over sorting column -------------- */
 	$("#dataTable th.sortable").click(function () {
 		var colIndex = $(this).parent().children().index($(this));
 
