@@ -1213,7 +1213,7 @@ div.envi_info {
 	cursor: pointer;
 }
 .form_holder select {
-	border: 1px solid #CCC;
+	border: 1px solid #CCC !important;
 	border-radius: 2px;
 	font: 13px Arial,sans-serif;
 	color: #777;
@@ -1668,7 +1668,8 @@ body.envi {
 	background-color: #222;
 	color: #FFF
 }
-.envi table.readers th {
+.envi table.readers th,
+.envi table.users th {
 	background-color: #a4a4a4;
 	background: -moz-linear-gradient(top,#CCC,#A4A4A4);
 	background: -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
@@ -1680,27 +1681,35 @@ body.envi {
 	border-right: 1px solid #999;
 	border-bottom: 1px solid #828282;
 }
-.envi table.readers th.sortable {
+.envi table.readers th.sortable,
+.envi table.users th.sortable {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
 	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
 }
-.envi table.readers th.sorting-desc {
+.envi table.readers th.sorting-desc,
+.envi table.users th.sorting-desc {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
 }
-.envi table.readers th.sorting-asc {
+.envi table.readers th.sorting-asc,
+.envi table.users th.sorting-asc {
 	/* FF 3.6+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
 }
-.envi #searchTable table.readers th {
+.envi #searchTable table.readers th,
+.envi #searchTable table.users th {
 	background: -moz-linear-gradient(top, #303135, #3c3d42 6%, #404447 18%, #34383b 50%, #25292c 50%, #1a1b1f 63%, black);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3c3d42), color-stop(.18, #404447), color-stop(.5, #34383b), color-stop(.5, #25292c), color-stop(.63, #1a1b1f));
+	border-bottom: 1px solid #FFF;
+	border-top: 1px solid #FFF;
+	border-left: none;
+	border-right: none;
 }
 /* Color for sorting */
 .envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
@@ -1727,13 +1736,20 @@ body.envi {
 .envi table.readers td:last-child {
 	border-right: none;
 }
-.envi table.readers tr:hover td {
-    background-color: #E8B1B1
+.envi table.readers tr:hover td,
+.envi table.users tr:hover td {
+    background-color: #fcd7d7 !important;
 }
-.readers tr:nth-child(odd) td {
+.envi .readers tr:nth-child(odd) td {
 	background-color: #F2F2F2;
 }
-.readers tr:nth-child(even) td {
+.envi .readers tr:nth-child(even) td {
+	background-color: #E6E6E6;
+}
+.envi .users tr.offline:nth-child(odd) td {
+	background-color: #F2F2F2;
+}
+.envi .users tr.offline:nth-child(even) td {
 	background-color: #E6E6E6;
 }
 /* userconfig.html */
@@ -1773,12 +1789,21 @@ body.envi {
 	border-bottom: none
 }
 /* Background color for TD if TH have class sorting-asc, sorting-desc */
-.readers tr:nth-child(odd) .td-sorting {
+.envi .readers tr:nth-child(odd) .td-sorting,
+.envi .users tr.offline:nth-child(odd) .td-sorting {
 	background-color: #E6E6E6;
 }
-.readers tr:nth-child(even) .td-sorting {
+.envi .readers tr:nth-child(even) .td-sorting,
+.envi .users tr.offline:nth-child(even) .td-sorting {
 	background-color: #d9d9d9;
 }
+.envi .users tr.connected .td-sorting {
+	background-color: #f5f5a4;
+}
+.envi .users tr.online td.td-sorting {
+	background-color: #b2f2a2;
+}
+
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
 .envi div#livelog {
@@ -2115,8 +2140,9 @@ body.envi {
 	color: #13A2AE;
 }
 /* Color for Table */
-.colchange_1 table.readers tr:hover td {
-	background-color: #ACF0F6
+.colchange_1 table.readers tr:hover td,
+.colchange_1 table.users tr:hover td {
+	background-color: #D1E5EF !important;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */

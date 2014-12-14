@@ -139,7 +139,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1236</P>
+							<P><B>Envi revision:</B> 1237</P>
 							<P><B>For oscam revision:</B> 10077 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -575,20 +575,15 @@
 	});
 
 	/* -------------- CLICK FUNCTION FOR TH - now only for readers -------------- */
-	/* I need better found - call function after teble is sorting 
+	/* I need found better solution - call function after table is sorting 
 	 */
-	$("#dataTable th").click(function () {
-		if ($("th").hasClass("sorting-asc")) {
-			// has specialclass 
-			var colIndex = $(this).parent().children().index($(this));
+	$("#dataTable th.sortable").click(function () {
+		var colIndex = $(this).parent().children().index($(this));
 
-			$('tr').find('td.td-sorting').removeClass('td-sorting');
-			$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
-		}
-		if ($("th").hasClass("sorting-desc")) {
-			// has specialclass 
-			var colIndex = $(this).parent().children().index($(this));
+		$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
 
+		if ($("th").hasClass("sorting-asc") || $("th").hasClass("sorting-desc")) {
+			// has specialclass 
 			$('tr').find('td.td-sorting').removeClass('td-sorting');
 			$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
 		}
