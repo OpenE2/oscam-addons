@@ -825,7 +825,7 @@ path.graph_curve {stroke-opacity:0.8;stroke-width:0.7px;fill:none}
 	font-size:11px
 }
 .sortable {
-	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
+	background-image: url(data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
 	background-repeat:no-repeat;
 	background-position:4px center;
 	cursor:pointer;
@@ -833,7 +833,7 @@ path.graph_curve {stroke-opacity:0.8;stroke-width:0.7px;fill:none}
 	padding-right:8px
 }
 .sorting-desc {
-	background-image: url(data:image/png;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIFlD03K1sAOw==);
+	background-image: url(data:image/gif;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIFlD03K1sAOw==);
 	background-repeat:no-repeat;
 	background-position:4px center;
 	cursor:pointer;
@@ -841,7 +841,7 @@ path.graph_curve {stroke-opacity:0.8;stroke-width:0.7px;fill:none}
 	padding-right:8px
 }
 .sorting-asc {
-	background-image: url(data:image/png;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIF3GQnuF0AOw==);
+	background-image: url(data:image/gif;base64,R0lGODlhBQADAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAMAAAIF3GQnuF0AOw==);
 	background-repeat:no-repeat;
 	background-position:4px center;
 	cursor:pointer;
@@ -1305,7 +1305,7 @@ ul.patchange li {
 	float: left;
 }
 ul.colchange li {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPAQMAAADu2mw3AAAABlBMVEUAAABDR01g7m65AAAAAXRSTlMAQObYZgAAAC1JREFUCNcFwVEGgEAAQMFJ0U90gegi0cWiiz92Z8DGwcXDR5as2XPmzps/owmXowu3KS6gJQAAAABJRU5ErkJggg==) !important;
+	background-image: url(data:image/gif;base64,R0lGODlhDgAPAPABAENHTf///yH5BAEAAAEALAAAAAAOAA8AAAIdjI+pCpvQnIHR0cquvfhwmH3PB3pkGZzUpILt+xUAOw==) !important;
 }
 ul.backchange li:hover,
 ul.patchange li:hover,
@@ -1387,7 +1387,7 @@ ul.colchange li.active {
 
 /* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
 body.envi {
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMAQMAAABRKa/CAAAABlBMVEXy8vLk5OTQOLQ5AAAAD0lEQVQI12Po6GCAAVxsAEfcAzFIfEGeAAAAAElFTkSuQmCC');
+	background-image: url('data:image/gif;base64,R0lGODlhEAAMAPAAAOTk5PLy8iH5BAAAAAAALAAAAAAQAAwAAAIURG54kesPo5yx2dWo3lx5hnXiCBUAOw==');
 }
 /* file.html, script.html */
 .envi #filename {
@@ -1687,25 +1687,25 @@ body.envi {
 .envi table.users th.sortable,
 .envi table.statsbalance th.sortable {
 	/* FF 3.6+ */
-	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
+	background: url("data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
+	background: url("data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
 }
 .envi table.readers th.sorting-desc,
 .envi table.users th.sorting-desc,
 .envi table.statsbalance th.sorting-desc {
 	/* FF 3.6+ */
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
+	background: url("data:image/gif;base64,R0lGODlhBQAEAPAAAAAAACMtMCH5BAEAAAAALAAAAAAFAAQAAAIHhB2ZoBdWAAA7") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjYGD4wVDAoAAABlABiduq/yoAAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
+	background: url("data:image/gif;base64,R0lGODlhBQAEAPAAAAAAACMtMCH5BAEAAAAALAAAAAAFAAQAAAIHhB2ZoBdWAAA7") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
 }
 .envi table.readers th.sorting-asc,
 .envi table.users th.sorting-asc,
 .envi table.statsbalance th.sorting-asc {
 	/* FF 3.6+ */
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
+	background: url("data:image/gif;base64,R0lGODlhBQAEAPABACMtMAAAACH5BAUAAAEALAAAAAAFAAQAAAIGTGAHuJ1WADs=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
 	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAEAQMAAAB8/WcDAAAABlBMVEUAAAAjLTCZnys1AAAAAXRSTlMAQObYZgAAABBJREFUCNdjUGAoYPjBwAAABgABieHK2W4AAAAASUVORK5CYII=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
+	background: url("data:image/gif;base64,R0lGODlhBQAEAPABACMtMAAAACH5BAUAAAEALAAAAAAFAAQAAAIGTGAHuJ1WADs=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
 }
 .envi #searchTable table.readers th,
 .envi #searchTable table.users th {
