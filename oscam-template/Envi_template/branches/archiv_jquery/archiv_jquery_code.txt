@@ -51,3 +51,42 @@
 				return false
 			});
 		});
+
+2. GRAY LAYER FOR SORTABLE CELLS "TD" (Background for sorting cells in readers, readerstats and users)
+
+---- CSS		
+		/* Background color for TD if TH have class sorting-asc, sorting-desc */
+		.envi .readers tr:nth-child(odd) .td-sorting,
+		.envi .users tr.offline:nth-child(odd) .td-sorting,
+		.envi .statsbalance tr:nth-child(odd) .td-sorting {
+			background-color: #E6E6E6;
+		}
+		.envi .readers tr:nth-child(even) .td-sorting,
+		.envi .users tr.offline:nth-child(even) .td-sorting,
+		.envi .statsbalance tr:nth-child(even) .td-sorting {
+			background-color: #d9d9d9;
+		}
+		.envi .users tr.connected .td-sorting {
+			background-color: #f5f5a4;
+		}
+		.envi .users tr.online td.td-sorting {
+			background-color: #b2f2a2;
+		}
+
+
+---- JQEURY CODE
+		
+		/* -------------- CLICK FUNCTION FOR TH - gray layer over sorting column -------------- */
+		/* I don´t know I this code is OK
+		 */
+		$("#dataTable th.sortable").click(function () {
+			var colIndex = $(this).parent().children().index($(this));
+
+			$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
+
+			if ($("th").hasClass("sorting-asc") || $("th").hasClass("sorting-desc")) {
+				// has specialclass 
+				$('tr').find('td.td-sorting').removeClass('td-sorting');
+				$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
+			}
+		});
