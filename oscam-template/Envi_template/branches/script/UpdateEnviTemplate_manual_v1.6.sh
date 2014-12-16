@@ -101,6 +101,7 @@ cd $OscamTplFolder
 [ -f CSS.tpl ] && rm -f CSS.tpl
 [ -f FOOTER.tpl ] && rm -f FOOTER.tpl
 [ -f HEADERSHORT.tpl ] && rm -f HEADERSHORT.tpl
+[ -f JSCRIPT.tpl ] && rm -f JSCRIPT.tpl
 [ -f info.txt ] && rm -f info.txt
 
 # Print to display
