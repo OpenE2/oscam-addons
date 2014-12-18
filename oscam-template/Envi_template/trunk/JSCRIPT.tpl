@@ -2315,6 +2315,7 @@ $(function(){
 			$('.envi table.users th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 			$('.envi td.usercol0 a').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi td.usercol1 a').boot_tooltip({animation: false, placement: 'right'})
+			$('.envi td.usercol5 div').boot_tooltip({animation: false, placement: 'right'})
 			$('.envi td.usercol23 a').boot_tooltip({animation: false, placement: 'left'})
 			$('.envi td.usercol24 a').boot_tooltip({animation: false, placement: 'left'})
 			$('.envi td.usercol25 a').boot_tooltip({animation: false, placement: 'left'})

@@ -1,3 +1,18 @@
-Envi Revision:		1245
-Authors:			skyndas
-Last Changed Date:	2014-12-16
+#
+# INFO ABOUT REVISION
+# --------------------------------
+# Envi Revision:		1249
+# Authors:				skyndas
+# Last Changed Date:	2014-12-18
+#
+# FILE LIST (This is a list of files that contain Template) 
+# ----------------------------------------------------------
+#
+# Right name of file is "name.suffix" or "name_of_file.suffix"
+# Bad name of file is e.g "name _ of _ file.suffix" or e.g. "name - of - file.suffix"
+#
+CSS.tpl
+FOOTER.tpl
+HEADERSHORT.tpl
+JSCRIPT.tpl
+info.txt

@@ -1783,13 +1783,18 @@ body.envi {
 .envi table.configuser td:first-child {
 	background-color: #CCC
 }
-.envi table.config tr:nth-last-child(-n+2) td:first-child,
-.envi table.configreader tr:nth-last-child(-n+2) td:first-child,
-.envi table.configuser tr:nth-last-child(-n+2) td:first-child {
+.envi table.config tr:nth-last-child(-n+2) td,
+.envi table.configreader tr:nth-last-child(-n+2) td,
+.envi table.configuser tr:nth-last-child(-n+2) td {
 	background-color: transparent;
 }
-.envi table.subservicetable td:first-child {
-	background-color: #EEE
+.envi table.config table tr:nth-last-child(-n+2) td,
+.envi table.configreader table tr:nth-last-child(-n+2) td ,
+.envi table.configuser table tr:nth-last-child(-n+2) td {
+	background-color: #EEE;
+}
+.envi table.subservicetable tr:nth-last-child(-n+2) td:first-child {
+	background-color: #CCC
 }
 /* Border bottom for whole TR in .config, configreader, .configuser */
 .envi table.config td,
@@ -1897,6 +1902,9 @@ body.envi {
 
 .envi .regexdata_nav input {
     width: 100px;
+}
+.envi .configcontrol input[type="submit"] {
+    width: 115px;
 }
 .envi input[type="text"] {
 	border: 1px solid #666;
