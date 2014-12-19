@@ -323,18 +323,45 @@ $(function () {
 	});
 
 	// search related events
-	$("#searchTerm").keyup(function () {
-		var value = $("#searchTerm").val().toLowerCase().trim();
-		$("#dataTable tr").each(function (index) {
-			if (!index) return;
-			$(this).find("td").each(function () {
-				var id = $(this).text().toLowerCase().trim();
-				var not_found = (id.indexOf(value) == -1);
-				$(this).closest('tr').toggle(!not_found);
-				return not_found;
-			});
-		});
+	$.extend($.expr[":"], {
+		"containsNC": function(elem, i, match, array) {
+		return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+		}
 	});
+
+	$('#searchTerm').keyup( function() {
+		// coloring background
+		$('#dataTable tbody tr td').css("background-color",''); 
+		var value= $(this).val();
+		if (value.length > 0 ) {
+			$('#dataTable tbody tr td:containsNC("'+ value +'")').css("background-color",'#CCC');
+		}
+
+		// affect all table rows on in systems table
+		var that = this;
+		var tableBody = $('#dataTable tbody');
+		var tableRowsClass = $('#dataTable tbody tr');
+		$('.search-sf').remove();
+		tableRowsClass.each( function(i, val) {       
+			//Lower text for case insensitive
+			var rowText = $(val).text().toLowerCase();
+			var inputText = $(that).val().toLowerCase();
+
+			if( rowText.indexOf( inputText ) == -1 ) {
+				//hide rows
+				tableRowsClass.eq(i).hide(); 
+			}
+			else {
+				$('.search-sf').remove();
+				tableRowsClass.eq(i).show();
+			}
+		});
+
+		//If all TR elements are hidden
+		if(tableRowsClass.children(':visible').length == 0) {
+			tableBody.append('<TR CLASS="search-sf"><TD CLASS="text-muted" COLSPAN="13"><B>No entries found.</B></TD></TR>');
+		}
+    });
 
 	$("#searchTerm").click(function () {
 		cdpause();
@@ -2319,8 +2346,8 @@ $(function(){
 			$('.envi td.usercol23 a').boot_tooltip({animation: false, placement: 'left'})
 			$('.envi td.usercol24 a').boot_tooltip({animation: false, placement: 'left'})
 			$('.envi td.usercol25 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi span.global_conf').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi span.global_conf a').boot_tooltip({animation: false, placement: 'right'})
+			$('.envi span.global_conf').boot_tooltip({container: 'body',animation: false, placement: 'right'})
+			$('.envi span.global_conf a').boot_tooltip({container: 'body',animation: false, placement: 'right'})
 			/* Tables in Readers */
 			$('.envi table.readers th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 			$('.envi td.readercol0 a').boot_tooltip({animation: false, placement: 'right'})

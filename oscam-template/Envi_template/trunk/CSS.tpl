@@ -2032,7 +2032,7 @@ body.envi {
 	border-bottom: 5px solid transparent
 }
 .envi .boot_tooltip-inner {
-	max-width: 200px;
+	max-width: 350px;
 	padding: 3px 8px;
 	text-align: center;
 	text-decoration: none;
