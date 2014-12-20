@@ -323,45 +323,60 @@ $(function () {
 	});
 
 	// search related events
-	$.extend($.expr[":"], {
-		"containsNC": function(elem, i, match, array) {
-		return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-		}
-	});
+		// add div for count of rows
+		$('#dataTable').after("<div id=\"countrows\" style=\"text-align: left;margin-top:10px\"></div>");
+		// all rows counts
+		var rowCount = $("#dataTable > tbody").children().length;
+		document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">' + rowCount + '</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
 
-	$('#searchTerm').keyup( function() {
-		// coloring background
-		$('#dataTable tbody tr td').css("background-color",''); 
-		var value= $(this).val();
-		if (value.length > 0 ) {
-			$('#dataTable tbody tr td:containsNC("'+ value +'")').css("background-color",'#CCC');
-		}
-
-		// affect all table rows on in systems table
-		var that = this;
-		var tableBody = $('#dataTable tbody');
-		var tableRowsClass = $('#dataTable tbody tr');
-		$('.search-sf').remove();
-		tableRowsClass.each( function(i, val) {       
-			//Lower text for case insensitive
-			var rowText = $(val).text().toLowerCase();
-			var inputText = $(that).val().toLowerCase();
-
-			if( rowText.indexOf( inputText ) == -1 ) {
-				//hide rows
-				tableRowsClass.eq(i).hide(); 
-			}
-			else {
-				$('.search-sf').remove();
-				tableRowsClass.eq(i).show();
+		//function for coloring background if value from input found
+		$.extend($.expr[":"], {
+			"containsNC": function(elem, i, match, array) {
+			return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
 			}
 		});
 
-		//If all TR elements are hidden
-		if(tableRowsClass.children(':visible').length == 0) {
-			tableBody.append('<TR CLASS="search-sf"><TD CLASS="text-muted" COLSPAN="13"><B>No entries found.</B></TD></TR>');
-		}
-    });
+		// Keyup function for "#searchTerm" input
+		$('#searchTerm').keyup( function() {
+			// coloring background
+			$('#dataTable tbody tr td').css("background-color",''); 
+			var value= $(this).val();
+			if (value.length > 0 ) {
+				$('#dataTable tbody tr td:containsNC("'+ value +'")').css("background-color",'#CCC');
+			}
+
+			// affect all table rows on in systems table
+			var that = this;
+			var tableBody = $('#dataTable tbody');
+			var tableRowsClass = $('#dataTable tbody tr');
+			$('.search-sf').remove();
+			tableRowsClass.each( function(i, val) {       
+				//Lower text for case insensitive
+				var rowText = $(val).text().toLowerCase();
+				var inputText = $(that).val().toLowerCase();
+
+				if( rowText.indexOf( inputText ) == -1 ) {
+					//hide rows
+					tableRowsClass.eq(i).hide(); 
+				}
+				else {
+					$('.search-sf').remove();
+					tableRowsClass.eq(i).show();
+				}
+			});
+
+			// Count showing rows
+			var numOfVisibleRows = $('#dataTable > tbody > tr').filter(function() {
+				return $(this).css('display') !== 'none';
+			}).length;
+			document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">' + numOfVisibleRows + '</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
+
+			//all tr elements are hidden
+			if(tableRowsClass.children(':visible').length == 0) {
+				tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+				document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">0</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
+			}
+		});
 
 	$("#searchTerm").click(function () {
 		cdpause();

@@ -136,7 +136,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1250</P>
+							<P><B>Envi revision:</B> 1251</P>
 							<P><B>For oscam revision:</B> 10081 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
@@ -164,7 +164,7 @@
 									<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template" TARGET="_blank">Source files of Envi</A></TD>
 								</TR>
 							</TABLE>
-							<P CLASS="thanks">Special thanks for the development:<BR>ultra47,gismo2004 - and all the testers.</P>
+							<P CLASS="thanks">Special thanks for the development:<BR>ultra47,schorsch100,gismo2004 - and all the testers.</P>
 						</DIV>
 					</DIV>
 				</DIV>
