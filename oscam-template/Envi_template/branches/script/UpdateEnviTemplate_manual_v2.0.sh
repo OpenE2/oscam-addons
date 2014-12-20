@@ -20,7 +20,7 @@ ConfigPath="/etc/tuxbox/config"
 #
 # 2.
 # Set manually downloaded file without trailing "/"
-TrunkUrl="http://subversion.assembla.com/svn/skyndas-webif-template/trunk"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-template/Envi_template/branches/compressed_files"
 TrunkFile='Envi_Template.zip'
 #
 # 3.
