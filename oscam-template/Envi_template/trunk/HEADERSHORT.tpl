@@ -18,3 +18,34 @@
 			cookieTemplate();
 		});
 	</script>
+	<style type="text/css">
+	/* CSS setting for Original and Envi */
+		/* Coloring background TD for Searchterm */
+		.back_cell {
+			background-color: #e7f26f !important;
+		}
+		/* Setting for DIV "Count rows" */
+		#countrows {
+			text-align: left;
+			margin-top:10px;
+		}
+		/* Settings for SPAN in DIV "Count rows" */
+		.rowcount {
+			font-weight:bold
+		}
+		/* If no entries found in table */
+		.search-sf {}
+		.text-muted {
+			font-weight:bold
+		}
+	/* CSS setting only for Envi */
+		/* Color setting for TD in TFOOT only for BODY.envi */
+		.envi tfoot td {
+			background-color: transparent !important;
+		}
+		.envi table.readers tfoot tr:hover td,
+		.envi table.users tfoot tr:hover td,
+		.envi table.statsbalance tfoot tr:hover td {
+			background-color: transparent !important;
+		}
+	</style>

@@ -323,60 +323,20 @@ $(function () {
 	});
 
 	// search related events
-		// add div for count of rows
-		$('#dataTable').after("<div id=\"countrows\" style=\"text-align: left;margin-top:10px\"></div>");
-		// all rows counts
-		var rowCount = $("#dataTable > tbody").children().length;
-		document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">' + rowCount + '</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
-
-		//function for coloring background if value from input found
-		$.extend($.expr[":"], {
-			"containsNC": function(elem, i, match, array) {
-			return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-			}
-		});
-
-		// Keyup function for "#searchTerm" input
-		$('#searchTerm').keyup( function() {
-			// coloring background
-			$('#dataTable tbody tr td').css("background-color",''); 
-			var value= $(this).val();
-			if (value.length > 0 ) {
-				$('#dataTable tbody tr td:containsNC("'+ value +'")').css("background-color",'#CCC');
-			}
-
-			// affect all table rows on in systems table
-			var that = this;
-			var tableBody = $('#dataTable tbody');
-			var tableRowsClass = $('#dataTable tbody tr');
-			$('.search-sf').remove();
-			tableRowsClass.each( function(i, val) {       
-				//Lower text for case insensitive
-				var rowText = $(val).text().toLowerCase();
-				var inputText = $(that).val().toLowerCase();
-
-				if( rowText.indexOf( inputText ) == -1 ) {
-					//hide rows
-					tableRowsClass.eq(i).hide(); 
-				}
-				else {
-					$('.search-sf').remove();
-					tableRowsClass.eq(i).show();
-				}
+	if ($('body').hasClass('original') == true) {
+		$("#searchTerm").keyup(function () {
+			var value = $("#searchTerm").val().toLowerCase().trim();
+			$("#dataTable tr").each(function (index) {
+				if (!index) return;
+				$(this).find("td").each(function () {
+					var id = $(this).text().toLowerCase().trim();
+					var not_found = (id.indexOf(value) == -1);
+					$(this).closest('tr').toggle(!not_found);
+					return not_found;
+				});
 			});
-
-			// Count showing rows
-			var numOfVisibleRows = $('#dataTable > tbody > tr').filter(function() {
-				return $(this).css('display') !== 'none';
-			}).length;
-			document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">' + numOfVisibleRows + '</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
-
-			//all tr elements are hidden
-			if(tableRowsClass.children(':visible').length == 0) {
-				tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
-				document.getElementById("countrows").innerHTML = 'Showing: <span style="font-weight:bold">0</span> of <span style="font-weight:bold">' + rowCount + '</span> entries';
-			}
 		});
+	}
 
 	$("#searchTerm").click(function () {
 		cdpause();
@@ -2383,6 +2343,117 @@ $(function(){
 			$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
 		})
 	}(window.jQuery)
+
+/* -------------- SMARTER SEARCH IN TABLES with SWOWING ENTRIES -------------- */
+/* This function replaces the standard search in the original WebIf. It is only available in Envi.
+ *
+ * NOTE: Change in Original script - for standard script I use 
+ *		if ($('body').hasClass('original') == true) { }
+ *	
+ * STANDARD SEARCH in Orgininal WebIf
+ *
+ * // search related events
+ *	$("#searchTerm").keyup(function () {
+ * 		var value = $("#searchTerm").val().toLowerCase().trim();
+ * 		$("#dataTable tr").each(function (index) {
+ *			if (!index) return;
+ * 			$(this).find("td").each(function () {
+ * 				var id = $(this).text().toLowerCase().trim();
+ * 				var not_found = (id.indexOf(value) == -1);
+ * 				$(this).closest('tr').toggle(!not_found);
+ * 				return not_found;
+ * 			});
+ * 		});
+ * 	});
+ */
+
+$(function () {
+	if ($('body').hasClass('envi') == true) {
+		// search related events
+			// Create TFOOT in TABLE for count rows
+			tfoot = '<TFOOT></TFOOT>';
+			$('#dataTable').append(tfoot);
+			tfoot_tr = '<TR><TD ID="countrows"></TD></TR>';
+			$('#dataTable tfoot').append(tfoot_tr);
+			if (typeof page != 'undefined') {
+				if(page == 'reader'){
+					$('#countrows').attr('colspan',18);
+				}
+				if(page == 'user'){
+					$('#countrows').attr('colspan',23);
+				}
+				if(page == 'cacheex'){
+					$('#countrows').attr('colspan',12);
+				}
+			}
+
+			// Counts of all rows
+			var rowCount = ($("#dataTable > tbody").children('tr').length);
+			$('#countrows').html('Showing: <SPAN CLASS="rowcount">' + rowCount + '</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
+
+			//Function for coloring background if value from input found
+			$.extend($.expr[":"], {
+				"containsNC": function(elem, i, match, array) {
+				return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+				}
+			});
+
+			// Keyup function for "#searchTerm" input
+			$('#searchTerm').keyup( function() {
+				// coloring background
+				$('#dataTable tbody tr td').removeClass('back_cell'); 
+				var value= $(this).val();
+				if (value.length > 0 ) {
+					$('#dataTable tbody tr td:containsNC("'+ value +'")').addClass('back_cell');
+				}
+
+				// affect all table rows on in systems table
+				var that = this;
+				var tableBody = $('#dataTable tbody');
+				var tableRowsClass = $('#dataTable tbody tr');
+				$('.search-sf').remove();
+				tableRowsClass.each( function(i, val) {       
+					//Lower text for case insensitive
+					var rowText = $(val).text().toLowerCase();
+					var inputText = $(that).val().toLowerCase();
+
+					if( rowText.indexOf( inputText ) == -1 ) {
+						//hide rows
+						tableRowsClass.eq(i).hide(); 
+					}
+					else {
+						$('.search-sf').remove();
+						tableRowsClass.eq(i).show();
+					}
+				});
+
+				// Count showing rows
+				var numOfVisibleRows = $('#dataTable > tbody > tr').filter(function() {
+					return $(this).css('display') !== 'none';
+				}).length;
+				$('#countrows').html('Showing: <SPAN CLASS="rowcount">' + numOfVisibleRows + '</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
+
+				if(tableRowsClass.children(':visible').length == 0) {
+					// Set "colspan" for TD if no entries found by name of page
+					if (typeof page != 'undefined') {
+						if(page == 'reader'){
+							colspan = "13"
+						}
+						if(page == 'user'){
+							colspan = "21"
+						}
+						if(page == 'cacheex'){
+							colspan = "12"
+						}
+					}
+					tableBody.append('<TR CLASS="search-sf"><TD CLASS="text-muted" COLSPAN="' + colspan + '">No entries found.</TD></TR>');
+
+					//all TR elements are hidden
+					$('#countrows').html('Showing: <SPAN CLASS="rowcount">0</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
+				}
+			});
+	}
+});
 
 /* -------------- LIBRARY FOR ENVI -------------- */
 	/*! jquery.cookie v1.4.1 | MIT */
