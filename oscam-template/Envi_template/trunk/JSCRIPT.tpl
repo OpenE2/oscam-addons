@@ -2080,7 +2080,7 @@ $(function(){
 			}
 
 		// (Re-)enable or Disable tooltips 
-		// NOTE: I dont know how disabled Bootstrap tooltip if I change template (original/Envi), solution is throught reload page.
+		// NOTE: I dont know how disabled Bootstrap tooltip if I change template (original/Envi), solution is throught reload page. Reload page is important for new loading whole JSCRIPT.tpl (e.g. better function searchterm is avalaible)
 			location.reload();
 
 			return false;
