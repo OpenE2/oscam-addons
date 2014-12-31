@@ -1,3 +1,11 @@
+CONTENT
+============================================================================
+	== 1. SCROLL TO TOP FUNCTION
+	== 2. GRAY LAYER FOR SORTABLE CELLS "TD" (Background for sorting cells in readers, readerstats and users)
+	== 3. COUNT VISIBLE ROWS in TABLE
+	== 4. PAGINATION with "PREVIOUS" and "NEXT" button
+	== 5. PAGINATION with SEARCHING
+
 1. SCROLL TO TOP FUNCTION
 
 ---- HTML
@@ -90,3 +98,199 @@
 				$('tr').find('td:eq(' + colIndex + ')').addClass('td-sorting');
 			}
 		});
+
+
+3. COUNT VISIBLE ROWS in TABLE
+
+	/* Count visible rows in table */
+	var numOfVisibleRows = $('#dataTable > tbody > tr').filter(function() {
+		return $(this).css('display') !== 'none';
+	}).length;
+	$('#countrows').html('Showing: <SPAN CLASS="rowcount">' + numOfVisibleRows + '</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
+
+4. PAGINATION with "PREVIOUS" and "NEXT" button
+
+	function Paginate() {
+		//How much items per page to show if page is load
+			//Check if cookie exists
+			if (typeof $.cookie('numPerPage') === 'undefined'){
+				//no cookie
+				var numPerPage = 15;
+				$("#selectionPerPage").val("15");
+			} else {
+				//have cookie
+				var numPerPage = $.cookie("numPerPage"); // Set amount of table rows per 'page' from cookie
+				$("#selectionPerPage").val($.cookie("numPerPage"));
+			}
+
+	    var currentPage = 0;
+	    var $table = $(this);
+	    var $tfoot = $(this).find('#pagination');
+	    $table.bind('repaginate', function() {
+	        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+	    });
+	    $table.trigger('repaginate'); //show correct number of rows on first page load
+	    var numRows = $table.find('tbody tr').length;
+	    var numPages = Math.ceil(numRows / numPerPage);
+	    var $pager = $('<DIV CLASS="pager"></DIV>'); // create "pager"
+	    var $previous = $('<SPAN CLASS="previous" TITLE="Previous page"><<</SPAN>'); // create "previous" link
+	    var $next = $('<SPAN CLASS="next" title="Next page">>></SPAN>'); // create "next" link
+	    // If num of pages is > 1
+	    for (var page = 0; page < numPages; page++) {
+		        $('<SPAN CLASS="page-number"></SPAN>').text(page + 1).bind('click', {
+		            newPage: page
+		        }, function(event) {
+		            currentPage = event.data['newPage'];
+		            $table.trigger('repaginate');
+		            $(this).addClass('active').siblings().removeClass('active');
+		        }).appendTo($pager).addClass('clickable');
+		    }
+		// If num of pages == 1, hide link "previous" and "next"
+		if(numPages == 1){
+			$previous.hide();
+			$next.hide()
+		}
+	    $pager.appendTo($tfoot).find('span.page-number:first').addClass('active');
+	    $previous.insertBefore('span.page-number:first');
+	    $next.insertAfter('span.page-number:last');
+		    
+	    $next.click(function (e) {
+	        $previous.addClass('clickable');
+	        $pager.find('.active').next('.page-number.clickable').click();
+	    });
+	    $previous.click(function (e) {
+	        $next.addClass('clickable');
+	        $pager.find('.active').prev('.page-number.clickable').click();
+	    });
+	    $table.on('repaginate', function () {
+	        $next.addClass('clickable');
+	        $previous.addClass('clickable');
+		        
+	        setTimeout(function () {
+	            var $active = $pager.find('.page-number.active');
+	            if ($active.next('.page-number.clickable').length === 0) {
+	                $next.removeClass('clickable');
+	            } else if ($active.prev('.page-number.clickable').length === 0) {
+	                $previous.removeClass('clickable');
+	            }
+	        });
+	    });
+	    $table.trigger('repaginate'); //show correct number of rows on first page load
+	}
+
+5. PAGINATION with SEARCHING
+---- HTML
+	<div class="search" >Search: <input type="text" id="txtEquipmentSearch"/></div>
+	<table class="gridview" ID="tblEquipment">
+		<thead>
+			<tr class="header">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Wade</td>
+				<td>vitae.orci.Phasellus@Morbisit.org</td>
+				<td>Kemmerer</td>
+				<td>Benin</td>
+			</tr>
+		</tbody>
+
+	</table>
+---- CSS
+	/* PAGING*/
+	div.pager {
+	float: left;
+	margin-bottom: 10px;
+	}
+
+	div.pager span {
+	    display: inline-block;
+	    padding: 5px;
+	    text-align: center;
+	    cursor: pointer;
+	    background: #E2E4FF;
+	    color: #000;
+	    margin-right: 0.5em;
+	}
+
+	div.pager span.active {
+	    background: #1296bc;
+	    color: #FFF
+	}
+
+	.insert_button {
+	    padding: 5px;
+	    cursor: pointer;
+	    background: #E2E4FF;
+	    color: #000;
+	}
+
+---- JQUERY
+		
+		$(document).ready(function () {
+            $('#txtUserSearch').keyup(function () {
+                searchTable($(this).val(), '#MainContent_lvUsers_tblUserList');
+            });
+            $('#txtUserItemSearch').keyup(function () {
+                searchTable($(this).val(), '#tblUserItems');
+            });
+            $('#txtMicrosoftSearch').keyup(function () {
+                searchTable($(this).val(), '#MainContent_ListView1_tblMicrosoft');
+            });
+            $('#txtEquipmentSearch').keyup(function () {
+                searchTable($(this).val(), '#tblEquipment');
+            });
+
+            paginate();
+        });
+
+        function paginate() {
+            $('table.gridview').each(function () {
+                var currentPage = 0;
+                var numPerPage = 20;
+                var $table = $(this);
+                $table.bind('repaginate', function () {
+                    $table.children('tbody').children('tr:not(.exclude)').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+                });
+                $table.trigger('repaginate');
+                var numRows = $table.children('tbody').children('tr:not(.exclude)').length;
+
+                var numPages = Math.ceil(numRows / numPerPage);
+                var $pager = $('<div id="pager" class="pager"></div>');
+                for (var page = 0; page < numPages; page++) {
+                    $('<span class="page-number"></span>').text(page + 1).bind('click', {
+                        newPage: page
+                    }, function (event) {
+                        currentPage = event.data['newPage'];
+                        $table.trigger('repaginate');
+                        $(this).addClass('active').siblings().removeClass('active');
+                    }).appendTo($pager).addClass('clickable');
+                }
+                // Clear the old pager first
+                $('#pager').remove();
+                $pager.insertBefore($table).find('span.page-number:first').addClass('active');
+            });
+        }
+
+        function searchTable(inputVal, tablename) {
+            var table = $(tablename);
+            table.find('tr:not(.header)').each(function (index, row) {
+                var allCells = $(row).find('td');
+                if (allCells.length > 0) {
+                    var found = false;
+                    allCells.each(function (index, td) {
+                        var regExp = new RegExp(inputVal, 'i');
+                        if (regExp.test($(td).text())) {
+                            found = true;
+                            return false;
+                        }
+                    });
+                    if (found == true) $(row).show().removeClass('exclude'); else $(row).hide().addClass('exclude');
+                }
+            });
+            paginate();
+        }

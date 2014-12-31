@@ -329,7 +329,7 @@ $(function () {
 			$("#dataTable tr").each(function (index) {
 				if (!index) return;
 				$(this).find("td").each(function () {
-					var id = $(this).text().toLowerCase().trim();
+					var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
 					var not_found = (id.indexOf(value) == -1);
 					$(this).closest('tr').toggle(!not_found);
 					return not_found;
@@ -1922,32 +1922,15 @@ $(document).ready(function () {
 
 /* -------------- BASIC SETTINGS for HTML  -------------- */
 
-/* IF DOCUMENT READY */
-$(function(){
-// Hidden Subnav in script.html - SCRIPTS ITEM
-	if(window.location.href.indexOf("script.html") > -1) {
-		$('#subnav').css('visibility', 'hidden');
+/* IF DOCUMENT READY */ 
+$(function(){ // Hidden Subnav only for selected pages
+	if (document.URL.indexOf('logpoll.html') > -1 ||
+		document.URL.indexOf('emm.html') > -1 ||
+		document.URL.indexOf('emm_running.html') > -1 ||
+		document.URL.indexOf('services.html') > -1 ||
+		document.URL.indexOf('script.html') > -1 ) {
+			$('#subnav').css('visibility', 'hidden');
 	}
-	
-// Hidden Subnav in services.html - SERVICES ITEM
-	if(window.location.href.indexOf("services.html") > -1) {
-		$('#subnav').css('visibility', 'hidden');
-	}
-		
-// Hidden Subnav in logpoll.html - LIVELOG ITEM
-	if(window.location.href.indexOf("logpoll.html") > -1) {
-		$('#subnav').css('visibility', 'hidden');
-	}
-		
-// Hidden Subnav in emm.html
-	if(window.location.href.indexOf("emm.html") > -1) {
-		$('#subnav').css('visibility', 'hidden');
-	}
-		
-// Hidden Subnav in emm_running.html
-	if(window.location.href.indexOf("emm_running.html") > -1) {
-		$('#subnav').css('visibility', 'hidden');
-	} 
 
 // Add checkbox and label for responsive design
 	$("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
@@ -1959,103 +1942,137 @@ $(function(){
 /* -------------- STYLESWITCHER with COOKIES -------------- */
 
 function cookieTemplate() {
-/* Cookie - Change template */
-	if ($.cookie('TemplateSwitch') == 'envi') {
-		$('body').addClass('envi');
-		$('.addClass a[value$="envi"]').addClass("active");
-	} else {
-		$('body').removeClass();
-		$('.addClass a[value="original"]').addClass("active");
-		$('#switchersettings').css('display', 'none');
-	}
+
 };
 
 /* IF DOCUMENT READY */
 $(function(){
-/* Cookie - Show/hide StyleSwitcher */
-	if ($.cookie('myCookieName') == 'isActive') {
-		$('.demo_changer').addClass('active');    
+/* Cookie - Change template */
+	//Check if cookie exists
+	if (typeof $.cookie('TemplateSwitch') != 'undefined'){
+		// Cookie 'TemplateSwitch' is defined
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			// Cookie 'TemplateSwitch' has value 'envi'
+			$('body').addClass('envi');
+			$('.addClass a[value$="envi"]').addClass("active");
+		} else {
+			// Cookie 'TemplateSwitch' has value 'original'
+			$('body').removeClass();
+			$('body').addClass('original');
+			$('.addClass a[value="original"]').addClass("active");
+			$('#switchersettings').css('display', 'none');
+		}
 	} else {
-		$('.demo_changer').removeClass('active');
+		// Cookie 'TemplateSwitch' is undefined (Show Original WebIf)
+		$.cookie('TemplateSwitch', 'original', {expires: 365,path: '/'});
+		$('body').addClass('original');
+		$('.addClass a[value="original"]').addClass("active");
+		$('#switchersettings').css('display', 'none');
+	}
+
+/* Cookie - Show/hide StyleSwitcher */
+	//Check if cookie exists
+	if (typeof $.cookie('StyleSwitcher') != 'undefined'){
+		// Cookie 'StyleSwitcher' is defined
+		if ($.cookie('StyleSwitcher') == 'isActive') {
+			$('.demo_changer').addClass('active');    
+		} else {
+			$('.demo_changer').removeClass('active');
+		}
+	} else {
+		// Cookie 'StyleSwitcher' is undefined
 	}
 
 /* Cookie - isActive/notActive Background color */
 	//Check if cookie exists
-	if (typeof $.cookie('BackCookieName') === 'undefined'){
-		//no cookie
+	if (typeof $.cookie('BackCookieID') != 'undefined'){
+		// Cookie 'BackCookieID' is defined
+		$('#' + $.cookie("BackCookieID")).addClass('active');
 	} else {
-		$('#' + $.cookie("BackCookieName")).addClass('active');
+		// Cookie 'BackCookieID' is undefined
 	}
 
 /* Cookie - isActive/notActive Background pattern */
-	$('#' + $.cookie("PatCookieName")).addClass('active');
+	//Check if cookie exists
+	if (typeof $.cookie('PatCookieID') != 'undefined'){
+		// Cookie 'PatCookieID' is defined
+		$('#' + $.cookie("PatCookieID")).addClass('active');
+	} else {
+		// Cookie 'PatCookieID' is undefined
+	}
 
 /* Cookie - isActive/notActive Template color style */
-	$('#' + $.cookie("ColCookieName")).addClass('active');
+	//Check if cookie exists
+	if (typeof $.cookie('ColCookieID') != 'undefined'){
+		// Cookie 'ColCookieID' is defined
+		$('#' + $.cookie("ColCookieID")).addClass('active');
+	} else {
+		// Cookie 'ColCookieID' is undefined
+	}
 
 /* Cookie - for Body Font Family */
 	//Check if cookie exists
-	if (typeof $.cookie('BodyFontFamily') === 'undefined'){
-		//no cookie
-	} else {
-		//have cookie
-		// For original WebIf remove style
+	if (typeof $.cookie('BodyFontFamily') != 'undefined'){
+		/// Cookie 'BodyFontFamily' is defined
 		if ($.cookie('TemplateSwitch') === 'envi'){
-			$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+			$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}');
 			$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
 		} else {
 			$("#enviBodyFontFamily").html('')
 		}
+	} else {
+		// Cookie 'BodyFontFamily' is undefined
 	}
 
 /* Cookie - for Menu Font Family */
 	//Check if cookie exists
-	if (typeof $.cookie('FontFamily') === 'undefined'){
-		//no cookie
+	if (typeof $.cookie('FontFamily') != 'undefined'){
+		/// Cookie 'FontFamily' is defined
+		if ($.cookie('TemplateSwitch') === 'envi'){
+			$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}');
+			$("#menufontfamily").val($.cookie("FontFamily"));
+		} else {
+			$("#enviFontFamily").html('')
+		}
 	} else {
-		//have cookie
-		$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}')
-		$("#menufontfamily").val($.cookie("FontFamily"));
+		// Cookie 'FontFamily' is undefined
 	}
 
 /* Cookie - for Menu Font Size */
 	//Check if cookie exists
-	if (typeof $.cookie('FontSize') === 'undefined'){
-		//no cookie
-	} else {
-		//have cookie
-		$("#enviFontSize").html(
-			'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
-			'.envi #mainmenu { margin-top: 11px;}')
+	if (typeof $.cookie('FontSize') != 'undefined'){
+		/// Cookie 'FontSize' is defined
+		if ($.cookie('TemplateSwitch') === 'envi'){
+			$("#enviFontSize").html(
+				'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
+				'.envi #mainmenu { margin-top: 11px;}');
 			$("#menufontsize").val($.cookie("FontSize") +'px');
+		} else {
+			$("#enviFontSize").html('')
+		}
+	} else {
+		// Cookie 'FontSize' is undefined
 	}
 });
 
 /* SHOW/HIDE STYLESWITCHER */
-	function setMyCookie() {
-		myCookieVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
-		$.cookie('myCookieName', myCookieVal, {
-			expires: 365,
-			path: '/'
-		});
+	function styleSwitcherCookie() {
+		styleSwitcherVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
+		$.cookie('StyleSwitcher', styleSwitcherVal, {expires: 365,path: '/'});
 	}
-
 	
-		$("#demo_icon").click(function () {
-			$('.demo_changer').toggleClass('active');
-			setMyCookie();
-		});
+	$("#demo_icon").click(function () {
+		$('.demo_changer').toggleClass('active');
+		styleSwitcherCookie();
+	});
 	
 /* CHANGE TEMPLATE (original/Envi) */
 	$(function(){
 		var TemplateSwitch = $.cookie('TemplateSwitch');
-		$('.addClass a').on('click', function (e) {
-			TemplateSwitch = $(this).attr('value')
+		$('.addClass a').click(function () {
+			templateSwitchVal = $(this).attr('value')
 			$('body').removeClass().addClass(TemplateSwitch)
-			$.cookie('TemplateSwitch', TemplateSwitch, {
-					expires: 365,
-					path: '/'
-				});
+			$.cookie('TemplateSwitch', templateSwitchVal, {expires: 365,path: '/'});
 			$('ul.addClass a.active').removeClass('active');
 			$(this).addClass('active');
 
@@ -2082,46 +2099,28 @@ $(function(){
 		// (Re-)enable or Disable tooltips 
 		// NOTE: I dont know how disabled Bootstrap tooltip if I change template (original/Envi), solution is throught reload page. Reload page is important for new loading whole JSCRIPT.tpl (e.g. better function searchterm is avalaible)
 			location.reload();
-
 			return false;
-		}).filter(function () {
-			return $(this).attr('class') === TemplateSwitch
-		}).click()
-	});
-
-/* SETTINGS for LI for CHANGE COLOR and PATTERNS */
-	// Background color
-	$(".backchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('BackCookieName', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
-	});
-
-	// Background pattern
-	$(".patchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('PatCookieName', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
-	});
-
-	// Template color style
-	$(".colchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('ColCookieName', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
 		});
 	});
 
 /* FUNCTION for CHANGE COLOR */
 	$(function(){
+	/* Change Template color style */
+		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
+		$('.colchange li').on('click', function (e) { 	// function for colchange li click
+			color = $(this).attr('class')				// Rename value "color" with class in colchange li
+			if ($("body").hasClass('envi')) {			
+				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
+				$.cookie('color', color, {				// Set cookie
+					expires: 365,
+					path: '/'
+				});
+			};
+			return false;
+		}).filter(function () {
+			return $(this).attr('class') === color
+		}).click()
+
 	/* Change background color */
 		var backcolor = $.cookie('backcolor');
 		$('.backchange li').on('click', function (e) {
@@ -2153,22 +2152,34 @@ $(function(){
 		}).filter(function () {
 			return $(this).attr('class') === patcolor
 		}).click()
+	});
 
-	/* Change Template color style */
-		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
-		$('.colchange li').on('click', function (e) { 	// function for colchange li click
-			color = $(this).attr('class')				// Rename value "color" with class in colchange li
-			if ($("body").hasClass('envi')) {			
-				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
-				$.cookie('color', color, {				// Set cookie
-					expires: 365,
-					path: '/'
-				});
-			};
-			return false;
-		}).filter(function () {
-			return $(this).attr('class') === color
-		}).click()
+/* SETTINGS for LI for CHANGE COLOR and PATTERNS */
+	// Background color
+	$(".backchange li").click(function () {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		$.cookie('BackCookieID', $(this).attr('id'), {expires: 365,path: '/'});
+	});
+
+	// Background pattern
+	$(".patchange li").click(function () {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		$.cookie('PatCookieID', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
+	});
+
+	// Template color style
+	$(".colchange li").click(function () {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		$.cookie('ColCookieID', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
 	});
 
 /* CHECKBOX - ROTATE LOGO */
@@ -2212,12 +2223,8 @@ $(function(){
 	// Change font family for body
 		$('#bodyfontfamily').change(function() {
 			// value and cookie
-			font_weight = false;
 			font_picked = $(this).val();
-			var split_font_name = font_picked.split(":");
-			if(split_font_name.length > 0){
-				font_picked = split_font_name[0];
-				font_weight = split_font_name[1];
+			if(font_picked.length > 0){
 				$.cookie('BodyFontFamily', font_picked, {
 					expires: 365,
 					path: '/'
@@ -2233,12 +2240,8 @@ $(function(){
 	// Change font family for main menu
 		$('#menufontfamily').change(function() {
 			// value and cookie
-			font_weight = false;
 			font_picked = $(this).val();
-			var split_font_name = font_picked.split(":");
-			if(split_font_name.length > 0){
-				font_picked = split_font_name[0];
-				font_weight = split_font_name[1];
+			if(font_picked.length > 0){
 				$.cookie('FontFamily', font_picked, {
 					expires: 365,
 					path: '/'
@@ -2341,119 +2344,391 @@ $(function(){
 			$('.envi table.infotable td').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 			/* For Parameter input in script.html */
 			$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
+			/* Section label in Style Switcher */
+			$('.envi a.sectioninfo').boot_tooltip({html: true,container: 'body',animation: false, placement: 'bottom'})
 		})
 	}(window.jQuery)
+/* -------------------------------------- SEARCHTERM and PAGINATION in tables readers, users, cacheex -------------------------------- */
+$(function () { if ($('body').hasClass('envi') == true) {
+// ********************************************************************
 
-/* -------------- SMARTER SEARCH IN TABLES with SWOWING ENTRIES -------------- */
-/* This function replaces the standard search in the original WebIf. It is only available in Envi.
- *
- * NOTE: Change in Original script - for standard script I use 
- *		if ($('body').hasClass('original') == true) { }
- *	
- * STANDARD SEARCH in Orgininal WebIf
- *
- * // search related events
- *	$("#searchTerm").keyup(function () {
- * 		var value = $("#searchTerm").val().toLowerCase().trim();
- * 		$("#dataTable tr").each(function (index) {
- *			if (!index) return;
- * 			$(this).find("td").each(function () {
- * 				var id = $(this).text().toLowerCase().trim();
- * 				var not_found = (id.indexOf(value) == -1);
- * 				$(this).closest('tr').toggle(!not_found);
- * 				return not_found;
- * 			});
- * 		});
- * 	});
- */
+	/* ------------------------- FUNCTION FOR SEARCHTERM and PAGINATION ------------------------- */
+	// Create TEST DIV - It is only for test. I can remove.
+	function CreateTestDiv() {
+		// Counts of all TR
+		var output = $('#dataTable');
+		var content = ('<DIV ID="testdiv" STYLE="text-align: left;margin: 10px;padding: 6px;background: #CCC;"><B>CONTROL DATA FROM SEARCHTERM - </B> ' + 
+						'Count visible rows: <SPAN ID="span3" STYLE="font-weight:bold;"></SPAN> ' +
+						'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+						'numRows: <SPAN ID="span4" STYLE="font-weight:bold;"></SPAN> ' +
+						'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+						'numPages: <SPAN ID="span5" STYLE="font-weight:bold;"></SPAN> ' +
+						'</DIV>');
+		output.after(content);
+	}
 
-$(function () {
-	if ($('body').hasClass('envi') == true) {
-		// search related events
-			// Create TFOOT in TABLE for count rows
-			tfoot = '<TFOOT></TFOOT>';
-			$('#dataTable').append(tfoot);
-			tfoot_tr = '<TR><TD ID="countrows"></TD></TR>';
-			$('#dataTable tfoot').append(tfoot_tr);
-			if (typeof page != 'undefined') {
-				if(page == 'reader'){
-					$('#countrows').attr('colspan',18);
-				}
-				if(page == 'user'){
-					$('#countrows').attr('colspan',23);
-				}
-				if(page == 'cacheex'){
-					$('#countrows').attr('colspan',12);
-				}
+	function CreateTfoot() {
+		// Create TFOOT in TABLE for count rows
+		tfoot = '<TFOOT></TFOOT>';
+		$('#dataTable').append(tfoot);
+		// TD "countrows" is for searchterm and TD "pagination" is for pagination
+		tfoot_tr = '<TR><TD ID="TfootDiv"><DIV ID="countrows"></DIV><DIV CLASS="pagin"><DIV ID="pagination"></DIV><DIV ID="numPerPage">Items per page: </DIV></DIV></TD></TR>';
+		$('#dataTable tfoot').append(tfoot_tr);
+		// Set COLSPAN for TD (id=pagination) - colspan = TD with hidden columns (Anticasc,CW Cycle, Group)
+		if (typeof page != 'undefined') {
+			if(page == 'reader'){
+				$('#TfootDiv').attr('colspan',18);
+			}
+			if(page == 'user'){
+				$('#TfootDiv').attr('colspan',23);
+			}
+		}
+	}
+
+	function AllRowCount() {
+		// Counts of all TR - Function is not used, But I do not want to delete it
+		var outputCell = $('#countrows'); // output to DIV
+		var allRowCount = ($("#dataTable > tbody").children('tr').length); // count of all TR in TABLE
+		outputCell.html('Showing: <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+	}
+	
+	function VisibleRowCount() {
+		// Count visible rows for searching in table
+		var outputCell = $('#countrows'); // output to DIV
+		var allRowCount = $('#dataTable tbody tr').length;  // count of all TR in TABLE
+		var hiddenRowCount = $("#dataTable tbody tr:hidden").length; // count of hidden TR
+		var numOfVisibleRows = (allRowCount - hiddenRowCount);  // count of visible TR
+		outputCell.html('Showing: <SPAN CLASS="rowcount">' + numOfVisibleRows + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+	}
+
+	function VisibleRowCountPagination() {
+		// Count visible rows for pagination if page is loading and for selection in pagination
+		var outputCell = $('#countrows'); // output to DIV
+		var itemsTR = $("#dataTable tbody tr");
+		var allRowCount = itemsTR.length;  // count of all TR in TABLE
+			// Set "numPerPage" with scrutiny cookie 
+			if (typeof $.cookie('numPerPage') === 'undefined') {
+				//no cookie
+				var numPerPage = 10;
+			} else {
+				//have cookie
+				var numPerPage = $.cookie("numPerPage"); // Set amount of table rows per 'page' from cookie
+			}
+		var startRecord = 1;
+		var endRecord = (numPerPage * startRecord);
+			// Control If count of all TR is less or equal then "numPerPage".
+			if (allRowCount <= numPerPage){
+				outputCell.html('Showing: <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+			} else {
+				outputCell.html('Showing: <SPAN CLASS="rowcount">' + startRecord + ' - ' + endRecord + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+			}
+	}
+
+	function NullRowCount() {
+		// How much TR is visible
+		var outputCell = $('#countrows'); // output to DIV
+		var allRowCount = $('#dataTable tbody tr').length-1;  // number of all TR without TR "no entris found"
+		outputCell.html('Showing: <SPAN CLASS="rowcount">0</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+	}
+
+	function Paginate() {
+		$('#dataTable').each(function () {
+			// How much items per page to show if page is load (Check if cookie exists )
+			if (typeof $.cookie('numPerPage') === 'undefined'){
+				//no cookie
+				var numPerPage = 10;
+				$("#selectionPerPage").val("10");
+			} else {
+				//have cookie
+				var numPerPage = $.cookie("numPerPage"); // Set amount of table rows per 'page' from cookie
+				$("#selectionPerPage").val($.cookie("numPerPage"));
+			}
+			var currentPage = 0;
+			var $table = $(this);
+			var $tfoot = $(this).find('#pagination');
+			$table.bind('repaginate', function () {
+				$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+			});
+			$table.trigger('repaginate');
+			var numRows = $table.find('tbody tr').length;
+			var numPages = Math.ceil(numRows / numPerPage);
+			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>');	// create "pager"
+			var newPage = 'newPage';
+			// If num of pages is > 1
+			for (var page = 0; page < numPages; page++) {
+				$('<span class="page-number"></span>').text(page + 1).bind('click', {
+					newPage: page
+				}, function (event) {
+					currentPage = event.data.newPage;
+					$table.trigger('repaginate');
+					$(this).addClass('active').siblings().removeClass('active');
+				}).appendTo($pager).addClass('clickable');
+			}
+			// Clear the old pager first
+			$('#pager').remove();
+			$pager.appendTo($tfoot).find('span.page-number:first').addClass('active');
+
+			// Show info about record after click on span in $pager
+				// The common setting for $pagerItems and $lastPagerItems
+				var $pagerItems = $('span.page-number');
+				var $lastPagerItems = $('span.page-number:last-child');
+				var outputCell = $('#countrows'); // output to DIV
+				// How much items per page to show if page is load (Check if cookie exists )
+					if (typeof $.cookie('numPerPage') === 'undefined'){
+						//no cookie
+						var numPerPage = 10;
+					} else {
+						//have cookie
+						var numPerPage = $.cookie("numPerPage"); // Set amount of table rows per 'page' from cookie
+					}
+				var itemsTR = $("#dataTable tbody tr");
+				var allRowCount = itemsTR.length; // count of all TR in TABLE
+			// If num of pages == 1, cookie "numPerPage" is set to 1000 (show All items)
+			if(numPages == 1){
+				VisibleRowCountPagination();
+				return;
 			}
 
-			// Counts of all rows
-			var rowCount = ($("#dataTable > tbody").children('tr').length);
-			$('#countrows').html('Showing: <SPAN CLASS="rowcount">' + rowCount + '</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
+			$pagerItems.click(function() {
+				// Showing record 
+				currentPage = currentPage + 1;
+				var startcurrentRecord = (numPerPage * currentPage) - numPerPage + 1;
+				var endcurrentRecord = (numPerPage * currentPage);
+				outputCell.html('Showing: <SPAN CLASS="rowcount">' + startcurrentRecord + ' - ' + endcurrentRecord + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+		    });
 
-			//Function for coloring background if value from input found
-			$.extend($.expr[":"], {
-				"containsNC": function(elem, i, match, array) {
-				return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-				}
-			});
-
-			// Keyup function for "#searchTerm" input
-			$('#searchTerm').keyup( function() {
-				// coloring background
-				$('#dataTable tbody tr td').removeClass('back_cell'); 
-				var value= $(this).val();
-				if (value.length > 0 ) {
-					$('#dataTable tbody tr td:containsNC("'+ value +'")').addClass('back_cell');
-				}
-
-				// affect all table rows on in systems table
-				var that = this;
-				var tableBody = $('#dataTable tbody');
-				var tableRowsClass = $('#dataTable tbody tr');
-				$('.search-sf').remove();
-				tableRowsClass.each( function(i, val) {       
-					//Lower text for case insensitive
-					var rowText = $(val).text().toLowerCase();
-					var inputText = $(that).val().toLowerCase();
-
-					if( rowText.indexOf( inputText ) == -1 ) {
-						//hide rows
-						tableRowsClass.eq(i).hide(); 
-					}
-					else {
-						$('.search-sf').remove();
-						tableRowsClass.eq(i).show();
-					}
-				});
-
-				// Count showing rows
-				var numOfVisibleRows = $('#dataTable > tbody > tr').filter(function() {
-					return $(this).css('display') !== 'none';
-				}).length;
-				$('#countrows').html('Showing: <SPAN CLASS="rowcount">' + numOfVisibleRows + '</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
-
-				if(tableRowsClass.children(':visible').length == 0) {
-					// Set "colspan" for TD if no entries found by name of page
-					if (typeof page != 'undefined') {
-						if(page == 'reader'){
-							colspan = "13"
-						}
-						if(page == 'user'){
-							colspan = "21"
-						}
-						if(page == 'cacheex'){
-							colspan = "12"
-						}
-					}
-					tableBody.append('<TR CLASS="search-sf"><TD CLASS="text-muted" COLSPAN="' + colspan + '">No entries found.</TD></TR>');
-
-					//all TR elements are hidden
-					$('#countrows').html('Showing: <SPAN CLASS="rowcount">0</SPAN> of <SPAN CLASS="rowcount">' + rowCount + '</SPAN> entries');
-				}
-			});
+		    $lastPagerItems.click(function() {
+		    	// Showing record for last TR's
+		    	var startcurrentRecord = (numPerPage * currentPage) - numPerPage + 1;
+				var endcurrentRecord = (numPerPage * currentPage);
+				outputCell.html('Showing: <SPAN CLASS="rowcount">' + startcurrentRecord + ' - ' + allRowCount + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
+		    });
+		});
 	}
-});
+
+	function PaginateBySearchTerm() {
+		$('#dataTable').each(function () {
+			// How much items per page to show if page is load (Check if cookie exists )
+			// How much TR is visible
+			var outputCell = $('#span3');
+			var visibleRowCount = $("#dataTable tbody tr:visible").length; // number of visible TR
+			outputCell.html(visibleRowCount);
+
+			// How much items per page to show if page is load (Check if cookie exists )
+			if (typeof $.cookie('numPerPage') === 'undefined'){
+				//no cookie
+				var numPerPage = 10;
+				$("#selectionPerPage").val("10");
+			} else {
+				//have cookie
+				var numPerPage = $.cookie("numPerPage"); // Set amount of table rows per 'page' from cookie
+				$("#selectionPerPage").val($.cookie("numPerPage"));
+			}
+			var currentPage = 0;
+			var $table = $(this);
+			var $tfoot = $(this).find('#pagination');
+			$table.bind('repaginate', function () {
+				$table.find('tbody tr:visible').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+			});
+			var numRows = $table.children('tbody').children('tr:visible').length;
+			var numPages = Math.ceil(numRows / numPerPage);
+			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>');	// create "pager"
+			var newPage = 'newPage';
+			// Clear the old pager first
+			$('#pager').remove();
+			// Create pagination
+			for (var page = 0; page < numPages; page++) {
+				$('<span class="page-number"></span>').text(page + 1).bind('click', {
+					newPage: page
+				}, function (event) {
+					currentPage = event.data.newPage;
+					$table.trigger('repaginate');
+					$(this).addClass('active').siblings().removeClass('active');
+				}).appendTo($pager).addClass('clickable');
+			}
+			
+
+			// Clear the old pager first
+			$('#pager').remove();
+			$pager.appendTo($tfoot).find('span.page-number:first').addClass('active');
+ 
+
+
+			$('#span4').html(numRows);
+			$('#span5').html(numPages);
+
+
+		});
+	}
+
+	function HidePagination() {
+		$('#pagination').addClass('visibility')
+		$('#numPerPage').addClass('visibility')
+	}
+
+	function ShowPagination() {
+		$('#pagination').removeClass('visibility')
+		$('#numPerPage').removeClass('visibility')
+	}
+
+	/* ---------------- CALL FUNCTION after loading page - only for page READER, USER ---------------- */
+	if (typeof page != 'undefined') {
+		if(page == 'reader' || 'user'){
+			// Create TEST DIV (Call function)
+			CreateTestDiv();
+			// Create TFOOT (Call function)
+			CreateTfoot();
+		}
+	}
+
+	/* -------------- SMARTER SEARCH IN TABLES with SWOWING ENTRIES -------------- */
+	/* This function replaces the standard search in the original WebIf. It is only available in Envi.
+	 *
+	 * NOTE: Change in Original script - for standard script I use 
+	 *		if ($('body').hasClass('original') == true) { }
+	 *	
+	 * STANDARD SEARCH in Orgininal WebIf
+	 *
+	 * // search related events
+	 *	$("#searchTerm").keyup(function () {
+	 * 		var value = $("#searchTerm").val().toLowerCase().trim();
+	 * 		$("#dataTable tr").each(function (index) {
+	 *			if (!index) return;
+	 * 			$(this).find("td").each(function () {
+	 * 				var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
+	 * 				var not_found = (id.indexOf(value) == -1);
+	 * 				$(this).closest('tr').toggle(!not_found);
+	 * 				return not_found;
+	 * 			});
+	 * 		});
+	 * 	});
+	 */
+	
+	//Function for coloring background if value from input found
+	$.extend($.expr[":"], {
+		"containsNC": function(elem, i, match, array) {
+			return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+		}
+	});
+	// Keyup function for "#searchTerm" input
+	$('#searchTerm').keyup( function() {
+		// coloring background
+		$('#dataTable tbody tr td').removeClass('back_cell'); 
+		var value= $(this).val();
+		if (value.length > 0 ) {
+			$('#dataTable tbody tr td:containsNC("'+ value +'")').addClass('back_cell');
+		}
+		//Set basic value for SearchTerm
+		var that = this;
+		var tableBody = $('#dataTable tbody');
+		var tableRowsClass = $('#dataTable tbody tr');
+		// affect all table rows on in systems table
+		$('.search-sf').remove();
+		tableRowsClass.each( function(i, val) {       
+			//Lower text for case insensitive
+			var rowText = $(val).text().toLowerCase();
+			var inputText = $(that).val().toLowerCase();
+
+			if( rowText.indexOf( inputText ) == -1 ) {
+				//hide rows
+				tableRowsClass.eq(i).hide(); 
+			} else {
+				$('.search-sf').remove();
+				tableRowsClass.eq(i).show();
+			}
+		});
+		
+		// Count visible rows in table
+		VisibleRowCount();
+
+		if(tableRowsClass.children(':visible').length == 0) {
+			// Set "colspan" for TD if no entries found by name of page - colspan = TD with hidden columns (Anticasc,CW Cycle, Group)
+			if (typeof page != 'undefined') {
+				if(page == 'reader'){
+					colspan = "18"
+				}
+				if(page == 'user'){
+					colspan = "23"
+				}
+			}
+			tableBody.append('<TR CLASS="search-sf"><TD CLASS="text-muted" COLSPAN="' + colspan + '">No entries found.</TD></TR>');
+			//all TR elements are hidden
+			NullRowCount()
+		}
+		// Repaginate table
+		PaginateBySearchTerm();
+	});
+
+	$("#searchTerm").focusout(function () {
+		// Show paginate table
+		// ShowPagination();
+	});
+
+	$("#searchTerm").focusin(function () {
+		// Hide paginate table
+		// HidePagination();
+	});
+	
+	/* ------------------------- PAGINATION ------------------------- */
+		// Create selection from Array
+		var arr = [
+			{val : 1000, text: 'All'},
+			{val : 5, text: '5'},
+			{val : 10, text: '10 - default'},
+			{val : 15, text: '15'},
+			{val : 20, text: '20'}
+		];
+
+		var sel = $('<select id="selectionPerPage">').appendTo('#numPerPage');
+		$(arr).each(function() {
+			sel.append($("<option>").attr('value',this.val).text(this.text));
+		});
+
+		// Set value after selection
+		$('#selectionPerPage').change(function() {
+			// value and cookie
+			var numPerPage = $(this).val();
+			if(numPerPage.length > 0){
+				$.cookie('numPerPage', numPerPage, {
+					expires: 365,path: '/'
+				});
+			}
+			// ONLY TEST
+				var selval = $(this).find("option:selected").val();
+				var seltext = $(this).find("option:selected").text();
+				$.cookie('selval', selval, {expires: 365,path: '/'});
+				$.cookie('seltext', seltext, {expires: 365,path: '/'});
+			// Repaginate table
+			Paginate();
+			// Count visible rows in table
+			VisibleRowCountPagination();
+		});
+	
+	/* ---------------- CALL FUNCTION after loading page - only for page READER, USER ---------------- */
+	if (typeof page != 'undefined') {
+		if(page == 'reader' || 'user'){
+			// Create pagination for table
+			Paginate();
+			// Counts of all rows (Call function)
+			VisibleRowCountPagination()
+		}
+	}
+	
+// ********************************************************************
+
+}});
+
+/* -------------------------------- ICONS ------------------------------- */
+$(function () { if ($('body').hasClass('envi') == true) {
+// ********************************************************************
+// Icons
+$("#mainmenu li a").each(function (i) {
+            var incremental = i + 1;
+            $(this).addClass('menu_image' + incremental);
+		});
+
+// ********************************************************************
+}});
 
 /* -------------- LIBRARY FOR ENVI -------------- */
 	/*! jquery.cookie v1.4.1 | MIT */

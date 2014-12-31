@@ -1054,50 +1054,50 @@ div.bar {
 
 /* footer.html */
 div.footer ul {
-	margin:5px
+	margin: 5px
 }
 div.footer li {
-	margin:0
+	margin: 0
 }
 div.footer b {}
 
 ul.textfooter {
-	margin:5px 0
+	margin: 5px 0
 }
 ul.textfooter,  ul.textfooter ul {
-	list-style-type:none
+	list-style-type: none
 }
 ul.textfooter li {
-	display:inline
+	display: inline
 }
 div.styleswitcher {
 	position: absolute;
 	bottom: 34px;
 	right: 52px;
-	color:#656565
+	color: #656565
 }
 div.footer ul.addClass {
 	margin: 3px auto;
-	padding: 7px 0px;
+	padding: 7px 0px
 }
 div.footer ul.addClass li {
 	display: inline;
-	padding: 9px 5px;
+	padding: 9px 5px
 }
 
 /* Go to top link */
 .envi .top_link a {
-	color: #FFF;
+	color: #FFF
 }
 .envi .top_link a:hover {
-	color: #BD0000;
+	color: #BD0000
 }
 
 /* Popup info about Envi Template */
 div.envi_info {
 	position: absolute;
 	bottom: 5px;
-	right: 35px;
+	right: 35px
 }
 .modalDialog {
 	position: fixed;
@@ -1110,20 +1110,20 @@ div.envi_info {
 	z-index: 99999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
+	   -moz-transition: opacity 400ms ease-in;
+		    transition: opacity 400ms ease-in;
+	pointer-events: none
 }
 .modalDialog:target {
 	opacity:1;
-	pointer-events: auto;
+	pointer-events: auto
 }
 .modalDialog > div {
 	width: 400px;
 	position: relative;
 	margin: 10% auto;
 	padding: 13px 20px;
-	background-color: #FFF;
+	background-color: #FFF
 }
 .modalDialog > div > table {
 	width: 90%;
@@ -1151,12 +1151,12 @@ div.envi_info {
 	text-decoration: none;
 	font-weight: 800;
 	-webkit-border-radius: 14px;
-	-moz-border-radius: 14px;
-	border-radius: 14px;
-	-moz-box-shadow: 1px 1px 3px #000;
+	   -moz-border-radius: 14px;
+		    border-radius: 14px;
 	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
-	border: 2px solid #FFF;
+	   -moz-box-shadow: 1px 1px 3px #000;
+		    box-shadow: 1px 1px 3px #000;
+	border: 2px solid #FFF
 }
 .close:hover {
 	background-color: #000;
@@ -1170,7 +1170,7 @@ div.envi_info {
 	right: 0;
 	bottom: 10px;
 	font-family: Arial;
-	display: table;
+	display: table
 }
 .line {
 	border-bottom: 1px solid #E0E0E0;
@@ -1184,68 +1184,78 @@ div.envi_info {
 	background-repeat:no-repeat;
 	background-position: center;
 	-webkit-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
-	-moz-box-shadow: 	-2px -2px 6px -2px rgba(0,0,0,0.3);
-	box-shadow: 		-2px -2px 6px -2px rgba(0,0,0,0.3);
+	   -moz-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
+		    box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
 	cursor: pointer;
 	height: 40px;
 	width: 40px;
-	border-radius: 2px 0 0 2px;
-	-moz-border-radius: 2px 0 0 2px;
 	-webkit-border-radius: 2px 0 0 2px;
-	bottom: 0;
+	   -moz-border-radius: 2px 0 0 2px;
+		    border-radius: 2px 0 0 2px;
+	bottom: 0
 }
 .demo_changer .form_holder {
 	background: #FFF;
 	float: left;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+		    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	width: 180px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
-	display: table-cell;
+	display: none
 }
 .demo_changer.active .form_holder {
-	display: none
+	display: table-cell
 }
 .otherchange tr:nth-child(4n) td,
 .otherchange tr:last-child td {
-	text-align: center;
+	text-align: center
 }
 .demo_changer tr:nth-child(4n) label {
-	cursor: pointer;
+	cursor: pointer
 }
 .form_holder select {
 	border: 1px solid #CCC !important;
-	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+		    border-radius: 2px;
 	font: 13px Arial,sans-serif;
-	color: #777;
+	color: #666;
 	width: 80px;
 	background: #FFF;
-	padding: 0;
+	padding: 0
 }
 .form_holder td {
 	background: #FFF;
+	color: #666;
 }
 div.styleswitcher {
 	position: static;
-	color:#212121
+	color: #212121
 }
 div.styleswitcher a.active {
 	color: #FF9E5F
 }
 .rotatelogo div.logo svg.OSCam_logo {
-	height:45px !important;
-	width:45px !important;
+	height: 35px !important;
+	width: 35px !important;
+	background-color: #000;
+	padding: 3px;
 	
 	/* ROTATE IMAGE */
-	-webkit-transform: rotate(350deg);
-	-moz-transform: rotate(350deg);
+	-webkit-transform: rotate(345deg);
+	   -moz-transform: rotate(345deg);
+		    transform: rotate(345deg);
 }
 .form_holder #reset {
 	font-weight: 700;
 	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	transition: all 0.5s ease 0s;
-	border-radius: 0;
+	-webkit-border-radius: 0;
+	   -moz-border-radius: 0;
+		    border-radius: 0;
 	color: #FFF;
 	background: #BD0000;
 	padding: 1px 6px;
@@ -1253,10 +1263,10 @@ div.styleswitcher a.active {
 	border: 1px solid transparent;
 	width: 115px;
 	height: 23px;
-	text-transform: uppercase;
+	text-transform: uppercase
 }
 .form_holder #reset:hover {
-	background: #000;
+	background: #000
 }
 div.envi_info {
 	position: static
@@ -1269,40 +1279,36 @@ div.envi_info {
 	color: #333;
 	text-shadow: 1px 1px 0px #FFF;
 	border-bottom: 1px solid #DDD;
-	text-align: left;
+	text-align: left
 }
 ul.backchange,
 ul.patchange,
 ul.colchange {
 	width:auto;
-	line-height:30px;
-	padding: 0 10px;
+	line-height: 30px;
+	padding: 0 10px
 }
 ul.backchange,
 ul.colchange {
-	height:30px;
+	height: 30px
 }
 ul.patchange {
-	height: 55px;
+	height: 55px
 }
 ul.backchange li,
 ul.patchange li,
 ul.colchange li  {
-	list-style:none;
+	list-style: none;
 	cursor: pointer;
-	border: 3px solid #E1E1E1;
+	border: 3px solid #E1E1E1
 }
 ul.backchange li,
+ul.patchange li,
 ul.colchange li {
-	margin: 0px 4px;
-	padding: 1px 7px;
-	display:inline;
-}
-ul.patchange li {
 	margin: 4px 5px;
 	padding: 7px;
 	display:block;
-	float: left;
+	float: left
 }
 ul.colchange li {
 	background-image: url(data:image/gif;base64,R0lGODlhDgAPAPABAENHTf///yH5BAEAAAEALAAAAAAOAA8AAAIdjI+pCpvQnIHR0cquvfhwmH3PB3pkGZzUpILt+xUAOw==) !important;
@@ -1310,74 +1316,74 @@ ul.colchange li {
 ul.backchange li:hover,
 ul.patchange li:hover,
 ul.colchange li:hover {
-	border: 3px solid #F02;
+	border: 3px solid #F02
 }
 ul.backchange li.active,
 ul.patchange li.active,
 ul.colchange li.active {
-	border: 3px solid #F02;
+	border: 3px solid #F02
 }
 
 /* Advanced color settings template */
 	.background_1 {
-		background: #FFF !important;
+		background: #FFF !important
 	}
 	.background_2 {
-		background: #f2f2f2 !important;
+		background: #f2f2f2 !important
 	}
 	.background_3 {
-		background: #a6a6a6 !important;
+		background: #a6a6a6 !important
 	}
 	.background_4 {
-		background: #333 !important;
+		background: #333 !important
 	}
 	.background_5 {
-		background: #1a1a1a !important;
+		background: #1a1a1a !important
 	}
 	.patchange_1 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important
 	}
 	.patchange_2 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important
 	}
 	.patchange_3 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important
 	}
 	.patchange_4 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important
 	}
 	.patchange_5 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important
 	}
 	.patchange_6 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important
 	}
 	.patchange_7 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important
 	}
 	.patchange_8 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important
 	}
 	.patchange_9 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important
 	}
 	.patchange_10 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important
 	}
 	li.colchange_1 {
-		background: #16B6C6 !important;
+		background: #16B6C6 !important
 	}
 	li.colchange_2 {
-		background: #ff9c00 !important;
+		background: #ff9c00 !important
 	}
 	li.colchange_3 {
-		background: #ffe400 !important;
+		background: #ffe400 !important
 	}
 	li.colchange_4 {
-		background: #7cb600 !important;
+		background: #7cb600 !important
 	}
 	li.colchange_5 {
-		background: #C71C77 !important;
+		background: #C71C77 !important
 	}
 
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
@@ -1387,7 +1393,7 @@ ul.colchange li.active {
 
 /* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
 body.envi {
-	background-image: url('data:image/gif;base64,R0lGODlhEAAMAPAAAOTk5PLy8iH5BAAAAAAALAAAAAAQAAwAAAIURG54kesPo5yx2dWo3lx5hnXiCBUAOw==');
+	background-image: url('data:image/gif;base64,R0lGODlhEAAMAPAAAOTk5PLy8iH5BAAAAAAALAAAAAAQAAwAAAIURG54kesPo5yx2dWo3lx5hnXiCBUAOw==')
 }
 /* file.html, script.html */
 .envi #filename {
@@ -1403,41 +1409,46 @@ body.envi {
 
 /* **************** 5. MAIN MENU */
 .envi #main {
-	width:100%;
-	height:40px;
-	position:fixed;
-	right:0;
-	left:0;
-	top:0;
-	z-index:1050;
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 1050;
 
 	/* BACKGROUND COLOR */
+	/* Old browsers */
 	background: #131517;
-	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #212121),color-stop(1, #000000));
-	background-image: -o-linear-gradient(bottom, #212121 0%, #000000 100%);
-	background-image: -moz-linear-gradient(bottom, #212121 0%, #000000 100%);
+	/* Webkit (Chrome10+/Safari5.1+) */
 	background-image: -webkit-linear-gradient(bottom, #212121 0%, #000000 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(bottom, #212121 0%, #000000 100%);
+	/* IE10+ */
 	background-image: -ms-linear-gradient(bottom, #212121 0%, #000000 100%);
+	/* W3C Markup, IE10 Release Preview */
 	background-image: linear-gradient(to bottom, #212121 0%, #000000 100%);
 
 	/* BOX SHADOW */
-	box-shadow:0px 1px 4px #5e5e5e
+	-webkit-box-shadow: 0px 1px 4px #5e5e5e;
+	   -moz-box-shadow: 0px 1px 4px #5e5e5e;
+		    box-shadow: 0px 1px 4px #5e5e5e
 }
 .envi #mainmenu {
-	height:27px;
-	padding-top:0;
-	white-space:nowrap;
-	display:inline-block;
-	position:relative;
-	margin-top:14px;
-	text-shadow:1px 1px 1px #000;
+	height: 27px;
+	padding-top: 0;
+	white-space: nowrap;
+	display: inline-block;
+	position: relative;
+	margin-top: 14px;
+	text-shadow: 1px 1px 1px #000;
 	background: none
 }
 .envi #mainmenu li {
-	display:inline;
-	padding:3px 0;
-	font-size:12px;
-	font-weight:700;
+	display: inline;
+	padding: 3px 0;
+	font-size: 12px;
+	font-weight: 700;
 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -1447,14 +1458,14 @@ body.envi {
 	
 }
 .envi #mainmenu li:first-child {
-	border-left: none;
+	border-left: none
 }
 .envi #mainmenu li:last-child {
-	border-right: none;
+	border-right: none
 }
 .envi li.menu a,.envi li.menu a:hover,
 .envi li.menu_selected a,.envi li.menu_selected a:hover {
-	background: none
+
 }
 
 .envi li.menu:hover,.envi li.menu_selected, 
@@ -1464,7 +1475,7 @@ body.envi {
 
 .envi li.menu a {
 	color:#FFF;
-	padding: 0px 7px 9px;
+	padding: 0px 7px 9px
 }
 .envi li.menu:hover a {
 	color:#F00423;
@@ -1474,7 +1485,7 @@ body.envi {
 .envi li.menu_selected a {
 	color: #F00423;
 	border-bottom: 2px solid #F00423;
-	padding: 0px 7px 9px;
+	padding: 0px 7px 9px
 }
 
 /* **************** 6. SUBNAV */
@@ -1483,21 +1494,17 @@ body.envi {
 	top: 37px;
 	left: 0;
 	right: 0;
-	padding:6px 0px 4px 0px;
-	z-index:1040;
+	padding: 6px 0px 4px 0px;
+	z-index: 1040;
 	border: 1px solid #e5e5e5;
 
 	/* GRADIENT */
 	/* Old browsers */
 	background: #EEEEEE;
-	/* Webkit (Chrome/Safari4+) */
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #F5F5F5),color-stop(1, #EEEEEE));
-	/* Opera */
-	background-image: -o-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
-	/* Firefox */
-	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* Webkit (Chrome10+/Safari5.1+) */
 	background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* IE10+ */
 	background-image: -ms-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* W3C Markup, IE10 Release Preview */
@@ -1505,33 +1512,33 @@ body.envi {
 
 	/* BOX SHADOW */
 	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-	-moz-box-shadow: 	inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-	box-shadow: 		inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1)
+	   -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
+			box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1)
 }
 .envi #nav {
-	height:22px;
-	white-space:nowrap
+	height: 22px;
+	white-space: nowrap
 }
 .envi #nav li {
-	display:inline-block;
-	position:relative;
-	margin:2px 2px;
-	padding:0 3px;
-	font-size:14px
+	display: inline-block;
+	position: relative;
+	margin: 2px 2px;
+	padding: 0 3px;
+	font-size: 14px
 }
 .envi #nav li.pollselect {
 	position: absolute;
-	font-size: 12px;
+	font-size: 12px
 }
 .envi li.configmenu a,.envi li.configmenu a:hover,
 .envi li.configmenu_selected a,.envi li.configmenu_selected a:hover {
-	color:#050840
+	color: #050840
 }
 .envi #nav a {
-	padding:8px 5px;
-	margin:-5px;
+	padding: 8px 5px;
+	margin: -5px;
 	color: #2e2e2e;
-	font-size:12px
+	font-size: 12px
 }
 .envi #nav li.configmenu_selected > a:link,
 .envi #nav li.configmenu_selected > a:visited,
@@ -1545,7 +1552,7 @@ body.envi {
 /* status.html */
 .envi table.status {
 	border-spacing: 0px;
-	border-bottom: 1px solid #222;
+	border-bottom: 1px solid #222
 }
 /* ------- SERVICES ------- */
 /* services.html */
@@ -1556,38 +1563,42 @@ body.envi {
 /* readers.html */
 .envi table.readers {
 	border-spacing: 0px;
-	border-bottom: 1px solid #222;
+	border-bottom: 1px solid #222
 }
 .envi #dataTable {
 	border-spacing: 0px;
 	margin-top: 12px;
 	background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5);
-	box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
 	border: 6px solid rgba(255, 255, 255, 0.2);
 	outline: 1px solid #FFF;
+
+	/* BOX SHADOW */
+	-webkit-box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
+	   -moz-box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
+			box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5)
 }
 /* emm.html */
 .envi table.writeemm {
-	margin-top:0
+	margin-top: 0
 }
 /* emm_running.html */
 .envi table.emmrunning {
-	margin-top:0
+	margin-top: 0
 }
 .envi #newinsert table,
 .envi #searchTable table.readers {
-	border-spacing:0px;
+	border-spacing: 0px;
 	border-bottom: none
 }
 /* ------- USERS ------- */
 /* userconfig.html */
 .envi table.users {
-	border-spacing:0;
+	border-spacing: 0;
 	border-bottom: 1px solid #222
 }
 .envi #newinsert table,
 .envi #searchTable table.users {
-	border-spacing:0px;
+	border-spacing: 0px;
 	border-bottom: none
 }
 .envi table.infotable {
@@ -1607,7 +1618,7 @@ body.envi {
 /* **************** 8. TABLE TR */
 /* rowcolors for users rows in unserconfig.html depend on status */
 .envi tr.online td.usercol6 {
-	background-color:#BFA;
+	background-color: #BFA;
 	color: #000
 }
 
@@ -1624,7 +1635,7 @@ body.envi {
 }
 /* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
 .envi th.nameinfo {
-	background-color:#222;
+	background-color: #222;
 	color: #FFF
 }
 /* userconfig.html */
@@ -1672,16 +1683,25 @@ body.envi {
 .envi table.readers th,
 .envi table.users th,
 .envi table.statsbalance th {
-	background-color: #a4a4a4;
-	background: -moz-linear-gradient(top,#CCC,#A4A4A4);
-	background: -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
-	-moz-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
-	-webkit-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 	border-top: 1px solid #FFF;
 	border-left: 1px solid #DDD;
 	border-right: 1px solid #999;
 	border-bottom: 1px solid #828282;
+
+	/* GRADIENT */
+	/* Old browsers */
+	background: #A4A4A4;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-gradient(linear,left top, left bottom,from(#CCC),to(#A4A4A4));
+	/* Firefox */
+	background-image: -moz-linear-gradient(top,#CCC,#A4A4A4);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(top,#CCC,#A4A4A4);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(top,#CCC,#A4A4A4);
+
+	/* TEXT SHADOW */
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7)
 }
 .envi table.readers th.sortable,
 .envi table.users th.sortable,
@@ -1709,12 +1729,22 @@ body.envi {
 }
 .envi #searchTable table.readers th,
 .envi #searchTable table.users th {
-	background: -moz-linear-gradient(top, #303135, #3c3d42 6%, #404447 18%, #34383b 50%, #25292c 50%, #1a1b1f 63%, black);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3c3d42), color-stop(.18, #404447), color-stop(.5, #34383b), color-stop(.5, #25292c), color-stop(.63, #1a1b1f));
 	border-bottom: 1px solid #FFF;
 	border-top: 1px solid #FFF;
 	border-left: none;
 	border-right: none;
+
+	/* GRADIENT */
+	/* Old browsers */
+	background: #A4A4A4;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3C3D42), color-stop(.18, #404447), color-stop(.5, #34383B), color-stop(.5, #25292C), color-stop(.63, #1A1B1F));
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
 }
 /* Color for sorting */
 .envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
@@ -1728,13 +1758,13 @@ body.envi {
 /* status.html */
 .envi table.status td.subheadline {
 	border-top: 1px solid #FFF;
-	border-bottom: 1px solid #FFF;
+	border-bottom: 1px solid #FFF
 }
 .envi table.status td {
-    border-right: 1px dotted #999;
+    border-right: 1px dotted #999
 }
 .envi table.status td:last-child {
-	border-right: none;
+	border-right: none
 }
 /* ------- READERS ------- */
 /* readers.html */
@@ -1742,31 +1772,31 @@ body.envi {
 	border-right: 1px dotted #999
 }
 .envi table.readers td:last-child {
-	border-right: none;
+	border-right: none
 }
 .envi table.readers tr:hover td,
 .envi table.users tr:hover td,
 .envi table.statsbalance tr:hover td {
-    background-color: #fcd7d7 !important;
+    background-color: #fcd7d7 !important
 }
 .envi table.readers tr:hover td.td-sorting,
 .envi table.users tr:hover td.td-sorting,
 .envi table.statsbalance tr:hover td.td-sorting {
-	background-color: #f2cece !important;
+	background-color: #f2cece !important
 }
 .envi .readers tr:nth-child(odd) td,
 .envi .statsbalance tr:nth-child(odd) td {
-	background-color: #F2F2F2;
+	background-color: #F2F2F2
 }
 .envi .readers tr:nth-child(even) td,
 .envi .statsbalance tr:nth-child(even) td {
-	background-color: #E6E6E6;
+	background-color: #E6E6E6
 }
 .envi .users tr.offline:nth-child(odd) td {
-	background-color: #F2F2F2;
+	background-color: #F2F2F2
 }
 .envi .users tr.offline:nth-child(even) td {
-	background-color: #E6E6E6;
+	background-color: #E6E6E6
 }
 /* ------- USERS ------- */
 /* userconfig.html */
@@ -1774,7 +1804,7 @@ body.envi {
 	border-right: 1px dotted #999
 }
 .envi table.users td:last-child {
-	border-right: none;
+	border-right: none
 }
 /* ------- CONFIG ------- */
 /* Solution for coloring first TD in table .config, .configreader, .configuser */
@@ -1786,12 +1816,12 @@ body.envi {
 .envi table.config tr:nth-last-child(-n+2) td,
 .envi table.configreader tr:nth-last-child(-n+2) td,
 .envi table.configuser tr:nth-last-child(-n+2) td {
-	background-color: transparent;
+	background-color: transparent
 }
 .envi table.config table tr:nth-last-child(-n+2) td,
 .envi table.configreader table tr:nth-last-child(-n+2) td ,
 .envi table.configuser table tr:nth-last-child(-n+2) td {
-	background-color: #EEE;
+	background-color: #EEE
 }
 .envi table.subservicetable tr:nth-last-child(-n+2) td:first-child {
 	background-color: #CCC
@@ -1803,7 +1833,7 @@ body.envi {
 	border-bottom: 1px dotted #999
 }
 .envi table.subservicetable td {
-	border-bottom:none
+	border-bottom: none
 }
 .envi table.config tr:nth-last-child(-n+3) td,
 .envi table.configreader tr:nth-last-child(-n+3) td,
@@ -1815,71 +1845,69 @@ body.envi {
 .envi .readers tr:nth-child(odd) .td-sorting,
 .envi .users tr.offline:nth-child(odd) .td-sorting,
 .envi .statsbalance tr:nth-child(odd) .td-sorting {
-	background-color: #E6E6E6;
+	background-color: #E6E6E6
 }
 .envi .readers tr:nth-child(even) .td-sorting,
 .envi .users tr.offline:nth-child(even) .td-sorting,
 .envi .statsbalance tr:nth-child(even) .td-sorting {
-	background-color: #d9d9d9;
+	background-color: #D9D9D9
 }
 .envi .users tr.connected .td-sorting {
-	background-color: #f5f5a4;
+	background-color: #F5F5A4
 }
 .envi .users tr.online td.td-sorting {
-	background-color: #b2f2a2;
+	background-color: #B2F2A2
 }
 
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
 .envi div#livelog {
-	margin-top:0
+	margin-top: 0
 }
 /* logobit.html - Logo for Oscam */
 .envi div.logo {
 	position: fixed;
-	z-index:1060
+	z-index: 1060
 }
 /* footer.html */
 .envi div.footer {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEUYGBgRERGrUlCvAAAADklEQVQI12M4AIQGDAYACcgB4WUKpxgAAAAASUVORK5CYII=);
-	border-top:10px solid #000
+	border-top: 10px solid #000
 }
 .envi div.footer li {
-	color:#656565
+	color: #656565
 }
 .envi div.footer li.styleauthor b {
-	color:#BD0000;
-	text-shadow:1px 1px 1px #000
+	color: #BD0000;
+	text-shadow: 1px 1px 1px #000
 }
 .envi div.form_holder a {
-	color:#999
+	color: #666
 }
 .envi div.form_holder a:hover {
-	color:#BD0000
+	color: #BD0000
 }
 .envi div.form_holder a.active {
-	color:#BD0000
+	color: #BD0000
 }
 .envi div.footer b {
-	color: #A3A3A3;
+	color: #A3A3A3
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
 .envi #otherdropdown option {
-	margin:5px
+	margin: 5px
 }
 .envi #otherdropdown option:hover {
-	background-color:;
+	
 }
 /* for extract in script.html */ 
 .envi div.extract pre {
-	background-color: #FAFAFA;
+	background-color: #FAFAFA
 }
 /* generaly settings for all buttons/submits */
 .envi input[type=button],
 .envi input[type=submit] {
-	-webkit-appearance:none;
-	border-radius:0;
 	border:1px solid transparent;
 	width:90px;
 	height:23px;
@@ -1889,47 +1917,57 @@ body.envi {
 	font-size: 11px;
 	font-weight: 700;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+		    appearance: none;
+	-webkit-border-radius: 0;
+	   -moz-border-radius: 0;
+		    border-radius: 0
 }
 /* generaly hover settings for all buttons/submits */
 .envi input[type=button]:hover,
 .envi input[type=submit]:hover {
-	background-color:#000;
-	color:#FFF;
-	box-shadow:none;
+	background-color: #000;
+	color: #FFF;
 	padding: 0px 2px;
-	transition:all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+
+	/* BOX SHADOW */
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+			box-shadow: none
 }
 
 .envi .regexdata_nav input {
-    width: 100px;
+    width: 100px
 }
 .envi .configcontrol input[type="submit"] {
-    width: 115px;
+    width: 115px
 }
 .envi input[type="text"] {
-	border: 1px solid #666;
+	border: 1px solid #666
 }
 .envi .readers input[type="text"] {
     border: 1px solid #000;
-    box-shadow: 0px 0px 7px #000;
+    box-shadow: 0px 0px 7px #000
 }
 .envi .pollselect input[type="text"] {
-    border: 1px solid transparent;
+    border: 1px solid transparent
 }
 .envi select {
     padding: 1px;
-    border: 1px solid #666;
+    border: 1px solid #666
 }
 .envi td.subheadline input[type="button"] {
 	margin: 0px 0px 0px 15px;
-	font-weight: 700;
+	font-weight: 700
 }
 .envi #otherdropdown input.short[type="text"] {
-    margin: 0 5px;
+    margin: 0 5px
 }
 .envi #nav li.pollselect input[type="text"].pintervall{
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 12px
 }
 
 /* **************** 13. IMAGE */
@@ -1938,42 +1976,42 @@ body.envi {
 	max-height: 28px
 }
 .envi div.logo svg.OSCam_logo {
-	fill:#ffffff;
-	height:28px;
-	width:28px
+	fill: #FFFFFF;
+	height: 28px;
+	width: 28px
 }
 
 /* **************** 14. SPAN */
 .envi span.span_notifier {
 	background-color: #BD0000;
-	margin-right: 5px;
+	margin-right: 5px
 }
 
 /* **************** 16. SORTING IN TABLE */
 .envi .sortable {
-	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///4CAgP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==);
+	background-image: url(data:image/png;base64,R0lGODlhBQAIAJEAAAAAAP///4CAgP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==)
 }
 .envi .sorting-desc{
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdj+MFQwKAAAAZOAYkOHHR7AAAAAElFTkSuQmCC);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdj+MFQwKAAAAZOAYkOHHR7AAAAAElFTkSuQmCC)
 }
 .envi .sorting-asc{
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjUGAoYPgBAALuAYlvcnaaAAAAAElFTkSuQmCC);
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADAQMAAABh+Fe7AAAABlBMVEUAAACAgICSabkkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjUGAoYPgBAALuAYlvcnaaAAAAAElFTkSuQmCC)
 }
 
 /* **************** 17. POLLING */
 /* User-Page polling */
 .envi #inc, .envi #dec {
-	background-color:#BD0000;
+	background-color: #BD0000
 }
 .envi #inc:hover, .envi #dec:hover {
-	background-color:#000;
-	transition:all 0.5s ease 0s;
+	background-color: #000;
+	transition: all 0.5s ease 0s
 }
 
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
-	margin:0
+	margin: 0
 }
 
 /* **************** 21. TOOLTIP */
@@ -2037,8 +2075,8 @@ body.envi {
 	text-align: center;
 	text-decoration: none;
 	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px
+	   -moz-border-radius: 4px;
+		    border-radius: 4px
 }
 .envi .boot_tooltip-arrow {
 	position: absolute;
@@ -2047,20 +2085,20 @@ body.envi {
 }
 /* Tooltip color */
 .envi .boot_tooltip-inner {
-	color: #fff;
-	background-color: #333
+	color: #FFF;
+	background-color: #515151
 }
 .envi .boot_tooltip.top .boot_tooltip-arrow {
-	border-top: 5px solid #333
+	border-top: 5px solid #515151
 }
 .envi .boot_tooltip.left .boot_tooltip-arrow {
-	border-left: 5px solid #333
+	border-left: 5px solid #515151
 }
 .envi .boot_tooltip.bottom .boot_tooltip-arrow {
-	border-bottom: 5px solid #333
+	border-bottom: 5px solid #515151
 }
 .envi .boot_tooltip.right .boot_tooltip-arrow {
-	border-right: 5px solid #333
+	border-right: 5px solid #515151
 }
 
 /* **************** 22. OTHER SETTINGS */
@@ -2070,134 +2108,134 @@ body.envi {
 /* Settings for Template color style "colchange_1" */
 
 .colchange_1 h4 {
-	color: #16B6C6;
+	color: #16B6C6
 }
 .colchange_1 li.menu_selected a {
 	color: #16B6C6;
-	border-bottom: 2px solid #13A2AE;
+	border-bottom: 2px solid #13A2AE
 }
 .colchange_1 li.menu:hover a {
 	color: #16B6C6;
-	border-bottom: 2px solid #13A2AE;
+	border-bottom: 2px solid #13A2AE
 }
 .colchange_1 #nav li.configmenu_selected > a:link,
 .colchange_1 #nav li.configmenu_selected > a:visited,
 .colchange_1 #nav li.configmenu_selected > a:active,
 .colchange_1 #nav li.configmenu > a:hover {
-	color: #16B6C6;
+	color: #16B6C6
 }
 .colchange_1 div.footer li.styleauthor b {
-	color: #16B6C6;
+	color: #16B6C6
 }
 .colchange_1 div.sidlistclose {
-	background-color: #16B6C6;
+	background-color: #16B6C6
 }
 /* Span Notifier */
 .colchange_1 span.span_notifier {
-	background-color: #16B6C6;
+	background-color: #16B6C6
 }
 /* generaly settings for all buttons/submits */
 .colchange_1 input[type=button],
 .colchange_1 input[type=submit] {
-	background-color:#16B6C6;
+	background-color: #16B6C6
 }
 /* generaly hover settings for all buttons/submits */
 .colchange_1 input[type=button]:hover,
 .colchange_1 input[type=submit]:hover {
-	background-color:#000;
-	color:#16B6C6;
-	transition:all 0.5s ease 0s;
+	background-color: #000;
+	color: #16B6C6;
+	transition: all 0.5s ease 0s
 }
 /* User-Page polling */
 .colchange_1 #picolor {
-	background-color:#16B6C6
+	background-color: #16B6C6
 }
 .colchange_1 #inc,
 .colchange_1 #dec {
-	background-color: #16B6C6;
+	background-color: #16B6C6
 }
 .colchange_1 #inc:hover,
 .colchange_1 #dec:hover {
 	background-color: #000;
-	transition:all 0.5s ease 0s;
+	transition:all 0.5s ease 0s
 }
 /* StyleSwitcher */
 .colchange_1 div.form_holder a {
-    color: #999;
+    color: #999
 }
 .colchange_1 div.form_holder a.active {
-	color: #16B6C6;
+	color: #16B6C6
 }
 .colchange_1 div.form_holder a:hover {
-	color: #16B6C6;
+	color: #16B6C6
 }
 .colchange_1 ul.backchange li.active,
 .colchange_1 ul.patchange li.active,
 .colchange_1 ul.colchange li.active {
-	border-color: #16B6C6;
+	border-color: #16B6C6
 }
 .colchange_1 ul.backchange li:hover,
 .colchange_1 ul.patchange li:hover,
 .colchange_1 ul.colchange li:hover {
-	border-color: #16B6C6;
+	border-color: #16B6C6
 }
 .colchange_1 .form_holder #reset{
-	background-color:#16B6C6;
+	background-color:#16B6C6
 }
 .colchange_1 .form_holder #reset:hover {
-	background-color:#000;
-	color:#16B6C6;
-	transition:all 0.5s ease 0s;
+	background-color: #000;
+	color: #16B6C6;
+	transition: all 0.5s ease 0s
 }
 /* Color for links of icons */
 .colchange_1 a img.icon {
-	background-color: #13A2AE;
+	background-color: #13A2AE
 }
 .colchange_1 a:hover img.icon {
-	background-color: #30D9E8;
+	background-color: #30D9E8
 }
 /* Color for links */
 .colchange_1 a:hover {
-	color: #13A2AE;
+	color: #13A2AE
 }
 /* Go to top link */
 .colchange_1 .top_link a:hover {
-	color: #16B6C6;
+	color: #16B6C6
 }
 /* Color for Table */
 .colchange_1 table.readers tr:hover td,
 .colchange_1 table.users tr:hover td,
 .colchange_1 table.statsbalance tr:hover td {
-	background-color: #D1E5EF !important;
+	background-color: #D1E5EF !important
 }
 .colchange_1 table.readers tr:hover td.td-sorting,
 .colchange_1 table.users tr:hover td.td-sorting,
 .colchange_1 table.statsbalance tr:hover td.td-sorting {
-	background-color: #c5d9e3 !important;
+	background-color: #c5d9e3 !important
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
 
 .colchange_2 h4 {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 li.menu_selected a {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 li.menu:hover a {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 #nav li.configmenu_selected > a:link,
 .colchange_2 #nav li.configmenu_selected > a:visited,
 .colchange_2 #nav li.configmenu_selected > a:active,
 .colchange_2 #nav li.configmenu > a:hover {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 div.footer li.styleauthor b {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 div.sidlistclose {
-	background-color: #FF9C00;
+	background-color: #FF9C00
 }
 /* Polling */
 .colchange_2 #picolor {
@@ -2205,17 +2243,17 @@ body.envi {
 }
 .colchange_2 #inc,
 .colchange_2 #dec {
-	background-color: #FF9C00;
+	background-color: #FF9C00
 }
 /* StyleSwitcher */
 .colchange_2 div.form_holder a {
-    color: #999;
+    color: #999
 }
 .colchange_2 div.form_holder a.active {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 div.form_holder a:hover {
-	color: #FF9C00;
+	color: #FF9C00
 }
 .colchange_2 ul.backchange li.active,
 .colchange_2 ul.patchange li.active,
@@ -2225,22 +2263,22 @@ body.envi {
 .colchange_2 ul.backchange li:hover,
 .colchange_2 ul.patchange li:hover,
 .colchange_2 ul.colchange li:hover {
-	border-color: #FF9C00;
+	border-color: #FF9C00
 }
 .colchange_2 .form_holder #reset:hover {
 	background-color: #FF9C00;
-	color: #000;
+	color: #000
 }
 /* Color for links of icons */
 .colchange_2 a img.icon {
-	background-color: #FF9C00;
+	background-color: #FF9C00
 }
 .colchange_2 a:hover img.icon {
-	background-color: #FFB53D;
+	background-color: #FFB53D
 }
 /* Color for links */
 .colchange_2 a:hover {
-	color: #FF9C00;
+	color: #FF9C00
 }
 /* Color for Table */
 .colchange_2 table.readers tr:hover td {
@@ -2251,68 +2289,68 @@ body.envi {
 /* Settings for Template color style "colchange_3" */
 
 .colchange_3 h4 {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 li.menu_selected a {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 li.menu:hover a {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 #nav li.configmenu_selected > a:link,
 .colchange_3 #nav li.configmenu_selected > a:visited,
 .colchange_3 #nav li.configmenu_selected > a:active,
 .colchange_3 #nav li.configmenu > a:hover {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 div.footer li.styleauthor b {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 div.sidlistclose {
-	background-color: #FFE400;
+	background-color: #FFE400
 }
 /* Polling */
 .colchange_3 #picolor {
-	background-color:#FFE400
+	background-color: #FFE400
 }
 .colchange_3 #inc,
 .colchange_3 #dec {
-	background-color: #FFE400;
+	background-color: #FFE400
 }
 /* StyleSwitcher */
 .colchange_3 div.form_holder a {
-    color: #999;
+    color: #999
 }
 .colchange_3 div.form_holder a.active {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 div.form_holder a:hover {
-	color: #FFE400;
+	color: #FFE400
 }
 .colchange_3 ul.backchange li.active,
 .colchange_3 ul.patchange li.active,
 .colchange_3 ul.colchange li.active {
-	border-color: #FFE400;
+	border-color: #FFE400
 }
 .colchange_3 ul.backchange li:hover,
 .colchange_3 ul.patchange li:hover,
 .colchange_3 ul.colchange li:hover {
-	border-color: #FFE400;
+	border-color: #FFE400
 }
 .colchange_3 .form_holder #reset:hover {
 	background-color: #FFE400;
-	color: #000;
+	color: #000
 }
 /* Color for links of icons */
 .colchange_3 a img.icon {
-	background-color: #FFCC00;
+	background-color: #FFCC00
 }
 .colchange_3 a:hover img.icon {
-	background-color: #FFE400;
+	background-color: #FFE400
 }
 /* Color for links */
 .colchange_3 a:hover {
-	color: #FFE400;
+	color: #FFE400
 }
 /* Color for Table */
 .colchange_3 table.readers tr:hover td {
@@ -2323,61 +2361,61 @@ body.envi {
 /* Settings for Template color style "colchange_4" */
 
 .colchange_4 h4 {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 li.menu_selected a {
 	color: #7CB600;
 }
 .colchange_4 li.menu:hover a {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 #nav li.configmenu_selected > a:link,
 .colchange_4 #nav li.configmenu_selected > a:visited,
 .colchange_4 #nav li.configmenu_selected > a:active,
 .colchange_4 #nav li.configmenu > a:hover {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 div.footer li.styleauthor b {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 div.sidlistclose {
-	background-color: #7CB600;
+	background-color: #7CB600
 }
 /* Polling */
 .colchange_4 #picolor {
-	background-color:#7CB600
+	background-color: #7CB600
 }
 .colchange_4 #inc,
 .colchange_4 #dec {
-	background-color: #7CB600;
+	background-color: #7CB600
 }
 /* StyleSwitcher */
 .colchange_4 div.form_holder a {
-    color: #999;
+    color: #999
 }
 .colchange_4 div.form_holder a.active {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 div.form_holder a:hover {
-	color: #7CB600;
+	color: #7CB600
 }
 .colchange_4 ul.backchange li.active,
 .colchange_4 ul.patchange li.active,
 .colchange_4 ul.colchange li.active {
-	border-color: #7CB600;
+	border-color: #7CB600
 }
 .colchange_4 ul.backchange li:hover,
 .colchange_4 ul.patchange li:hover,
 .colchange_4 ul.colchange li:hover {
-	border-color: #7CB600;
+	border-color: #7CB600
 }
 .colchange_4 .form_holder #reset:hover {
 	background-color: #7CB600;
-	color: #000;
+	color: #000
 }
 /* Color for links */
 .colchange_4 a:hover {
-	color: #7CB600;
+	color: #7CB600
 }
 /* Color for Table */
 .colchange_4 table.readers tr:hover td {
@@ -2388,68 +2426,68 @@ body.envi {
 /* Settings for Template color style "colchange_5" */
 
 .colchange_5 h4 {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 li.menu_selected a {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 li.menu:hover a {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 #nav li.configmenu_selected > a:link,
 .colchange_5 #nav li.configmenu_selected > a:visited,
 .colchange_5 #nav li.configmenu_selected > a:active,
 .colchange_5 #nav li.configmenu > a:hover {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 div.footer li.styleauthor b {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 div.sidlistclose {
-	background-color: #C71C77;
+	background-color: #C71C77
 }
 /* Polling */
 .colchange_5 #picolor {
-	background-color:#C71C77
+	background-color: #C71C77
 }
 .colchange_5 #inc,
 .colchange_5 #dec {
-	background-color: #C71C77;
+	background-color: #C71C77
 }
 /* StyleSwitcher */
 .colchange_5 div.form_holder a {
-    color: #999;
+    color: #999
 }
 .colchange_5 div.form_holder a.active {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 div.form_holder a:hover {
-	color: #C71C77;
+	color: #C71C77
 }
 .colchange_5 ul.backchange li.active,
 .colchange_5 ul.patchange li.active,
 .colchange_5 ul.colchange li.active {
-	border-color: #C71C77;
+	border-color: #C71C77
 }
 .colchange_5 ul.backchange li:hover,
 .colchange_5 ul.patchange li:hover,
 .colchange_5 ul.colchange li:hover {
-	border-color: #C71C77;
+	border-color: #C71C77
 }
 .colchange_5 .form_holder #reset:hover {
 	background-color: #C71C77;
-	color: #000;
+	color: #000
 }
 /* Color for links of icons */
 .colchange_5 a img.icon {
-	background-color: #C71C77;
+	background-color: #C71C77
 }
 .colchange_5 a:hover img.icon {
-	background-color: #E43F97;
+	background-color: #E43F97
 }
 /* Color for links */
 .colchange_5 a:hover {
-	color: #C71C77;
+	color: #C71C77
 }
 /* Color for Table */
 .colchange_5 table.readers tr:hover td {
@@ -2462,7 +2500,7 @@ body.envi {
 /* checkbox for show/hide main menu 
  * (it is used only for showing main menu on mobile device) 
  * for desktops browser is not used */
-#toggle, #subtoggle {display:none}
+#toggle, #subtoggle {display: none}
 
 /* ################ DESKTOPS ################ */
 
@@ -2472,21 +2510,21 @@ body.envi {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	body {
-		position:relative;
-		overflow-x:hidden;
+		position: relative;
+		overflow-x: hidden
 	}
 	#content {
-		padding: 0px 0px 280px;
+		padding: 0px 0px 280px
 	}
 
 /* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
 		/* pre_shutdown.html */
 		h4 {
-			line-height:1.2em;
+			line-height: 1.2em; 
 		}
 		/* file.html, script.html */
 		#filename,#filesubmit {
-			font-size:1.5em
+			font-size: 1.5em
 		}
 		/* footer.html */
 		div.footer li.styleauthor b:after {
@@ -2499,42 +2537,41 @@ body.envi {
 /* **************** 5. MAIN MENU */
 	/* checkbox for show/hide main menu */
 		#toggle:checked ~ #mainmenu {
-			display:block;
-			opacity:1;
+			display: block;
+			opacity: 1;
 			z-index: 1050
 		}
 	/* label for checkbox */
 		.toggle {
-			display:block;
-			position:relative;
-			cursor:pointer;
-			-webkit-touch-callout:none;
-			-webkit-user-select:none;
-			user-select:none;
+			display: block;
+			position: relative;
+			cursor: pointer;
+			-webkit-touch-callout: none;
+			  -webkit-user-select: none;
+					  user-select: none;
 			z-index: 1050
 		}
 		.toggle:after {
 			content:'\2261 \00a0 \00a0 Main menu';
-			display:block;
-			width:100%;
-			padding:13px 50px;
-			background-color:#000;
-			text-align:center;
-			font-size:1.5em;
-			font-weight:700;
-			color:#FFF;
+			display: block;
+			width: 100%;
+			padding: 13px 50px;
+			background-color: #000;
+			text-align: center;
+			font-size: 1.5em;
+			font-weight: 700;
+			color: #FFF;
 			-webkit-transition: all 0.5s linear;
-			-moz-transition: all 0.5s linear;
-			-o-transition: all 0.5s linear;
-			transition: all 0.5s linear;
+			   -moz-transition: all 0.5s linear;
+				    transition: all 0.5s linear;
 			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+				    box-sizing: border-box;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+			   -moz-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+					box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 		}
 		.toggle:hover:after{
 			background: #000
@@ -2547,96 +2584,95 @@ body.envi {
 
 	/* main menu */
 		#main {
-			height:46px
+			height: 46px
 		}
 		#mainmenu, #mainmenu > li, #mainmenu > li > a{ 
 			height: auto
 		}
 		#mainmenu { 
-			display:none;
-			opacity:0;
-			width:60%;
-			position:absolute;
-			left:0;
-			padding-top:0;
-			margin-top:0
+			display: none;
+			opacity: 0;
+			width: 60%;
+			position: absolute;
+			left: 0;
+			padding-top: 0;
+			margin-top: 0
 		}
 		#mainmenu > li {
-			display:block;
-			width:100%;
-			margin:0;
-			background:#DDD;
+			display: block;
+			width: 100%;
+			margin: 0;
+			background: #DDD;
 			border-bottom: 1px solid #CCC;
-			font-size:1.5em;
-			font-weight:700;
+			font-size: 1.5em;
+			font-weight: 700;
 			padding: 0
 		}
 		#mainmenu > li:hover {
-			background:#CCC;
+			background: #CCC;
 		}
 		li.menu a {
-			color:#000;
-			font-weight:700
+			color: #000;
+			font-weight: 700
 		}
 		li.menu_selected a {
-			color:#F00;
-			background:#CCC
+			color: #F00;
+			background: #CCC
 		}
 		#mainmenu > li:last-child {
-			border-bottom:2px solid black;
+			border-bottom: 2px solid black;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+			   -moz-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+				    box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 		}
 		#mainmenu > li > a {
-			width:100%;
-			text-decoration:none;
+			width: 100%;
+			text-decoration: none;
 			display: block;
 			padding: 10px;
 			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box; 
-			box-sizing:border-box
+			   -moz-box-sizing:border-box; 
+				    box-sizing:border-box
 		}
 		span.span_notifier {
-			margin-left:5px;
-			font-weight:700
+			margin-left: 5px;
+			font-weight: 700
 		}
 /* **************** 6. SUBNAV */
 	/* checkbox for show/hide subnav */
 		#subtoggle:checked ~ #nav {display:block;opacity:1}
 	/* label for checkbox */
 		.subtoggle {
-			display:block;
-			position:relative;
-			cursor:pointer;
-			-webkit-touch-callout:none;
-			-webkit-user-select:none;
-			user-select:none
+			display: block;
+			position: relative;
+			cursor: pointer;
+			-webkit-touch-callout: none;
+			  -webkit-user-select: none;
+					  user-select: none
 		}
 		.subtoggle:after {
 			content:'Submenu \25bc';
-			display:block;
-			width:100%;
-			padding:10px 50px;
-			background-color:#707070;
-			text-align:center;
-			font-size:1.3em;
-			font-weight:700;
-			color:#FFF;
+			display: block;
+			width: 100%;
+			padding: 10px 50px;
+			background-color: #707070;
+			text-align: center;
+			font-size: 1.3em;
+			font-weight: 700;
+			color: #FFF;
 			-webkit-transition: all 0.5s linear;
-			-moz-transition: all 0.5s linear;
-			-o-transition: all 0.5s linear;
-			transition: all 0.5s linear;
+			   -moz-transition: all 0.5s linear;
+				    transition: all 0.5s linear;
 			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+					box-sizing: border-box;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+			   -moz-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+					box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 		}
 		.subtoggle:hover:after{}
 		#subtoggle:checked + .subtoggle:after{
@@ -2650,32 +2686,32 @@ body.envi {
 			z-index: 1050
 		}
 		#nav { 
-			display:none;
-			opacity:0;
-			width:65%;
-			position:absolute;
-			right:0;
-			padding-top:0;
-			margin-top:0;
+			display: none;
+			opacity: 0;
+			width: 65%;
+			position: absolute;
+			right: 0;
+			padding-top: 0;
+			margin-top: 0;
 			z-index: 1040
 		}
 		#nav > li {
-			display:block;
-			width:100%;
-			margin:0;
-			background:#EDEDED;
-			font-size:1.3em;
-			font-weight:400;
+			display: block;
+			width: 100%;
+			margin: 0;
+			background: #EDEDED;
+			font-size: 1.3em;
+			font-weight: 400;
 			padding: 0
 		}
 		#nav > li > a {
-			width:100%;
-			text-decoration:none;
+			width: 100%;
+			text-decoration: none;
 			display: block;
 			padding: 10px;
 			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box; 
-			box-sizing:border-box
+			   -moz-box-sizing:border-box; 
+				    box-sizing:border-box
 		}
 		#nav > li:last-child {
 			border-bottom: 2px solid black;
@@ -2684,8 +2720,8 @@ body.envi {
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			-moz-box-shadow:    0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-			box-shadow:         0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+			   -moz-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
+					box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 		}
 		#nav li.pollselect {
 			display: block;
@@ -2694,7 +2730,7 @@ body.envi {
 			padding: 10px 0
 		}
 		#nav > li > b {
-			line-height:2em
+			line-height: 2em
 		}
 /* **************** 7. TABLE */
 	/* ------- SERVICES ------- */
@@ -2724,7 +2760,7 @@ body.envi {
 	/* pre_autoconf.html, pre_shutdown.html */
 	div.warning {
 		line-height: 1.5em;
-		font-size: 1.2em;
+		font-size: 1.2em
 	}
 
 /* **************** 12. TEXTAREA,SELECT,INPUT */
@@ -2758,9 +2794,9 @@ body.envi {
 	}
 /* **************** 13. IMAGE */
 	div.logo svg.OSCam_logo {
-		fill:#ffffff;
-		height:28px;
-		width:28px;
+		fill: #FFFFFF;
+		height: 28px;
+		width: 28px;
 	}
 
 /* **************** 17. POLLING */
@@ -2774,25 +2810,25 @@ body.envi {
 		padding-bottom: 10px;
 	}
 	div.footer ul ul li {
-		margin:5px
+		margin: 5px
 	}
 	ul.textfooter ul li,ul.textfooter ul li:last-child {
 		display: list-item;
 		list-style-type: square
 	}
 	ul.textfooter ul {
-		text-align:left;
-		margin:auto;
-		width:60%
+		text-align: left;
+		margin: auto;
+		width: 60%
 	}
 	div.footer ul.addClass li {
 		font-size: 1.2em
 	}
 	li.developed {
-		font-size:1.1em
+		font-size: 1.1em
 	}
 	li.styleauthor {
-		padding:2px
+		padding: 2px
 	}
 	div.styleswitcher h3 {
 		font-size: 1.5em
@@ -2808,11 +2844,11 @@ body.envi {
 	}
 	.envi_info a {
 		font-weight: bold;
-		font-size:1.2em
+		font-size: 1.2em
 	}
 	.modalDialog a {
 		font-weight: normal;
-		font-size:1em
+		font-size: 1em
 	}
 }
 
@@ -2820,19 +2856,19 @@ body.envi {
 
 /* **************** 1. BASIC DIVISION PAGES */
 	#content {
-		padding: 0px 0px 250px;
+		padding: 0px 0px 250px
 	}
 
 /* **************** 3. BASIC SETTINGS - BODY,P,H4,LI,B */
 		/* pre_shutdown.html */
 		h4 {
-			line-height:1.2em;
+			line-height:1.2em
 		}
 
 /* **************** 5. MAIN MENU */
 		#mainmenu > li {
 			line-height: 1.2em;
-			font-size: 1.2em;
+			font-size: 1.2em
 		}
 
 /* **************** 11. DIV */
@@ -2840,7 +2876,7 @@ body.envi {
 	div.warning {
 		margin: 16px 0 14px;
 		padding: 0 10px;
-		line-height: 1.2em;
+		line-height: 1.2em
 	}
 
 /* **************** X. FOOTER */
@@ -2850,6 +2886,6 @@ body.envi {
 		font-size: 0.9em
 	}
 	li.developed {
-		font-size:1em
+		font-size: 1em
 	}
 }

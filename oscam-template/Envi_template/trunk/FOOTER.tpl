@@ -34,14 +34,32 @@
 			</DIV>
 			<DIV CLASS="form_holder">
 				<DIV CLASS="styleswitcher">
-					<DIV CLASS="section-label">STYLE SWITCHER</DIV>
+					<DIV CLASS="section-label">STYLE SWITCHER
+						<DIV CLASS="sectioninfo">
+							<DIV CLASS="sectioninfo_detail">
+								Style switcher used cookie system. To function properly, you must have cookies enabled in your browser. All Cookie is set to 365 days.
+							</DIV>
+						</DIV>
+					</DIV>
 					<UL CLASS="addClass">
 						<LI><A HREF="#" VALUE="original">Original WebIf</A></LI>
 						<LI><A HREF="#" VALUE="envi">Envi Template</A></LI>
 					</UL>
 				</DIV>
 				<DIV ID="switchersettings">
-					<DIV CLASS="section-label">Template color style</DIV>
+					<DIV CLASS="section-label">Template color style
+						<DIV HREF="#" CLASS="sectioninfo">
+							<DIV CLASS="sectioninfo_detail">
+								Color settings of WebIf.Colors settings in the following elements:
+								<UL>
+									<LI>Text in Main menu and Submenu</LI>
+									<LI>Text in links</LI>
+									<LI>Background colors for "hover" in tables</LI>
+									<LI>Background colors for icons</LI>
+								</UL>
+							</DIV>
+						</DIV>
+					</DIV>
 					<UL CLASS="colchange">
 						<LI ID="col_1" CLASS='colchange_1' TITLE="Teal"></LI>
 						<LI ID="col_2" CLASS='colchange_2' TITLE="Orange"></LI>
@@ -49,7 +67,14 @@
 						<LI ID="col_4" CLASS='colchange_4' TITLE="Green"></LI>
 						<LI ID="col_5" CLASS='colchange_5' TITLE="Pink"></LI>
 					</UL>
-					<DIV CLASS="section-label">Background color</DIV>
+					<DIV CLASS="section-label">Background color
+						<DIV HREF="#" CLASS="sectioninfo">
+							<DIV CLASS="sectioninfo_detail">
+								For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template
+"
+							</DIV>
+						</DIV>
+					</DIV>
 					<UL CLASS="backchange">
 						<LI ID="back_1" CLASS='background_1' TITLE="White"></LI>
 						<LI ID="back_2" CLASS='background_2' TITLE="5% Black"></LI>
@@ -57,7 +82,14 @@
 						<LI ID="back_4" CLASS='background_4' TITLE="80% Black"></LI>
 						<LI ID="back_5" CLASS='background_5' TITLE="90% Black"></LI>
 					</UL>
-					<DIV CLASS="section-label">Patterns</DIV>
+					<DIV CLASS="section-label">Patterns
+						<DIV HREF="#" CLASS="sectioninfo">
+							<DIV CLASS="sectioninfo_detail">
+								For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template
+"
+							</DIV>
+						</DIV>
+					</DIV>
 					<UL CLASS="patchange">
 						<LI ID="pat_1" CLASS='patchange_1' TITLE="Diagonal line - transparent"></LI>
 						<LI ID="pat_2" CLASS='patchange_2' TITLE="Diamond - transparent"></LI>
@@ -70,7 +102,13 @@
 						<LI ID="pat_9" CLASS='patchange_9' TITLE=""></LI>
 						<LI ID="pat_10" CLASS='patchange_10' TITLE=""></LI>
 					</UL>
-					<DIV CLASS="section-label">Other settings</DIV>
+					<DIV CLASS="section-label">Other settings
+						<DIV HREF="#" CLASS="sectioninfo">
+							<DIV CLASS="sectioninfo_detail">
+								You can set the font for text, rotate logo or reset all settings.
+							</DIV>
+						</DIV>
+					</DIV>
 					<TABLE CLASS="otherchange">
 						<TR>
 							<TD>Menu font:</TD>
@@ -136,7 +174,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1256</P>
+							<P><B>Envi revision:</B> 1257</P>
 							<P><B>For oscam revision:</B> 10081 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
