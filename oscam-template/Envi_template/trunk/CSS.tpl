@@ -1180,7 +1180,6 @@ div.envi_info {
 
 .demo_changer .demo_icon{
 	background-color: rgba(255, 255, 255, 0.8);
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADmYDp0AAAAGHRSTlMAB3Laye98qCGVEPeNgkfhvJxlXT4vshgFDlz8AAAAxklEQVQYGWXBB5LCMAAEwVWWc4b5/0tPhsInQ7e+2EYaon55omXSr5nCG91Z53nxPqo2AKk1C9DoxkIrmY6oOwutZDqsbnogGdMAvd5yaiRZ56HrwLtBbxsYnTyFNzo187NNsGl3oxzW4nQ6IASKCSbFXuoHvSxcRtV2wA1NgEm1NsFspBxgM7oEil1FT7Hog9OhIlI89DFaB1GS8ZDWQ/9WIObjAV2r2sZHeKqSA5dZlezCujp4jAtJtZwlC09pN/o2EnT3B9qZEIrL4gjtAAAAAElFTkSuQmCC);
 	background-repeat:no-repeat;
 	background-position: center;
 	-webkit-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
@@ -1281,6 +1280,57 @@ div.envi_info {
 	border-bottom: 1px solid #DDD;
 	text-align: left
 }
+/* Info icons in StyleSwitcher */
+.sectioninfo {
+	cursor: pointer;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAPFBMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsLSlzAAAAE3RSTlMA0MRrBvr0G7vqcFirqJ97YD8Vn8W1wQAAAFpJREFUCNcdjlkSAEEEQ2Npvc3u/ncd5CN4VQQAFW6NRRHq5O5GTj149v5gOinEU3yFCTh8bh1J0MKPVazVYF+vUujEyoHrwMadTOq0vLlPWqGpDK13htkQAD++iQXOARfLfgAAAABJRU5ErkJggg==");
+	background-repeat: no-repeat;
+	background-position: center 2px;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	right: 0px;
+	float: right;
+}
+.sectioninfo:hover .sectioninfo_detail {
+	text-shadow: none;
+	font-weight: 300;
+	display: block;
+	z-index: 1000;
+	position: relative;
+	background-color: #515151;
+	border-radius: 3px;
+	color: #FFF;
+	width: 200px;
+	padding: 13px;
+	top: -8px;
+	right: 235px;
+	opacity: 1;
+	transition: opacity 0.5s ease 0s;
+}
+.sectioninfo_detail {
+	display: none;
+	opacity: 0;
+}
+div.footer .sectioninfo_detail li {
+	color: #FFF !important;
+	list-style-type: initial;
+	margin-left: 10px;
+}
+/* Css triangle trick for tooltip for help in StyleSwitcher*/
+.sectioninfo:hover .sectioninfo_detail:before{
+	content:'';
+	display:block;
+	width:0;
+	height:0;
+	position:absolute;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left:8px solid #515151;
+	right:-8px;
+	top:7px;
+}
+/* List of colors, background, patterns */		
 ul.backchange,
 ul.patchange,
 ul.colchange {
@@ -2102,7 +2152,103 @@ body.envi {
 }
 
 /* **************** 22. OTHER SETTINGS */
-
+/* Coloring background TD for Searchterm */
+		.envi .back_cell {
+			background-color: #e7f26f !important;
+		}
+		/* Setting for DIV "Count rows" */
+		.envi #countrows {
+			text-align: left;
+			margin-top: 10px;
+			float: left
+		}
+		/* Setting for main DIV for "Pagination" */
+		.envi .pagin {
+			float: right
+		}
+		/* Setting for DIV "Pagination" */
+		.envi #pagination {
+			float: left
+		}
+		/* Setting for DIV "Select pagination" */
+		.envi #numPerPage {
+			float: right;
+			margin-left: 10px;
+			padding-top: 3px
+		}
+		/* Settings for SPAN in DIV "Count rows" */
+		.envi .rowcount {
+			font-weight: bold
+		}
+		/* If no entries found in table */
+		.envi .search-sf {}
+		.envi .text-muted {
+			font-weight: bold
+		}
+		/* Color setting for TD in TFOOT only for BODY.envi */
+		.envi tfoot td {
+			background-color: transparent !important;
+		}
+		.envi table.readers tfoot tr:hover td,
+		.envi table.users tfoot tr:hover td,
+		.envi table.statsbalance tfoot tr:hover td {
+			background-color: transparent !important;
+		}
+		.envi table.readers tfoot td,
+		.envi table.users tfoot td {
+		    border-right: none;
+		}
+		/* Setting for pagination */
+		.envi div.pager {
+			text-align: right;
+			margin-top: 5px;
+		}
+		.envi div.pager span {
+			display: inline-block;
+			width: 1.8em;
+			height: 1.8em;
+			line-height: 1.8;
+			text-align: center;
+			cursor: pointer;
+			background: #A4A4A4;
+			color: #000;
+			margin-right: 0.5em;
+			font-weight:bold
+		}
+		.envi div.pager span.active {
+			background: #BD0000;
+			color: #FFF;
+		}
+		.envi div.pager span.clickable:hover {
+			background: #BD0000;
+			color: #FFF;
+		}
+		/* Selection for pagination */
+		.envi #selectionPerPage {
+			padding: 1px 10px 1px 1px
+		}
+		.envi #selectionPerPage option {
+			padding-left: 5px
+		}
+		.envi #selectionPerPage option:nth-child(3) {
+			font-weight: bold
+		}
+		/* Show/Hide pagination */
+		.envi .visibility {
+			visibility:hidden;
+		}
+		/* Menu Icons */
+		.envi li.menu a,
+		.envi li.menu_selected a {
+			padding: 10px 6px 9px 26px !important;
+			margin-left: 3px;
+			margin-right: 3px;
+		}
+		.envi a[class*='menu_image'] {
+			background-repeat:no-repeat;
+			background-position: 4px center;
+			cursor:pointer;
+		}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1" */
@@ -2129,6 +2275,11 @@ body.envi {
 }
 .colchange_1 div.sidlistclose {
 	background-color: #16B6C6
+}
+.colchange_1 div.sidlistclose:hover {
+	background-color: #000;
+	color: #16B6C6;
+	transition: all 0.5s ease 0s
 }
 /* Span Notifier */
 .colchange_1 span.span_notifier {
@@ -2212,6 +2363,12 @@ body.envi {
 .colchange_1 table.users tr:hover td.td-sorting,
 .colchange_1 table.statsbalance tr:hover td.td-sorting {
 	background-color: #c5d9e3 !important
+}
+/* Color for pagination */
+.colchange_1 div.pager span.active,
+.colchange_1 div.pager span.clickable:hover {
+	background: #16B6C6;
+	color: #000;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colchange_2" */
