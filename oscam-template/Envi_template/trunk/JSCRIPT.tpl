@@ -2730,6 +2730,14 @@ function CreateIcons() {
 
 	if ($('body').hasClass('colchange_1') == true) {
 		var colorHover = '16B6C6';
+	} else if ($('body').hasClass('colchange_2') == true) {
+		var colorHover = 'FF9C00';
+	} else if ($('body').hasClass('colchange_3') == true) {
+		var colorHover = 'FFE400';
+	} else if ($('body').hasClass('colchange_4') == true) {
+		var colorHover = '7CB600';
+	} else if ($('body').hasClass('colchange_5') == true) {
+		var colorHover = 'C71C77';
 	} else {
 		var colorHover = 'F00423';
 	};
@@ -2959,6 +2967,20 @@ function CreateIcons() {
 // ********************************************************************
 }});
 
+$(function () { if ($('body').hasClass('original') == true) {
+// ********************************************************************
+function CreateIcons() {
+	// Icon for STYLESWITCHER
+		var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#000000"></path></svg>';
+		var encodedIcon = window.btoa(svgIcon);
+
+		$('#demo_icon').css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
+}
+// CreateIcons for first loading page
+	CreateIcons();
+
+// ********************************************************************
+}});
 /* -------------- LIBRARY FOR ENVI -------------- */
 	/*! jquery.cookie v1.4.1 | MIT */
 	!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});

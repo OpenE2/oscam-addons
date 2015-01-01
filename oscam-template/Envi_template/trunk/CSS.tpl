@@ -2061,6 +2061,7 @@ body.envi {
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
+	padding: 1px 10px;
 	margin: 0
 }
 
