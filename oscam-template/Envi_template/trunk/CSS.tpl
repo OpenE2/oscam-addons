@@ -621,6 +621,10 @@ textarea.bt {
 select {
 	padding:2px
 }
+/* settings for select in script.html */
+#scriptselect {
+	height: 22px;
+}
 /* generaly settings for all input */
 input,textarea {
 	-moz-box-sizing:border-box;
@@ -1215,10 +1219,6 @@ div.envi_info {
 	cursor: pointer
 }
 .form_holder select {
-	border: 1px solid #CCC !important;
-	-webkit-border-radius: 2px;
-	   -moz-border-radius: 2px;
-		    border-radius: 2px;
 	font: 13px Arial,sans-serif;
 	color: #666;
 	width: 80px;
@@ -1606,26 +1606,22 @@ body.envi {
 }
 /* ------- SERVICES ------- */
 /* services.html */
+.envi #addnewservice,
+.envi #servicesedit,
+.envi table.configservices {
+	border-spacing: 0
+}
 .envi #newservice {
-	margin-top:0
+	margin-top: 0
+}
+.envi #servicesedit {
+	border-bottom: 1px solid #222
 }
 /* ------- READERS ------- */
 /* readers.html */
-.envi table.readers {
-	border-spacing: 0px;
-	border-bottom: 1px solid #222
-}
-.envi #dataTable {
-	border-spacing: 0px;
-	margin-top: 12px;
-	background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5);
-	border: 6px solid rgba(255, 255, 255, 0.2);
-	outline: 1px solid #FFF;
-
-	/* BOX SHADOW */
-	-webkit-box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
-	   -moz-box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5);
-			box-shadow: 0px 0px 4px rgba(50, 50, 50, 0.5)
+.envi table.readers,
+.envi table.configreader {
+	border-spacing: 0
 }
 /* emm.html */
 .envi table.writeemm {
@@ -1638,18 +1634,25 @@ body.envi {
 .envi #newinsert table,
 .envi #searchTable table.readers {
 	border-spacing: 0px;
-	border-bottom: none
+	border-bottom: none;
+	margin-bottom: 10px
+}
+/* readerstats.html */
+.envi table.statsbalance {
+	border-spacing: 0px;
+	border-bottom: 1px solid #222
 }
 /* ------- USERS ------- */
 /* userconfig.html */
-.envi table.users {
-	border-spacing: 0;
-	border-bottom: 1px solid #222
+.envi table.users,
+.envi table.configuser {
+	border-spacing: 0
 }
 .envi #newinsert table,
 .envi #searchTable table.users {
 	border-spacing: 0px;
-	border-bottom: none
+	border-bottom: none;
+	margin-bottom: 10px
 }
 .envi table.infotable {
 	border-bottom: 1px solid #222;
@@ -1681,7 +1684,7 @@ body.envi {
 	border-top: 1px solid #FFF;
 }
 .envi table.status th:last-child {
-    border-right: medium none;
+	border-right: medium none;
 }
 /* status_cacheexinfo.html, status_systeminfo.html, status_userinfo.html */
 .envi th.nameinfo {
@@ -1698,11 +1701,23 @@ body.envi {
 .envi table.users th:last-child {
 	border-right: none
 }
-/* userconfig.html */
+/* readers.html */
 .envi table.readers th {
 	border-right: 1px dotted #666;
 	color: #FFF;
 	border-top: 1px solid #FFF
+}
+.envi table.readers th:last-child {
+	border-right: none
+}
+/* readerstats.html */
+.envi table.statsbalance th {
+	border-right: 1px dotted #666;
+	color: #FFF;
+	border-top: 1px solid #FFF
+}
+.envi table.statsbalance th:last-child {
+	border-right: none
 }
 /* cacheex.html */
 .envi table.stats th {
@@ -1714,6 +1729,17 @@ body.envi {
 .envi table.stats th:last-child {
 	border-right: none
 }
+/* services.html */
+.envi #addnewservice th {
+	border-top: 1px solid #FFF
+}
+.envi #servicesedit th {
+	border-right: 1px dotted #666;
+	border-top: 1px solid #FFF
+}
+.envi #servicesedit th:last-child {
+    border-right: medium none;
+}
 /* Background color for th */
 .envi table.config th,
 .envi table.configreader th,
@@ -1722,6 +1748,7 @@ body.envi {
 .envi table.failban th,
 .envi #servicesedit th,
 .envi #addnewservice th,
+.envi table.configservices th,
 .envi table.readers th,
 .envi table.writeemm th,
 .envi table.statsbalance th,
@@ -1729,72 +1756,6 @@ body.envi {
 .envi table.status td.subheadline {
 	background-color: #222;
 	color: #FFF
-}
-.envi table.readers th,
-.envi table.users th,
-.envi table.statsbalance th {
-	border-top: 1px solid #FFF;
-	border-left: 1px solid #DDD;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #828282;
-
-	/* GRADIENT */
-	/* Old browsers */
-	background: #A4A4A4;
-	/* Webkit (Chrome10+/Safari5.1+) */
-	background-image: -webkit-gradient(linear,left top, left bottom,from(#CCC),to(#A4A4A4));
-	/* Firefox */
-	background-image: -moz-linear-gradient(top,#CCC,#A4A4A4);
-	/* IE10+ */
-	background-image: -ms-linear-gradient(top,#CCC,#A4A4A4);
-	/* W3C Markup, IE10 Release Preview */
-	background-image: linear-gradient(top,#CCC,#A4A4A4);
-
-	/* TEXT SHADOW */
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7)
-}
-.envi table.readers th.sortable,
-.envi table.users th.sortable,
-.envi table.statsbalance th.sortable {
-	/* FF 3.6+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -moz-linear-gradient(center top , #CCC, #A4A4A4);
-	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAIAJEAAAAAAP///yMtMP///yH5BAEAAAMALAAAAAAFAAgAAAIL3GQnuJ2f2lLI1AIAOw==") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#cccccc),to(#a4a4a4));
-}
-.envi table.readers th.sorting-desc,
-.envi table.users th.sorting-desc,
-.envi table.statsbalance th.sorting-desc {
-	/* FF 3.6+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAEAPAAAAAAACMtMCH5BAEAAAAALAAAAAAFAAQAAAIHhB2ZoBdWAAA7") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
-	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAEAPAAAAAAACMtMCH5BAEAAAAALAAAAAAFAAQAAAIHhB2ZoBdWAAA7") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
-}
-.envi table.readers th.sorting-asc,
-.envi table.users th.sorting-asc,
-.envi table.statsbalance th.sorting-asc {
-	/* FF 3.6+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAEAPABACMtMAAAACH5BAUAAAEALAAAAAAFAAQAAAIGTGAHuJ1WADs=") 4px center no-repeat, -moz-linear-gradient(center top , #999, #A4A4A4);
-	/* Safari 4+, Chrome 2+ */
-	background: url("data:image/gif;base64,R0lGODlhBQAEAPABACMtMAAAACH5BAUAAAEALAAAAAAFAAQAAAIGTGAHuJ1WADs=") 4px center no-repeat, -webkit-gradient(linear,left top, left bottom,from(#999),to(#a4a4a4));
-}
-.envi #searchTable table.readers th,
-.envi #searchTable table.users th {
-	border-bottom: 1px solid #FFF;
-	border-top: 1px solid #FFF;
-	border-left: none;
-	border-right: none;
-
-	/* GRADIENT */
-	/* Old browsers */
-	background: #A4A4A4;
-	/* Webkit (Chrome10+/Safari5.1+) */
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303135), to(black), color-stop(.06, #3C3D42), color-stop(.18, #404447), color-stop(.5, #34383B), color-stop(.5, #25292C), color-stop(.63, #1A1B1F));
-	/* Firefox */
-	background-image: -moz-linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
-	/* IE10+ */
-	background-image: -ms-linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
-	/* W3C Markup, IE10 Release Preview */
-	background-image: linear-gradient(top, #303135, #3C3D42 6%, #404447 18%, #34383B 50%, #25292C 50%, #1A1B1F 63%, black);
 }
 /* Color for sorting */
 .envi table.readers .sorting-asc, .envi table.readers .sorting-desc,
@@ -1804,6 +1765,9 @@ body.envi {
 }
 
 /* **************** 10. TABLE TD */
+td {
+	background-color: #EBEBEB;
+}
 /* ------- STATUS ------- */
 /* status.html */
 .envi table.status td.subheadline {
@@ -1818,10 +1782,14 @@ body.envi {
 }
 /* ------- READERS ------- */
 /* readers.html */
-.envi table.readers td {
+.envi table.readers td,
+.envi table.stats td,
+.envi table.statsbalance td {
 	border-right: 1px dotted #999
 }
-.envi table.readers td:last-child {
+.envi table.readers td:last-child,
+.envi table.stats td:last-child,
+.envi table.statsbalance td:last-child {
 	border-right: none
 }
 .envi table.readers tr:hover td,
@@ -1861,20 +1829,21 @@ body.envi {
 .envi table.config td:first-child,
 .envi table.configreader td:first-child,
 .envi table.configuser td:first-child {
-	background-color: #CCC
+	background-color: #D9D9D9
 }
 .envi table.config tr:nth-last-child(-n+2) td,
 .envi table.configreader tr:nth-last-child(-n+2) td,
 .envi table.configuser tr:nth-last-child(-n+2) td {
-	background-color: transparent
+	background-color: transparent;
+	border-bottom: none;
 }
 .envi table.config table tr:nth-last-child(-n+2) td,
 .envi table.configreader table tr:nth-last-child(-n+2) td ,
 .envi table.configuser table tr:nth-last-child(-n+2) td {
-	background-color: #EEE
+	background-color: #EBEBEB
 }
 .envi table.subservicetable tr:nth-last-child(-n+2) td:first-child {
-	background-color: #CCC
+	background-color: #D9D9D9
 }
 /* Border bottom for whole TR in .config, configreader, .configuser */
 .envi table.config td,
@@ -1885,10 +1854,30 @@ body.envi {
 .envi table.subservicetable td {
 	border-bottom: none
 }
-.envi table.config tr:nth-last-child(-n+3) td,
-.envi table.configreader tr:nth-last-child(-n+3) td,
-.envi table.configuser tr:nth-last-child(-n+3) td {
+/* ------- SERVICES ------- */
+.envi #servicesedit td,
+.envi table.configservices td {
+	border-right: 1px dotted #999
+}
+.envi table.configservices td {
+	border-bottom: 1px dotted #999
+}
+.envi #servicesedit td:last-child,
+.envi table.configservices td:last-child {
+	border-right: none
+}
+.envi #servicesedit tr:nth-child(odd) td {
+	background-color: #F2F2F2
+}
+.envi #servicesedit tr:nth-child(even) td {
+	background-color: #E6E6E6
+}
+.envi table.configservices tr:nth-last-child(-n+2) td {
+	background-color: transparent;
 	border-bottom: none
+}
+.envi table.configservices td:first-child {
+    background-color: #D9D9D9;
 }
 /* ------- OTHER SETTINGS ------- */
 /* Background color for TD if TH have class sorting-asc, sorting-desc */
@@ -1908,7 +1897,11 @@ body.envi {
 .envi .users tr.online td.td-sorting {
 	background-color: #B2F2A2
 }
-
+/* Border for tfoot with pagination in readers, users */
+.envi table.readers tfoot td,
+.envi table.users tfoot td {
+	border-top: 1px solid #222;
+}
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
 .envi div#livelog {
@@ -1987,37 +1980,52 @@ body.envi {
 	   -moz-box-shadow: none;
 			box-shadow: none
 }
-
 .envi .regexdata_nav input {
-    width: 100px
+	width: 100px
 }
 .envi .configcontrol input[type="submit"] {
-    width: 115px
+	width: 115px
 }
 .envi input[type="text"] {
-	border: 1px solid #666
+	border: 1px solid #858585
+}
+.envi input[type="text"]:hover {
+    border: 1px solid #000;
+}
+.envi .readers input[type="text"],
+.envi .readers select,
+.envi .users input[type="text"],
+.envi .cacheex input[type="text"],
+.envi #addnewservice input[type="text"] {
+	outline: 1px solid #FFF;
+	border: 1px solid #000
 }
 .envi .readers input[type="text"] {
-    border: 1px solid #000;
-    box-shadow: 0px 0px 7px #000
+	margin-right: 5px
 }
 .envi .pollselect input[type="text"] {
-    border: 1px solid transparent
+	border: 1px solid transparent
 }
 .envi select {
-    padding: 1px;
-    border: 1px solid #666
+	padding: 1px;
+	border: 1px solid #858585
+}
+.envi select:hover {
+	border: 1px solid #000
 }
 .envi td.subheadline input[type="button"] {
 	margin: 0px 0px 0px 15px;
 	font-weight: 700
 }
 .envi #otherdropdown input.short[type="text"] {
-    margin: 0 5px
+	margin: 0 5px
 }
 .envi #nav li.pollselect input[type="text"].pintervall{
 	font-weight: bold;
 	font-size: 12px
+}
+textarea.bt {
+	border: 1px solid #858585
 }
 
 /* **************** 13. IMAGE */
@@ -2252,11 +2260,11 @@ body.envi {
 		}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
-/* Settings for Template color style "colchange_1" */
-
-.colchange_1 h4 {
-	color: #16B6C6
-}
+/* Settings for Template color style "colchange_1"
+ * Basic colors: #16B6C6
+ * Other colors: #038AA5 , #13A2AE , #30D9E8 , #D1E5EF , #C5D9E3 , #025D8C
+ */
+/* Color for main menu */
 .colchange_1 li.menu_selected a {
 	color: #16B6C6;
 	border-bottom: 2px solid #13A2AE
@@ -2271,9 +2279,11 @@ body.envi {
 .colchange_1 #nav li.configmenu > a:hover {
 	color: #16B6C6
 }
+/* Footer */
 .colchange_1 div.footer li.styleauthor b {
 	color: #16B6C6
 }
+/* Services */
 .colchange_1 div.sidlistclose {
 	background-color: #16B6C6
 }
@@ -2282,16 +2292,22 @@ body.envi {
 	color: #16B6C6;
 	transition: all 0.5s ease 0s
 }
+.colchange_1 div.sidlistclose a {
+	color: #FFF
+}
+.colchange_1 div.sidlistclose:hover a{
+	color: #16B6C6
+}
 /* Span Notifier */
 .colchange_1 span.span_notifier {
 	background-color: #16B6C6
 }
-/* generaly settings for all buttons/submits */
+/* Generaly settings for all buttons/submits */
 .colchange_1 input[type=button],
 .colchange_1 input[type=submit] {
 	background-color: #16B6C6
 }
-/* generaly hover settings for all buttons/submits */
+/* Generaly hover settings for all buttons/submits */
 .colchange_1 input[type=button]:hover,
 .colchange_1 input[type=submit]:hover {
 	background-color: #000;
@@ -2312,14 +2328,11 @@ body.envi {
 	transition:all 0.5s ease 0s
 }
 /* StyleSwitcher */
-.colchange_1 div.form_holder a {
-    color: #999
-}
 .colchange_1 div.form_holder a.active {
-	color: #16B6C6
+	color: #038AA5
 }
 .colchange_1 div.form_holder a:hover {
-	color: #16B6C6
+	color: #038AA5
 }
 .colchange_1 ul.backchange li.active,
 .colchange_1 ul.patchange li.active,
@@ -2347,23 +2360,77 @@ body.envi {
 	background-color: #30D9E8
 }
 /* Color for links */
+.colchange_1 a:link,
+.colchange_1 a:visited,
+.colchange_1 a:active {
+	color: #038AA5
+}
 .colchange_1 a:hover {
-	color: #13A2AE
+	color: #000
+}
+/* Colors for tooltip */
+.colchange_1 a.tooltip1 {
+	color: #F00;
+}
+/* Colors for debug */
+.colchange_1 a.debugl:hover,
+.colchange_1 a.debugs:hover {
+	background-color: #000;
+	color: #16B6C6;
+}
+.colchange_1 a.debugls:link,
+.colchange_1 a.debugls:visited {
+	background-color: #000;
+	color: #16B6C6;
+}
+/* Color links in config tables */
+.colchange_1 .config a,
+.colchange_1 .configreader a,
+.colchange_1 .configuser a,
+.colchange_1 .configservices a {
+	color: #025D8C
+}
+.colchange_1 .config a:hover,
+.colchange_1 .configreader a:hover,
+.colchange_1 .configuser a:hover,
+.colchange_1 .configservices a:hover {
+	color: #000
+}
+/* Links color for table.subservicetable */
+.colchange_1 .subservicetable a {
+	color: #16B6C6
+}
+/* Links color for table.subservicetable */
+.colchange_1 .subservicetable a:hover {
+	color: #FFF
+}
+/* Color for text */
+.colchange_1 h4 {
+	color: #16B6C6
 }
 /* Go to top link */
 .colchange_1 .top_link a:hover {
 	color: #16B6C6
 }
 /* Color for Table */
-.colchange_1 table.readers tr:hover td,
-.colchange_1 table.users tr:hover td,
-.colchange_1 table.statsbalance tr:hover td {
+.colchange_1 #dataTable tr:hover td,
+.colchange_1 table.statsbalance tr:hover td,
+.colchange_1 #servicesedit tr:hover td,
+.colchange_1 table.failban tr:hover td,
+.colchange_1 table.stats tr:hover td,
+.colchange_1 table.status tr.r:hover td,
+.colchange_1 table.status tr.p:hover td,
+.colchange_1 table.status tr.c:hover td {
 	background-color: #D1E5EF !important
 }
 .colchange_1 table.readers tr:hover td.td-sorting,
 .colchange_1 table.users tr:hover td.td-sorting,
 .colchange_1 table.statsbalance tr:hover td.td-sorting {
-	background-color: #c5d9e3 !important
+	background-color: #C5D9E3 !important
+}
+.colchange_1 #dataTable tfoot tr:hover td,
+.colchange_1 table.statsbalance tfoot tr:hover td {
+	background-color: transparent !important;
 }
 /* Color for pagination */
 .colchange_1 div.pager span.active,
@@ -2372,16 +2439,18 @@ body.envi {
 	color: #000;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
-/* Settings for Template color style "colchange_2" */
-
-.colchange_2 h4 {
-	color: #FF9C00
-}
+/* Settings for Template color style "colchange_2"
+ * Basic colors: #FF9C00
+ * Other colors: #FF8A00 , #F5E9D8
+ */
+/* Color for main menu */
 .colchange_2 li.menu_selected a {
-	color: #FF9C00
+	color: #FF9C00;
+	border-bottom: 2px solid #FF9C00
 }
 .colchange_2 li.menu:hover a {
-	color: #FF9C00
+	color: #FF9C00;
+	border-bottom: 2px solid #FF9C00
 }
 .colchange_2 #nav li.configmenu_selected > a:link,
 .colchange_2 #nav li.configmenu_selected > a:visited,
@@ -2389,24 +2458,55 @@ body.envi {
 .colchange_2 #nav li.configmenu > a:hover {
 	color: #FF9C00
 }
+/* Footer */
 .colchange_2 div.footer li.styleauthor b {
 	color: #FF9C00
 }
+/* Services */
 .colchange_2 div.sidlistclose {
 	background-color: #FF9C00
 }
-/* Polling */
+.colchange_2 div.sidlistclose:hover {
+	background-color: #000;
+	color: #FF9C00;
+	transition: all 0.5s ease 0s
+}
+.colchange_2 div.sidlistclose a {
+	color: #FFF
+}
+.colchange_2 div.sidlistclose:hover a{
+	color: #FF9C00
+}
+/* Span Notifier */
+.colchange_2 span.span_notifier {
+	background-color: #FF9C00
+}
+/* Generaly settings for all buttons/submits */
+.colchange_2 input[type=button],
+.colchange_2 input[type=submit] {
+	background-color: #FF9C00
+}
+/* Generaly hover settings for all buttons/submits */
+.colchange_2 input[type=button]:hover,
+.colchange_2 input[type=submit]:hover {
+	background-color: #000;
+	color: #FF9C00;
+	transition: all 0.5s ease 0s
+}
+/* User-Page polling */
 .colchange_2 #picolor {
-	background-color:#FF9C00
+	background-color: #FF9C00
 }
 .colchange_2 #inc,
 .colchange_2 #dec {
 	background-color: #FF9C00
 }
-/* StyleSwitcher */
-.colchange_2 div.form_holder a {
-    color: #999
+.colchange_2 #inc:hover,
+.colchange_2 #dec:hover {
+	background-color: #000;
+	transition:all 0.5s ease 0s
 }
+/* StyleSwitcher */
 .colchange_2 div.form_holder a.active {
 	color: #FF9C00
 }
@@ -2416,16 +2516,20 @@ body.envi {
 .colchange_2 ul.backchange li.active,
 .colchange_2 ul.patchange li.active,
 .colchange_2 ul.colchange li.active {
-	border-color: #FF9C00;
+	border-color: #FF9C00
 }
 .colchange_2 ul.backchange li:hover,
 .colchange_2 ul.patchange li:hover,
 .colchange_2 ul.colchange li:hover {
 	border-color: #FF9C00
 }
+.colchange_2 .form_holder #reset{
+	background-color:#FF9C00
+}
 .colchange_2 .form_holder #reset:hover {
-	background-color: #FF9C00;
-	color: #000
+	background-color: #000;
+	color: #FF9C00;
+	transition: all 0.5s ease 0s
 }
 /* Color for links of icons */
 .colchange_2 a img.icon {
@@ -2435,222 +2539,95 @@ body.envi {
 	background-color: #FFB53D
 }
 /* Color for links */
+.colchange_2 a:link,
+.colchange_2 a:visited,
+.colchange_2 a:active {
+	color: #FF8A00
+}
 .colchange_2 a:hover {
+	color: #000
+}
+/* Colors for tooltip */
+.colchange_2 a.tooltip1 {
+	color: #F00;
+}
+/* Colors for debug */
+.colchange_2 a.debugl:hover,
+.colchange_2 a.debugs:hover {
+	background-color: #000;
+	color: #FF9C00;
+}
+.colchange_2 a.debugls:link,
+.colchange_2 a.debugls:visited {
+	background-color: #000;
+	color: #FF9C00;
+}
+/* Color links in config tables */
+.colchange_2 .config a,
+.colchange_2 .configreader a,
+.colchange_2 .configuser a,
+.colchange_2 .configservices a {
+	color: #FF8A00
+}
+.colchange_2 .config a:hover,
+.colchange_2 .configreader a:hover,
+.colchange_2 .configuser a:hover,
+.colchange_2 .configservices a:hover {
+	color: #000
+}
+/* Links color for table.subservicetable */
+.colchange_2 .subservicetable a {
+	color: #FF9C00
+}
+/* Links color for table.subservicetable */
+.colchange_2 .subservicetable a:hover {
+	color: #FFF
+}
+/* Color for text */
+.colchange_2 h4 {
+	color: #FF9C00
+}
+/* Go to top link */
+.colchange_2 .top_link a:hover {
 	color: #FF9C00
 }
 /* Color for Table */
-.colchange_2 table.readers tr:hover td {
-	background-color: #FFE2B3
+.colchange_2 #dataTable tr:hover td,
+.colchange_2 table.statsbalance tr:hover td,
+.colchange_2 #servicesedit tr:hover td,
+.colchange_2 table.failban tr:hover td,
+.colchange_2 table.stats tr:hover td,
+.colchange_2 table.status tr.r:hover td,
+.colchange_2 table.status tr.p:hover td,
+.colchange_2 table.status tr.c:hover td {
+	background-color: #F5E9D8 !important
 }
-
+.colchange_2 table.readers tr:hover td.td-sorting,
+.colchange_2 table.users tr:hover td.td-sorting,
+.colchange_2 table.statsbalance tr:hover td.td-sorting {
+	background-color: #F5E9D8 !important
+}
+.colchange_2 #dataTable tfoot tr:hover td,
+.colchange_2 table.statsbalance tfoot tr:hover td {
+	background-color: transparent !important;
+}
+/* Color for pagination */
+.colchange_2 div.pager span.active,
+.colchange_2 div.pager span.clickable:hover {
+	background: #FF9C00;
+	color: #000;
+}
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
 /* Settings for Template color style "colchange_3" */
 
-.colchange_3 h4 {
-	color: #FFE400
-}
-.colchange_3 li.menu_selected a {
-	color: #FFE400
-}
-.colchange_3 li.menu:hover a {
-	color: #FFE400
-}
-.colchange_3 #nav li.configmenu_selected > a:link,
-.colchange_3 #nav li.configmenu_selected > a:visited,
-.colchange_3 #nav li.configmenu_selected > a:active,
-.colchange_3 #nav li.configmenu > a:hover {
-	color: #FFE400
-}
-.colchange_3 div.footer li.styleauthor b {
-	color: #FFE400
-}
-.colchange_3 div.sidlistclose {
-	background-color: #FFE400
-}
-/* Polling */
-.colchange_3 #picolor {
-	background-color: #FFE400
-}
-.colchange_3 #inc,
-.colchange_3 #dec {
-	background-color: #FFE400
-}
-/* StyleSwitcher */
-.colchange_3 div.form_holder a {
-    color: #999
-}
-.colchange_3 div.form_holder a.active {
-	color: #FFE400
-}
-.colchange_3 div.form_holder a:hover {
-	color: #FFE400
-}
-.colchange_3 ul.backchange li.active,
-.colchange_3 ul.patchange li.active,
-.colchange_3 ul.colchange li.active {
-	border-color: #FFE400
-}
-.colchange_3 ul.backchange li:hover,
-.colchange_3 ul.patchange li:hover,
-.colchange_3 ul.colchange li:hover {
-	border-color: #FFE400
-}
-.colchange_3 .form_holder #reset:hover {
-	background-color: #FFE400;
-	color: #000
-}
-/* Color for links of icons */
-.colchange_3 a img.icon {
-	background-color: #FFCC00
-}
-.colchange_3 a:hover img.icon {
-	background-color: #FFE400
-}
-/* Color for links */
-.colchange_3 a:hover {
-	color: #FFE400
-}
-/* Color for Table */
-.colchange_3 table.readers tr:hover td {
-	background-color: #FFFACC
-}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 4 */
 /* Settings for Template color style "colchange_4" */
 
-.colchange_4 h4 {
-	color: #7CB600
-}
-.colchange_4 li.menu_selected a {
-	color: #7CB600;
-}
-.colchange_4 li.menu:hover a {
-	color: #7CB600
-}
-.colchange_4 #nav li.configmenu_selected > a:link,
-.colchange_4 #nav li.configmenu_selected > a:visited,
-.colchange_4 #nav li.configmenu_selected > a:active,
-.colchange_4 #nav li.configmenu > a:hover {
-	color: #7CB600
-}
-.colchange_4 div.footer li.styleauthor b {
-	color: #7CB600
-}
-.colchange_4 div.sidlistclose {
-	background-color: #7CB600
-}
-/* Polling */
-.colchange_4 #picolor {
-	background-color: #7CB600
-}
-.colchange_4 #inc,
-.colchange_4 #dec {
-	background-color: #7CB600
-}
-/* StyleSwitcher */
-.colchange_4 div.form_holder a {
-    color: #999
-}
-.colchange_4 div.form_holder a.active {
-	color: #7CB600
-}
-.colchange_4 div.form_holder a:hover {
-	color: #7CB600
-}
-.colchange_4 ul.backchange li.active,
-.colchange_4 ul.patchange li.active,
-.colchange_4 ul.colchange li.active {
-	border-color: #7CB600
-}
-.colchange_4 ul.backchange li:hover,
-.colchange_4 ul.patchange li:hover,
-.colchange_4 ul.colchange li:hover {
-	border-color: #7CB600
-}
-.colchange_4 .form_holder #reset:hover {
-	background-color: #7CB600;
-	color: #000
-}
-/* Color for links */
-.colchange_4 a:hover {
-	color: #7CB600
-}
-/* Color for Table */
-.colchange_4 table.readers tr:hover td {
-	background-color: #85FFAB
-}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 5 */
 /* Settings for Template color style "colchange_5" */
 
-.colchange_5 h4 {
-	color: #C71C77
-}
-.colchange_5 li.menu_selected a {
-	color: #C71C77
-}
-.colchange_5 li.menu:hover a {
-	color: #C71C77
-}
-.colchange_5 #nav li.configmenu_selected > a:link,
-.colchange_5 #nav li.configmenu_selected > a:visited,
-.colchange_5 #nav li.configmenu_selected > a:active,
-.colchange_5 #nav li.configmenu > a:hover {
-	color: #C71C77
-}
-.colchange_5 div.footer li.styleauthor b {
-	color: #C71C77
-}
-.colchange_5 div.sidlistclose {
-	background-color: #C71C77
-}
-/* Polling */
-.colchange_5 #picolor {
-	background-color: #C71C77
-}
-.colchange_5 #inc,
-.colchange_5 #dec {
-	background-color: #C71C77
-}
-/* StyleSwitcher */
-.colchange_5 div.form_holder a {
-    color: #999
-}
-.colchange_5 div.form_holder a.active {
-	color: #C71C77
-}
-.colchange_5 div.form_holder a:hover {
-	color: #C71C77
-}
-.colchange_5 ul.backchange li.active,
-.colchange_5 ul.patchange li.active,
-.colchange_5 ul.colchange li.active {
-	border-color: #C71C77
-}
-.colchange_5 ul.backchange li:hover,
-.colchange_5 ul.patchange li:hover,
-.colchange_5 ul.colchange li:hover {
-	border-color: #C71C77
-}
-.colchange_5 .form_holder #reset:hover {
-	background-color: #C71C77;
-	color: #000
-}
-/* Color for links of icons */
-.colchange_5 a img.icon {
-	background-color: #C71C77
-}
-.colchange_5 a:hover img.icon {
-	background-color: #E43F97
-}
-/* Color for links */
-.colchange_5 a:hover {
-	color: #C71C77
-}
-/* Color for Table */
-.colchange_5 table.readers tr:hover td {
-	background-color: #F5BCDC
-}
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
 
