@@ -3,6 +3,7 @@ var oCounterTimer = null;
 
 function reloadDocument() {
 	if(!withquery) history.pushState('', document.title, window.location.pathname);
+	else if (window.location.href.match(/(&amp;|&)action=\w+/)) history.pushState('', document.title, window.location.href.replace(/(&amp;|&)action=\w+/,''));
 	window.location.reload();
 };
 
@@ -1215,8 +1216,8 @@ function updateStatuspage(data) {
 
 			} else {
 				// picon is not delivered in JSON - we set the text of column
-				if (item.request.chprovider && item.request.chname && item.request.srvid != '0000') {
-					$(uid + " > td.statuscol13").html(item.request.chprovider + item.request.chname);
+				if (item.request.chname && item.request.srvid != '0000') {
+					$(uid + " > td.statuscol13 > a").html(item.request.chprovider + item.request.chname);
 				} else {
 					$(uid + " > td.statuscol13").html('');
 				}
@@ -1224,7 +1225,7 @@ function updateStatuspage(data) {
 		}
 
 		if (!is_nopoll('statuscol14')) {
-			if (item.type == 's' || item.type == 'h' || item.type == 'm') {
+			if ('hms'.indexOf(item.type) > (-1) || item.request.caid == 'FFFE') {
 				$(uid + " > td.statuscol14").text('');
 			} else {
 				var value = item.type == 'c' ? (item.request.answered ? item.request.answered + ' (' + item.request.msvalue + ' ms)' : '') : item.request.lbvalue;
@@ -1940,11 +1941,6 @@ $(function(){ // Hidden Subnav only for selected pages
 });
 
 /* -------------- STYLESWITCHER with COOKIES -------------- */
-
-function cookieTemplate() {
-
-};
-
 /* IF DOCUMENT READY */
 $(function(){
 /* Cookie - Change template */
@@ -2056,6 +2052,7 @@ $(function(){
 });
 
 /* SHOW/HIDE STYLESWITCHER */
+$(function(){
 	function styleSwitcherCookie() {
 		styleSwitcherVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
 		$.cookie('StyleSwitcher', styleSwitcherVal, {expires: 365,path: '/'});
@@ -2065,46 +2062,47 @@ $(function(){
 		$('.demo_changer').toggleClass('active');
 		styleSwitcherCookie();
 	});
+});
 	
 /* CHANGE TEMPLATE (original/Envi) */
-	$(function(){
-		var TemplateSwitch = $.cookie('TemplateSwitch');
-		$('.addClass a').click(function () {
-			templateSwitchVal = $(this).attr('value')
-			$('body').removeClass().addClass(TemplateSwitch)
-			$.cookie('TemplateSwitch', templateSwitchVal, {expires: 365,path: '/'});
-			$('ul.addClass a.active').removeClass('active');
-			$(this).addClass('active');
+$(function(){
+	var TemplateSwitch = $.cookie('TemplateSwitch');
+	$('.addClass a').click(function () {
+		templateSwitchVal = $(this).attr('value')
+		$('body').removeClass().addClass(TemplateSwitch)
+		$.cookie('TemplateSwitch', templateSwitchVal, {expires: 365,path: '/'});
+		$('ul.addClass a.active').removeClass('active');
+		$(this).addClass('active');
 
-		// Hide StyleSwitcher settings for original WebIF
-			if ($.cookie('TemplateSwitch') == 'envi') {
-				// Show StyleSwitcher for Envi
-				$('#switchersettings').css('display', 'initial');
-				// For Envi add style
-					if (typeof $.cookie('BodyFontFamily') === 'undefined'){
-					//no cookie
-						$("#enviBodyFontFamily").html('')
-					} else {
-						//have cookie
-						$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
-						$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
-					}
-			} else {
-				// Hide StyleSwitcher settings
-				$('#switchersettings').css('display', 'none');
-				// For original WebIf remove style 
-				$("#enviBodyFontFamily").html('')
-			}
+	// Hide StyleSwitcher settings for original WebIF
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			// Show StyleSwitcher for Envi
+			$('#switchersettings').css('display', 'initial');
+			// For Envi add style
+				if (typeof $.cookie('BodyFontFamily') === 'undefined'){
+				//no cookie
+					$("#enviBodyFontFamily").html('')
+				} else {
+					//have cookie
+					$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+					$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+				}
+		} else {
+			// Hide StyleSwitcher settings
+			$('#switchersettings').css('display', 'none');
+			// For original WebIf remove style 
+			$("#enviBodyFontFamily").html('')
+		}
 
-		// (Re-)enable or Disable tooltips 
-		// NOTE: I dont know how disabled Bootstrap tooltip if I change template (original/Envi), solution is throught reload page. Reload page is important for new loading whole JSCRIPT.tpl (e.g. better function searchterm is avalaible)
-			location.reload();
-			return false;
-		});
+	// (Re-)enable or Disable tooltips 
+	// NOTE: I dont know how disabled Bootstrap tooltip if I change template (original/Envi), solution is throught reload page. Reload page is important for new loading whole JSCRIPT.tpl (e.g. better function searchterm is avalaible)
+		location.reload();
+		return false;
 	});
+});
 
 /* FUNCTION for CHANGE COLOR */
-	$(function(){
+$(function(){
 	/* Change Template color style */
 		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
 		$('.colchange li').on('click', function (e) { 	// function for colchange li click
@@ -2152,9 +2150,10 @@ $(function(){
 		}).filter(function () {
 			return $(this).attr('class') === patcolor
 		}).click()
-	});
+});
 
 /* SETTINGS for LI for CHANGE COLOR and PATTERNS */
+$(function(){
 	// Background color
 	$(".backchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
@@ -2181,174 +2180,172 @@ $(function(){
 			path: '/'
 		});
 	});
+});
 
 /* CHECKBOX - ROTATE LOGO */
-	$(function(){
-		$("input.rotatelogo").each(function() {
-			if ($.cookie('TemplateSwitch') == 'envi') {
-				var rotate = $.cookie($(this).attr('name'));
-				if (rotate && rotate == "true") {
-					$(this).prop('checked', rotate);
-					$('body').addClass('rotatelogo');
-				}
+$(function(){
+	$("input.rotatelogo").each(function() {
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var rotate = $.cookie($(this).attr('name'));
+			if (rotate && rotate == "true") {
+				$(this).prop('checked', rotate);
+				$('body').addClass('rotatelogo');
+			}
+		} else {
+			$('body').removeClass('rotatelogo');
+		}
+	});
+
+	// Function if checkbox is changed
+	$("input.rotatelogo").change(function() {
+		if ($("body").hasClass('envi')) {
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="rotatelogo"]').is(':checked') ) {
+				$('body').addClass('rotatelogo');
 			} else {
 				$('body').removeClass('rotatelogo');
 			}
-		});
-
-	// Function if checkbox is changed
-		$("input.rotatelogo").change(function() {
-			if ($("body").hasClass('envi')) {
-				$.cookie($(this).attr("name"), $(this).prop('checked'), {
-					path: '/',
-					expires: 365
-				});
-				if ( $('input[name="rotatelogo"]').is(':checked') ) {
-					$('body').addClass('rotatelogo');
-				} else {
-					$('body').removeClass('rotatelogo');
-				}
-			};
-		});
+		};
 	});
+});
 
 /* FONT FAMILY and SIZE */
+$(function() {
 	// Create <style> in <head>
 	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
 	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
 	$("head").append("<style type='text/css' id='enviFontSize'></style>");
-
-
-	$(function() {
+	
 	// Change font family for body
-		$('#bodyfontfamily').change(function() {
-			// value and cookie
-			font_picked = $(this).val();
-			if(font_picked.length > 0){
-				$.cookie('BodyFontFamily', font_picked, {
-					expires: 365,
-					path: '/'
-				});
-			}
-
-			// write into <style>
-			$("#enviBodyFontFamily").html(
-				'body { font-family: '+ font_picked +';}'
-			)
-		});
+	$('#bodyfontfamily').change(function() {
+		// value and cookie
+		font_picked = $(this).val();
+		if(font_picked.length > 0){
+			$.cookie('BodyFontFamily', font_picked, {
+				expires: 365,
+				path: '/'
+			});
+		}
+		// write into <style>
+		$("#enviBodyFontFamily").html(
+			'body { font-family: '+ font_picked +';}'
+		)
+	});
 
 	// Change font family for main menu
-		$('#menufontfamily').change(function() {
-			// value and cookie
-			font_picked = $(this).val();
-			if(font_picked.length > 0){
-				$.cookie('FontFamily', font_picked, {
-					expires: 365,
-					path: '/'
-				});
-			}
-
-			// write into <style> (I dont use "font_weight")
-			$("#enviFontFamily").html(
-				'.envi #mainmenu li { font-family: '+ font_picked +';}'
-			)
-		});
+	$('#menufontfamily').change(function() {
+		// value and cookie
+		font_picked = $(this).val();
+		if(font_picked.length > 0){
+			$.cookie('FontFamily', font_picked, {
+				expires: 365,
+				path: '/'
+			});
+		}
+		// write into <style> (I dont use "font_weight")
+		$("#enviFontFamily").html(
+			'.envi #mainmenu li { font-family: '+ font_picked +';}'
+		)
+	});
 		
 	// Change font size for main menu
-		$('#menufontsize').change(function() {
-			// value and cookie
-			fontsize_picked = $(this).val();
-			var split_fontsize_int = fontsize_picked.split("px");
-			if(split_fontsize_int.length > 0){
-				fontsize_picked_int = split_fontsize_int[0];
-				$.cookie('FontSize', fontsize_picked_int, {
-					expires: 365,
-					path: '/'
-				});
-			}
-			// write into <style>
-			$("#enviFontSize").html(
-				'.envi #mainmenu li { font-size: '+ fontsize_picked_int +'px;}' +
-				'.envi #mainmenu { margin-top: 11px;}'
-			)
-		});
+	$('#menufontsize').change(function() {
+		// value and cookie
+		fontsize_picked = $(this).val();
+		var split_fontsize_int = fontsize_picked.split("px");
+		if(split_fontsize_int.length > 0){
+			fontsize_picked_int = split_fontsize_int[0];
+			$.cookie('FontSize', fontsize_picked_int, {
+				expires: 365,
+				path: '/'
+			});
+		}
+		// write into <style>
+		$("#enviFontSize").html(
+			'.envi #mainmenu li { font-size: '+ fontsize_picked_int +'px;}' +
+			'.envi #mainmenu { margin-top: 11px;}'
+		)
 	});
+});
 
 /* RESET BUTTON - only for Envi (not for original) */
-	$(function() {
-		$("#reset").click(function () {
-			if($("body").hasClass("envi")) {
-				// Remove all cookie
-				var cookies = $.cookie();
-				for(var cookie in cookies) {
-					$.removeCookie(cookie);
-				}
-				// Set only cookie for Envi
-				$.cookie('TemplateSwitch', 'envi', {expires: 365,path: '/'});
-				// Set default class and checkbox
-				$('body').removeClass().addClass('envi');
-				$('.backchange li').removeClass('active');
-				$('.patchange li').removeClass('active');
-				$('.colchange li').removeClass('active');
-				$('#rotatelogo').prop('checked', false);
-				// Set default input
-				$("#bodyfontfamily")[0].selectedIndex = 0;
-				$("#menufontfamily")[0].selectedIndex = 0;
-				$("#menufontsize")[0].selectedIndex = 1;
-				// Set default style
-				$("#enviBodyFontFamily").html('')
-				$("#enviFontFamily").html('')
-				$("#enviFontSize").html('')
+$(function() {
+	$("#reset").click(function () {
+		if($("body").hasClass("envi")) {
+			// Remove all cookie
+			var cookies = $.cookie();
+			for(var cookie in cookies) {
+				$.removeCookie(cookie);
 			}
-		});
+			// Set only cookie for Envi
+			$.cookie('TemplateSwitch', 'envi', {expires: 365,path: '/'});
+			// Set default class and checkbox
+			$('body').removeClass().addClass('envi');
+			$('.backchange li').removeClass('active');
+			$('.patchange li').removeClass('active');
+			$('.colchange li').removeClass('active');
+			$('#rotatelogo').prop('checked', false);
+			// Set default input
+			$("#bodyfontfamily")[0].selectedIndex = 0;
+			$("#menufontfamily")[0].selectedIndex = 0;
+			$("#menufontsize")[0].selectedIndex = 1;
+			// Set default style
+			$("#enviBodyFontFamily").html('')
+			$("#enviFontFamily").html('')
+			$("#enviFontSize").html('')
+		}
 	});
+});
 
 /* -------------- TOOLTIP -------------- */
-	!function ($) {
-		$(function(){
-			/* Logo */
-			$('.envi div.logo a').boot_tooltip({animation: false, placement: 'bottom'})
-			/* Submit and button */
-			$('.envi input[type="submit"]').boot_tooltip({animation: false, placement: 'bottom'})
-			$('.envi input[type="button"]').boot_tooltip({animation: false, placement: 'bottom'})
-			/* Switch debug */
-			$('.envi span.debugl a').boot_tooltip({animation: false, placement: 'bottom'})
-			$('.envi span.debugs a').boot_tooltip({animation: false, placement: 'bottom'})
-			$('.envi ul.addClass a').boot_tooltip({animation: false, placement: 'top'})
-			$('.envi td.centered a').boot_tooltip({animation: false, placement: 'right'})
-			/* Tables in Users */
-			$('.envi table.users th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
-			$('.envi table.users th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
-			$('.envi td.usercol0 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.usercol1 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.usercol5 div').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.usercol23 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.usercol24 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.usercol25 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi span.global_conf').boot_tooltip({container: 'body',animation: false, placement: 'right'})
-			$('.envi span.global_conf a').boot_tooltip({container: 'body',animation: false, placement: 'right'})
-			/* Tables in Readers */
-			$('.envi table.readers th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
-			$('.envi td.readercol0 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.readercol1 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.readercol12 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.readercol13 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.readercol14 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.readercol15 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.readercol16 a').boot_tooltip({animation: false, placement: 'left'})
-			$('.envi td.readercol17 a').boot_tooltip({animation: false, placement: 'left'})
-			/* Tables in Status */
-			$('.envi table.status th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
-			$('.envi td.statuscol0 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.statuscol1 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi td.statuscol4 a').boot_tooltip({animation: false, placement: 'right'})
-			$('.envi table.infotable td').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
-			/* For Parameter input in script.html */
-			$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
-			/* Section label in Style Switcher */
-			$('.envi a.sectioninfo').boot_tooltip({html: true,container: 'body',animation: false, placement: 'bottom'})
-		})
-	}(window.jQuery)
+!function ($) {
+	$(function(){
+		/* Logo */
+		$('.envi div.logo a').boot_tooltip({animation: false, placement: 'bottom'})
+		/* Submit and button */
+		$('.envi input[type="submit"]').boot_tooltip({animation: false, placement: 'bottom'})
+		$('.envi input[type="button"]').boot_tooltip({animation: false, placement: 'bottom'})
+		/* Switch debug */
+		$('.envi span.debugl a').boot_tooltip({animation: false, placement: 'bottom'})
+		$('.envi span.debugs a').boot_tooltip({animation: false, placement: 'bottom'})
+		$('.envi ul.addClass a').boot_tooltip({animation: false, placement: 'top'})
+		$('.envi td.centered a').boot_tooltip({animation: false, placement: 'right'})
+		/* Tables in Users */
+		$('.envi table.users th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		$('.envi table.users th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		$('.envi td.usercol0 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.usercol1 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.usercol5 div').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.usercol23 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.usercol24 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.usercol25 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi span.global_conf').boot_tooltip({container: 'body',animation: false, placement: 'right'})
+		$('.envi span.global_conf a').boot_tooltip({container: 'body',animation: false, placement: 'right'})
+		/* Tables in Readers */
+		$('.envi table.readers th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		$('.envi td.readercol0 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.readercol1 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.readercol12 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.readercol13 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.readercol14 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.readercol15 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.readercol16 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi td.readercol17 a').boot_tooltip({animation: false, placement: 'left'})
+		/* Tables in Status */
+		$('.envi table.status th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		$('.envi td.statuscol0 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.statuscol1 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.statuscol4 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi table.infotable td').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		/* For Parameter input in script.html */
+		$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
+		/* Section label in Style Switcher */
+		$('.envi a.sectioninfo').boot_tooltip({html: true,container: 'body',animation: false, placement: 'bottom'})
+	})
+}(window.jQuery)
 /* -------------------------------------- SEARCHTERM and PAGINATION in tables readers, users, cacheex -------------------------------- */
 $(function () { if ($('body').hasClass('envi') == true) {
 // ********************************************************************
@@ -2984,6 +2981,230 @@ function CreateIcons() {
 
 // ********************************************************************
 }});
+
+/* -------------- JQUERY RESPONSIVE -------------- */
+if (window.matchMedia('(max-width: 360px)').matches) {
+    // do functionality on screens smaller than 768px
+    function CreateIcons() {
+		// Variable for color settings
+		var color = 'FFFFFF';
+		var colorHover = 'F00423';
+
+		// Icon for STATUS
+			var svgStatus = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 10.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-0.75v-4q0-0.109-0.070-0.18t-0.18-0.070h-2.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h0.75v2.5h-0.75q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h3.5q0.109 0 0.18-0.070t0.070-0.18zM7 3.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-1.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h1.5q0.109 0 0.18-0.070t0.070-0.18zM12 7q0 1.633-0.805 3.012t-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805 3.012 0.805 2.184 2.184 0.805 3.012z" fill="#'+color+'"></path></svg>';
+			var encodedStatus = window.btoa(svgStatus);
+			var svgStatusHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 10.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-0.75v-4q0-0.109-0.070-0.18t-0.18-0.070h-2.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h0.75v2.5h-0.75q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h3.5q0.109 0 0.18-0.070t0.070-0.18zM7 3.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-1.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h1.5q0.109 0 0.18-0.070t0.070-0.18zM12 7q0 1.633-0.805 3.012t-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805 3.012 0.805 2.184 2.184 0.805 3.012z" fill="#'+colorHover+'"></path></svg>';
+			var encodedStatusHover = window.btoa(svgStatusHover);
+
+			if ($('#item1').hasClass('menu_selected') == true) {
+				$('a.menu_image1').css("background-image","url(data:image/svg+xml;base64," + encodedStatusHover + ")");
+			} else {
+				$("a.menu_image1").css("background-image","url(data:image/svg+xml;base64," + encodedStatus + ")");
+				$('a.menu_image1').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedStatusHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedStatus + ")");
+				});
+			}
+
+
+		// Icon for LIVELOG
+			var svgLivelog = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M14 10.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 7.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 4.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 1.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+color+'"></path></svg>';
+			var encodedLivelog = window.btoa(svgLivelog);
+			var svgLivelogHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M14 10.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 7.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 4.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 1.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+colorHover+'"></path></svg>';
+			var encodedLivelogHover = window.btoa(svgLivelogHover);
+
+			if ($('#item2').hasClass('menu_selected') == true) {
+				$('a.menu_image2').css("background-image","url(data:image/svg+xml;base64," + encodedLivelogHover + ")");
+			} else {
+				$("a.menu_image2").css("background-image","url(data:image/svg+xml;base64," + encodedLivelog + ")");
+				$('a.menu_image2').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedLivelogHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedLivelog + ")");
+				});
+			}
+
+		// Icon for CONFIG
+			var svgConfig = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 7q0-0.828-0.586-1.414t-1.414-0.586-1.414 0.586-0.586 1.414 0.586 1.414 1.414 0.586 1.414-0.586 0.586-1.414zM12 6.148v1.734q0 0.094-0.062 0.18t-0.156 0.102l-1.445 0.219q-0.148 0.422-0.305 0.711 0.273 0.391 0.836 1.078 0.078 0.094 0.078 0.195t-0.070 0.18q-0.211 0.289-0.773 0.844t-0.734 0.555q-0.094 0-0.203-0.070l-1.078-0.844q-0.344 0.18-0.711 0.297-0.125 1.062-0.227 1.453-0.055 0.219-0.281 0.219h-1.734q-0.109 0-0.191-0.066t-0.090-0.168l-0.219-1.438q-0.383-0.125-0.703-0.289l-1.102 0.836q-0.078 0.070-0.195 0.070-0.109 0-0.195-0.086-0.984-0.891-1.289-1.313-0.055-0.078-0.055-0.18 0-0.094 0.062-0.18 0.117-0.164 0.398-0.52t0.422-0.551q-0.211-0.391-0.32-0.773l-1.43-0.211q-0.102-0.016-0.164-0.098t-0.062-0.184v-1.734q0-0.094 0.062-0.18t0.148-0.102l1.453-0.219q0.109-0.359 0.305-0.719-0.312-0.445-0.836-1.078-0.078-0.094-0.078-0.187 0-0.078 0.070-0.18 0.203-0.281 0.77-0.84t0.738-0.559q0.102 0 0.203 0.078l1.078 0.836q0.344-0.18 0.711-0.297 0.125-1.062 0.227-1.453 0.055-0.219 0.281-0.219h1.734q0.109 0 0.191 0.066t0.090 0.168l0.219 1.438q0.383 0.125 0.703 0.289l1.109-0.836q0.070-0.070 0.187-0.070 0.102 0 0.195 0.078 1.008 0.93 1.289 1.328 0.055 0.062 0.055 0.172 0 0.094-0.062 0.18-0.117 0.164-0.398 0.52t-0.422 0.551q0.203 0.391 0.32 0.766l1.43 0.219q0.102 0.016 0.164 0.098t0.062 0.184z" fill="#'+color+'"></path></svg>';
+			var encodedConfig = window.btoa(svgConfig);
+			var svgConfigHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 7q0-0.828-0.586-1.414t-1.414-0.586-1.414 0.586-0.586 1.414 0.586 1.414 1.414 0.586 1.414-0.586 0.586-1.414zM12 6.148v1.734q0 0.094-0.062 0.18t-0.156 0.102l-1.445 0.219q-0.148 0.422-0.305 0.711 0.273 0.391 0.836 1.078 0.078 0.094 0.078 0.195t-0.070 0.18q-0.211 0.289-0.773 0.844t-0.734 0.555q-0.094 0-0.203-0.070l-1.078-0.844q-0.344 0.18-0.711 0.297-0.125 1.062-0.227 1.453-0.055 0.219-0.281 0.219h-1.734q-0.109 0-0.191-0.066t-0.090-0.168l-0.219-1.438q-0.383-0.125-0.703-0.289l-1.102 0.836q-0.078 0.070-0.195 0.070-0.109 0-0.195-0.086-0.984-0.891-1.289-1.313-0.055-0.078-0.055-0.18 0-0.094 0.062-0.18 0.117-0.164 0.398-0.52t0.422-0.551q-0.211-0.391-0.32-0.773l-1.43-0.211q-0.102-0.016-0.164-0.098t-0.062-0.184v-1.734q0-0.094 0.062-0.18t0.148-0.102l1.453-0.219q0.109-0.359 0.305-0.719-0.312-0.445-0.836-1.078-0.078-0.094-0.078-0.187 0-0.078 0.070-0.18 0.203-0.281 0.77-0.84t0.738-0.559q0.102 0 0.203 0.078l1.078 0.836q0.344-0.18 0.711-0.297 0.125-1.062 0.227-1.453 0.055-0.219 0.281-0.219h1.734q0.109 0 0.191 0.066t0.090 0.168l0.219 1.438q0.383 0.125 0.703 0.289l1.109-0.836q0.070-0.070 0.187-0.070 0.102 0 0.195 0.078 1.008 0.93 1.289 1.328 0.055 0.062 0.055 0.172 0 0.094-0.062 0.18-0.117 0.164-0.398 0.52t-0.422 0.551q0.203 0.391 0.32 0.766l1.43 0.219q0.102 0.016 0.164 0.098t0.062 0.184z" fill="#'+colorHover+'"></path></svg>';
+			var encodedConfigHover = window.btoa(svgConfigHover);
+
+			if ($('#item3').hasClass('menu_selected') == true) {
+				$('a.menu_image3').css("background-image","url(data:image/svg+xml;base64," + encodedConfigHover + ")");
+			} else {
+				$("a.menu_image3").css("background-image","url(data:image/svg+xml;base64," + encodedConfig + ")");
+				$('a.menu_image3').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedConfigHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedConfig + ")");
+				});
+			}
+
+		// Icon for READERS
+			var svgReaders = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+color+'"></path></svg>';
+			var encodedReaders = window.btoa(svgReaders);
+			var svgReadersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+colorHover+'"></path></svg>';
+			var encodedReadersHover = window.btoa(svgReadersHover);
+
+			if ($('#item4').hasClass('menu_selected') == true) {
+				$('a.menu_image4').css("background-image","url(data:image/svg+xml;base64," + encodedReadersHover + ")");
+			} else {
+				$("a.menu_image4").css("background-image","url(data:image/svg+xml;base64," + encodedReaders + ")");
+				$('a.menu_image4').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedReadersHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedReaders + ")");
+				});
+			}
+
+		// Icon for USERS
+			var svgUsers = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="14" viewBox="0 0 11 14"><path d="M11 10.977q0 0.937-0.57 1.48t-1.516 0.543h-6.828q-0.945 0-1.516-0.543t-0.57-1.48q0-0.414 0.027-0.809t0.109-0.852 0.207-0.848 0.336-0.762 0.484-0.633 0.668-0.418 0.871-0.156q0.070 0 0.328 0.168t0.582 0.375 0.844 0.375 1.043 0.168 1.043-0.168 0.844-0.375 0.582-0.375 0.328-0.168q0.477 0 0.871 0.156t0.668 0.418 0.484 0.633 0.336 0.762 0.207 0.848 0.109 0.852 0.027 0.809zM8.5 4q0 1.242-0.879 2.121t-2.121 0.879-2.121-0.879-0.879-2.121 0.879-2.121 2.121-0.879 2.121 0.879 0.879 2.121z" fill="#'+color+'"></path></svg>';
+			var encodedUsers = window.btoa(svgUsers);
+			var svgUsersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="14" viewBox="0 0 11 14"><path d="M11 10.977q0 0.937-0.57 1.48t-1.516 0.543h-6.828q-0.945 0-1.516-0.543t-0.57-1.48q0-0.414 0.027-0.809t0.109-0.852 0.207-0.848 0.336-0.762 0.484-0.633 0.668-0.418 0.871-0.156q0.070 0 0.328 0.168t0.582 0.375 0.844 0.375 1.043 0.168 1.043-0.168 0.844-0.375 0.582-0.375 0.328-0.168q0.477 0 0.871 0.156t0.668 0.418 0.484 0.633 0.336 0.762 0.207 0.848 0.109 0.852 0.027 0.809zM8.5 4q0 1.242-0.879 2.121t-2.121 0.879-2.121-0.879-0.879-2.121 0.879-2.121 2.121-0.879 2.121 0.879 0.879 2.121z" fill="#'+colorHover+'"></path></svg>';
+			var encodedUsersHover = window.btoa(svgUsersHover);
+
+			if ($('#item5').hasClass('menu_selected') == true) {
+				$('a.menu_image5').css("background-image","url(data:image/svg+xml;base64," + encodedUsersHover + ")");
+			} else {
+				$("a.menu_image5").css("background-image","url(data:image/svg+xml;base64," + encodedUsers + ")");
+				$('a.menu_image5').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedUsersHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedUsers + ")");
+				});
+			}
+
+		// Icon for SERVICES
+			var svgServices = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M4 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM4 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM4 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM14 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531z" fill="#'+color+'"></path></svg>';
+			var encodedServices = window.btoa(svgServices);
+			var svgServicesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M4 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM4 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM4 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM14 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531z" fill="#'+colorHover+'"></path></svg>';
+			var encodedServicesHover = window.btoa(svgServicesHover);
+
+			if ($('#item6').hasClass('menu_selected') == true) {
+				$('a.menu_image6').css("background-image","url(data:image/svg+xml;base64," + encodedServicesHover + ")");
+			} else {
+				$("a.menu_image6").css("background-image","url(data:image/svg+xml;base64," + encodedServices + ")");
+				$('a.menu_image6').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedServicesHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedServices + ")");
+				});
+			}
+
+		// Icon for FILES
+			var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';		
+			var encodedFiles = window.btoa(svgFiles);
+			var svgFilesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+colorHover+'"></path></svg>';
+			var encodedFilesHover = window.btoa(svgFilesHover);
+
+			if ($('#item7').hasClass('menu_selected') == true) {
+				$('a.menu_image7').css("background-image","url(data:image/svg+xml;base64," + encodedFilesHover + ")");
+			} else {
+				$("a.menu_image7").css("background-image","url(data:image/svg+xml;base64," + encodedFiles + ")");
+				$('a.menu_image7').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFilesHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFiles + ")");
+				});
+			}
+
+		// Icon for FAILBAN
+			var svgFailban = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012-0.805 3.012-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805zM7 10.742v-1.484q0-0.109-0.070-0.184t-0.172-0.074h-1.5q-0.102 0-0.18 0.078t-0.078 0.18v1.484q0 0.102 0.078 0.18t0.18 0.078h1.5q0.102 0 0.172-0.074t0.070-0.184zM6.984 8.055l0.141-4.852q0-0.094-0.078-0.141-0.078-0.062-0.187-0.062h-1.719q-0.109 0-0.187 0.062-0.078 0.047-0.078 0.141l0.133 4.852q0 0.078 0.078 0.137t0.187 0.059h1.445q0.109 0 0.184-0.059t0.082-0.137z" fill="#'+color+'"></path></svg>';
+			var encodedFailban = window.btoa(svgFailban);
+			var svgFailbanHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012-0.805 3.012-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805zM7 10.742v-1.484q0-0.109-0.070-0.184t-0.172-0.074h-1.5q-0.102 0-0.18 0.078t-0.078 0.18v1.484q0 0.102 0.078 0.18t0.18 0.078h1.5q0.102 0 0.172-0.074t0.070-0.184zM6.984 8.055l0.141-4.852q0-0.094-0.078-0.141-0.078-0.062-0.187-0.062h-1.719q-0.109 0-0.187 0.062-0.078 0.047-0.078 0.141l0.133 4.852q0 0.078 0.078 0.137t0.187 0.059h1.445q0.109 0 0.184-0.059t0.082-0.137z" fill="#'+colorHover+'"></path></svg>';
+			var encodedFailbanHover = window.btoa(svgFailbanHover);
+
+			if ($('#item8').hasClass('menu_selected') == true) {
+				$('a.menu_image8').css("background-image","url(data:image/svg+xml;base64," + encodedFailbanHover + ")");
+			} else {
+				$("a.menu_image8").css("background-image","url(data:image/svg+xml;base64," + encodedFailban + ")");
+				$('a.menu_image8').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFailbanHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFailban + ")");
+				});
+			}
+
+		// Icon for CACHEEX
+			var svgCacheex = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M5.898 8.25q0 0.102-0.078 0.18l-2.594 2.594 1.125 1.125q0.148 0.148 0.148 0.352t-0.148 0.352-0.352 0.148h-3.5q-0.203 0-0.352-0.148t-0.148-0.352v-3.5q0-0.203 0.148-0.352t0.352-0.148 0.352 0.148l1.125 1.125 2.594-2.594q0.078-0.078 0.18-0.078t0.18 0.078l0.891 0.891q0.078 0.078 0.078 0.18zM12 1.5v3.5q0 0.203-0.148 0.352t-0.352 0.148-0.352-0.148l-1.125-1.125-2.594 2.594q-0.078 0.078-0.18 0.078t-0.18-0.078l-0.891-0.891q-0.078-0.078-0.078-0.18t0.078-0.18l2.594-2.594-1.125-1.125q-0.148-0.148-0.148-0.352t0.148-0.352 0.352-0.148h3.5q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+color+'"></path></svg>';
+			var encodedCacheex = window.btoa(svgCacheex);
+			var svgCacheexHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M5.898 8.25q0 0.102-0.078 0.18l-2.594 2.594 1.125 1.125q0.148 0.148 0.148 0.352t-0.148 0.352-0.352 0.148h-3.5q-0.203 0-0.352-0.148t-0.148-0.352v-3.5q0-0.203 0.148-0.352t0.352-0.148 0.352 0.148l1.125 1.125 2.594-2.594q0.078-0.078 0.18-0.078t0.18 0.078l0.891 0.891q0.078 0.078 0.078 0.18zM12 1.5v3.5q0 0.203-0.148 0.352t-0.352 0.148-0.352-0.148l-1.125-1.125-2.594 2.594q-0.078 0.078-0.18 0.078t-0.18-0.078l-0.891-0.891q-0.078-0.078-0.078-0.18t0.078-0.18l2.594-2.594-1.125-1.125q-0.148-0.148-0.148-0.352t0.148-0.352 0.352-0.148h3.5q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+colorHover+'"></path></svg>';
+			var encodedCacheexHover = window.btoa(svgCacheexHover);
+
+			if ($('#item9').hasClass('menu_selected') == true) {
+				$('a.menu_image9').css("background-image","url(data:image/svg+xml;base64," + encodedCacheexHover + ")");
+			} else {
+				$("a.menu_image9").css("background-image","url(data:image/svg+xml;base64," + encodedCacheex + ")");
+				$('a.menu_image9').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedCacheexHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedCacheex + ")");
+				});
+			}
+
+		// Icon for SCRIPTS
+			var svgScripts = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z" fill="#'+color+'"></path><path d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z" fill="#'+color+'"></path><path d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z" fill="#'+color+'"></path></svg>';
+			var encodedScripts = window.btoa(svgScripts);
+			var svgScriptsHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z" fill="#'+colorHover+'"></path><path d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z" fill="#'+colorHover+'"></path><path d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z" fill="#'+colorHover+'"></path></svg>';
+			var encodedScriptsHover = window.btoa(svgScriptsHover);
+
+			if ($('#item10').hasClass('menu_selected') == true) {
+				$('a.menu_image10').css("background-image","url(data:image/svg+xml;base64," + encodedScriptsHover + ")");
+			} else {
+				$("a.menu_image10").css("background-image","url(data:image/svg+xml;base64," + encodedScripts + ")");
+				$('a.menu_image10').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedScriptsHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedScripts + ")");
+				});
+			}
+
+		// Icon for RESTART
+			var svgRestart = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M12 7q0 1.219-0.477 2.328t-1.281 1.914-1.914 1.281-2.328 0.477-2.328-0.477-1.914-1.281-1.281-1.914-0.477-2.328q0-1.422 0.629-2.68t1.77-2.109q0.336-0.25 0.746-0.195t0.652 0.391q0.25 0.328 0.191 0.738t-0.387 0.66q-0.766 0.578-1.184 1.414t-0.418 1.781q0 0.813 0.316 1.551t0.855 1.277 1.277 0.855 1.551 0.316 1.551-0.316 1.277-0.855 0.855-1.277 0.316-1.551q0-0.945-0.418-1.781t-1.184-1.414q-0.328-0.25-0.387-0.66t0.191-0.738q0.242-0.336 0.656-0.391t0.742 0.195q1.141 0.852 1.77 2.109t0.629 2.68zM7 1v5q0 0.406-0.297 0.703t-0.703 0.297-0.703-0.297-0.297-0.703v-5q0-0.406 0.297-0.703t0.703-0.297 0.703 0.297 0.297 0.703z" fill="#'+color+'"></path></svg>';
+			var encodedRestart = window.btoa(svgRestart);
+			var svgRestartHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M12 7q0 1.219-0.477 2.328t-1.281 1.914-1.914 1.281-2.328 0.477-2.328-0.477-1.914-1.281-1.281-1.914-0.477-2.328q0-1.422 0.629-2.68t1.77-2.109q0.336-0.25 0.746-0.195t0.652 0.391q0.25 0.328 0.191 0.738t-0.387 0.66q-0.766 0.578-1.184 1.414t-0.418 1.781q0 0.813 0.316 1.551t0.855 1.277 1.277 0.855 1.551 0.316 1.551-0.316 1.277-0.855 0.855-1.277 0.316-1.551q0-0.945-0.418-1.781t-1.184-1.414q-0.328-0.25-0.387-0.66t0.191-0.738q0.242-0.336 0.656-0.391t0.742 0.195q1.141 0.852 1.77 2.109t0.629 2.68zM7 1v5q0 0.406-0.297 0.703t-0.703 0.297-0.703-0.297-0.297-0.703v-5q0-0.406 0.297-0.703t0.703-0.297 0.703 0.297 0.297 0.703z" fill="#'+colorHover+'"></path></svg>';
+			var encodedRestartHover = window.btoa(svgRestartHover);
+
+			if ($('#item11').hasClass('menu_selected') == true) {
+				$('a.menu_image11').css("background-image","url(data:image/svg+xml;base64," + encodedRestartHover + ")");
+			} else {
+				$("a.menu_image11").css("background-image","url(data:image/svg+xml;base64," + encodedRestart + ")");
+				$('a.menu_image11').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedRestartHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedRestart + ")");
+				});
+			}
+
+		// Icon for STYLESWITCHER
+			var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#000000"></path></svg>';
+			var encodedIcon = window.btoa(svgIcon);
+			var svgIconHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#'+colorHover+'"></path></svg>';
+			var encodedIconHover = window.btoa(svgIconHover);
+
+			$('#demo_icon').css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
+			$('#demo_icon').hover(function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedIconHover + ")");
+				}, function () {
+					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
+				});
+	}
+
+    // Icons - create ID and CLASS
+	$("#mainmenu li a").each(function (i) {
+		var incremental = i + 1;
+		$(this).addClass('menu_image' + incremental);
+	});
+	$("#mainmenu li").each(function (i) {
+		var incremental = i + 1;
+		$(this).attr('id', 'item' + incremental);
+	});
+	// CreateIcons for first loading page
+	CreateIcons();
+}
+
 /* -------------- LIBRARY FOR ENVI -------------- */
 	/*! jquery.cookie v1.4.1 | MIT */
 	!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});

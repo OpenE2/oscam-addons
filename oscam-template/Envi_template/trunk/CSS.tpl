@@ -2727,7 +2727,7 @@ textarea.bt {
 		#mainmenu { 
 			display: none;
 			opacity: 0;
-			width: 60%;
+			width: 50%;
 			position: absolute;
 			left: 0;
 			padding-top: 0;
@@ -2737,22 +2737,22 @@ textarea.bt {
 			display: block;
 			width: 100%;
 			margin: 0;
-			background: #DDD;
-			border-bottom: 1px solid #CCC;
+			background: #131517;
+			border-top: 1px solid #4D4D4D;
 			font-size: 1.5em;
 			font-weight: 700;
 			padding: 0
 		}
 		#mainmenu > li:hover {
-			background: #CCC;
+
 		}
 		li.menu a {
-			color: #000;
+			color: #FFF;
 			font-weight: 700
 		}
+		li.menu a:hover,
 		li.menu_selected a {
-			color: #F00;
-			background: #CCC
+			color: #F00
 		}
 		#mainmenu > li:last-child {
 			border-bottom: 2px solid black;
@@ -2984,6 +2984,18 @@ textarea.bt {
 	.modalDialog a {
 		font-weight: normal;
 		font-size: 1em
+	}
+
+/* **************** X. JQUERY STYLESWITCHER */
+	.demo_changer {
+		display: none
+	}
+
+/* **************** X. ICONS */
+	a[class*="menu_image"] {
+		background-repeat: no-repeat;
+		background-position: 20px center;
+		cursor: pointer;
 	}
 }
 
