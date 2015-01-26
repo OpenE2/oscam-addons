@@ -1902,6 +1902,21 @@ td {
 .envi table.users tfoot td {
 	border-top: 1px solid #222;
 }
+/* Color for Table */
+.envi #dataTable tr:hover td,
+.envi table.statsbalance tr:hover td,
+.envi #servicesedit tr:hover td,
+.envi table.failban tr:hover td,
+.envi table.stats tr:hover td,
+.envi table.status tr.r:hover td,
+.envi table.status tr.p:hover td,
+.envi table.status tr.c:hover td {
+	background-color: #FCD7D7 !important
+}
+.envi #dataTable tfoot tr:hover td,
+.envi table.statsbalance tfoot tr:hover td {
+	background-color: transparent !important;
+}
 /* **************** 11. DIV */
 /* Log status.html, livelog.html, file.html */
 .envi div#livelog {
@@ -1935,6 +1950,21 @@ td {
 }
 .envi div.footer b {
 	color: #A3A3A3
+}
+/* Services */
+.envi div.sidlistclose {
+	background-color: #BD0000;
+	transition: all 0.5s ease 0s
+}
+.envi div.sidlistclose:hover {
+	background-color: #000;
+	color: #FFF;
+}
+.envi div.sidlistclose a {
+	color: #FFF
+}
+.envi div.sidlistclose:hover a{
+	color: #FFF
 }
 
 /* **************** 12. TEXTAREA,SELECT,INPUT,PRE */
