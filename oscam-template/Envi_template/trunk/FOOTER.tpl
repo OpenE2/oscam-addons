@@ -133,7 +133,7 @@
 							<TD>
 								<select id="menufontsize">
 									<option value="11px">11px</option>
-									<option value="12px">Default</option>
+									<option value="12px" selected>Default</option>
 									<option value="13px">13px</option>
 									<option value="14px">14px</option>
 								</select>
@@ -175,7 +175,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1284</P>
+							<P><B>Envi revision:</B> 1285</P>
 							<P><B>For oscam revision:</B> 10234 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
