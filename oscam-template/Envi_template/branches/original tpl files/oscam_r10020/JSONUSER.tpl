@@ -1,4 +1,0 @@
-<!--OSCam;610731870;1.20-unstable_svn;10020;-->
-##TPLJSONHEADER##
-"users":[##APIUSERCONFIGS##]
-##TPLJSONFOOTER##

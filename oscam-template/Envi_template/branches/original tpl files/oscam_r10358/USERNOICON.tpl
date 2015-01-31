@@ -1,0 +1,2 @@
+<!--OSCam;883932863;1.20-unstable_svn;10358;-->
+<A CLASS="usericon" HREF="user_edit.html?user=##USERNAMEENC##" TITLE="Edit User: ##USERNAME####DESCRIPTION##&#013;missing icon: IC_##USERNAME##.tpl">##USERNAME##</A>
