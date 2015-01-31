@@ -1834,6 +1834,10 @@ td {
 .envi .users tr.offline:nth-child(even) td {
 	background-color: #E6E6E6
 }
+.envi table.writeemm tr:nth-last-child(-n+2) td {
+    background-color: transparent;
+    border-bottom: medium none;
+}
 /* ------- USERS ------- */
 /* userconfig.html */
 .envi table.users td {
@@ -1992,7 +1996,13 @@ td {
 .envi #otherdropdown option:hover {
 	
 }
-/* for extract in script.html */ 
+/* for extract in script.html and emm.html */ 
+.envi div.extract p.emmhead {
+	font-size: 11px;
+	background-color: #222;
+	padding: 5px;
+	color: #FFF;
+}
 .envi div.extract pre {
 	background-color: #FAFAFA
 }
