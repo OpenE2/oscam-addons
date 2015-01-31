@@ -1769,6 +1769,7 @@ body.envi {
 .envi table.configservices th,
 .envi table.readers th,
 .envi table.writeemm th,
+.envi table.emmrunning th,
 .envi table.statsbalance th,
 .envi table.status th,
 .envi table.status td.subheadline {
@@ -2002,6 +2003,7 @@ td {
 	background-color: #222;
 	padding: 5px;
 	color: #FFF;
+	margin: 10px 0
 }
 .envi div.extract pre {
 	background-color: #FAFAFA
