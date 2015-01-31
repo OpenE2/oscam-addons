@@ -297,7 +297,9 @@ table.readers {
 /* entitlements_bit.html, entitlements_cccambit.html */
 table.stats {}
 /* emm.html */
-table.writeemm {}
+table.writeemm {
+	width:750px
+}
 /* emm_running.html */
 table.emmrunning {}
 /* readerstats.html */
@@ -617,6 +619,10 @@ textarea.bt {
 	width:380px; 
 	font-size:12px
 }
+/* textarea for emm.html */
+table.writeemm textarea {
+	width:597px
+}
 /* generaly settings for all select */
 select {
 	padding:2px
@@ -723,7 +729,7 @@ td.configcolsave {
 #otherdropdown option:first-child {
     display:none
 }
-/* for extract in script.html */ 
+/* for extract in script.html and emm.html */
 div.extract {
 	width:750px;
 	margin:10px auto;
@@ -748,7 +754,9 @@ div.extract pre {
 	border:1px dotted #AAA;
 	white-space:pre
 }
-
+div.extract pre.script {
+	min-height: 100px;
+}
 /* **************** 13. IMAGE */
 /* generaly settings for images */
 img {
