@@ -725,18 +725,28 @@ td.configcolsave {
 }
 /* for extract in script.html */ 
 div.extract {
-	width: 750px;
-	margin: 10px auto;
-	text-align: left
+	width:750px;
+	margin:10px auto;
+	text-align:left
 }
+div.extract p { 
+	font-weight:700; 
+	margin:10px 6px 0 6px 
+} 
+div.extract p.emmhead { 
+	font-size:13px; 
+	text-align:center 
+} 
+div.extract p .emminfo { 
+	font-weight:normal 
+} 
 div.extract pre {
-	overflow: auto;
-	min-height: 100px;
-	margin: 10px 0;
-	padding: 10px;
-	font-family: courier,monospace;
+	overflow:auto; 
+	margin:5px 0; 
+	padding:5px; 
+	font-family:courier,monospace; 
 	border:1px dotted #AAA;
-	white-space: pre
+	white-space:pre
 }
 
 /* **************** 13. IMAGE */
@@ -1572,7 +1582,7 @@ body.envi {
 .envi #nav li {
 	display: inline-block;
 	position: relative;
-	margin: 2px 2px;
+	margin: 4px 2px;
 	padding: 0 3px;
 	font-size: 14px
 }
@@ -2192,102 +2202,102 @@ textarea.bt {
 
 /* **************** 22. OTHER SETTINGS */
 /* Coloring background TD for Searchterm */
-		.envi .back_cell {
-			background-color: #e7f26f !important;
-		}
-		/* Setting for DIV "Count rows" */
-		.envi #countrows {
-			text-align: left;
-			margin-top: 10px;
-			float: left
-		}
-		/* Setting for main DIV for "Pagination" */
-		.envi .pagin {
-			float: right
-		}
-		/* Setting for DIV "Pagination" */
-		.envi #pagination {
-			float: left
-		}
-		/* Setting for DIV "Select pagination" */
-		.envi #numPerPage {
-			float: right;
-			margin-left: 10px;
-			padding-top: 3px
-		}
-		/* Settings for SPAN in DIV "Count rows" */
-		.envi .rowcount {
-			font-weight: bold
-		}
-		/* If no entries found in table */
-		.envi .search-sf {}
-		.envi .text-muted {
-			font-weight: bold
-		}
-		/* Color setting for TD in TFOOT only for BODY.envi */
-		.envi tfoot td {
-			background-color: transparent !important;
-		}
-		.envi table.readers tfoot tr:hover td,
-		.envi table.users tfoot tr:hover td,
-		.envi table.statsbalance tfoot tr:hover td {
-			background-color: transparent !important;
-		}
-		.envi table.readers tfoot td,
-		.envi table.users tfoot td {
-		    border-right: none;
-		}
-		/* Setting for pagination */
-		.envi div.pager {
-			text-align: right;
-			margin-top: 5px;
-		}
-		.envi div.pager span {
-			display: inline-block;
-			width: 1.8em;
-			height: 1.8em;
-			line-height: 1.8;
-			text-align: center;
-			cursor: pointer;
-			background: #A4A4A4;
-			color: #000;
-			margin-right: 0.5em;
-			font-weight:bold
-		}
-		.envi div.pager span.active {
-			background: #BD0000;
-			color: #FFF;
-		}
-		.envi div.pager span.clickable:hover {
-			background: #BD0000;
-			color: #FFF;
-		}
-		/* Selection for pagination */
-		.envi #selectionPerPage {
-			padding: 1px 10px 1px 1px
-		}
-		.envi #selectionPerPage option {
-			padding-left: 5px
-		}
-		.envi #selectionPerPage option:nth-child(3) {
-			font-weight: bold
-		}
-		/* Show/Hide pagination */
-		.envi .visibility {
-			visibility:hidden;
-		}
-		/* Menu Icons */
-		.envi li.menu a,
-		.envi li.menu_selected a {
-			padding: 10px 6px 9px 26px !important;
-			margin-left: 3px;
-			margin-right: 3px;
-		}
-		.envi a[class*='menu_image'] {
-			background-repeat:no-repeat;
-			background-position: 4px center;
-			cursor:pointer;
-		}
+.envi .back_cell {
+	background-color: #e7f26f !important;
+}
+/* Setting for DIV "Count rows" */
+.envi #countrows {
+	text-align: left;
+	margin-top: 10px;
+	float: left
+}
+/* Setting for main DIV for "Pagination" */
+.envi .pagin {
+	float: right
+}
+/* Setting for DIV "Pagination" */
+.envi #pagination {
+	float: left
+}
+/* Setting for DIV "Select pagination" */
+.envi #numPerPage {
+	float: right;
+	margin-left: 10px;
+	padding-top: 3px
+}
+/* Settings for SPAN in DIV "Count rows" */
+.envi .rowcount {
+	font-weight: bold
+}
+/* If no entries found in table */
+.envi .search-sf {}
+.envi .text-muted {
+	font-weight: bold
+}
+/* Color setting for TD in TFOOT only for BODY.envi */
+.envi tfoot td {
+	background-color: transparent !important;
+}
+.envi table.readers tfoot tr:hover td,
+.envi table.users tfoot tr:hover td,
+.envi table.statsbalance tfoot tr:hover td {
+	background-color: transparent !important;
+}
+.envi table.readers tfoot td,
+.envi table.users tfoot td {
+    border-right: none;
+}
+/* Setting for pagination */
+.envi div.pager {
+	text-align: right;
+	margin-top: 5px;
+}
+.envi div.pager span {
+	display: inline-block;
+	width: 1.8em;
+	height: 1.8em;
+	line-height: 1.8;
+	text-align: center;
+	cursor: pointer;
+	background: #A4A4A4;
+	color: #000;
+	margin-right: 0.5em;
+	font-weight:bold
+}
+.envi div.pager span.active {
+	background: #BD0000;
+	color: #FFF;
+}
+.envi div.pager span.clickable:hover {
+	background: #BD0000;
+	color: #FFF;
+}
+/* Selection for pagination */
+.envi #selectionPerPage {
+	padding: 1px 10px 1px 1px
+}
+.envi #selectionPerPage option {
+	padding-left: 5px
+}
+.envi #selectionPerPage option:nth-child(3) {
+	font-weight: bold
+}
+/* Show/Hide pagination */
+.envi .visibility {
+	visibility:hidden;
+}
+/* Menu Icons */
+.envi li.menu a,
+.envi li.menu_selected a {
+	padding: 10px 6px 9px 26px !important;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.envi a[class*='menu_image'] {
+	background-repeat:no-repeat;
+	background-position: 4px center;
+	cursor:pointer;
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1"
