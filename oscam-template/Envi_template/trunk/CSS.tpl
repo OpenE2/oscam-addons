@@ -1561,12 +1561,12 @@ body.envi {
 /* **************** 6. SUBNAV */
 .envi #subnav {
 	position: fixed;
-	top: 37px;
+	top: 40px;
 	left: 0;
 	right: 0;
-	padding: 6px 0px 4px 0px;
+	padding: 5px 0px 5px 0px;
 	z-index: 1040;
-	border: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
 
 	/* GRADIENT */
 	/* Old browsers */
@@ -1581,9 +1581,9 @@ body.envi {
 	background-image: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
 
 	/* BOX SHADOW */
-	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-	   -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1); 
-			box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1)
+	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05); 
+	   -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05); 
+			box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05)
 }
 .envi #nav {
 	height: 22px;
@@ -1592,13 +1592,15 @@ body.envi {
 .envi #nav li {
 	display: inline-block;
 	position: relative;
-	margin: 4px 2px;
-	padding: 0 3px;
-	font-size: 14px
+	margin: 5px 2px;
+	/* padding: 0 3px; */
+	font-size: 14px;
+	line-height: 12px
 }
 .envi #nav li.pollselect {
 	position: absolute;
-	font-size: 12px
+	font-size: 12px;
+	margin: 3px 2px
 }
 .envi li.configmenu a,.envi li.configmenu a:hover,
 .envi li.configmenu_selected a,.envi li.configmenu_selected a:hover {
@@ -2015,7 +2017,7 @@ td {
 .envi input[type=submit] {
 	border:1px solid transparent;
 	width:90px;
-	height:23px;
+	height:22px;
 	color:#FFF;
 	background-color:#BD0000;
 	text-transform: uppercase;
