@@ -2088,10 +2088,27 @@ td {
 	font-weight: bold;
 	font-size: 12px
 }
-textarea.bt {
+.envi textarea.bt {
 	border: 1px solid #858585
 }
-
+/* Custom image for checkbox */
+.envi input[type=checkbox] {
+	opacity: 0;
+}
+.envi input[type=checkbox] + label {
+	height: 15px;
+	width: 15px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAElBMVEX////Ly8v29vba2trY2Njt7e23QkkFAAAAHklEQVQI12NwFAQDBwZRJTAQYBBiAAO6MAwhthsAAFENBDgCMhyZAAAAAElFTkSuQmCC);
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+	padding-left: 20px;
+	padding-bottom: 3px;
+	margin-left: -18px;
+}
+.envi input[type=checkbox]:checked + label  {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAARVBMVEX////My8v29vbt7e3Qz8+enp709PTHx8eOjo6BgYHp6enh4eHBwcG9vb22tranp6eGhobW1tbLy8uwsLCqqqqhoaGVlZWltlVpAAAAVElEQVQI13XPyQ7AIAhFURBxnjr+/6e2ixqpiXd3NrwAGmUakIwaIaAB0Wu1ctp/tqVI6yOd3RQhXLVun627TW5M0O09N0fjfmDvotwjzvP+wvN/D/2nAh3RQAwaAAAAAElFTkSuQmCC);
+}
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
@@ -2133,7 +2150,7 @@ textarea.bt {
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
-	padding: 1px 10px;
+	padding: 3px 13px;
 	margin: 0
 }
 
@@ -2700,6 +2717,7 @@ textarea.bt {
  * (it is used only for showing main menu on mobile device) 
  * for desktops browser is not used */
 #toggle, #subtoggle {display: none}
+.toggle,.subtoggle {display: none}
 
 /* ################ DESKTOPS ################ */
 
