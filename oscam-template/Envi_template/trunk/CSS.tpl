@@ -2091,6 +2091,16 @@ td {
 .envi textarea.bt {
 	border: 1px solid #858585
 }
+.envi table.writeemm textarea {
+	border: 1px solid #858585
+}
+.envi table.configreader textarea.bt:hover,
+.envi table.configuser textarea.bt:hover,
+.envi table.config textarea.bt:hover,
+.envi table.writeemm textarea:hover,
+.envi table.emmrunning textarea.bt:hover {
+	border: 1px solid #000
+}
 /* Custom image for checkbox */
 .envi input[type=checkbox] {
 	opacity: 0;
