@@ -2102,12 +2102,17 @@ td {
 	background-repeat:no-repeat;
 	background-position: 0 0;
 	cursor: pointer;
-	padding-left: 20px;
-	padding-bottom: 3px;
+	padding: 1px 0px 3px 20px;
 	margin-left: -18px;
 }
 .envi input[type=checkbox]:checked + label  {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAARVBMVEX////My8v29vbt7e3Qz8+enp709PTHx8eOjo6BgYHp6enh4eHBwcG9vb22tranp6eGhobW1tbLy8uwsLCqqqqhoaGVlZWltlVpAAAAVElEQVQI13XPyQ7AIAhFURBxnjr+/6e2ixqpiXd3NrwAGmUakIwaIaAB0Wu1ctp/tqVI6yOd3RQhXLVun627TW5M0O09N0fjfmDvotwjzvP+wvN/D/2nAh3RQAwaAAAAAElFTkSuQmCC);
+}
+.envi input[type=checkbox]:hover + label {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEX///+vr6/p6enFxcXZ2dnxU1h0AAAAHElEQVQI12MwFAQDAwYRJTAQYBBiAAN6MOC2AwBAQAQXAZw1xgAAAABJRU5ErkJggg==);
+}
+.envi input[type=checkbox]:checked:hover + label {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAASFBMVEX///+vrq7o6OjZ2dm1tbWDg4Nra2upqamjo6OMjIxzc3Pm5ubS0tKZmZl6enr8/Pzh4eHJycnHx8e6urqurq6enp6UlJSGhoa857gZAAAAVklEQVQI13XPyQ7AIAhFURDB2c7t//9pu6hxSLy7s+EF0NimASmoGgKGBWqfFUxsz84mpdb6tq6YNoiPc8dv4/N6CRMUi7DPVO9HFr+3e8R23J94/O8FCWYCJcCi7p4AAAAASUVORK5CYII=);
 }
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
