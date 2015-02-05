@@ -255,7 +255,7 @@ $(function () {
 		if ($(this).data('next-action') == 'enable') {
 			$(this).data('next-action', 'disable').attr('title', 'Disable Reader: ' + $(this).data('reader-name') + $(this).data('desc'));
 			$(rowid).attr('class', 'enabledreader');
-			img.attr('src', 'image?i=ICDIS').attr('alt', 'Disable this reader');
+			img.attr('src', 'image?i=ICDIS').attr('alt', 'Disable');
 		} else {
 			$(this).data('next-action', 'enable').attr('title', 'Enable Reader: ' + $(this).data('reader-name') + $(this).data('desc'));
 			$(rowid).attr('class', 'disabledreader');
@@ -1364,7 +1364,6 @@ function updateStatuspage(data) {
 	}
 
 	//update reader-headline
-	$("#rcc").text(data.oscam.status.rcc);
 	if(data.oscam.status.rco != '0') { 
 		var rcon = (data.oscam.status.rca - data.oscam.status.rco); 
 		if($("#rco").length) { 
@@ -1382,7 +1381,6 @@ function updateStatuspage(data) {
 	} 
 
 	//update proxy-headline
-	$("#pcc").text(data.oscam.status.pcc);
 	if(data.oscam.status.pco != '0') { 
 		var pcon = (data.oscam.status.pca - data.oscam.status.pco); 
 		if($("#pco").length) { 
