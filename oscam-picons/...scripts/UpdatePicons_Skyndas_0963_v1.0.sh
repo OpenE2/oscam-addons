@@ -66,7 +66,7 @@ printHelp() {
   echo ''
   echo 'The script does not support parameter.'
   echo "$hr"
-  echo 'Script with the use temporary directory for downloaded picons (CAID:0963 - Sky It) from SVN.'
+  echo 'Script with the use temporary directory for downloaded picons (CAID:0963 - Sky UK) from SVN.'
   echo ''
   echo 'For ensure correct operation the script You must be set paths manually in the script.'
   echo ''
