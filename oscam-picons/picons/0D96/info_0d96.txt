@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1313	
+# Revision:		        			1316	
 # Authors:							skyndas
 # Last Changed Date:				2015-02-21
-# Number of Picons:					18 picons for CAID 0D96
-# Info About The Latest Update:		Remove all picons, add picons in svg for CT1,CT1 HD,CT2,CT2 HD,Nova,STV1,STV2,HBO 2,HBO Comedy,Cinemax,AXN,Universal Channel,Nova Sport,Nat Geo,Nat Geo HD,Nat Geo Wild HD,Nickelodeon
+# Number and format of Picons:		26 picons for CAID 0D96 in SVG (max size w:110px - h:28px)
+# Info About The Latest Update:		Add next picons - Animal Planet, JimJam, Fine Living, Crime and Invest., Sport 5, Food Network, AutoMotorSport HD, Prima ZOOM
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -26,6 +26,8 @@ IC_0D96_1F44.tpl
 IC_0D96_1326.tpl
 # Nova - original SVG logo
 IC_0D96_3352.tpl
+# Prima ZOOM - SVG logo with custom trace
+IC_0D96_3353.tpl
 # TV Barrandov - original SVG logo
 IC_0D96_13D3.tpl
 # STV 1 - original SVG logo
@@ -46,13 +48,27 @@ IC_0D96_02D8.tpl
 #
 # Nova Sport - original SVG logo
 IC_0D96_36F7.tpl
+# Sport 5 - original SVG logo
+IC_0D96_13BE.tpl
+# AutoMotorSport HD - original SVG logo
+IC_0D96_17D7.tpl
 #
+# Animal Planet - original SVG logo
+IC_0D96_1799.tpl
 # National Geographic Channel - original SVG logo
 IC_0D96_13DD.tpl
 # National Geographic Channel HD - original SVG logo
 IC_0D96_15ED.tpl
 # Nat Geo Wild HD - original SVG logo
 IC_0D96_15EB.tpl
+# Fine Living - original SVG logo
+IC_0D96_5163.tpl
+# Food Network - original SVG logo
+IC_0D96_5165.tpl
+# Crime and Invest. - original SVG logo
+IC_0D96_1B8D.tpl
 #
+# JimJam - original SVG logo
+IC_0D96_17A5.tpl
 # Nickelodeon - original SVG logo
 IC_0D96_13BD.tpl
