@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1316	
+# Revision:		        			1322	
 # Authors:							skyndas
 # Last Changed Date:				2015-02-21
-# Number and format of Picons:		26 picons for CAID 0D96 in SVG (max size widht - 110px / height - 28px)
-# Info About The Latest Update:		Add next picons - Animal Planet, JimJam, Fine Living, Crime and Invest., Sport 5, Food Network, AutoMotorSport HD, Prima ZOOM
+# Number and format of Picons:		27 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
+# Info About The Latest Update:		Add next picons - Travel Channel HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -61,6 +61,8 @@ IC_0D96_13DD.tpl
 IC_0D96_15ED.tpl
 # Nat Geo Wild HD - original SVG logo
 IC_0D96_15EB.tpl
+#Travel Channel HD - original SVG logo
+IC_0D96_13B8.tpl
 # Fine Living - original SVG logo
 IC_0D96_5163.tpl
 # Food Network - original SVG logo
