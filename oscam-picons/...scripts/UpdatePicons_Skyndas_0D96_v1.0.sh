@@ -20,7 +20,7 @@ ConfigPath="/etc/tuxbox/config"
 #
 # 2.
 # Set manually downloaded file without trailing "/"
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/skyndas/0D96"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/picons/0D96"
 TrunkFile='Skyndas_0D96.zip'
 #
 # 3.
@@ -160,6 +160,7 @@ if [ -s $InfoFile ]; then
   InfoRevision=$(parseInfoTxt "Revision:")
   InfoAuthors=$(parseInfoTxt "Authors:")
   InfoDate=$(parseInfoTxt "Date:")
+  InfoPicons=$(parseInfoTxt "Picons:")
   InfoUpdate=$(parseInfoTxt "Update:")
 
   echo ''
@@ -168,6 +169,7 @@ if [ -s $InfoFile ]; then
 	echo "Revision:                      $InfoRevision"
 	echo "Authors:                       $InfoAuthors"
 	echo "Last Changed Date:             $InfoDate"
+  echo "Number of Picons:              $InfoPicons"
   echo "Info About The Latest Update:  $InfoUpdate"
   echo ''
   echo "Files:"

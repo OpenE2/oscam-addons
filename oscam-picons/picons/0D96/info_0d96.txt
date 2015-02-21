@@ -1,0 +1,58 @@
+#
+# INFO ABOUT REVISION OF PICONS FOR CAID 0D96
+# -------------------------------------------
+# Revision:		        			1313	
+# Authors:							skyndas
+# Last Changed Date:				2015-02-21
+# Number of Picons:					18 picons for CAID 0D96
+# Info About The Latest Update:		Remove all picons, add picons in svg for CT1,CT1 HD,CT2,CT2 HD,Nova,STV1,STV2,HBO 2,HBO Comedy,Cinemax,AXN,Universal Channel,Nova Sport,Nat Geo,Nat Geo HD,Nat Geo Wild HD,Nickelodeon
+#
+# FILE LIST (This is a list of files that contain zip file) 
+# ----------------------------------------------------------
+#
+# Right name of file is "name.suffix" or "name_of_file.suffix"
+# Bad name of file is e.g "name _ of _ file.suffix" or e.g. "name - of - file.suffix"
+#
+# Info file
+info_0d96.txt
+#
+# ČT 1 - original SVG logo
+IC_0D96_1F43.tpl
+# ČT 1 HD - original SVG logo
+IC_0D96_1325.tpl
+# ČT 2 - original SVG logo
+IC_0D96_1F44.tpl
+# ČT 2 HD - original SVG logo
+IC_0D96_1326.tpl
+# Nova - original SVG logo
+IC_0D96_3352.tpl
+# TV Barrandov - original SVG logo
+IC_0D96_13D3.tpl
+# STV 1 - original SVG logo
+IC_0D96_13F1.tpl
+# STV 2 - original SVG logo
+IC_0D96_13F2.tpl
+#
+# HBO 2 - original SVG logo
+IC_0D96_02D5.tpl
+# HBO Comedy - original SVG logo
+IC_0D96_02C8.tpl
+# Cinemax - original SVG logo
+IC_0D96_02D6.tpl
+# AXN - original SVG logo
+IC_0D96_13B9.tpl
+# Universal Channel - SVG logo (Custom color)
+IC_0D96_02D8.tpl
+#
+# Nova Sport - original SVG logo
+IC_0D96_36F7.tpl
+#
+# National Geographic Channel - original SVG logo
+IC_0D96_13DD.tpl
+# National Geographic Channel HD - original SVG logo
+IC_0D96_15ED.tpl
+# Nat Geo Wild HD - original SVG logo
+IC_0D96_15EB.tpl
+#
+# Nickelodeon - original SVG logo
+IC_0D96_13BD.tpl
