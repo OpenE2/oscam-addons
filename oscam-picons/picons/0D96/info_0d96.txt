@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1325
+# Revision:		        			1326
 # Authors:							skyndas
 # Last Changed Date:				2015-02-21
-# Number and format of Picons:		30 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
-# Info About The Latest Update:		Add picons - duck TV
+# Number and format of Picons:		31 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
+# Info About The Latest Update:		Add picons - Disney Channel
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -70,6 +70,8 @@ IC_0D96_5165.tpl
 # Crime and Invest. - original SVG logo
 IC_0D96_1B8D.tpl
 #
+# Disney Channel - SVG logo with custom trace
+IC_0D96_13A6.tpl
 # JimJam - original SVG logo
 IC_0D96_17A5.tpl
 # Nickelodeon - original SVG logo
