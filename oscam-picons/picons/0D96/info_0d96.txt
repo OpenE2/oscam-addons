@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1329
+# Revision:		        			1330
 # Authors:							skyndas
-# Last Changed Date:				2015-02-22
-# Number and format of Picons:		34 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
-# Info About The Latest Update:		New picons - CT-D/CT-art
+# Last Changed Date:				2015-02-23
+# Number and format of Picons:		38 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		New picons - Viasat Explorer, Viasat History, Viasat Nature, History HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -67,6 +67,14 @@ IC_0D96_13DD.tpl
 IC_0D96_15ED.tpl
 # Nat Geo Wild HD - original SVG logo
 IC_0D96_15EB.tpl
+# Viasat Nature - original SVG logo
+IC_0D96_13DC.tpl
+# Viasat Explorer - original SVG logo
+IC_0D96_13DA.tpl
+# Viasat History - original SVG logo
+IC_0D96_13DB.tpl
+# History HD - original SVG logo
+IC_0D96_13B3.tpl
 #Travel Channel HD - original SVG logo
 IC_0D96_13B8.tpl
 # Fine Living - original SVG logo
