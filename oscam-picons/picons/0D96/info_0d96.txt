@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1331
+# Revision:		        			1338
 # Authors:							skyndas
 # Last Changed Date:				2015-02-23
-# Number and format of Picons:		39 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		New picons - TV Paprika
+# Number and format of Picons:		40 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		New picons - Eurosport CZ
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -54,6 +54,8 @@ IC_0D96_02D8.tpl
 #
 # Nova Sport - original SVG logo
 IC_0D96_36F7.tpl
+# Eurosport - original SVG logo
+IC_0D96_335A.tpl
 # Sport 5 - original SVG logo
 IC_0D96_13BE.tpl
 # AutoMotorSport HD - original SVG logo
