@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1327
+# Revision:		        			1328
 # Authors:							skyndas
-# Last Changed Date:				2015-02-21
-# Number and format of Picons:		31 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
-# Info About The Latest Update:		Update picons - Disney Channel
+# Last Changed Date:				2015-02-22
+# Number and format of Picons:		33 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
+# Info About The Latest Update:		New picons - ČT Sport, ČT Sport HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -30,6 +30,10 @@ IC_0D96_3352.tpl
 IC_0D96_3353.tpl
 # TV Barrandov - original SVG logo
 IC_0D96_13D3.tpl
+# ČT Sport - original SVG logo
+IC_0D96_1F47
+# ČT Sport HD- original SVG logo
+IC_0D96_1328
 # STV 1 - original SVG logo
 IC_0D96_13F1.tpl
 # STV 2 - original SVG logo
