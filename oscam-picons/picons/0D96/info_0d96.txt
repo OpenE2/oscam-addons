@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1328
+# Revision:		        			1329
 # Authors:							skyndas
 # Last Changed Date:				2015-02-22
-# Number and format of Picons:		33 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
-# Info About The Latest Update:		New picons - ČT Sport, ČT Sport HD
+# Number and format of Picons:		34 picons for CAID 0D96 in SVG (max size width - 110px / height - 28px)
+# Info About The Latest Update:		New picons - CT-D/CT-art
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -24,6 +24,8 @@ IC_0D96_1325.tpl
 IC_0D96_1F44.tpl
 # ČT 2 HD - original SVG logo
 IC_0D96_1326.tpl
+# ČT:D/ČT:art - original SVG logo
+IC_0D96_1F49.tpl
 # Nova - original SVG logo
 IC_0D96_3352.tpl
 # Prima ZOOM - SVG logo with custom trace
