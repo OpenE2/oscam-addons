@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1330
+# Revision:		        			1331
 # Authors:							skyndas
 # Last Changed Date:				2015-02-23
-# Number and format of Picons:		38 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		New picons - Viasat Explorer, Viasat History, Viasat Nature, History HD
+# Number and format of Picons:		39 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		New picons - TV Paprika
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -75,8 +75,10 @@ IC_0D96_13DA.tpl
 IC_0D96_13DB.tpl
 # History HD - original SVG logo
 IC_0D96_13B3.tpl
-#Travel Channel HD - original SVG logo
+# Travel Channel HD - original SVG logo
 IC_0D96_13B8.tpl
+# TV Paprika - original SVG logo
+IC_0D96_13AE.tpl
 # Fine Living - original SVG logo
 IC_0D96_5163.tpl
 # Food Network - original SVG logo
