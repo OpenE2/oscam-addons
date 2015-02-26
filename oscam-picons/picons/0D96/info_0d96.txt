@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1347
+# Revision:		        			1348
 # Authors:							skyndas
 # Last Changed Date:				2015-02-26
-# Number and format of Picons:		43 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add picons for Prima
+# Number and format of Picons:		44 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add picons for Prima Love
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -34,6 +34,8 @@ IC_0D96_3354.tpl
 IC_0D96_334D.tpl
 # Prima - SVG logo (CUSTOM WORK)
 IC_0D96_1F42.tpl
+# Prima Love - SVG logo (CUSTOM WORK)
+IC_0D96_3355.tpl
 # Prima ZOOM - SVG logo with custom trace
 IC_0D96_3353.tpl
 # TV Barrandov - original SVG logo
