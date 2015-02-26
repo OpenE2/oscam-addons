@@ -1,0 +1,3 @@
+Name of channel:	Smichov
+Font for logo:		Futurist-Stencil
+Download:		http://www.azfonts.net/load_font/futrsten.html
