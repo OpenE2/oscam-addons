@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1344
+# Revision:		        			1346
 # Authors:							skyndas
 # Last Changed Date:				2015-02-26
-# Number and format of Picons:		41 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Update file info_0D96.txt
+# Number and format of Picons:		42 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add picons for TELKA
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -28,7 +28,9 @@ IC_0D96_1326.tpl
 IC_0D96_1F49.tpl
 # Nova - original SVG logo
 IC_0D96_3352.tpl
-# Nova - SVG logo (CUSTOM WORK)
+# TELKA - SVG logo (CUSTOM WORK)
+IC_0D96_3354.tpl
+# Smichov - SVG logo (CUSTOM WORK)
 IC_0D96_334D.tpl
 # Prima ZOOM - SVG logo with custom trace
 IC_0D96_3353.tpl
