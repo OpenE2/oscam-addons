@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1338
+# Revision:		        			1343
 # Authors:							skyndas
-# Last Changed Date:				2015-02-23
+# Last Changed Date:				2015-02-26
 # Number and format of Picons:		40 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		New picons - Eurosport CZ
+# Info About The Latest Update:		Update file info_0D96.txt
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -33,9 +33,9 @@ IC_0D96_3353.tpl
 # TV Barrandov - original SVG logo
 IC_0D96_13D3.tpl
 # ČT Sport - original SVG logo
-IC_0D96_1F47
+IC_0D96_1F47.tpl
 # ČT Sport HD- original SVG logo
-IC_0D96_1328
+IC_0D96_1328.tpl
 # STV 1 - original SVG logo
 IC_0D96_13F1.tpl
 # STV 2 - original SVG logo
