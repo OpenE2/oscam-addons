@@ -7,7 +7,7 @@
 # NOTES: 	- Dont use \n for new line. \n dont works on enigma 2
 #			- Set manually:
 #				1. PATH to config files of Oscam
-#				2. PATH to download the file with Envi Template
+#				2. PATH to download the file with picons - only basic folder
 #				3. TEMP folder
 
 # USER SETUP ###############################################
@@ -61,13 +61,16 @@ printHelp() {
   echo ''
   echo 'The script support parameter.'
   echo 'Insert your CAID as parameter which you want to download'
+  echo 'Allowed CAID:'
+  echo 'Skylink:  0D96, 0624'
+  echo ''
   echo "$hr"
   echo 'Script with the use temporary directory for downloaded picons from SVN.'
   echo ''
   echo 'For ensure correct operation the script You must be set paths manually in the script.'
   echo ''
   echo 'ConfigPath="/path/to/oscam/config"'
-  echo 'TrunkUrl="http://path/to/folder"'
+  echo 'TrunkUrl="http://path/to/basic_folder"'
 	echo 'TempFolder="temporary folder"'
   echo ''
   exit 0
