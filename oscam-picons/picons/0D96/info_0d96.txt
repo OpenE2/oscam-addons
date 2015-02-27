@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1353
+# Revision:		        			1357
 # Authors:							skyndas
 # Last Changed Date:				2015-02-27
-# Number and format of Picons:		47 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for Markiza
+# Number and format of Picons:		48 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for Filmbox HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -63,6 +63,8 @@ IC_0D96_02C8.tpl
 IC_0D96_02D6.tpl
 # AXN - original SVG logo
 IC_0D96_13B9.tpl
+# Filmbox HD - SVG logo (CUSTOM WORK)
+IC_0D96_13AA.tpl
 # Universal Channel - SVG logo (Custom color)
 IC_0D96_02D8.tpl
 #
