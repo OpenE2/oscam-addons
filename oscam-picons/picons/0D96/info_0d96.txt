@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1357
+# Revision:		        			1358
 # Authors:							skyndas
 # Last Changed Date:				2015-02-27
 # Number and format of Picons:		48 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for Filmbox HD
+# Info About The Latest Update:		Update CT Sport HD - it was bad export from AI to SVG
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
