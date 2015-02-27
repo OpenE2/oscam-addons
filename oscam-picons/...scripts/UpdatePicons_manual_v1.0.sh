@@ -8,8 +8,7 @@
 #			- Set manually:
 #				1. PATH to config files of Oscam
 #				2. PATH to download the file with Envi Template
-#				3. Name of INFO file (list of files that contain Template)
-#				4. TEMP folder
+#				3. TEMP folder
 
 # USER SETUP ###############################################
 # 1.
@@ -20,14 +19,10 @@ ConfigPath="/etc/tuxbox/config"
 #
 # 2.
 # Set manually downloaded file without trailing "/"
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/picons/0D96"
-TrunkFile='Skyndas_0D96.zip'
+# Insert basic folder for all picons
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/picons"
 #
 # 3.
-# Set manually INFO file (list of files that contain Template) without trailing "/"
-InfoFile='info_0d96.txt'
-#
-# 4.
 # Set TEMP folder without trailing "/"
 TempFolder='/tmp'
 #
@@ -64,24 +59,43 @@ url() {
 printHelp() {
   echo "$0 HELP:"
   echo ''
-  echo 'The script does not support parameter.'
+  echo 'The script support parameter.'
+  echo 'Insert your CAID as parameter which you want to download'
   echo "$hr"
-  echo 'Script with the use temporary directory for downloaded picons (CAID:0D96 - Skylink) from SVN.'
+  echo 'Script with the use temporary directory for downloaded picons from SVN.'
   echo ''
   echo 'For ensure correct operation the script You must be set paths manually in the script.'
   echo ''
   echo 'ConfigPath="/path/to/oscam/config"'
   echo 'TrunkUrl="http://path/to/folder"'
-  echo 'TrunkFile="downloaded template file"'
-  echo 'InfoFile="info_0d96.txt"'
 	echo 'TempFolder="temporary folder"'
   echo ''
   exit 0
 }
 
 # PARAMETER ************************************************
-# unknown parameter = show help (script has no parameter yet)
-[ ! -z "$1" ] && printHelp
+# unknown parameter = show help (script has parameter)
+
+setParam() {
+  case "$1" in
+    # Skylink CAID - 0D96, 0624
+        0D96|0d96)
+          TrunkCaid='0D96'
+          TrunkFile='0D96.zip'
+          InfoFile='info_0d96.txt'
+        ;;
+        *|h|help)
+          printHelp
+          exit 0
+        ;;
+  esac
+}
+
+
+for PARAM in $*; do
+  setParam "$PARAM"
+done
+
 
 # UPDATE ***************************************************
 # Detecting operating system and CPU type
@@ -112,7 +126,7 @@ cd $TempFolder
 [ -f "$TrunkFile" ] && rm -f "$TrunkFile"
 
 # Download new files
-url "$TrunkUrl/$TrunkFile"
+url "$TrunkUrl/$TrunkCaid/$TrunkFile"
 # Validate downloaded file
 [ ! -s "$TrunkFile" ] && die "  Could not download file \"$TrunkFile\"!"
 
