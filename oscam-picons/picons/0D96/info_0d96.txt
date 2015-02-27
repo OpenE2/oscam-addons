@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1352
+# Revision:		        			1353
 # Authors:							skyndas
 # Last Changed Date:				2015-02-27
-# Number and format of Picons:		46 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for Doma
+# Number and format of Picons:		47 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for Markiza
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -50,6 +50,8 @@ IC_0D96_1328.tpl
 IC_0D96_13F1.tpl
 # STV 2 - original SVG logo
 IC_0D96_13F2.tpl
+# Markiza - SVG logo (CUSTOM WORK)
+IC_0D96_13EF.tpl
 # Doma - SVG logo (CUSTOM WORK)
 IC_0D96_13F0.tpl
 #
