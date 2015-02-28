@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1365
+# Revision:		        			1367
 # Authors:							skyndas
 # Last Changed Date:				2015-02-28
-# Number and format of Picons:		49 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel AMC
+# Number and format of Picons:		50 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Film+
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -65,10 +65,12 @@ IC_0D96_02D6.tpl
 IC_0D96_13B9.tpl
 # Filmbox HD - SVG logo (CUSTOM WORK)
 IC_0D96_13AA.tpl
-# AMC - SVG logo (CUSTOM WORK)
-IC_0D96_13D0.tpl
+# Film+ - SVG logo (CUSTOM WORK)
+IC_0D96_13A7.tpl
 # Universal Channel - SVG logo (Custom color)
 IC_0D96_02D8.tpl
+# AMC - SVG logo (CUSTOM WORK)
+IC_0D96_13D0.tpl
 #
 # Nova Sport - original SVG logo
 IC_0D96_36F7.tpl
