@@ -1,10 +1,11 @@
 #
-# INFO ABOUT REVISION OF PICONS FOR CAID 098C
+# INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1312
+# Revision:		        			1364
 # Authors:							skyndas
-# Last Changed Date:				2015-02-19
-# Info About The Latest Update:		xxxxxx
+# Last Changed Date:				2015-02-28
+# Number and format of Picons:		1 picons for CAID 098C in SVG
+# Info About The Latest Update:		New picon for 13th Street
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -14,3 +15,6 @@
 #
 # Info file
 info_098C.txt
+#
+# 13th Street - original SVG logo
+IC_098C_002A.tpl
