@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1373
+# Revision:		        			1374
 # Authors:							skyndas
 # Last Changed Date:				2015-03-01
-# Number and format of Picons:		54 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Golf Channel, Eurosport HD
+# Number and format of Picons:		55 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Dajto
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -56,6 +56,8 @@ IC_0D96_13F2.tpl
 IC_0D96_13EF.tpl
 # Doma - SVG logo (CUSTOM WORK)
 IC_0D96_13F0.tpl
+# Dajto - SVG logo (CUSTOM WORK)
+IC_0D96_13F4.tpl
 #
 # HBO 2 - original SVG logo
 IC_0D96_02D5.tpl
