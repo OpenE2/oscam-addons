@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1372
+# Revision:		        			1373
 # Authors:							skyndas
 # Last Changed Date:				2015-03-01
-# Number and format of Picons:		52 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Eurosport 2 HD
+# Number and format of Picons:		54 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Golf Channel, Eurosport HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -78,12 +78,16 @@ IC_0D96_13D0.tpl
 IC_0D96_36F7.tpl
 # Eurosport - original SVG logo
 IC_0D96_335A.tpl
+# Eurosport HD - original SVG logo
+IC_0D96_13B7.tpl
 # Eurosport 2 HD- original SVG logo
 IC_0D96_13B1.tpl
 # Sport 5 - original SVG logo
 IC_0D96_13BE.tpl
 # AutoMotorSport HD - original SVG logo
 IC_0D96_17D7.tpl
+# Golf Channel - original SVG logo
+IC_0D96_13AC.tpl
 #
 # Animal Planet - original SVG logo
 IC_0D96_1799.tpl
