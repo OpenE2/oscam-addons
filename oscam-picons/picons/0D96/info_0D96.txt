@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1376
+# Revision:		        			1377
 # Authors:							skyndas
 # Last Changed Date:				2015-03-01
-# Number and format of Picons:		57 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Fanda HD
+# Number and format of Picons:		58 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Prima HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -38,6 +38,8 @@ IC_0D96_3354.tpl
 IC_0D96_334D.tpl
 # Prima - SVG logo (CUSTOM WORK)
 IC_0D96_1F42.tpl
+# Prima HD - SVG logo (CUSTOM WORK)
+IC_0D96_3392.tpl
 # Prima Cool - SVG logo (CUSTOM WORK)
 IC_0D96_3351.tpl
 # Prima Cool HD - SVG logo (CUSTOM WORK)
