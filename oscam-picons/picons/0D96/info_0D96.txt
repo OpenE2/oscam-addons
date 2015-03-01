@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1374
+# Revision:		        			1375
 # Authors:							skyndas
 # Last Changed Date:				2015-03-01
-# Number and format of Picons:		55 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Dajto
+# Number and format of Picons:		56 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Fanda
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -28,6 +28,8 @@ IC_0D96_1326.tpl
 IC_0D96_1F49.tpl
 # Nova - original SVG logo
 IC_0D96_3352.tpl
+# Fanda - SVG logo (CUSTOM WORK)
+IC_0D96_36F8.tpl
 # TELKA - SVG logo (CUSTOM WORK)
 IC_0D96_3354.tpl
 # Smichov - SVG logo (CUSTOM WORK)
