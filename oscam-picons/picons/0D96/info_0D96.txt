@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1377
+# Revision:		        			1378
 # Authors:							skyndas
-# Last Changed Date:				2015-03-01
-# Number and format of Picons:		58 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Prima HD
+# Last Changed Date:				2015-03-07
+# Number and format of Picons:		59 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Wau
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -64,6 +64,8 @@ IC_0D96_13EF.tpl
 IC_0D96_13F0.tpl
 # Dajto - SVG logo (CUSTOM WORK)
 IC_0D96_13F4.tpl
+# Wau - SVG logo (CUSTOM WORK)
+IC_0D96_1452.tpl
 #
 # HBO 2 - original SVG logo
 IC_0D96_02D5.tpl
