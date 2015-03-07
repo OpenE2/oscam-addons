@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1378
+# Revision:		        			1379
 # Authors:							skyndas
 # Last Changed Date:				2015-03-07
-# Number and format of Picons:		59 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Wau
+# Number and format of Picons:		60 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel The QYou HD
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -125,14 +125,16 @@ IC_0D96_5163.tpl
 IC_0D96_5165.tpl
 # Crime and Invest. - original SVG logo
 IC_0D96_1B8D.tpl
+# The QYou HD - SVG logo (CUSTOM WORK)
+IC_0D96_7CF.tpl
 #
-# Disney Channel - SVG logo with custom trace
+# Disney Channel - SVG logo (CUSTOM WORK)
 IC_0D96_13A6.tpl
 # JimJam - original SVG logo
 IC_0D96_17A5.tpl
 # Nickelodeon - original SVG logo
 IC_0D96_13BD.tpl
-# duck TV - SVG logo with custom trace
+# duck TV - SVG logo (CUSTOM WORK)
 IC_0D96_13D6.tpl
 #
 # VH1 - original SVG logo
