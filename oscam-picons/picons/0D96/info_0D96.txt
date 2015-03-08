@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1382
+# Revision:		        			1384
 # Authors:							skyndas
-# Last Changed Date:				2015-03-07
-# Number and format of Picons:		61 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Rename picon for channel The QYou
+# Last Changed Date:				2015-03-08
+# Number and format of Picons:		62 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add picon for channel Sport 1
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -92,6 +92,8 @@ IC_0D96_335A.tpl
 IC_0D96_13B7.tpl
 # Eurosport 2 HD- original SVG logo
 IC_0D96_13B1.tpl
+# Sport 1 - SVG logo (CUSTOM WORK)
+IC_0D96_02DB.tpl
 # Sport 5 - original SVG logo
 IC_0D96_13BE.tpl
 # AutoMotorSport HD - original SVG logo
