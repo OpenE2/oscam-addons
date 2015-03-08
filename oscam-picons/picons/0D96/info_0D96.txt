@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1380
+# Revision:		        			1381
 # Authors:							skyndas
 # Last Changed Date:				2015-03-07
 # Number and format of Picons:		61 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel Boomerang
+# Info About The Latest Update:		Change color for picon for channel Boomerang
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
