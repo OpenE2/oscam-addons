@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1381
+# Revision:		        			1382
 # Authors:							skyndas
 # Last Changed Date:				2015-03-07
 # Number and format of Picons:		61 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Change color for picon for channel Boomerang
+# Info About The Latest Update:		Rename picon for channel The QYou
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -126,7 +126,7 @@ IC_0D96_5165.tpl
 # Crime and Invest. - original SVG logo
 IC_0D96_1B8D.tpl
 # The QYou HD - SVG logo (CUSTOM WORK)
-IC_0D96_7CF.tpl
+IC_0D96_17CF.tpl
 #
 # Disney Channel - SVG logo (CUSTOM WORK)
 IC_0D96_13A6.tpl
