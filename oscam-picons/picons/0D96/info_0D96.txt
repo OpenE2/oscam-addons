@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1379
+# Revision:		        			1380
 # Authors:							skyndas
 # Last Changed Date:				2015-03-07
-# Number and format of Picons:		60 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add new picon for channel The QYou HD
+# Number and format of Picons:		61 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add new picon for channel Boomerang
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -134,6 +134,8 @@ IC_0D96_13A6.tpl
 IC_0D96_17A5.tpl
 # Nickelodeon - original SVG logo
 IC_0D96_13BD.tpl
+# Boomerang - SVG logo (CUSTOM WORK)
+IC_0D96_1794.tpl
 # duck TV - SVG logo (CUSTOM WORK)
 IC_0D96_13D6.tpl
 #
