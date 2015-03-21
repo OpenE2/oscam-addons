@@ -1,7 +1,7 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1389
+# Revision:		        			1387
 # Authors:							skyndas
 # Last Changed Date:				2015-03-21
 # Number and format of Picons:		65 picons for CAID 0D96 in SVG
