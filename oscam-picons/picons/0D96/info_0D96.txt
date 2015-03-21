@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1389
+# Revision:		        			1390
 # Authors:							skyndas
 # Last Changed Date:				2015-03-21
 # Number and format of Picons:		66 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add picon for channel MTV Europe CZ
+# Info About The Latest Update:		Better compress for SVG MTV Europe CZ
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
