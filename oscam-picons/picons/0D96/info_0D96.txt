@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1384
+# Revision:		        			1385
 # Authors:							skyndas
 # Last Changed Date:				2015-03-08
-# Number and format of Picons:		62 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Add picon for channel Sport 1
+# Number and format of Picons:		63 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Add picon for channel MTV Dance
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -141,6 +141,8 @@ IC_0D96_1794.tpl
 # duck TV - SVG logo (CUSTOM WORK)
 IC_0D96_13D6.tpl
 #
+# MTV Dance - original SVG logo
+IC_0D96_6FEF.tpl
 # VH1 - original SVG logo
 IC_0D96_6FF0.tpl
 # VH1 Classic- original SVG logo
