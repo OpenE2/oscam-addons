@@ -101,7 +101,7 @@ IC_0D96_17D7.tpl
 # Golf Channel - original SVG logo
 IC_0D96_13AC.tpl
 #
-# Discovery CZ - original SVG logo
+# Discovery CZ - original SVG logo and CUSTOM WORK
 IC_0D96_13A8.tpl
 # Animal Planet - original SVG logo
 IC_0D96_1799.tpl
