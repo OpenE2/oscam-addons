@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1393
+# Revision:		        			1394
 # Authors:							skyndas
 # Last Changed Date:				2015-03-21
-# Number and format of Picons:		66 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Better qaulity for SVG MTV Hits, MTV Dance, MTV Rocks
+# Number and format of Picons:		67 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Added picon for channel Discovery CZ
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -101,6 +101,8 @@ IC_0D96_17D7.tpl
 # Golf Channel - original SVG logo
 IC_0D96_13AC.tpl
 #
+# Discovery CZ - original SVG logo
+IC_0D96_13A8.tpl
 # Animal Planet - original SVG logo
 IC_0D96_1799.tpl
 # National Geographic Channel - original SVG logo
