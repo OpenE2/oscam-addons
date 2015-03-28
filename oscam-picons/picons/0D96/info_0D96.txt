@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1394
+# Revision:		        			1396
 # Authors:							skyndas
-# Last Changed Date:				2015-03-21
-# Number and format of Picons:		67 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Added picon for channel Discovery CZ
+# Last Changed Date:				2015-03-28
+# Number and format of Picons:		68 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Added picon for channel Slovak Sport
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -79,7 +79,7 @@ IC_0D96_13B9.tpl
 IC_0D96_13AA.tpl
 # Film+ - SVG logo (CUSTOM WORK)
 IC_0D96_13A7.tpl
-# Universal Channel - SVG logo (Custom color)
+# Universal Channel - SVG logo (CUSTOM WORK)
 IC_0D96_02D8.tpl
 # AMC - SVG logo (CUSTOM WORK)
 IC_0D96_13D0.tpl
@@ -96,12 +96,14 @@ IC_0D96_13B1.tpl
 IC_0D96_02DB.tpl
 # Sport 5 - original SVG logo
 IC_0D96_13BE.tpl
+# Slovak Sport - SVG logo (CUSTOM WORK)
+IC_0D96_13B2.tpl
 # AutoMotorSport HD - original SVG logo
 IC_0D96_17D7.tpl
 # Golf Channel - original SVG logo
 IC_0D96_13AC.tpl
 #
-# Discovery CZ - original SVG logo and CUSTOM WORK
+# Discovery CZ - SVG logo (CUSTOM WORK)
 IC_0D96_13A8.tpl
 # Animal Planet - original SVG logo
 IC_0D96_1799.tpl
