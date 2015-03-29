@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1396
+# Revision:		        			1398
 # Authors:							skyndas
-# Last Changed Date:				2015-03-28
+# Last Changed Date:				2015-03-29
 # Number and format of Picons:		68 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Added picon for channel Slovak Sport
+# Info About The Latest Update:		Added picon for channel DOCUBOX
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -129,6 +129,8 @@ IC_0D96_13AE.tpl
 IC_0D96_5163.tpl
 # Food Network - original SVG logo
 IC_0D96_5165.tpl
+# DOCUBOX - SVG logo (CUSTOM WORK)
+IC_0D96_36E3.tpl
 # Crime and Invest. - original SVG logo
 IC_0D96_1B8D.tpl
 # The QYou HD - SVG logo (CUSTOM WORK)
