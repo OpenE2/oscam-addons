@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1398
+# Revision:		        			1406
 # Authors:							skyndas
-# Last Changed Date:				2015-03-29
-# Number and format of Picons:		68 picons for CAID 0D96 in SVG
-# Info About The Latest Update:		Added picon for channel DOCUBOX
+# Last Changed Date:				2015-04-04
+# Number and format of Picons:		69 picons for CAID 0D96 in SVG
+# Info About The Latest Update:		Added picon for channel TV JOJ
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -62,6 +62,8 @@ IC_0D96_13F2.tpl
 IC_0D96_13EF.tpl
 # Doma - SVG logo (CUSTOM WORK)
 IC_0D96_13F0.tpl
+# TV JOJ - SVG logo (CUSTOM WORK)
+IC_0D96_13ED.tpl
 # Dajto - SVG logo (CUSTOM WORK)
 IC_0D96_13F4.tpl
 # Wau - SVG logo (CUSTOM WORK)
