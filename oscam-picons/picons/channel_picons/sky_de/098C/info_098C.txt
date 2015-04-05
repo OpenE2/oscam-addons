@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96
 # -------------------------------------------
-# Revision:		        			1364
+# Revision:		        			1412
 # Authors:							skyndas
-# Last Changed Date:				2015-02-28
-# Number and format of Picons:		1 picons for CAID 098C in SVG
-# Info About The Latest Update:		New picon for 13th Street
+# Last Changed Date:				2015-04-05
+# Number and format of Picons:		6 picons for CAID 098C in SVG
+# Info About The Latest Update:		New picon for 13th Street, TNT Serie, Spiegel Geschichte, Motorvision TV, Goldstar TV, Jukebox TV
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -22,3 +22,13 @@ info_098C.txt
 #
 # 13th Street - original SVG logo
 IC_098C_002A.tpl
+# TNT Serie - original SVG logo
+IC_098C_0032.tpl
+# Spiegel Geschichte - original SVG logo
+IC_098C_0034.tpl
+# Motorvision TV - SVG logo (CUSTOM WORK)
+IC_098C_00A8.tpl
+# Goldstar TV - original SVG logo
+IC_098C_0206.tpl
+# Jukebox TV - original SVG logo
+IC_098C_0191.tpl
