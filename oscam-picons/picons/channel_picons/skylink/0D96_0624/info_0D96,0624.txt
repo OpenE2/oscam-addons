@@ -1,11 +1,11 @@
 #
 # INFO ABOUT REVISION OF PICONS FOR CAID 0D96,0624
 # -------------------------------------------
-# Revision:		        			1407
+# Revision:		        			1414
 # Authors:							skyndas
 # Last Changed Date:				2015-04-04
-# Number and format of Picons:		70 picons for CAID 0D96,0624 in SVG
-# Info About The Latest Update:		Added picon for channel JOJ Plus
+# Number and format of Picons:		71 picons for CAID 0D96,0624 in SVG
+# Info About The Latest Update:		Added picon for channel Nova Cinema
 #
 # FILE LIST (This is a list of files that contain zip file) 
 # ----------------------------------------------------------
@@ -28,6 +28,8 @@ IC_0D96,0624_1326.tpl
 IC_0D96,0624_1F49.tpl
 # Nova - original SVG logo
 IC_0D96,0624_3352.tpl
+# Nova Cinema - SVG logo (CUSTOM WORK)
+IC_0D96,0624_36F9.tpl
 # Fanda - SVG logo (CUSTOM WORK)
 IC_0D96,0624_36F8.tpl
 # Fanda HD - SVG logo (CUSTOM WORK)
