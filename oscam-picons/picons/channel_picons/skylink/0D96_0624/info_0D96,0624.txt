@@ -1,10 +1,10 @@
 #
-# INFO ABOUT REVISION OF PICONS FOR CAID 0D96
+# INFO ABOUT REVISION OF PICONS FOR CAID 0D96,0624
 # -------------------------------------------
 # Revision:		        			1407
 # Authors:							skyndas
 # Last Changed Date:				2015-04-04
-# Number and format of Picons:		70 picons for CAID 0D96 in SVG
+# Number and format of Picons:		70 picons for CAID 0D96,0624 in SVG
 # Info About The Latest Update:		Added picon for channel JOJ Plus
 #
 # FILE LIST (This is a list of files that contain zip file) 
@@ -14,152 +14,152 @@
 # Bad name of file is e.g "name _ of _ file.suffix" or e.g. "name - of - file.suffix"
 #
 # Info file
-info_0d96.txt
+info_0D96,0624.txt
 #
 # ČT 1 - original SVG logo
-IC_0D96_1F43.tpl
+IC_0D96,0624_1F43.tpl
 # ČT 1 HD - original SVG logo
-IC_0D96_1325.tpl
+IC_0D96,0624_1325.tpl
 # ČT 2 - original SVG logo
-IC_0D96_1F44.tpl
+IC_0D96,0624_1F44.tpl
 # ČT 2 HD - original SVG logo
-IC_0D96_1326.tpl
+IC_0D96,0624_1326.tpl
 # ČT:D/ČT:art - original SVG logo
-IC_0D96_1F49.tpl
+IC_0D96,0624_1F49.tpl
 # Nova - original SVG logo
-IC_0D96_3352.tpl
+IC_0D96,0624_3352.tpl
 # Fanda - SVG logo (CUSTOM WORK)
-IC_0D96_36F8.tpl
+IC_0D96,0624_36F8.tpl
 # Fanda HD - SVG logo (CUSTOM WORK)
-IC_0D96_3394.tpl
+IC_0D96,0624_3394.tpl
 # TELKA - SVG logo (CUSTOM WORK)
-IC_0D96_3354.tpl
+IC_0D96,0624_3354.tpl
 # Smichov - SVG logo (CUSTOM WORK)
-IC_0D96_334D.tpl
+IC_0D96,0624_334D.tpl
 # Prima - SVG logo (CUSTOM WORK)
-IC_0D96_1F42.tpl
+IC_0D96,0624_1F42.tpl
 # Prima HD - SVG logo (CUSTOM WORK)
-IC_0D96_3392.tpl
+IC_0D96,0624_3392.tpl
 # Prima Cool - SVG logo (CUSTOM WORK)
-IC_0D96_3351.tpl
+IC_0D96,0624_3351.tpl
 # Prima Cool HD - SVG logo (CUSTOM WORK)
-IC_0D96_3396.tpl
+IC_0D96,0624_3396.tpl
 # Prima Love - SVG logo (CUSTOM WORK)
-IC_0D96_3355.tpl
+IC_0D96,0624_3355.tpl
 # Prima ZOOM - SVG logo (CUSTOM WORK)
-IC_0D96_3353.tpl
+IC_0D96,0624_3353.tpl
 # TV Barrandov - original SVG logo
-IC_0D96_13D3.tpl
+IC_0D96,0624_13D3.tpl
 # ČT Sport - original SVG logo
-IC_0D96_1F47.tpl
+IC_0D96,0624_1F47.tpl
 # ČT Sport HD- original SVG logo
-IC_0D96_1328.tpl
+IC_0D96,0624_1328.tpl
 # STV 1 - original SVG logo
-IC_0D96_13F1.tpl
+IC_0D96,0624_13F1.tpl
 # STV 2 - original SVG logo
-IC_0D96_13F2.tpl
+IC_0D96,0624_13F2.tpl
 # Markiza - SVG logo (CUSTOM WORK)
-IC_0D96_13EF.tpl
+IC_0D96,0624_13EF.tpl
 # Doma - SVG logo (CUSTOM WORK)
-IC_0D96_13F0.tpl
+IC_0D96,0624_13F0.tpl
 # TV JOJ - SVG logo (CUSTOM WORK)
-IC_0D96_13ED.tpl
+IC_0D96,0624_13ED.tpl
 # JOJ Plus - SVG logo (CUSTOM WORK)
-IC_0D96_13EE.tpl
+IC_0D96,0624_13EE.tpl
 # Dajto - SVG logo (CUSTOM WORK)
-IC_0D96_13F4.tpl
+IC_0D96,0624_13F4.tpl
 # Wau - SVG logo (CUSTOM WORK)
-IC_0D96_1452.tpl
+IC_0D96,0624_1452.tpl
 #
 # HBO 2 - original SVG logo
-IC_0D96_02D5.tpl
+IC_0D96,0624_02D5.tpl
 # HBO Comedy - original SVG logo
-IC_0D96_02C8.tpl
+IC_0D96,0624_02C8.tpl
 # Cinemax - original SVG logo
-IC_0D96_02D6.tpl
+IC_0D96,0624_02D6.tpl
 # AXN - original SVG logo
-IC_0D96_13B9.tpl
+IC_0D96,0624_13B9.tpl
 # Filmbox HD - SVG logo (CUSTOM WORK)
-IC_0D96_13AA.tpl
+IC_0D96,0624_13AA.tpl
 # Film+ - SVG logo (CUSTOM WORK)
-IC_0D96_13A7.tpl
+IC_0D96,0624_13A7.tpl
 # Universal Channel - SVG logo (CUSTOM WORK)
-IC_0D96_02D8.tpl
+IC_0D96,0624_02D8.tpl
 # AMC - SVG logo (CUSTOM WORK)
-IC_0D96_13D0.tpl
+IC_0D96,0624_13D0.tpl
 #
 # Nova Sport - original SVG logo
-IC_0D96_36F7.tpl
+IC_0D96,0624_36F7.tpl
 # Eurosport - original SVG logo
-IC_0D96_335A.tpl
+IC_0D96,0624_335A.tpl
 # Eurosport HD - original SVG logo
-IC_0D96_13B7.tpl
+IC_0D96,0624_13B7.tpl
 # Eurosport 2 HD- original SVG logo
-IC_0D96_13B1.tpl
+IC_0D96,0624_13B1.tpl
 # Sport 1 - SVG logo (CUSTOM WORK)
-IC_0D96_02DB.tpl
+IC_0D96,0624_02DB.tpl
 # Sport 5 - original SVG logo
-IC_0D96_13BE.tpl
+IC_0D96,0624_13BE.tpl
 # Slovak Sport - SVG logo (CUSTOM WORK)
-IC_0D96_13B2.tpl
+IC_0D96,0624_13B2.tpl
 # AutoMotorSport HD - original SVG logo
-IC_0D96_17D7.tpl
+IC_0D96,0624_17D7.tpl
 # Golf Channel - original SVG logo
-IC_0D96_13AC.tpl
+IC_0D96,0624_13AC.tpl
 #
 # Discovery CZ - SVG logo (CUSTOM WORK)
-IC_0D96_13A8.tpl
+IC_0D96,0624_13A8.tpl
 # Animal Planet - original SVG logo
-IC_0D96_1799.tpl
+IC_0D96,0624_1799.tpl
 # National Geographic Channel - original SVG logo
-IC_0D96_13DD.tpl
+IC_0D96,0624_13DD.tpl
 # National Geographic Channel HD - original SVG logo
-IC_0D96_15ED.tpl
+IC_0D96,0624_15ED.tpl
 # Nat Geo Wild HD - original SVG logo
-IC_0D96_15EB.tpl
+IC_0D96,0624_15EB.tpl
 # Viasat Nature - original SVG logo
-IC_0D96_13DC.tpl
+IC_0D96,0624_13DC.tpl
 # Viasat Explorer - original SVG logo
-IC_0D96_13DA.tpl
+IC_0D96,0624_13DA.tpl
 # Viasat History - original SVG logo
-IC_0D96_13DB.tpl
+IC_0D96,0624_13DB.tpl
 # History HD - original SVG logo
-IC_0D96_13B3.tpl
+IC_0D96,0624_13B3.tpl
 # Travel Channel HD - original SVG logo
-IC_0D96_13B8.tpl
+IC_0D96,0624_13B8.tpl
 # TV Paprika - original SVG logo
-IC_0D96_13AE.tpl
+IC_0D96,0624_13AE.tpl
 # Fine Living - original SVG logo
-IC_0D96_5163.tpl
+IC_0D96,0624_5163.tpl
 # Food Network - original SVG logo
-IC_0D96_5165.tpl
+IC_0D96,0624_5165.tpl
 # DOCUBOX - SVG logo (CUSTOM WORK)
-IC_0D96_36E3.tpl
+IC_0D96,0624_36E3.tpl
 # Crime and Invest. - original SVG logo
-IC_0D96_1B8D.tpl
+IC_0D96,0624_1B8D.tpl
 # The QYou HD - SVG logo (CUSTOM WORK)
-IC_0D96_17CF.tpl
+IC_0D96,0624_17CF.tpl
 #
 # Disney Channel - SVG logo (CUSTOM WORK)
-IC_0D96_13A6.tpl
+IC_0D96,0624_13A6.tpl
 # JimJam - original SVG logo
-IC_0D96_17A5.tpl
+IC_0D96,0624_17A5.tpl
 # Nickelodeon - original SVG logo
-IC_0D96_13BD.tpl
+IC_0D96,0624_13BD.tpl
 # Boomerang - SVG logo (CUSTOM WORK)
-IC_0D96_1794.tpl
+IC_0D96,0624_1794.tpl
 # duck TV - SVG logo (CUSTOM WORK)
-IC_0D96_13D6.tpl
+IC_0D96,0624_13D6.tpl
 #
 # MTV Europe CZ - original SVG logo
-IC_0D96_02D9.tpl
+IC_0D96,0624_02D9.tpl
 # MTV ROCKS - original SVG logo
-IC_0D96_6FF3.tpl
+IC_0D96,0624_6FF3.tpl
 # MTV Dance - original SVG logo
-IC_0D96_6FEF.tpl
+IC_0D96,0624_6FEF.tpl
 # MTV Hits - original SVG logo
-IC_0D96_6FEE.tpl
+IC_0D96,0624_6FEE.tpl
 # VH1 - original SVG logo
-IC_0D96_6FF0.tpl
+IC_0D96,0624_6FF0.tpl
 # VH1 Classic- original SVG logo
-IC_0D96_6FF1.tpl
+IC_0D96,0624_6FF1.tpl

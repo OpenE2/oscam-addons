@@ -20,7 +20,7 @@ ConfigPath="/etc/tuxbox/config"
 # 2.
 # Set manually downloaded file without trailing "/"
 # Insert basic folder for all picons
-TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/picons"
+TrunkUrl="http://www.streamboard.tv/svn/oscam-addons/oscam-picons/picons/channel_picons"
 #
 # 3.
 # Set TEMP folder without trailing "/"
@@ -97,13 +97,18 @@ setParam() {
   case "$1" in
     # Skylink CAID - 0D96, 0624
         0D96|0d96)
-          TrunkCaid='0D96'
+          TrunkCaid='/skylink/0D96_0624'
           TrunkFile='0D96.zip'
           InfoFile='info_0D96.txt'
         ;;
+        0624)
+          TrunkCaid='/skylink/0D96_0624'
+          TrunkFile='0624.zip'
+          InfoFile='info_0624.txt'
+        ;;
     # Sky DE CAID - 098C
         098C|098c)
-          TrunkCaid='098C'
+          TrunkCaid='/sky_de/098C'
           TrunkFile='098C.zip'
           InfoFile='info_098C.txt'
         ;;
