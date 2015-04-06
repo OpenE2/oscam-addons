@@ -14,7 +14,7 @@
 # Bad name of file is e.g "name _ of _ file.suffix" or e.g. "name - of - file.suffix"
 #
 # Info file
-info_0D96,0624.txt
+info_0D96_0624.txt
 #
 # ČT 1 - original SVG logo
 IC_0D96,0624_1F43.tpl
