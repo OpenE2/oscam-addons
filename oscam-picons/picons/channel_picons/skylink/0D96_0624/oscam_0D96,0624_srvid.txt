@@ -1,0 +1,167 @@
+# oscam.srvid #
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/example/oscam.srvid
+#
+##############################################################################################
+#          Skylink - Astra 23,5 Caid:0D96,0624  / last edited 23.05.2015                     #
+##############################################################################################
+#
+# NOTE:
+#
+0D96,0624:1F43|Skylink|CT1
+0D96,0624:1F45|Skylink|CT1 SM
+0D96,0624:1F41|Skylink|CT1 JM
+0D96,0624:1325|Skylink|CT1 HD
+0D96,0624:1F44|Skylink|CT2
+0D96,0624:1326|Skylink|CT2 HD
+0D96,0624:1F49|Skylink|CT D/CT art
+0D96,0624:3352|Skylink|Nova
+0D96,0624:3391|Skylink|Nova HD
+0D96,0624:36F9|Skylink|Nova Cinema
+0D96,0624:3395|Skylink|Nova Cinema HD
+0D96,0624:36F8|Skylink|FANDA
+0D96,0624:3394|Skylink|FANDA HD
+0D96,0624:3354|Skylink|TELKA
+0D96,0624:334D|Skylink|SMICHOV
+0D96,0624:1F42|Skylink|Prima
+0D96,0624:3392|Skylink|Prima HD
+0D96,0624:3351|Skylink|Prima COOL
+0D96,0624:3396|Skylink|Prima COOL HD
+0D96,0624:3355|Skylink|Prima Love
+0D96,0624:3353|Skylink|Prima ZOOM
+0D96,0624:13D3|Skylink|TV Barrandov
+0D96,0624:132B|Skylink|TV Barrandov HD
+0D96,0624:13D2|Skylink|Kino Barrandov
+0D96,0624:132C|Skylink|Kino Barrandov HD
+0D96,0624:145B|Skylink|Barrandov Plus
+0D96,0624:132D|Skylink|Barrandov Plus HD
+0D96,0624:1F47|Skylink|CT Sport
+0D96,0624:1328|Skylink|CT Sport HD
+0000,FFFE:1F46|Skylink|CT 24|FTA
+0D96,0624:13F1|Skylink|STV1
+0D96,0624:1329|Skylink|STV1 HD
+0D96,0624:13F2|Skylink|STV2
+0D96,0624:132A|Skylink|STV2 HD
+0D96,0624:13EF|Skylink|Markiza
+0D96,0624:13B4|Skylink|Markiza HD
+0D96,0624:13F0|Skylink|DOMA
+0D96,0624:13ED|Skylink|TV JOJ
+0D96,0624:3398|Skylink|TV JOJ HD
+0D96,0624:13EE|Skylink|JOJ PLUS
+0D96,0624:3399|Skylink|JOJ PLUS HD
+0D96,0624:13F4|Skylink|DAJTO
+0D96,0624:3397|Skylink|DAJTO HD
+0D96,0624:1452|Skylink|WAU
+0000,FFFE:13F3|Skylink|TA3|FTA
+0000,FFFE:1453|Skylink|Regionalnitelevize.cz|FTA
+0000,FFFE:334E|Skylink|TV Regina|FTA
+0D96,0624:13BC|Skylink|Retro Music Television
+0000,FFFE:13D1|Skylink|REBEL|FTA
+0000,FFFE:13D5|Skylink|RELAX Pohoda|FTA
+0000,FFFE:1451|Skylink|Ocko TV|FTA
+0000,FFFE:13D9|Skylink|Slagr TV|FTA
+0000,FFFE:13D4|Skylink|Active|FTA
+0000,FFFE:1F48|Skylink|Noe TV|FTA
+#
+#       Pay TV - Film
+#
+0D96,0624:02C7|Skylink|HBO HD
+0D96,0624:02D5|Skylink|HBO2
+0D96,0624:02C8|Skylink|HBO Comedy
+0D96,0624:02D6|Skylink|Cinemax
+0D96,0624:13CF|Skylink|FilmBox
+0D96,0624:13AA|Skylink|Filmbox HD
+0D96,0624:13AF|Skylink|Filmbox Plus
+0D96,0624:13C6|Skylink|Film Europe HD
+0D96,0624:13BA|Skylink|Filmbox Family
+0D96,0624:13BB|Skylink|Filmbox Premium
+0D96,0624:13A7|Skylink|Film+
+0D96,0624:02D8|Skylink|Universal Channel
+0D96,0624:13B9|Skylink|AXN
+0D96,0624:13D0|Skylink|AMC
+0D96,0624:02CA|Skylink|Kino CS
+0D96,0624:1421|Skylink|Kinosvet
+0D96,0624:3358|Skylink|Kinosvet 20-22h
+0D96,0624:3350|Skylink|HOROR FILM
+0D96,0624:3360|Skylink|CSFilm/CSMini
+#
+#       Pay TV - Sport
+#
+0D96,0624:36F7|Skylink|Nova Sport
+0D96,0624:3393|Skylink|Nova Sport HD
+0D96,0624:335A|Skylink|Eurosport CZ
+0D96,0624:13B7|Skylink|Eurosport HD
+0D96,0624:13B1|Skylink|Eurosport 2 HD
+0D96,0624:02DB|Skylink|Sport 1 CZ
+0D96,0624:13AD|Skylink|Sport 2 HD
+0D96,0624:13BE|Skylink|Sport 5
+0D96,0624:13B2|Skylink|Slovak Sport
+0D96,0624:1807|Skylink|EDGE CZ
+0D96,0624:36E2|Skylink|FIGHTBOX
+0D96,0624:17D7|Skylink|AutoMotorSport HD
+0D96,0624:13AC|Skylink|Golf Channel
+#
+#       Pay TV - Document
+#
+0D96,0624:02D7|Skylink|Spektrum HD
+0D96,0624:13A8|Skylink|Discovery CZ
+0D96,0624:13B5|Skylink|Discovery Showcase HD CZ
+0D96,0624:13CB|Skylink|Animal Planet CZ - 12109Mhz
+0D96,0624:13DD|Skylink|NGC
+0D96,0624:15ED|Skylink|NatGeo HD CZ
+0D96,0624:15EB|Skylink|NatGeo Wild HD CZ
+0D96,0624:13DC|Skylink|Viasat Nature
+0D96,0624:13DA|Skylink|Viasat Explorer/Spice
+0D96,0624:13DB|Skylink|Viasat History
+0D96,0624:13AB|Skylink|Viasat HD
+0D96,0624:13B3|Skylink|History HD
+0D96,0624:13B8|Skylink|Travel Channel HD CE - 12109Mhz
+0D96,0624:51A1|Skylink|Travel Channel HD CE - 11914Mhz
+0D96,0624:13AE|Skylink|TV Paprika
+0D96,0624:141F|Skylink|Mnam TV
+0D96,0624:1422|Skylink|Nautical HD
+0D96,0624:1B81|Skylink|Reality Kings CZ
+0D96,0624:5163|Skylink|Fine Living CZ
+0D96,0624:5165|Skylink|Food Network CZ
+0D96,0624:519E|Skylink|Food Network HD CZ
+0D96,0624:02C9|Skylink|Doku CS
+0D96,0624:36E3|Skylink|DOCUBOX
+0D96,0624:1B8D|Skylink|Crime and Invest. CZ
+0D96,0624:02D4|Skylink|Fishing & Hunting
+#
+#       Pay TV - Kid
+#
+0D96,0624:13A6|Skylink|Disney CZ
+0D96,0624:141E|Skylink|JimJam CZ
+0D96,0624:334C|Skylink|Minimax
+0D96,0624:13BD|Skylink|Nickelodeon CZ
+0D96,0624:1794|Skylink|Boomerang CZ
+0D96,0624:339A|Skylink|RiK
+0D96,0624:13D6|Skylink|duck TV
+#
+#       Pay TV - Music
+#
+0D96,0624:02D9|Skylink|MTV Europe CZ
+0D96,0624:6FF3|Skylink|MTV ROCKS - 19.2
+0D96,0624:6FEF|Skylink|MTV Dance - 19.2
+0D96,0624:6FEE|Skylink|MTV Hits - 19.2
+0D96,0624:6FF0|Skylink|VH1 - 19.2
+0D96,0624:6FF1|Skylink|VH1 Classic - 19.2
+0D96,0624:02D1|Skylink|Muzika CS
+0D96,0624:1420|Skylink|E!Entertainment CZ
+0D96,0624:17CF|Skylink|The QYou CZ
+0D96,0624:02DA|Skylink|iConcerts
+0D96,0624:02DD|Skylink|iConcerts CZ
+0D96,0624:02DC|Skylink|brava HD
+0D96,0624:17D5|Skylink|Unitel Classica HD
+#
+#       Pay TV - Erotic
+#
+0D96,0624:3356|Skylink|Leo TV
+0D96,0624:51DD|Skylink|Penthouse CZ
+0D96,0624:17B9|Skylink|Brazzers TV CZ
+0D96,0624:13CD|Skylink|Brazzers TV CZ
+0D96,0624:36E7|Skylink|EROXXX
+0D96,0624:515F|Skylink|Hustler HD CZ - 23.5
+0D96,0624:3254|Skylink|Hustler TV CZ - 19.2
+0D96,0624:5284|Skylink|Man-X
+0D96,0624:0FE1|Skylink|Vivid CZ - 19.2
