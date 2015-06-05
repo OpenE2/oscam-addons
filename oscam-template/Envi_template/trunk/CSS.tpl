@@ -1750,7 +1750,8 @@ tr.scanusbsubhead td {
 .envi table.statsbalance th {
 	border-right: 1px dotted #666;
 	color: #FFF;
-	border-top: 1px solid #FFF
+	border-top: 1px solid #FFF;
+	padding-left: 15px;
 }
 .envi table.statsbalance th:last-child {
 	border-right: none
@@ -2164,6 +2165,10 @@ td {
 	fill: #FFFFFF;
 	height: 28px;
 	width: 28px
+}
+/*  */
+.envi table.statsbalance th.subheadline img{
+    margin-left: 5px
 }
 
 /* **************** 14. SPAN */
