@@ -309,7 +309,7 @@ table.statsbalance td:last-child {
 	line-height:20px;
 	width:125px
 }
-table.statsbalance td:last-child img.icon {
+table.statsbalance td:last-child a {
 	float:right;
 	margin-left:10px
 }
@@ -1908,15 +1908,16 @@ td {
    border-bottom: 1px solid black
 }
 /* ------- SERVICES ------- */
-.envi #servicesedit td,
-.envi table.configservices td {
+.envi #servicesedit td {
 	border-right: 1px dotted #999
 }
 .envi table.configservices td {
 	border-bottom: 1px dotted #999
 }
-.envi #servicesedit td:last-child,
-.envi table.configservices td:last-child {
+.configservices tbody tr:nth-last-child(3) td {
+    border-bottom: 1px solid #000;
+}
+.envi #servicesedit td:last-child {
 	border-right: none
 }
 .envi #servicesedit tr:nth-child(odd) td {

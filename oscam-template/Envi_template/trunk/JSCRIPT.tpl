@@ -2349,7 +2349,6 @@ $(function() {
 		$('.envi span.debugl a').boot_tooltip({animation: false, placement: 'bottom'})
 		$('.envi span.debugs a').boot_tooltip({animation: false, placement: 'bottom'})
 		$('.envi ul.addClass a').boot_tooltip({animation: false, placement: 'top'})
-		$('.envi td.centered a').boot_tooltip({animation: false, placement: 'right'})
 		/* Tables in Users */
 		$('.envi table.users th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		$('.envi table.users th span').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
@@ -2371,6 +2370,7 @@ $(function() {
 		$('.envi td.readercol15 a').boot_tooltip({animation: false, placement: 'left'})
 		$('.envi td.readercol16 a').boot_tooltip({animation: false, placement: 'left'})
 		$('.envi td.readercol17 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi .statsbalance a').boot_tooltip({animation: false, placement: 'left'})
 		/* Tables in Status */
 		$('.envi table.status th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		$('.envi td.statuscol0 a').boot_tooltip({animation: false, placement: 'right'})
