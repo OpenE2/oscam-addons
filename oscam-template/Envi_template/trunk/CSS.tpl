@@ -737,22 +737,22 @@ div.extract {
 	margin:10px auto;
 	text-align:left
 }
-div.extract p { 
-	font-weight:700; 
-	margin:10px 6px 0 6px 
+div.extract p {
+	font-weight:700;
+	margin:10px 6px 0 6px
 } 
-div.extract p.emmhead { 
-	font-size:13px; 
-	text-align:center 
+div.extract p.emmhead {
+	font-size:13px;
+	text-align:center
 } 
-div.extract p .emminfo { 
-	font-weight:normal 
+div.extract p .emminfo {
+	font-weight:normal
 } 
 div.extract pre {
-	overflow:auto; 
-	margin:5px 0; 
-	padding:5px; 
-	font-family:courier,monospace; 
+	overflow:auto;
+	margin:5px 0;
+	padding:5px;
+	font-family:courier,monospace;
 	border:1px dotted #AAA;
 	white-space:pre
 }
@@ -1937,9 +1937,15 @@ td {
 .envi #servicesedit tr:hover td,
 .envi table.failban tr:hover td,
 .envi table.stats tr:hover td,
+.envi table.status tr.a:hover td,
+.envi table.status tr.c:hover td,
+.envi table.status tr.s:hover td,
+.envi table.status tr.l:hover td,
+.envi table.status tr.n:hover td,
+.envi table.status tr.m:hover td,
+.envi table.status tr.h:hover td,
 .envi table.status tr.r:hover td,
-.envi table.status tr.p:hover td,
-.envi table.status tr.c:hover td {
+.envi table.status tr.p:hover td {
 	background-color: #FCD7D7 !important
 }
 .envi #dataTable tfoot tr:hover td,
@@ -2516,9 +2522,15 @@ td {
 .colchange_1 #servicesedit tr:hover td,
 .colchange_1 table.failban tr:hover td,
 .colchange_1 table.stats tr:hover td,
+.colchange_1 table.status tr.a:hover td,
+.colchange_1 table.status tr.c:hover td,
+.colchange_1 table.status tr.s:hover td,
+.colchange_1 table.status tr.l:hover td,
+.colchange_1 table.status tr.n:hover td,
+.colchange_1 table.status tr.m:hover td,
+.colchange_1 table.status tr.h:hover td,
 .colchange_1 table.status tr.r:hover td,
-.colchange_1 table.status tr.p:hover td,
-.colchange_1 table.status tr.c:hover td {
+.colchange_1 table.status tr.p:hover td  {
 	background-color: #D1E5EF !important
 }
 .colchange_1 table.readers tr:hover td.td-sorting,
@@ -2695,9 +2707,15 @@ td {
 .colchange_2 #servicesedit tr:hover td,
 .colchange_2 table.failban tr:hover td,
 .colchange_2 table.stats tr:hover td,
+.colchange_2 table.status tr.a:hover td,
+.colchange_2 table.status tr.c:hover td,
+.colchange_2 table.status tr.s:hover td,
+.colchange_2 table.status tr.l:hover td,
+.colchange_2 table.status tr.n:hover td,
+.colchange_2 table.status tr.m:hover td,
+.colchange_2 table.status tr.h:hover td,
 .colchange_2 table.status tr.r:hover td,
-.colchange_2 table.status tr.p:hover td,
-.colchange_2 table.status tr.c:hover td {
+.colchange_2 table.status tr.p:hover td  {
 	background-color: #F5E9D8 !important
 }
 .colchange_2 table.readers tr:hover td.td-sorting,
