@@ -2004,6 +2004,10 @@ td {
 	position: fixed;
 	z-index: 1060
 }
+/* READERS and USERS items */
+div.groups {
+	text-overflow: ellipsis;
+}
 /* footer.html */
 .envi div.footer {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEUYGBgRERGrUlCvAAAADklEQVQI12M4AIQGDAYACcgB4WUKpxgAAAAASUVORK5CYII=);
