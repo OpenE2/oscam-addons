@@ -323,20 +323,18 @@ $(function () {
 	});
 
 	// search related events
-	if ($('body').hasClass('original') == true) {
-		$("#searchTerm").keyup(function () {
-			var value = $("#searchTerm").val().toLowerCase().trim();
-			$("#dataTable tr").each(function (index) {
-				if (!index) return;
-				$(this).find("td").each(function () {
-					var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
-					var not_found = (id.indexOf(value) == -1);
-					$(this).closest('tr').toggle(!not_found);
-					return not_found;
-				});
+	$("#searchTerm").keyup(function () {
+		var value = $("#searchTerm").val().toLowerCase().trim();
+		$("#dataTable tr").each(function (index) {
+			if (!index) return;
+			$(this).find("td").each(function () {
+				var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
+				var not_found = (id.indexOf(value) == -1);
+				$(this).closest('tr').toggle(!not_found);
+				return not_found;
 			});
 		});
-	};
+	});
 
 	$("#searchTerm").click(function () {
 		cdpause();
@@ -1225,7 +1223,7 @@ function updateStatuspage(data) {
 			} else {
 				// picon is not delivered in JSON - we set the text of column
 				if (item.request.chname && item.request.srvid != '0000') {
-					$(uid + " > td.statuscol13 > a").html(item.request.chprovider + item.request.chname);
+					$(uid + " > td.statuscol13").html(item.request.chprovider + item.request.chname);
 				} else {
 					$(uid + " > td.statuscol13").html('');
 				}
