@@ -280,7 +280,7 @@ table.infotable {
 /* include readerconfig.html & user_edit.html */
 table.config, table.configreader,table.configuser {
 	width:80%;
- 	margin-bottom:-1px;
+	margin-bottom:-1px;
 	max-width:610px;
 	white-space:nowrap
 }
@@ -339,7 +339,7 @@ table.users {
 }
 /* services_edit.html */
 table.configservices {
- 	margin-bottom:-1px;
+	margin-bottom:-1px;
 	text-align:left
 }
 
@@ -655,7 +655,7 @@ input.short[type=text] {
 	width:52px
 }
 input.colorinput[type=text] {
-    width:60px
+	width:60px
 }
 input.medium[type=text] {
 	width:125px
@@ -733,7 +733,7 @@ td.configcolsave {
 	margin:5px
 }
 #otherdropdown option:first-child {
-    display:none
+	display:none
 }
 /* for extract in script.html and emm.html */
 div.extract {
@@ -1016,7 +1016,7 @@ input.pintervall {
 	position:absolute
 }
 .disabledtable {
-    opacity:0.5
+	opacity:0.5
 }
 /* Statuspage Functions: Generate a Bar for Barchart */
 div.bar {
@@ -1141,7 +1141,7 @@ div.envi_info {
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	   -moz-transition: opacity 400ms ease-in;
-		    transition: opacity 400ms ease-in;
+			transition: opacity 400ms ease-in;
 	pointer-events: none
 }
 .modalDialog:target {
@@ -1182,10 +1182,10 @@ div.envi_info {
 	font-weight: 800;
 	-webkit-border-radius: 14px;
 	   -moz-border-radius: 14px;
-		    border-radius: 14px;
+			border-radius: 14px;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	   -moz-box-shadow: 1px 1px 3px #000;
-		    box-shadow: 1px 1px 3px #000;
+			box-shadow: 1px 1px 3px #000;
 	border: 2px solid #FFF
 }
 .close:hover {
@@ -1214,13 +1214,13 @@ div.envi_info {
 	background-position: center;
 	-webkit-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
 	   -moz-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
-		    box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
+			box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
 	cursor: pointer;
 	height: 40px;
 	width: 40px;
 	-webkit-border-radius: 2px 0 0 2px;
 	   -moz-border-radius: 2px 0 0 2px;
-		    border-radius: 2px 0 0 2px;
+			border-radius: 2px 0 0 2px;
 	bottom: 0
 }
 .demo_changer .form_holder {
@@ -1228,7 +1228,7 @@ div.envi_info {
 	float: left;
 	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-		    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	width: 180px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
@@ -1271,7 +1271,7 @@ div.styleswitcher a.active {
 	/* ROTATE IMAGE */
 	-webkit-transform: rotate(345deg);
 	   -moz-transform: rotate(345deg);
-		    transform: rotate(345deg);
+			transform: rotate(345deg);
 }
 .form_holder #reset {
 	font-weight: 700;
@@ -1280,7 +1280,7 @@ div.styleswitcher a.active {
 	transition: all 0.5s ease 0s;
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
-		    border-radius: 0;
+			border-radius: 0;
 	color: #FFF;
 	background: #BD0000;
 	padding: 1px 6px;
@@ -1508,7 +1508,7 @@ body.envi {
 	/* BOX SHADOW */
 	-webkit-box-shadow: 0px 1px 4px #5e5e5e;
 	   -moz-box-shadow: 0px 1px 4px #5e5e5e;
-		    box-shadow: 0px 1px 4px #5e5e5e
+			box-shadow: 0px 1px 4px #5e5e5e
 }
 .envi #mainmenu {
 	height: 27px;
@@ -1706,6 +1706,10 @@ body.envi {
 	background-color: #BFA;
 	color: #000
 }
+/* scanusb.html */
+tr.scanusbsubhead td {
+    background-color: #EBEBEB;
+}
 
 /* **************** 9. TABLE TH */
 /* status.html */
@@ -1751,6 +1755,11 @@ body.envi {
 .envi table.statsbalance th:last-child {
 	border-right: none
 }
+/* scanusb.html */
+.envi table.scanusb th {
+	background-color: #222;
+	color: #FFF;
+}
 /* cacheex.html */
 .envi table.stats th {
 	border-right: 1px dotted #666;
@@ -1770,7 +1779,7 @@ body.envi {
 	border-top: 1px solid #FFF
 }
 .envi #servicesedit th:last-child {
-    border-right: medium none;
+	border-right: medium none;
 }
 /* Background color for th */
 .envi table.config th,
@@ -1808,7 +1817,7 @@ td {
 	border-bottom: 1px solid #FFF
 }
 .envi table.status td {
-    border-right: 1px dotted #999
+	border-right: 1px dotted #999
 }
 .envi table.status td:last-child {
 	border-right: none
@@ -1828,7 +1837,7 @@ td {
 .envi table.readers tr:hover td,
 .envi table.users tr:hover td,
 .envi table.statsbalance tr:hover td {
-    background-color: #fcd7d7 !important
+	background-color: #fcd7d7 !important
 }
 .envi table.readers tr:hover td.td-sorting,
 .envi table.users tr:hover td.td-sorting,
@@ -1850,8 +1859,8 @@ td {
 	background-color: #E6E6E6
 }
 .envi table.writeemm tr:nth-last-child(-n+2) td {
-    background-color: transparent;
-    border-bottom: medium none;
+	background-color: transparent;
+	border-bottom: medium none;
 }
 /* ------- USERS ------- */
 /* userconfig.html */
@@ -1920,7 +1929,7 @@ td {
 	border-bottom: none
 }
 .envi table.configservices td:first-child {
-    background-color: #D9D9D9;
+	background-color: #D9D9D9;
 }
 /* ------- OTHER SETTINGS ------- */
 /* Background color for TD if TH have class sorting-asc, sorting-desc */
@@ -2048,10 +2057,10 @@ td {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	-webkit-appearance: none;
 	   -moz-appearance: none;
-		    appearance: none;
+			appearance: none;
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
-		    border-radius: 0
+			border-radius: 0
 }
 /* generaly hover settings for all buttons/submits */
 .envi input[type=button]:hover,
@@ -2076,7 +2085,7 @@ td {
 	border: 1px solid #858585
 }
 .envi input[type="text"]:hover {
-    border: 1px solid #000;
+	border: 1px solid #000;
 }
 .envi .readers input[type="text"],
 .envi .readers select,
@@ -2253,7 +2262,7 @@ td {
 	text-decoration: none;
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
-		    border-radius: 4px
+			border-radius: 4px
 }
 .envi .boot_tooltip-arrow {
 	position: absolute;
@@ -2323,7 +2332,7 @@ td {
 }
 .envi table.readers tfoot td,
 .envi table.users tfoot td {
-    border-right: none;
+	border-right: none;
 }
 /* Setting for pagination */
 .envi div.pager {
@@ -2829,10 +2838,10 @@ td {
 			color: #FFF;
 			-webkit-transition: all 0.5s linear;
 			   -moz-transition: all 0.5s linear;
-				    transition: all 0.5s linear;
+					transition: all 0.5s linear;
 			-webkit-box-sizing: border-box;
 			   -moz-box-sizing: border-box;
-				    box-sizing: border-box;
+					box-sizing: border-box;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
@@ -2891,7 +2900,7 @@ td {
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
 			   -moz-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
-				    box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
+					box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32)
 		}
 		#mainmenu > li > a {
 			width: 100%;
@@ -2900,7 +2909,7 @@ td {
 			padding: 10px;
 			-webkit-box-sizing:border-box;
 			   -moz-box-sizing:border-box; 
-				    box-sizing:border-box
+					box-sizing:border-box
 		}
 		span.span_notifier {
 			margin-left: 5px;
@@ -2930,7 +2939,7 @@ td {
 			color: #FFF;
 			-webkit-transition: all 0.5s linear;
 			   -moz-transition: all 0.5s linear;
-				    transition: all 0.5s linear;
+					transition: all 0.5s linear;
 			-webkit-box-sizing: border-box;
 			   -moz-box-sizing: border-box;
 					box-sizing: border-box;
@@ -2977,7 +2986,7 @@ td {
 			padding: 10px;
 			-webkit-box-sizing:border-box;
 			   -moz-box-sizing:border-box; 
-				    box-sizing:border-box
+					box-sizing:border-box
 		}
 		#nav > li:last-child {
 			border-bottom: 2px solid black;
