@@ -251,6 +251,10 @@ li.configmenu a, li.configmenu a:hover,
 li.configmenu_selected a, li.configmenu_selected a:hover {
 	color:#050840
 }
+/* entitlements.html, readerconfig.html and user_edit.html */
+li.text_entitle {
+	font-weight:700
+}
 
 /* **************** 7. TABLE */
 table {
@@ -744,14 +748,14 @@ div.extract {
 div.extract p {
 	font-weight:700;
 	margin:10px 6px 0 6px
-} 
+}
 div.extract p.emmhead {
 	font-size:13px;
 	text-align:center
-} 
+}
 div.extract p .emminfo {
 	font-weight:normal
-} 
+}
 div.extract pre {
 	overflow:auto;
 	margin:5px 0;
@@ -763,6 +767,7 @@ div.extract pre {
 div.extract pre.script {
 	min-height: 100px;
 }
+
 /* **************** 13. IMAGE */
 /* generaly settings for images */
 img {
@@ -826,11 +831,6 @@ span.global_conf {
 	cursor:default;
 	padding:4px;
 	color:blue
-}
-/* entitlements.html, readerconfig.html and user_edit.html */
-span.text_entitle {
-	display:inline-block;
-	font-weight:700
 }
 /* cachex status */
 span.e_expired {background-color:#FFF3E7}
@@ -956,7 +956,7 @@ div.colorPicker-swatch {
 	line-height:12px
 }
 /* User-Page polling */
-#inc,#dec {
+#inc,#dec,.regexbutton {
 	padding:0 3px;
 	margin:-3px 3px;
 	border:none;
@@ -969,7 +969,7 @@ div.colorPicker-swatch {
 	width:22px;
 	height:22px
 }
-#inc:hover,#dec:hover {
+#inc:hover,#dec:hover,.regexbutton:hover {
 	background-color:red
 }
 #nav li.pollselect {
@@ -1623,6 +1623,23 @@ body.envi {
 .envi #nav li.configmenu_selected > a:active,
 .envi #nav li.configmenu > a:hover {
 	color: #D80320
+}
+
+/* Class "blanksubnav" is added by javascript in entitlements.html, readerconfig.html and user_edit.html */
+.envi #subnav.blanksubnav {
+	position: absolute;
+	border-bottom: none;
+
+	/* GRADIENT */
+	background: none;
+
+	/* BOX SHADOW */
+	-webkit-box-shadow: none; 
+	   -moz-box-shadow: none; 
+			box-shadow: none
+}
+.envi #subnav.blanksubnav .text_entitle {
+	text-transform: uppercase;
 }
 
 /* **************** 7. TABLE */

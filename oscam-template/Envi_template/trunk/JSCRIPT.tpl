@@ -1961,13 +1961,20 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 /* -------------- BASIC SETTINGS for HTML  -------------- */
 
 /* IF DOCUMENT READY */ 
-$(function(){ // Hidden Subnav only for selected pages
+$(function(){ 
+	// Hidden Subnav only for selected pages
 	if (document.URL.indexOf('logpoll.html') > -1 ||
 		document.URL.indexOf('emm.html') > -1 ||
 		document.URL.indexOf('emm_running.html') > -1 ||
 		document.URL.indexOf('services.html') > -1 ||
 		document.URL.indexOf('script.html') > -1 ) {
 			$('#subnav').css('visibility', 'hidden');
+	}
+	// AddClass for SUBNAV - remover background of Subnav
+	if (document.URL.indexOf('entitlements.html') > -1 ||
+		document.URL.indexOf('readerconfig.html') > -1 ||
+		document.URL.indexOf('user_edit.html') > -1) {
+			$('#subnav').attr("class", "blanksubnav");;
 	}
 
 // Add checkbox and label for responsive design
