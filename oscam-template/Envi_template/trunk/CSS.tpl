@@ -1691,7 +1691,11 @@ body.envi {
 	border-spacing: 0px;
 	border-bottom: 1px solid #222
 }
-
+/* ------- CONFIG ------- */
+/* userconfig.html */
+.envi table.config {
+	border-spacing: 0
+}
 /* **************** 8. TABLE TR */
 /* rowcolors for users rows in unserconfig.html depend on status */
 .envi tr.online td.usercol6 {
@@ -1880,8 +1884,14 @@ td {
 .envi table.configuser td {
 	border-bottom: 1px dotted #999
 }
-.envi table.subservicetable td {
+.envi table.subservicetable td,
+.envi table.subservicetable tbody tr:nth-last-child(3) td {
 	border-bottom: none
+}
+.config tbody tr:nth-last-child(3) td,
+.configreader tbody tr:nth-last-child(3) td,
+.configuser tbody tr:nth-last-child(3) td {
+   border-bottom: 1px solid black
 }
 /* ------- SERVICES ------- */
 .envi #servicesedit td,
