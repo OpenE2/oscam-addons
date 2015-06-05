@@ -313,6 +313,8 @@ table.statsbalance td:last-child img.icon {
 	float:right;
 	margin-left:10px
 }
+/* scanusb.html */
+table.scanusb {}
 
 /* ------- USERS ------- */
 /* userconfig.html */
@@ -402,6 +404,8 @@ tr.s td, tr.l td,
 tr.n td,tr.h td {background-color:#E1E1EF}
 tr.r td {background-color:#FFF3E7}
 tr.p td, tr.scanusbsubhead td {background-color:#FDFBE1}
+/* scanusb.html */
+tr.scanusbsubhead {}
 
 /* **************** 9. TABLE TH */
 th {
