@@ -336,7 +336,7 @@ $(function () {
 				});
 			});
 		});
-	}
+	};
 
 	$("#searchTerm").click(function () {
 		cdpause();
