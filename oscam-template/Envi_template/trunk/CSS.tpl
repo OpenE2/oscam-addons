@@ -1919,9 +1919,9 @@ td {
 .envi table.subservicetable tbody tr:nth-last-child(3) td {
 	border-bottom: none
 }
-.config tbody tr:nth-last-child(3) td,
-.configreader tbody tr:nth-last-child(3) td,
-.configuser tbody tr:nth-last-child(3) td {
+.envi .config tbody tr:nth-last-child(3) td,
+.envi .configreader tbody tr:nth-last-child(3) td,
+.envi .configuser tbody tr:nth-last-child(3) td {
    border-bottom: 1px solid black
 }
 /* ------- SERVICES ------- */
@@ -1931,7 +1931,7 @@ td {
 .envi table.configservices td {
 	border-bottom: 1px dotted #999
 }
-.configservices tbody tr:nth-last-child(3) td {
+.envi .configservices tbody tr:nth-last-child(3) td {
     border-bottom: 1px solid #000;
 }
 .envi #servicesedit td:last-child {
@@ -2215,7 +2215,7 @@ div.groups {
 .envi #inc, .envi #dec {
 	background-color: #BD0000
 }
-.envi #inc:hover, .envi #dec:hover {
+.envi #inc:hover, .envi #dec:hover, .envi .regexbutton:hover {
 	background-color: #000;
 	transition: all 0.5s ease 0s
 }
@@ -2473,11 +2473,13 @@ div.groups {
 	background-color: #16B6C6
 }
 .colchange_1 #inc,
-.colchange_1 #dec {
+.colchange_1 #dec,
+.colchange_1 .regexbutton {
 	background-color: #16B6C6
 }
 .colchange_1 #inc:hover,
-.colchange_1 #dec:hover {
+.colchange_1 #dec:hover,
+.colchange_1 .regexbutton:hover {
 	background-color: #000;
 	transition:all 0.5s ease 0s
 }
@@ -2599,190 +2601,8 @@ div.groups {
 	color: #000;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
-/* Settings for Template color style "colchange_2"
- * Basic colors: #FF9C00
- * Other colors: #FF8A00 , #F5E9D8
- */
-/* Color for main menu */
-.colchange_2 li.menu_selected a {
-	color: #FF9C00;
-	border-bottom: 2px solid #FF9C00
-}
-.colchange_2 li.menu:hover a {
-	color: #FF9C00;
-	border-bottom: 2px solid #FF9C00
-}
-.colchange_2 #nav li.configmenu_selected > a:link,
-.colchange_2 #nav li.configmenu_selected > a:visited,
-.colchange_2 #nav li.configmenu_selected > a:active,
-.colchange_2 #nav li.configmenu > a:hover {
-	color: #FF9C00
-}
-/* Footer */
-.colchange_2 div.footer li.styleauthor b {
-	color: #FF9C00
-}
-/* Services */
-.colchange_2 div.sidlistclose {
-	background-color: #FF9C00
-}
-.colchange_2 div.sidlistclose:hover {
-	background-color: #000;
-	color: #FF9C00;
-	transition: all 0.5s ease 0s
-}
-.colchange_2 div.sidlistclose a {
-	color: #FFF
-}
-.colchange_2 div.sidlistclose:hover a{
-	color: #FF9C00
-}
-/* Span Notifier */
-.colchange_2 span.span_notifier {
-	background-color: #FF9C00
-}
-/* Generaly settings for all buttons/submits */
-.colchange_2 input[type=button],
-.colchange_2 input[type=submit] {
-	background-color: #FF9C00
-}
-/* Generaly hover settings for all buttons/submits */
-.colchange_2 input[type=button]:hover,
-.colchange_2 input[type=submit]:hover {
-	background-color: #000;
-	color: #FF9C00;
-	transition: all 0.5s ease 0s
-}
-/* User-Page polling */
-.colchange_2 #picolor {
-	background-color: #FF9C00
-}
-.colchange_2 #inc,
-.colchange_2 #dec {
-	background-color: #FF9C00
-}
-.colchange_2 #inc:hover,
-.colchange_2 #dec:hover {
-	background-color: #000;
-	transition:all 0.5s ease 0s
-}
-/* StyleSwitcher */
-.colchange_2 div.form_holder a.active {
-	color: #FF9C00
-}
-.colchange_2 div.form_holder a:hover {
-	color: #FF9C00
-}
-.colchange_2 ul.backchange li.active,
-.colchange_2 ul.patchange li.active,
-.colchange_2 ul.colchange li.active {
-	border-color: #FF9C00
-}
-.colchange_2 ul.backchange li:hover,
-.colchange_2 ul.patchange li:hover,
-.colchange_2 ul.colchange li:hover {
-	border-color: #FF9C00
-}
-.colchange_2 .form_holder #reset{
-	background-color:#FF9C00
-}
-.colchange_2 .form_holder #reset:hover {
-	background-color: #000;
-	color: #FF9C00;
-	transition: all 0.5s ease 0s
-}
-/* Color for links of icons */
-.colchange_2 a img.icon {
-	background-color: #FF9C00
-}
-.colchange_2 a:hover img.icon {
-	background-color: #FFB53D
-}
-/* Color for links */
-.colchange_2 a:link,
-.colchange_2 a:visited,
-.colchange_2 a:active {
-	color: #FF8A00
-}
-.colchange_2 a:hover {
-	color: #000
-}
-/* Colors for tooltip */
-.colchange_2 a.tooltip1 {
-	color: #F00;
-}
-/* Colors for debug */
-.colchange_2 a.debugl:hover,
-.colchange_2 a.debugs:hover {
-	background-color: #000;
-	color: #FF9C00;
-}
-.colchange_2 a.debugls:link,
-.colchange_2 a.debugls:visited {
-	background-color: #000;
-	color: #FF9C00;
-}
-/* Color links in config tables */
-.colchange_2 .config a,
-.colchange_2 .configreader a,
-.colchange_2 .configuser a,
-.colchange_2 .configservices a {
-	color: #FF8A00
-}
-.colchange_2 .config a:hover,
-.colchange_2 .configreader a:hover,
-.colchange_2 .configuser a:hover,
-.colchange_2 .configservices a:hover {
-	color: #000
-}
-/* Links color for table.subservicetable */
-.colchange_2 .subservicetable a {
-	color: #FF9C00
-}
-/* Links color for table.subservicetable */
-.colchange_2 .subservicetable a:hover {
-	color: #FFF
-}
-/* Color for text */
-.colchange_2 h4 {
-	color: #FF9C00
-}
-/* Go to top link */
-.colchange_2 .top_link a:hover {
-	color: #FF9C00
-}
-/* Color for Table */
-.colchange_2 #dataTable tr:hover td,
-.colchange_2 table.statsbalance tr:hover td,
-.colchange_2 #servicesedit tr:hover td,
-.colchange_2 table.failban tr:hover td,
-.colchange_2 table.stats tr:hover td,
-.colchange_2 table.status tr.a:hover td,
-.colchange_2 table.status tr.c:hover td,
-.colchange_2 table.status tr.s:hover td,
-.colchange_2 table.status tr.l:hover td,
-.colchange_2 table.status tr.n:hover td,
-.colchange_2 table.status tr.m:hover td,
-.colchange_2 table.status tr.h:hover td,
-.colchange_2 table.status tr.r:hover td,
-.colchange_2 table.status tr.p:hover td  {
-	background-color: #F5E9D8 !important
-}
-.colchange_2 table.readers tr:hover td.td-sorting,
-.colchange_2 table.users tr:hover td.td-sorting,
-.colchange_2 table.statsbalance tr:hover td.td-sorting {
-	background-color: #F5E9D8 !important
-}
-.colchange_2 #dataTable tfoot tr:hover td,
-.colchange_2 table.statsbalance tfoot tr:hover td {
-	background-color: transparent !important;
-}
-/* Color for pagination */
-.colchange_2 div.pager span.active,
-.colchange_2 div.pager span.clickable:hover {
-	background: #FF9C00;
-	color: #000;
-}
+/* Settings for Template color style "colchange_2" */
+
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
 /* Settings for Template color style "colchange_3" */
 

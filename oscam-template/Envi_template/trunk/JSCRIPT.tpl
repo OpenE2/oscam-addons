@@ -2483,6 +2483,9 @@ $(function() {
 		$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
 		/* Section label in Style Switcher */
 		$('.envi a.sectioninfo').boot_tooltip({html: true,container: 'body',animation: false, placement: 'bottom'})
+		/* Regex in logpoll.html */
+		$('.envi #add1regex').boot_tooltip({animation: false, placement: 'bottom'})
+		$('.envi #del1regex').boot_tooltip({animation: false, placement: 'bottom'})
 	})
 }(window.jQuery)
 /* -------------------------------------- SEARCHTERM and PAGINATION in tables readers, users, cacheex -------------------------------- */
