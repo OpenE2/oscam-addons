@@ -2351,6 +2351,36 @@ $(function(){
 	});
 });
 
+/* CHECKBOX - BORDER RADIUS */
+$(function(){
+	$("input.border_radius").each(function() {
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var radius = $.cookie($(this).attr('name'));
+			if (radius && radius == "true") {
+				$(this).prop('checked', radius);
+				$('body').addClass('border_radius');
+			}
+		} else {
+			$('body').removeClass('border_radius');
+		}
+	});
+
+	// Function if checkbox is changed
+	$("input.border_radius").change(function() {
+		if ($("body").hasClass('envi')) {
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="border_radius"]').is(':checked') ) {
+				$('body').addClass('border_radius');
+			} else {
+				$('body').removeClass('border_radius');
+			}
+		};
+	});
+});
+
 /* FONT FAMILY and SIZE */
 $(function() {
 	// Create <style> in <head>
@@ -2473,6 +2503,7 @@ $(function() {
 		$('.envi td.readercol16 a').boot_tooltip({animation: false, placement: 'left'})
 		$('.envi td.readercol17 a').boot_tooltip({animation: false, placement: 'left'})
 		$('.envi .statsbalance a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi .statusecminfo a').boot_tooltip({animation: false, placement: 'right'})
 		/* Tables in Status */
 		$('.envi table.status th').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		$('.envi td.statuscol0 a').boot_tooltip({animation: false, placement: 'right'})
@@ -2486,6 +2517,10 @@ $(function() {
 		/* Regex in logpoll.html */
 		$('.envi #add1regex').boot_tooltip({animation: false, placement: 'bottom'})
 		$('.envi #del1regex').boot_tooltip({animation: false, placement: 'bottom'})
+		/* Services */
+		$('.envi #servicesedit a').boot_tooltip({animation: false, placement: 'left'})
+		/* Failban */
+		$('.envi .failban a').boot_tooltip({animation: false, placement: 'left'})
 	})
 }(window.jQuery)
 /* -------------------------------------- SEARCHTERM and PAGINATION in tables readers, users, cacheex -------------------------------- */

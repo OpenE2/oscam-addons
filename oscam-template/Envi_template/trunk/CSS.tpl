@@ -1237,7 +1237,10 @@ div.envi_info {
 .demo_changer.active .form_holder {
 	display: table-cell
 }
-.otherchange tr:nth-child(4n) td,
+.otherchange tr:nth-last-child(3) td,
+.otherchange tr:nth-last-child(2) td {
+	padding-left: 27px
+}
 .otherchange tr:last-child td {
 	text-align: center
 }
@@ -1922,7 +1925,10 @@ td {
 .envi .config tbody tr:nth-last-child(3) td,
 .envi .configreader tbody tr:nth-last-child(3) td,
 .envi .configuser tbody tr:nth-last-child(3) td {
-   border-bottom: 1px solid black
+	border-bottom: 1px solid black
+}
+.envi .configreader tbody td.invisible tr td {
+	border-bottom: none
 }
 /* ------- SERVICES ------- */
 .envi #servicesedit td {
@@ -2178,6 +2184,14 @@ div.groups {
 .envi input[type=checkbox]:checked:hover + label {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAMFBMVEX///8mISEAAADZ2dkVExOxsbHV1dWAgID7+/vIyMimpqaZmZlQUFA8PDwhISEJCQkCB0hTAAAASElEQVQI12NwFAQDBwbRZGMQEGAQa2AAAQEGYQZkhh6UwaIEZVyCMMK5lHRADH6lSUoBIAaLkpIqRNcmpQIIg1UJbg4KA247AABGCoFFjhhMAAAAAElFTkSuQmCC);
 }
+/* Settings for border_radius */
+.border_radius input[type="button"],
+.border_radius input[type="submit"] {
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+			border-radius: 4px
+}
+
 /* **************** 13. IMAGE */
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
@@ -2287,9 +2301,6 @@ div.groups {
 	padding: 3px 8px;
 	text-align: center;
 	text-decoration: none;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-			border-radius: 4px
 }
 .envi .boot_tooltip-arrow {
 	position: absolute;

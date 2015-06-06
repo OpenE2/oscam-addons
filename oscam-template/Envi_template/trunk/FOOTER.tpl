@@ -162,6 +162,12 @@
 						</TR>
 						<TR>
 							<TD COLSPAN="2">
+								<input id="border_radius" type="checkbox" class="border_radius" name="border_radius">
+								<label for="border_radius">Border radius</label>
+							</TD>
+						</TR>
+						<TR>
+							<TD COLSPAN="2">
 								<input id="reset" value="Reset all value" type="reset">
 							</TD>
 						</TR>
@@ -175,7 +181,7 @@
 							<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 							<H2>Info about Envi Template</H2>
 							<HR>
-							<P><B>Envi revision:</B> 1438</P>
+							<P><B>Envi revision:</B> 1439</P>
 							<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 							<TABLE>
 								<TR>
