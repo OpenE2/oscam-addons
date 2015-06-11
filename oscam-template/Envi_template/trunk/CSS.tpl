@@ -8,12 +8,14 @@
 =====================================
 	###### ORIGINAL WEBIF from STREAMBOARD
 
-		Same css style as is in Oscam
+		Same css style as in original css.style of Oscam
 
 	###### ENVI TEMPLATE WEBIF for STREAMBOARD
 		== CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE
+			# FOOTER
+		== STYLESWITCHER
 
-		== ENVI TEMPLATE
+		== ENVI TEMPLATE - BASIC STYLE 
 			# 2. BASIC DIVISION PAGES
 			# 3. BASIC SETTINGS
 			# 5. MAIN MENU
@@ -31,6 +33,8 @@
 			# 19. FILE MENU
 			# 21. TOOLTIP
 			# 22. OTHER SETTINGS
+
+		== ENVI TEMPLATE - PLASTIC STYLE
 
 		== ENVI TEMPLATE - STYLE 1
 		== ENVI TEMPLATE - STYLE 2
@@ -103,7 +107,7 @@ h4 {
 p.text-large-red {
 	font-weight:700;
 	font-size:large;
-	color:red
+	color:#F00
 }
 /* file.html, script.html */
 #filename,#filesubmit {
@@ -170,7 +174,7 @@ a.tooltip1 span {
 	white-space:nowrap
 }
 a.tooltip1 {
-	color:red
+	color:#F00
 }
 a:hover span {
 	display:block;
@@ -188,7 +192,7 @@ a img.icon {
 	background-color:#A00
 }
 a:hover img.icon {
-	background-color:red
+	background-color:#F00
 }
 span a {
 	text-align:center
@@ -527,7 +531,7 @@ div.sidlist {
 }
 div.sidlistclose {
 	float:right;
-	background-color:red;
+	background-color:#F00;
 	color:#FFF
 }
 /* message.html */
@@ -816,14 +820,14 @@ span.span_notifier {
 	margin-left:2px;
 	padding:1px 3px;
 	color:#FFF;
-	background-color:red
+	background-color:#F00
 }
 /* module-webif.c value for STATUS item ( more info in Changeset 6668 by alno )
  * Class for formating values in statusview column "Idle"
  * In new WebIf column Idle is not used. Info about Idle is in title */
 span.idlesec_normal, span.idlesec_alert {
 	font-size:9px;
-	color:red
+	color:#F00
 }
 /* readerconfig_cccambit.html, user_edit_anticasc.html and user_edit_cccam.html */
 span.global_conf {
@@ -842,7 +846,7 @@ span.e_expired {background-color:#FFF3E7}
 svg.graph {background-color:#F0F0F0;font-family:Arial;font-size:9px}
 rect.graph_bg {fill:white}
 rect.graph_button {fill:#A9D0F5}
-text.graph_error {text-anchor:middle;fill:red}
+text.graph_error {text-anchor:middle;fill:#F00}
 text.graph_top_txt {text-anchor:end}
 text.graph_grid_txt {text-anchor:end;fill:gray}
 path.graph_grid {stroke-opacity:0.5;stroke-width:0.7px;stroke:gray}
@@ -876,15 +880,15 @@ path.graph_curve {stroke-opacity:0.8;stroke-width:0.7px;fill:none}
 	padding-left:10px;
 	padding-right:8px
 }
-.sorting-asc, .sorting-desc {background-color:#aaa}
+.sorting-asc, .sorting-desc {background-color:#AAA}
 .readers .td-sorting,
 .users tr.offline .td-sorting,
 .users tr.disabled .td-sorting,
-.statsbalance .td-sorting {background-color: #d9d9d9}
-.users tr.connected .td-sorting {background-color: #eaea95}
-.users tr.online .td-sorting {background-color: #a6ea95}
-.users tr.online td.usercol6.td-sorting {background-color:#c8c8c8}
-.users tr.expired .td-sorting {background-color: #eaa69f}
+.statsbalance .td-sorting {background-color: #D9D9D9}
+.users tr.connected .td-sorting {background-color: #EAEA95}
+.users tr.online .td-sorting {background-color: #A6EA95}
+.users tr.online td.usercol6.td-sorting {background-color:#C8C8C8}
+.users tr.expired .td-sorting {background-color: #EAA69F}
 
 /* **************** 17. POLLING */
 /*  for UL in logpoll.html */
@@ -916,10 +920,10 @@ input.regexinput {
 	margin-top:10px
 }
 .colorPicker_def_color {
-	color:#ddd
+	color:#DDD
 }
 .colorPicker_def_fcolor {
-	color:#00f
+	color:#00F
 }
 div.colorPicker-picker {
 	height:16px;
@@ -927,7 +931,7 @@ div.colorPicker-picker {
 	display:inline;
 	margin:3px;
 	padding:4px 8px;
-	border:1px solid #ccc;
+	border:1px solid #CCC;
 	cursor:pointer;
 	line-height:16px;
 	font-size:0.75em;
@@ -970,7 +974,7 @@ div.colorPicker-swatch {
 	height:22px
 }
 #inc:hover,#dec:hover,.regexbutton:hover {
-	background-color:red
+	background-color:#F00
 }
 #nav li.pollselect {
 	display:inline;
@@ -1081,7 +1085,7 @@ div.bar {
 
 /* ################################# ENVI TEMPLATE WEBIF for STREAMBOARD ################################# */
 /* ============================= CORRECTION ORIGINAL WEBIF FOR ENVI TEMPLATE ============================= */
-
+/* **************** FOOTER */
 /* footer.html */
 div.footer ul {
 	margin: 5px
@@ -1100,27 +1104,25 @@ ul.textfooter,  ul.textfooter ul {
 ul.textfooter li {
 	display: inline
 }
+
+/* ============================================= STYLESWITCHER =========================================== */
 div.styleswitcher {
-	position: absolute;
-	bottom: 34px;
-	right: 52px;
-	color: #656565
+	position: static;
+	color: #212121
+}
+div.styleswitcher a.active {
+	color: #FF9E5F
 }
 div.footer ul.addClass {
-	margin: 3px auto;
+	margin: 12px auto;
 	padding: 7px 0px
 }
 div.footer ul.addClass li {
 	display: inline;
-	padding: 9px 5px
-}
-
-/* Go to top link */
-.envi .top_link a {
-	color: #FFF
-}
-.envi .top_link a:hover {
-	color: #BD0000
+	padding: 9px 5px;
+	border: 1px solid #656565;
+	border-radius: 4px;
+	margin: 10px;
 }
 
 /* Popup info about Envi Template */
@@ -1140,8 +1142,8 @@ div.envi_info {
 	z-index: 99999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
-	   -moz-transition: opacity 400ms ease-in;
-			transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+			  transition: opacity 400ms ease-in;
 	pointer-events: none
 }
 .modalDialog:target {
@@ -1181,11 +1183,11 @@ div.envi_info {
 	text-decoration: none;
 	font-weight: 800;
 	-webkit-border-radius: 14px;
-	   -moz-border-radius: 14px;
-			border-radius: 14px;
+		-moz-border-radius: 14px;
+			  border-radius: 14px;
 	-webkit-box-shadow: 1px 1px 3px #000;
-	   -moz-box-shadow: 1px 1px 3px #000;
-			box-shadow: 1px 1px 3px #000;
+		-moz-box-shadow: 1px 1px 3px #000;
+			  box-shadow: 1px 1px 3px #000;
 	border: 2px solid #FFF
 }
 .close:hover {
@@ -1197,8 +1199,8 @@ div.envi_info {
 .demo_changer {
 	z-index: 900;
 	position: absolute;
-	right: 0;
-	bottom: 10px;
+	left: 0;
+	bottom: 30px;
 	font-family: Arial;
 	display: table
 }
@@ -1207,45 +1209,75 @@ div.envi_info {
 	clear: both;
 	margin: 10px !important
 }
-
-.demo_changer .demo_icon{
+.demo_changer .demo_icon {
 	background-color: rgba(255, 255, 255, 0.8);
 	background-repeat:no-repeat;
 	background-position: center;
-	-webkit-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
-	   -moz-box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
-			box-shadow: -2px -2px 6px -2px rgba(0,0,0,0.3);
 	cursor: pointer;
 	height: 40px;
 	width: 40px;
-	-webkit-border-radius: 2px 0 0 2px;
-	   -moz-border-radius: 2px 0 0 2px;
-			border-radius: 2px 0 0 2px;
+	-webkit-border-radius: 0 2px 2px 0;
+	   -moz-border-radius: 0 2px 2px 0;
+			  border-radius: 0 2px 2px 0;
 	bottom: 0
 }
+.demo_changer.active .demo_icon {
+	position: absolute;
+	display: table-cell;
+	bottom: 0;
+	right: -40px
+	
+}
 .demo_changer .form_holder {
-	background: #FFF;
 	float: left;
 	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 180px;
+			  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	width: 625px;
 	padding: 0 0 10px 0;
 	border: 1px solid #DDD;
-	display: none
+	display: none;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	background: #FFF;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFF 0%, #EAEAEA 100%);
+}
+.demo_changer .form_holder .form_holder_left  {
+	float: left;
+	width: 195px;
+	margin: 0px 5px 0px 10px;
+}
+.demo_changer .form_holder .form_holder_center  {
+	float: left;
+	width: 195px;
+	margin: 0px 5px 0px 5px;
+}
+.demo_changer .form_holder .form_holder_right  {
+	float: left;
+	width: 195px;
+	margin: 0px 10px 0px 5px;
+}
+.demo_changer .form_holder_one  {
+	float: left;
+	width: 100%;
 }
 .demo_changer.active .form_holder {
 	display: table-cell
 }
-.otherchange tr:nth-last-child(3) td,
-.otherchange tr:nth-last-child(2) td {
-	padding-left: 27px
-}
-.otherchange tr:last-child td {
-	text-align: center
-}
 .demo_changer tr:nth-child(4n) label {
 	cursor: pointer
+}
+.fontchange tr td,
+.otherchange tr td {
+	background: transparent
 }
 .form_holder select {
 	font: 13px Arial,sans-serif;
@@ -1258,24 +1290,6 @@ div.envi_info {
 	background: #FFF;
 	color: #666;
 }
-div.styleswitcher {
-	position: static;
-	color: #212121
-}
-div.styleswitcher a.active {
-	color: #FF9E5F
-}
-.rotatelogo div.logo svg.OSCam_logo {
-	height: 35px !important;
-	width: 35px !important;
-	background-color: #000;
-	padding: 3px;
-	
-	/* ROTATE IMAGE */
-	-webkit-transform: rotate(345deg);
-	   -moz-transform: rotate(345deg);
-			transform: rotate(345deg);
-}
 .form_holder #reset {
 	font-weight: 700;
 	font-size: 11px;
@@ -1283,7 +1297,7 @@ div.styleswitcher a.active {
 	transition: all 0.5s ease 0s;
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
-			border-radius: 0;
+			  border-radius: 0;
 	color: #FFF;
 	background: #BD0000;
 	padding: 1px 6px;
@@ -1299,27 +1313,46 @@ div.styleswitcher a.active {
 div.envi_info {
 	position: static
 }
+.styleswitcher-label {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 10px;
+	margin: 0px 0px 5px;
+	color: #333;
+	border-bottom: 1px solid #DDD;
+	text-align: center
+}
 .section-label {
 	font-weight: bold;
-	padding: 5px 10px;
+	padding: 6px 10px;
 	margin: 0px 0px 5px;
-	background: none repeat scroll 0% 0% #EEE;
+	background: none repeat scroll 0% 0% #E5E5E5;
 	color: #333;
 	text-shadow: 1px 1px 0px #FFF;
-	border-bottom: 1px solid #DDD;
+	border-bottom: 1px solid #B8B8B8;
 	text-align: left
 }
 /* Info icons in StyleSwitcher */
 .sectioninfo {
 	cursor: pointer;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAPFBMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMxsLSlzAAAAE3RSTlMA0MRrBvr0G7vqcFirqJ97YD8Vn8W1wQAAAFpJREFUCNcdjlkSAEEEQ2Npvc3u/ncd5CN4VQQAFW6NRRHq5O5GTj149v5gOinEU3yFCTh8bh1J0MKPVazVYF+vUujEyoHrwMadTOq0vLlPWqGpDK13htkQAD++iQXOARfLfgAAAABJRU5ErkJggg==");
-	background-repeat: no-repeat;
-	background-position: center 2px;
-	width: 14px;
-	height: 14px;
+	width: 16px;
+	height: 16px;
 	display: inline-block;
 	right: 0px;
 	float: right;
+	background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+}
+.sectioninfo:hover {
+	background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.3);
+}
+.sectioninfo_icon {
+	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8ZyBpZD0iaW5mbyI+DQoJCTxnPg0KCQkJPHBhdGggc3R5bGU9ImZpbGw6IzAzMDEwNDsiIGQ9Ik0xMCwxNmMxLjEwNSwwLDIsMC44OTUsMiwydjhjMCwxLjEwNS0wLjg5NSwyLTIsMkg4djRoMTZ2LTRoLTEuOTkyYy0xLjEwMiwwLTItMC44OTUtMi0yTDIwLDEySDgNCgkJCQl2NEgxMHoiLz4NCgkJCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzAzMDEwNDsiIGN4PSIxNiIgY3k9IjQiIHI9IjQiLz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+	background-repeat: no-repeat;
+	background-position: 4px 2px;
+	background-size: 8px 10px;
+	width: 16px;
+	height: 16px;
 }
 .sectioninfo:hover .sectioninfo_detail {
 	text-shadow: none;
@@ -1332,8 +1365,8 @@ div.envi_info {
 	color: #FFF;
 	width: 200px;
 	padding: 13px;
-	top: -8px;
-	right: 235px;
+	top: -24px;
+	left: 29px;
 	opacity: 1;
 	transition: opacity 0.5s ease 0s;
 }
@@ -1346,8 +1379,9 @@ div.footer .sectioninfo_detail li {
 	list-style-type: initial;
 	margin-left: 10px;
 }
+
 /* Css triangle trick for tooltip for help in StyleSwitcher*/
-.sectioninfo:hover .sectioninfo_detail:before{
+.sectioninfo:hover .sectioninfo_detail:before {
 	content:'';
 	display:block;
 	width:0;
@@ -1355,10 +1389,11 @@ div.footer .sectioninfo_detail li {
 	position:absolute;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;
-	border-left:8px solid #515151;
-	right:-8px;
+	border-right: 8px solid rgb(81, 81, 81);
+	left: -8px;
 	top:7px;
 }
+
 /* List of colors, background, patterns */		
 ul.backchange,
 ul.patchange,
@@ -1367,16 +1402,16 @@ ul.colchange {
 	line-height: 30px;
 	padding: 0 10px
 }
-ul.backchange,
 ul.colchange {
 	height: 30px
 }
+ul.backchange,
 ul.patchange {
 	height: 55px
 }
 ul.backchange li,
 ul.patchange li,
-ul.colchange li  {
+ul.colchange li {
 	list-style: none;
 	cursor: pointer;
 	border: 3px solid #E1E1E1
@@ -1404,66 +1439,84 @@ ul.colchange li.active {
 }
 
 /* Advanced color settings template */
-	.background_1 {
-		background: #FFF !important
-	}
-	.background_2 {
-		background: #f2f2f2 !important
-	}
-	.background_3 {
-		background: #a6a6a6 !important
-	}
-	.background_4 {
-		background: #333 !important
-	}
-	.background_5 {
-		background: #1a1a1a !important
-	}
-	.patchange_1 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important
-	}
-	.patchange_2 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important
-	}
-	.patchange_3 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important
-	}
-	.patchange_4 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important
-	}
-	.patchange_5 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important
-	}
-	.patchange_6 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important
-	}
-	.patchange_7 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important
-	}
-	.patchange_8 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important
-	}
-	.patchange_9 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important
-	}
-	.patchange_10 {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfAQMAAADKou9EAAAABlBMVEUzMzMjIyMFU6d/AAAAK0lEQVQI12PgYWY4ACGEWBoVGBQ5nAQYHCaocDA0JEiwgAkwFywBVkI3HQB3FBimo2cS+gAAAABJRU5ErkJggg==) !important
-	}
-	li.colchange_1 {
-		background: #16B6C6 !important
-	}
-	li.colchange_2 {
-		background: #ff9c00 !important
-	}
-	li.colchange_3 {
-		background: #ffe400 !important
-	}
-	li.colchange_4 {
-		background: #7cb600 !important
-	}
-	li.colchange_5 {
-		background: #C71C77 !important
-	}
+
+[data-style="colchange_0"] {
+	background: #BD0000 !important
+}
+[data-style="colchange_1"],
+li.colchange_1 {
+	background: #16B6C6 !important
+}
+[data-style="colchange_2"],
+li.colchange_2 {
+	background: #FF9C00 !important
+}
+[data-style="colchange_3"],
+li.colchange_3 {
+	background: #FFE400 !important
+}
+[data-style="colchange_4"],
+li.colchange_4 {
+	background: #7CB600 !important
+}
+
+[data-style="background_1"],
+.background_1{
+	background: #FFF !important
+}
+[data-style="background_2"],
+.background_2 {
+	background: #F2F2F2 !important
+}
+[data-style="background_3"],
+.background_3 {
+	background: #E5E5E5 !important
+}
+[data-style="background_4"],
+.background_4 {
+	background: #CCC !important
+}
+[data-style="background_5"],
+.background_5 {
+	background: #B3B3B3 !important
+}
+
+[data-style="patchange_1"],
+.patchange_1 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAGovxNEIAAAASSURBVAjXY3BgaGDgYBBgUAAABkIA+ddj1LAAAAAASUVORK5CYII=) !important
+}
+[data-style="patchange_2"],
+.patchange_2 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF5JREFUeNpcTkEOwCAIA+IPOOz/z/OwH5ggXdB0cGml0lYjQjCqKsk9cSSuXL3Ym9QcMeks9O+wHK5Ijg+clGyntMEno8wuInYZLjmzFwaRykWmn8J4c8l/MSq8BRgAk3tHpOGq6zwAAAAASUVORK5CYII=) !important
+}
+[data-style="patchange_3"],
+.patchange_3 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAITr63WYAAAAMSURBVAjXY2hgQAEAB5AAgRJ4xJ4AAAAASUVORK5CYII=) !important
+}
+[data-style="patchange_4"],
+.patchange_4 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAJ0lEQVQ4y2NkYGCwYKAysKCmOiZqu27UwFEDyQCMozll1MBRA4kAAE1sAXOMGaL3AAAAAElFTkSuQmCC) !important
+}
+[data-style="patchange_5"],
+.patchange_5 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAM0lEQVQ4y2NkYGCwYKAiYIQaeJMItepAfGLUwFEDh5KBVM8pJ4hQa0GKC0cNHDVwIA0EAI4qJIUBiV6BAAAAAElFTkSuQmCC) !important
+}
+[data-style="patchange_6"],
+.patchange_6 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAMAgMAAAA8OSS9AAAADFBMVEU+Pj40NDQ5OTk6OjoinxExAAAAHElEQVQI12PgCgChD2C0lAGEWBeAUAAYRTEAEQCcqghdECfipwAAAABJRU5ErkJggg==) !important
+}
+[data-style="patchange_7"],
+.patchange_7 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAD1BMVEUFBQUTExMNDQ0LCwsPDw+4/rCjAAAAXElEQVQI1x2M0QnFMAzERNwBHk4HiOENcKYLpND9Z6rrn+MQQmhMQvaDW8MVi+GkzAusw2vAiWUnajlbzgLKlkM1hTkVankXENcxVXdDfKFnM6al6nbf/l+5Q/AC990LIvW5VSwAAAAASUVORK5CYII=) !important
+}
+[data-style="patchange_8"],
+.patchange_8 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAABlBMVEUzMzMAAAAjllnVAAAAEklEQVQI12NYtWrVCgYQGEwsAAhGJ7sv4oz0AAAAAElFTkSuQmCC) !important
+}
+[data-style="patchange_9"],
+.patchange_9 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUoKCgzMzM4ODj/n5c0AAACQ0lEQVRIx4zRu23DQBAGYRY5AQtgsAVdsAVsMGUa97BJ0aKtAQMJH+7AH9wASQ0FZKZOUb1Jdgm03aVtzylnaqgEcJca4hvJbvPMc+t6qFyrVqdo5F3OM+lFnjPTXuJ1VrFZjo5X2dkirUr1KpX+vedMq4rVi+yV6VuJqooP9hBZIj+tAbFhl/2UPKXK2wtS4Md7FIhx9ztJf0tOiX/2KGGhgcyK0NgstKESS8Y/N8WQ60eVXevvPUIrDoNrXQqUw/wlzkdf5TkEM5VKIjEPRdgosMf3c9SShBpSBx6kOuU5AoRUIZORwpB1IRhTIro0EIwmLMD6Z4/IyBJkLRjSppQBQSvRGLJPyf5DMqc8J/X9iVGFCFS7DJO2xESziwQQFOoBtc4899VYHRxJCMNAACRIPRyAHxOQHwpgHhPmnSUta9i9MxQfqqFUVkkDzfLwMUSufIoUM+uBcYqU/hLEPdzce4h2c52trjV452+fQjMhhadoSrt+w5TNvK1ZoGqR3QVN+C6Uc8om39ShdR1qLqaQJa+0HiUx5dFGBsh2eeAygNfoFUQdlLnGr/hJTdMOKU9uOmVo2pN8y4B5r/5F3AR9lR76JA94DY9aHz8M+hSn6TDdBIINGLfnUb0umumSyp5tidGSVmlVPITbuQYINJGi5ZVpdkiMpovSKUhx7x6CVcY/dbK9btKtGVNGCD8EiuUK0MO8bt0ASPCKBWko6yCrc05wipcMw1JDDombOrX25Lp9XnmdrV/k/C94TPn9mz+vH1BbRybaAeEvAAAAAElFTkSuQmCC) !important
+}
 
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
 
@@ -1509,9 +1562,9 @@ body.envi {
 	background-image: linear-gradient(to bottom, #212121 0%, #000000 100%);
 
 	/* BOX SHADOW */
-	-webkit-box-shadow: 0px 1px 4px #5e5e5e;
-	   -moz-box-shadow: 0px 1px 4px #5e5e5e;
-			box-shadow: 0px 1px 4px #5e5e5e
+	-webkit-box-shadow: 0px 1px 4px #5E5E5E;
+	   -moz-box-shadow: 0px 1px 4px #5E5E5E;
+			  box-shadow: 0px 1px 4px #5E5E5E
 }
 .envi #mainmenu {
 	height: 27px;
@@ -1543,15 +1596,12 @@ body.envi {
 	border-right: none
 }
 .envi li.menu a,.envi li.menu a:hover,
-.envi li.menu_selected a,.envi li.menu_selected a:hover {
-
-}
+.envi li.menu_selected a,.envi li.menu_selected a:hover {}
 
 .envi li.menu:hover,.envi li.menu_selected, 
 .envi li.configmenu:hover,.envi li.configmenu_selected {
 	background: none
 }
-
 .envi li.menu a {
 	color:#FFF;
 	padding: 0px 7px 9px
@@ -1575,7 +1625,7 @@ body.envi {
 	right: 0;
 	padding: 5px 0px 5px 0px;
 	z-index: 1040;
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid #E5E5E5;
 
 	/* GRADIENT */
 	/* Old browsers */
@@ -1590,9 +1640,9 @@ body.envi {
 	background-image: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
 
 	/* BOX SHADOW */
-	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05); 
-	   -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05); 
-			box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,0.05)
+	-webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,0.05); 
+	   -moz-box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,0.05); 
+			  box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,0.05)
 }
 .envi #nav {
 	height: 22px;
@@ -1618,7 +1668,7 @@ body.envi {
 .envi #nav a {
 	padding: 8px 5px;
 	margin: -5px;
-	color: #2e2e2e;
+	color: #2E2E2E;
 	font-size: 12px
 }
 .envi #nav li.configmenu_selected > a:link,
@@ -1639,7 +1689,7 @@ body.envi {
 	/* BOX SHADOW */
 	-webkit-box-shadow: none; 
 	   -moz-box-shadow: none; 
-			box-shadow: none
+			  box-shadow: none
 }
 .envi #subnav.blanksubnav .text_entitle {
 	text-transform: uppercase;
@@ -1728,7 +1778,7 @@ body.envi {
 }
 /* scanusb.html */
 tr.scanusbsubhead td {
-    background-color: #EBEBEB;
+	background-color: #EBEBEB;
 }
 
 /* **************** 9. TABLE TH */
@@ -1858,12 +1908,12 @@ td {
 .envi table.readers tr:hover td,
 .envi table.users tr:hover td,
 .envi table.statsbalance tr:hover td {
-	background-color: #fcd7d7 !important
+	background-color: #FCD7D7 !important
 }
 .envi table.readers tr:hover td.td-sorting,
 .envi table.users tr:hover td.td-sorting,
 .envi table.statsbalance tr:hover td.td-sorting {
-	background-color: #f2cece !important
+	background-color: #F2CECE !important
 }
 .envi .readers tr:nth-child(odd) td,
 .envi .statsbalance tr:nth-child(odd) td {
@@ -1925,7 +1975,7 @@ td {
 .envi .config tbody tr:nth-last-child(3) td,
 .envi .configreader tbody tr:nth-last-child(3) td,
 .envi .configuser tbody tr:nth-last-child(3) td {
-	border-bottom: 1px solid black
+	border-bottom: 1px solid #000
 }
 .envi .configreader tbody td.invisible tr td {
 	border-bottom: none
@@ -1938,7 +1988,7 @@ td {
 	border-bottom: 1px dotted #999
 }
 .envi .configservices tbody tr:nth-last-child(3) td {
-    border-bottom: 1px solid #000;
+	border-bottom: 1px solid #000;
 }
 .envi #servicesedit td:last-child {
 	border-right: none
@@ -2058,9 +2108,7 @@ div.groups {
 .envi #otherdropdown option {
 	margin: 5px
 }
-.envi #otherdropdown option:hover {
-	
-}
+.envi #otherdropdown option:hover {}
 /* for extract in script.html and emm.html */ 
 .envi div.extract p.emmhead {
 	font-size: 11px;
@@ -2086,10 +2134,10 @@ div.groups {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	-webkit-appearance: none;
 	   -moz-appearance: none;
-			appearance: none;
+			  appearance: none;
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
-			border-radius: 0
+			  border-radius: 0
 }
 /* generaly hover settings for all buttons/submits */
 .envi input[type=button]:hover,
@@ -2102,8 +2150,9 @@ div.groups {
 	/* BOX SHADOW */
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
-			box-shadow: none
+			  box-shadow: none
 }
+
 .envi .regexdata_nav input {
 	width: 100px
 }
@@ -2184,15 +2233,19 @@ div.groups {
 .envi input[type=checkbox]:checked:hover + label {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPBAMAAADJ+Ih5AAAAMFBMVEX///8mISEAAADZ2dkVExOxsbHV1dWAgID7+/vIyMimpqaZmZlQUFA8PDwhISEJCQkCB0hTAAAASElEQVQI12NwFAQDBwbRZGMQEGAQa2AAAQEGYQZkhh6UwaIEZVyCMMK5lHRADH6lSUoBIAaLkpIqRNcmpQIIg1UJbg4KA247AABGCoFFjhhMAAAAAElFTkSuQmCC);
 }
-/* Settings for border_radius */
-.border_radius input[type="button"],
-.border_radius input[type="submit"] {
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-			border-radius: 4px
+/* Input in userconfig.html */
+.envi #newinsert table.users:first-child input,
+.envi #newinsert table.readers:first-child input,
+.envi #newinsert table.readers:first-child select,
+.envi #newservice table#addnewservice input {
+	margin-left: 10px
 }
 
 /* **************** 13. IMAGE */
+/* for icons with following Action */
+.envi img.icon {
+	border-radius:0
+}
 /* logo IC_LOGO.tpL */
 .envi div.logo img {
 	max-height: 28px
@@ -2203,8 +2256,8 @@ div.groups {
 	width: 28px
 }
 /*  */
-.envi table.statsbalance th.subheadline img{
-    margin-left: 5px
+.envi table.statsbalance th.subheadline img {
+	margin-left: 5px
 }
 
 /* **************** 14. SPAN */
@@ -2226,8 +2279,9 @@ div.groups {
 
 /* **************** 17. POLLING */
 /* User-Page polling */
-.envi #inc, .envi #dec {
-	background-color: #BD0000
+.envi #inc, .envi #dec, .envi .regexbutton {
+	background-color: #BD0000;
+	border-radius: 0;
 }
 .envi #inc:hover, .envi #dec:hover, .envi .regexbutton:hover {
 	background-color: #000;
@@ -2328,7 +2382,7 @@ div.groups {
 /* **************** 22. OTHER SETTINGS */
 /* Coloring background TD for Searchterm */
 .envi .back_cell {
-	background-color: #e7f26f !important;
+	background-color: #E7F26F !important;
 }
 /* Setting for DIV "Count rows" */
 .envi #countrows {
@@ -2423,8 +2477,206 @@ div.groups {
 	background-position: 4px center;
 	cursor:pointer;
 }
+/* Scroll to top */
+.scroll-top {
+	float: right;
+	width: 45px;
+	height: 43px;
+	position: fixed;
+	right: 0px;
+	bottom: 30px;
+	z-index: 9;
+}
+#back-top {
+	width: 45px;
+	height: 43px;
+}
+#back-top a:hover span {
+	position: initial;
+	top: initial;
+	right: initial;
+	padding: initial;
+	background-color: initial;
+	border: initial;
+}
+#back-top span {
+	float: right;
+	width: 45px;
+	height: 43px;
+	display: block;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTM0NjkzNjAwQzZBMTFFNUIyMzRBQ0U1RUREOTZGNTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTM0NjkzNjEwQzZBMTFFNUIyMzRBQ0U1RUREOTZGNTUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMzQ2OTM1RTBDNkExMUU1QjIzNEFDRTVFREQ5NkY1NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMzQ2OTM1RjBDNkExMUU1QjIzNEFDRTVFREQ5NkY1NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmWfwMwAAAG2SURBVHjaYmRgYNAA4mggNmAYWuA0EC9jBBJzgFicYWiC50xD2PEgwMfEMMTBqAdGPTDqgVEPjHpg1AOjHhhWHggMDBT+9euX19+/f73Lyspkae0BZiCOopZh+fn50rNnzzZmZWVlYgQCV1dXCTk5OaZNmza9oZH7f4Oa05upYVJfX59KYWGhBja5/fv3P/f397/w+fPnv1T2wFeKkxAHBwfT5s2b9WGOnzdv3h2YXHl5+cU/f/78c3R0lDx58qSloqIi+6DKA5KSkqzHjx839/Hxkf3379//lpaWK8nJyTdg8l1dXY/DwsJOAkP+t6ampsCJEydsgICXmh6gKAlduXLFWltbW/DHjx9/UlNTzy5ZsuQ1SPz///8+YMMZGbeAaAMDA+6tW7eaSUlJcT979uyrtLT0fmolIRZKdAM98PH79+9/gMnn2pEjRz7jUnfhwoWvwJA/VlNTo3j+/PlPgyYGcAH0GKAh+DpakY16YNQDox4YWMBCC0OB5f5bUBOCHh6gST1ARzBaD4x6YNQDox4Y9cCoB0Y9MOoBSj3wegi7/wNoaPE+A2S2nm+IOf4pEE8CCDAA5SWP/7jKWLwAAAAASUVORK5CYII=);
+	margin: 0px;
+}
+#back-top span:hover {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjU2REJEMzIwQzZBMTFFNUJFOUJGRENBMEI4OUM0QjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjU2REJEMzMwQzZBMTFFNUJFOUJGRENBMEI4OUM0QjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNTZEQkQzMDBDNkExMUU1QkU5QkZEQ0EwQjg5QzRCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNTZEQkQzMTBDNkExMUU1QkU5QkZEQ0EwQjg5QzRCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjiXBaYAAAGkSURBVHjaYmRgYBAEYnUgFmUYWuAlEN9kBBLOQMzFMDTBV6Yh7HgQYGNiGOJg1AOjHhj1wKgHRj0w6oFRDwwrD7S2tur8/ft37b9//zasWrXKmdYeALVGfall2JIlS+wjIyPzmZiYWGBip06dWmNubr6IRu7/TTUP7Nu3L8TR0TEOm9z9+/eP2tnZ9T958uQXtT1AcRISFhZmuXHjRj7M8aAQh8mtXr16IjAp/VFUVLS+cOFCG1CN4KDKA8bGxrxXr15tUldXd/7///+/bdu2zUROLmFhYXs7Ojrqfv/+/RnoUbUtW7b0ZGVlyQ+aPPD69esuERERjT9//vyYNm1aR35+/jmQONAzm8CGMzL6geioqCjJmTNnNvDw8Eh++fLlOS8vbzq1khALJbqfPn1699evXz+AJc9coAce4lK3bNmy50BQAYwNX2Byuz9oSyEYQI8BGoLfoxXZqAdGPTDqgYEFLLQw9OXLl1eALdI/9PAATeoBOoLRemDUA6MeGPXAqAdGPTDqgVEPUOqB70PY/T+ZgcQnBshsPdsQc/wXIL4IEGAAt9eUA7OsXhUAAAAASUVORK5CYII=);
+}
 
-/* ==================================================================  ENVI TEMPLATE - STYLE 1 */
+/* ==================================================================  ROTATE OSCAM LOGO  */
+/* Settings for rotate OSCam logo */
+.rotatelogo div.logo svg.OSCam_logo {
+	height: 35px !important;
+	width: 35px !important;
+	background-color: #000;
+	padding: 3px;
+	
+	/* ROTATE IMAGE */
+	-webkit-transform: rotate(345deg);
+	   -moz-transform: rotate(345deg);
+			transform: rotate(345deg);
+}
+
+/* ==================================================================  BORDER OF INFO TABLES  */
+/* Border for tfoot with pagination in readers, users */
+.infotable_border table.readers tfoot td,
+.infotable_border table.users tfoot td {
+	border-top: 3px solid #222;
+}
+/* Border bottom for whole TR in Table*/
+.infotable_border table.status,
+.infotable_border .config tbody tr:nth-last-child(3) td,
+.infotable_border .configreader tbody tr:nth-last-child(3) td,
+.infotable_border .configuser tbody tr:nth-last-child(3) td,
+.infotable_border table.statsbalance,
+.infotable_border #servicesedit,
+.infotable_border .configservices tbody tr:nth-last-child(3) td {
+	border-bottom: 3px solid #000
+}
+.infotable_border table.infotable,
+.infotable_border table.stats {
+	border: 3px solid #222;
+}
+/* ==================================================================  BUTTON BORDER RADIUS */
+/* Settings for border_radius */
+.border_radius input[type="button"],
+.border_radius input[type="submit"],
+.border_radius #reset {
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+			  border-radius: 4px
+}
+/* for icons with following Action */
+.border_radius img.icon {
+	border-radius: 4px;
+}
+/* User-Page polling */
+.border_radius #inc, .border_radius #dec, .border_radius .regexbutton {
+	border-radius: 4px;
+}
+/* ==================================================================  NOTIFIER BORDER RADIUS */
+/* Settings for notifier border radius */
+.notifier_radius span.span_notifier {
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+			  border-radius: 2px
+}
+
+/* ==================================================================  ENVI TEMPLATE - PLASTIC STYLE */
+/* for icons with following Action */
+.plastic a img.icon {
+	border: solid 1px #980C10;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FADDDE;
+	background: #BD0000;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-gradient(linear, left top, left bottom, from(#CE0303), to(#6B0508));
+	/* Firefox */
+	background: -moz-linear-gradient(top,  #CE0303,  #6B0508);
+	/* IE6-9 */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#CE0303', endColorstr='#6B0508');
+}
+.plastic a:hover img.icon {
+	border: solid 1px #BA0000;
+
+	/* BACKGROUND COLOR */
+	background: #EB0000;
+}
+.plastic tr.disabled td:first-child img.icon,
+.plastic tr.disabledreader td:first-child img.icon {
+    border: solid 1px #003300;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	background: #0D9C02;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-gradient(linear, left top, left bottom, from(#0D9C02), to(#1A3C08));
+	/* Firefox */
+	background: -moz-linear-gradient(top,  #0D9C02,  #1A3C08);
+	/* IE6-9 */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#008700', endColorstr='#003300');
+}
+.plastic tr.disabled td:first-child a:hover img.icon,
+.plastic tr.disabledreader td:first-child a:hover img.icon {
+	border: solid 1px #005400;
+
+	/* BACKGROUND COLOR */
+	background: #17AB15;
+}
+
+/* Main menu */
+.plastic #main {
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	background: #444;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-linear-gradient(bottom, #444 0%, #111 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(bottom, #444 0%, #111 100%);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(bottom, #444 0%, #111 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #444 0%, #111 100%);
+}
+
+/* Settings for button */
+.plastic input[type="button"],
+.plastic input[type="submit"],
+.plastic #reset {
+	border: solid 1px #980C10;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FADDDE;
+	background: #BD0000;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-gradient(linear, left top, left bottom, from(#CE0303), to(#6B0508));
+	/* Firefox */
+	background: -moz-linear-gradient(top,  #CE0303,  #6B0508);
+	/* IE6-9 */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#CE0303', endColorstr='#6B0508');
+
+	/* TEXT SHADOW */
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.plastic input[type="button"]:hover,
+.plastic input[type="submit"]:hover,
+.plastic #reset:hover {
+	border: solid 1px #000;
+	transition: all 0s ease 0s;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FFF;
+	background: #000;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-gradient(linear, left top, left bottom, from(#666C71), to(#454A4E));
+	/* Firefox */
+	background: -moz-linear-gradient(top,  #666C71,  #454A4E);
+	/* IE6-9 */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666C71', endColorstr='#454A4E');
+
+	/* TEXT SHADOW */
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+ /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1"
  * Basic colors: #16B6C6
  * Other colors: #038AA5 , #13A2AE , #30D9E8 , #D1E5EF , #C5D9E3 , #025D8C
@@ -2753,7 +3005,7 @@ div.groups {
 			color: #F00
 		}
 		#mainmenu > li:last-child {
-			border-bottom: 2px solid black;
+			border-bottom: 2px solid #000;
 
 			/* BOX SHADOW */
 			-webkit-box-shadow: 0 8px 6px -6px  rgba(50, 50, 50, 0.32);
@@ -2847,7 +3099,7 @@ div.groups {
 					box-sizing:border-box
 		}
 		#nav > li:last-child {
-			border-bottom: 2px solid black;
+			border-bottom: 2px solid #000;
 			border-top: 1px solid #CFCFCF;
 			margin-bottom: 20px;
 

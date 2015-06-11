@@ -53,8 +53,8 @@ function cleaninsert(deleteinsert) {
 	var tmp_array = existing_inserts.slice();
 	existing_inserts.length = 0;
 	var i2 = 0;
- 	for (i = 0; i < tmp_array.length; i++) {
- 		if (tmp_array[i] != deleteinsert){
+	for (i = 0; i < tmp_array.length; i++) {
+		if (tmp_array[i] != deleteinsert){
 			existing_inserts[i2] = tmp_array[i];
 			i2++; 
 		}
@@ -250,7 +250,7 @@ $(function () {
 				$('#color' + i).val($('.colorPicker_def_color').css('color'));
 				$('#color' + i).change();
 				$('#fcolor' + i).val($('.colorPicker_def_fcolor').css('color'));   
-    			$('#fcolor' + i).change();
+					$('#fcolor' + i).change();
 				$('#beep' + i).prop('checked', false);
 				localStorage['regex' + i] = '';
 				localStorage['color' + i] = '';
@@ -462,7 +462,7 @@ function updateFooter(data) {
 }
 
 /*
- *	identfy an element within string of elements
+ *  identfy an element within string of elements
  */
 var poll_excluded;
 
@@ -820,7 +820,7 @@ function updateReaderpage(data) {
 }
 
 /*
- *	LiveLog Functions: format the debuglevel switcher
+ *  LiveLog Functions: format the debuglevel switcher
  */
 function setDebuglevel(debug, maxdebug) {
 	var cs_dblevel = parseInt(debug);
@@ -966,7 +966,7 @@ $.fn.toHtmlString = function () {
 };
 
 /*
- *	Statuspage Functions: Generate a Bar for Barchart
+ *  Statuspage Functions: Generate a Bar for Barchart
  */
 function generateBar(value) {
 	var bar = $('<div class="bar"/>');
@@ -982,7 +982,7 @@ function generateBar(value) {
 }
 
 /*
- *	Statuspage Functions: Add/Remove Subheadline
+ *  Statuspage Functions: Add/Remove Subheadline
  */
 function addremoveSubheadline(remove, data, container, subheadline, type) {
 
@@ -1018,7 +1018,7 @@ function addremoveSubheadline(remove, data, container, subheadline, type) {
 }
 
 /*
- *	Statuspage Functions: Update Totals cacheEx
+ *  Statuspage Functions: Update Totals cacheEx
  */
 function updateCacheextotals(data) {
 	$("#total_cachexpush").text(data.oscam.totals.total_cachexpush);
@@ -1029,7 +1029,7 @@ function updateCacheextotals(data) {
 }
 
 /*
- *	Statuspage Functions: Update Totals User + ECM
+ *  Statuspage Functions: Update Totals User + ECM
  */
 function updateTotals(data) {
 	$("#total_users").text(data.oscam.totals.total_users);
@@ -1062,7 +1062,7 @@ function updateTotals(data) {
 }
 
 /*
- *	Statuspage Functions: Update Totals Sysinfo
+ *  Statuspage Functions: Update Totals Sysinfo
  */
 var first_run = 1;
 
@@ -1093,7 +1093,7 @@ function updateSysinfo(data) {
 }
 
 /*
- *	Statuspage Functions: Update Page
+ *  Statuspage Functions: Update Page
  */
 function updateStatuspage(data) {
 
@@ -1449,7 +1449,7 @@ function updateStatuspage(data) {
 		var rcon = (data.oscam.status.rca - data.oscam.status.rco);
 		if($("#rco").length) {
 			$("#rcc").text(data.oscam.status.rcc);
-			$("#rca").text(data.oscam.status.rca);	
+			$("#rca").text(data.oscam.status.rca);  
 			$("#rco").text(rcon);
 		} else {
 			$("#rhead").html('Readers <span id="rcc">' + data.oscam.status.rcc + '</span>/' + data.oscam.status.rca + ' (<span id="rco">' + rcon + '</span> of ' + data.oscam.status.rca + ' CARDOK)');
@@ -1458,7 +1458,7 @@ function updateStatuspage(data) {
 		$("#rhead").html('Readers <span id="rcc">' + data.oscam.status.rcc + '</span>/' + data.oscam.status.rca);
 	} else {
 		$("#rcc").text(data.oscam.status.rcc);
-		$("#rca").text(data.oscam.status.rca);	
+		$("#rca").text(data.oscam.status.rca);  
 	}
 
 	//update proxy-headline
@@ -1466,7 +1466,7 @@ function updateStatuspage(data) {
 		var pcon = (data.oscam.status.pca - data.oscam.status.pco);
 		if($("#pco").length) {
 			$("#pcc").text(data.oscam.status.pcc);
-			$("#pca").text(data.oscam.status.pca);	
+			$("#pca").text(data.oscam.status.pca);  
 			$("#pco").text(pcon);
 		} else {
 			$("#phead").html('Proxies <span id="pcc">' + data.oscam.status.pcc + '</span>/' + data.oscam.status.pca + ' (<span id="pco">' + pcon + '</span> of ' + data.oscam.status.pca + ' online)');
@@ -1475,7 +1475,7 @@ function updateStatuspage(data) {
 		$("#phead").html('Proxies <span id="pcc">' + data.oscam.status.pcc + '</span>/' + data.oscam.status.pca);
 	} else {
 		$("#pcc").text(data.oscam.status.pcc);
-		$("#pca").text(data.oscam.status.pca);	
+		$("#pca").text(data.oscam.status.pca);  
 	}
 
 	// update footer
@@ -1503,7 +1503,7 @@ function updateCacheexpage(data) {
 }
 
 /*
- *	General fork into page refresh functions
+ *  General fork into page refresh functions
  */
 function updatePage(data) {
 
@@ -1567,7 +1567,7 @@ function waitForMsg() {
 
 	if (lockpoll > 0) {
 		/* assumed that previous poll is not finnished yet we not
-	   call new data and just set the next intervall */
+		 call new data and just set the next intervall */
 		clearTimeout(timer_ID);
 		timer_ID = setTimeout("waitForMsg()", pollintervall);
 		return;
@@ -2072,11 +2072,17 @@ $(function(){
 			$('#subnav').attr("class", "blanksubnav");;
 	}
 
-// Add checkbox and label for responsive design
+	// Add checkbox and label for responsive design
 	$("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
 	$("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");
 	$("#subnav").prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
 	$("#subnav").prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
+
+	// Create <style> in <head>
+	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
+	$("head").append("<style type='text/css' id='enviFontSize'></style>");
+	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
+	$("head").append("<style type='text/css' id='enviBodyFontSize'></style>");
 });
 
 /* -------------- STYLESWITCHER with COOKIES -------------- */
@@ -2096,6 +2102,7 @@ $(function(){
 			$('body').addClass('original');
 			$('.addClass a[value="original"]').addClass("active");
 			$('#switchersettings').css('display', 'none');
+			$('.form_holder').css('width', '225px');
 		}
 	} else {
 		// Cookie 'TemplateSwitch' is undefined (Show Original WebIf)
@@ -2103,6 +2110,7 @@ $(function(){
 		$('body').addClass('original');
 		$('.addClass a[value="original"]').addClass("active");
 		$('#switchersettings').css('display', 'none');
+		$('.form_holder').css('width', '225px');
 	}
 
 /* Cookie - Show/hide StyleSwitcher */
@@ -2125,6 +2133,7 @@ $(function(){
 		$('#' + $.cookie("BackCookieID")).addClass('active');
 	} else {
 		// Cookie 'BackCookieID' is undefined
+		$('#back_0').addClass('active');
 	}
 
 /* Cookie - isActive/notActive Background pattern */
@@ -2134,6 +2143,7 @@ $(function(){
 		$('#' + $.cookie("PatCookieID")).addClass('active');
 	} else {
 		// Cookie 'PatCookieID' is undefined
+		$('#pat_0').addClass('active');
 	}
 
 /* Cookie - isActive/notActive Template color style */
@@ -2143,27 +2153,14 @@ $(function(){
 		$('#' + $.cookie("ColCookieID")).addClass('active');
 	} else {
 		// Cookie 'ColCookieID' is undefined
-	}
-
-/* Cookie - for Body Font Family */
-	//Check if cookie exists
-	if (typeof $.cookie('BodyFontFamily') != 'undefined'){
-		/// Cookie 'BodyFontFamily' is defined
-		if ($.cookie('TemplateSwitch') === 'envi'){
-			$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}');
-			$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
-		} else {
-			$("#enviBodyFontFamily").html('')
-		}
-	} else {
-		// Cookie 'BodyFontFamily' is undefined
+		$('#col_0').addClass('active');
 	}
 
 /* Cookie - for Menu Font Family */
 	//Check if cookie exists
 	if (typeof $.cookie('FontFamily') != 'undefined'){
 		/// Cookie 'FontFamily' is defined
-		if ($.cookie('TemplateSwitch') === 'envi'){
+		if ($.cookie('TemplateSwitch') == 'envi'){
 			$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}');
 			$("#menufontfamily").val($.cookie("FontFamily"));
 		} else {
@@ -2177,7 +2174,7 @@ $(function(){
 	//Check if cookie exists
 	if (typeof $.cookie('FontSize') != 'undefined'){
 		/// Cookie 'FontSize' is defined
-		if ($.cookie('TemplateSwitch') === 'envi'){
+		if ($.cookie('TemplateSwitch') == 'envi'){
 			$("#enviFontSize").html(
 				'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
 				'.envi #mainmenu { margin-top: 11px;}');
@@ -2187,6 +2184,34 @@ $(function(){
 		}
 	} else {
 		// Cookie 'FontSize' is undefined
+	}
+
+/* Cookie - for Body Font Family */
+	//Check if cookie exists
+	if (typeof $.cookie('BodyFontFamily') != 'undefined'){
+		/// Cookie 'BodyFontFamily' is defined
+		if ($.cookie('TemplateSwitch') == 'envi'){
+			$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}');
+			$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+		} else {
+			$("#enviBodyFontFamily").html('')
+		}
+	} else {
+		// Cookie 'BodyFontFamily' is undefined
+	}
+
+/* Cookie - for Body Font Size */
+	//Check if cookie exists
+	if (typeof $.cookie('BodyFontSize') != 'undefined'){
+		/// Cookie 'BodyFontSize' is defined
+		if ($.cookie('TemplateSwitch') == 'envi'){
+			$("#enviBodyFontSize").html('body { font-size: '+ $.cookie("BodyFontSize") +'}');
+			$("#bodyfontsize").val($.cookie("BodyFontSize") +'px');
+		} else {
+			$("#enviBodyFontSize").html('')
+		}
+	} else {
+		// Cookie 'BodyFontSize' is undefined
 	}
 });
 
@@ -2217,8 +2242,10 @@ $(function(){
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			// Show StyleSwitcher for Envi
 			$('#switchersettings').css('display', 'initial');
+			// Set width for <DIV CLASS="form_holder">
+			$('.form_holder').css('width', '625px');
 			// For Envi add style
-				if (typeof $.cookie('BodyFontFamily') === 'undefined'){
+				if (typeof $.cookie('BodyFontFamily') == 'undefined'){
 				//no cookie
 					$("#enviBodyFontFamily").html('')
 				} else {
@@ -2231,6 +2258,8 @@ $(function(){
 			$('#switchersettings').css('display', 'none');
 			// For original WebIf remove style 
 			$("#enviBodyFontFamily").html('')
+			// Set width for <DIV CLASS="form_holder">
+			$('.form_holder').css('width', '225px');
 		}
 
 	// (Re-)enable or Disable tooltips 
@@ -2243,27 +2272,27 @@ $(function(){
 /* FUNCTION for CHANGE COLOR */
 $(function(){
 	/* Change Template color style */
-		var color = $.cookie('color'); 					// Get the cookie's value and set to variable "color"
-		$('.colchange li').on('click', function (e) { 	// function for colchange li click
-			color = $(this).attr('class')				// Rename value "color" with class in colchange li
-			if ($("body").hasClass('envi')) {			
-				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4 colchange_5").addClass(color)
-				$.cookie('color', color, {				// Set cookie
+		var color = $.cookie('color');          // Get the cookie's value and set to variable "color"
+		$('.colchange li').on('click', function (e) {   // function for colchange li click
+			color = $(this).attr('data-style')       // Rename value "color" with class in colchange li
+			if ($("body").hasClass('envi')) {     
+				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4").addClass(color)
+				$.cookie('color', color, {        // Set cookie
 					expires: 365,
 					path: '/'
 				});
 			};
 			return false;
 		}).filter(function () {
-			return $(this).attr('class') === color
+			return $(this).attr('data-style') === color
 		}).click()
 
 	/* Change background color */
 		var backcolor = $.cookie('backcolor');
 		$('.backchange li').on('click', function (e) {
-			backcolor = $(this).attr('class')
+			backcolor = $(this).attr('data-style')
 			if ($("body").hasClass('envi')) {
-				$("body").removeClass("background_1 background_2 background_3 background_4 background_5").addClass(backcolor)
+				$("body").removeClass("background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9").addClass(backcolor)
 				$.cookie('backcolor', backcolor, {
 					expires: 365,
 					path: '/'
@@ -2271,15 +2300,15 @@ $(function(){
 			};
 			return false;
 		}).filter(function () {
-			return $(this).attr('class') === backcolor
+			return $(this).attr('data-style') === backcolor
 		}).click()
 
 	/* Change background pattern */
 		var patcolor = $.cookie('patcolor');
 		$('.patchange li').on('click', function (e) {
-			patcolor = $(this).attr('class')
+			patcolor = $(this).attr('data-style')
 			if ($("body").hasClass('envi')) {
-				$("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9 patchange_10").addClass(patcolor)
+				$("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9").addClass(patcolor)
 				$.cookie('patcolor', patcolor, {
 					expires: 365,
 					path: '/'
@@ -2287,7 +2316,7 @@ $(function(){
 			};
 			return false;
 		}).filter(function () {
-			return $(this).attr('class') === patcolor
+			return $(this).attr('data-style') === patcolor
 		}).click()
 });
 
@@ -2297,7 +2326,10 @@ $(function(){
 	$(".backchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
-		$.cookie('BackCookieID', $(this).attr('id'), {expires: 365,path: '/'});
+		$.cookie('BackCookieID', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
 	});
 
 	// Background pattern
@@ -2321,7 +2353,7 @@ $(function(){
 	});
 });
 
-/* CHECKBOX - ROTATE LOGO */
+/* CHECKBOX - ROTATE OSCAM LOGO */
 $(function(){
 	$("input.rotatelogo").each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
@@ -2351,13 +2383,43 @@ $(function(){
 	});
 });
 
-/* CHECKBOX - BORDER RADIUS */
+/* CHECKBOX - BORDER OF INFO TABLES */
+$(function(){
+	$("input.infotable_border").each(function() {
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var infotableborder = $.cookie($(this).attr('name'));
+			if (infotableborder && infotableborder == "true") {
+				$(this).prop('checked', infotableborder);
+				$('body').addClass('infotable_border');
+			}
+		} else {
+			$('body').removeClass('infotable_border');
+		}
+	});
+
+	// Function if checkbox is changed
+	$("input.infotable_border").change(function() {
+		if ($("body").hasClass('envi')) {
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="infotable_border"]').is(':checked') ) {
+				$('body').addClass('infotable_border');
+			} else {
+				$('body').removeClass('infotable_border');
+			}
+		};
+	});
+});
+
+/* CHECKBOX - BUTTON BORDER RADIUS */
 $(function(){
 	$("input.border_radius").each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
-			var radius = $.cookie($(this).attr('name'));
-			if (radius && radius == "true") {
-				$(this).prop('checked', radius);
+			var borderradius = $.cookie($(this).attr('name'));
+			if (borderradius && borderradius == "true") {
+				$(this).prop('checked', borderradius);
 				$('body').addClass('border_radius');
 			}
 		} else {
@@ -2381,29 +2443,68 @@ $(function(){
 	});
 });
 
-/* FONT FAMILY and SIZE */
-$(function() {
-	// Create <style> in <head>
-	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
-	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
-	$("head").append("<style type='text/css' id='enviFontSize'></style>");
-	
-	// Change font family for body
-	$('#bodyfontfamily').change(function() {
-		// value and cookie
-		font_picked = $(this).val();
-		if(font_picked.length > 0){
-			$.cookie('BodyFontFamily', font_picked, {
-				expires: 365,
-				path: '/'
-			});
+/* CHECKBOX - NOTIFIER BORDER RADIUS */
+$(function(){
+	$("input.notifier_radius").each(function() {
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var notifierradius = $.cookie($(this).attr('name'));
+			if (notifierradius && notifierradius == "true") {
+				$(this).prop('checked', notifierradius);
+				$('body').addClass('notifier_radius');
+			}
+		} else {
+			$('body').removeClass('notifier_radius');
 		}
-		// write into <style>
-		$("#enviBodyFontFamily").html(
-			'body { font-family: '+ font_picked +';}'
-		)
 	});
 
+	// Function if checkbox is changed
+	$("input.notifier_radius").change(function() {
+		if ($("body").hasClass('envi')) {
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="notifier_radius"]').is(':checked') ) {
+				$('body').addClass('notifier_radius');
+			} else {
+				$('body').removeClass('notifier_radius');
+			}
+		};
+	});
+});
+
+/* CHECKBOX - PLASTIC */
+$(function(){
+	$("input.plastic").each(function() {
+		if ($.cookie('TemplateSwitch') == 'envi') {
+			var plasticstyle = $.cookie($(this).attr('name'));
+			if (plasticstyle && plasticstyle == "true") {
+				$(this).prop('checked', plasticstyle);
+				$('body').addClass('plastic');
+			}
+		} else {
+			$('body').removeClass('plastic');
+		}
+	});
+
+	// Function if checkbox is changed
+	$("input.plastic").change(function() {
+		if ($("body").hasClass('envi')) {
+			$.cookie($(this).attr("name"), $(this).prop('checked'), {
+				path: '/',
+				expires: 365
+			});
+			if ( $('input[name="plastic"]').is(':checked') ) {
+				$('body').addClass('plastic');
+			} else {
+				$('body').removeClass('plastic');
+			}
+		};
+	});
+});
+
+/* FONT FAMILY and SIZE */
+$(function() {
 	// Change font family for main menu
 	$('#menufontfamily').change(function() {
 		// value and cookie
@@ -2438,6 +2539,40 @@ $(function() {
 			'.envi #mainmenu { margin-top: 11px;}'
 		)
 	});
+
+	// Change font family for body
+	$('#bodyfontfamily').change(function() {
+		// value and cookie
+		font_picked = $(this).val();
+		if(font_picked.length > 0){
+			$.cookie('BodyFontFamily', font_picked, {
+				expires: 365,
+				path: '/'
+			});
+		}
+		// write into <style>
+		$("#enviBodyFontFamily").html(
+			'body { font-family: '+ font_picked +';}'
+		)
+	});
+
+	// Change font size for body
+	$('#bodyfontsize').change(function() {
+		// value and cookie
+		bodyfontsize_picked = $(this).val();
+		var split_bodyfontsize_int = bodyfontsize_picked.split("px");
+		if(split_bodyfontsize_int.length > 0){
+			bodyfontsize_picked = split_bodyfontsize_int[0];
+			$.cookie('BodyFontSize', bodyfontsize_picked, {
+				expires: 365,
+				path: '/'
+			});
+		}
+		// write into <style>
+		$("#enviBodyFontSize").html(
+			'body { font-size: '+ bodyfontsize_picked +'px;}'
+		)
+	});
 });
 
 /* RESET BUTTON - only for Envi (not for original) */
@@ -2457,15 +2592,44 @@ $(function() {
 			$('.patchange li').removeClass('active');
 			$('.colchange li').removeClass('active');
 			$('#rotatelogo').prop('checked', false);
+			$('#infotable_border').prop('checked', false);
+			$('#border_radius').prop('checked', false);
+			$('#notifier_radius').prop('checked', false);
+			$('#plastic').prop('checked', false);
 			// Set default input
-			$("#bodyfontfamily")[0].selectedIndex = 0;
 			$("#menufontfamily")[0].selectedIndex = 0;
 			$("#menufontsize")[0].selectedIndex = 1;
+			$("#bodyfontfamily")[0].selectedIndex = 0;
+			$("#bodyfontsize")[0].selectedIndex = 1;
 			// Set default style
-			$("#enviBodyFontFamily").html('')
 			$("#enviFontFamily").html('')
 			$("#enviFontSize").html('')
+			$("#enviBodyFontFamily").html('')
+			$("#enviBodyFontSize").html('')
 		}
+	});
+});
+/* -------------- SCROLL TO TOP FUNCTION -------------- */
+$(function() {
+	// hide #back-top first
+	jQuery("#back-top").hide();
+	// fade in #back-top
+	jQuery(function () {
+		jQuery(window).scroll(function () {
+			if (jQuery(this).scrollTop() > 100) {
+				jQuery('#back-top').fadeIn();
+			} else {
+				jQuery('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		jQuery('#back-top a').click(function () {
+			jQuery('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
 	});
 });
 
@@ -2627,7 +2791,7 @@ $(function () { if ($('body').hasClass('envi') == true) {
 			$table.trigger('repaginate');
 			var numRows = $table.find('tbody tr').length;
 			var numPages = Math.ceil(numRows / numPerPage);
-			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>');	// create "pager"
+			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>'); // create "pager"
 			var newPage = 'newPage';
 			// If num of pages is > 1
 			for (var page = 0; page < numPages; page++) {
@@ -2670,14 +2834,14 @@ $(function () { if ($('body').hasClass('envi') == true) {
 				var startcurrentRecord = (numPerPage * currentPage) - numPerPage + 1;
 				var endcurrentRecord = (numPerPage * currentPage);
 				outputCell.html('Showing: <SPAN CLASS="rowcount">' + startcurrentRecord + ' - ' + endcurrentRecord + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
-		    });
+				});
 
-		    $lastPagerItems.click(function() {
-		    	// Showing record for last TR's
-		    	var startcurrentRecord = (numPerPage * currentPage) - numPerPage + 1;
+				$lastPagerItems.click(function() {
+					// Showing record for last TR's
+					var startcurrentRecord = (numPerPage * currentPage) - numPerPage + 1;
 				var endcurrentRecord = (numPerPage * currentPage);
 				outputCell.html('Showing: <SPAN CLASS="rowcount">' + startcurrentRecord + ' - ' + allRowCount + '</SPAN> of <SPAN CLASS="rowcount">' + allRowCount + '</SPAN> entries');
-		    });
+				});
 		});
 	}
 
@@ -2707,7 +2871,7 @@ $(function () { if ($('body').hasClass('envi') == true) {
 			});
 			var numRows = $table.children('tbody').children('tr:visible').length;
 			var numPages = Math.ceil(numRows / numPerPage);
-			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>');	// create "pager"
+			var $pager = $('<DIV ID="pager" CLASS="pager">Page: </div>'); // create "pager"
 			var newPage = 'newPage';
 			// Clear the old pager first
 			$('#pager').remove();
@@ -2760,23 +2924,23 @@ $(function () { if ($('body').hasClass('envi') == true) {
 	/* This function replaces the standard search in the original WebIf. It is only available in Envi.
 	 *
 	 * NOTE: Change in Original script - for standard script I use 
-	 *		if ($('body').hasClass('original') == true) { }
-	 *	
+	 *    if ($('body').hasClass('original') == true) { }
+	 *  
 	 * STANDARD SEARCH in Orgininal WebIf
 	 *
 	 * // search related events
-	 *	$("#searchTerm").keyup(function () {
-	 * 		var value = $("#searchTerm").val().toLowerCase().trim();
-	 * 		$("#dataTable tr").each(function (index) {
-	 *			if (!index) return;
-	 * 			$(this).find("td").each(function () {
-	 * 				var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
-	 * 				var not_found = (id.indexOf(value) == -1);
-	 * 				$(this).closest('tr').toggle(!not_found);
-	 * 				return not_found;
-	 * 			});
-	 * 		});
-	 * 	});
+	 *  $("#searchTerm").keyup(function () {
+	 *    var value = $("#searchTerm").val().toLowerCase().trim();
+	 *    $("#dataTable tr").each(function (index) {
+	 *      if (!index) return;
+	 *      $(this).find("td").each(function () {
+	 *        var id = (($(this).data('sort-value') == undefined || $(this).hasClass("usercol2")) ? $(this).text() : $(this).data('sort-value').toString()).toLowerCase().trim();
+	 *        var not_found = (id.indexOf(value) == -1);
+	 *        $(this).closest('tr').toggle(!not_found);
+	 *        return not_found;
+	 *      });
+	 *    });
+	 *  });
 	 */
 	
 	//Function for coloring background if value from input found
@@ -2971,9 +3135,9 @@ function CreateIcons() {
 		}
 
 	// Icon for READERS
-		var svgReaders = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+color+'"></path></svg>';
+		var svgReaders = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13.1px" height="14px" viewBox="490.5 490 13.1 14" enable-background="new 490.5 490 13.1 14" xml:space="preserve"><path fill="#'+color+'" d="M491.6,498.1l-1,1.1c0.1-0.1,0.3-0.1,0.5-0.1H503c0.2,0,0.3,0,0.5,0.1l-1-1.1H491.6L491.6,498.1z"/><path fill="#'+color+'" d="M503,500H491c-0.3,0-0.6,0.3-0.6,0.6v2.9c0,0.3,0.3,0.6,0.6,0.6H503c0.3,0,0.6-0.3,0.6-0.6v-2.9 C503.5,500.2,503.3,500,503,500z M501.4,502.8c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8 C502.2,502.5,501.9,502.8,501.4,502.8z"/><path fill="#'+color+'" d="M503,492.4c0.2,0,0.3,0,0.5,0.1l-2-2.2c-0.2-0.2-0.4-0.3-0.6-0.3H497h-3.8c-0.2,0-0.5,0.1-0.6,0.3l-2,2.2 c0.2-0.1,0.3-0.1,0.5-0.1H503z"/><path fill="#'+color+'" d="M503,493.2H491c-0.3,0-0.6,0.3-0.6,0.6v2.9c0,0.3,0.3,0.6,0.6,0.6h1.3h9.3h1.3c0.3,0,0.6-0.3,0.6-0.6v-2.9 C503.5,493.5,503.3,493.2,503,493.2z M501.4,496.1c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8 C502.2,495.7,501.9,496.1,501.4,496.1z"/></svg>';
 		var encodedReaders = window.btoa(svgReaders);
-		var svgReadersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+colorHover+'"></path></svg>';
+		var svgReadersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13.1px" height="14px" viewBox="490.5 490 13.1 14" enable-background="new 490.5 490 13.1 14" xml:space="preserve"><path fill="#'+colorHover+'" d="M491.6,498.1l-1,1.1c0.1-0.1,0.3-0.1,0.5-0.1H503c0.2,0,0.3,0,0.5,0.1l-1-1.1H491.6L491.6,498.1z"/><path fill="#'+colorHover+'" d="M503,500H491c-0.3,0-0.6,0.3-0.6,0.6v2.9c0,0.3,0.3,0.6,0.6,0.6H503c0.3,0,0.6-0.3,0.6-0.6v-2.9 C503.5,500.2,503.3,500,503,500z M501.4,502.8c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8 C502.2,502.5,501.9,502.8,501.4,502.8z"/><path fill="#'+colorHover+'" d="M503,492.4c0.2,0,0.3,0,0.5,0.1l-2-2.2c-0.2-0.2-0.4-0.3-0.6-0.3H497h-3.8c-0.2,0-0.5,0.1-0.6,0.3l-2,2.2 c0.2-0.1,0.3-0.1,0.5-0.1H503z"/><path fill="#'+colorHover+'" d="M503,493.2H491c-0.3,0-0.6,0.3-0.6,0.6v2.9c0,0.3,0.3,0.6,0.6,0.6h1.3h9.3h1.3c0.3,0,0.6-0.3,0.6-0.6v-2.9 C503.5,493.5,503.3,493.2,503,493.2z M501.4,496.1c-0.5,0-0.8-0.4-0.8-0.8c0-0.5,0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8 C502.2,495.7,501.9,496.1,501.4,496.1z"/></svg>';
 		var encodedReadersHover = window.btoa(svgReadersHover);
 
 		if ($('#item4').hasClass('menu_selected') == true) {
@@ -3022,7 +3186,7 @@ function CreateIcons() {
 		}
 
 	// Icon for FILES
-		var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';		
+		var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';   
 		var encodedFiles = window.btoa(svgFiles);
 		var svgFilesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+colorHover+'"></path></svg>';
 		var encodedFilesHover = window.btoa(svgFilesHover);
@@ -3107,9 +3271,9 @@ function CreateIcons() {
 		}
 
 	// Icon for STYLESWITCHER
-		var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#000000"></path></svg>';
+		var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="21px" viewBox="99.8 99.8 21 21" enable-background="new 99.8 99.8 21 21" xml:space="preserve"><path d="M108.7,102.8l6.8,7.5l-6.8,7.5l2.7,3l9.5-10.5l-9.5-10.5L108.7,102.8z"/><path d="M102.5,120.8l9.5-10.5l-9.5-10.5l-2.7,3l6.8,7.5l-6.8,7.5L102.5,120.8z"/></svg>';
 		var encodedIcon = window.btoa(svgIcon);
-		var svgIconHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#'+colorHover+'"></path></svg>';
+		var svgIconHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="21px" viewBox="99.8 99.8 21 21" enable-background="new 99.8 99.8 21 21" xml:space="preserve"><path d="M108.7,102.8l6.8,7.5l-6.8,7.5l2.7,3l9.5-10.5l-9.5-10.5L108.7,102.8z" fill="#'+colorHover+'"/><path d="M102.5,120.8l9.5-10.5l-9.5-10.5l-2.7,3l6.8,7.5l-6.8,7.5L102.5,120.8z" fill="#'+colorHover+'"/></svg>';
 		var encodedIconHover = window.btoa(svgIconHover);
 
 		$('#demo_icon').css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
@@ -3148,7 +3312,7 @@ $(function () { if ($('body').hasClass('original') == true) {
 // ********************************************************************
 function CreateIcons() {
 	// Icon for STYLESWITCHER
-		var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#000000"></path></svg>';
+		var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="21px" viewBox="99.8 99.8 21 21" enable-background="new 99.8 99.8 21 21" xml:space="preserve"><path d="M108.7,102.8l6.8,7.5l-6.8,7.5l2.7,3l9.5-10.5l-9.5-10.5L108.7,102.8z"/><path d="M102.5,120.8l9.5-10.5l-9.5-10.5l-2.7,3l6.8,7.5l-6.8,7.5L102.5,120.8z"/></svg>';
 		var encodedIcon = window.btoa(svgIcon);
 
 		$('#demo_icon').css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
@@ -3161,8 +3325,8 @@ function CreateIcons() {
 
 /* -------------- JQUERY RESPONSIVE -------------- */
 if (window.matchMedia('(max-width: 360px)').matches) {
-    // do functionality on screens smaller than 768px
-    function CreateIcons() {
+		// do functionality on screens smaller than 768px
+		function CreateIcons() {
 		// Variable for color settings
 		var color = 'FFFFFF';
 		var colorHover = 'F00423';
@@ -3271,7 +3435,7 @@ if (window.matchMedia('(max-width: 360px)').matches) {
 			}
 
 		// Icon for FILES
-			var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';		
+			var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';   
 			var encodedFiles = window.btoa(svgFiles);
 			var svgFilesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+colorHover+'"></path></svg>';
 			var encodedFilesHover = window.btoa(svgFilesHover);
@@ -3369,7 +3533,7 @@ if (window.matchMedia('(max-width: 360px)').matches) {
 				});
 	}
 
-    // Icons - create ID and CLASS
+		// Icons - create ID and CLASS
 	$("#mainmenu li a").each(function (i) {
 		var incremental = i + 1;
 		$(this).addClass('menu_image' + incremental);
