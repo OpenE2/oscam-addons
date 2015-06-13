@@ -2353,6 +2353,10 @@ $(function(){
 /* GET CUSTOM COLOR FROM COLOR PICKER */
 $(function(){ 
 	$("#colorpicker1").bind("change", function() {
+		// Set variable
+		bodycolor = $('#colorpicker1').val()
+		// Set value from Color Picker to DIV
+		$("#colorpicker_value").html(bodycolor)
 		// Control if 'body' have 'class="envi"'
 		if ($("body").hasClass('envi')) {
 			//If 'body' have 'class="envi"' than remove all class for background (background class are added from list of color's background)
@@ -2366,13 +2370,15 @@ $(function(){
 	});
 
 	$("body").on('click', ".minicolors-swatch",function(){
+		// Set variable
+		bodycolor = $('#colorpicker1').val()
 		// Remove 'class="active"' from List of background color
 		$(".backchange li").removeClass('active');
 		// Add class to 'span' from Color Picker
 		$(".minicolors-swatch-color").addClass('active');
+		// Set value from Color Picker to DIV
+		$("#colorpicker_value").html(bodycolor)
 		if ($("body").hasClass('envi')) {
-			// Set variable
-			bodycolor = $('#colorpicker1').val()
 			//If 'body' have 'class="envi"' than remove all class for setting background color and add css style to 'stylesheet' in 'head'
 			$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
 			// And add css style to 'head'
@@ -2384,8 +2390,7 @@ $(function(){
 					expires: 365,
 					path: '/'
 				});
-			}
-			
+			}			
 		} else {
 			//If 'body' have not 'class="envi"' than remove all style from 'head'
 			$("#enviBodyColor").html('')
