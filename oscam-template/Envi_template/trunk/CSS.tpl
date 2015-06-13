@@ -1515,6 +1515,18 @@ li.colchange_4 {
 .background_6 {
 	background: #999 !important
 }
+[data-style="background_7"],
+.background_7 {
+	background: #CDB38B !important
+}
+[data-style="background_8"],
+.background_8 {
+	background: #946D40 !important
+}
+[data-style="background_9"],
+.background_9 {
+	background: #71918A !important
+}
 
 /* **************** 3. PATTERNS COLOR SETTINGS */
 [data-style="patchange_1"],

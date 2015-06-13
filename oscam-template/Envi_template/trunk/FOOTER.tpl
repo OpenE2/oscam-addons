@@ -85,13 +85,13 @@
 							<LI ID="back_4" DATA-STYLE='background_4' TITLE="20% Black"></LI>
 							<LI ID="back_5" DATA-STYLE='background_5' TITLE="30% Black"></LI>
 							<LI ID="back_6" DATA-STYLE='background_6' TITLE="40% Black"></LI>
-							<LI ID="back_7" DATA-STYLE='background_7' TITLE="XXX - ??"></LI>
-							<LI ID="back_8" DATA-STYLE='background_8' TITLE="XXX - ??"></LI>
-							<LI ID="back_9" DATA-STYLE='background_9' TITLE="XXX - ??"></LI>
+							<LI ID="back_7" DATA-STYLE='background_7' TITLE="Light Brown"></LI>
+							<LI ID="back_8" DATA-STYLE='background_8' TITLE="Dark Brown"></LI>
+							<LI ID="back_9" DATA-STYLE='background_9' TITLE="Light slate gray"></LI>
 						</UL>
 						<div class="form-group">
 							<label>Custom color: </label>
-							<input type="hidden" id="colorpicker1" class="demo" data-position="top left" value="#db913d">
+							<input type="hidden" id="colorpicker1" class="demo" data-position="top left" value="#409494">
 						</div>
 						<script>
 							$(document).ready( function() {
@@ -264,7 +264,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1442</P>
+								<P><B>Envi revision:</B> 1443</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
