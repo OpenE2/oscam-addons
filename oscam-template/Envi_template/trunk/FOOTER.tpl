@@ -92,22 +92,8 @@
 						<DIV CLASS="form-group">
 							<label>Custom color: </label>
 							<input type="hidden" id="colorpicker1" class="demo" data-position="top left" value="#409494">
-							<DIV ID="colorpicker_value" CLASS="verticalCenter">#409494</DIV>
+							<DIV ID="colorpicker_value" CLASS="colorpicker_value">#409494</DIV>
 						</DIV>
-						<style type="text/css">
-						.form-group {
-						    display: inline-block;
-						    *display: inline;
-						}
-						.verticalCenter {
-						    display: inline-block;
-						    *display: inline;
-						    vertical-align: middle;
-						    margin-left: 5px;
-						    font-size: 12px;
-						    text-transform: uppercase;
-						}
-						</style>
 						<script>
 							$(document).ready( function() {
 								
@@ -279,7 +265,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1444</P>
+								<P><B>Envi revision:</B> 1445</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>

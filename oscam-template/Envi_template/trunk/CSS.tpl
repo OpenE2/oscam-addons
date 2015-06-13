@@ -1845,6 +1845,22 @@ li.colchange_4 {
 	padding-right: 44px;
 	padding-left: 12px;
 }
+
+/* Custom setting for Color Picker */
+.form-group {
+	display: inline-block;
+	*display: inline;
+}
+.colorpicker_value {
+	display: inline-block;
+	*display: inline;
+	vertical-align: middle;
+	margin-left: 5px;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 60px;
+}
+
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
 
 /* **************** 2. BASIC DIVISION PAGES */
