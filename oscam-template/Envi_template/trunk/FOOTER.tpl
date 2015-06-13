@@ -39,14 +39,15 @@
 				<DIV CLASS="form_holder_one">
 					<DIV CLASS="styleswitcher">
 						<DIV CLASS="styleswitcher-label"> ENVI - STYLE SWITCHER </DIV>
-						<UL CLASS="addClass">
-							<LI><A HREF="#" VALUE="original">Original WebIf</A></LI>
-							<LI><A HREF="#" VALUE="envi">Envi Template</A></LI>
-						</UL>
 					</DIV>
 				</DIV>
-				<DIV ID="switchersettings">
-					<DIV CLASS="form_holder_left">
+				<DIV CLASS="form_holder_left">
+					<DIV CLASS="styleswitcher-label" STYLE="border-bottom: none"> WebIf STYLE </DIV>
+					<UL CLASS="addClass">
+						<LI><A HREF="#" VALUE="original">Original WebIf</A></LI>
+						<LI><A HREF="#" VALUE="envi">Envi Template</A></LI>
+					</UL>
+					<DIV ID="switchersettings1">
 						<DIV CLASS="section-label">Template color style
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
@@ -72,8 +73,7 @@
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template
-	"
+									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template"
 								</DIV>
 							</DIV>
 						</DIV>
@@ -84,17 +84,59 @@
 							<LI ID="back_3" DATA-STYLE='background_3' TITLE="10% Black"></LI>
 							<LI ID="back_4" DATA-STYLE='background_4' TITLE="20% Black"></LI>
 							<LI ID="back_5" DATA-STYLE='background_5' TITLE="30% Black"></LI>
-							<LI ID="back_6" DATA-STYLE='background_6' TITLE=""></LI>
-							<LI ID="back_7" DATA-STYLE='background_7' TITLE=""></LI>
-							<LI ID="back_8" DATA-STYLE='background_8' TITLE=""></LI>
-							<LI ID="back_9" DATA-STYLE='background_9' TITLE=""></LI>
+							<LI ID="back_6" DATA-STYLE='background_6' TITLE="40% Black"></LI>
+							<LI ID="back_7" DATA-STYLE='background_7' TITLE="XXX - ??"></LI>
+							<LI ID="back_8" DATA-STYLE='background_8' TITLE="XXX - ??"></LI>
+							<LI ID="back_9" DATA-STYLE='background_9' TITLE="XXX - ??"></LI>
 						</UL>
+						<div class="form-group">
+							<label>Custom color: </label>
+							<input type="hidden" id="colorpicker1" class="demo" data-position="top left" value="#db913d">
+						</div>
+						<script>
+							$(document).ready( function() {
+								
+					            $('.demo').each( function() {
+					                //
+					                // Dear reader, it's actually very easy to initialize MiniColors. For example:
+					                //
+					                //  $(selector).minicolors();
+					                //
+					                // The way I've done it below is just for the demo, so don't get confused 
+					                // by it. Also, data- attributes aren't supported at this time. Again, 
+					                // they're only used for the purposes of this demo.
+					                //
+									$(this).minicolors({
+										control: $(this).attr('data-control') || 'hue',
+										defaultValue: $(this).attr('data-defaultValue') || '',
+										inline: $(this).attr('data-inline') === 'true',
+										letterCase: $(this).attr('data-letterCase') || 'uppercase',
+										opacity: $(this).attr('data-opacity'),
+										position: $(this).attr('data-position') || 'top left',
+										change: function(hex, opacity) {
+											var log;
+											try {
+												log = hex ? hex : 'transparent';
+												if( opacity ) log += ', ' + opacity;
+												console.log(log);
+											} catch(e) {}
+										},
+										theme: 'default'
+									});
+					                
+					            });
+								
+							});
+						</script>
+					</DIV>
+				</DIV>
+				<DIV ID="switchersettings2">
+					<DIV CLASS="form_holder_center">
 						<DIV CLASS="section-label">Patterns
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template
-	"
+									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template"
 								</DIV>
 							</DIV>
 						</DIV>
@@ -105,13 +147,11 @@
 							<LI ID="pat_3" DATA-STYLE='patchange_3' TITLE="Dots - transparent"></LI>
 							<LI ID="pat_4" DATA-STYLE='patchange_4' TITLE="Squares 1 - transparent"></LI>
 							<LI ID="pat_5" DATA-STYLE='patchange_5' TITLE="Squares 2 - transparent"></LI>
-							<LI ID="pat_6" DATA-STYLE='patchange_6' TITLE=""></LI>
-							<LI ID="pat_7" DATA-STYLE='patchange_7' TITLE=""></LI>
-							<LI ID="pat_8" DATA-STYLE='patchange_8' TITLE=""></LI>
-							<LI ID="pat_9" DATA-STYLE='patchange_9' TITLE=""></LI>
+							<LI ID="pat_6" DATA-STYLE='patchange_6' TITLE="XXX - transparent"></LI>
+							<LI ID="pat_7" DATA-STYLE='patchange_7' TITLE="XXX - transparent"></LI>
+							<LI ID="pat_8" DATA-STYLE='patchange_8' TITLE="XXX - transparent"></LI>
+							<LI ID="pat_9" DATA-STYLE='patchange_9' TITLE="Dark full image"></LI>
 						</UL>
-					</DIV>
-					<DIV CLASS="form_holder_center">
 						<DIV CLASS="section-label">Font settings
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
@@ -160,18 +200,6 @@
 									</select>
 								</TD>
 							</TR>
-							<TR>
-								<TD>Body font size:</TD>
-								<TD>
-									<select id="bodyfontsize">
-										<option value="10px">10px</option>
-										<option value="11px" style="font-weight: bold;" selected>11px</option>
-										<option value="12px">12px</option>
-										<option value="13px">13px</option>
-										<option value="14px">14px</option>
-									</select>
-								</TD>
-							</TR>
 						</TABLE>
 					</DIV>
 					<DIV CLASS="form_holder_right">
@@ -194,7 +222,7 @@
 							<TR>
 								<TD style="border-bottom: 1px solid #E0E0E0;">
 									<input id="rotatelogo" type="checkbox" class="rotatelogo" name="rotatelogo">
-									<label for="rotatelogo">Rotate Oscam logo</label>
+									<label for="rotatelogo">Rotate OSCam logo</label>
 								</TD>
 							</TR>
 							<TR>
@@ -236,7 +264,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1440</P>
+								<P><B>Envi revision:</B> 1441</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
