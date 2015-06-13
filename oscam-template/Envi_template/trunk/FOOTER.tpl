@@ -52,7 +52,7 @@
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									Color settings of WebIf.Colors settings in the following elements:
+									Color settings Envi in the following elements:
 									<UL>
 										<LI>Text in Main menu and Submenu</LI>
 										<LI>Text in links</LI>
@@ -73,7 +73,7 @@
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template"
+									Background color settings
 								</DIV>
 							</DIV>
 						</DIV>
@@ -136,7 +136,7 @@
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									For more information about this you use "Envi Tips and Tricks" in "Info about Envi Template"
+									Setting patterns for background
 								</DIV>
 							</DIV>
 						</DIV>
@@ -156,7 +156,7 @@
 							<DIV CLASS="sectioninfo">
 								<DIV CLASS="sectioninfo_icon"></DIV>
 								<DIV CLASS="sectioninfo_detail">
-									You can set the font for text in Menu or in whole page.
+									Setting the font for text in Menu or in whole page.
 								</DIV>
 							</DIV>
 						</DIV>
@@ -228,7 +228,7 @@
 							<TR>
 								<TD>
 									<input id="infotable_border" type="checkbox" class="infotable_border" name="infotable_border">
-									<label for="infotable_border">Border of info tables</label>
+									<label for="infotable_border">Border of tables</label>
 								</TD>
 							</TR>
 							<TR>
@@ -264,7 +264,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1441</P>
+								<P><B>Envi revision:</B> 1442</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>

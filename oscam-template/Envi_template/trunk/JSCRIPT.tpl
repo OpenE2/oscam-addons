@@ -2128,6 +2128,16 @@ $(function(){
 		// Cookie 'StyleSwitcher' is undefined
 	}
 
+/* Cookie - isActive/notActive Template color style */
+	//Check if cookie exists
+	if (typeof $.cookie('ColCookieID') != 'undefined'){
+		// Cookie 'ColCookieID' is defined
+		$('#' + $.cookie("ColCookieID")).addClass('active');
+	} else {
+		// Cookie 'ColCookieID' is undefined
+		$('#col_0').addClass('active');
+	}
+
 /* Cookie - isActive/notActive Background color */
 	//Check if cookie exists
 	if (typeof $.cookie('BackCookieID') != 'undefined'){
@@ -2146,16 +2156,6 @@ $(function(){
 	} else {
 		// Cookie 'PatCookieID' is undefined
 		$('#pat_0').addClass('active');
-	}
-
-/* Cookie - isActive/notActive Template color style */
-	//Check if cookie exists
-	if (typeof $.cookie('ColCookieID') != 'undefined'){
-		// Cookie 'ColCookieID' is defined
-		$('#' + $.cookie("ColCookieID")).addClass('active');
-	} else {
-		// Cookie 'ColCookieID' is undefined
-		$('#col_0').addClass('active');
 	}
 
 /* Cookie - for Menu Font Family */
@@ -2267,7 +2267,7 @@ $(function(){
 		$('.colchange li').on('click', function (e) {   // function for colchange li click
 			color = $(this).attr('data-style')       // Rename value "color" with class in colchange li
 			if ($("body").hasClass('envi')) {     
-				$("body").removeClass("colchange_1 colchange_2 colchange_3 colchange_4").addClass(color)
+				$("body").removeClass("colchange_0 colchange_1 colchange_2 colchange_3 colchange_4").addClass(color)
 				$.cookie('color', color, {        // Set cookie
 					expires: 365,
 					path: '/'
@@ -2283,7 +2283,7 @@ $(function(){
 		$('.backchange li').on('click', function (e) {
 			backcolor = $(this).attr('data-style')
 			if ($("body").hasClass('envi')) {
-				$("body").removeClass("background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9").addClass(backcolor)
+				$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9").addClass(backcolor)
 				$.cookie('backcolor', backcolor, {
 					expires: 365,
 					path: '/'
@@ -2299,7 +2299,7 @@ $(function(){
 		$('.patchange li').on('click', function (e) {
 			patcolor = $(this).attr('data-style')
 			if ($("body").hasClass('envi')) {
-				$("body").removeClass("patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9").addClass(patcolor)
+				$("body").removeClass("patchange_0 patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9").addClass(patcolor)
 				$.cookie('patcolor', patcolor, {
 					expires: 365,
 					path: '/'
@@ -2313,6 +2313,16 @@ $(function(){
 
 /* SETTINGS for LI for CHANGE COLOR and PATTERNS */
 $(function(){
+	// Template color style
+	$(".colchange li").click(function () {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		$.cookie('ColCookieID', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
+	});
+
 	// Background color
 	$(".backchange li").click(function () {
 		$(this).siblings('li').removeClass('active');
@@ -2323,6 +2333,8 @@ $(function(){
 		});
 		// Remove class 'active' from 'Custom background color in Color Picker'
 		$(".minicolors-swatch-color").removeClass('active');
+		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
+		$("#enviBodyColor").html('')
 	});
 
 	// Background pattern
@@ -2333,18 +2345,63 @@ $(function(){
 			expires: 365,
 			path: '/'
 		});
-	});
-
-	// Template color style
-	$(".colchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('ColCookieID', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
+		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
+		$("#enviBodyColor").html('')
 	});
 });
+
+/* GET CUSTOM COLOR FROM COLOR PICKER */
+$(function(){ 
+	$("#colorpicker1").bind("change", function() {
+		// Control if 'body' have 'class="envi"'
+		if ($("body").hasClass('envi')) {
+			//If 'body' have 'class="envi"' than remove all class for background (background class are added from list of color's background)
+			$("body").removeClass("patchange_0 background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
+			// And add css style to 'head'
+			$("#enviBodyColor").html('body.envi { background-color: '+ $(this).val() +'; background-image:none;}');
+		} else {
+			//If 'body' have not 'class="envi"' than remove all style from 'head'
+			$("#enviBodyColor").html('')
+		}
+	});
+
+	$("body").on('click', ".minicolors-swatch",function(){
+		// Remove 'class="active"' from List of background color
+		$(".backchange li").removeClass('active');
+		// Add class to 'span' from Color Picker
+		$(".minicolors-swatch-color").addClass('active');
+		if ($("body").hasClass('envi')) {
+			// Set variable
+			bodycolor = $('#colorpicker1').val()
+			//If 'body' have 'class="envi"' than remove all class for setting background color and add css style to 'stylesheet' in 'head'
+			$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
+			// And add css style to 'head'
+			$("#enviBodyColor").html('body.envi { background-color: '+ $('#colorpicker1').val() +'; background-image:none;}');
+			// Set color from Color Picker to cookies
+			var split_bodycolor = bodycolor.replace('#', '');
+			if(split_bodycolor.length > 0){
+				$.cookie('BodyColor', split_bodycolor, {
+					expires: 365,
+					path: '/'
+				});
+			}
+			
+		} else {
+			//If 'body' have not 'class="envi"' than remove all style from 'head'
+			$("#enviBodyColor").html('')
+		}
+	});
+	
+	if (typeof $.cookie('BodyColor') != 'undefined'){
+		// Cookie 'BodyColor' is defined
+		// And add css style to 'head'
+		$("#enviBodyColor").html('body.envi { background-color: #'+ $.cookie("BodyColor") +'; background-image:none;}');
+	} else {
+		// Cookie 'BodyColor' is undefined
+		$("#enviBodyColor").html('')
+	}
+});	
+
 
 /* CHECKBOX - ROTATE OSCAM LOGO */
 $(function(){
@@ -2885,18 +2942,13 @@ $(function () { if ($('body').hasClass('envi') == true) {
 					$(this).addClass('active').siblings().removeClass('active');
 				}).appendTo($pager).addClass('clickable');
 			}
-			
 
 			// Clear the old pager first
 			$('#pager').remove();
 			$pager.appendTo($tfoot).find('span.page-number:first').addClass('active');
  
-
-
 			$('#span4').html(numRows);
 			$('#span5').html(numPages);
-
-
 		});
 	}
 
@@ -3555,37 +3607,6 @@ $(function(){
 			$("#poll").before("<li id='reader_graph' class='configmenu'><a href=''>Graph of readers</a></li>");
 	}
 });
-
-/* -------------- GET CUSTOM COLOR FROM COLOR PICKER -------------- */
-$(function(){ 
-	$("#colorpicker1").bind("change", function() {
-		// Control if 'body' have 'class="envi"'
-		if ($("body").hasClass('envi')) {
-			//If 'body' have 'class="envi"' than remove all class for background (background class are added from list of color's background) and add css style to 'head'
-			$("body").removeClass("background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-			$("#enviBodyColor").html('body { background-color: '+ $(this).val() +'}');
-		} else {
-			//If 'body' have not 'class="envi"' thane remove all style from 'head'
-			$("#enviBodyColor").html('')
-		}
-	});
-
-	$("body").on('click', ".minicolors-swatch",function(){
-	   
-	   $(".backchange li").removeClass('active');
-	   $(".minicolors-swatch-color").addClass('active');
-	   if ($("body").hasClass('envi')) {
-			$("body").removeClass("background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-			$("#enviBodyColor").html('body { background-color: '+ $('#colorpicker1').val() +'}');
-		} else {
-			$("#enviBodyColor").html('')
-		}
-	});
-
-
-
-
-});	
 
 /* -------------- LIBRARY FOR ENVI -------------- */
 	/*! jquery.cookie v1.4.1 | MIT */

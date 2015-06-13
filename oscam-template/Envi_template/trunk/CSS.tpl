@@ -1591,7 +1591,6 @@ li.colchange_4 {
 .minicolors-swatch {
 	position: absolute;
 	vertical-align: middle;
-	background: url(jquery.minicolors.png) -80px 0;
 	border: solid 1px #ccc;
 	cursor: text;
 	padding: 0;
