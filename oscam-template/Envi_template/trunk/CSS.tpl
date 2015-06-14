@@ -20,7 +20,8 @@
 			# 2. BACKGROUND COLOR SETTINGS
 			# 3. PATTERNS COLOR SETTINGS
 			# 4. BODY FONT COLOR SETTINGS
-			# 5. SIMPLE COLOR PICKER
+			# 5. BODY LINK COLOR SETTINGS
+			# 6. SIMPLE COLOR PICKER
 
 		== ENVI TEMPLATE - BASIC STYLE 
 			# 2. BASIC DIVISION PAGES
@@ -1295,9 +1296,36 @@ div.envi_info {
 	width: 195px;
 	margin: 0px 10px 0px 5px;
 }
-.demo_changer .form_holder_one  {
+.demo_changer .form_holder_one {
 	float: left;
 	width: 100%;
+}
+.demo_changer #ext_settings {
+	display: none;
+	background-color: #FFF;
+	z-index: 1030;
+	clear: both;
+	height: 376px;
+	position: absolute;
+	top: 1px;
+	left: 0;
+	width: 626px;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	background: #FFF;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background-image: -webkit-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* Firefox */
+	background-image: -moz-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* IE10+ */
+	background-image: -ms-linear-gradient(bottom, #FFF 0%, #EAEAEA 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFF 0%, #EAEAEA 100%);
+
+}
+.demo_changer #ext_settings .form-group {
+	margin: 5px 0;
 }
 .demo_changer.active .form_holder {
 	display: table-cell
@@ -1320,7 +1348,9 @@ div.envi_info {
 	background: #FFF;
 	color: #666;
 }
-.form_holder #reset {
+.form_holder #reset,
+.form_holder #show_ext,
+.form_holder #save_color {
 	font-weight: 700;
 	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1333,11 +1363,23 @@ div.envi_info {
 	padding: 1px 6px;
 	cursor:pointer;
 	border: 1px solid transparent;
-	width: 115px;
 	height: 23px;
 	text-transform: uppercase
 }
-.form_holder #reset:hover {
+.form_holder #reset {
+	width: 115px
+}
+.form_holder #show_ext {
+	width: 160px;
+	margin-bottom: 10px;
+}
+.form_holder #save_color {
+	width: 160px;
+	margin-bottom: 10px;
+}
+.form_holder #reset:hover,
+.form_holder #show_ext:hover,
+.form_holder #save_color:hover {
 	background: #000
 }
 div.envi_info {
@@ -1470,14 +1512,16 @@ ul.colchange li.active {
 	border: 3px solid #F02
 }
 
-ul.fontcolorchange {
+ul.fontcolorchange,
+ul.linkcolorchange, {
 	height: 20px
 }
-div.footer ul.fontcolorchange {
+div.footer ul.fontcolorchange,
+div.footer ul.linkcolorchange {
 	margin: 0
 }
-ul.fontcolorchange li {
-	margin: 0px 5px;
+ul.fontcolorchange li,
+ul.linkcolorchange li {
 	padding: 7px;
 	display: block;
 	float: left;
@@ -1485,9 +1529,42 @@ ul.fontcolorchange li {
 	cursor: pointer;
 	border: 3px solid #E1E1E1
 }
+ul.fontcolorchange li {
+	margin: 0px 5px;
+}
+ul.linkcolorchange li {
+	margin: 4px 5px;
+}
 ul.fontcolorchange li:hover,
-ul.fontcolorchange li.active {
+ul.fontcolorchange li.active,
+ul.linkcolorchange li:hover,
+ul.linkcolorchange li.active {
 	border: 3px solid #F02
+}
+ul.linkcolorchange li#linkcolorchange_1 {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAABYlBMVEX/TTT/Ohn/MAVL/wA2/wD/JwD/WUIn/wD/GwD/VT0t/wD/HwD/Riv/QSRS/wZE/wA+/wD9/gC1tbX/wgC9vb2tra3/ygTl/wDi/wDg/wDF/wC+/wCf/wD/5wD/5QD/4wD/pADMzMz/bz//uTn/njX/6jH/gTH/0C7/mSf/eiP/Wx7/rQNw/wL/jgKO/wHB/wCo/wCk/wCH/wCC/wB5/wBo/wBh/wBV/wD/xgD/qAD/hgD/gQD/aQD/XwD/SwD/PwDa2tqlpaWcnJz/ikD/oj7/hjr/0jn/ajXp/zP9/jL/ZTD/tS/N/y3n/yv9/ir/YSr/tCez/yb/6SbL/yX/ziPn/yL9/iH/siCV/x+w/xz/lBz/6BvK/xn/zRn/dhjm/xX/rxV1/xP9/hL/VRL/kRGS/xCu/wz/6Az/cgzJ/wn/UQfl/wX/bgKs/wHI/wCa/wB9/wBb/wD/nwD/igD/ZAD/RQCI88vuAAAAEXRSTlPc3Nzc3Nz19fXg4ODc3Nzc3LbKYVoAAAC5SURBVAgdBcGxasJQFIDhv8fBii5iHaRDurgpOmiDWnEU3Ap5D6HvVRe3rkVUCiJkEYS+QKeaS27izfX4ffI4m04+GkG99bwchGUpASsAPqEk19dQAYC38VXY7wBFn/jeIB5GrTZAE2pCp/8FwB+qKpoXXH4VRcEI2zQEAAqL1PhJhwDRFKqibQ52viByeTgsi3Ge3Jp3kyTJuit4Chdbk9ps/xBL5RxwIs6y/PjvvXhuLwQ4ZxKhdwe3GU2mT45bywAAAABJRU5ErkJggg==);
+}
+#linkcolorchange_1 {
+	position: relative;
+}
+#linkcolorchange_1:hover .minipicker_wrapper {
+	display: block;
+	position: absolute;
+}
+.minipicker_wrapper {
+	display: none;
+	width: 120px;
+	position: absolute;
+	bottom: 2px;
+	padding: 5px;
+	border: 1px solid #CCC;
+	background-color: #F7F7F7;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+	z-index: 99999;
+}
+div.footer ul.minipicker_linkcolorchange {
+	height: 55px;
+	margin: 0;
 }
 
 /* ============================================= STYLESWITCHER - COLOR SETTINGS ========================== */
@@ -1683,7 +1760,20 @@ li.colchange_4 {
 .fontcolorchange_1 .modalDialog b {
     color: #A3A3A3 !important
 }
-/* **************** 5. SIMPLE COLOR PICKER */
+/* **************** 5. BODY LINK COLOR SETTINGS */
+[data-style="linkcolorchange_2"] {
+	background: #1ED5E6 !important
+}
+[data-style="linkcolorchange_3"] {
+	background: #B32114 !important
+}
+[data-style="linkcolorchange_4"] {
+	background: #7C170E !important
+}
+[data-style="linkcolorchange_5"] {
+	background: #B1FF3D !important
+}
+/* **************** 6. SIMPLE COLOR PICKER */
 .minicolors {
 	position: relative;
 }

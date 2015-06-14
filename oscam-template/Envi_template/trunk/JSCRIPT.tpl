@@ -2735,6 +2735,16 @@ $(function() {
 		}
 	});
 });
+/* -------------- EXTENDED SETTINGS IN STYLESWITCHER -------------- */
+/* Show extended settings in StyleSwitcher */
+$(function() {
+	$("#show_ext").click(function () {
+		$('#ext_settings').slideToggle("slide");
+		$(this).val( $(this).val() == 'Show extended settings' ? "Show basic settings" : "Show extended settings");
+		return false;
+	});
+
+});
 /* -------------- SCROLL TO TOP FUNCTION -------------- */
 $(function() {
 	// hide #back-top first
@@ -2763,7 +2773,8 @@ $(function() {
 !function ($) {
 	$(function(){
 		/* Styleswitcher */
-		$('.envi div.demo_changer li').boot_tooltip({animation: false, placement: 'bottom'})
+		$('.envi div.demo_changer li').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
+		$('.envi div.demo_changer input').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		/* Logo */
 		$('.envi div.logo a').boot_tooltip({animation: false, placement: 'bottom'})
 		/* Submit and button */

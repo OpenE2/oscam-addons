@@ -38,7 +38,7 @@
 			<DIV CLASS="form_holder">
 				<DIV CLASS="form_holder_one">
 					<DIV CLASS="styleswitcher">
-						<DIV CLASS="styleswitcher-label"> ENVI - STYLE SWITCHER </DIV>
+						<DIV CLASS="styleswitcher-label"> ENVI - STYLE SWITCHER</DIV>
 					</DIV>
 				</DIV>
 				<DIV CLASS="form_holder_left">
@@ -209,6 +209,28 @@
 									</UL>
 								</TD>
 							</TR>
+							<TR>
+								<TD>Body link color:</TD>
+								<TD STYLE="display: table; margin: 0px auto;">
+									<UL CLASS="linkcolorchange">
+										<LI ID="linkcolorchange_0" DATA-STYLE='linkcolorchange_0' TITLE="Default"></LI>
+										<LI ID="linkcolorchange_1" DATA-STYLE='linkcolorchange_1' TITLE="">
+											<DIV ID="minipicker_wrapper" CLASS="minipicker_wrapper">
+												<UL CLASS="minipicker_linkcolorchange">
+													<LI ID="link_2" DATA-STYLE='linkcolorchange_2' TITLE="Color 1"></LI>
+													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 2"></LI>
+													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 3"></LI>
+													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 4"></LI>
+													<LI ID="link_2" DATA-STYLE='linkcolorchange_2' TITLE="Color 1"></LI>
+													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 2"></LI>
+													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 3"></LI>
+													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 4"></LI>
+												</UL>
+											</DIV>
+										</LI>
+									</UL>
+								</TD>
+							</TR>
 						</TABLE>
 					</DIV>
 					<DIV CLASS="form_holder_right">
@@ -259,8 +281,139 @@
 								</TD>
 							</TR>
 						</TABLE>
-						<DIV STYLE="position: absolute; right: 50px; bottom: 47px;">
-							<input id="reset" value="Reset all value" type="reset">
+						<DIV STYLE="position: absolute; bottom: 47px; width: 180px; right: 7px; z-index: 1040;">
+							<input id="save_color" value="Save color settings" type="submit" title="Save color settings to file">
+							<input id="show_ext" value="Show extended settings" type="submit" title="Show extended color settings">
+							<input id="reset" value="Reset all value" type="reset" title="Reset all basic value (without extended settings)">
+						</DIV>
+					</DIV>
+				</DIV>
+				<DIV ID="ext_settings">
+					<DIV CLASS="form_holder_one">
+						<DIV CLASS="styleswitcher">
+							<DIV CLASS="styleswitcher-label"> ENVI - STYLE SWITCHER - EXTENDED SETTINGS</DIV>
+						</DIV>
+					</DIV>
+					<DIV CLASS="form_holder_left">
+						<DIV CLASS="section-label">Main Menu color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Background color: </label>
+								<input type="text" id="colorpicker2" class="demo" data-position="top left" value="#6067D1">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Font color: </label>
+								<input type="text" id="colorpicker3" class="demo" data-position="top left" value="#171A4D">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Link color: </label>
+								<input type="text" id="colorpicker4" class="demo" data-position="top left" value="#C84DD1">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Link:hover color: </label>
+								<input type="text" id="colorpicker5" class="demo" data-position="top left" value="#1DA39A">
+							</DIV>
+						</DIV>
+						<DIV CLASS="section-label">Submenu color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Background color: </label>
+								<input type="text" id="colorpicker6" class="demo" data-position="top left" value="#088713">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Font color: </label>
+								<input type="text" id="colorpicker7" class="demo" data-position="top left" value="#7D8568">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Link color: </label>
+								<input type="text" id="colorpicker8" class="demo" data-position="top left" value="#FFEB52">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Link:hover color: </label>
+								<input type="text" id="colorpicker9" class="demo" data-position="top left" value="#FF0A9D">
+							</DIV>
+						</DIV>
+					</DIV>
+					<DIV CLASS="form_holder_center">
+						<DIV CLASS="section-label">Table color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Thead back color: </label>
+								<input type="text" id="colorpicker10" class="demo" data-position="top left" value="#113D15">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Thead text color: </label>
+								<input type="text" id="colorpicker11" class="demo" data-position="top left" value="#9CA89D">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Text color: </label>
+								<input type="text" id="colorpicker12" class="demo" data-position="top left" value="#821329">
+							</DIV>
+						</DIV>
+						<DIV CLASS="section-label">LIVELOG color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Text color: </label>
+								<input type="text" id="colorpicker13" class="demo" data-position="top left" value="#052B2B">
+							</DIV>
+						</DIV>
+						<DIV CLASS="section-label">FILES color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Text color: </label>
+								<input type="text" id="colorpicker14" class="demo" data-position="top left" value="#98F0C2">
+							</DIV>
+						</DIV>
+					</DIV>
+					<DIV CLASS="form_holder_right">
+						<DIV CLASS="section-label">Footer color settings
+							<DIV CLASS="sectioninfo">
+								<DIV CLASS="sectioninfo_icon"></DIV>
+								<DIV CLASS="sectioninfo_detail"></DIV>
+							</DIV>
+						</DIV>
+						<DIV STYLE="text-align: right; padding-right: 10px;">
+							<DIV CLASS="form-group">
+								<label>Background color: </label>
+								<input type="text" id="colorpicker15" class="demo" data-position="top left" value="#5DBAC2">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Top border color: </label>
+								<input type="text" id="colorpicker16" class="demo" data-position="top left" value="#AFB37F">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Text color: </label>
+								<input type="text" id="colorpicker17" class="demo" data-position="top left" value="#3B0842">
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Text bold color: </label>
+								<input type="text" id="colorpicker18" class="demo" data-position="top left" value="#305D61">
+							</DIV>
 						</DIV>
 					</DIV>
 				</DIV>
@@ -273,7 +426,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1449</P>
+								<P><B>Envi revision:</B> 1450</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
