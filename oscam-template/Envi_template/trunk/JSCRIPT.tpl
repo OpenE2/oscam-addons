@@ -2320,6 +2320,38 @@ $(function(){
 			return $(this).attr('data-style') === patcolor
 		}).click()
 
+		/* It si terrible solution, but works */
+		$("#pat_9").click(function () {
+			if ($("body").hasClass('envi')) {
+				$('body').removeClass('fontcolorchange_0 fontcolorchange_1');
+				$('.fontcolorchange li').removeClass('active');
+				$('#fontcolorchange_1').addClass('active');
+				$.cookie('BodyFontColorCookieID', 'fontcolorchange_1', {
+					expires: 365,
+					path: '/'
+				});
+				$.cookie('fontcolor', 'fontcolorchange_1', {
+					expires: 365,
+					path: '/'
+				});
+			};
+		});
+		$("#pat_0, #pat_1, #pat_2, #pat_3, #pat_4, #pat_5, #pat_6, #pat_7, #pat_8").click(function () {
+			if ($("body").hasClass('envi')) {
+				$('body').removeClass('fontcolorchange_0 fontcolorchange_1');
+				$('.fontcolorchange li').removeClass('active');
+				$('#fontcolorchange_0').addClass('active');
+				$.cookie('BodyFontColorCookieID', 'fontcolorchange_0', {
+					expires: 365,
+					path: '/'
+				});
+				$.cookie('fontcolor', 'fontcolorchange_0', {
+					expires: 365,
+					path: '/'
+				});
+			};
+		});
+
 	/* Change body font color */
 		var fontcolor = $.cookie('fontcolor');
 		$('.fontcolorchange li').on('click', function (e) {
