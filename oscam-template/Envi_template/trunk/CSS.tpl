@@ -1617,9 +1617,12 @@ li.colchange_4 {
 }
 
 /* **************** 4. BODY FONT COLOR SETTINGS */
+/* ------- Class 'fontcolorchange_0' ------- */
+/* Color for StyleSwitcher */
 [data-style="fontcolorchange_0"] {
 	background: #000 !important
 }
+/* Set color for text in Body */
 .fontcolorchange_0 p,
 .fontcolorchange_0 div.debugmenu,
 .fontcolorchange_0 div.logmenu,
@@ -1629,9 +1632,32 @@ li.colchange_4 {
 .fontcolorchange_0 div.warning {
 	color: #000 !important
 }
+/* Exclusion of styles in 'P' 
+ * td.subheadline p - in 'TH' in 'status.html'
+ * p - in modal dialog in Info about Envi Template
+ * p.thanks - in modal dialog in Info about Envi Template
+ */
+.fontcolorchange_0 td.subheadline p {
+	color: #FFF !important
+}
+.fontcolorchange_0 .modalDialog p {
+    color: #000 !important
+}
+.fontcolorchange_0 .modalDialog p.thanks {
+    color: #BBB !important
+}
+/* Exclusion of styles in 'B' 
+ * 'b' - in modal dialog in Info about Envi Template
+ */
+.fontcolorchange_0 .modalDialog b {
+    color: #A3A3A3 !important
+}
+/* ------- Class 'fontcolorchange_1' ------- */
+/* Color for StyleSwitcher */
 [data-style="fontcolorchange_1"] {
 	background: #FFF !important
 }
+/* Set color for text in Body */
 .fontcolorchange_1 p,
 .fontcolorchange_1 div.debugmenu,
 .fontcolorchange_1 div.logmenu,
@@ -1640,6 +1666,22 @@ li.colchange_4 {
 .fontcolorchange_1 ul#regexdatainput,
 .fontcolorchange_1 div.warning {
 	color: #FFF !important
+}
+/* Exclusion of styles in 'P' 
+ * p.thanks - in modal dialog in Info about Envi Template
+ * p - in modal dialog in Info about Envi Template
+ */
+.fontcolorchange_1 .modalDialog p {
+    color: #000 !important
+}
+.fontcolorchange_1 .modalDialog p.thanks {
+    color: #BBB !important
+}
+/* Exclusion of styles in 'B' 
+ * 'b' - in modal dialog in Info about Envi Template
+ */
+.fontcolorchange_1 .modalDialog b {
+    color: #A3A3A3 !important
 }
 /* **************** 5. SIMPLE COLOR PICKER */
 .minicolors {
@@ -1850,6 +1892,7 @@ li.colchange_4 {
 	border: 3px solid #E1E1E1;
 	width: 100px;
 }
+#colorpicker1:hover,
 #colorpicker1.active {
 	border: 3px solid #F02;
 }
@@ -3009,7 +3052,7 @@ div.groups {
  /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1"
  * Basic colors: #16B6C6
- * Other colors: #038AA5 , #13A2AE , #30D9E8 , #D1E5EF , #C5D9E3 , #025D8C
+ * Other colors: 
  */
 /* Color for main menu */
 .colchange_1 li.menu_selected a {
@@ -3052,14 +3095,15 @@ div.groups {
 /* Generaly settings for all buttons/submits */
 .colchange_1 input[type=button],
 .colchange_1 input[type=submit] {
-	background-color: #16B6C6
+	background-color: #16B6C6;
+	transition: color 0.5s ease, background-color 0.5s ease
 }
 /* Generaly hover settings for all buttons/submits */
 .colchange_1 input[type=button]:hover,
 .colchange_1 input[type=submit]:hover {
 	background-color: #000;
 	color: #16B6C6;
-	transition: all 0.5s ease 0s
+	transition: all 0.5s ease
 }
 /* User-Page polling */
 .colchange_1 #picolor {
@@ -3074,7 +3118,7 @@ div.groups {
 .colchange_1 #dec:hover,
 .colchange_1 .regexbutton:hover {
 	background-color: #000;
-	transition:all 0.5s ease 0s
+	transition:all 0.5s ease
 }
 /* StyleSwitcher */
 .colchange_1 div.form_holder a.active {
@@ -3093,13 +3137,43 @@ div.groups {
 .colchange_1 ul.colchange li:hover {
 	border-color: #16B6C6
 }
+.colchange_1 #colorpicker1:hover,
+.colchange_1 #colorpicker1.active {
+	border-color: #16B6C6
+}
+.colchange_1 ul.fontcolorchange li:hover, 
+.colchange_1 ul.fontcolorchange li.active {
+	border-color: #16B6C6
+}
 .colchange_1 .form_holder #reset{
 	background-color:#16B6C6
 }
 .colchange_1 .form_holder #reset:hover {
 	background-color: #000;
 	color: #16B6C6;
-	transition: all 0.5s ease 0s
+	transition: all 0.5s ease
+}
+.colchange_1.plastic input[type="button"],
+.colchange_1.plastic input[type="submit"],
+.colchange_1.plastic .form_holder #reset {
+	color: #FFF;
+	border: solid 1px #0076a3;
+	background: #16B6C6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#16B6C6), to(#0D6D75));
+	background: -moz-linear-gradient(top,  #16B6C6,  #0D6D75);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16B6C6', endColorstr='#0D6D75');
+	transition: none
+}
+.colchange_1.plastic input[type="button"]:hover,
+.colchange_1.plastic input[type="submit"]:hover,
+.colchange_1.plastic .form_holder #reset:hover {
+	color: #16B6C6;
+	border: solid 1px #000;
+	background: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
+	transition: none
 }
 /* Color for links of icons */
 .colchange_1 a img.icon {
@@ -3112,7 +3186,7 @@ div.groups {
 .colchange_1 a:link,
 .colchange_1 a:visited,
 .colchange_1 a:active {
-	color: #038AA5
+	color: #0E727B
 }
 .colchange_1 a:hover {
 	color: #000
@@ -3137,7 +3211,7 @@ div.groups {
 .colchange_1 .configreader a,
 .colchange_1 .configuser a,
 .colchange_1 .configservices a {
-	color: #025D8C
+	color: #0E727B
 }
 .colchange_1 .config a:hover,
 .colchange_1 .configreader a:hover,
