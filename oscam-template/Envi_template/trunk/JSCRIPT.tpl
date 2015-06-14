@@ -2158,6 +2158,16 @@ $(function(){
 		$('#pat_0').addClass('active');
 	}
 
+/* Cookie - isActive/notActive Body Font Color */
+	//Check if cookie exists
+	if (typeof $.cookie('BodyFontColorCookieID') != 'undefined'){
+		// Cookie 'BodyFontColorCookieID' is defined
+		$('#' + $.cookie("BodyFontColorCookieID")).addClass('active');
+	} else {
+		// Cookie 'BodyFontColorCookieID' is undefined
+		$('#fontcolorchange_0').addClass('active');
+	}
+
 /* Cookie - for Menu Font Family */
 	//Check if cookie exists
 	if (typeof $.cookie('FontFamily') != 'undefined'){
@@ -2309,6 +2319,22 @@ $(function(){
 		}).filter(function () {
 			return $(this).attr('data-style') === patcolor
 		}).click()
+
+	/* Change body font color */
+		var fontcolor = $.cookie('fontcolor');
+		$('.fontcolorchange li').on('click', function (e) {
+			fontcolor = $(this).attr('data-style')
+			if ($("body").hasClass('envi')) {
+				$("body").removeClass("fontcolorchange_0 fontcolorchange_1").addClass(fontcolor)
+				$.cookie('fontcolor', fontcolor, {
+					expires: 365,
+					path: '/'
+				});
+			};
+			return false;
+		}).filter(function () {
+			return $(this).attr('data-style') === fontcolor
+		}).click()
 });
 
 /* SETTINGS for LI for CHANGE COLOR and PATTERNS */
@@ -2332,7 +2358,7 @@ $(function(){
 			path: '/'
 		});
 		// Remove class 'active' from 'Custom background color in Color Picker'
-		$(".minicolors-swatch-color").removeClass('active');
+		$("#colorpicker1").removeClass('active');
 		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
 		$("#enviBodyColor").html('')
 	});
@@ -2348,55 +2374,22 @@ $(function(){
 		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
 		$("#enviBodyColor").html('')
 	});
+
+	// Body font color
+	$(".fontcolorchange li").click(function () {
+		$(this).siblings('li').removeClass('active');
+		$(this).addClass('active');
+		$.cookie('BodyFontColorCookieID', $(this).attr('id'), {
+			expires: 365,
+			path: '/'
+		});
+	});
 });
 
 /* GET CUSTOM COLOR FROM COLOR PICKER */
-$(function(){ 
-	$("#colorpicker1").bind("change", function() {
-		// Set variable
-		bodycolor = $('#colorpicker1').val()
-		// Set value from Color Picker to DIV
-		$("#colorpicker_value").html(bodycolor)
-		// Control if 'body' have 'class="envi"'
-		if ($("body").hasClass('envi')) {
-			//If 'body' have 'class="envi"' than remove all class for background (background class are added from list of color's background)
-			$("body").removeClass("patchange_0 background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-			// And add css style to 'head'
-			$("#enviBodyColor").html('body.envi { background-color: '+ $(this).val() +'; background-image:none;}');
-		} else {
-			//If 'body' have not 'class="envi"' than remove all style from 'head'
-			$("#enviBodyColor").html('')
-		}
-	});
-
-	$("body").on('click', ".minicolors-swatch",function(){
-		// Set variable
-		bodycolor = $('#colorpicker1').val()
-		// Remove 'class="active"' from List of background color
-		$(".backchange li").removeClass('active');
-		// Add class to 'span' from Color Picker
-		$(".minicolors-swatch-color").addClass('active');
-		// Set value from Color Picker to DIV
-		$("#colorpicker_value").html(bodycolor)
-		if ($("body").hasClass('envi')) {
-			//If 'body' have 'class="envi"' than remove all class for setting background color and add css style to 'stylesheet' in 'head'
-			$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-			// And add css style to 'head'
-			$("#enviBodyColor").html('body.envi { background-color: '+ $('#colorpicker1').val() +'; background-image:none;}');
-			// Set color from Color Picker to cookies
-			var split_bodycolor = bodycolor.replace('#', '');
-			if(split_bodycolor.length > 0){
-				$.cookie('BodyColor', split_bodycolor, {
-					expires: 365,
-					path: '/'
-				});
-			}			
-		} else {
-			//If 'body' have not 'class="envi"' than remove all style from 'head'
-			$("#enviBodyColor").html('')
-		}
-	});
-	
+$(function(){
+/* =========== BACKGROUND COLOR =======*/
+	/* Cookie background color */
 	if (typeof $.cookie('BodyColor') != 'undefined'){
 		// Cookie 'BodyColor' is defined
 		// And add css style to 'head'
@@ -2405,6 +2398,45 @@ $(function(){
 		// Cookie 'BodyColor' is undefined
 		$("#enviBodyColor").html('')
 	}
+	
+	/* Background color */
+	$("#colorpicker1").bind("change", function() {
+		// Set variable
+		bodycolor = $(this).val()
+		// Remove all class for background (background class are added from list of color's background)
+		$("body").removeClass("patchange_0 background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
+		// And add css style to 'head'
+		$("#enviBodyColor").html('body.envi { background-color: '+ bodycolor +'; background-image:none;}');
+		// Set color from Color Picker to cookies
+		var split_bodycolor = bodycolor.replace('#', '');
+		if(split_bodycolor.length > 0){
+			$.cookie('BodyColor', split_bodycolor, {
+				expires: 365,
+				path: '/'
+			});
+		}
+	});
+
+	$("body").on('click', "#colorpicker1",function(){
+		// Set variable
+		bodycolor = $('#colorpicker1').val()
+		// Remove 'class="active"' from List of background color
+		$(".backchange li").removeClass('active');
+		// Add class to 'input' from Color Picker
+		$("#colorpicker1").addClass('active');
+		//Remove all class for setting background color and add css style to 'stylesheet' in 'head'
+		$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
+		// And add css style to 'head'
+		$("#enviBodyColor").html('body.envi { background-color: '+ bodycolor +'; background-image:none;}');
+		// Set color from Color Picker to cookies
+		var split_bodycolor = bodycolor.replace('#', '');
+		if(split_bodycolor.length > 0){
+			$.cookie('BodyColor', split_bodycolor, {
+				expires: 365,
+				path: '/'
+			});
+		}
+	});
 });	
 
 
@@ -2648,6 +2680,7 @@ $(function() {
 			$('.backchange li').removeClass('active');
 			$('.patchange li').removeClass('active');
 			$('.colchange li').removeClass('active');
+			$('.fontcolorchange li').removeClass('active');
 			$('#rotatelogo').prop('checked', false);
 			$('#infotable_border').prop('checked', false);
 			$('#border_radius').prop('checked', false);
@@ -2657,6 +2690,7 @@ $(function() {
 			$('#col_0').addClass('active');
 			$('#back_0').addClass('active');
 			$('#pat_0').addClass('active');
+			$('#fontcolorchange_0').addClass('active');
 			// Set default input
 			$("#menufontfamily")[0].selectedIndex = 0;
 			$("#menufontsize")[0].selectedIndex = 1;
@@ -3380,229 +3414,6 @@ function CreateIcons() {
 // ********************************************************************
 }});
 
-/* -------------- JQUERY RESPONSIVE -------------- */
-if (window.matchMedia('(max-width: 360px)').matches) {
-		// do functionality on screens smaller than 768px
-		function CreateIcons() {
-		// Variable for color settings
-		var color = 'FFFFFF';
-		var colorHover = 'F00423';
-
-		// Icon for STATUS
-			var svgStatus = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 10.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-0.75v-4q0-0.109-0.070-0.18t-0.18-0.070h-2.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h0.75v2.5h-0.75q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h3.5q0.109 0 0.18-0.070t0.070-0.18zM7 3.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-1.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h1.5q0.109 0 0.18-0.070t0.070-0.18zM12 7q0 1.633-0.805 3.012t-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805 3.012 0.805 2.184 2.184 0.805 3.012z" fill="#'+color+'"></path></svg>';
-			var encodedStatus = window.btoa(svgStatus);
-			var svgStatusHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 10.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-0.75v-4q0-0.109-0.070-0.18t-0.18-0.070h-2.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h0.75v2.5h-0.75q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h3.5q0.109 0 0.18-0.070t0.070-0.18zM7 3.75v-1.25q0-0.109-0.070-0.18t-0.18-0.070h-1.5q-0.109 0-0.18 0.070t-0.070 0.18v1.25q0 0.109 0.070 0.18t0.18 0.070h1.5q0.109 0 0.18-0.070t0.070-0.18zM12 7q0 1.633-0.805 3.012t-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805 3.012 0.805 2.184 2.184 0.805 3.012z" fill="#'+colorHover+'"></path></svg>';
-			var encodedStatusHover = window.btoa(svgStatusHover);
-
-			if ($('#item1').hasClass('menu_selected') == true) {
-				$('a.menu_image1').css("background-image","url(data:image/svg+xml;base64," + encodedStatusHover + ")");
-			} else {
-				$("a.menu_image1").css("background-image","url(data:image/svg+xml;base64," + encodedStatus + ")");
-				$('a.menu_image1').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedStatusHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedStatus + ")");
-				});
-			}
-
-
-		// Icon for LIVELOG
-			var svgLivelog = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M14 10.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 7.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 4.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 1.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+color+'"></path></svg>';
-			var encodedLivelog = window.btoa(svgLivelog);
-			var svgLivelogHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M14 10.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 7.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 4.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352zM14 1.5v1q0 0.203-0.148 0.352t-0.352 0.148h-13q-0.203 0-0.352-0.148t-0.148-0.352v-1q0-0.203 0.148-0.352t0.352-0.148h13q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+colorHover+'"></path></svg>';
-			var encodedLivelogHover = window.btoa(svgLivelogHover);
-
-			if ($('#item2').hasClass('menu_selected') == true) {
-				$('a.menu_image2').css("background-image","url(data:image/svg+xml;base64," + encodedLivelogHover + ")");
-			} else {
-				$("a.menu_image2").css("background-image","url(data:image/svg+xml;base64," + encodedLivelog + ")");
-				$('a.menu_image2').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedLivelogHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedLivelog + ")");
-				});
-			}
-
-		// Icon for CONFIG
-			var svgConfig = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 7q0-0.828-0.586-1.414t-1.414-0.586-1.414 0.586-0.586 1.414 0.586 1.414 1.414 0.586 1.414-0.586 0.586-1.414zM12 6.148v1.734q0 0.094-0.062 0.18t-0.156 0.102l-1.445 0.219q-0.148 0.422-0.305 0.711 0.273 0.391 0.836 1.078 0.078 0.094 0.078 0.195t-0.070 0.18q-0.211 0.289-0.773 0.844t-0.734 0.555q-0.094 0-0.203-0.070l-1.078-0.844q-0.344 0.18-0.711 0.297-0.125 1.062-0.227 1.453-0.055 0.219-0.281 0.219h-1.734q-0.109 0-0.191-0.066t-0.090-0.168l-0.219-1.438q-0.383-0.125-0.703-0.289l-1.102 0.836q-0.078 0.070-0.195 0.070-0.109 0-0.195-0.086-0.984-0.891-1.289-1.313-0.055-0.078-0.055-0.18 0-0.094 0.062-0.18 0.117-0.164 0.398-0.52t0.422-0.551q-0.211-0.391-0.32-0.773l-1.43-0.211q-0.102-0.016-0.164-0.098t-0.062-0.184v-1.734q0-0.094 0.062-0.18t0.148-0.102l1.453-0.219q0.109-0.359 0.305-0.719-0.312-0.445-0.836-1.078-0.078-0.094-0.078-0.187 0-0.078 0.070-0.18 0.203-0.281 0.77-0.84t0.738-0.559q0.102 0 0.203 0.078l1.078 0.836q0.344-0.18 0.711-0.297 0.125-1.062 0.227-1.453 0.055-0.219 0.281-0.219h1.734q0.109 0 0.191 0.066t0.090 0.168l0.219 1.438q0.383 0.125 0.703 0.289l1.109-0.836q0.070-0.070 0.187-0.070 0.102 0 0.195 0.078 1.008 0.93 1.289 1.328 0.055 0.062 0.055 0.172 0 0.094-0.062 0.18-0.117 0.164-0.398 0.52t-0.422 0.551q0.203 0.391 0.32 0.766l1.43 0.219q0.102 0.016 0.164 0.098t0.062 0.184z" fill="#'+color+'"></path></svg>';
-			var encodedConfig = window.btoa(svgConfig);
-			var svgConfigHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M8 7q0-0.828-0.586-1.414t-1.414-0.586-1.414 0.586-0.586 1.414 0.586 1.414 1.414 0.586 1.414-0.586 0.586-1.414zM12 6.148v1.734q0 0.094-0.062 0.18t-0.156 0.102l-1.445 0.219q-0.148 0.422-0.305 0.711 0.273 0.391 0.836 1.078 0.078 0.094 0.078 0.195t-0.070 0.18q-0.211 0.289-0.773 0.844t-0.734 0.555q-0.094 0-0.203-0.070l-1.078-0.844q-0.344 0.18-0.711 0.297-0.125 1.062-0.227 1.453-0.055 0.219-0.281 0.219h-1.734q-0.109 0-0.191-0.066t-0.090-0.168l-0.219-1.438q-0.383-0.125-0.703-0.289l-1.102 0.836q-0.078 0.070-0.195 0.070-0.109 0-0.195-0.086-0.984-0.891-1.289-1.313-0.055-0.078-0.055-0.18 0-0.094 0.062-0.18 0.117-0.164 0.398-0.52t0.422-0.551q-0.211-0.391-0.32-0.773l-1.43-0.211q-0.102-0.016-0.164-0.098t-0.062-0.184v-1.734q0-0.094 0.062-0.18t0.148-0.102l1.453-0.219q0.109-0.359 0.305-0.719-0.312-0.445-0.836-1.078-0.078-0.094-0.078-0.187 0-0.078 0.070-0.18 0.203-0.281 0.77-0.84t0.738-0.559q0.102 0 0.203 0.078l1.078 0.836q0.344-0.18 0.711-0.297 0.125-1.062 0.227-1.453 0.055-0.219 0.281-0.219h1.734q0.109 0 0.191 0.066t0.090 0.168l0.219 1.438q0.383 0.125 0.703 0.289l1.109-0.836q0.070-0.070 0.187-0.070 0.102 0 0.195 0.078 1.008 0.93 1.289 1.328 0.055 0.062 0.055 0.172 0 0.094-0.062 0.18-0.117 0.164-0.398 0.52t-0.422 0.551q0.203 0.391 0.32 0.766l1.43 0.219q0.102 0.016 0.164 0.098t0.062 0.184z" fill="#'+colorHover+'"></path></svg>';
-			var encodedConfigHover = window.btoa(svgConfigHover);
-
-			if ($('#item3').hasClass('menu_selected') == true) {
-				$('a.menu_image3').css("background-image","url(data:image/svg+xml;base64," + encodedConfigHover + ")");
-			} else {
-				$("a.menu_image3").css("background-image","url(data:image/svg+xml;base64," + encodedConfig + ")");
-				$('a.menu_image3').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedConfigHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedConfig + ")");
-				});
-			}
-
-		// Icon for READERS
-			var svgReaders = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+color+'"></path></svg>';
-			var encodedReaders = window.btoa(svgReaders);
-			var svgReadersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 6q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 12q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 9q1.852 0 3.461-0.336t2.539-0.992v1.328q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1.328q0.93 0.656 2.539 0.992t3.461 0.336zM6 0q1.625 0 3.008 0.27t2.188 0.73 0.805 1v1q0 0.539-0.805 1t-2.188 0.73-3.008 0.27-3.008-0.27-2.188-0.73-0.805-1v-1q0-0.539 0.805-1t2.188-0.73 3.008-0.27z" fill="#'+colorHover+'"></path></svg>';
-			var encodedReadersHover = window.btoa(svgReadersHover);
-
-			if ($('#item4').hasClass('menu_selected') == true) {
-				$('a.menu_image4').css("background-image","url(data:image/svg+xml;base64," + encodedReadersHover + ")");
-			} else {
-				$("a.menu_image4").css("background-image","url(data:image/svg+xml;base64," + encodedReaders + ")");
-				$('a.menu_image4').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedReadersHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedReaders + ")");
-				});
-			}
-
-		// Icon for USERS
-			var svgUsers = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="14" viewBox="0 0 11 14"><path d="M11 10.977q0 0.937-0.57 1.48t-1.516 0.543h-6.828q-0.945 0-1.516-0.543t-0.57-1.48q0-0.414 0.027-0.809t0.109-0.852 0.207-0.848 0.336-0.762 0.484-0.633 0.668-0.418 0.871-0.156q0.070 0 0.328 0.168t0.582 0.375 0.844 0.375 1.043 0.168 1.043-0.168 0.844-0.375 0.582-0.375 0.328-0.168q0.477 0 0.871 0.156t0.668 0.418 0.484 0.633 0.336 0.762 0.207 0.848 0.109 0.852 0.027 0.809zM8.5 4q0 1.242-0.879 2.121t-2.121 0.879-2.121-0.879-0.879-2.121 0.879-2.121 2.121-0.879 2.121 0.879 0.879 2.121z" fill="#'+color+'"></path></svg>';
-			var encodedUsers = window.btoa(svgUsers);
-			var svgUsersHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="14" viewBox="0 0 11 14"><path d="M11 10.977q0 0.937-0.57 1.48t-1.516 0.543h-6.828q-0.945 0-1.516-0.543t-0.57-1.48q0-0.414 0.027-0.809t0.109-0.852 0.207-0.848 0.336-0.762 0.484-0.633 0.668-0.418 0.871-0.156q0.070 0 0.328 0.168t0.582 0.375 0.844 0.375 1.043 0.168 1.043-0.168 0.844-0.375 0.582-0.375 0.328-0.168q0.477 0 0.871 0.156t0.668 0.418 0.484 0.633 0.336 0.762 0.207 0.848 0.109 0.852 0.027 0.809zM8.5 4q0 1.242-0.879 2.121t-2.121 0.879-2.121-0.879-0.879-2.121 0.879-2.121 2.121-0.879 2.121 0.879 0.879 2.121z" fill="#'+colorHover+'"></path></svg>';
-			var encodedUsersHover = window.btoa(svgUsersHover);
-
-			if ($('#item5').hasClass('menu_selected') == true) {
-				$('a.menu_image5').css("background-image","url(data:image/svg+xml;base64," + encodedUsersHover + ")");
-			} else {
-				$("a.menu_image5").css("background-image","url(data:image/svg+xml;base64," + encodedUsers + ")");
-				$('a.menu_image5').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedUsersHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedUsers + ")");
-				});
-			}
-
-		// Icon for SERVICES
-			var svgServices = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M4 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM4 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM4 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM14 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531z" fill="#'+color+'"></path></svg>';
-			var encodedServices = window.btoa(svgServices);
-			var svgServicesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M4 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM4 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 9.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM4 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-2.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h2.5q0.312 0 0.531 0.219t0.219 0.531zM14 5.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531zM14 1.75v1.5q0 0.312-0.219 0.531t-0.531 0.219h-7.5q-0.312 0-0.531-0.219t-0.219-0.531v-1.5q0-0.312 0.219-0.531t0.531-0.219h7.5q0.312 0 0.531 0.219t0.219 0.531z" fill="#'+colorHover+'"></path></svg>';
-			var encodedServicesHover = window.btoa(svgServicesHover);
-
-			if ($('#item6').hasClass('menu_selected') == true) {
-				$('a.menu_image6').css("background-image","url(data:image/svg+xml;base64," + encodedServicesHover + ")");
-			} else {
-				$("a.menu_image6").css("background-image","url(data:image/svg+xml;base64," + encodedServices + ")");
-				$('a.menu_image6').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedServicesHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedServices + ")");
-				});
-			}
-
-		// Icon for FILES
-			var svgFiles = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+color+'"></path></svg>';   
-			var encodedFiles = window.btoa(svgFiles);
-			var svgFilesHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M11.469 3.719q0.109 0.109 0.219 0.281h-3.687v-3.687q0.172 0.109 0.281 0.219zM7.75 5h4.25v8.25q0 0.312-0.219 0.531t-0.531 0.219h-10.5q-0.312 0-0.531-0.219t-0.219-0.531v-12.5q0-0.312 0.219-0.531t0.531-0.219h6.25v4.25q0 0.312 0.219 0.531t0.531 0.219zM9 10.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 8.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18zM9 6.75v-0.5q0-0.109-0.070-0.18t-0.18-0.070h-5.5q-0.109 0-0.18 0.070t-0.070 0.18v0.5q0 0.109 0.070 0.18t0.18 0.070h5.5q0.109 0 0.18-0.070t0.070-0.18z" fill="#'+colorHover+'"></path></svg>';
-			var encodedFilesHover = window.btoa(svgFilesHover);
-
-			if ($('#item7').hasClass('menu_selected') == true) {
-				$('a.menu_image7').css("background-image","url(data:image/svg+xml;base64," + encodedFilesHover + ")");
-			} else {
-				$("a.menu_image7").css("background-image","url(data:image/svg+xml;base64," + encodedFiles + ")");
-				$('a.menu_image7').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFilesHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFiles + ")");
-				});
-			}
-
-		// Icon for FAILBAN
-			var svgFailban = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012-0.805 3.012-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805zM7 10.742v-1.484q0-0.109-0.070-0.184t-0.172-0.074h-1.5q-0.102 0-0.18 0.078t-0.078 0.18v1.484q0 0.102 0.078 0.18t0.18 0.078h1.5q0.102 0 0.172-0.074t0.070-0.184zM6.984 8.055l0.141-4.852q0-0.094-0.078-0.141-0.078-0.062-0.187-0.062h-1.719q-0.109 0-0.187 0.062-0.078 0.047-0.078 0.141l0.133 4.852q0 0.078 0.078 0.137t0.187 0.059h1.445q0.109 0 0.184-0.059t0.082-0.137z" fill="#'+color+'"></path></svg>';
-			var encodedFailban = window.btoa(svgFailban);
-			var svgFailbanHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012-0.805 3.012-2.184 2.184-3.012 0.805-3.012-0.805-2.184-2.184-0.805-3.012 0.805-3.012 2.184-2.184 3.012-0.805zM7 10.742v-1.484q0-0.109-0.070-0.184t-0.172-0.074h-1.5q-0.102 0-0.18 0.078t-0.078 0.18v1.484q0 0.102 0.078 0.18t0.18 0.078h1.5q0.102 0 0.172-0.074t0.070-0.184zM6.984 8.055l0.141-4.852q0-0.094-0.078-0.141-0.078-0.062-0.187-0.062h-1.719q-0.109 0-0.187 0.062-0.078 0.047-0.078 0.141l0.133 4.852q0 0.078 0.078 0.137t0.187 0.059h1.445q0.109 0 0.184-0.059t0.082-0.137z" fill="#'+colorHover+'"></path></svg>';
-			var encodedFailbanHover = window.btoa(svgFailbanHover);
-
-			if ($('#item8').hasClass('menu_selected') == true) {
-				$('a.menu_image8').css("background-image","url(data:image/svg+xml;base64," + encodedFailbanHover + ")");
-			} else {
-				$("a.menu_image8").css("background-image","url(data:image/svg+xml;base64," + encodedFailban + ")");
-				$('a.menu_image8').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFailbanHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedFailban + ")");
-				});
-			}
-
-		// Icon for CACHEEX
-			var svgCacheex = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M5.898 8.25q0 0.102-0.078 0.18l-2.594 2.594 1.125 1.125q0.148 0.148 0.148 0.352t-0.148 0.352-0.352 0.148h-3.5q-0.203 0-0.352-0.148t-0.148-0.352v-3.5q0-0.203 0.148-0.352t0.352-0.148 0.352 0.148l1.125 1.125 2.594-2.594q0.078-0.078 0.18-0.078t0.18 0.078l0.891 0.891q0.078 0.078 0.078 0.18zM12 1.5v3.5q0 0.203-0.148 0.352t-0.352 0.148-0.352-0.148l-1.125-1.125-2.594 2.594q-0.078 0.078-0.18 0.078t-0.18-0.078l-0.891-0.891q-0.078-0.078-0.078-0.18t0.078-0.18l2.594-2.594-1.125-1.125q-0.148-0.148-0.148-0.352t0.148-0.352 0.352-0.148h3.5q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+color+'"></path></svg>';
-			var encodedCacheex = window.btoa(svgCacheex);
-			var svgCacheexHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M5.898 8.25q0 0.102-0.078 0.18l-2.594 2.594 1.125 1.125q0.148 0.148 0.148 0.352t-0.148 0.352-0.352 0.148h-3.5q-0.203 0-0.352-0.148t-0.148-0.352v-3.5q0-0.203 0.148-0.352t0.352-0.148 0.352 0.148l1.125 1.125 2.594-2.594q0.078-0.078 0.18-0.078t0.18 0.078l0.891 0.891q0.078 0.078 0.078 0.18zM12 1.5v3.5q0 0.203-0.148 0.352t-0.352 0.148-0.352-0.148l-1.125-1.125-2.594 2.594q-0.078 0.078-0.18 0.078t-0.18-0.078l-0.891-0.891q-0.078-0.078-0.078-0.18t0.078-0.18l2.594-2.594-1.125-1.125q-0.148-0.148-0.148-0.352t0.148-0.352 0.352-0.148h3.5q0.203 0 0.352 0.148t0.148 0.352z" fill="#'+colorHover+'"></path></svg>';
-			var encodedCacheexHover = window.btoa(svgCacheexHover);
-
-			if ($('#item9').hasClass('menu_selected') == true) {
-				$('a.menu_image9').css("background-image","url(data:image/svg+xml;base64," + encodedCacheexHover + ")");
-			} else {
-				$("a.menu_image9").css("background-image","url(data:image/svg+xml;base64," + encodedCacheex + ")");
-				$('a.menu_image9').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedCacheexHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedCacheex + ")");
-				});
-			}
-
-		// Icon for SCRIPTS
-			var svgScripts = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z" fill="#'+color+'"></path><path d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z" fill="#'+color+'"></path><path d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z" fill="#'+color+'"></path></svg>';
-			var encodedScripts = window.btoa(svgScripts);
-			var svgScriptsHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><path d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z" fill="#'+colorHover+'"></path><path d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z" fill="#'+colorHover+'"></path><path d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z" fill="#'+colorHover+'"></path></svg>';
-			var encodedScriptsHover = window.btoa(svgScriptsHover);
-
-			if ($('#item10').hasClass('menu_selected') == true) {
-				$('a.menu_image10').css("background-image","url(data:image/svg+xml;base64," + encodedScriptsHover + ")");
-			} else {
-				$("a.menu_image10").css("background-image","url(data:image/svg+xml;base64," + encodedScripts + ")");
-				$('a.menu_image10').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedScriptsHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedScripts + ")");
-				});
-			}
-
-		// Icon for RESTART
-			var svgRestart = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M12 7q0 1.219-0.477 2.328t-1.281 1.914-1.914 1.281-2.328 0.477-2.328-0.477-1.914-1.281-1.281-1.914-0.477-2.328q0-1.422 0.629-2.68t1.77-2.109q0.336-0.25 0.746-0.195t0.652 0.391q0.25 0.328 0.191 0.738t-0.387 0.66q-0.766 0.578-1.184 1.414t-0.418 1.781q0 0.813 0.316 1.551t0.855 1.277 1.277 0.855 1.551 0.316 1.551-0.316 1.277-0.855 0.855-1.277 0.316-1.551q0-0.945-0.418-1.781t-1.184-1.414q-0.328-0.25-0.387-0.66t0.191-0.738q0.242-0.336 0.656-0.391t0.742 0.195q1.141 0.852 1.77 2.109t0.629 2.68zM7 1v5q0 0.406-0.297 0.703t-0.703 0.297-0.703-0.297-0.297-0.703v-5q0-0.406 0.297-0.703t0.703-0.297 0.703 0.297 0.297 0.703z" fill="#'+color+'"></path></svg>';
-			var encodedRestart = window.btoa(svgRestart);
-			var svgRestartHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14"><path d="M12 7q0 1.219-0.477 2.328t-1.281 1.914-1.914 1.281-2.328 0.477-2.328-0.477-1.914-1.281-1.281-1.914-0.477-2.328q0-1.422 0.629-2.68t1.77-2.109q0.336-0.25 0.746-0.195t0.652 0.391q0.25 0.328 0.191 0.738t-0.387 0.66q-0.766 0.578-1.184 1.414t-0.418 1.781q0 0.813 0.316 1.551t0.855 1.277 1.277 0.855 1.551 0.316 1.551-0.316 1.277-0.855 0.855-1.277 0.316-1.551q0-0.945-0.418-1.781t-1.184-1.414q-0.328-0.25-0.387-0.66t0.191-0.738q0.242-0.336 0.656-0.391t0.742 0.195q1.141 0.852 1.77 2.109t0.629 2.68zM7 1v5q0 0.406-0.297 0.703t-0.703 0.297-0.703-0.297-0.297-0.703v-5q0-0.406 0.297-0.703t0.703-0.297 0.703 0.297 0.297 0.703z" fill="#'+colorHover+'"></path></svg>';
-			var encodedRestartHover = window.btoa(svgRestartHover);
-
-			if ($('#item11').hasClass('menu_selected') == true) {
-				$('a.menu_image11').css("background-image","url(data:image/svg+xml;base64," + encodedRestartHover + ")");
-			} else {
-				$("a.menu_image11").css("background-image","url(data:image/svg+xml;base64," + encodedRestart + ")");
-				$('a.menu_image11').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedRestartHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedRestart + ")");
-				});
-			}
-
-		// Icon for STYLESWITCHER
-			var svgIcon = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#000000"></path></svg>';
-			var encodedIcon = window.btoa(svgIcon);
-			var svgIconHover = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M21 10.5h0.375c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5zM18 6h3v3h-3v-3zM13.875 19.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-13.5h-3v13.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v4.5h3v-4.5h0.375zM10.5 15h3v3h-3v-3zM6.375 10.5c0.619 0 1.125-0.506 1.125-1.125v-3.75c0-0.619-0.506-1.125-1.125-1.125h-0.375v-4.5h-3v4.5h-0.375c-0.619 0-1.125 0.506-1.125 1.125v3.75c0 0.619 0.506 1.125 1.125 1.125h0.375v13.5h3v-13.5h0.375zM3 6h3v3h-3v-3z" fill="#'+colorHover+'"></path></svg>';
-			var encodedIconHover = window.btoa(svgIconHover);
-
-			$('#demo_icon').css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
-			$('#demo_icon').hover(function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedIconHover + ")");
-				}, function () {
-					$(this).css("background-image","url(data:image/svg+xml;base64," + encodedIcon + ")");
-				});
-	}
-
-		// Icons - create ID and CLASS
-	$("#mainmenu li a").each(function (i) {
-		var incremental = i + 1;
-		$(this).addClass('menu_image' + incremental);
-	});
-	$("#mainmenu li").each(function (i) {
-		var incremental = i + 1;
-		$(this).attr('id', 'item' + incremental);
-	});
-	// CreateIcons for first loading page
-	CreateIcons();
-}
-
 /* -------------- GRAPHS FOR ENVI -------------- */
 
 /* IF DOCUMENT READY */ 
@@ -3627,5 +3438,843 @@ $(function(){
 	 *
 	 * Licensed under the MIT license: http://opensource.org/licenses/MIT
 	 *
-	 */jQuery&&function(e){function t(t,n){var r=e('<div class="minicolors" />'),i=e.minicolors.defaults;if(t.data("minicolors-initialized"))return;n=e.extend(!0,{},i,n);r.addClass("minicolors-theme-"+n.theme).toggleClass("minicolors-with-opacity",n.opacity);n.position!==undefined&&e.each(n.position.split(" "),function(){r.addClass("minicolors-position-"+this)});t.addClass("minicolors-input").data("minicolors-initialized",!1).data("minicolors-settings",n).prop("size",7).wrap(r).after('<div class="minicolors-panel minicolors-slider-'+n.control+'">'+'<div class="minicolors-slider">'+'<div class="minicolors-picker"></div>'+"</div>"+'<div class="minicolors-opacity-slider">'+'<div class="minicolors-picker"></div>'+"</div>"+'<div class="minicolors-grid">'+'<div class="minicolors-grid-inner"></div>'+'<div class="minicolors-picker"><div></div></div>'+"</div>"+"</div>");if(!n.inline){t.after('<span class="minicolors-swatch"><span class="minicolors-swatch-color"></span></span>');t.next(".minicolors-swatch").on("click",function(e){e.preventDefault();t.focus()})}t.parent().find(".minicolors-panel").on("selectstart",function(){return!1}).end();n.inline&&t.parent().addClass("minicolors-inline");u(t,!1);t.data("minicolors-initialized",!0)}function n(e){var t=e.parent();e.removeData("minicolors-initialized").removeData("minicolors-settings").removeProp("size").removeClass("minicolors-input");t.before(e).remove()}function r(e){var t=e.parent(),n=t.find(".minicolors-panel"),r=e.data("minicolors-settings");if(!e.data("minicolors-initialized")||e.prop("disabled")||t.hasClass("minicolors-inline")||t.hasClass("minicolors-focus"))return;i();t.addClass("minicolors-focus");n.stop(!0,!0).fadeIn(r.showSpeed,function(){r.show&&r.show.call(e.get(0))})}function i(){e(".minicolors-input").each(function(){var t=e(this),n=t.data("minicolors-settings"),r=t.parent();if(n.inline)return;r.find(".minicolors-panel").fadeOut(n.hideSpeed,function(){r.hasClass("minicolors-focus")&&n.hide&&n.hide.call(t.get(0));r.removeClass("minicolors-focus")})})}function s(e,t,n){var r=e.parents(".minicolors").find(".minicolors-input"),i=r.data("minicolors-settings"),s=e.find("[class$=-picker]"),u=e.offset().left,a=e.offset().top,f=Math.round(t.pageX-u),l=Math.round(t.pageY-a),c=n?i.animationSpeed:0,h,p,d,v;if(t.originalEvent.changedTouches){f=t.originalEvent.changedTouches[0].pageX-u;l=t.originalEvent.changedTouches[0].pageY-a}f<0&&(f=0);l<0&&(l=0);f>e.width()&&(f=e.width());l>e.height()&&(l=e.height());if(e.parent().is(".minicolors-slider-wheel")&&s.parent().is(".minicolors-grid")){h=75-f;p=75-l;d=Math.sqrt(h*h+p*p);v=Math.atan2(p,h);v<0&&(v+=Math.PI*2);if(d>75){d=75;f=75-75*Math.cos(v);l=75-75*Math.sin(v)}f=Math.round(f);l=Math.round(l)}e.is(".minicolors-grid")?s.stop(!0).animate({top:l+"px",left:f+"px"},c,i.animationEasing,function(){o(r,e)}):s.stop(!0).animate({top:l+"px"},c,i.animationEasing,function(){o(r,e)})}function o(e,t){function n(e,t){var n,r;if(!e.length||!t)return null;n=e.offset().left;r=e.offset().top;return{x:n-t.offset().left+e.outerWidth()/2,y:r-t.offset().top+e.outerHeight()/2}}var r,i,s,o,u,f,l,h=e.val(),d=e.attr("data-opacity"),v=e.parent(),g=e.data("minicolors-settings"),y=v.find(".minicolors-swatch"),b=v.find(".minicolors-grid"),w=v.find(".minicolors-slider"),E=v.find(".minicolors-opacity-slider"),S=b.find("[class$=-picker]"),x=w.find("[class$=-picker]"),T=E.find("[class$=-picker]"),N=n(S,b),C=n(x,w),k=n(T,E);if(t.is(".minicolors-grid, .minicolors-slider")){switch(g.control){case"wheel":o=b.width()/2-N.x;u=b.height()/2-N.y;f=Math.sqrt(o*o+u*u);l=Math.atan2(u,o);l<0&&(l+=Math.PI*2);if(f>75){f=75;N.x=69-75*Math.cos(l);N.y=69-75*Math.sin(l)}i=p(f/.75,0,100);r=p(l*180/Math.PI,0,360);s=p(100-Math.floor(C.y*(100/w.height())),0,100);h=m({h:r,s:i,b:s});w.css("backgroundColor",m({h:r,s:i,b:100}));break;case"saturation":r=p(parseInt(N.x*(360/b.width()),10),0,360);i=p(100-Math.floor(C.y*(100/w.height())),0,100);s=p(100-Math.floor(N.y*(100/b.height())),0,100);h=m({h:r,s:i,b:s});w.css("backgroundColor",m({h:r,s:100,b:s}));v.find(".minicolors-grid-inner").css("opacity",i/100);break;case"brightness":r=p(parseInt(N.x*(360/b.width()),10),0,360);i=p(100-Math.floor(N.y*(100/b.height())),0,100);s=p(100-Math.floor(C.y*(100/w.height())),0,100);h=m({h:r,s:i,b:s});w.css("backgroundColor",m({h:r,s:i,b:100}));v.find(".minicolors-grid-inner").css("opacity",1-s/100);break;default:r=p(360-parseInt(C.y*(360/w.height()),10),0,360);i=p(Math.floor(N.x*(100/b.width())),0,100);s=p(100-Math.floor(N.y*(100/b.height())),0,100);h=m({h:r,s:i,b:s});b.css("backgroundColor",m({h:r,s:100,b:100}))}e.val(c(h,g.letterCase))}if(t.is(".minicolors-opacity-slider")){g.opacity?d=parseFloat(1-k.y/E.height()).toFixed(2):d=1;g.opacity&&e.attr("data-opacity",d)}y.find("SPAN").css({backgroundColor:h,opacity:d});a(e,h,d)}function u(e,t){var n,r,i,s,o,u,f,l=e.parent(),d=e.data("minicolors-settings"),v=l.find(".minicolors-swatch"),y=l.find(".minicolors-grid"),b=l.find(".minicolors-slider"),w=l.find(".minicolors-opacity-slider"),E=y.find("[class$=-picker]"),S=b.find("[class$=-picker]"),x=w.find("[class$=-picker]");n=c(h(e.val(),!0),d.letterCase);n||(n=c(h(d.defaultValue,!0),d.letterCase));r=g(n);t||e.val(n);if(d.opacity){i=e.attr("data-opacity")===""?1:p(parseFloat(e.attr("data-opacity")).toFixed(2),0,1);isNaN(i)&&(i=1);e.attr("data-opacity",i);v.find("SPAN").css("opacity",i);o=p(w.height()-w.height()*i,0,w.height());x.css("top",o+"px")}v.find("SPAN").css("backgroundColor",n);switch(d.control){case"wheel":u=p(Math.ceil(r.s*.75),0,y.height()/2);f=r.h*Math.PI/180;s=p(75-Math.cos(f)*u,0,y.width());o=p(75-Math.sin(f)*u,0,y.height());E.css({top:o+"px",left:s+"px"});o=150-r.b/(100/y.height());n===""&&(o=0);S.css("top",o+"px");b.css("backgroundColor",m({h:r.h,s:r.s,b:100}));break;case"saturation":s=p(5*r.h/12,0,150);o=p(y.height()-Math.ceil(r.b/(100/y.height())),0,y.height());E.css({top:o+"px",left:s+"px"});o=p(b.height()-r.s*(b.height()/100),0,b.height());S.css("top",o+"px");b.css("backgroundColor",m({h:r.h,s:100,b:r.b}));l.find(".minicolors-grid-inner").css("opacity",r.s/100);break;case"brightness":s=p(5*r.h/12,0,150);o=p(y.height()-Math.ceil(r.s/(100/y.height())),0,y.height());E.css({top:o+"px",left:s+"px"});o=p(b.height()-r.b*(b.height()/100),0,b.height());S.css("top",o+"px");b.css("backgroundColor",m({h:r.h,s:r.s,b:100}));l.find(".minicolors-grid-inner").css("opacity",1-r.b/100);break;default:s=p(Math.ceil(r.s/(100/y.width())),0,y.width());o=p(y.height()-Math.ceil(r.b/(100/y.height())),0,y.height());E.css({top:o+"px",left:s+"px"});o=p(b.height()-r.h/(360/b.height()),0,b.height());S.css("top",o+"px");y.css("backgroundColor",m({h:r.h,s:100,b:100}))}e.data("minicolors-initialized")&&a(e,n,i)}function a(e,t,n){var r=e.data("minicolors-settings"),i=e.data("minicolors-lastChange");if(!i||i.hex!==t||i.opacity!==n){e.data("minicolors-lastChange",{hex:t,opacity:n});if(r.change)if(r.changeDelay){clearTimeout(e.data("minicolors-changeTimeout"));e.data("minicolors-changeTimeout",setTimeout(function(){r.change.call(e.get(0),t,n)},r.changeDelay))}else r.change.call(e.get(0),t,n);e.trigger("change").trigger("input")}}function f(t){var n=h(e(t).val(),!0),r=b(n),i=e(t).attr("data-opacity");if(!r)return null;i!==undefined&&e.extend(r,{a:parseFloat(i)});return r}function l(t,n){var r=h(e(t).val(),!0),i=b(r),s=e(t).attr("data-opacity");if(!i)return null;s===undefined&&(s=1);return n?"rgba("+i.r+", "+i.g+", "+i.b+", "+parseFloat(s)+")":"rgb("+i.r+", "+i.g+", "+i.b+")"}function c(e,t){return t==="uppercase"?e.toUpperCase():e.toLowerCase()}function h(e,t){e=e.replace(/[^A-F0-9]/ig,"");if(e.length!==3&&e.length!==6)return"";e.length===3&&t&&(e=e[0]+e[0]+e[1]+e[1]+e[2]+e[2]);return"#"+e}function p(e,t,n){e<t&&(e=t);e>n&&(e=n);return e}function d(e){var t={},n=Math.round(e.h),r=Math.round(e.s*255/100),i=Math.round(e.b*255/100);if(r===0)t.r=t.g=t.b=i;else{var s=i,o=(255-r)*i/255,u=(s-o)*(n%60)/60;n===360&&(n=0);if(n<60){t.r=s;t.b=o;t.g=o+u}else if(n<120){t.g=s;t.b=o;t.r=s-u}else if(n<180){t.g=s;t.r=o;t.b=o+u}else if(n<240){t.b=s;t.r=o;t.g=s-u}else if(n<300){t.b=s;t.g=o;t.r=o+u}else if(n<360){t.r=s;t.g=o;t.b=s-u}else{t.r=0;t.g=0;t.b=0}}return{r:Math.round(t.r),g:Math.round(t.g),b:Math.round(t.b)}}function v(t){var n=[t.r.toString(16),t.g.toString(16),t.b.toString(16)];e.each(n,function(e,t){t.length===1&&(n[e]="0"+t)});return"#"+n.join("")}function m(e){return v(d(e))}function g(e){var t=y(b(e));t.s===0&&(t.h=360);return t}function y(e){var t={h:0,s:0,b:0},n=Math.min(e.r,e.g,e.b),r=Math.max(e.r,e.g,e.b),i=r-n;t.b=r;t.s=r!==0?255*i/r:0;t.s!==0?e.r===r?t.h=(e.g-e.b)/i:e.g===r?t.h=2+(e.b-e.r)/i:t.h=4+(e.r-e.g)/i:t.h=-1;t.h*=60;t.h<0&&(t.h+=360);t.s*=100/255;t.b*=100/255;return t}function b(e){e=parseInt(e.indexOf("#")>-1?e.substring(1):e,16);return{r:e>>16,g:(e&65280)>>8,b:e&255}}e.minicolors={defaults:{animationSpeed:50,animationEasing:"swing",change:null,changeDelay:0,control:"hue",defaultValue:"",hide:null,hideSpeed:100,inline:!1,letterCase:"lowercase",opacity:!1,position:"bottom left",show:null,showSpeed:100,theme:"default"}};e.extend(e.fn,{minicolors:function(s,o){switch(s){case"destroy":e(this).each(function(){n(e(this))});return e(this);case"hide":i();return e(this);case"opacity":if(o===undefined)return e(this).attr("data-opacity");e(this).each(function(){u(e(this).attr("data-opacity",o))});return e(this);case"rgbObject":return f(e(this),s==="rgbaObject");case"rgbString":case"rgbaString":return l(e(this),s==="rgbaString");case"settings":if(o===undefined)return e(this).data("minicolors-settings");e(this).each(function(){var t=e(this).data("minicolors-settings")||{};n(e(this));e(this).minicolors(e.extend(!0,t,o))});return e(this);case"show":r(e(this).eq(0));return e(this);case"value":if(o===undefined)return e(this).val();e(this).each(function(){u(e(this).val(o))});return e(this);default:s!=="create"&&(o=s);e(this).each(function(){t(e(this),o)});return e(this)}}});e(document).on("mousedown.minicolors touchstart.minicolors",function(t){e(t.target).parents().add(t.target).hasClass("minicolors")||i()}).on("mousedown.minicolors touchstart.minicolors",".minicolors-grid, .minicolors-slider, .minicolors-opacity-slider",function(t){var n=e(this);t.preventDefault();e(document).data("minicolors-target",n);s(n,t,!0)}).on("mousemove.minicolors touchmove.minicolors",function(t){var n=e(document).data("minicolors-target");n&&s(n,t)}).on("mouseup.minicolors touchend.minicolors",function(){e(this).removeData("minicolors-target")}).on("mousedown.minicolors touchstart.minicolors",".minicolors-swatch",function(t){var n=e(this).parent().find(".minicolors-input");t.preventDefault();r(n)}).on("focus.minicolors",".minicolors-input",function(){var t=e(this);if(!t.data("minicolors-initialized"))return;r(t)}).on("blur.minicolors",".minicolors-input",function(){var t=e(this),n=t.data("minicolors-settings");if(!t.data("minicolors-initialized"))return;t.val(h(t.val(),!0));t.val()===""&&t.val(h(n.defaultValue,!0));t.val(c(t.val(),n.letterCase))}).on("keydown.minicolors",".minicolors-input",function(t){var n=e(this);if(!n.data("minicolors-initialized"))return;switch(t.keyCode){case 9:i();break;case 13:case 27:i();n.blur()}}).on("keyup.minicolors",".minicolors-input",function(){var t=e(this);if(!t.data("minicolors-initialized"))return;u(t,!0)}).on("paste.minicolors",".minicolors-input",function(){var t=e(this);if(!t.data("minicolors-initialized"))return;setTimeout(function(){u(t,!0)},1)})}(jQuery);
-	
+	 */
+	if(jQuery) (function($) {
+		
+		// Defaults
+		$.minicolors = {
+			defaults: {
+				animationSpeed: 50,
+				animationEasing: 'swing',
+				change: null,
+				changeDelay: 0,
+				control: 'hue',
+				defaultValue: '',
+				hide: null,
+				hideSpeed: 100,
+				inline: false,
+				letterCase: 'lowercase',
+				opacity: false,
+				position: 'bottom left',
+				show: null,
+				showSpeed: 100,
+				theme: 'default'
+			}
+		};
+		
+		// Public methods
+		$.extend($.fn, {
+			minicolors: function(method, data) {
+				
+				switch(method) {
+					
+					// Destroy the control
+					case 'destroy':
+						$(this).each( function() {
+							destroy($(this));
+						});
+						return $(this);
+					
+					// Hide the color picker
+					case 'hide':
+						hide();
+						return $(this);
+					
+					// Get/set opacity
+					case 'opacity':
+						// Getter
+						if( data === undefined ) {
+							// Getter
+							return $(this).attr('data-opacity');
+						} else {
+							// Setter
+							$(this).each( function() {
+								updateFromInput($(this).attr('data-opacity', data));
+							});
+						}
+						return $(this);
+					
+					// Get an RGB(A) object based on the current color/opacity
+					case 'rgbObject':
+						return rgbObject($(this), method === 'rgbaObject');
+					
+					// Get an RGB(A) string based on the current color/opacity
+					case 'rgbString':
+					case 'rgbaString':
+						return rgbString($(this), method === 'rgbaString');
+					
+					// Get/set settings on the fly
+					case 'settings':
+						if( data === undefined ) {
+							return $(this).data('minicolors-settings');
+						} else {
+							// Setter
+							$(this).each( function() {
+								var settings = $(this).data('minicolors-settings') || {};
+								destroy($(this));
+								$(this).minicolors($.extend(true, settings, data));
+							});
+						}
+						return $(this);
+					
+					// Show the color picker
+					case 'show':
+						show( $(this).eq(0) );
+						return $(this);
+					
+					// Get/set the hex color value
+					case 'value':
+						if( data === undefined ) {
+							// Getter
+							return $(this).val();
+						} else {
+							// Setter
+							$(this).each( function() {
+								updateFromInput($(this).val(data));
+							});
+						}
+						return $(this);
+					
+					// Initializes the control
+					default:
+						if( method !== 'create' ) data = method;
+						$(this).each( function() {
+							init($(this), data);
+						});
+						return $(this);
+					
+				}
+				
+			}
+		});
+		
+		// Initialize input elements
+		function init(input, settings) {
+			
+			var minicolors = $('<div id="minicolors" class="minicolors" />'),
+				defaults = $.minicolors.defaults;
+			
+			// Do nothing if already initialized
+			if( input.data('minicolors-initialized') ) return;
+			
+			// Handle settings
+			settings = $.extend(true, {}, defaults, settings);
+			
+			// The wrapper
+			minicolors
+				.addClass('minicolors-theme-' + settings.theme)
+				.toggleClass('minicolors-with-opacity', settings.opacity);
+			
+			// Custom positioning
+			if( settings.position !== undefined ) {
+				$.each(settings.position.split(' '), function() {
+					minicolors.addClass('minicolors-position-' + this);
+				});
+			}
+			
+			// The input
+			input
+				.addClass('minicolors-input')
+				.data('minicolors-initialized', false)
+				.data('minicolors-settings', settings)
+				.prop('size', 7)
+				.wrap(minicolors)
+				.after(
+					'<div class="minicolors-panel minicolors-slider-' + settings.control + '">' + 
+						'<div class="minicolors-slider">' + 
+							'<div class="minicolors-picker"></div>' +
+						'</div>' + 
+						'<div class="minicolors-opacity-slider">' + 
+							'<div class="minicolors-picker"></div>' +
+						'</div>' +
+						'<div class="minicolors-grid">' +
+							'<div class="minicolors-grid-inner"></div>' +
+							'<div class="minicolors-picker"><div></div></div>' +
+						'</div>' +
+					'</div>'
+				);
+			
+			// The swatch
+			if( !settings.inline ) {
+				input.after('<span class="minicolors-swatch"><span class="minicolors-swatch-color"></span></span>');
+				input.next('.minicolors-swatch').on('click', function(event) {
+					event.preventDefault();
+					input.focus();
+				});
+			}
+			
+			// Prevent text selection in IE
+			input.parent().find('.minicolors-panel').on('selectstart', function() { return false; }).end();
+			
+			// Inline controls
+			if( settings.inline ) input.parent().addClass('minicolors-inline');
+			
+			updateFromInput(input, false);
+			
+			input.data('minicolors-initialized', true);
+			
+		}
+		
+		// Returns the input back to its original state
+		function destroy(input) {
+			
+			var minicolors = input.parent();
+			
+			// Revert the input element
+			input
+				.removeData('minicolors-initialized')
+				.removeData('minicolors-settings')
+				.removeProp('size')
+				.removeClass('minicolors-input');
+			
+			// Remove the wrap and destroy whatever remains
+			minicolors.before(input).remove();
+			
+		}
+		
+		// Shows the specified dropdown panel
+		function show(input) {
+			
+			var minicolors = input.parent(),
+				panel = minicolors.find('.minicolors-panel'),
+				settings = input.data('minicolors-settings');
+			
+			// Do nothing if uninitialized, disabled, inline, or already open
+			if( !input.data('minicolors-initialized') || 
+				input.prop('disabled') || 
+				minicolors.hasClass('minicolors-inline') || 
+				minicolors.hasClass('minicolors-focus')
+			) return;
+			
+			hide();
+			
+			minicolors.addClass('minicolors-focus');
+			panel
+				.stop(true, true)
+				.fadeIn(settings.showSpeed, function() {
+					if( settings.show ) settings.show.call(input.get(0));
+				});
+			
+		}
+		
+		// Hides all dropdown panels
+		function hide() {
+			
+			$('.minicolors-input').each( function() {
+				
+				var input = $(this),
+					settings = input.data('minicolors-settings'),
+					minicolors = input.parent();
+				
+				// Don't hide inline controls
+				if( settings.inline ) return;
+				
+				minicolors.find('.minicolors-panel').fadeOut(settings.hideSpeed, function() {
+					if(minicolors.hasClass('minicolors-focus')) {
+						if( settings.hide ) settings.hide.call(input.get(0));
+					}
+					minicolors.removeClass('minicolors-focus');
+				});			
+							
+			});
+		}
+		
+		// Moves the selected picker
+		function move(target, event, animate) {
+			
+			var input = target.parents('.minicolors').find('.minicolors-input'),
+				settings = input.data('minicolors-settings'),
+				picker = target.find('[class$=-picker]'),
+				offsetX = target.offset().left,
+				offsetY = target.offset().top,
+				x = Math.round(event.pageX - offsetX),
+				y = Math.round(event.pageY - offsetY),
+				duration = animate ? settings.animationSpeed : 0,
+				wx, wy, r, phi;
+				
+			
+			// Touch support
+			if( event.originalEvent.changedTouches ) {
+				x = event.originalEvent.changedTouches[0].pageX - offsetX;
+				y = event.originalEvent.changedTouches[0].pageY - offsetY;
+			}
+			
+			// Constrain picker to its container
+			if( x < 0 ) x = 0;
+			if( y < 0 ) y = 0;
+			if( x > target.width() ) x = target.width();
+			if( y > target.height() ) y = target.height();
+			
+			// Constrain color wheel values to the wheel
+			if( target.parent().is('.minicolors-slider-wheel') && picker.parent().is('.minicolors-grid') ) {
+				wx = 75 - x;
+				wy = 75 - y;
+				r = Math.sqrt(wx * wx + wy * wy);
+				phi = Math.atan2(wy, wx);
+				if( phi < 0 ) phi += Math.PI * 2;
+				if( r > 75 ) {
+					r = 75;
+					x = 75 - (75 * Math.cos(phi));
+					y = 75 - (75 * Math.sin(phi));
+				}
+				x = Math.round(x);
+				y = Math.round(y);
+			}
+			
+			// Move the picker
+			if( target.is('.minicolors-grid') ) {
+				picker
+					.stop(true)
+					.animate({
+						top: y + 'px',
+						left: x + 'px'
+					}, duration, settings.animationEasing, function() {
+						updateFromControl(input, target);
+					});
+			} else {
+				picker
+					.stop(true)
+					.animate({
+						top: y + 'px'
+					}, duration, settings.animationEasing, function() {
+						updateFromControl(input, target);
+					});
+			}
+			
+		}
+		
+		// Sets the input based on the color picker values
+		function updateFromControl(input, target) {
+			
+			function getCoords(picker, container) {
+				
+				var left, top;
+				if( !picker.length || !container ) return null;
+				left = picker.offset().left;
+				top = picker.offset().top;
+				
+				return {
+					x: left - container.offset().left + (picker.outerWidth() / 2),
+					y: top - container.offset().top + (picker.outerHeight() / 2)
+				};
+				
+			}
+			
+			var hue, saturation, brightness, x, y, r, phi,
+				
+				hex = input.val(),
+				opacity = input.attr('data-opacity'),
+				
+				// Helpful references
+				minicolors = input.parent(),
+				settings = input.data('minicolors-settings'),
+				swatch = minicolors.find('.minicolors-swatch'),
+				
+				// Panel objects
+				grid = minicolors.find('.minicolors-grid'),
+				slider = minicolors.find('.minicolors-slider'),
+				opacitySlider = minicolors.find('.minicolors-opacity-slider'),
+				
+				// Picker objects
+				gridPicker = grid.find('[class$=-picker]'),
+				sliderPicker = slider.find('[class$=-picker]'),
+				opacityPicker = opacitySlider.find('[class$=-picker]'),
+				
+				// Picker positions
+				gridPos = getCoords(gridPicker, grid),
+				sliderPos = getCoords(sliderPicker, slider),
+				opacityPos = getCoords(opacityPicker, opacitySlider);
+			
+			// Handle colors
+			if( target.is('.minicolors-grid, .minicolors-slider') ) {
+				
+				// Determine HSB values
+				switch(settings.control) {
+					
+					case 'wheel':
+						// Calculate hue, saturation, and brightness
+						x = (grid.width() / 2) - gridPos.x;
+						y = (grid.height() / 2) - gridPos.y;
+						r = Math.sqrt(x * x + y * y);
+						phi = Math.atan2(y, x);
+						if( phi < 0 ) phi += Math.PI * 2;
+						if( r > 75 ) {
+							r = 75;
+							gridPos.x = 69 - (75 * Math.cos(phi));
+							gridPos.y = 69 - (75 * Math.sin(phi));
+						}
+						saturation = keepWithin(r / 0.75, 0, 100);
+						hue = keepWithin(phi * 180 / Math.PI, 0, 360);
+						brightness = keepWithin(100 - Math.floor(sliderPos.y * (100 / slider.height())), 0, 100);
+						hex = hsb2hex({
+							h: hue,
+							s: saturation,
+							b: brightness
+						});
+						
+						// Update UI
+						slider.css('backgroundColor', hsb2hex({ h: hue, s: saturation, b: 100 }));
+						break;
+					
+					case 'saturation':
+						// Calculate hue, saturation, and brightness
+						hue = keepWithin(parseInt(gridPos.x * (360 / grid.width()), 10), 0, 360);
+						saturation = keepWithin(100 - Math.floor(sliderPos.y * (100 / slider.height())), 0, 100);
+						brightness = keepWithin(100 - Math.floor(gridPos.y * (100 / grid.height())), 0, 100);
+						hex = hsb2hex({
+							h: hue,
+							s: saturation,
+							b: brightness
+						});
+						
+						// Update UI
+						slider.css('backgroundColor', hsb2hex({ h: hue, s: 100, b: brightness }));
+						minicolors.find('.minicolors-grid-inner').css('opacity', saturation / 100);
+						break;
+					
+					case 'brightness':
+						// Calculate hue, saturation, and brightness
+						hue = keepWithin(parseInt(gridPos.x * (360 / grid.width()), 10), 0, 360);
+						saturation = keepWithin(100 - Math.floor(gridPos.y * (100 / grid.height())), 0, 100);
+						brightness = keepWithin(100 - Math.floor(sliderPos.y * (100 / slider.height())), 0, 100);
+						hex = hsb2hex({
+							h: hue,
+							s: saturation,
+							b: brightness
+						});
+						
+						// Update UI
+						slider.css('backgroundColor', hsb2hex({ h: hue, s: saturation, b: 100 }));
+						minicolors.find('.minicolors-grid-inner').css('opacity', 1 - (brightness / 100));
+						break;
+					
+					default:
+						// Calculate hue, saturation, and brightness
+						hue = keepWithin(360 - parseInt(sliderPos.y * (360 / slider.height()), 10), 0, 360);
+						saturation = keepWithin(Math.floor(gridPos.x * (100 / grid.width())), 0, 100);
+						brightness = keepWithin(100 - Math.floor(gridPos.y * (100 / grid.height())), 0, 100);
+						hex = hsb2hex({
+							h: hue,
+							s: saturation,
+							b: brightness
+						});
+						
+						// Update UI
+						grid.css('backgroundColor', hsb2hex({ h: hue, s: 100, b: 100 }));
+						break;
+					
+				}
+			
+				// Adjust case
+				input.val( convertCase(hex, settings.letterCase) );
+				
+			}
+			
+			// Handle opacity
+			if( target.is('.minicolors-opacity-slider') ) {
+				if( settings.opacity ) {
+					opacity = parseFloat(1 - (opacityPos.y / opacitySlider.height())).toFixed(2);
+				} else {
+					opacity = 1;
+				}
+				if( settings.opacity ) input.attr('data-opacity', opacity);
+			}
+			
+			// Set swatch color
+			swatch.find('SPAN').css({
+				backgroundColor: hex,
+				opacity: opacity
+			});
+			
+			// Handle change event
+			doChange(input, hex, opacity);
+			
+		}
+		
+		// Sets the color picker values from the input
+		function updateFromInput(input, preserveInputValue) {
+			
+			var hex,
+				hsb,
+				opacity,
+				x, y, r, phi,
+				
+				// Helpful references
+				minicolors = input.parent(),
+				settings = input.data('minicolors-settings'),
+				swatch = minicolors.find('.minicolors-swatch'),
+				
+				// Panel objects
+				grid = minicolors.find('.minicolors-grid'),
+				slider = minicolors.find('.minicolors-slider'),
+				opacitySlider = minicolors.find('.minicolors-opacity-slider'),
+				
+				// Picker objects
+				gridPicker = grid.find('[class$=-picker]'),
+				sliderPicker = slider.find('[class$=-picker]'),
+				opacityPicker = opacitySlider.find('[class$=-picker]');
+			
+			// Determine hex/HSB values
+			hex = convertCase(parseHex(input.val(), true), settings.letterCase);
+			if( !hex ){
+				hex = convertCase(parseHex(settings.defaultValue, true), settings.letterCase);
+			}
+			hsb = hex2hsb(hex);
+			
+			// Update input value
+			if( !preserveInputValue ) input.val(hex);
+			
+			// Determine opacity value
+			if( settings.opacity ) {
+				// Get from data-opacity attribute and keep within 0-1 range
+				opacity = input.attr('data-opacity') === '' ? 1 : keepWithin(parseFloat(input.attr('data-opacity')).toFixed(2), 0, 1);
+				if( isNaN(opacity) ) opacity = 1;
+				input.attr('data-opacity', opacity);
+				swatch.find('SPAN').css('opacity', opacity);
+				
+				// Set opacity picker position
+				y = keepWithin(opacitySlider.height() - (opacitySlider.height() * opacity), 0, opacitySlider.height());
+				opacityPicker.css('top', y + 'px');
+			}
+			
+			// Update swatch
+			swatch.find('SPAN').css('backgroundColor', hex);
+			
+			// Determine picker locations
+			switch(settings.control) {
+				
+				case 'wheel':
+					// Set grid position
+					r = keepWithin(Math.ceil(hsb.s * 0.75), 0, grid.height() / 2);
+					phi = hsb.h * Math.PI / 180;
+					x = keepWithin(75 - Math.cos(phi) * r, 0, grid.width());
+					y = keepWithin(75 - Math.sin(phi) * r, 0, grid.height());
+					gridPicker.css({
+						top: y + 'px',
+						left: x + 'px'
+					});
+					
+					// Set slider position
+					y = 150 - (hsb.b / (100 / grid.height()));
+					if( hex === '' ) y = 0;
+					sliderPicker.css('top', y + 'px');
+					
+					// Update panel color
+					slider.css('backgroundColor', hsb2hex({ h: hsb.h, s: hsb.s, b: 100 }));
+					break;
+				
+				case 'saturation':
+					// Set grid position
+					x = keepWithin((5 * hsb.h) / 12, 0, 150);
+					y = keepWithin(grid.height() - Math.ceil(hsb.b / (100 / grid.height())), 0, grid.height());
+					gridPicker.css({
+						top: y + 'px',
+						left: x + 'px'
+					});				
+					
+					// Set slider position
+					y = keepWithin(slider.height() - (hsb.s * (slider.height() / 100)), 0, slider.height());
+					sliderPicker.css('top', y + 'px');
+					
+					// Update UI
+					slider.css('backgroundColor', hsb2hex({ h: hsb.h, s: 100, b: hsb.b }));
+					minicolors.find('.minicolors-grid-inner').css('opacity', hsb.s / 100);
+					break;
+				
+				case 'brightness':
+					// Set grid position
+					x = keepWithin((5 * hsb.h) / 12, 0, 150);
+					y = keepWithin(grid.height() - Math.ceil(hsb.s / (100 / grid.height())), 0, grid.height());
+					gridPicker.css({
+						top: y + 'px',
+						left: x + 'px'
+					});				
+					
+					// Set slider position
+					y = keepWithin(slider.height() - (hsb.b * (slider.height() / 100)), 0, slider.height());
+					sliderPicker.css('top', y + 'px');
+					
+					// Update UI
+					slider.css('backgroundColor', hsb2hex({ h: hsb.h, s: hsb.s, b: 100 }));
+					minicolors.find('.minicolors-grid-inner').css('opacity', 1 - (hsb.b / 100));
+					break;
+				
+				default:
+					// Set grid position
+					x = keepWithin(Math.ceil(hsb.s / (100 / grid.width())), 0, grid.width());
+					y = keepWithin(grid.height() - Math.ceil(hsb.b / (100 / grid.height())), 0, grid.height());
+					gridPicker.css({
+						top: y + 'px',
+						left: x + 'px'
+					});
+					
+					// Set slider position
+					y = keepWithin(slider.height() - (hsb.h / (360 / slider.height())), 0, slider.height());
+					sliderPicker.css('top', y + 'px');
+					
+					// Update panel color
+					grid.css('backgroundColor', hsb2hex({ h: hsb.h, s: 100, b: 100 }));
+					break;
+					
+			}
+			
+			// Fire change event, but only if minicolors is fully initialized
+			if( input.data('minicolors-initialized') ) {
+				doChange(input, hex, opacity);
+			}
+			
+		}
+		
+		// Runs the change and changeDelay callbacks
+		function doChange(input, hex, opacity) {
+			
+			var settings = input.data('minicolors-settings'),
+				lastChange = input.data('minicolors-lastChange');
+			
+			// Only run if it actually changed
+			if( !lastChange || lastChange.hex !== hex || lastChange.opacity !== opacity ) {
+				
+				// Remember last-changed value
+				input.data('minicolors-lastChange', {
+					hex: hex,
+					opacity: opacity
+				});
+				
+				// Fire change event
+				if( settings.change ) {
+					if( settings.changeDelay ) {
+						// Call after a delay
+						clearTimeout(input.data('minicolors-changeTimeout'));
+						input.data('minicolors-changeTimeout', setTimeout( function() {
+							settings.change.call(input.get(0), hex, opacity);
+						}, settings.changeDelay));
+					} else {
+						// Call immediately
+						settings.change.call(input.get(0), hex, opacity);
+					}
+				}
+				input.trigger('change').trigger('input');
+			}
+		
+		}
+		
+		// Generates an RGB(A) object based on the input's value
+		function rgbObject(input) {
+			var hex = parseHex($(input).val(), true),
+				rgb = hex2rgb(hex),
+				opacity = $(input).attr('data-opacity');
+			if( !rgb ) return null;
+			if( opacity !== undefined ) $.extend(rgb, { a: parseFloat(opacity) });
+			return rgb;
+		}
+		
+		// Genearates an RGB(A) string based on the input's value
+		function rgbString(input, alpha) {
+			var hex = parseHex($(input).val(), true),
+				rgb = hex2rgb(hex),
+				opacity = $(input).attr('data-opacity');
+			if( !rgb ) return null;
+			if( opacity === undefined ) opacity = 1;
+			if( alpha ) {
+				return 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', ' + parseFloat(opacity) + ')';
+			} else {
+				return 'rgb(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ')';
+			}
+		}
+		
+		// Converts to the letter case specified in settings
+		function convertCase(string, letterCase) {
+			return letterCase === 'uppercase' ? string.toUpperCase() : string.toLowerCase();
+		}
+		
+		// Parses a string and returns a valid hex string when possible
+		function parseHex(string, expand) {
+			string = string.replace(/[^A-F0-9]/ig, '');
+			if( string.length !== 3 && string.length !== 6 ) return '';
+			if( string.length === 3 && expand ) {
+				string = string[0] + string[0] + string[1] + string[1] + string[2] + string[2];
+			}
+			return '#' + string;
+		}
+		
+		// Keeps value within min and max
+		function keepWithin(value, min, max) {
+			if( value < min ) value = min;
+			if( value > max ) value = max;
+			return value;
+		}
+		
+		// Converts an HSB object to an RGB object
+		function hsb2rgb(hsb) {
+			var rgb = {};
+			var h = Math.round(hsb.h);
+			var s = Math.round(hsb.s * 255 / 100);
+			var v = Math.round(hsb.b * 255 / 100);
+			if(s === 0) {
+				rgb.r = rgb.g = rgb.b = v;
+			} else {
+				var t1 = v;
+				var t2 = (255 - s) * v / 255;
+				var t3 = (t1 - t2) * (h % 60) / 60;
+				if( h === 360 ) h = 0;
+				if( h < 60 ) { rgb.r = t1; rgb.b = t2; rgb.g = t2 + t3; }
+				else if( h < 120 ) {rgb.g = t1; rgb.b = t2; rgb.r = t1 - t3; }
+				else if( h < 180 ) {rgb.g = t1; rgb.r = t2; rgb.b = t2 + t3; }
+				else if( h < 240 ) {rgb.b = t1; rgb.r = t2; rgb.g = t1 - t3; }
+				else if( h < 300 ) {rgb.b = t1; rgb.g = t2; rgb.r = t2 + t3; }
+				else if( h < 360 ) {rgb.r = t1; rgb.g = t2; rgb.b = t1 - t3; }
+				else { rgb.r = 0; rgb.g = 0; rgb.b = 0; }
+			}
+			return {
+				r: Math.round(rgb.r),
+				g: Math.round(rgb.g),
+				b: Math.round(rgb.b)
+			};
+		}
+		
+		// Converts an RGB object to a hex string
+		function rgb2hex(rgb) {
+			var hex = [
+				rgb.r.toString(16),
+				rgb.g.toString(16),
+				rgb.b.toString(16)
+			];
+			$.each(hex, function(nr, val) {
+				if (val.length === 1) hex[nr] = '0' + val;
+			});
+			return '#' + hex.join('');
+		}
+		
+		// Converts an HSB object to a hex string
+		function hsb2hex(hsb) {
+			return rgb2hex(hsb2rgb(hsb));
+		}
+		
+		// Converts a hex string to an HSB object
+		function hex2hsb(hex) {
+			var hsb = rgb2hsb(hex2rgb(hex));
+			if( hsb.s === 0 ) hsb.h = 360;
+			return hsb;
+		}
+		
+		// Converts an RGB object to an HSB object
+		function rgb2hsb(rgb) {
+			var hsb = { h: 0, s: 0, b: 0 };
+			var min = Math.min(rgb.r, rgb.g, rgb.b);
+			var max = Math.max(rgb.r, rgb.g, rgb.b);
+			var delta = max - min;
+			hsb.b = max;
+			hsb.s = max !== 0 ? 255 * delta / max : 0;
+			if( hsb.s !== 0 ) {
+				if( rgb.r === max ) {
+					hsb.h = (rgb.g - rgb.b) / delta;
+				} else if( rgb.g === max ) {
+					hsb.h = 2 + (rgb.b - rgb.r) / delta;
+				} else {
+					hsb.h = 4 + (rgb.r - rgb.g) / delta;
+				}
+			} else {
+				hsb.h = -1;
+			}
+			hsb.h *= 60;
+			if( hsb.h < 0 ) {
+				hsb.h += 360;
+			}
+			hsb.s *= 100/255;
+			hsb.b *= 100/255;
+			return hsb;
+		}
+		
+		// Converts a hex string to an RGB object
+		function hex2rgb(hex) {
+			hex = parseInt(((hex.indexOf('#') > -1) ? hex.substring(1) : hex), 16);
+			return {
+				r: hex >> 16,
+				g: (hex & 0x00FF00) >> 8,
+				b: (hex & 0x0000FF)
+			};
+		}
+		
+		// Handle events
+		$(document)
+			// Hide on clicks outside of the control
+			.on('mousedown.minicolors touchstart.minicolors', function(event) {
+				if( !$(event.target).parents().add(event.target).hasClass('minicolors') ) {
+					hide();
+				}
+			})
+			// Start moving
+			.on('mousedown.minicolors touchstart.minicolors', '.minicolors-grid, .minicolors-slider, .minicolors-opacity-slider', function(event) {
+				var target = $(this);
+				event.preventDefault();
+				$(document).data('minicolors-target', target);
+				move(target, event, true);
+			})
+			// Move pickers
+			.on('mousemove.minicolors touchmove.minicolors', function(event) {
+				var target = $(document).data('minicolors-target');
+				if( target ) move(target, event);
+			})
+			// Stop moving
+			.on('mouseup.minicolors touchend.minicolors', function() {
+				$(this).removeData('minicolors-target');
+			})
+			// Show panel when swatch is clicked
+			.on('mousedown.minicolors touchstart.minicolors', '.minicolors-swatch', function(event) {
+				var input = $(this).parent().find('.minicolors-input');
+				event.preventDefault();
+				show(input);
+			})
+			// Show on focus
+			.on('focus.minicolors', '.minicolors-input', function() {
+				var input = $(this);
+				if( !input.data('minicolors-initialized') ) return;
+				show(input);
+			})
+			// Fix hex on blur
+			.on('blur.minicolors', '.minicolors-input', function() {
+				var input = $(this),
+					settings = input.data('minicolors-settings');
+				if( !input.data('minicolors-initialized') ) return;
+				
+				// Parse Hex
+				input.val(parseHex(input.val(), true));
+				
+				// Is it blank?
+				if( input.val() === '' ) input.val(parseHex(settings.defaultValue, true));
+				
+				// Adjust case
+				input.val( convertCase(input.val(), settings.letterCase) );
+				
+			})
+			// Handle keypresses
+			.on('keydown.minicolors', '.minicolors-input', function(event) {
+				var input = $(this);
+				if( !input.data('minicolors-initialized') ) return;
+				switch(event.keyCode) {
+					case 9: // tab
+						hide();
+						break;
+					case 13: // enter
+					case 27: // esc
+						hide();
+						input.blur();
+						break;
+				}
+			})
+			// Update on keyup
+			.on('keyup.minicolors', '.minicolors-input', function() {
+				var input = $(this);
+				if( !input.data('minicolors-initialized') ) return;
+				updateFromInput(input, true);
+			})
+			// Update on paste
+			.on('paste.minicolors', '.minicolors-input', function() {
+				var input = $(this);
+				if( !input.data('minicolors-initialized') ) return;
+				setTimeout( function() {
+					updateFromInput(input, true);
+				}, 1);
+			});
+		
+	})(jQuery);

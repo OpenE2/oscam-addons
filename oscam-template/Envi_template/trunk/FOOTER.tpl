@@ -91,8 +91,7 @@
 						</UL>
 						<DIV CLASS="form-group">
 							<label>Custom color: </label>
-							<input type="hidden" id="colorpicker1" class="demo" data-position="top left" value="#409494">
-							<DIV ID="colorpicker_value" CLASS="colorpicker_value">#409494</DIV>
+							<input type="text" id="colorpicker1" class="demo" data-position="top left" value="#409494">
 						</DIV>
 						<script>
 							$(document).ready( function() {
@@ -201,6 +200,15 @@
 									</select>
 								</TD>
 							</TR>
+							<TR>
+								<TD>Body font color:</TD>
+								<TD STYLE="display: table; margin: 0px auto;">
+									<UL CLASS="fontcolorchange">
+										<LI ID="fontcolorchange_0" DATA-STYLE='fontcolorchange_0' TITLE="Default - Black"></LI>
+										<LI ID="fontcolorchange_1" DATA-STYLE='fontcolorchange_1' TITLE="White"></LI>
+									</UL>
+								</TD>
+							</TR>
 						</TABLE>
 					</DIV>
 					<DIV CLASS="form_holder_right">
@@ -265,7 +273,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1445</P>
+								<P><B>Envi revision:</B> 1446</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
