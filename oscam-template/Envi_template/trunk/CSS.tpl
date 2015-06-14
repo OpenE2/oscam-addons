@@ -3052,9 +3052,11 @@ div.groups {
  /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
 /* Settings for Template color style "colchange_1"
  * Basic colors: #16B6C6
- * Other colors: 
+ * Other colors:
+ *		- #13A2AE 
  */
-/* Color for main menu */
+
+/* ------- COLORS FOR MAIN MENU ------- */
 .colchange_1 li.menu_selected a {
 	color: #16B6C6;
 	border-bottom: 2px solid #13A2AE
@@ -3069,11 +3071,11 @@ div.groups {
 .colchange_1 #nav li.configmenu > a:hover {
 	color: #16B6C6
 }
-/* Footer */
+/* ------- COLORS IN FOOTER ------- */
 .colchange_1 div.footer li.styleauthor b {
 	color: #16B6C6
 }
-/* Services */
+/* ------- COLORS IN SERVICES ------- */
 .colchange_1 div.sidlistclose {
 	background-color: #16B6C6
 }
@@ -3088,10 +3090,11 @@ div.groups {
 .colchange_1 div.sidlistclose:hover a{
 	color: #16B6C6
 }
-/* Span Notifier */
+/* ------- COLORS FOR NOTIFIER ------- */
 .colchange_1 span.span_notifier {
 	background-color: #16B6C6
 }
+/* ------- COLORS FOR BUTTONS ------- */
 /* Generaly settings for all buttons/submits */
 .colchange_1 input[type=button],
 .colchange_1 input[type=submit] {
@@ -3105,6 +3108,39 @@ div.groups {
 	color: #16B6C6;
 	transition: all 0.5s ease
 }
+/* Buttons in StyleSwitcher */
+.colchange_1 .form_holder #reset{
+	background-color:#16B6C6
+}
+.colchange_1 .form_holder #reset:hover {
+	background-color: #000;
+	color: #16B6C6;
+	transition: all 0.5s ease
+}
+/* Buttons if Plastic style is active */
+.colchange_1.plastic input[type="button"],
+.colchange_1.plastic input[type="submit"],
+.colchange_1.plastic .form_holder #reset {
+	color: #FFF;
+	border: solid 1px #0076A3;
+	background: #16B6C6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#16B6C6), to(#0D6D75));
+	background: -moz-linear-gradient(top,  #16B6C6,  #0D6D75);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16B6C6', endColorstr='#0D6D75');
+	transition: none
+}
+.colchange_1.plastic input[type="button"]:hover,
+.colchange_1.plastic input[type="submit"]:hover,
+.colchange_1.plastic .form_holder #reset:hover {
+	color: #16B6C6;
+	border: solid 1px #000;
+	background: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
+	transition: none
+}
+/* ------- COLORS FOR POLLING ------- */
 /* User-Page polling */
 .colchange_1 #picolor {
 	background-color: #16B6C6
@@ -3120,7 +3156,7 @@ div.groups {
 	background-color: #000;
 	transition:all 0.5s ease
 }
-/* StyleSwitcher */
+/* ------- STYLESWITCHER ------- */
 .colchange_1 div.form_holder a.active {
 	color: #038AA5
 }
@@ -3145,36 +3181,7 @@ div.groups {
 .colchange_1 ul.fontcolorchange li.active {
 	border-color: #16B6C6
 }
-.colchange_1 .form_holder #reset{
-	background-color:#16B6C6
-}
-.colchange_1 .form_holder #reset:hover {
-	background-color: #000;
-	color: #16B6C6;
-	transition: all 0.5s ease
-}
-.colchange_1.plastic input[type="button"],
-.colchange_1.plastic input[type="submit"],
-.colchange_1.plastic .form_holder #reset {
-	color: #FFF;
-	border: solid 1px #0076a3;
-	background: #16B6C6;
-	background: -webkit-gradient(linear, left top, left bottom, from(#16B6C6), to(#0D6D75));
-	background: -moz-linear-gradient(top,  #16B6C6,  #0D6D75);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16B6C6', endColorstr='#0D6D75');
-	transition: none
-}
-.colchange_1.plastic input[type="button"]:hover,
-.colchange_1.plastic input[type="submit"]:hover,
-.colchange_1.plastic .form_holder #reset:hover {
-	color: #16B6C6;
-	border: solid 1px #000;
-	background: #666;
-	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
-	background: -moz-linear-gradient(top,  #666,  #000);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
-	transition: none
-}
+/* ------- COLORS FOR LINKS ------- */
 /* Color for links of icons */
 .colchange_1 a img.icon {
 	background-color: #13A2AE
@@ -3190,21 +3197,6 @@ div.groups {
 }
 .colchange_1 a:hover {
 	color: #000
-}
-/* Colors for tooltip */
-.colchange_1 a.tooltip1 {
-	color: #F00;
-}
-/* Colors for debug */
-.colchange_1 a.debugl:hover,
-.colchange_1 a.debugs:hover {
-	background-color: #000;
-	color: #16B6C6;
-}
-.colchange_1 a.debugls:link,
-.colchange_1 a.debugls:visited {
-	background-color: #000;
-	color: #16B6C6;
 }
 /* Color links in config tables */
 .colchange_1 .config a,
@@ -3227,14 +3219,33 @@ div.groups {
 .colchange_1 .subservicetable a:hover {
 	color: #FFF
 }
-/* Color for text */
-.colchange_1 h4 {
-	color: #16B6C6
-}
 /* Go to top link */
 .colchange_1 .top_link a:hover {
 	color: #16B6C6
 }
+/* ------- COLORS FOR TOOLTIP ------- */
+/* Colors for tooltip */
+.colchange_1 a.tooltip1 {
+	color: #F00;
+}
+/* ------- COLORS FOR DEBUG ------- */
+/* Colors for debug */
+.colchange_1 a.debugl:hover,
+.colchange_1 a.debugs:hover {
+	background-color: #000;
+	color: #16B6C6;
+}
+.colchange_1 a.debugls:link,
+.colchange_1 a.debugls:visited {
+	background-color: #000;
+	color: #16B6C6;
+}
+/* ------- COLORS FOR TEXT ------- */
+/* Color for text */
+.colchange_1 h4 {
+	color: #16B6C6
+}
+/* ------- COLORS FOR TABLES ------- */
 /* Color for Table */
 .colchange_1 #dataTable tr:hover td,
 .colchange_1 table.statsbalance tr:hover td,
@@ -3261,6 +3272,7 @@ div.groups {
 .colchange_1 table.statsbalance tfoot tr:hover td {
 	background-color: transparent !important;
 }
+/* ------- COLORS FOR PAGINATION ------- */
 /* Color for pagination */
 .colchange_1 div.pager span.active,
 .colchange_1 div.pager span.clickable:hover {
