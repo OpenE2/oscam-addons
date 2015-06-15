@@ -416,7 +416,12 @@ tr.expired td {background-color:#FBA}
 tr.connected td {background-color:#FFA}
 tr.disabled td {}
 tr.disabled td:first-child img.icon,
-tr.disabledreader td:first-child img.icon {background-color:#0A0}
+tr.disabledreader td:first-child img.icon {background-color:#A00}
+tr.online td:first-child img.icon,
+tr.offline td:first-child img.icon,
+tr.expired td:first-child img.icon,
+tr.connected td:first-child img.icon,
+tr.enabledreader td:first-child img.icon {background-color:#0A0}
 /* colors for status rows in status.html depend on status */
 tr.a td {background-color:#3F0}
 tr.c td {background-color:#F1F5E6}
@@ -1244,7 +1249,7 @@ div.envi_info {
 .openModalColorBox > div {
 	width: 600px;
 	height: 300px;
-	padding: 15px;
+	padding: 15px 15px 40px 15px;
 	background-color: #FFF;
 	position: fixed;
 	top: 50%;
@@ -1302,7 +1307,7 @@ div.envi_info {
 	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	width: 625px;
-	padding: 0 0 10px 0;
+	height: 376px;
 	border: 1px solid #DDD;
 	display: none;
 
@@ -1385,6 +1390,7 @@ div.envi_info {
 	background: #FFF;
 	color: #666;
 }
+/* Buttons in StyleSwitcher */
 .form_holder #reset,
 .form_holder #show_ext,
 .form_holder #show_color {
@@ -1407,13 +1413,20 @@ div.envi_info {
 	width: 115px
 }
 .form_holder #show_ext {
-	width: 160px;
+	width: 170px;
 	margin-bottom: 10px;
 }
 .form_holder #show_color {
-	width: 160px;
+	width: 170px;
 	margin-bottom: 10px;
 }
+/* Buttons for DIV 'id="openModalColorBox"' */ 
+#savecolor input {
+	width: 170px;
+	margin-bottom: 10px;
+	margin-top: 8px;
+}
+/* */
 .form_holder #reset:hover,
 .form_holder #show_ext:hover,
 .form_holder #show_color:hover {
@@ -2005,6 +2018,8 @@ li.colchange_4 {
 	width: auto;
 	display: inline-block;
 	padding-left: 26px;
+	width: 92px;
+	font-size: 12px;
 }
 .minicolors-theme-default.minicolors-position-right .minicolors-input {
 	padding-right: 26px;

@@ -250,7 +250,7 @@ $(function () {
 				$('#color' + i).val($('.colorPicker_def_color').css('color'));
 				$('#color' + i).change();
 				$('#fcolor' + i).val($('.colorPicker_def_fcolor').css('color'));   
-					$('#fcolor' + i).change();
+				$('#fcolor' + i).change();
 				$('#beep' + i).prop('checked', false);
 				localStorage['regex' + i] = '';
 				localStorage['color' + i] = '';
@@ -462,7 +462,7 @@ function updateFooter(data) {
 }
 
 /*
- *  identfy an element within string of elements
+ *	identfy an element within string of elements
  */
 var poll_excluded;
 
@@ -820,7 +820,7 @@ function updateReaderpage(data) {
 }
 
 /*
- *  LiveLog Functions: format the debuglevel switcher
+ *	LiveLog Functions: format the debuglevel switcher
  */
 function setDebuglevel(debug, maxdebug) {
 	var cs_dblevel = parseInt(debug);
@@ -966,7 +966,7 @@ $.fn.toHtmlString = function () {
 };
 
 /*
- *  Statuspage Functions: Generate a Bar for Barchart
+ *	Statuspage Functions: Generate a Bar for Barchart
  */
 function generateBar(value) {
 	var bar = $('<div class="bar"/>');
@@ -982,7 +982,7 @@ function generateBar(value) {
 }
 
 /*
- *  Statuspage Functions: Add/Remove Subheadline
+ *	Statuspage Functions: Add/Remove Subheadline
  */
 function addremoveSubheadline(remove, data, container, subheadline, type) {
 
@@ -1018,7 +1018,7 @@ function addremoveSubheadline(remove, data, container, subheadline, type) {
 }
 
 /*
- *  Statuspage Functions: Update Totals cacheEx
+ *	Statuspage Functions: Update Totals cacheEx
  */
 function updateCacheextotals(data) {
 	$("#total_cachexpush").text(data.oscam.totals.total_cachexpush);
@@ -1029,7 +1029,7 @@ function updateCacheextotals(data) {
 }
 
 /*
- *  Statuspage Functions: Update Totals User + ECM
+ *	Statuspage Functions: Update Totals User + ECM
  */
 function updateTotals(data) {
 	$("#total_users").text(data.oscam.totals.total_users);
@@ -1062,7 +1062,7 @@ function updateTotals(data) {
 }
 
 /*
- *  Statuspage Functions: Update Totals Sysinfo
+ *	Statuspage Functions: Update Totals Sysinfo
  */
 var first_run = 1;
 
@@ -1093,7 +1093,7 @@ function updateSysinfo(data) {
 }
 
 /*
- *  Statuspage Functions: Update Page
+ *	Statuspage Functions: Update Page
  */
 function updateStatuspage(data) {
 
@@ -1255,7 +1255,7 @@ function updateStatuspage(data) {
 			$(uid + " > td.statuscol9").attr('title', item.protocolext);
 		}
 		if (!is_nopoll('statuscol12')) {
-			$(uid + " > td.statuscol12").text(item.request.caid + ':' + item.request.srvid);
+			$(uid + " > td.statuscol12").text(item.request.caid + '@' + item.request.provid + ':' + item.request.srvid);
 		}
 
 		if (!is_nopoll('statuscol13')) {
@@ -1449,7 +1449,7 @@ function updateStatuspage(data) {
 		var rcon = (data.oscam.status.rca - data.oscam.status.rco);
 		if($("#rco").length) {
 			$("#rcc").text(data.oscam.status.rcc);
-			$("#rca").text(data.oscam.status.rca);  
+			$("#rca").text(data.oscam.status.rca);
 			$("#rco").text(rcon);
 		} else {
 			$("#rhead").html('Readers <span id="rcc">' + data.oscam.status.rcc + '</span>/' + data.oscam.status.rca + ' (<span id="rco">' + rcon + '</span> of ' + data.oscam.status.rca + ' CARDOK)');
@@ -1458,7 +1458,7 @@ function updateStatuspage(data) {
 		$("#rhead").html('Readers <span id="rcc">' + data.oscam.status.rcc + '</span>/' + data.oscam.status.rca);
 	} else {
 		$("#rcc").text(data.oscam.status.rcc);
-		$("#rca").text(data.oscam.status.rca);  
+		$("#rca").text(data.oscam.status.rca);
 	}
 
 	//update proxy-headline
@@ -1466,7 +1466,7 @@ function updateStatuspage(data) {
 		var pcon = (data.oscam.status.pca - data.oscam.status.pco);
 		if($("#pco").length) {
 			$("#pcc").text(data.oscam.status.pcc);
-			$("#pca").text(data.oscam.status.pca);  
+			$("#pca").text(data.oscam.status.pca);
 			$("#pco").text(pcon);
 		} else {
 			$("#phead").html('Proxies <span id="pcc">' + data.oscam.status.pcc + '</span>/' + data.oscam.status.pca + ' (<span id="pco">' + pcon + '</span> of ' + data.oscam.status.pca + ' online)');
@@ -1475,7 +1475,7 @@ function updateStatuspage(data) {
 		$("#phead").html('Proxies <span id="pcc">' + data.oscam.status.pcc + '</span>/' + data.oscam.status.pca);
 	} else {
 		$("#pcc").text(data.oscam.status.pcc);
-		$("#pca").text(data.oscam.status.pca);  
+		$("#pca").text(data.oscam.status.pca);
 	}
 
 	// update footer
@@ -1503,7 +1503,7 @@ function updateCacheexpage(data) {
 }
 
 /*
- *  General fork into page refresh functions
+ *	General fork into page refresh functions
  */
 function updatePage(data) {
 
@@ -1567,7 +1567,7 @@ function waitForMsg() {
 
 	if (lockpoll > 0) {
 		/* assumed that previous poll is not finnished yet we not
-		 call new data and just set the next intervall */
+		call new data and just set the next intervall */
 		clearTimeout(timer_ID);
 		timer_ID = setTimeout("waitForMsg()", pollintervall);
 		return;
@@ -2748,6 +2748,17 @@ $(function() {
 
 /* -------------- SAVE COLOR SETTINGS -------------- */
 $(function() {
+	function currentDate() {
+		var currentdate = new Date(); 
+		var datetime = "Export: " + currentdate.getDate() + "/"
+			+ (currentdate.getMonth()+1)  + "/" 
+			+ currentdate.getFullYear() + " @ "  
+			+ currentdate.getHours() + ":"  
+			+ currentdate.getMinutes() + ":" 
+			+ currentdate.getSeconds();
+		return datetime;
+	}
+
 	$("#show_color").click(function () {
 		var colorStyle= $(".colchange li.active").attr('title');
 		var patternStyle= $(".patchange li.active").attr('title');
@@ -2783,7 +2794,7 @@ $(function() {
 		}
 
 		$('#save_color_text').val(
-			'ENVI STYLESWITCHER - BASIC SETTINGS\n' +
+			'ENVI STYLESWITCHER - BASIC SETTINGS  ' + currentDate() + '\n' +
 			'===================================================================\n' +
 			'Template color settings\n' +
 			'--------------------------------------\n' +
@@ -2818,8 +2829,20 @@ $(function() {
 		);
 		$('#openModalColorBox').show();
 	});
+
 	$("#closeModalColorBox").click(function () {
 		$('#openModalColorBox').hide();
+	});
+
+	/* Download text from textarea to 'txt' file */
+	$("#savecolor").on('click', function (event) {
+		var txt = $("#save_color_text").val();
+		// Data URI
+		txtData = 'data:application/txt;charset=utf-8,' + encodeURIComponent(txt);
+		$(this).attr({
+			'href': txtData,
+			'target': '_blank'
+		});
 	});
 });
 /* -------------- SCROLL TO TOP FUNCTION -------------- */
