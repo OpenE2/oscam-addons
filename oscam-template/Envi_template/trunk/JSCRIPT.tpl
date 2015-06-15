@@ -2745,6 +2745,83 @@ $(function() {
 	});
 
 });
+
+/* -------------- SAVE COLOR SETTINGS -------------- */
+$(function() {
+	$("#show_color").click(function () {
+		var colorStyle= $(".colchange li.active").attr('title');
+		var patternStyle= $(".patchange li.active").attr('title');
+		var menuFontFamily = $("#menufontfamily option:selected").text();
+		var menuFontSize = $("#menufontsize option:selected").text();
+		var bodyFontFamily = $("#bodyfontfamily option:selected").text();
+		var bodyFontColor = $(".fontcolorchange li.active").attr('title');
+		var rotateLogo = $("#rotatelogo").is(':checked') ? 'On' : 'Off';
+		var infotableBorder = $("#infotable_border").is(':checked') ? 'On' : 'Off';
+		var borderRadius = $("#border_radius").is(':checked') ? 'On' : 'Off';
+		var notifierRadius = $("#notifier_radius").is(':checked') ? 'On' : 'Off';
+		var plasticStyle = $("#plastic").is(':checked') ? 'On' : 'Off';
+
+		if($('.backchange li').hasClass('active')){
+			var backgroundBodyColor = $(".backchange li.active").attr('title');
+			/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
+			if(backgroundBodyColor.length == 0) {
+				var backgroundBodyColor= $(".backchange li.active").attr('data-original-title');
+			}
+		} else {
+			var backgroundBodyColor = $('#colorpicker1').val() + '(Custom color setting)' ;
+		}
+
+		/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
+		if(colorStyle.length == 0) {
+			var colorStyle= $(".colchange li.active").attr('data-original-title');
+		}
+		if(patternStyle.length == 0) {
+			var patternStyle= $(".patchange li.active").attr('data-original-title');
+		}
+		if(bodyFontColor.length == 0) {
+			var bodyFontColor= $(".fontcolorchange li.active").attr('data-original-title');
+		}
+
+		$('#save_color_text').val(
+			'ENVI STYLESWITCHER - BASIC SETTINGS\n' +
+			'===================================================================\n' +
+			'Template color settings\n' +
+			'--------------------------------------\n' +
+			'Template style:           ' + colorStyle + '\n' +
+			'\n' +
+			'Background color settings\n' +
+			'--------------------------------------\n' +
+			'Body background color:    ' + backgroundBodyColor + '\n' +
+			'\n' +
+			'Background pattern settings\n' +
+			'--------------------------------------\n' +
+			'Pattern style:            ' + patternStyle + '\n' +
+			'\n' +
+			'Font settings\n' +
+			'--------------------------------------\n' +
+			'Menu font:                ' + menuFontFamily + '\n' +
+			'Menu font size:           ' + menuFontSize + '\n' +
+			'Body font:                ' + bodyFontFamily + '\n' +
+			'Body font color:          ' + bodyFontColor + '\n' +	
+			'\n' +
+			'Other settings\n' +
+			'--------------------------------------\n' +
+			'Rotate logo:              ' + rotateLogo + '\n' +
+			'Border of tables:         ' + infotableBorder + '\n' +
+			'Button border radius:     ' + borderRadius + '\n' +
+			'Notifier border radius:   ' + notifierRadius + '\n' +
+			'Plastic style:            ' + plasticStyle + '\n' +
+			'\n' +
+			'ENVI STYLESWITCHER - EXTENDED SETTINGS\n' +
+			'===================================================================\n' +
+			'Will be defined in future !!\n'
+		);
+		$('#openModalColorBox').show();
+	});
+	$("#closeModalColorBox").click(function () {
+		$('#openModalColorBox').hide();
+	});
+});
 /* -------------- SCROLL TO TOP FUNCTION -------------- */
 $(function() {
 	// hide #back-top first

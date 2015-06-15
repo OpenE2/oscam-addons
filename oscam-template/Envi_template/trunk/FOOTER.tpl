@@ -282,7 +282,7 @@
 							</TR>
 						</TABLE>
 						<DIV STYLE="position: absolute; bottom: 47px; width: 180px; right: 7px; z-index: 1040;">
-							<input id="save_color" value="Save color settings" type="submit" title="Save color settings to file">
+							<input id="show_color" value="Show color settings" type="submit" title="Show whole color settings">
 							<input id="show_ext" value="Show extended settings" type="submit" title="Show extended color settings">
 							<input id="reset" value="Reset all value" type="reset" title="Reset all basic value (without extended settings)">
 						</DIV>
@@ -426,7 +426,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1450</P>
+								<P><B>Envi revision:</B> 1451</P>
 								<P><B>For oscam revision:</B> 10678 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
@@ -463,5 +463,11 @@
 		</DIV>
 	</DIV>
 </DIV> <!-- End wrapper -->
+<DIV ID="openModalColorBox" CLASS="openModalColorBox">
+	<DIV>
+		<A HREF="#close" ID="closeModalColorBox" CLASS="close" TITLE="Close">X</A>
+		<textarea ID="save_color_text"></textarea>
+	</DIV>
+</DIV>
 </BODY>
 </HTML>

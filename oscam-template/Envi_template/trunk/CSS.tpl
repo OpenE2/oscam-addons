@@ -1183,10 +1183,12 @@ div.envi_info {
 }
 .modalDialog > div {
 	width: 400px;
-	position: relative;
-	margin: 10% auto;
 	padding: 13px 20px;
-	background-color: #FFF
+	background-color: #FFF;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .modalDialog > div > table {
 	width: 90%;
@@ -1225,7 +1227,42 @@ div.envi_info {
 	background-color: #000;
 	color: #FFF
 }
-
+/* Popup color settings */
+.openModalColorBox {
+	position: fixed;
+	display: none;
+	background: rgba(0,0,0,0.8);
+	z-index: 1040;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	-webkit-transition: opacity 400ms ease-in;
+	   -moz-transition: opacity 400ms ease-in;
+			transition: opacity 400ms ease-in;
+}
+.openModalColorBox > div {
+	width: 600px;
+	height: 300px;
+	padding: 15px;
+	background-color: #FFF;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);	
+}
+#save_color_text {
+	font-size: 11px;
+	width: 100%;
+	height: 100%;
+	font-family: "Courier New",monospace;
+	text-align: left;
+	border: 1px dotted #AAA;
+	background-color: #FAFAFA;
+	color: #666;
+	padding: 10px;
+}
 /* jQuery Style Switcher for Designers */
 .demo_changer {
 	z-index: 900;
@@ -1350,7 +1387,7 @@ div.envi_info {
 }
 .form_holder #reset,
 .form_holder #show_ext,
-.form_holder #save_color {
+.form_holder #show_color {
 	font-weight: 700;
 	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1373,13 +1410,13 @@ div.envi_info {
 	width: 160px;
 	margin-bottom: 10px;
 }
-.form_holder #save_color {
+.form_holder #show_color {
 	width: 160px;
 	margin-bottom: 10px;
 }
 .form_holder #reset:hover,
 .form_holder #show_ext:hover,
-.form_holder #save_color:hover {
+.form_holder #show_color:hover {
 	background: #000
 }
 div.envi_info {
