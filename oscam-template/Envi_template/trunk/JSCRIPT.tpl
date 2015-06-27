@@ -2075,15 +2075,15 @@ $(function(){
 	}
 
 	// Add checkbox and label for responsive design
-	$("#main").prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
-	$("#main").prepend("<input type=\"checkbox\" id=\"toggle\" />");
-	$("#subnav").prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
-	$("#subnav").prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
+	$('#main').prepend("<label for=\"toggle\" class=\"toggle\" onclick=\"\"  /></label>");
+	$('#main').prepend("<input type=\"checkbox\" id=\"toggle\" />");
+	$('#subnav').prepend("<label for=\"subtoggle\" class=\"subtoggle\" onclick=\"\"  /></label>");
+	$('#subnav').prepend("<input type=\"checkbox\" id=\"subtoggle\" />");
 
 	// Create <style> in <head>
-	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
-	$("head").append("<style type='text/css' id='enviFontSize'></style>");
-	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
+	$('head').append("<style type='text/css' id='enviFontFamily'></style>");
+	$('head').append("<style type='text/css' id='enviFontSize'></style>");
+	$('head').append("<style type='text/css' id='enviBodyFontFamily'></style>");
 });
 
 /* -------------------------- STYLESWITCHER -------------------------- */
@@ -2134,10 +2134,15 @@ $(function(){
 			if ($.cookie('TemplateSwitch') == 'envi') {
 				$('body').addClass('envi');
 				$('.addClass a[value$="envi"]').addClass('active');
+				// Hide Scroll to Top
+				$('.top_link').hide();
 			} else {
 				$('body').removeClass().addClass('original');
 				$('.addClass a[value="original"]').addClass('active');
 				hideStyleswitcher()
+				// Hide Scroll to Top
+				$('.scroll-top').hide();
+				$('#console').hide();
 			}
 		} else {
 			// Cookie 'TemplateSwitch' is undefined (Show Original WebIf)
@@ -2146,6 +2151,7 @@ $(function(){
 			$('.addClass a[value="original"]').addClass('active');
 			hideStyleswitcher()
 		}
+
 
 	var TemplateSwitch = $.cookie('TemplateSwitch');
 	$('.addClass a').click(function () {

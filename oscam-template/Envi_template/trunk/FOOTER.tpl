@@ -1,11 +1,12 @@
 	</DIV> <!-- End content -->
 	<DIV CLASS="footer" ID="footer">
-		<!-- Basic top link
-			<DIV CLASS="top_link"><a href="#_top">TOP</a></DIV> 
-		-->
+		<!-- Scroll to Top (original) -->
+		<DIV CLASS="top_link"><a href="#_top">TOP</a></DIV>
+		<!-- Scroll to Top (envi) -->
 		<DIV CLASS="scroll-top">
 			<P ID="back-top"><A HREF="#top" ><SPAN></SPAN></A></P>
 		</DIV>
+
 		<UL CLASS="textfooter">
 			<LI CLASS="developed"><B>OSCam Webinterface developed by Streamboard Team</B></LI>
 			<LI>
@@ -407,31 +408,31 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1453</P>
+								<P><B>Envi revision:</B> 1454</P>
 								<P><B>For oscam revision:</B> 10841 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
-										<TD>Wiki:</TD>
+										<TD><B>Wiki:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/oscam-addons/wiki/Envi_WebIf_Template" TARGET="_blank">Wiki Envi Template</A></TD>
 									</TR>
 									<TR>
-										<TD>Envi Tips and Tricks:</TD>
+										<TD><B>Envi Tips and Tricks:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/oscam-addons/wiki/Envi_WebIf_Template#EnviTipsandTricks" TARGET="_blank">Envi Template - Tips and Tricks</A></TD>
 									</TR>
 									<TR>
-										<TD>Forum:</TD>
+										<TD><B>Forum:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/wbb2/thread.php?threadid=40859&threadview=0&hilight=&hilightuser=0&page=1" TARGET="_blank">Forum about Envi</A></TD>
 									</TR>
 									<TR>
-										<TD>Revision log:</TD>
+										<TD><B>Revision log:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/oscam-addons/log/oscam-template/Envi_template" TARGET="_blank">Revision log of Envi</A></TD>
 									</TR>
 									<TR>
-										<TD>Script for download:</TD>
+										<TD><B>Script for download:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template/branches/script" TARGET="_blank">Script to download Envi</A></TD>
 									</TR>
 									<TR>
-										<TD>Source:</TD>
+										<TD><B>Source:</B></TD>
 										<TD><A HREF="http://www.streamboard.tv/oscam-addons/browser/oscam-template/Envi_template" TARGET="_blank">Source files of Envi</A></TD>
 									</TR>
 								</TABLE>
