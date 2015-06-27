@@ -1,5 +1,0 @@
-<!--OSCam;1494447980;1.20-unstable_svn;10358;WITH_LB-->
-			<TR>
-    			<TH CLASS="subheadline" COLSPAN="7">Not found</TH>
-    			<TH CLASS="subheadline right"><A HREF="readerstats.html?label=##RESETA##&amp;hide=4" TITLE="Hide Not found"><IMG CLASS="icon" SRC="image?i=ICHID" ALT="Hide Not found"></A>&nbsp;<A HREF="readerstats.html?label=##RESETA##&amp;action=resetstat&amp;rc=4" onclick="return confirm('Delete all Not found ?')" TITLE="Delete all Not found"><IMG CLASS="icon" SRC="image?i=ICDEL" ALT="Delete all Not found"></A></TH>
-			</TR>

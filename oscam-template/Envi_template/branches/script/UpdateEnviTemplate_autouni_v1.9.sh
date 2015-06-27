@@ -59,10 +59,10 @@ url() {
 }
 
 printHelp() {
-  echo "$0 HELP:"
+  echo '$0 HELP:'
   echo ''
   echo 'The script does not support parameter.'
-  echo "$hr"
+  echo '$hr'
   echo 'Automatic Script for downloaded Envi Template from SVN.'
   echo ''
   echo 'This script automatic find folder with config files of OSCAM.'
@@ -70,6 +70,8 @@ printHelp() {
   echo ''
   echo 'TrunkUrl="http://path/to/folder"'
   echo 'TrunkFile="downloaded file"'
+  echo 'InfoFile="info.txt"'
+  echo 'TempFolder="temporary folder"'
   echo ''
   exit 0
 }
@@ -143,17 +145,17 @@ if [ -s "$InfoFile" ]; then
 	InfoDate=$(parseInfoTxt "Date")
 
 	# Print to display about the PREVIOUS version of Envi Template
-	echo ""
-	echo "Current installed version:"
-	echo "$hr"
-	echo "Envi Revision:     $InfoRevision"
-	echo "Authors:           $InfoAuthors"
-	echo "Last Changed Date: $InfoDate"
+	echo ''
+	echo 'Current installed version:'
+	echo '$hr'
+	echo 'Envi Revision:     $InfoRevision'
+	echo 'Authors:           $InfoAuthors'
+	echo 'Last Changed Date: $InfoDate'
 	# Remove the previous files
 		# Print to display
-		echo ""
-		echo "Deleting old (unused) files of Envi"
-		echo "$hr"
+		echo ''
+		echo 'Deleting old (unused) files of Envi'
+		echo '$hr'
 		# Read through the info.txt file and execute echo command for every filename
 		for i in `cat $InfoFile | egrep -v '^#|^[[:space:]]*$'`; do
 			echo 'removed: '$i; 
@@ -163,32 +165,32 @@ if [ -s "$InfoFile" ]; then
 fi
 
 #  Decompression, remove a compressed file and exit
-echo ""
-echo "Uncompressing downloaded zip file..."
-echo "$hr"
-unzip -o "$TrunkFile"
+echo ''
+echo 'Uncompressing downloaded zip file...'
+echo '$hr'
+unzip -o '$TrunkFile'
 rm -if "$TrunkFile" || die "  Could not remove $TrunkFile!"
 
 if [ -s $InfoFile ]; then
-	# Print to display about the NEW installed version of Envi Template
+  # Print to display about the NEW installed version of Envi Template
   InfoRevision=$(parseInfoTxt "Revision:")
   InfoAuthors=$(parseInfoTxt "Authors:")
   InfoDate=$(parseInfoTxt "Date:")
 
   echo ''
   echo 'Downloaded (new installed) version:'
-  echo "$hr"
-	echo "Envi Revision:     $InfoRevision"
-	echo "Authors:           $InfoAuthors"
-	echo "Last Changed Date: $InfoDate"
+  echo '$hr'
+  echo 'Envi Revision:     $InfoRevision'
+  echo 'Authors:           $InfoAuthors'
+  echo 'Last Changed Date: $InfoDate'
   echo ''
-  echo "Files:"
-  echo "$hr"
+  echo 'Files:'
+  echo '$hr'
   # Size without file IC_......tpl. These are files with picons.
   ls -l $OscamTplFolder | grep -v '\IC_.tpl$'
 
   echo ''
-  echo "$hr"
+  echo '$hr'
   echo '>>>>>PLEASE REFRESH YOUR BROWSER<<<<<'
 fi
 

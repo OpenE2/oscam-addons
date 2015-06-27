@@ -1190,7 +1190,7 @@ function updateStatuspage(data) {
 			}
 
 			if (!is_nopoll('statuscol13')) {
-				$(uid + " > td.statuscol13").append('<A HREF="files.html?file=oscam.srvid" TITLE="' + item.request + '"/>');
+				$(uid + " > td.statuscol13").append('<A HREF="files.html?file=' + data.oscam.srvidfile + '" TITLE="' + item.request + '"/>');
 			}
 
 			if (!is_nopoll('statuscol9')) {
@@ -1255,7 +1255,7 @@ function updateStatuspage(data) {
 			$(uid + " > td.statuscol9").attr('title', item.protocolext);
 		}
 		if (!is_nopoll('statuscol12')) {
-			$(uid + " > td.statuscol12").text(item.request.caid + '@' + item.request.provid + ':' + item.request.srvid);
+			$(uid + " > td.statuscol12").text(item.request.srvid + ':' + item.request.caid + '@' + item.request.provid);
 		}
 
 		if (!is_nopoll('statuscol13')) {
@@ -1269,7 +1269,7 @@ function updateStatuspage(data) {
 					var image = $(uid + " > td.statuscol13 > a > img.statususericon");
 					if (image.attr('src') != 'image?i=IC_' + item.request.picon) {
 						// set title of link as tooltip
-						$(uid + " > td.statuscol13 > a").attr('title', item.request.chprovider + item.request.chname);
+						$(uid + " > td.statuscol13 > a").attr('title', item.request.chname + item.request.chprovider);
 						image.hide();
 						image.attr('src', 'image?i=IC_' + item.request.picon);
 						image.fadeIn('slow');
@@ -1282,10 +1282,10 @@ function updateStatuspage(data) {
 
 					// if we have no link we create one
 					if (!$(uid + " > td.statuscol13 > a").length) {
-						$(uid + " > td.statuscol13").append('<a href="files.html?file=oscam.srvid"/>');
+						$(uid + " > td.statuscol13").append('<a href="files.html?file=' + data.oscam.srvidfile + '"/>');
 					}
 					// set title of link as tooltip
-					$(uid + " > td.statuscol13 > a").attr('title', item.request.chprovider + item.request.chname);
+					$(uid + " > td.statuscol13 > a").attr('title', item.request.chname + item.request.chprovider);
 
 					// just to be sure that class of image is set
 					if ($(uid + " > td.statuscol13 > a > img").length) {
@@ -1301,7 +1301,9 @@ function updateStatuspage(data) {
 			} else {
 				// picon is not delivered in JSON - we set the text of column
 				if (item.request.chname && item.request.srvid != '0000') {
-					$(uid + " > td.statuscol13").html(item.request.chprovider + item.request.chname);
+					$(uid + " > td.statuscol13").html('<a href="files.html?file=' + data.oscam.srvidfile + '"/>');
+					$(uid + " > td.statuscol13 > a").html(item.request.chname + item.request.chprovider);
+					$(uid + " > td.statuscol13 > a").attr('title', item.request.chname + item.request.chprovider);
 				} else {
 					$(uid + " > td.statuscol13").html('');
 				}
@@ -2053,10 +2055,9 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 
 /* ==================================================== ENVI SCRIPT ==================================================== */
 
-/* -------------- BASIC SETTINGS for HTML  -------------- */
+/* -------------------------- BASIC SETTINGS for HTML  -------------------------- */
 
-/* IF DOCUMENT READY */ 
-$(function(){ 
+$(function(){
 	// Hidden Subnav only for selected pages
 	if (document.URL.indexOf('logpoll.html') > -1 ||
 		document.URL.indexOf('emm.html') > -1 ||
@@ -2065,6 +2066,7 @@ $(function(){
 		document.URL.indexOf('script.html') > -1 ) {
 			$('#subnav').css('visibility', 'hidden');
 	}
+
 	// AddClass for SUBNAV - remover background of Subnav
 	if (document.URL.indexOf('entitlements.html') > -1 ||
 		document.URL.indexOf('readerconfig.html') > -1 ||
@@ -2082,185 +2084,93 @@ $(function(){
 	$("head").append("<style type='text/css' id='enviFontFamily'></style>");
 	$("head").append("<style type='text/css' id='enviFontSize'></style>");
 	$("head").append("<style type='text/css' id='enviBodyFontFamily'></style>");
-	$("head").append("<style type='text/css' id='enviBodyColor'></style>");
 });
 
-/* -------------- STYLESWITCHER with COOKIES -------------- */
-/* IF DOCUMENT READY */
+/* -------------------------- STYLESWITCHER -------------------------- */
+/* =========== SHOW/HIDE STYLESWITCHER ======= */
 $(function(){
-/* Cookie - Change template */
-	//Check if cookie exists
-	if (typeof $.cookie('TemplateSwitch') != 'undefined'){
-		// Cookie 'TemplateSwitch' is defined
-		if ($.cookie('TemplateSwitch') == 'envi') {
-			// Cookie 'TemplateSwitch' has value 'envi'
-			$('body').addClass('envi');
-			$('.addClass a[value$="envi"]').addClass("active");
+	// Check Cookie after loading page
+		if (typeof $.cookie('StyleSwitcher') != 'undefined'){
+			// Cookie 'StyleSwitcher' is defined
+			if ($.cookie('StyleSwitcher') == 'isActive') {
+				$('.demo_changer').addClass('active');    
+			} else {
+				$('.demo_changer').removeClass('active');
+			}
 		} else {
-			// Cookie 'TemplateSwitch' has value 'original'
-			$('body').removeClass();
-			$('body').addClass('original');
-			$('.addClass a[value="original"]').addClass("active");
-			$('#switchersettings1').css('display', 'none');
-			$('#switchersettings2').css('display', 'none');
-			$('.form_holder').css('width', '225px');
+			// Cookie 'StyleSwitcher' is undefined
 		}
-	} else {
-		// Cookie 'TemplateSwitch' is undefined (Show Original WebIf)
-		$.cookie('TemplateSwitch', 'original', {expires: 365,path: '/'});
-		$('body').addClass('original');
-		$('.addClass a[value="original"]').addClass("active");
-		$('#switchersettings1').css('display', 'none');
-		$('#switchersettings2').css('display', 'none');
-		$('.form_holder').css('width', '225px');
-	}
 
-/* Cookie - Show/hide StyleSwitcher */
-	//Check if cookie exists
-	if (typeof $.cookie('StyleSwitcher') != 'undefined'){
-		// Cookie 'StyleSwitcher' is defined
-		if ($.cookie('StyleSwitcher') == 'isActive') {
-			$('.demo_changer').addClass('active');    
-		} else {
-			$('.demo_changer').removeClass('active');
-		}
-	} else {
-		// Cookie 'StyleSwitcher' is undefined
-	}
-
-/* Cookie - isActive/notActive Template color style */
-	//Check if cookie exists
-	if (typeof $.cookie('ColCookieID') != 'undefined'){
-		// Cookie 'ColCookieID' is defined
-		$('#' + $.cookie("ColCookieID")).addClass('active');
-	} else {
-		// Cookie 'ColCookieID' is undefined
-		$('#col_0').addClass('active');
-	}
-
-/* Cookie - isActive/notActive Background color */
-	//Check if cookie exists
-	if (typeof $.cookie('BackCookieID') != 'undefined'){
-		// Cookie 'BackCookieID' is defined
-		$('#' + $.cookie("BackCookieID")).addClass('active');
-	} else {
-		// Cookie 'BackCookieID' is undefined
-		$('#back_0').addClass('active');
-	}
-
-/* Cookie - isActive/notActive Background pattern */
-	//Check if cookie exists
-	if (typeof $.cookie('PatCookieID') != 'undefined'){
-		// Cookie 'PatCookieID' is defined
-		$('#' + $.cookie("PatCookieID")).addClass('active');
-	} else {
-		// Cookie 'PatCookieID' is undefined
-		$('#pat_0').addClass('active');
-	}
-
-/* Cookie - isActive/notActive Body Font Color */
-	//Check if cookie exists
-	if (typeof $.cookie('BodyFontColorCookieID') != 'undefined'){
-		// Cookie 'BodyFontColorCookieID' is defined
-		$('#' + $.cookie("BodyFontColorCookieID")).addClass('active');
-	} else {
-		// Cookie 'BodyFontColorCookieID' is undefined
-		$('#fontcolorchange_0').addClass('active');
-	}
-
-/* Cookie - for Menu Font Family */
-	//Check if cookie exists
-	if (typeof $.cookie('FontFamily') != 'undefined'){
-		/// Cookie 'FontFamily' is defined
-		if ($.cookie('TemplateSwitch') == 'envi'){
-			$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}');
-			$("#menufontfamily").val($.cookie("FontFamily"));
-		} else {
-			$("#enviFontFamily").html('')
-		}
-	} else {
-		// Cookie 'FontFamily' is undefined
-	}
-
-/* Cookie - for Menu Font Size */
-	//Check if cookie exists
-	if (typeof $.cookie('FontSize') != 'undefined'){
-		/// Cookie 'FontSize' is defined
-		if ($.cookie('TemplateSwitch') == 'envi'){
-			$("#enviFontSize").html(
-				'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
-				'.envi #mainmenu { margin-top: 15px;}'
-			)
-			$("#menufontsize").val($.cookie("FontSize") +'px');
-		} else {
-			$("#enviFontSize").html('')
-		}
-	} else {
-		// Cookie 'FontSize' is undefined
-	}
-
-/* Cookie - for Body Font Family */
-	//Check if cookie exists
-	if (typeof $.cookie('BodyFontFamily') != 'undefined'){
-		/// Cookie 'BodyFontFamily' is defined
-		if ($.cookie('TemplateSwitch') == 'envi'){
-			$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}');
-			$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
-		} else {
-			$("#enviBodyFontFamily").html('')
-		}
-	} else {
-		// Cookie 'BodyFontFamily' is undefined
-	}
-});
-
-/* SHOW/HIDE STYLESWITCHER */
-$(function(){
 	function styleSwitcherCookie() {
 		styleSwitcherVal = $('.demo_changer').hasClass('active') ? 'isActive' : 'notActive';
-		$.cookie('StyleSwitcher', styleSwitcherVal, {expires: 365,path: '/'});
+		$.cookie('StyleSwitcher', styleSwitcherVal, {expires: 1,path: '/'});
 	}
 	
-	$("#demo_icon").click(function () {
+	$('#demo_icon').click(function () {
 		$('.demo_changer').toggleClass('active');
 		styleSwitcherCookie();
 	});
 });
-	
-/* CHANGE TEMPLATE (original/Envi) */
+
+/* =========== CHANGE TEMPLATE (original/Envi) ======= */
 $(function(){
+	function hideStyleswitcher() {
+		// Hide StyleSwitcher
+		$('[id^="switchersettings"]').css('display', 'none');
+		// Set width for <DIV CLASS="form_holder">
+		$('.form_holder').css({'width': '225px', 'height': '165px'});
+	}
+
+	function showStyleswitcher() {
+		// Show StyleSwitcher
+		$('[id^="switchersettings"]').css('display', 'initial');
+		// Set width for <DIV CLASS="form_holder">
+		$('.form_holder').css({'width': '625px', 'height': '376px'});
+	}
+
+	// Check Cookie after loading page
+		if (typeof $.cookie('TemplateSwitch') != 'undefined') {
+			// Cookie 'TemplateSwitch' is defined
+			if ($.cookie('TemplateSwitch') == 'envi') {
+				$('body').addClass('envi');
+				$('.addClass a[value$="envi"]').addClass('active');
+			} else {
+				$('body').removeClass().addClass('original');
+				$('.addClass a[value="original"]').addClass('active');
+				hideStyleswitcher()
+			}
+		} else {
+			// Cookie 'TemplateSwitch' is undefined (Show Original WebIf)
+			$.cookie('TemplateSwitch', 'original', {expires: 365,path: '/'});
+			$('body').addClass('original');
+			$('.addClass a[value="original"]').addClass('active');
+			hideStyleswitcher()
+		}
+
 	var TemplateSwitch = $.cookie('TemplateSwitch');
 	$('.addClass a').click(function () {
 		templateSwitchVal = $(this).attr('value')
 		$('body').removeClass().addClass(TemplateSwitch)
-		$.cookie('TemplateSwitch', templateSwitchVal, {expires: 365,path: '/'});
+		$.cookie('TemplateSwitch', templateSwitchVal, { expires: 365, path: '/'});
 		$('ul.addClass a.active').removeClass('active');
 		$(this).addClass('active');
 
-	// Hide StyleSwitcher settings for original WebIF
-		if ($.cookie('TemplateSwitch') == 'envi') {
-			// Show StyleSwitcher for Envi
-			$('#switchersettings1').css('display', 'initial');
-			$('#switchersettings2').css('display', 'initial');
-			// Set width for <DIV CLASS="form_holder">
-			$('.form_holder').css('width', '625px');
+		// Hide StyleSwitcher settings for original WebIF
+		if (templateSwitchVal == 'envi') {
+			showStyleswitcher();
 			// For Envi add style
 				if (typeof $.cookie('BodyFontFamily') == 'undefined'){
 				//no cookie
-					$("#enviBodyFontFamily").html('')
+					$('#enviBodyFontFamily').html('')
 				} else {
 					//have cookie
-					$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
-					$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+					$('#enviBodyFontFamily').html('body { font-family: '+ $.cookie("BodyFontFamily") +'}')
+					$('#bodyfontfamily').val($.cookie('BodyFontFamily'));
 				}
 		} else {
-			// Hide StyleSwitcher settings
-			$('#switchersettings1').css('display', 'none');
-			$('#switchersettings2').css('display', 'none');
+			hideStyleswitcher()
 			// For original WebIf remove style 
-			$("#enviBodyFontFamily").html('')
-			// Set width for <DIV CLASS="form_holder">
-			$('.form_holder').css('width', '225px');
+			$('#enviBodyFontFamily').html('')
 		}
 
 	// (Re-)enable or Disable tooltips 
@@ -2270,46 +2180,108 @@ $(function(){
 	});
 });
 
-/* FUNCTION for CHANGE COLOR */
+/* =========== CHANGE TEMPLATE COLOR STYLE ======= */
 $(function(){
+	// Check Cookie after loading page
+		if (typeof $.cookie('colorstyleListID') != 'undefined'){
+			$('#' + $.cookie('colorstyleListID')).addClass('active');
+		} else {
+			$('#col_0').addClass('active');
+		}
+
 	/* Change Template color style */
-		var color = $.cookie('color');          // Get the cookie's value and set to variable "color"
-		$('.colchange li').on('click', function (e) {   // function for colchange li click
-			color = $(this).attr('data-style')       // Rename value "color" with class in colchange li
-			if ($("body").hasClass('envi')) {     
-				$("body").removeClass("colchange_0 colchange_1 colchange_2 colchange_3 colchange_4").addClass(color)
-				$.cookie('color', color, {        // Set cookie
+		var colorstyle = $.cookie('colorstyle');
+		$('.colchange li').on('click', function (e) {
+			colorstyle = $(this).attr('data-style')
+			if ($('body').hasClass('envi')) {
+				$('body').removeClass(function (index, css) {
+					return (css.match (/\bcolorstyle_\S+/g) || []).join(' ');
+				}).addClass(colorstyle);
+				$.cookie('colorstyle', colorstyle, {
 					expires: 365,
 					path: '/'
 				});
 			};
 			return false;
 		}).filter(function () {
-			return $(this).attr('data-style') === color
+			return $(this).attr('data-style') === colorstyle
 		}).click()
+
+	// SETTINGS for LI for Template color style
+		$('.colchange li').click(function () {
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			$.cookie('colorstyleListID', $(this).attr('id'), {
+				expires: 365,
+				path: '/'
+			});
+		});
+});
+
+/* =========== CHANGE BACKGROUND COLOR ======= */
+$(function(){
+	// Check Cookie after loading page
+		if (typeof $.cookie('backcolorListID') != 'undefined'){
+			$('#' + $.cookie('backcolorListID')).addClass('active');
+		} else {
+			$('#back_0').addClass('active');
+		}
 
 	/* Change background color */
 		var backcolor = $.cookie('backcolor');
 		$('.backchange li').on('click', function (e) {
 			backcolor = $(this).attr('data-style')
-			if ($("body").hasClass('envi')) {
-				$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9").addClass(backcolor)
+			if ($('body').hasClass('envi')) {
+				$('body').removeClass(function (index, css) {
+					return (css.match (/\bbackground_\S+/g) || []).join(' ');
+				}).addClass(backcolor);
 				$.cookie('backcolor', backcolor, {
 					expires: 365,
 					path: '/'
 				});
+			};
+			if (typeof $.cookie('ColorPicker1_revert') != 'undefined') {
+				$.removeCookie('ColorPicker1');
+				$('#colorpicker1').val('#' + $.cookie('ColorPicker1_revert'));
+				$('#enviColorPicker1').remove();
 			};
 			return false;
 		}).filter(function () {
 			return $(this).attr('data-style') === backcolor
 		}).click()
 
-	/* Change background pattern */
+	// SETTINGS for LI for Background color
+		$('.backchange li').click(function () {
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			$.cookie('backcolorListID', $(this).attr('id'), {
+				expires: 365,
+				path: '/'
+			});
+			// Remove class 'active' from 'Custom background color in Color Picker'
+			$('#colorpicker1').removeClass('active');
+			// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
+			$('#enviBodyColor').html('')
+		});
+});
+
+/* =========== CHANGE BACKGROUND PATTERN ======= */
+$(function(){
+	// Check Cookie after loading page
+		if (typeof $.cookie('patcolorListID') != 'undefined'){
+			$('#' + $.cookie("patcolorListID")).addClass('active');
+		} else {
+			$('#pat_0').addClass('active');
+		}
+
+	// Change background pattern
 		var patcolor = $.cookie('patcolor');
 		$('.patchange li').on('click', function (e) {
 			patcolor = $(this).attr('data-style')
-			if ($("body").hasClass('envi')) {
-				$("body").removeClass("patchange_0 patchange_1 patchange_2 patchange_3 patchange_4 patchange_5 patchange_6 patchange_7 patchange_8 patchange_9").addClass(patcolor)
+			if ($('body').hasClass('envi')) {
+				$('body').removeClass(function (index, css) {
+					return (css.match (/\bpatchange_\S+/g) || []).join(' ');
+				}).addClass(patcolor);
 				$.cookie('patcolor', patcolor, {
 					expires: 365,
 					path: '/'
@@ -2320,9 +2292,9 @@ $(function(){
 			return $(this).attr('data-style') === patcolor
 		}).click()
 
-		/* It si terrible solution, but works */
-		$("#pat_9").click(function () {
-			if ($("body").hasClass('envi')) {
+		// It si terrible solution, but works
+		$('#pat_9').click(function () {
+			if ($('body').hasClass('envi')) {
 				$('body').removeClass('fontcolorchange_0 fontcolorchange_1');
 				$('.fontcolorchange li').removeClass('active');
 				$('#fontcolorchange_1').addClass('active');
@@ -2336,8 +2308,8 @@ $(function(){
 				});
 			};
 		});
-		$("#pat_0, #pat_1, #pat_2, #pat_3, #pat_4, #pat_5, #pat_6, #pat_7, #pat_8").click(function () {
-			if ($("body").hasClass('envi')) {
+		$('#pat_0, #pat_1, #pat_2, #pat_3, #pat_4, #pat_5, #pat_6, #pat_7, #pat_8').click(function () {
+			if ($('body').hasClass('envi')) {
 				$('body').removeClass('fontcolorchange_0 fontcolorchange_1');
 				$('.fontcolorchange li').removeClass('active');
 				$('#fontcolorchange_0').addClass('active');
@@ -2352,12 +2324,34 @@ $(function(){
 			};
 		});
 
-	/* Change body font color */
+	// SETTINGS for LI for Background pattern
+		$('.patchange li').click(function () {
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			$.cookie('patcolorListID', $(this).attr('id'), {
+				expires: 365,
+				path: '/'
+			});
+			// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
+			$('#enviBodyColor').html('')
+		});
+});
+
+/* =========== CHANGE BODY FONT COLOR ======= */
+$(function(){
+	// Check Cookie after loading page
+		if (typeof $.cookie('BodyFontColorCookieID') != 'undefined'){
+			$('#' + $.cookie('BodyFontColorCookieID')).addClass('active');
+		} else {
+			$('#fontcolorchange_0').addClass('active');
+		}
+
+	// Change body font color
 		var fontcolor = $.cookie('fontcolor');
 		$('.fontcolorchange li').on('click', function (e) {
 			fontcolor = $(this).attr('data-style')
-			if ($("body").hasClass('envi')) {
-				$("body").removeClass("fontcolorchange_0 fontcolorchange_1").addClass(fontcolor)
+			if ($('body').hasClass('envi')) {
+				$('body').removeClass('fontcolorchange_0 fontcolorchange_1').addClass(fontcolor)
 				$.cookie('fontcolor', fontcolor, {
 					expires: 365,
 					path: '/'
@@ -2367,114 +2361,258 @@ $(function(){
 		}).filter(function () {
 			return $(this).attr('data-style') === fontcolor
 		}).click()
+
+	// SETTINGS for LI for Body font color
+		$('.fontcolorchange li').click(function () {
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			$.cookie('BodyFontColorCookieID', $(this).attr('id'), {
+				expires: 365,
+				path: '/'
+			});
+		});
 });
 
-/* SETTINGS for LI for CHANGE COLOR and PATTERNS */
+/* =========== CHANGE BODY LINK COLOR ======= */
 $(function(){
-	// Template color style
-	$(".colchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('ColCookieID', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
-	});
+	// Check Cookie after loading page
+		if (typeof $.cookie('BodyLinkColorCookieID') != 'undefined'){
+			$('#' + $.cookie("BodyLinkColorCookieID")).addClass('active');
+		} else {
+			$('#linkcolorchange_0').addClass('active');
+		}
 
-	// Background color
-	$(".backchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('BackCookieID', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
-		// Remove class 'active' from 'Custom background color in Color Picker'
-		$("#colorpicker1").removeClass('active');
-		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
-		$("#enviBodyColor").html('')
-	});
+	// Change body link color
+		var linkcolor = $.cookie('linkcolor');
+		$('.linkcolorchange li').on('click', function (e) {
+			linkcolor = $(this).attr('data-style')
+			if ($('body').hasClass('envi')) {		
+				$('body').removeClass(function (index, css) {
+					return (css.match (/\blinkcolorchange_\S+/g) || []).join(' ');
+				}).addClass(linkcolor);
+				$.cookie('linkcolor', linkcolor, {
+					expires: 365,
+					path: '/'
+				});
+			};
+			return false;
+		}).filter(function () {
+			return $(this).attr('data-style') === linkcolor
+		}).click()
 
-	// Background pattern
-	$(".patchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('PatCookieID', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
+	// SETTINGS for LI for Body link color
+		$('.linkcolorchange li').click(function () {
+			$(this).siblings('li').removeClass('active');
+			$(this).addClass('active');
+			$.cookie('BodyLinkColorCookieID', $(this).attr('id'), {
+				expires: 365,
+				path: '/'
+			});
 		});
-		// Remove CSS settings from Color Picker - This is particularly relevant for setting the basic background and pattern
-		$("#enviBodyColor").html('')
-	});
-
-	// Body font color
-	$(".fontcolorchange li").click(function () {
-		$(this).siblings('li').removeClass('active');
-		$(this).addClass('active');
-		$.cookie('BodyFontColorCookieID', $(this).attr('id'), {
-			expires: 365,
-			path: '/'
-		});
-	});
 });
 
-/* GET CUSTOM COLOR FROM COLOR PICKER */
+/* -------------------------- GET CUSTOM COLOR FROM COLOR PICKER -------------------------- */
 $(function(){
-/* =========== BACKGROUND COLOR =======*/
-	/* Cookie background color */
-	if (typeof $.cookie('BodyColor') != 'undefined'){
-		// Cookie 'BodyColor' is defined
-		// And add css style to 'head'
-		$("#enviBodyColor").html('body.envi { background-color: #'+ $.cookie("BodyColor") +'; background-image:none;}');
-	} else {
-		// Cookie 'BodyColor' is undefined
-		$("#enviBodyColor").html('')
-	}
+	/* FUNCTION */
+		// CREATE STYLESHEET IN 'HEAD'
+		function CreateStyleSheet_enviColorPicker(x) {
+			$('head').append("<style type='text/css' id='" + x + "'></style>");
+		}
+
+		function enviColorPicker(x) {
+				// Remove 'class="active"' from List of background color
+				$('.backchange li').removeClass('active');
+				//Remove all class for setting background color and add css style to 'stylesheet' in 'head'
+				$('body').removeClass(function (index, css) {
+					return (css.match (/\bbackground_\S+/g) || []).join(' ');
+				});
+				// Remove cookie for background color list
+				$.removeCookie('backcolorListID');
+				$.removeCookie('backcolor');
+				// Add class to 'input' from Color Picker
+				$(x).addClass('active');
+		}
+
+		function enviColorPicker_ext(x) {
+				// Add class to 'input' from Color Picker
+				$(x).addClass('active');
+		}
+
+/* =========== BODY BACKGROUND COLOR ======= */
+	/* START - COOKIE BACKGROUND COLOR */
+		// VARIABLE --------------------------------------
+		/* getc_ - get cookie */
+			var getc_ColorPicker1 = $.cookie('ColorPicker1');
+		// FUNCTION --------------------------------------
+			if (getc_ColorPicker1 !== null && getc_ColorPicker1 !== undefined){
+				// Cookie 'ColorPicker1' is defined
+					// Check If Stylesheet exists
+					if ($("#enviColorPicker1").length > 0) {
+						// Remove 'class="active"' from List of background color
+						$(".backchange li").removeClass('active');
+						// Add class to 'input' from Color Picker
+						$("#colorpicker1").addClass('active'); 
+						// Add css style to 'head'
+						$("#enviColorPicker1").html(
+							'body.envi { background-color: #'+ getc_ColorPicker1 +';background-image:none;}'
+						);
+						// Add value to 'colorpicker1'
+						$('#colorpicker1').val('#' + getc_ColorPicker1);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker1');
+						// Remove 'class="active"' from List of background color
+						$(".backchange li").removeClass('active');
+						// Add class to 'input' from Color Picker
+						$("#colorpicker1").addClass('active');
+						// Add css style to 'head'
+						$("#enviColorPicker1").html(
+							'body.envi { background-color: #'+ getc_ColorPicker1 +';background-image:none;}'
+						);
+						// Add value to 'colorpicker1'
+						$('#colorpicker1').val('#' + getc_ColorPicker1); 
+					}
+			} else {
+				// Cookie 'ColorPicker1' is undefined
+			}
+	/* END - COOKIE BACKGROUND COLOR  */
+
+	/* START - CHANGE BACKGROUND COLOR  */
+		$("#colorpicker1").bind("click", function() {
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+			// FUNCTION --------------------------------------
+				enviColorPicker("#colorpicker1");
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker1").length > 0) {
+						$("#enviColorPicker1").html(
+							'body.envi { background-color:'+ val_ColorPicker +';background-image:none;}'
+						);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker1');
+						// Add css style to 'head'
+						$("#enviColorPicker1").html(
+							'body.envi { background-color:'+ val_ColorPicker +';background-image:none;}'
+						);
+					}
+		});
+
+		$("#colorpicker1").bind("change", function() {
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var split_ColorPicker = val_ColorPicker.replace('#', '');
+			// FUNCTION --------------------------------------
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker1").length > 0) {
+						$("#enviColorPicker1").html(
+							'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
+						);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker1');
+						// Add css style to 'head'
+						$("#enviColorPicker1").html(
+							'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
+						);
+					}
+				// Set color from Color Picker to cookies
+				if(split_ColorPicker.length > 0){
+					$.cookie('ColorPicker1', split_ColorPicker, { expires: 365, path: '/' });
+					$.cookie('ColorPicker1_revert', split_ColorPicker, { expires: 365, path: '/' });
+				}
+		});
+	/* END - CHANGE BACKGROUND COLOR  */
+
+/* =========== MAIN MENU BACKGROUND COLOR ======= */
 	
-	/* Background color */
-	$("#colorpicker1").bind("change", function() {
-		// Set variable
-		bodycolor = $(this).val()
-		// Remove all class for background (background class are added from list of color's background)
-		$("body").removeClass("patchange_0 background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-		// And add css style to 'head'
-		$("#enviBodyColor").html('body.envi { background-color: '+ bodycolor +'; background-image:none;}');
-		// Set color from Color Picker to cookies
-		var split_bodycolor = bodycolor.replace('#', '');
-		if(split_bodycolor.length > 0){
-			$.cookie('BodyColor', split_bodycolor, {
-				expires: 365,
-				path: '/'
-			});
-		}
-	});
+	/* START -  MAIN MENU CHANGE BACKGROUND COLOR  */
+		$("body").on('click', "#colorpicker2",function(){
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var newRule = ".envi #main { background:" + val_ColorPicker + "}";
+			// FUNCTION --------------------------------------
+				enviColorPicker_ext("#colorpicker2");
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker2").length > 0) {
+						// Add css style to 'head'
+						$("#enviColorPicker2").html(newRule);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker2');
+						// Add css style to 'head'
+						$("#enviColorPicker2").html(newRule);
+					}
+		});
 
-	$("body").on('click', "#colorpicker1",function(){
-		// Set variable
-		bodycolor = $('#colorpicker1').val()
-		// Remove 'class="active"' from List of background color
-		$(".backchange li").removeClass('active');
-		// Add class to 'input' from Color Picker
-		$("#colorpicker1").addClass('active');
-		//Remove all class for setting background color and add css style to 'stylesheet' in 'head'
-		$("body").removeClass("background_0 background_1 background_2 background_3 background_4 background_5 background_6 background_7 background_8 background_9");
-		// And add css style to 'head'
-		$("#enviBodyColor").html('body.envi { background-color: '+ bodycolor +'; background-image:none;}');
-		// Set color from Color Picker to cookies
-		var split_bodycolor = bodycolor.replace('#', '');
-		if(split_bodycolor.length > 0){
-			$.cookie('BodyColor', split_bodycolor, {
-				expires: 365,
-				path: '/'
-			});
-		}
-	});
+		$("#colorpicker2").bind("change", function() {
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var split_ColorPicker = val_ColorPicker.replace('#', '');
+				var newRule = ".envi #main { background:" + val_ColorPicker + "}";
+			// FUNCTION --------------------------------------
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker2").length > 0) {
+						// Add css style to 'head'
+						$("#enviColorPicker2").html(newRule);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker2');
+						// Add css style to 'head'
+						$("#enviColorPicker2").html(newRule);
+					}
+				// Set color from Color Picker to cookies
+				if(split_ColorPicker.length > 0){
+					$.cookie('ColorPicker2', split_ColorPicker, { expires: 365, path: '/' });
+					$.cookie('ColorPicker2_revert', split_ColorPicker, { expires: 365, path: '/' });
+				}
+		});
+	/* END -  MAIN MENU CHANGE BACKGROUND COLOR  */
+
+/* =========== MAIN MENU FONT COLOR ======= */
+	
+	/* START -  MAIN MENU CHANGE FONT COLOR  */
+		$("body").on('click', "#colorpicker3",function(){
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var newRule = ".envi li.menu a { color:" + val_ColorPicker + "}";
+			// FUNCTION --------------------------------------
+				enviColorPicker_ext("#colorpicker3");
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker3").length > 0) {
+						// Add css style to 'head'
+						$("#enviColorPicker3").html(newRule);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker3');
+						// Add css style to 'head'
+						$("#enviColorPicker3").html(newRule);
+					}
+		});
+
+		$("#colorpicker3").bind("change", function() {
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var split_ColorPicker = val_ColorPicker.replace('#', '');
+				var newRule = ".envi li.menu a { color:" + val_ColorPicker + "}";
+			// FUNCTION --------------------------------------
+				// Check If Stylesheet exists
+					if ($("#enviColorPicker3").length > 0) {
+						// Add css style to 'head'
+						$("#enviColorPicker3").html(newRule);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker3');
+						// Add css style to 'head'
+						$("#enviColorPicker3").html(newRule);
+					}
+				// Set color from Color Picker to cookies
+				if(split_ColorPicker.length > 0){
+					$.cookie('ColorPicker3', split_ColorPicker, { expires: 365, path: '/' });
+					$.cookie('ColorPicker3_revert', split_ColorPicker, { expires: 365, path: '/' });
+				}
+		});
+	/* END -  MAIN MENU CHANGE FONT COLOR  */
+	
 });	
 
-
-/* CHECKBOX - ROTATE OSCAM LOGO */
+/* -------------------------- OTHER SETTINGS -------------------------- */
+/* =========== CHECKBOX - ROTATE OSCAM LOGO ======= */
 $(function(){
-	$("input.rotatelogo").each(function() {
+	$('input.rotatelogo').each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			var rotate = $.cookie($(this).attr('name'));
 			if (rotate && rotate == "true") {
@@ -2487,24 +2625,22 @@ $(function(){
 	});
 
 	// Function if checkbox is changed
-	$("input.rotatelogo").change(function() {
-		if ($("body").hasClass('envi')) {
-			$.cookie($(this).attr("name"), $(this).prop('checked'), {
-				path: '/',
-				expires: 365
-			});
-			if ( $('input[name="rotatelogo"]').is(':checked') ) {
-				$('body').addClass('rotatelogo');
-			} else {
-				$('body').removeClass('rotatelogo');
-			}
-		};
+	$('input.rotatelogo').change(function() {
+		$.cookie($(this).attr('name'), $(this).prop('checked'), {
+			path: '/',
+			expires: 365
+		});
+		if ( $('input[name="rotatelogo"]').is(':checked') ) {
+			$('body').addClass('rotatelogo');
+		} else {
+			$('body').removeClass('rotatelogo');
+		}
 	});
 });
 
-/* CHECKBOX - BORDER OF INFO TABLES */
+/* =========== CHECKBOX - BORDER OF INFO TABLES ======= */
 $(function(){
-	$("input.infotable_border").each(function() {
+	$('input.infotable_border').each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			var infotableborder = $.cookie($(this).attr('name'));
 			if (infotableborder && infotableborder == "true") {
@@ -2517,24 +2653,22 @@ $(function(){
 	});
 
 	// Function if checkbox is changed
-	$("input.infotable_border").change(function() {
-		if ($("body").hasClass('envi')) {
-			$.cookie($(this).attr("name"), $(this).prop('checked'), {
-				path: '/',
-				expires: 365
-			});
-			if ( $('input[name="infotable_border"]').is(':checked') ) {
-				$('body').addClass('infotable_border');
-			} else {
-				$('body').removeClass('infotable_border');
-			}
-		};
+	$('input.infotable_border').change(function() {
+		$.cookie($(this).attr('name'), $(this).prop('checked'), {
+			path: '/',
+			expires: 365
+		});
+		if ( $('input[name="infotable_border"]').is(':checked') ) {
+			$('body').addClass('infotable_border');
+		} else {
+			$('body').removeClass('infotable_border');
+		}
 	});
 });
 
-/* CHECKBOX - BUTTON BORDER RADIUS */
+/* =========== CHECKBOX - BUTTON BORDER RADIUS ======= */
 $(function(){
-	$("input.border_radius").each(function() {
+	$('input.border_radius').each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			var borderradius = $.cookie($(this).attr('name'));
 			if (borderradius && borderradius == "true") {
@@ -2547,24 +2681,22 @@ $(function(){
 	});
 
 	// Function if checkbox is changed
-	$("input.border_radius").change(function() {
-		if ($("body").hasClass('envi')) {
-			$.cookie($(this).attr("name"), $(this).prop('checked'), {
-				path: '/',
-				expires: 365
-			});
-			if ( $('input[name="border_radius"]').is(':checked') ) {
-				$('body').addClass('border_radius');
-			} else {
-				$('body').removeClass('border_radius');
-			}
-		};
+	$('input.border_radius').change(function() {
+		$.cookie($(this).attr('name'), $(this).prop('checked'), {
+			path: '/',
+			expires: 365
+		});
+		if ( $('input[name="border_radius"]').is(':checked') ) {
+			$('body').addClass('border_radius');
+		} else {
+			$('body').removeClass('border_radius');
+		}
 	});
 });
 
-/* CHECKBOX - NOTIFIER BORDER RADIUS */
+/* =========== CHECKBOX - NOTIFIER BORDER RADIUS ======= */
 $(function(){
-	$("input.notifier_radius").each(function() {
+	$('input.notifier_radius').each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			var notifierradius = $.cookie($(this).attr('name'));
 			if (notifierradius && notifierradius == "true") {
@@ -2577,24 +2709,22 @@ $(function(){
 	});
 
 	// Function if checkbox is changed
-	$("input.notifier_radius").change(function() {
-		if ($("body").hasClass('envi')) {
-			$.cookie($(this).attr("name"), $(this).prop('checked'), {
-				path: '/',
-				expires: 365
-			});
-			if ( $('input[name="notifier_radius"]').is(':checked') ) {
-				$('body').addClass('notifier_radius');
-			} else {
-				$('body').removeClass('notifier_radius');
-			}
-		};
+	$('input.notifier_radius').change(function() {
+		$.cookie($(this).attr('name'), $(this).prop('checked'), {
+			path: '/',
+			expires: 365
+		});
+		if ( $('input[name="notifier_radius"]').is(':checked') ) {
+			$('body').addClass('notifier_radius');
+		} else {
+			$('body').removeClass('notifier_radius');
+		}
 	});
 });
 
-/* CHECKBOX - PLASTIC */
+/* =========== CHECKBOX - PLASTIC ======= */
 $(function(){
-	$("input.plastic").each(function() {
+	$('input.plastic').each(function() {
 		if ($.cookie('TemplateSwitch') == 'envi') {
 			var plasticstyle = $.cookie($(this).attr('name'));
 			if (plasticstyle && plasticstyle == "true") {
@@ -2607,23 +2737,33 @@ $(function(){
 	});
 
 	// Function if checkbox is changed
-	$("input.plastic").change(function() {
-		if ($("body").hasClass('envi')) {
-			$.cookie($(this).attr("name"), $(this).prop('checked'), {
-				path: '/',
-				expires: 365
-			});
-			if ( $('input[name="plastic"]').is(':checked') ) {
-				$('body').addClass('plastic');
-			} else {
-				$('body').removeClass('plastic');
-			}
-		};
+	$('input.plastic').change(function() {
+		$.cookie($(this).attr("name"), $(this).prop('checked'), {
+			path: '/',
+			expires: 365
+		});
+		if ( $('input[name="plastic"]').is(':checked') ) {
+			$('body').addClass('plastic');
+		} else {
+			$('body').removeClass('plastic');
+		}
 	});
 });
 
-/* FONT FAMILY and SIZE */
+/* =========== FONT FAMILY ======= */
 $(function() {
+	// Check Cookie after loading page
+		if (typeof $.cookie('FontFamily') != 'undefined'){
+			if ($.cookie('TemplateSwitch') == 'envi'){
+				$("#enviFontFamily").html('.envi #mainmenu li { font-family: '+ $.cookie("FontFamily") +'}');
+				$("#menufontfamily").val($.cookie("FontFamily"));
+			} else {
+				$("#enviFontFamily").html('')
+			}
+		} else {
+			// Cookie 'FontFamily' is undefined
+		}
+
 	// Change font family for main menu
 	$('#menufontfamily').change(function() {
 		// value and cookie
@@ -2634,12 +2774,31 @@ $(function() {
 				path: '/'
 			});
 		}
-		// write into <style> (I dont use "font_weight")
+		// write into <style>
 		$("#enviFontFamily").html(
 			'.envi #mainmenu li { font-family: '+ font_picked +';}'
 		)
 	});
-		
+});		
+
+/* =========== FONT SIZE ======= */
+$(function() {
+	// Check Cookie after loading page
+		if (typeof $.cookie('FontSize') != 'undefined'){
+			/// Cookie 'FontSize' is defined
+			if ($.cookie('TemplateSwitch') == 'envi'){
+				$("#enviFontSize").html(
+					'.envi #mainmenu li { font-size: '+ $.cookie("FontSize") +'px;}' +
+					'.envi #mainmenu { margin-top: 15px;}'
+				)
+				$("#menufontsize").val($.cookie("FontSize") +'px');
+			} else {
+				$("#enviFontSize").html('')
+			}
+		} else {
+			// Cookie 'FontSize' is undefined
+		}
+
 	// Change font size for main menu
 	$('#menufontsize').change(function() {
 		// value and cookie
@@ -2678,6 +2837,22 @@ $(function() {
 		}
 		
 	});
+});
+
+/* =========== BODY FONT FAMILY ======= */
+$(function() {
+	// Check Cookie after loading page
+		if (typeof $.cookie('BodyFontFamily') != 'undefined'){
+			/// Cookie 'BodyFontFamily' is defined
+			if ($.cookie('TemplateSwitch') == 'envi'){
+				$("#enviBodyFontFamily").html('body { font-family: '+ $.cookie("BodyFontFamily") +'}');
+				$("#bodyfontfamily").val($.cookie("BodyFontFamily"));
+			} else {
+				$("#enviBodyFontFamily").html('')
+			}
+		} else {
+			// Cookie 'BodyFontFamily' is undefined
+		}
 
 	// Change font family for body
 	$('#bodyfontfamily').change(function() {
@@ -2696,57 +2871,7 @@ $(function() {
 	});
 });
 
-/* RESET BUTTON - only for Envi (not for original) */
-$(function() {
-	$("#reset").click(function () {
-		if($("body").hasClass("envi")) {
-			// Remove all cookie
-			var cookies = $.cookie();
-			for(var cookie in cookies) {
-				$.removeCookie(cookie);
-			}
-			// Set only cookie for Envi
-			$.cookie('TemplateSwitch', 'envi', {expires: 365,path: '/'});
-			// Set default class and checkbox
-			$('body').removeClass().addClass('envi');
-			$('.backchange li').removeClass('active');
-			$('.patchange li').removeClass('active');
-			$('.colchange li').removeClass('active');
-			$('.fontcolorchange li').removeClass('active');
-			$('#rotatelogo').prop('checked', false);
-			$('#infotable_border').prop('checked', false);
-			$('#border_radius').prop('checked', false);
-			$('#notifier_radius').prop('checked', false);
-			$('#plastic').prop('checked', false);
-			// Set default colors
-			$('#col_0').addClass('active');
-			$('#back_0').addClass('active');
-			$('#pat_0').addClass('active');
-			$('#fontcolorchange_0').addClass('active');
-			// Set default input
-			$("#menufontfamily")[0].selectedIndex = 0;
-			$("#menufontsize")[0].selectedIndex = 1;
-			$("#bodyfontfamily")[0].selectedIndex = 0;
-			// Set default style
-			$("#enviFontFamily").html('')
-			$("#enviFontSize").html('')
-			$("#enviBodyFontFamily").html('')
-			$("#enviBodyFontSize").html('')
-		}
-	});
-});
-/* -------------- EXTENDED SETTINGS IN STYLESWITCHER -------------- */
-/* Show extended settings in StyleSwitcher */
-$(function() {
-	$("#show_ext").click(function () {
-		$('#ext_settings').slideToggle("slide");
-		$(this).val( $(this).val() == 'Show extended settings' ? "Show basic settings" : "Show extended settings");
-		return false;
-	});
-
-});
-
-/* -------------- SAVE COLOR SETTINGS -------------- */
+/* =========== SAVE COLOR SETTINGS ======= */
 $(function() {
 	function currentDate() {
 		var currentdate = new Date(); 
@@ -2760,6 +2885,7 @@ $(function() {
 	}
 
 	$("#show_color").click(function () {
+		/* Variable - Basic color settings */
 		var colorStyle= $(".colchange li.active").attr('title');
 		var patternStyle= $(".patchange li.active").attr('title');
 		var menuFontFamily = $("#menufontfamily option:selected").text();
@@ -2771,7 +2897,6 @@ $(function() {
 		var borderRadius = $("#border_radius").is(':checked') ? 'On' : 'Off';
 		var notifierRadius = $("#notifier_radius").is(':checked') ? 'On' : 'Off';
 		var plasticStyle = $("#plastic").is(':checked') ? 'On' : 'Off';
-
 		if($('.backchange li').hasClass('active')){
 			var backgroundBodyColor = $(".backchange li.active").attr('title');
 			/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
@@ -2792,6 +2917,25 @@ $(function() {
 		if(bodyFontColor.length == 0) {
 			var bodyFontColor= $(".fontcolorchange li.active").attr('data-original-title');
 		}
+
+		/* Variable - Extended color settings */
+		var colorpicker2_val = $('#colorpicker2').val()
+		var colorpicker3_val = $('#colorpicker3').val()
+		var colorpicker4_val = $('#colorpicker4').val()
+		var colorpicker5_val = $('#colorpicker5').val()
+		var colorpicker6_val = $('#colorpicker6').val()
+		var colorpicker7_val = $('#colorpicker7').val()
+		var colorpicker8_val = $('#colorpicker8').val()
+		var colorpicker9_val = $('#colorpicker9').val()
+		var colorpicker10_val = $('#colorpicker10').val()
+		var colorpicker11_val = $('#colorpicker11').val()
+		var colorpicker12_val = $('#colorpicker12').val()
+		var colorpicker13_val = $('#colorpicker13').val()
+		var colorpicker14_val = $('#colorpicker14').val()
+		var colorpicker15_val = $('#colorpicker15').val()
+		var colorpicker16_val = $('#colorpicker16').val()
+		var colorpicker17_val = $('#colorpicker17').val()
+		var colorpicker18_val = $('#colorpicker18').val()
 
 		$('#save_color_text').val(
 			'ENVI STYLESWITCHER - BASIC SETTINGS  ' + currentDate() + '\n' +
@@ -2825,7 +2969,41 @@ $(function() {
 			'\n' +
 			'ENVI STYLESWITCHER - EXTENDED SETTINGS\n' +
 			'===================================================================\n' +
-			'Will be defined in future !!\n'
+			'Main Menu color settings\n' +
+			'--------------------------------------\n' +
+			'Background color:         ' + colorpicker2_val + '\n' +
+			'Font color:               ' + colorpicker3_val + '\n' +
+			'Link color:               ' + colorpicker4_val + '\n' +
+			'Link:hover color:         ' + colorpicker5_val + '\n' +
+			'\n' +
+			'Submenu color settings\n' +
+			'--------------------------------------\n' +
+			'Background color:         ' + colorpicker6_val + '\n' +
+			'Font color:               ' + colorpicker7_val + '\n' +
+			'Link color:               ' + colorpicker8_val + '\n' +
+			'Link:hover color:         ' + colorpicker9_val + '\n' +
+			'\n' +
+			'Submenu color settings\n' +
+			'--------------------------------------\n' +
+			'Thead back color:         ' + colorpicker10_val + '\n' +
+			'Thead text color:         ' + colorpicker11_val + '\n' +
+			'Text color:               ' + colorpicker12_val + '\n' +
+			'\n' +
+			'LIVELOG color settings\n' +
+			'--------------------------------------\n' +
+			'Text color:               ' + colorpicker13_val + '\n' +
+			'\n' +
+			'FILES color settings\n' +
+			'--------------------------------------\n' +
+			'Text color:               ' + colorpicker14_val + '\n' +
+			'\n' +
+			'Footer color settings\n' +
+			'--------------------------------------\n' +
+			'Background color:         ' + colorpicker15_val + '\n' +
+			'Top border color:         ' + colorpicker16_val + '\n' +
+			'Text color:               ' + colorpicker17_val + '\n' +
+			'Text bold color:          ' + colorpicker18_val + '\n' +
+			'\n'
 		);
 		$('#openModalColorBox').show();
 	});
@@ -2843,6 +3021,86 @@ $(function() {
 			'href': txtData,
 			'target': '_blank'
 		});
+	});
+});
+
+/* -------------- EXTENDED SETTINGS IN STYLESWITCHER -------------- */
+/* Show extended settings in StyleSwitcher */
+$(function() {
+	$("#show_ext").click(function () {
+		$('#ext_settings').slideToggle("slide");
+		$(this).val( $(this).val() == 'Show extended settings' ? "Show basic settings" : "Show extended settings");
+		return false;
+	});
+
+});
+
+/* -------------- RESET SETTINGS -------------- */
+/* RESET BUTTON - only for Envi (not for original) */
+$(function() {
+
+	$("#reset").click(function () {
+		$('#openModalResetBox').show();
+	});
+	
+	$("#closeModalResetBox").click(function () {
+		$('#openModalResetBox').hide();
+	});
+
+	$("#resetindividual").click(function () {
+		// Reset settings in 'Template color style'
+			if( $('#reset_1').is(':checked')) {
+				// Remove class in list of colors
+				$('.colchange li').removeClass('active');
+				$('#col_0').addClass('active');
+				// Remove class in 'body'
+				$('body').removeClass (function (index, css) {
+					return (css.match (/\bcolorstyle_\S+/g) || []).join(' ');
+				});
+				// Clear cookie
+				$.removeCookie("colorstyleListID");
+				$.removeCookie("colorstyle");
+				// !!!! I NEED SOLUTION HOW CALL FUNCTION FOR COLORS OF ICONS AFTER RESET !!!
+			}
+		// Clear all checkbox
+		$('input[id^="reset_"]').prop('checked', false);
+	});
+
+	$("#resetall").click(function () {
+		if($("body").hasClass("envi")) {
+			// Remove all cookie
+			var cookies = $.cookie();
+			for(var cookie in cookies) {
+				$.removeCookie(cookie);
+			}
+			// Set only cookie for Envi
+			$.cookie('TemplateSwitch', 'envi', {expires: 365,path: '/'});
+			// Set default class and checkbox
+			$('body').removeClass().addClass('envi');
+			$('.colchange li').removeClass('active');
+			$('.backchange li').removeClass('active');
+			$('.patchange li').removeClass('active');
+			$('.fontcolorchange li').removeClass('active');
+			$('#rotatelogo').prop('checked', false);
+			$('#infotable_border').prop('checked', false);
+			$('#border_radius').prop('checked', false);
+			$('#notifier_radius').prop('checked', false);
+			$('#plastic').prop('checked', false);
+			// Set default colors
+			$('#col_0').addClass('active');
+			$('#back_0').addClass('active');
+			$('#pat_0').addClass('active');
+			$('#fontcolorchange_0').addClass('active');
+			// Set default input
+			$("#menufontfamily")[0].selectedIndex = 0;
+			$("#menufontsize")[0].selectedIndex = 1;
+			$("#bodyfontfamily")[0].selectedIndex = 0;
+			// Set default style
+			$("#enviFontFamily").html('')
+			$("#enviFontSize").html('')
+			$("#enviBodyFontFamily").html('')
+			$("#enviBodyFontSize").html('')
+		}
 	});
 });
 /* -------------- SCROLL TO TOP FUNCTION -------------- */
@@ -3303,15 +3561,15 @@ function CreateIcons() {
 	// Variable for color settings
 	var color = 'FFFFFF';
 
-	if ($('body').hasClass('colchange_1') == true) {
+	if ($('body').hasClass('colorstyle_1') == true) {
 		var colorHover = '16B6C6';
-	} else if ($('body').hasClass('colchange_2') == true) {
+	} else if ($('body').hasClass('colorstyle_2') == true) {
 		var colorHover = 'FF9C00';
-	} else if ($('body').hasClass('colchange_3') == true) {
+	} else if ($('body').hasClass('colorstyle_3') == true) {
 		var colorHover = 'FFE400';
-	} else if ($('body').hasClass('colchange_4') == true) {
+	} else if ($('body').hasClass('colorstyle_4') == true) {
 		var colorHover = '7CB600';
-	} else if ($('body').hasClass('colchange_5') == true) {
+	} else if ($('body').hasClass('colorstyle_5') == true) {
 		var colorHover = 'C71C77';
 	} else {
 		var colorHover = 'F00423';

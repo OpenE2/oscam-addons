@@ -33,6 +33,7 @@
 			<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
 			<LI><A NAME="statusfooter"></A></LI>
 		</UL>
+		<DIV id="console" style="width: 200px; color: #FFF; font: 12px monospace; overflow: auto; position: absolute; float: right; bottom: 0px; right: 70px; background: rgba(0,0,0,0.3); padding: 1em; margin: 1em 0px; height: 50px; text-align: left; text-transform: uppercase;"></DIV>
 		<DIV CLASS="demo_changer">
 			<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
 			<DIV CLASS="form_holder">
@@ -63,11 +64,11 @@
 							</DIV>
 						</DIV>
 						<UL CLASS="colchange">
-							<LI ID="col_0" DATA-STYLE='colchange_0' TITLE="Default"></LI>
-							<LI ID="col_1" DATA-STYLE='colchange_1' TITLE="Teal"></LI>
-							<LI ID="col_2" DATA-STYLE='colchange_2' TITLE="Orange"></LI>
-							<LI ID="col_3" DATA-STYLE='colchange_3' TITLE="Yellow"></LI>
-							<LI ID="col_4" DATA-STYLE='colchange_4' TITLE="Green"></LI>
+							<LI ID="col_0" DATA-STYLE='colorstyle_0' TITLE="Default"></LI>
+							<LI ID="col_1" DATA-STYLE='colorstyle_1' TITLE="Teal"></LI>
+							<LI ID="col_2" DATA-STYLE='colorstyle_2' TITLE="Orange"></LI>
+							<LI ID="col_3" DATA-STYLE='colorstyle_3' TITLE="Yellow"></LI>
+							<LI ID="col_4" DATA-STYLE='colorstyle_4' TITLE="Green"></LI>
 						</UL>
 						<DIV CLASS="section-label">Background color
 							<DIV CLASS="sectioninfo">
@@ -91,41 +92,21 @@
 						</UL>
 						<DIV CLASS="form-group">
 							<label>Custom color: </label>
-							<input type="text" id="colorpicker1" class="demo" data-position="top left" value="#409494">
+							<input type="text" id="colorpicker1" class="color-picker" value="#409494">
 						</DIV>
 						<script>
 							$(document).ready( function() {
-								
-					            $('.demo').each( function() {
-					                //
-					                // Dear reader, it's actually very easy to initialize MiniColors. For example:
-					                //
-					                //  $(selector).minicolors();
-					                //
-					                // The way I've done it below is just for the demo, so don't get confused 
-					                // by it. Also, data- attributes aren't supported at this time. Again, 
-					                // they're only used for the purposes of this demo.
-					                //
-									$(this).minicolors({
-										control: $(this).attr('data-control') || 'hue',
-										defaultValue: $(this).attr('data-defaultValue') || '',
-										inline: $(this).attr('data-inline') === 'true',
-										letterCase: $(this).attr('data-letterCase') || 'uppercase',
-										opacity: $(this).attr('data-opacity'),
-										position: $(this).attr('data-position') || 'top left',
-										change: function(hex, opacity) {
-											var log;
-											try {
-												log = hex ? hex : 'transparent';
-												if( opacity ) log += ', ' + opacity;
-												console.log(log);
-											} catch(e) {}
-										},
-										theme: 'default'
+								$('.color-picker').each( function() {
+						            $(this).minicolors({
+										letterCase: 'uppercase',
+										position: 'top left',
+										change: function(hex) {
+											// Show text in console
+											log = 'HEX VALUE: ' + hex + '<br>';
+											$("#console").prepend(log);
+										}
 									});
-					                
-					            });
-								
+								});
 							});
 						</script>
 					</DIV>
@@ -221,10 +202,10 @@
 													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 2"></LI>
 													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 3"></LI>
 													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 4"></LI>
-													<LI ID="link_2" DATA-STYLE='linkcolorchange_2' TITLE="Color 1"></LI>
-													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 2"></LI>
-													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 3"></LI>
-													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 4"></LI>
+													<LI ID="link_6" DATA-STYLE='linkcolorchange_6' TITLE="Color 5"></LI>
+													<LI ID="link_7" DATA-STYLE='linkcolorchange_7' TITLE="Color 6"></LI>
+													<LI ID="link_8" DATA-STYLE='linkcolorchange_8' TITLE="Color 7"></LI>
+													<LI ID="link_9" DATA-STYLE='linkcolorchange_9' TITLE="Color 8"></LI>
 												</UL>
 											</DIV>
 										</LI>
@@ -284,7 +265,7 @@
 						<DIV STYLE="position: absolute; bottom: 47px; width: 180px; right: 13px; z-index: 1040;">
 							<input id="show_color" value="Show color settings" type="submit" title="Show whole color settings">
 							<input id="show_ext" value="Show extended settings" type="submit" title="Show extended color settings">
-							<input id="reset" value="Reset all value" type="reset" title="Reset all basic value (without extended settings)">
+							<input id="reset" value="Reset value" type="reset" title="Reset value">
 						</DIV>
 					</DIV>
 				</DIV>
@@ -304,19 +285,19 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Background color: </label>
-								<input type="text" id="colorpicker2" class="demo" data-position="top left" value="#6067D1">
+								<input type="text" id="colorpicker2" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Font color: </label>
-								<input type="text" id="colorpicker3" class="demo" data-position="top left" value="#171A4D">
+								<input type="text" id="colorpicker3" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Link color: </label>
-								<input type="text" id="colorpicker4" class="demo" data-position="top left" value="#C84DD1">
+								<input type="text" id="colorpicker4" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Link:hover color: </label>
-								<input type="text" id="colorpicker5" class="demo" data-position="top left" value="#1DA39A">
+								<input type="text" id="colorpicker5" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 						<DIV CLASS="section-label">Submenu color settings
@@ -328,19 +309,19 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Background color: </label>
-								<input type="text" id="colorpicker6" class="demo" data-position="top left" value="#088713">
+								<input type="text" id="colorpicker6" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Font color: </label>
-								<input type="text" id="colorpicker7" class="demo" data-position="top left" value="#7D8568">
+								<input type="text" id="colorpicker7" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Link color: </label>
-								<input type="text" id="colorpicker8" class="demo" data-position="top left" value="#FFEB52">
+								<input type="text" id="colorpicker8" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Link:hover color: </label>
-								<input type="text" id="colorpicker9" class="demo" data-position="top left" value="#FF0A9D">
+								<input type="text" id="colorpicker9" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 					</DIV>
@@ -354,15 +335,15 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Thead back color: </label>
-								<input type="text" id="colorpicker10" class="demo" data-position="top left" value="#113D15">
+								<input type="text" id="colorpicker10" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Thead text color: </label>
-								<input type="text" id="colorpicker11" class="demo" data-position="top left" value="#9CA89D">
+								<input type="text" id="colorpicker11" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Text color: </label>
-								<input type="text" id="colorpicker12" class="demo" data-position="top left" value="#821329">
+								<input type="text" id="colorpicker12" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 						<DIV CLASS="section-label">LIVELOG color settings
@@ -374,7 +355,7 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Text color: </label>
-								<input type="text" id="colorpicker13" class="demo" data-position="top left" value="#052B2B">
+								<input type="text" id="colorpicker13" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 						<DIV CLASS="section-label">FILES color settings
@@ -386,7 +367,7 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Text color: </label>
-								<input type="text" id="colorpicker14" class="demo" data-position="top left" value="#98F0C2">
+								<input type="text" id="colorpicker14" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 					</DIV>
@@ -400,19 +381,19 @@
 						<DIV STYLE="text-align: right; padding-right: 10px;">
 							<DIV CLASS="form-group">
 								<label>Background color: </label>
-								<input type="text" id="colorpicker15" class="demo" data-position="top left" value="#5DBAC2">
+								<input type="text" id="colorpicker15" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Top border color: </label>
-								<input type="text" id="colorpicker16" class="demo" data-position="top left" value="#AFB37F">
+								<input type="text" id="colorpicker16" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Text color: </label>
-								<input type="text" id="colorpicker17" class="demo" data-position="top left" value="#3B0842">
+								<input type="text" id="colorpicker17" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Text bold color: </label>
-								<input type="text" id="colorpicker18" class="demo" data-position="top left" value="#305D61">
+								<input type="text" id="colorpicker18" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
 						</DIV>
 					</DIV>
@@ -426,8 +407,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1452</P>
-								<P><B>For oscam revision:</B> 10769 until to changes in html and css in revision Oscam</P>
+								<P><B>Envi revision:</B> 1453</P>
+								<P><B>For oscam revision:</B> 10841 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
 										<TD>Wiki:</TD>
@@ -468,6 +449,149 @@
 		<A HREF="#close" ID="closeModalColorBox" CLASS="close" TITLE="Close">X</A>
 		<textarea ID="save_color_text"></textarea>
 		<A HREF="#" DOWNLOAD="EnviColorSettings.txt" ID="savecolor"><input type="submit" value="Save Color Settings"></A>
+	</DIV>
+</DIV>
+<DIV ID="openModalResetBox" CLASS="openModalResetBox">
+	<DIV>
+		<A HREF="#close" ID="closeModalResetBox" CLASS="close" TITLE="Close">X</A>
+		<TABLE STYLE="width: 30%; float: left;">
+			<TR>
+				<TH COLSPAN="2">BASIC SETTINGS</TH>
+			</TR>
+			<TR>
+				<TD>Template color style</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_1" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Background color</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_2" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Patterns</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_3" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Menu font settings</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_4" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Menu font size settings</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_5" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Body font settings</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_6" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Body font color settings</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_7" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Rotate OSCam logo</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_8" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Border of tables</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_9" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Button border radius</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_10" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Notifier border radius</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_11" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Plastic style</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_12" value="value"><label></label></TD>
+			</TR>
+		</TABLE>
+		<TABLE STYLE="width: 70%; margin-bottom: 10px;">
+			<TR>
+				<TH COLSPAN="2">EXTENDED SETTINGS</TH>
+			</TR>
+			<TR>
+				<TD STYLE="vertical-align: top;">
+					<TABLE>
+						<TR>
+							<TD>Main Menu - Background color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_13" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Main Menu - Font color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_14" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Main Menu - Link color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_15" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Main Menu - Link:hover color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_16" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Submenu - Background color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_17" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Submenu - Font color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_18" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Submenu - Link color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_19" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Submenu - Link:hover color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_20" value="value"><label></label></TD>
+						</TR>
+					</TABLE>
+				</TD>
+				<TD STYLE="vertical-align: top;">
+					<TABLE>
+						<TR>
+							<TD>Table - Thead back color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_21" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Table - Thead text color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_22" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Table - Text colorpicker18</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_23" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>LIVELOG - Text color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_24" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>FILES - Text color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_25" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Footer - Background color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_26" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Footer - Top border color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_27" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Footer - Text color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_28" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Footer - Text bold color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_29" value="value"><label></label></TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+		<input id="resetindividual" value="Reset individual value" type="reset" title="Reset individual value">
+		<input id="resetall" value="Reset all value" type="reset" title="Reset all basic value (without extended settings)">
 	</DIV>
 </DIV>
 </BODY>

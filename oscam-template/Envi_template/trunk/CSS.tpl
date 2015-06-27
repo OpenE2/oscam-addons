@@ -1233,7 +1233,8 @@ div.envi_info {
 	color: #FFF
 }
 /* Popup color settings */
-.openModalColorBox {
+.openModalColorBox,
+.openModalResetBox {
 	position: fixed;
 	display: none;
 	background: rgba(0,0,0,0.8);
@@ -1246,7 +1247,8 @@ div.envi_info {
 	   -moz-transition: opacity 400ms ease-in;
 			transition: opacity 400ms ease-in;
 }
-.openModalColorBox > div {
+.openModalColorBox > div,
+.openModalResetBox > div {
 	width: 600px;
 	height: 300px;
 	padding: 15px 15px 40px 15px;
@@ -1392,33 +1394,49 @@ div.envi_info {
 }
 /* Buttons in StyleSwitcher */
 .form_holder #reset,
+.openModalResetBox #resetall,
+.openModalResetBox #resetindividual,
 .form_holder #show_ext,
 .form_holder #show_color {
 	font-weight: 700;
 	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	transition: all 0.5s ease 0s;
-	-webkit-border-radius: 0;
-	   -moz-border-radius: 0;
-			border-radius: 0;
 	color: #FFF;
-	background: #BD0000;
 	padding: 1px 6px;
 	cursor:pointer;
 	border: 1px solid transparent;
 	height: 23px;
 	text-transform: uppercase
 }
-.form_holder #reset {
-	width: 115px
+.form_holder #reset,
+.openModalResetBox #resetall {
+	width: 115px;
+	background: #BD0000;
 }
-.form_holder #show_ext {
-	width: 170px;
-	margin-bottom: 10px;
+.openModalResetBox #resetindividual {
+	width: 150px;
+	background: #BD0000;
 }
+.form_holder #show_ext,
 .form_holder #show_color {
 	width: 170px;
 	margin-bottom: 10px;
+	background: #BD0000;
+	-webkit-border-radius: 0;
+	   -moz-border-radius: 0;
+			border-radius: 0;
+}
+.form_holder #show_ext:hover,
+.form_holder #show_color:hover {
+	box-shadow: none;
+}
+.form_holder #reset:hover,
+.openModalResetBox #resetall:hover,
+.openModalResetBox #resetindividual:hover,
+.form_holder #show_ext:hover,
+.form_holder #show_color:hover {
+	background: #000
 }
 /* Buttons for DIV 'id="openModalColorBox"' */ 
 #savecolor input {
@@ -1427,11 +1445,6 @@ div.envi_info {
 	margin-top: 8px;
 }
 /* */
-.form_holder #reset:hover,
-.form_holder #show_ext:hover,
-.form_holder #show_color:hover {
-	background: #000
-}
 div.envi_info {
 	position: static
 }
@@ -1619,23 +1632,23 @@ div.footer ul.minipicker_linkcolorchange {
 
 /* ============================================= STYLESWITCHER - COLOR SETTINGS ========================== */
 /* **************** 1. TEMPLATE COLOR STYLE */
-[data-style="colchange_0"] {
+[data-style="colorstyle_0"] {
 	background: #BD0000 !important
 }
-[data-style="colchange_1"],
-li.colchange_1 {
+[data-style="colorstyle_1"],
+li.colorstyle_1 {
 	background: #16B6C6 !important
 }
-[data-style="colchange_2"],
-li.colchange_2 {
+[data-style="colorstyle_2"],
+li.colorstyle_2 {
 	background: #FF9C00 !important
 }
-[data-style="colchange_3"],
-li.colchange_3 {
+[data-style="colorstyle_3"],
+li.colorstyle_3 {
 	background: #FFE400 !important
 }
-[data-style="colchange_4"],
-li.colchange_4 {
+[data-style="colorstyle_4"],
+li.colorstyle_4 {
 	background: #7CB600 !important
 }
 
@@ -1855,13 +1868,15 @@ li.colchange_4 {
 	width: 173px;
 	height: 152px;
 	background: white;
-	border: solid 1px #CCC;
+	border: 1px solid #BBB;
 	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 	z-index: 99999;
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 	display: none;
+	padding: 5px 13px 3px 0;
+	border-radius: 5px;
 }
 .minicolors-panel.minicolors-visible {
 	display: block;
@@ -1869,7 +1884,7 @@ li.colchange_4 {
 
 /* Panel positioning */
 .minicolors-position-top .minicolors-panel {
-	top: -154px;
+	top: -157px;
 }
 .minicolors-position-right .minicolors-panel {
 	right: 0;
@@ -1885,8 +1900,8 @@ li.colchange_4 {
 }
 .minicolors .minicolors-grid {
 	position: absolute;
-	top: 1px;
-	left: 1px;
+	top: 5px;
+	left: 5px;
 	width: 150px;
 	height: 150px;
 	background-image: url(data:image/png;base64,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);
@@ -1918,8 +1933,8 @@ li.colchange_4 {
 .minicolors-slider,
 .minicolors-opacity-slider {
 	position: absolute;
-	top: 1px;
-	left: 152px;
+	top: 5px;
+	left: 160px;
 	width: 20px;
 	height: 150px;
 	background-image: url(data:image/png;base64,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);
@@ -2030,12 +2045,12 @@ li.colchange_4 {
 .form-group label {
 	color: #666;
 }
-#colorpicker1 {
+.color-picker {
 	border: 3px solid #E1E1E1;
 	width: 100px;
 }
-#colorpicker1:hover,
-#colorpicker1.active {
+.color-picker:hover,
+.color-picker.active {
 	border: 3px solid #F02;
 }
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
@@ -2670,12 +2685,6 @@ div.groups {
 .envi .configcontrol input[type="submit"] {
 	width: 115px
 }
-.envi input[type="text"] {
-	border: 1px solid #858585
-}
-.envi input[type="text"]:hover {
-	border: 1px solid #000;
-}
 .envi .readers input[type="text"],
 .envi .readers select,
 .envi .users input[type="text"],
@@ -3064,7 +3073,11 @@ div.groups {
 /* Settings for border_radius */
 .border_radius input[type="button"],
 .border_radius input[type="submit"],
-.border_radius #reset {
+.border_radius #reset,
+.border_radius #resetall,
+.border_radius #resetindividual,
+.border_radius #show_ext,
+.border_radius #show_color {
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
 			border-radius: 4px
@@ -3147,7 +3160,11 @@ div.groups {
 /* Settings for button */
 .plastic input[type="button"],
 .plastic input[type="submit"],
-.plastic #reset {
+.plastic #show_color,
+.plastic #show_ext,
+.plastic #reset,
+.plastic #resetall,
+.plastic #resetindividual {
 	border: solid 1px #980C10;
 
 	/* BACKGROUND COLOR */
@@ -3169,7 +3186,9 @@ div.groups {
 }
 .plastic input[type="button"]:hover,
 .plastic input[type="submit"]:hover,
-.plastic #reset:hover {
+.plastic #reset:hover,
+.plastic #resetall:hover,
+.plastic #resetindividual:hover {
 	border: solid 1px #000;
 	transition: all 0s ease 0s;
 
@@ -3192,77 +3211,87 @@ div.groups {
 }
 
  /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
-/* Settings for Template color style "colchange_1"
+/* Settings for Template color style "colorstyle_1"
  * Basic colors: #16B6C6
  * Other colors:
  *		- #13A2AE 
  */
 
 /* ------- COLORS FOR MAIN MENU ------- */
-.colchange_1 li.menu_selected a {
+.colorstyle_1 li.menu_selected a {
 	color: #16B6C6;
 	border-bottom: 2px solid #13A2AE
 }
-.colchange_1 li.menu:hover a {
+.colorstyle_1 li.menu:hover a {
 	color: #16B6C6;
 	border-bottom: 2px solid #13A2AE
 }
-.colchange_1 #nav li.configmenu_selected > a:link,
-.colchange_1 #nav li.configmenu_selected > a:visited,
-.colchange_1 #nav li.configmenu_selected > a:active,
-.colchange_1 #nav li.configmenu > a:hover {
+.colorstyle_1 #nav li.configmenu_selected > a:link,
+.colorstyle_1 #nav li.configmenu_selected > a:visited,
+.colorstyle_1 #nav li.configmenu_selected > a:active,
+.colorstyle_1 #nav li.configmenu > a:hover {
 	color: #16B6C6
 }
 /* ------- COLORS IN FOOTER ------- */
-.colchange_1 div.footer li.styleauthor b {
+.colorstyle_1 div.footer li.styleauthor b {
 	color: #16B6C6
 }
 /* ------- COLORS IN SERVICES ------- */
-.colchange_1 div.sidlistclose {
+.colorstyle_1 div.sidlistclose {
 	background-color: #16B6C6
 }
-.colchange_1 div.sidlistclose:hover {
+.colorstyle_1 div.sidlistclose:hover {
 	background-color: #000;
 	color: #16B6C6;
 	transition: all 0.5s ease 0s
 }
-.colchange_1 div.sidlistclose a {
+.colorstyle_1 div.sidlistclose a {
 	color: #FFF
 }
-.colchange_1 div.sidlistclose:hover a{
+.colorstyle_1 div.sidlistclose:hover a{
 	color: #16B6C6
 }
 /* ------- COLORS FOR NOTIFIER ------- */
-.colchange_1 span.span_notifier {
+.colorstyle_1 span.span_notifier {
 	background-color: #16B6C6
 }
 /* ------- COLORS FOR BUTTONS ------- */
 /* Generaly settings for all buttons/submits */
-.colchange_1 input[type=button],
-.colchange_1 input[type=submit] {
+.colorstyle_1 input[type=button],
+.colorstyle_1 input[type=submit] {
 	background-color: #16B6C6;
 	transition: color 0.5s ease, background-color 0.5s ease
 }
 /* Generaly hover settings for all buttons/submits */
-.colchange_1 input[type=button]:hover,
-.colchange_1 input[type=submit]:hover {
+.colorstyle_1 input[type=button]:hover,
+.colorstyle_1 input[type=submit]:hover {
 	background-color: #000;
 	color: #16B6C6;
 	transition: all 0.5s ease
 }
 /* Buttons in StyleSwitcher */
-.colchange_1 .form_holder #reset{
+.colorstyle_1 .form_holder #show_color,
+.colorstyle_1 .form_holder #show_ext,
+.colorstyle_1 .form_holder #reset, 
+.colorstyle_1 .openModalResetBox #resetall,
+.colorstyle_1 .openModalResetBox #resetindividual {
 	background-color:#16B6C6
 }
-.colchange_1 .form_holder #reset:hover {
+.colorstyle_1 .form_holder #show_color:hover,
+.colorstyle_1 .form_holder #show_ext:hover,
+.colorstyle_1 .form_holder #reset:hover,
+.colorstyle_1 .openModalResetBox #resetall:hover,
+.colorstyle_1 .openModalResetBox #resetindividual:hover {
 	background-color: #000;
 	color: #16B6C6;
 	transition: all 0.5s ease
 }
 /* Buttons if Plastic style is active */
-.colchange_1.plastic input[type="button"],
-.colchange_1.plastic input[type="submit"],
-.colchange_1.plastic .form_holder #reset {
+.colorstyle_1.plastic input[type="button"],
+.colorstyle_1.plastic input[type="submit"],
+.colorstyle_1.plastic .form_holder #reset,
+.colorstyle_1.plastic .openModalResetBox #resetall,
+.colorstyle_1.plastic .openModalResetBox #resetindividual {
 	color: #FFF;
 	border: solid 1px #0076A3;
 	background: #16B6C6;
@@ -3271,9 +3300,11 @@ div.groups {
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16B6C6', endColorstr='#0D6D75');
 	transition: none
 }
-.colchange_1.plastic input[type="button"]:hover,
-.colchange_1.plastic input[type="submit"]:hover,
-.colchange_1.plastic .form_holder #reset:hover {
+.colorstyle_1.plastic input[type="button"]:hover,
+.colorstyle_1.plastic input[type="submit"]:hover,
+.colorstyle_1.plastic .form_holder #reset:hover,
+.colorstyle_1.plastic .openModalResetBox #resetall:hover,
+.colorstyle_1.plastic .openModalResetBox #resetindividual:hover {
 	color: #16B6C6;
 	border: solid 1px #000;
 	background: #666;
@@ -3284,140 +3315,140 @@ div.groups {
 }
 /* ------- COLORS FOR POLLING ------- */
 /* User-Page polling */
-.colchange_1 #picolor {
+.colorstyle_1 #picolor {
 	background-color: #16B6C6
 }
-.colchange_1 #inc,
-.colchange_1 #dec,
-.colchange_1 .regexbutton {
+.colorstyle_1 #inc,
+.colorstyle_1 #dec,
+.colorstyle_1 .regexbutton {
 	background-color: #16B6C6
 }
-.colchange_1 #inc:hover,
-.colchange_1 #dec:hover,
-.colchange_1 .regexbutton:hover {
+.colorstyle_1 #inc:hover,
+.colorstyle_1 #dec:hover,
+.colorstyle_1 .regexbutton:hover {
 	background-color: #000;
 	transition:all 0.5s ease
 }
 /* ------- STYLESWITCHER ------- */
-.colchange_1 div.form_holder a.active {
+.colorstyle_1 div.form_holder a.active {
 	color: #038AA5
 }
-.colchange_1 div.form_holder a:hover {
+.colorstyle_1 div.form_holder a:hover {
 	color: #038AA5
 }
-.colchange_1 ul.backchange li.active,
-.colchange_1 ul.patchange li.active,
-.colchange_1 ul.colchange li.active {
+.colorstyle_1 ul.backchange li.active,
+.colorstyle_1 ul.patchange li.active,
+.colorstyle_1 ul.colchange li.active {
 	border-color: #16B6C6
 }
-.colchange_1 ul.backchange li:hover,
-.colchange_1 ul.patchange li:hover,
-.colchange_1 ul.colchange li:hover {
+.colorstyle_1 ul.backchange li:hover,
+.colorstyle_1 ul.patchange li:hover,
+.colorstyle_1 ul.colchange li:hover {
 	border-color: #16B6C6
 }
-.colchange_1 #colorpicker1:hover,
-.colchange_1 #colorpicker1.active {
+.colorstyle_1 .color-picker:hover,
+.colorstyle_1 .color-picker.active {
 	border-color: #16B6C6
 }
-.colchange_1 ul.fontcolorchange li:hover, 
-.colchange_1 ul.fontcolorchange li.active {
+.colorstyle_1 ul.fontcolorchange li:hover, 
+.colorstyle_1 ul.fontcolorchange li.active {
 	border-color: #16B6C6
 }
 /* ------- COLORS FOR LINKS ------- */
 /* Color for links of icons */
-.colchange_1 a img.icon {
+.colorstyle_1 a img.icon {
 	background-color: #13A2AE
 }
-.colchange_1 a:hover img.icon {
+.colorstyle_1 a:hover img.icon {
 	background-color: #30D9E8
 }
 /* Color for links */
-.colchange_1 a:link,
-.colchange_1 a:visited,
-.colchange_1 a:active {
+.colorstyle_1 a:link,
+.colorstyle_1 a:visited,
+.colorstyle_1 a:active {
 	color: #0E727B
 }
-.colchange_1 a:hover {
+.colorstyle_1 a:hover {
 	color: #000
 }
 /* Color links in config tables */
-.colchange_1 .config a,
-.colchange_1 .configreader a,
-.colchange_1 .configuser a,
-.colchange_1 .configservices a {
+.colorstyle_1 .config a,
+.colorstyle_1 .configreader a,
+.colorstyle_1 .configuser a,
+.colorstyle_1 .configservices a {
 	color: #0E727B
 }
-.colchange_1 .config a:hover,
-.colchange_1 .configreader a:hover,
-.colchange_1 .configuser a:hover,
-.colchange_1 .configservices a:hover {
+.colorstyle_1 .config a:hover,
+.colorstyle_1 .configreader a:hover,
+.colorstyle_1 .configuser a:hover,
+.colorstyle_1 .configservices a:hover {
 	color: #000
 }
 /* Links color for table.subservicetable */
-.colchange_1 .subservicetable a {
+.colorstyle_1 .subservicetable a {
 	color: #16B6C6
 }
 /* Links color for table.subservicetable */
-.colchange_1 .subservicetable a:hover {
+.colorstyle_1 .subservicetable a:hover {
 	color: #FFF
 }
 /* Go to top link */
-.colchange_1 .top_link a:hover {
+.colorstyle_1 .top_link a:hover {
 	color: #16B6C6
 }
 /* ------- COLORS FOR TOOLTIP ------- */
 /* Colors for tooltip */
-.colchange_1 a.tooltip1 {
+.colorstyle_1 a.tooltip1 {
 	color: #F00;
 }
 /* ------- COLORS FOR DEBUG ------- */
 /* Colors for debug */
-.colchange_1 a.debugl:hover,
-.colchange_1 a.debugs:hover {
+.colorstyle_1 a.debugl:hover,
+.colorstyle_1 a.debugs:hover {
 	background-color: #000;
 	color: #16B6C6;
 }
-.colchange_1 a.debugls:link,
-.colchange_1 a.debugls:visited {
+.colorstyle_1 a.debugls:link,
+.colorstyle_1 a.debugls:visited {
 	background-color: #000;
 	color: #16B6C6;
 }
 /* ------- COLORS FOR TEXT ------- */
 /* Color for text */
-.colchange_1 h4 {
+.colorstyle_1 h4 {
 	color: #16B6C6
 }
 /* ------- COLORS FOR TABLES ------- */
 /* Color for Table */
-.colchange_1 #dataTable tr:hover td,
-.colchange_1 table.statsbalance tr:hover td,
-.colchange_1 #servicesedit tr:hover td,
-.colchange_1 table.failban tr:hover td,
-.colchange_1 table.stats tr:hover td,
-.colchange_1 table.status tr.a:hover td,
-.colchange_1 table.status tr.c:hover td,
-.colchange_1 table.status tr.s:hover td,
-.colchange_1 table.status tr.l:hover td,
-.colchange_1 table.status tr.n:hover td,
-.colchange_1 table.status tr.m:hover td,
-.colchange_1 table.status tr.h:hover td,
-.colchange_1 table.status tr.r:hover td,
-.colchange_1 table.status tr.p:hover td  {
+.colorstyle_1 #dataTable tr:hover td,
+.colorstyle_1 table.statsbalance tr:hover td,
+.colorstyle_1 #servicesedit tr:hover td,
+.colorstyle_1 table.failban tr:hover td,
+.colorstyle_1 table.stats tr:hover td,
+.colorstyle_1 table.status tr.a:hover td,
+.colorstyle_1 table.status tr.c:hover td,
+.colorstyle_1 table.status tr.s:hover td,
+.colorstyle_1 table.status tr.l:hover td,
+.colorstyle_1 table.status tr.n:hover td,
+.colorstyle_1 table.status tr.m:hover td,
+.colorstyle_1 table.status tr.h:hover td,
+.colorstyle_1 table.status tr.r:hover td,
+.colorstyle_1 table.status tr.p:hover td  {
 	background-color: #D1E5EF !important
 }
-.colchange_1 table.readers tr:hover td.td-sorting,
-.colchange_1 table.users tr:hover td.td-sorting,
-.colchange_1 table.statsbalance tr:hover td.td-sorting {
+.colorstyle_1 table.readers tr:hover td.td-sorting,
+.colorstyle_1 table.users tr:hover td.td-sorting,
+.colorstyle_1 table.statsbalance tr:hover td.td-sorting {
 	background-color: #C5D9E3 !important
 }
-.colchange_1 #dataTable tfoot tr:hover td,
-.colchange_1 table.statsbalance tfoot tr:hover td {
+.colorstyle_1 #dataTable tfoot tr:hover td,
+.colorstyle_1 table.statsbalance tfoot tr:hover td {
 	background-color: transparent !important;
 }
 /* ------- COLORS FOR PAGINATION ------- */
 /* Color for pagination */
-.colchange_1 div.pager span.active,
-.colchange_1 div.pager span.clickable:hover {
+.colorstyle_1 div.pager span.active,
+.colorstyle_1 div.pager span.clickable:hover {
 	background: #16B6C6;
 	color: #000;
 }

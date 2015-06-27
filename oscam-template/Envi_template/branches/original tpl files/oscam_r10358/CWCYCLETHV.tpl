@@ -1,2 +1,0 @@
-<!--OSCam;3165017852;1.20-unstable_svn;10358;CW_CYCLE_CHECK-->
-			<TH CLASS="##CWCCYCVIEW##" TITLE="CW Cycle Check"><SPAN TITLE="CWs checked">All</SPAN> / <SPAN TITLE="Cycle ok">OK</SPAN> / <SPAN TITLE="Cycle nok">NOK</SPAN> / <SPAN TITLE="Cycle IGN">IGN</SPAN></TH>
