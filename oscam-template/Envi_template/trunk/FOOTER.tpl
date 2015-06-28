@@ -34,7 +34,7 @@
 			<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
 			<LI><A NAME="statusfooter"></A></LI>
 		</UL>
-		<DIV id="console" style="width: 200px; color: #FFF; font: 12px monospace; overflow: auto; position: absolute; float: right; bottom: 0px; right: 70px; background: rgba(0,0,0,0.3); padding: 1em; margin: 1em 0px; height: 50px; text-align: left; text-transform: uppercase;"></DIV>
+		<DIV id="console" style="width: 200px; color: #FFF; font: 12px monospace; overflow: auto; position: absolute; float: right; bottom: 0px; right: 70px; background: rgba(0,0,0,0.3); padding: 1em; margin: 1em 0px; height: 50px; text-align: left; text-transform: uppercase; visibility: hidden;"></DIV>
 		<DIV CLASS="demo_changer">
 			<DIV ID="demo_icon" CLASS="demo_icon"></DIV>
 			<DIV CLASS="form_holder">
@@ -89,7 +89,7 @@
 							<LI ID="back_6" DATA-STYLE='background_6' TITLE="40% Black"></LI>
 							<LI ID="back_7" DATA-STYLE='background_7' TITLE="Light Brown"></LI>
 							<LI ID="back_8" DATA-STYLE='background_8' TITLE="Dark Brown"></LI>
-							<LI ID="back_9" DATA-STYLE='background_9' TITLE="Light slate gray"></LI>
+							<LI ID="back_9" DATA-STYLE='background_9' TITLE="Light Slate Gray"></LI>
 						</UL>
 						<DIV CLASS="form-group">
 							<label>Custom color: </label>
@@ -408,7 +408,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1454</P>
+								<P><B>Envi revision:</B> 1457</P>
 								<P><B>For oscam revision:</B> 10841 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
@@ -488,24 +488,28 @@
 				<TD><input type="checkbox" name="checkbox" id="reset_7" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Rotate OSCam logo</TD>
+				<TD>Body link color settings</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_8" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Border of tables</TD>
+				<TD>Rotate OSCam logo</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_9" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Button border radius</TD>
+				<TD>Border of tables</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_10" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Notifier border radius</TD>
+				<TD>Button border radius</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_11" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Plastic style</TD>
+				<TD>Notifier border radius</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_12" value="value"><label></label></TD>
+			</TR>
+			<TR>
+				<TD>Plastic style</TD>
+				<TD><input type="checkbox" name="checkbox" id="reset_13" value="value"><label></label></TD>
 			</TR>
 		</TABLE>
 		<TABLE STYLE="width: 70%; margin-bottom: 10px;">
@@ -517,35 +521,35 @@
 					<TABLE>
 						<TR>
 							<TD>Main Menu - Background color</TD>
-							<TD><input type="checkbox" name="checkbox" id="reset_13" value="value"><label></label></TD>
-						</TR>
-						<TR>
-							<TD>Main Menu - Font color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_14" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Main Menu - Link color</TD>
+							<TD>Main Menu - Font color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_15" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Main Menu - Link:hover color</TD>
+							<TD>Main Menu - Link color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_16" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Submenu - Background color</TD>
+							<TD>Main Menu - Link:hover color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_17" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Submenu - Font color</TD>
+							<TD>Submenu - Background color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_18" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Submenu - Link color</TD>
+							<TD>Submenu - Font color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_19" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Submenu - Link:hover color</TD>
+							<TD>Submenu - Link color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_20" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Submenu - Link:hover color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_21" value="value"><label></label></TD>
 						</TR>
 					</TABLE>
 				</TD>
@@ -553,39 +557,39 @@
 					<TABLE>
 						<TR>
 							<TD>Table - Thead back color</TD>
-							<TD><input type="checkbox" name="checkbox" id="reset_21" value="value"><label></label></TD>
-						</TR>
-						<TR>
-							<TD>Table - Thead text color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_22" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Table - Text colorpicker18</TD>
+							<TD>Table - Thead text color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_23" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>LIVELOG - Text color</TD>
+							<TD>Table - Text colorpicker18</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_24" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>FILES - Text color</TD>
+							<TD>LIVELOG - Text color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_25" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Footer - Background color</TD>
+							<TD>FILES - Text color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_26" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Footer - Top border color</TD>
+							<TD>Footer - Background color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_27" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Footer - Text color</TD>
+							<TD>Footer - Top border color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_28" value="value"><label></label></TD>
 						</TR>
 						<TR>
-							<TD>Footer - Text bold color</TD>
+							<TD>Footer - Text color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_29" value="value"><label></label></TD>
+						</TR>
+						<TR>
+							<TD>Footer - Text bold color</TD>
+							<TD><input type="checkbox" name="checkbox" id="reset_30" value="value"><label></label></TD>
 						</TR>
 					</TABLE>
 				</TD>

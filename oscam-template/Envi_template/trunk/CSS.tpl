@@ -52,7 +52,6 @@
 		== ENVI TEMPLATE - STYLE 2
 		== ENVI TEMPLATE - STYLE 3
 		== ENVI TEMPLATE - STYLE 4
-		== ENVI TEMPLATE - STYLE 5
 
 	###### RESPONSIVE DESIGN for STREAMBOARD
 */
@@ -1250,8 +1249,8 @@ div.envi_info {
 .openModalColorBox > div,
 .openModalResetBox > div {
 	width: 600px;
-	height: 300px;
-	padding: 15px 15px 40px 15px;
+	height: 350px;
+	padding: 15px;
 	background-color: #FFF;
 	position: fixed;
 	top: 50%;
@@ -1302,6 +1301,18 @@ div.envi_info {
 	bottom: 0;
 	right: -40px
 	
+}
+.demo_icon span.menu_icons,
+.envi .demo_icon span.menu_icons {
+	position: relative;
+	top: 9px;
+	left: 2px
+}
+.envi .demo_icon svg.svg_icons {
+	fill:#000;
+}
+.envi .demo_icon:hover svg.svg_icons {
+	fill:#F02;
 }
 .demo_changer .form_holder {
 	float: left;
@@ -2014,21 +2025,21 @@ li.colorstyle_4 {
 }
 
 /* Default theme */
-.minicolors-theme-default .minicolors-swatch {
+.envi .minicolors-theme-default .minicolors-swatch {
 	top: 3px;
 	left: 3px;
 	width: 18px;
 	height: 18px;	
 }
-.minicolors-theme-default.minicolors-position-right .minicolors-swatch {
+.envi .minicolors-theme-default.minicolors-position-right .minicolors-swatch {
 	left: auto;
 	right: 5px;
 }
-.minicolors-theme-default.minicolors {
+.envi .minicolors-theme-default.minicolors {
 	width: auto;
 	display: inline-block;
 }
-.minicolors-theme-default .minicolors-input {
+.envi .minicolors-theme-default .minicolors-input {
 	height: 26px;
 	width: auto;
 	display: inline-block;
@@ -2036,21 +2047,21 @@ li.colorstyle_4 {
 	width: 92px;
 	font-size: 12px;
 }
-.minicolors-theme-default.minicolors-position-right .minicolors-input {
+.envi .minicolors-theme-default.minicolors-position-right .minicolors-input {
 	padding-right: 26px;
 	padding-left: inherit;
 }
 
 /* Custom settings */
-.form-group label {
+.envi .form-group label {
 	color: #666;
 }
-.color-picker {
+.envi input[type="text"].color-picker {
 	border: 3px solid #E1E1E1;
 	width: 100px;
 }
-.color-picker:hover,
-.color-picker.active {
+.envi input[type="text"].color-picker:hover,
+.envi input[type="text"].color-picker.active {
 	border: 3px solid #F02;
 }
 /* ==================================================================  ENVI TEMPLATE - BASIC STYLE */
@@ -2088,13 +2099,13 @@ body.envi {
 	/* Old browsers */
 	background: #131517;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background-image: -webkit-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background: -webkit-linear-gradient(bottom, #212121 0%, #000000 100%);
 	/* Firefox */
-	background-image: -moz-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background: -moz-linear-gradient(bottom, #212121 0%, #000000 100%);
 	/* IE10+ */
-	background-image: -ms-linear-gradient(bottom, #212121 0%, #000000 100%);
+	background: -ms-linear-gradient(bottom, #212121 0%, #000000 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background-image: linear-gradient(to bottom, #212121 0%, #000000 100%);
+	background: linear-gradient(to bottom, #212121 0%, #000000 100%);
 
 	/* BOX SHADOW */
 	-webkit-box-shadow: 0px 1px 4px #5E5E5E;
@@ -2107,7 +2118,7 @@ body.envi {
 	white-space: nowrap;
 	display: inline-block;
 	position: relative;
-	margin-top: 14px;
+	margin-top: 10px;
 	text-shadow: 1px 1px 1px #000;
 	background: none
 }
@@ -2151,6 +2162,36 @@ body.envi {
 	border-bottom: 2px solid #F00423;
 	padding: 0px 7px 9px
 }
+.envi svg.svg_icons {
+    fill: #FFF;
+}
+.envi li.menu_selected svg.svg_icons {
+    fill: #F00423;
+}
+.envi li.menu:hover svg.svg_icons {
+    fill: #F00423;
+}
+.envi span.menu_icons {
+    padding: 0 4px 0 0;
+    position: relative;
+    top: 2px;
+}
+.envi li.menu a, .envi li.menu_selected a {
+    padding: 10px 6px 5px 6px !important;
+}
+
+.envi a:hover span.menu_icons {
+    display: initial;
+    position: relative;
+    top: 2px;
+    right: initial;
+    padding: 0 4px 0 0;
+    font-weight: normal;
+    text-align: initial;
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
 
 /* **************** 6. SUBNAV */
 .envi #subnav {
@@ -2166,13 +2207,13 @@ body.envi {
 	/* Old browsers */
 	background: #EEEEEE;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	background: -webkit-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* Firefox */
-	background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	background: -moz-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* IE10+ */
-	background-image: -ms-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
+	background: -ms-linear-gradient(top, #F5F5F5 0%, #EEEEEE 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background-image: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
+	background: linear-gradient(to top, #F5F5F5 0%, #EEEEEE 100%);
 
 	/* BOX SHADOW */
 	-webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 5px rgba(0,0,0,0.05); 
@@ -2693,6 +2734,13 @@ div.groups {
 	outline: 1px solid #FFF;
 	border: 1px solid #000
 }
+.envi input[type="text"] {
+	padding: 2px;
+	border: 1px solid #858585
+}
+.envi input[type="text"]:hover {
+	border: 1px solid #000
+}
 .envi .readers input[type="text"] {
 	margin-right: 5px
 }
@@ -2988,7 +3036,7 @@ div.groups {
 /* Menu Icons */
 .envi li.menu a,
 .envi li.menu_selected a {
-	padding: 10px 6px 9px 26px !important;
+	padding: 10px 6px 9px !important;
 	margin-left: 3px;
 	margin-right: 3px;
 }
@@ -3131,8 +3179,10 @@ div.groups {
 	background: -webkit-gradient(linear, left top, left bottom, from(#0D9C02), to(#1A3C08));
 	/* Firefox */
 	background: -moz-linear-gradient(top,  #0D9C02,  #1A3C08);
-	/* IE6-9 */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#008700', endColorstr='#003300');
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #0D9C02, #1A3C08);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to top, #0D9C02, #1A3C08);
 }
 .plastic tr.disabled td:first-child a:hover img.icon,
 .plastic tr.disabledreader td:first-child a:hover img.icon {
@@ -3148,13 +3198,13 @@ div.groups {
 	/* Old browsers */
 	background: #444;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background-image: -webkit-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -webkit-linear-gradient(bottom, #444 0%, #111 100%);
 	/* Firefox */
-	background-image: -moz-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -moz-linear-gradient(bottom, #444 0%, #111 100%);
 	/* IE10+ */
-	background-image: -ms-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -ms-linear-gradient(bottom, #444 0%, #111 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background-image: linear-gradient(to bottom, #444 0%, #111 100%);
+	background: linear-gradient(to bottom, #444 0%, #111 100%);
 }
 
 /* Settings for button */
@@ -3175,8 +3225,10 @@ div.groups {
 	background: -webkit-gradient(linear, left top, left bottom, from(#CE0303), to(#6B0508));
 	/* Firefox */
 	background: -moz-linear-gradient(top,  #CE0303,  #6B0508);
-	/* IE6-9 */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#CE0303', endColorstr='#6B0508');
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #CE0303, #6B0508);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to top, #CE0303, #6B0508);
 
 	/* TEXT SHADOW */
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -3200,8 +3252,10 @@ div.groups {
 	background: -webkit-gradient(linear, left top, left bottom, from(#666C71), to(#454A4E));
 	/* Firefox */
 	background: -moz-linear-gradient(top,  #666C71,  #454A4E);
-	/* IE6-9 */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666C71', endColorstr='#454A4E');
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #666C71, #454A4E);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to top, #666C71, #454A4E);
 
 	/* TEXT SHADOW */
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -3232,6 +3286,12 @@ div.groups {
 .colorstyle_1 #nav li.configmenu > a:hover {
 	color: #16B6C6
 }
+.colorstyle_1 li.menu_selected svg.svg_icons {
+	fill: #16B6C6;
+}
+.colorstyle_1 li.menu:hover svg.svg_icons {
+	fill: #16B6C6;
+}
 /* ------- COLORS IN FOOTER ------- */
 .colorstyle_1 div.footer li.styleauthor b {
 	color: #16B6C6
@@ -3259,13 +3319,13 @@ div.groups {
 /* Generaly settings for all buttons/submits */
 .colorstyle_1 input[type=button],
 .colorstyle_1 input[type=submit] {
-	background-color: #16B6C6;
+	background: #16B6C6;
 	transition: color 0.5s ease, background-color 0.5s ease
 }
 /* Generaly hover settings for all buttons/submits */
 .colorstyle_1 input[type=button]:hover,
 .colorstyle_1 input[type=submit]:hover {
-	background-color: #000;
+	background: #000;
 	color: #16B6C6;
 	transition: all 0.5s ease
 }
@@ -3275,14 +3335,14 @@ div.groups {
 .colorstyle_1 .form_holder #reset, 
 .colorstyle_1 .openModalResetBox #resetall,
 .colorstyle_1 .openModalResetBox #resetindividual {
-	background-color:#16B6C6
+	background:#16B6C6
 }
 .colorstyle_1 .form_holder #show_color:hover,
 .colorstyle_1 .form_holder #show_ext:hover,
 .colorstyle_1 .form_holder #reset:hover,
 .colorstyle_1 .openModalResetBox #resetall:hover,
 .colorstyle_1 .openModalResetBox #resetindividual:hover {
-	background-color: #000;
+	background: #000;
 	color: #16B6C6;
 	transition: all 0.5s ease
 }
@@ -3346,13 +3406,20 @@ div.groups {
 .colorstyle_1 ul.colchange li:hover {
 	border-color: #16B6C6
 }
-.colorstyle_1 .color-picker:hover,
-.colorstyle_1 .color-picker.active {
+.colorstyle_1 input[type="text"].color-picker:hover,
+.colorstyle_1 input[type="text"].color-picker.active {
 	border-color: #16B6C6
 }
 .colorstyle_1 ul.fontcolorchange li:hover, 
 .colorstyle_1 ul.fontcolorchange li.active {
 	border-color: #16B6C6
+}
+.colorstyle_1 ul.linkcolorchange li:hover,
+.colorstyle_1 ul.linkcolorchange li.active {
+	border-color: #16B6C6
+}
+.colorstyle_1 .demo_icon:hover svg.svg_icons {
+	fill:#16B6C6;
 }
 /* ------- COLORS FOR LINKS ------- */
 /* Color for links of icons */
@@ -3453,18 +3520,268 @@ div.groups {
 	color: #000;
 }
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
-/* Settings for Template color style "colchange_2" */
+/* Settings for Template color style "colorstyle_2"
+ * Basic colors: #FF6600 (#F60)
+ * Other colors:
+ *		- #B04600
+ *		- #FF8B3D
+ */
+
+/* ------- COLORS FOR MAIN MENU ------- */
+.colorstyle_2 li.menu_selected a {
+	color: #F60;
+	border-bottom: 2px solid #F60
+}
+.colorstyle_2 li.menu:hover a {
+	color: #F60;
+	border-bottom: 2px solid #F60
+}
+.colorstyle_2 #nav li.configmenu_selected > a:link,
+.colorstyle_2 #nav li.configmenu_selected > a:visited,
+.colorstyle_2 #nav li.configmenu_selected > a:active,
+.colorstyle_2 #nav li.configmenu > a:hover {
+	color: #F60
+}
+.colorstyle_2 li.menu_selected svg.svg_icons {
+	fill: #F60;
+}
+.colorstyle_2 li.menu:hover svg.svg_icons {
+	fill: #F60;
+}
+/* ------- COLORS IN FOOTER ------- */
+.colorstyle_2 div.footer li.styleauthor b {
+	color: #F60
+}
+/* ------- COLORS IN SERVICES ------- */
+.colorstyle_2 div.sidlistclose {
+	background-color: #F60
+}
+.colorstyle_2 div.sidlistclose:hover {
+	background-color: #000;
+	color: #F60;
+	transition: all 0.5s ease 0s
+}
+.colorstyle_2 div.sidlistclose a {
+	color: #FFF
+}
+.colorstyle_2 div.sidlistclose:hover a{
+	color: #F60
+}
+/* ------- COLORS FOR NOTIFIER ------- */
+.colorstyle_2 span.span_notifier {
+	background-color: #F60
+}
+/* ------- COLORS FOR BUTTONS ------- */
+/* Generaly settings for all buttons/submits */
+.colorstyle_2 input[type=button],
+.colorstyle_2 input[type=submit] {
+	background: #F60;
+	transition: color 0.5s ease, background-color 0.5s ease
+}
+/* Generaly hover settings for all buttons/submits */
+.colorstyle_2 input[type=button]:hover,
+.colorstyle_2 input[type=submit]:hover {
+	background: #000;
+	color: #F60;
+	transition: all 0.5s ease
+}
+/* Buttons in StyleSwitcher */
+.colorstyle_2 .form_holder #show_color,
+.colorstyle_2 .form_holder #show_ext,
+.colorstyle_2 .form_holder #reset, 
+.colorstyle_2 .openModalResetBox #resetall,
+.colorstyle_2 .openModalResetBox #resetindividual {
+	background:#F60
+}
+.colorstyle_2 .form_holder #show_color:hover,
+.colorstyle_2 .form_holder #show_ext:hover,
+.colorstyle_2 .form_holder #reset:hover,
+.colorstyle_2 .openModalResetBox #resetall:hover,
+.colorstyle_2 .openModalResetBox #resetindividual:hover {
+	background: #000;
+	color: #F60;
+	transition: all 0.5s ease
+}
+/* Buttons if Plastic style is active */
+.colorstyle_2.plastic input[type="button"],
+.colorstyle_2.plastic input[type="submit"],
+.colorstyle_2.plastic .form_holder #reset,
+.colorstyle_2.plastic .openModalResetBox #resetall,
+.colorstyle_2.plastic .openModalResetBox #resetindividual {
+	color: #FFF;
+	border: solid 1px #B04600;
+	background: #F60;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F60), to(#B04600));
+	background: -moz-linear-gradient(top,  #F60,  #B04600);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F60', endColorstr='#B04600');
+	transition: none
+}
+.colorstyle_2.plastic input[type="button"]:hover,
+.colorstyle_2.plastic input[type="submit"]:hover,
+.colorstyle_2.plastic .form_holder #reset:hover,
+.colorstyle_2.plastic .openModalResetBox #resetall:hover,
+.colorstyle_2.plastic .openModalResetBox #resetindividual:hover {
+	color: #F60;
+	border: solid 1px #000;
+	background: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
+	transition: none
+}
+/* ------- COLORS FOR POLLING ------- */
+/* User-Page polling */
+.colorstyle_2 #picolor {
+	background-color: #F60
+}
+.colorstyle_2 #inc,
+.colorstyle_2 #dec,
+.colorstyle_2 .regexbutton {
+	background-color: #F60
+}
+.colorstyle_2 #inc:hover,
+.colorstyle_2 #dec:hover,
+.colorstyle_2 .regexbutton:hover {
+	background-color: #000;
+	transition:all 0.5s ease
+}
+/* ------- STYLESWITCHER ------- */
+.colorstyle_2 div.form_holder a.active {
+	color: #F60
+}
+.colorstyle_2 div.form_holder a:hover {
+	color: #F60
+}
+.colorstyle_2 ul.backchange li.active,
+.colorstyle_2 ul.patchange li.active,
+.colorstyle_2 ul.colchange li.active {
+	border-color: #F60
+}
+.colorstyle_2 ul.backchange li:hover,
+.colorstyle_2 ul.patchange li:hover,
+.colorstyle_2 ul.colchange li:hover {
+	border-color: #F60
+}
+.colorstyle_2 input[type="text"].color-picker:hover,
+.colorstyle_2 input[type="text"].color-picker.active {
+	border-color: #F60
+}
+.colorstyle_2 ul.fontcolorchange li:hover, 
+.colorstyle_2 ul.fontcolorchange li.active {
+	border-color: #F60
+}
+.colorstyle_2 ul.linkcolorchange li:hover,
+.colorstyle_2 ul.linkcolorchange li.active {
+	border-color: #F60
+}
+.colorstyle_2 .demo_icon:hover svg.svg_icons {
+	fill:#F60;
+}
+/* ------- COLORS FOR LINKS ------- */
+/* Color for links of icons */
+.colorstyle_2 a img.icon {
+	background-color: #F60
+}
+.colorstyle_2 a:hover img.icon {
+	background-color: #FF8B3D
+}
+/* Color for links */
+.colorstyle_2 a:link,
+.colorstyle_2 a:visited,
+.colorstyle_2 a:active {
+	color: #EB5E00
+}
+.colorstyle_2 a:hover {
+	color: #000
+}
+/* Color links in config tables */
+.colorstyle_2 .config a,
+.colorstyle_2 .configreader a,
+.colorstyle_2 .configuser a,
+.colorstyle_2 .configservices a {
+	color: #EB5E00
+}
+.colorstyle_2 .config a:hover,
+.colorstyle_2 .configreader a:hover,
+.colorstyle_2 .configuser a:hover,
+.colorstyle_2 .configservices a:hover {
+	color: #000
+}
+/* Links color for table.subservicetable */
+.colorstyle_2 .subservicetable a {
+	color: #F60
+}
+/* Links color for table.subservicetable */
+.colorstyle_2 .subservicetable a:hover {
+	color: #FFF
+}
+/* Go to top link */
+.colorstyle_2 .top_link a:hover {
+	color: #F60
+}
+/* ------- COLORS FOR TOOLTIP ------- */
+/* Colors for tooltip */
+.colorstyle_2 a.tooltip1 {
+	color: #F60;
+}
+/* ------- COLORS FOR DEBUG ------- */
+/* Colors for debug */
+.colorstyle_2 a.debugl:hover,
+.colorstyle_2 a.debugs:hover {
+	background-color: #000;
+	color: #F60;
+}
+.colorstyle_2 a.debugls:link,
+.colorstyle_2 a.debugls:visited {
+	background-color: #000;
+	color: #F60;
+}
+/* ------- COLORS FOR TEXT ------- */
+/* Color for text */
+.colorstyle_2 h4 {
+	color: #F60
+}
+/* ------- COLORS FOR TABLES ------- */
+/* Color for Table */
+.colorstyle_2 #dataTable tr:hover td,
+.colorstyle_2 table.statsbalance tr:hover td,
+.colorstyle_2 #servicesedit tr:hover td,
+.colorstyle_2 table.failban tr:hover td,
+.colorstyle_2 table.stats tr:hover td,
+.colorstyle_2 table.status tr.a:hover td,
+.colorstyle_2 table.status tr.c:hover td,
+.colorstyle_2 table.status tr.s:hover td,
+.colorstyle_2 table.status tr.l:hover td,
+.colorstyle_2 table.status tr.n:hover td,
+.colorstyle_2 table.status tr.m:hover td,
+.colorstyle_2 table.status tr.h:hover td,
+.colorstyle_2 table.status tr.r:hover td,
+.colorstyle_2 table.status tr.p:hover td  {
+	background-color: #F7E6DA !important
+}
+.colorstyle_2 table.readers tr:hover td.td-sorting,
+.colorstyle_2 table.users tr:hover td.td-sorting,
+.colorstyle_2 table.statsbalance tr:hover td.td-sorting {
+	background-color: #C5D9E3 !important
+}
+.colorstyle_2 #dataTable tfoot tr:hover td,
+.colorstyle_2 table.statsbalance tfoot tr:hover td {
+	background-color: transparent !important;
+}
+/* ------- COLORS FOR PAGINATION ------- */
+/* Color for pagination */
+.colorstyle_2 div.pager span.active,
+.colorstyle_2 div.pager span.clickable:hover {
+	background: #F60;
+	color: #000;
+}
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
-/* Settings for Template color style "colchange_3" */
+/* Settings for Template color style "colorstyle_3" */
 
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 4 */
-/* Settings for Template color style "colchange_4" */
-
-
-/* ==================================================================  ENVI TEMPLATE - STYLE 5 */
-/* Settings for Template color style "colchange_5" */
+/* Settings for Template color style "colorstyle_4" */
 
 
 /* ################################# RESPONSIVE DESIGN for STREAMBOARD ################################# */
