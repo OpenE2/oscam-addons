@@ -22,7 +22,7 @@
 				left: 20px;
 				z-index: 1030;
 				border-spacing: 0px;
-				width: 180px
+				width: 200px
 			}
 			.GeoResultsTABLE td {
 				border-bottom: 1px dotted gray;
@@ -35,7 +35,7 @@
 				width: 55px;
 			}
 			.GeoResultsTABLE tr td:last-child {
-				width: 105px;
+				width: 125px;
 			}
 			a:hover .GeoResultsTABLE{
 				display: block;
@@ -48,7 +48,8 @@
 				border: 1px solid #000;
 				color: #000
 			}
-			/* Only for Envi Template */
+			/* For Envi Template and Original WebIf */
+			table.status tr:hover table[id^="GeoResults"] tr td,
 			.envi table.status tr:hover table[id^="GeoResults"] tr td {
 				background-color: transparent !important;
 				border-right: initial !important;
@@ -136,6 +137,14 @@
 						/* Convert 'title' to 'boot_tooltip' */
 						$('.envi #geoapibutton').boot_tooltip({animation: false, placement: 'bottom'})
 					})
+
+					// If we run 'Pause Pollinterval' then hide GEOAPI
+					// I have only one problem. If we click to 'Show GEOAPI' button, then we click two times.
+					$('.pollingdisabled').click(function() {
+						hideGEO();
+						$('#geoapibutton').val('Show GEOAPI');
+
+					});
 
 					// Function for call function if button Odd/Even click
 					var even = false;
@@ -587,7 +596,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1461</P>
+								<P><B>Envi revision:</B> 1462</P>
 								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
