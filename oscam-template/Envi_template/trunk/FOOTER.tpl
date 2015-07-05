@@ -7,6 +7,79 @@
 			<P ID="back-top"><A HREF="#top" ><SPAN></SPAN></A></P>
 		</DIV>
 
+		<!--  START GEOAPI FUNCTION-->
+		<style type="text/css">
+			.GeoResults {
+				position: relative;
+				color: #F00;
+				cursor: pointer;
+				float: right;
+				border-left: 1px solid #000;
+				padding-left: 5px;
+			}
+			.GeoResultsSPAN {
+				display: none;
+				left: 20px;
+				z-index: 1050;
+				background: #FFF;
+				width: 150px;
+			}
+		</style>
+		<script>
+			$(document).ready( function() {
+				if (document.URL.indexOf('status.html') > -1) {
+					/* ABOUT GEOAPI
+					 *	1. http://ip-api.com/ system will automatically ban any IP addresses doing over 250 requests per minute.)
+					 *		- Documentation on http://ip-api.com/docs/api:json
+					 *	2. https://freegeoip.net/ allowed up to 10,000 queries per hour by default
+					 *	3. https://ipinfo.io/ are limited to 1,000 API requests per day
+					 * ----------------------------------------------------------------------------------------------------------
+					 * OTHER GEOAPI DATABASES
+					 * > https://db-ip.com/ 
+					 *		- need api key
+					 *		- this key allows 2,000 queries per day
+					 * 
+					 */
+ 
+					// ================= FOR ALL USER
+					// Create function
+					function RunJson(){
+						var selector = $("#tbodyc tr td.statuscol7");
+
+						selector.each(array, function (i) {
+							count++
+							var cell = $(this);
+							var valueUSER = $(this).text();
+							var incremental = i + 1;
+
+							// GeoLocation API 2
+							$.get("https://freegeoip.net/json/" + valueUSER, function(data) {
+							    console.log(data.ip, data.country_code);
+
+							    var country_code	= data.country_code;
+							    var country_name   	= data.country_name;
+								var region_name		= data.region_name;
+								var city 			= data.city;
+								var ip          	= data.ip;
+							    
+							    $('SPAN[id^="GeoResults-"]').remove();
+							    cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">Country: ' + country_name + '<BR>Region: ' + region_name + '<BR> City: ' + city + '<BR> IP: ' + ip + '</SPAN></A>');
+							}, "jsonp");
+						});
+					};
+
+					// CREATE BUTTON
+					$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="" type="button" style="width: 120px;">');
+
+					$('#geoapibutton').click(function() {
+						RunJson();
+					});
+
+				}
+			});
+		</script>
+		<!--  END GEOAPI FUNCTION-->
+
 		<UL CLASS="textfooter">
 			<LI CLASS="developed"><B>OSCam Webinterface developed by Streamboard Team</B></LI>
 			<LI>
@@ -408,8 +481,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1458</P>
-								<P><B>For oscam revision:</B> 10841 until to changes in html and css in revision Oscam</P>
+								<P><B>Envi revision:</B> 1459</P>
+								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
 										<TD><B>Wiki:</B></TD>

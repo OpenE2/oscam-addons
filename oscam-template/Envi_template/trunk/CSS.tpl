@@ -415,12 +415,9 @@ tr.expired td {background-color:#FBA}
 tr.connected td {background-color:#FFA}
 tr.disabled td {}
 tr.disabled td:first-child img.icon,
-tr.disabledreader td:first-child img.icon {background-color:#A00}
-tr.online td:first-child img.icon,
-tr.offline td:first-child img.icon,
-tr.expired td:first-child img.icon,
-tr.connected td:first-child img.icon,
-tr.enabledreader td:first-child img.icon {background-color:#0A0}
+tr.disabledreader td:first-child img.icon {background-color:#0A0}
+tr.disabled td:first-child a:hover img.icon,
+tr.disabledreader td:first-child a:hover img.icon {background-color:#0D0}
 /* colors for status rows in status.html depend on status */
 tr.a td {background-color:#3F0}
 tr.c td {background-color:#F1F5E6}
@@ -976,9 +973,8 @@ div.colorPicker-swatch {
 	line-height:12px
 }
 /* User-Page polling */
-#inc,#dec,.regexbutton {
-	padding:0 3px;
-	margin:-3px 3px;
+#inc,#polling,#dec,.regexbutton {
+	margin:-3px 2px;
 	border:none;
 	background-color:#A00;
 	color:#FFF;
@@ -987,13 +983,17 @@ div.colorPicker-swatch {
 	font-size:14px;
 	font-weight:700;
 	width:22px;
-	height:22px
+	height:22px;
+	line-height:0px
 }
-#inc:hover,#dec:hover,.regexbutton:hover {
-	background-color:#F00
+#inc:hover,#polling:hover,#dec:hover,.regexbutton:hover {
+	background-color:#F00 !important
+}
+#poll button {
+	margin-bottom:1px;
+	vertical-align:middle
 }
 #nav li.pollselect {
-	display:inline;
 	position:absolute;
 	right:10px
 }
@@ -1261,7 +1261,7 @@ div.envi_info {
 #save_color_text {
 	font-size: 11px;
 	width: 100%;
-	height: 100%;
+	height: 93%;
 	font-family: "Courier New",monospace;
 	text-align: left;
 	border: 1px dotted #AAA;
@@ -1319,7 +1319,7 @@ div.envi_info {
 	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 625px;
+	width: 630px;
 	height: 376px;
 	border: 1px solid #DDD;
 	display: none;
@@ -1338,17 +1338,17 @@ div.envi_info {
 }
 .demo_changer .form_holder .form_holder_left  {
 	float: left;
-	width: 195px;
+	width: 196px;
 	margin: 0px 5px 0px 10px;
 }
 .demo_changer .form_holder .form_holder_center  {
 	float: left;
-	width: 195px;
+	width: 196px;
 	margin: 0px 5px 0px 5px;
 }
 .demo_changer .form_holder .form_holder_right  {
 	float: left;
-	width: 195px;
+	width: 196px;
 	margin: 0px 10px 0px 5px;
 }
 .demo_changer .form_holder_one {
@@ -1364,7 +1364,7 @@ div.envi_info {
 	position: absolute;
 	top: 1px;
 	left: 0;
-	width: 626px;
+	width: 630px;
 
 	/* BACKGROUND COLOR */
 	/* Old browsers */
@@ -2058,7 +2058,7 @@ li.colorstyle_4 {
 }
 .envi input[type="text"].color-picker {
 	border: 3px solid #E1E1E1;
-	width: 100px;
+	width: 95px;
 }
 .envi input[type="text"].color-picker:hover,
 .envi input[type="text"].color-picker.active {
@@ -2236,6 +2236,9 @@ body.envi {
 	position: absolute;
 	font-size: 12px;
 	margin: 3px 2px
+}
+.envi input[type="text"].pintervall {
+	padding: 0
 }
 .envi li.configmenu a,.envi li.configmenu a:hover,
 .envi li.configmenu_selected a,.envi li.configmenu_selected a:hover {
@@ -2486,9 +2489,7 @@ td {
 .envi table.statsbalance tr:hover td {
 	background-color: #FCD7D7 !important
 }
-.envi table.readers tr:hover td.td-sorting,
-.envi table.users tr:hover td.td-sorting,
-.envi table.statsbalance tr:hover td.td-sorting {
+.envi #dataTable tr:hover td.td-sorting {
 	background-color: #F2CECE !important
 }
 .envi .readers tr:nth-child(odd) td,
@@ -2847,7 +2848,7 @@ div.groups {
 
 /* **************** 17. POLLING */
 /* User-Page polling */
-.envi #inc, .envi #dec, .envi .regexbutton {
+.envi #inc, .envi #polling, .envi #dec, .envi .regexbutton {
 	background-color: #BD0000;
 	border-radius: 0;
 }
@@ -3135,7 +3136,7 @@ div.groups {
 	border-radius: 4px;
 }
 /* User-Page polling */
-.border_radius #inc, .border_radius #dec, .border_radius .regexbutton {
+.border_radius #inc, .border_radius #polling, .border_radius #dec, .border_radius .regexbutton {
 	border-radius: 4px;
 }
 /* ==================================================================  ENVI TEMPLATE - NOTIFIER BORDER RADIUS */
@@ -3271,6 +3272,7 @@ div.groups {
  *		- #13A2AE 
  */
 
+/* **************************** BASIC SETTINGS (is same for all coloring style) */
 /* ------- COLORS FOR MAIN MENU ------- */
 .colorstyle_1 li.menu_selected a {
 	color: #16B6C6;
@@ -3379,15 +3381,18 @@ div.groups {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc,
+.colorstyle_1 #polling,
 .colorstyle_1 #dec,
 .colorstyle_1 .regexbutton {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc:hover,
+.colorstyle_1 #polling:hover,
 .colorstyle_1 #dec:hover,
 .colorstyle_1 .regexbutton:hover {
-	background-color: #000;
-	transition:all 0.5s ease
+	background-color: #000 !important;
+	transition:all 0.5s ease;
+	color: #16B6C6;
 }
 /* ------- STYLESWITCHER ------- */
 .colorstyle_1 div.form_holder a.active {
@@ -3438,6 +3443,15 @@ div.groups {
 .colorstyle_1 a:hover {
 	color: #000
 }
+/* Color for links in pre */
+.colorstyle_1 pre a:link,
+.colorstyle_1 pre a:visited,
+.colorstyle_1 pre a:active {
+	color: #000
+}
+.colorstyle_1 pre a:hover {
+	color: #0E727B
+}
 /* Color links in config tables */
 .colorstyle_1 .config a,
 .colorstyle_1 .configreader a,
@@ -3486,6 +3500,31 @@ div.groups {
 	color: #16B6C6
 }
 /* ------- COLORS FOR TABLES ------- */
+/* Background color for th */
+.colorstyle_1 table.config th,
+.colorstyle_1 table.configreader th,
+.colorstyle_1 table.configuser th,
+.colorstyle_1 table.cacheex th,
+.colorstyle_1 table.failban th,
+.colorstyle_1 #servicesedit th,
+.colorstyle_1 #addnewservice th,
+.colorstyle_1 table.configservices th,
+.colorstyle_1 table.readers th,
+.colorstyle_1 table.writeemm th,
+.colorstyle_1 table.emmrunning th,
+.colorstyle_1 table.statsbalance th,
+.colorstyle_1 table.status th,
+.colorstyle_1 table.status td.subheadline {
+	background-color: #222;
+}
+/* cacheex.html */
+.colorstyle_1 table.stats th {
+	background-color: #222;
+}
+/* scanusb.html */
+.colorstyle_1 table.scanusb th {
+	background-color: #222;
+}
 /* Color for Table */
 .colorstyle_1 #dataTable tr:hover td,
 .colorstyle_1 table.statsbalance tr:hover td,
@@ -3503,10 +3542,8 @@ div.groups {
 .colorstyle_1 table.status tr.p:hover td  {
 	background-color: #D1E5EF !important
 }
-.colorstyle_1 table.readers tr:hover td.td-sorting,
-.colorstyle_1 table.users tr:hover td.td-sorting,
-.colorstyle_1 table.statsbalance tr:hover td.td-sorting {
-	background-color: #C5D9E3 !important
+.colorstyle_1 #dataTable tr:hover td.td-sorting {
+	background-color: #BDCFD9 !important
 }
 .colorstyle_1 #dataTable tfoot tr:hover td,
 .colorstyle_1 table.statsbalance tfoot tr:hover td {
@@ -3519,14 +3556,18 @@ div.groups {
 	background: #16B6C6;
 	color: #000;
 }
+/* **************************** EXTENDED SETTINGS (may be different in the individual styles) */
+
+/* NOTHING FOR ENVI TEMPLATE - STYLE  1 */
+
 /* ==================================================================  ENVI TEMPLATE - STYLE 2 */
 /* Settings for Template color style "colorstyle_2"
  * Basic colors: #FF6600 (#F60)
  * Other colors:
- *		- #B04600
- *		- #FF8B3D
+ *		- #
  */
 
+/* **************************** BASIC SETTINGS (is same for all coloring style) */
 /* ------- COLORS FOR MAIN MENU ------- */
 .colorstyle_2 li.menu_selected a {
 	color: #F60;
@@ -3635,15 +3676,18 @@ div.groups {
 	background-color: #F60
 }
 .colorstyle_2 #inc,
+.colorstyle_2 #polling,
 .colorstyle_2 #dec,
 .colorstyle_2 .regexbutton {
 	background-color: #F60
 }
 .colorstyle_2 #inc:hover,
+.colorstyle_2 #polling:hover,
 .colorstyle_2 #dec:hover,
 .colorstyle_2 .regexbutton:hover {
-	background-color: #000;
-	transition:all 0.5s ease
+	background-color: #000 !important;
+	transition:all 0.5s ease;
+	color: #F60;
 }
 /* ------- STYLESWITCHER ------- */
 .colorstyle_2 div.form_holder a.active {
@@ -3683,23 +3727,32 @@ div.groups {
 	background-color: #F60
 }
 .colorstyle_2 a:hover img.icon {
-	background-color: #FF8B3D
+	background-color: #DB3700
 }
 /* Color for links */
 .colorstyle_2 a:link,
 .colorstyle_2 a:visited,
 .colorstyle_2 a:active {
-	color: #EB5E00
+	color: #DB3700
 }
 .colorstyle_2 a:hover {
 	color: #000
+}
+/* Color for links in pre */
+.colorstyle_2 pre a:link,
+.colorstyle_2 pre a:visited,
+.colorstyle_2 pre a:active {
+	color: #000
+}
+.colorstyle_2 pre a:hover {
+	color: #DB3700
 }
 /* Color links in config tables */
 .colorstyle_2 .config a,
 .colorstyle_2 .configreader a,
 .colorstyle_2 .configuser a,
 .colorstyle_2 .configservices a {
-	color: #EB5E00
+	color: #DB3700
 }
 .colorstyle_2 .config a:hover,
 .colorstyle_2 .configreader a:hover,
@@ -3722,7 +3775,7 @@ div.groups {
 /* ------- COLORS FOR TOOLTIP ------- */
 /* Colors for tooltip */
 .colorstyle_2 a.tooltip1 {
-	color: #F60;
+	color: #F00;
 }
 /* ------- COLORS FOR DEBUG ------- */
 /* Colors for debug */
@@ -3742,6 +3795,31 @@ div.groups {
 	color: #F60
 }
 /* ------- COLORS FOR TABLES ------- */
+/* Background color for th */
+.colorstyle_2 table.config th,
+.colorstyle_2 table.configreader th,
+.colorstyle_2 table.configuser th,
+.colorstyle_2 table.cacheex th,
+.colorstyle_2 table.failban th,
+.colorstyle_2 #servicesedit th,
+.colorstyle_2 #addnewservice th,
+.colorstyle_2 table.configservices th,
+.colorstyle_2 table.readers th,
+.colorstyle_2 table.writeemm th,
+.colorstyle_2 table.emmrunning th,
+.colorstyle_2 table.statsbalance th,
+.colorstyle_2 table.status th,
+.colorstyle_2 table.status td.subheadline {
+	background-color: #333;
+}
+/* cacheex.html */
+.colorstyle_2 table.stats th {
+	background-color: #333;
+}
+/* scanusb.html */
+.colorstyle_2 table.scanusb th {
+	background-color: #333;
+}
 /* Color for Table */
 .colorstyle_2 #dataTable tr:hover td,
 .colorstyle_2 table.statsbalance tr:hover td,
@@ -3757,12 +3835,10 @@ div.groups {
 .colorstyle_2 table.status tr.h:hover td,
 .colorstyle_2 table.status tr.r:hover td,
 .colorstyle_2 table.status tr.p:hover td  {
-	background-color: #F7E6DA !important
+	background-color: #FAE2d2 !important
 }
-.colorstyle_2 table.readers tr:hover td.td-sorting,
-.colorstyle_2 table.users tr:hover td.td-sorting,
-.colorstyle_2 table.statsbalance tr:hover td.td-sorting {
-	background-color: #C5D9E3 !important
+.colorstyle_2 #dataTable tr:hover td.td-sorting {
+	background-color: #E3CDBF !important
 }
 .colorstyle_2 #dataTable tfoot tr:hover td,
 .colorstyle_2 table.statsbalance tfoot tr:hover td {
@@ -3774,6 +3850,37 @@ div.groups {
 .colorstyle_2 div.pager span.clickable:hover {
 	background: #F60;
 	color: #000;
+}
+
+/* **************************** EXTENDED SETTINGS (may be different in the individual styles) */
+/* **************** STYLESWITCHER */
+.colorstyle_2 div.form_holder ul.addClass a:hover,
+.colorstyle_2 div.form_holder ul.addClass a.active {
+	border: 1px solid #232323;
+	background-color: #333;
+}
+/* **************** 5. MAIN MENU */
+.colorstyle_2 #main {
+	/* BACKGROUND COLOR */
+	background: #333;
+}
+.colorstyle_2 li.menu a {
+	color:#D6D6D6;
+}
+.colorstyle_2 svg.svg_icons {
+	fill: #D6D6D6;
+}
+/* **************** 6. SUBNAV */
+.colorstyle_2 #subnav {
+	background: #E5E5E5;
+}
+/* **************** 11. DIV */
+/* footer.html */
+.colorstyle_2 div.footer {
+	background-image: initial;
+	border-top: 10px solid #232323;
+	background-color: #333;
+	color: #D6D6D6;
 }
 
 /* ==================================================================  ENVI TEMPLATE - STYLE 3 */
