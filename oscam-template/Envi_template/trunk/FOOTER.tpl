@@ -25,9 +25,8 @@
 				width: 180px
 			}
 			.GeoResultsTABLE td {
-				background-color: initial !important;
 				border-bottom: 1px dotted gray;
-				padding: 2px
+				padding: 2px;
 			}
 			.GeoResultsTABLE tr:last-child td {
 				border: initial;
@@ -49,6 +48,11 @@
 				border: 1px solid #000;
 				color: #000
 			}
+			/* Only for Envi Template */
+			.envi table.status tr:hover table[id^="GeoResults"] tr td {
+				background-color: transparent !important;
+				border-right: initial !important;
+			}
 		</style>
 		<script>
 			$(document).ready( function() {
@@ -67,7 +71,7 @@
 					 */
  
 					// ================= FUNCTION
-					function RunJson(){
+					function showGEO() {
 						var selector = $("#tbodyc tr td.statuscol7");
 
 						$('A[id^="GeoResults"]').remove();
@@ -121,13 +125,62 @@
 						});
 					};
 
+					function hideGEO() {
+						$('A[id^="GeoResults"]').remove();
+					}
+
 					// ================= BUTTON
-					$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="Show IP Location" type="button" style="width: 120px;">');
+					// Create button
+					$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="Show/Hide IP Location" type="button" style="width: 120px;">');
+					$(function(){
+						/* Convert 'title' to 'boot_tooltip' */
+						$('.envi #geoapibutton').boot_tooltip({animation: false, placement: 'bottom'})
+					})
+
+					// Function for call function if button Odd/Even click
+					var even = false;
 
 					$('#geoapibutton').click(function() {
-						RunJson();
+					    if(even) {
+					        doEven();
+					    } else {
+					        doOdd();
+					    }
+
+					    even = !even;
 					});
 
+					function doOdd() {
+						// first click, third click, fifth click, etc
+						showGEO();
+						$('#geoapibutton').val('Hide GEOAPI');
+						// Pollinterval PAUSE
+						if (polling < 1) {
+							polling = 1;
+							$(":text[name='pintervall']").val('--');
+							$('#polling').attr('class','pollingdisabled');
+						}
+						if (!nostorage) {
+							sessionStorage.polling = polling;
+						}
+					}
+
+					function doEven() {
+						// second click, fourth click, sixth click, etc
+						hideGEO();
+						$('#geoapibutton').val('Show GEOAPI');
+						// Pollinterval PAUSE
+						if (polling = 1) {
+							polling = 0;
+							$(":text[name='pintervall']").val(pollintervall/1000);
+							$('#polling').attr('class','pollingenabled');
+							clearTimeout(timer_ID);
+							timer_ID = setTimeout("waitForMsg()", pollintervall);
+						}
+						if (!nostorage) {
+							sessionStorage.polling = polling;
+						}
+					}
 				}
 			});
 		</script>
@@ -534,7 +587,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1460</P>
+								<P><B>Envi revision:</B> 1461</P>
 								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>

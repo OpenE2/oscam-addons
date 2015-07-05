@@ -3319,6 +3319,8 @@ $(function() {
 		$('.envi td.statuscol0 a').boot_tooltip({animation: false, placement: 'right'})
 		$('.envi td.statuscol1 a').boot_tooltip({animation: false, placement: 'right'})
 		$('.envi td.statuscol4 a').boot_tooltip({animation: false, placement: 'right'})
+		$('.envi td.statuscol14 a').boot_tooltip({animation: false, placement: 'left'})
+		$('.envi table.status td.statuscol15').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		$('.envi table.infotable td').boot_tooltip({container: 'body',animation: false, placement: 'bottom'})
 		/* For Parameter input in script.html */
 		$('.envi #scriptparam').boot_tooltip({animation: false, placement: 'bottom'})
