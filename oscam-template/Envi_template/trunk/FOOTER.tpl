@@ -6,7 +6,6 @@
 		<DIV CLASS="scroll-top">
 			<P ID="back-top"><A HREF="#top" ><SPAN></SPAN></A></P>
 		</DIV>
-
 		<!--  START GEOAPI FUNCTION-->
 		<style type="text/css">
 			.GeoResults {
@@ -15,14 +14,40 @@
 				cursor: pointer;
 				float: right;
 				border-left: 1px solid #000;
-				padding-left: 5px;
+				padding-left: 5px
 			}
-			.GeoResultsSPAN {
+			.GeoResultsSPAN,
+			.GeoResultsTABLE {
 				display: none;
 				left: 20px;
-				z-index: 1050;
-				background: #FFF;
-				width: 150px;
+				z-index: 1030;
+				border-spacing: 0px;
+				width: 180px
+			}
+			.GeoResultsTABLE td {
+				background-color: initial !important;
+				border-bottom: 1px dotted gray;
+				padding: 2px
+			}
+			.GeoResultsTABLE tr:last-child td {
+				border: initial;
+			}
+			.GeoResultsTABLE tr td:first-child {
+				width: 55px;
+			}
+			.GeoResultsTABLE tr td:last-child {
+				width: 105px;
+			}
+			a:hover .GeoResultsTABLE{
+				display: block;
+				position: absolute;
+				top: 1em;
+				right: 2em;
+				padding: 4px;
+				text-align: left;
+				background-color: #FFC;
+				border: 1px solid #000;
+				color: #000
 			}
 		</style>
 		<script>
@@ -41,20 +66,48 @@
 					 * 
 					 */
  
-					// ================= FOR ALL USER
-					// Create function
+					// ================= FUNCTION
 					function RunJson(){
 						var selector = $("#tbodyc tr td.statuscol7");
 
-						selector.each(array, function (i) {
-							count++
+						$('A[id^="GeoResults"]').remove();
+
+						selector.each(function (i) {
 							var cell = $(this);
 							var valueUSER = $(this).text();
 							var incremental = i + 1;
 
-							// GeoLocation API 2
+							// GeoLocation API 1 (http://ip-api.com/ - 250 requests per minute.)
+							$.getJSON("http://ip-api.com/json/" + valueUSER + "?callback=?", function(data) {
+								var country_code 	= data.countryCode;
+								var country_name   	= data.country;
+								var region_name  	= data.regionName;
+								var city        	= data.city;
+								var ip     			= data.query;
+								var isp    			= data.isp;
+								var reverse			= data.reverse;
+
+								var message     	= data.message;
+
+								if( typeof message === 'undefined' ) {
+									cell.append(
+										'<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  
+										'<TABLE ID="GeoResultsTABLE' + incremental + '" CLASS="GeoResultsTABLE">' +
+												'<TR><TD><B>Country:</B></TD><TD>' + country_name + '</TD></TR>' +
+												'<TR><TD><B>Region:</B></TD><TD>' + region_name + '</TD></TR>' +
+												'<TR><TD><B>City:</B></TD><TD>' + city + '</TD></TR>' +
+												'<TR><TD><B>ISP:</B></TD><TD>' + isp + '</TD></TR>' +
+												'<TR><TD><B>DNS:</B></TD><TD>' + reverse + '</TD></TR>' +
+										'</TABLE></A>'
+										);
+								} else {
+									cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + message +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">IP: ' + ip + '</SPAN></A>');
+								}
+					        });
+
+							// GeoLocation API 2 (https://freegeoip.net/ - 10,000 requests per hour)
+							/*
 							$.get("https://freegeoip.net/json/" + valueUSER, function(data) {
-							    console.log(data.ip, data.country_code);
 
 							    var country_code	= data.country_code;
 							    var country_name   	= data.country_name;
@@ -62,14 +115,14 @@
 								var city 			= data.city;
 								var ip          	= data.ip;
 							    
-							    $('SPAN[id^="GeoResults-"]').remove();
-							    cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">Country: ' + country_name + '<BR>Region: ' + region_name + '<BR> City: ' + city + '<BR> IP: ' + ip + '</SPAN></A>');
+								cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">Country: ' + country_name + '<BR>Region: ' + region_name + '<BR> City: ' + city + '<BR> IP: ' + ip + '</SPAN></A>');
 							}, "jsonp");
+							*/
 						});
 					};
 
-					// CREATE BUTTON
-					$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="" type="button" style="width: 120px;">');
+					// ================= BUTTON
+					$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="Show IP Location" type="button" style="width: 120px;">');
 
 					$('#geoapibutton').click(function() {
 						RunJson();
@@ -481,7 +534,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1459</P>
+								<P><B>Envi revision:</B> 1460</P>
 								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>

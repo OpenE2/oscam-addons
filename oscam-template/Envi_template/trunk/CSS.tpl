@@ -976,7 +976,6 @@ div.colorPicker-swatch {
 #inc,#polling,#dec,.regexbutton {
 	margin:-3px 2px;
 	border:none;
-	background-color:#A00;
 	color:#FFF;
 	cursor:pointer;
 	border-radius:4px;
@@ -986,8 +985,25 @@ div.colorPicker-swatch {
 	height:22px;
 	line-height:0px
 }
-#inc:hover,#polling:hover,#dec:hover,.regexbutton:hover {
-	background-color:#F00 !important
+#inc,#dec,.regexbutton {
+	background-color:#A00
+}
+#inc:hover,#dec:hover,.regexbutton:hover {
+	background-color:#F00
+}
+.pollingenabled{
+	background:url(image?i=ICDIS);
+	background-color:#A00
+}
+.pollingenabled:hover{
+	background-color:#F00
+}
+.pollingdisabled{
+	background:url(image?i=ICENA);
+	background-color:#0A0
+}
+.pollingdisabled:hover{
+	background-color:#0D0
 }
 #poll button {
 	margin-bottom:1px;
@@ -2848,15 +2864,17 @@ div.groups {
 
 /* **************** 17. POLLING */
 /* User-Page polling */
-.envi #inc, .envi #polling, .envi #dec, .envi .regexbutton {
+.envi #inc, .envi #polling.pollingenabled, .envi #dec, .envi .regexbutton {
 	background-color: #BD0000;
 	border-radius: 0;
 }
-.envi #inc:hover, .envi #dec:hover, .envi .regexbutton:hover {
+.envi #inc:hover,  .envi #polling.pollingenabled:hover, .envi #dec:hover, .envi .regexbutton:hover {
 	background-color: #000;
 	transition: all 0.5s ease 0s
 }
-
+.envi #polling {
+	border-radius: 0;
+}
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
@@ -3381,13 +3399,13 @@ div.groups {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc,
-.colorstyle_1 #polling,
+.colorstyle_1 #polling.pollingenabled,
 .colorstyle_1 #dec,
 .colorstyle_1 .regexbutton {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc:hover,
-.colorstyle_1 #polling:hover,
+.colorstyle_1 #polling.pollingenabled:hover,
 .colorstyle_1 #dec:hover,
 .colorstyle_1 .regexbutton:hover {
 	background-color: #000 !important;
@@ -3676,13 +3694,13 @@ div.groups {
 	background-color: #F60
 }
 .colorstyle_2 #inc,
-.colorstyle_2 #polling,
+.colorstyle_2 #polling.pollingenabled,
 .colorstyle_2 #dec,
 .colorstyle_2 .regexbutton {
 	background-color: #F60
 }
 .colorstyle_2 #inc:hover,
-.colorstyle_2 #polling:hover,
+.colorstyle_2 #polling.pollingenabled:hover,
 .colorstyle_2 #dec:hover,
 .colorstyle_2 .regexbutton:hover {
 	background-color: #000 !important;
