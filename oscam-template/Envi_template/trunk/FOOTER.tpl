@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1463</P>
+								<P><B>Envi revision:</B> 1464</P>
 								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
 								<TABLE>
 									<TR>
@@ -793,8 +793,9 @@
 					 */
  
 					// ================= GEOAPI FUNCTIONS
-					// Set selector, where will be use Geoapi function
+					// Set variable, will be it use Geoapi function
 					var selector = $("#tbodyc tr td.statuscol7");
+					var clientsCount_max = 250
 
 					// Show GEOAPI Data 
 					function showGEO() {
@@ -928,21 +929,28 @@
 						});
 
 					function doOdd() { // first click, third click, fifth click, etc
-						goeapi_val = 0;
-						showGEO();
-						showProgressBar();
-						$('#geoapibutton').val('Hide GEOAPI');
-						// Pollinterval PAUSE
-						if (polling < 1) {
-							polling = 1;
-							$(":text[name='pintervall']").val('--');
-							$('#polling').attr('class','pollingdisabled');
+						// Check max count of clients
+						var clientsCount = selector.length
+						if ( clientsCount > clientsCount_max ) {
+							console.log ('Too many users: ' + clientsCount);
+							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount);
+						} else {
+							goeapi_val = 0;
+							showGEO();
+							showProgressBar();
+							$('#geoapibutton').val('Hide GEOAPI');
+							// Pollinterval PAUSE
+							if (polling < 1) {
+								polling = 1;
+								$(":text[name='pintervall']").val('--');
+								$('#polling').attr('class','pollingdisabled');
+							}
+							if (!nostorage) {
+								sessionStorage.polling = polling;
+								localStorage.setItem("geoapi", goeapi_val);
+							}
+							console.log('GOEAPI Data are shown, button has value: ' + localStorage.getItem("geoapi"));
 						}
-						if (!nostorage) {
-							sessionStorage.polling = polling;
-							localStorage.setItem("geoapi", goeapi_val);
-						}
-						console.log(localStorage.getItem("geoapi"));
 					}
 
 					function doEven() { // second click, fourth click, sixth click, etc
@@ -962,7 +970,7 @@
 							localStorage.setItem("geoapi", goeapi_val);
 						}
 						// Write into web console
-						console.log(localStorage.getItem("geoapi"));
+						console.log('GOEAPI Data are not shown, button has value: ' + localStorage.getItem("geoapi"));
 					}
 
 					// ================= PROGRESSBAR
@@ -983,8 +991,6 @@
 					function showProgressBar() {
 						// Show ProgressBar
 						$('#Geo_progressBar').css('opacity', '1');
-						// Write count of clients into console
-						console.log ('Count of clients: ' + selector.length)
 						// Set value in ProgressBar - animation is 1500ms
 						progressBar(100, $('#progressBar'), 1500);
 						// Hide ProgressBar - timeout is 3000ms
@@ -1004,22 +1010,29 @@
 						var goeapi_val = localStorage.getItem("geoapi")
 						// Write into web console
 						console.log(goeapi_val);
-						// Check If  Geodata were displaying before the page is loaded
-						// goeapi_val = 0 (Yes, Geodata were displaying) 
-						// goeapi_val = 1 (No, Geodata were not displaying) 
-						if (goeapi_val < 1 ) {
-							// Set button 'geoapibutton' to Even click
-							var even = true;
-							// Run function for display GEOAPI data
-							showGEO();
-							showProgressBar();
-							// Set value in button geoapibutton
-							$('#geoapibutton').val('Hide GEOAPI');
-							// Write into web console
-							console.log('After loading page is shown GOEAPI plugin');
+						// Check max count of clients
+						var clientsCount = selector.length
+						if ( clientsCount > clientsCount_max ) {
+							console.log ('Too many users: ' + clientsCount)
+							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount)
 						} else {
-							// Write into web console
-							console.log('After loading page is not shown GOEAPI plugin');
+							// Check If  Geodata were displaying before the page is loaded
+							// goeapi_val = 0 (Yes, Geodata were displaying) 
+							// goeapi_val = 1 (No, Geodata were not displaying) 
+							if (goeapi_val < 1 ) {
+								// Set button 'geoapibutton' to Even click
+								var even = true;
+								// Run function for display GEOAPI data
+								showGEO();
+								showProgressBar();
+								// Set value in button geoapibutton
+								$('#geoapibutton').val('Hide GEOAPI');
+								// Write into web console
+								console.log('After loading page is shown GOEAPI plugin');
+							} else {
+								// Write into web console
+								console.log('After loading page is not shown GOEAPI plugin');
+							}
 						}
 				}
 			});
