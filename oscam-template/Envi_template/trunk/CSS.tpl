@@ -1208,7 +1208,8 @@ div.envi_info {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 }
 .modalDialog > div > table {
 	width: 90%;
@@ -1253,7 +1254,7 @@ div.envi_info {
 	position: fixed;
 	display: none;
 	background: rgba(0,0,0,0.8);
-	z-index: 1040;
+	z-index: 1030;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
@@ -1272,7 +1273,7 @@ div.envi_info {
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);	
+			transform: translate(-50%, -50%);
 }
 #save_color_text {
 	font-size: 11px;
