@@ -407,8 +407,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1464</P>
-								<P><B>For oscam revision:</B> 10873 until to changes in html and css in revision Oscam</P>
+								<P><B>Envi revision:</B> 1466</P>
+								<P><B>For oscam revision:</B> 10892 and above</P>
 								<TABLE>
 									<TR>
 										<TD><B>Wiki:</B></TD>
@@ -794,7 +794,9 @@
  
 					// ================= GEOAPI FUNCTIONS
 					// Set variable, will be it use Geoapi function
-					var selector = $("#tbodyc tr td.statuscol7");
+					var selector1 = '#tbodyc tr td.statuscol7';
+					var selector2 = '#tbodyp tr td.statuscol7';
+					var selectors = '#tbodyc tr td.statuscol7, #tbodyp tr td.statuscol7';
 					var clientsCount_max = 250
 
 					// Show GEOAPI Data 
@@ -802,7 +804,7 @@
 						// Remove all 'A' (if this exist) 
 						$('A[id^="GeoResults"]').remove();
 						// Show GEOAPI Data in each cell 
-						selector.each(function (i) {
+						$(selectors).each(function (i) {
 							var cell = $(this);
 							var valueUSER = $(this).text();
 							var incremental = i + 1;
@@ -905,37 +907,44 @@
 							$('.envi #geoapibutton').boot_tooltip({animation: false, placement: 'bottom'})
 						})
 
+					// Function for call function if button Odd/Even click
+						var count = 1;
+						$("#geoapibutton").click(function() {
+						    count++;
+						    var isEven = function(someNumber) {
+						        return (someNumber % 2 === 0) ? true : false;
+						    };
+						    if (isEven(count) === false) {
+						        doEven();
+						    } else if (isEven(count) === true) {
+						        doOdd();
+						    }
+						});
+
 					// If we run 'Pause Pollinterval' then hide GEOAPI
 					// I have only one problem. If we click to 'Show GEOAPI' button, then we click two times.
-						$('#polling.pollingdisabled').click(function() {
-							hideGEO();
-							$('#geoapibutton').val('Show GEOAPI');
-							goeapi_val = 1;
-							localStorage.setItem("geoapi", goeapi_val);
-
-						});
-
-					// Function for call function if button Odd/Even click
-						var even = false;
-
-						$('#geoapibutton').click(function() {
-							if(even) {
-								doEven();
-							} else {
-								doOdd();
+						function pollingClick() {
+							if ($('#polling').hasClass('pollingenabled')) {
+								count = 1;
+								hideGEO();
+								$('#geoapibutton').val('Show GEOAPI');
+								if (!nostorage) {
+									sessionStorage.setItem('geoapi', '0');
+								}
 							}
-
-							even = !even;
+						}
+						$('#polling').click(function() {
+							pollingClick()
 						});
 
-					function doOdd() { // first click, third click, fifth click, etc
+					// Function for first click, third click, fifth click, etc ...
+					function doOdd() {
 						// Check max count of clients
-						var clientsCount = selector.length
+						var clientsCount = $(selector1).length
 						if ( clientsCount > clientsCount_max ) {
 							console.log ('Too many users: ' + clientsCount);
 							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount);
 						} else {
-							goeapi_val = 0;
 							showGEO();
 							showProgressBar();
 							$('#geoapibutton').val('Hide GEOAPI');
@@ -947,14 +956,14 @@
 							}
 							if (!nostorage) {
 								sessionStorage.polling = polling;
-								localStorage.setItem("geoapi", goeapi_val);
+								sessionStorage.setItem('geoapi', '1');
 							}
-							console.log('GOEAPI Data are shown, button has value: ' + localStorage.getItem("geoapi"));
+							console.log('GOEAPI Data are shown, GOEAPI button has value: ' + sessionStorage.getItem('geoapi'));
 						}
 					}
 
-					function doEven() { // second click, fourth click, sixth click, etc
-						goeapi_val = 1;
+					// Function for second click, fourth click, sixth click, etc ...
+					function doEven() {
 						hideGEO();
 						$('#geoapibutton').val('Show GEOAPI');
 						// Pollinterval PAUSE
@@ -967,10 +976,10 @@
 						}
 						if (!nostorage) {
 							sessionStorage.polling = polling;
-							localStorage.setItem("geoapi", goeapi_val);
+							sessionStorage.setItem('geoapi', '0');
 						}
 						// Write into web console
-						console.log('GOEAPI Data are not shown, button has value: ' + localStorage.getItem("geoapi"));
+						console.log('GOEAPI Data are hidden, GOEAPI button has value: ' + sessionStorage.getItem('geoapi'));
 					}
 
 					// ================= PROGRESSBAR
@@ -1007,31 +1016,31 @@
 
 					// =================  AFTER PAGE LOADING
 					// Check If  Geodata were displaying before the page is loaded
-						var goeapi_val = localStorage.getItem("geoapi")
+						var geoapi = sessionStorage.getItem('geoapi');
 						// Write into web console
-						console.log(goeapi_val);
+						console.log(geoapi);
 						// Check max count of clients
-						var clientsCount = selector.length
+						var clientsCount = $(selector1).length;
 						if ( clientsCount > clientsCount_max ) {
 							console.log ('Too many users: ' + clientsCount)
 							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount)
 						} else {
 							// Check If  Geodata were displaying before the page is loaded
-							// goeapi_val = 0 (Yes, Geodata were displaying) 
-							// goeapi_val = 1 (No, Geodata were not displaying) 
-							if (goeapi_val < 1 ) {
+							// geoapi = 1 (Yes, Geodata were displaying) 
+							// geoapi = 0 (No, Geodata were not displaying) 
+							if (geoapi < 1 ) {
+								// Write into web console
+								console.log('GOEAPI Data are hidden after loading page');
+							} else {
 								// Set button 'geoapibutton' to Even click
-								var even = true;
+								count = 2;
 								// Run function for display GEOAPI data
 								showGEO();
 								showProgressBar();
 								// Set value in button geoapibutton
 								$('#geoapibutton').val('Hide GEOAPI');
 								// Write into web console
-								console.log('After loading page is shown GOEAPI plugin');
-							} else {
-								// Write into web console
-								console.log('After loading page is not shown GOEAPI plugin');
+								console.log('GOEAPI Data are shown after loading page');
 							}
 						}
 				}

@@ -334,6 +334,15 @@ table.statsbalance td:last-child a {
 }
 /* scanusb.html */
 table.scanusb {}
+/* On/Off button for readers and users in readers.html and userconfig.html*/
+td.readercol0 a img.icon,
+td.usercol0 a img.icon {
+	background-color:#0A0
+}
+td.readercol0 a:hover img.icon,
+td.usercol0 a:hover img.icon {
+	background-color:#00D814
+}
 
 /* ------- USERS ------- */
 /* userconfig.html */
@@ -413,11 +422,12 @@ tr.online td {background-color:#BFA}
 tr.offline td {}
 tr.expired td {background-color:#FBA}
 tr.connected td {background-color:#FFA}
+/* color of button for readers and user row in readers.html and userconfig.html*/
 tr.disabled td {}
 tr.disabled td:first-child img.icon,
-tr.disabledreader td:first-child img.icon {background-color:#0A0}
+tr.disabledreader td:first-child img.icon {background-color:#B0B0B0}
 tr.disabled td:first-child a:hover img.icon,
-tr.disabledreader td:first-child a:hover img.icon {background-color:#0D0}
+tr.disabledreader td:first-child a:hover img.icon {background-color:#CECECE}
 /* colors for status rows in status.html depend on status */
 tr.a td {background-color:#3F0}
 tr.c td {background-color:#F1F5E6}
@@ -656,7 +666,7 @@ select {
 }
 /* settings for select in script.html */
 #scriptselect {
-	height: 22px;
+	height: 22px
 }
 /* generaly settings for all input */
 input,textarea {
@@ -782,7 +792,7 @@ div.extract pre {
 	white-space:pre
 }
 div.extract pre.script {
-	min-height: 100px;
+	min-height: 100px
 }
 
 /* **************** 13. IMAGE */
@@ -811,7 +821,7 @@ img.usericon, img.readericon {
 	max-width:150px
 }
 /* ECM Restarticon */
-.statusecminfo img{
+.statusecminfo img {
 	vertical-align:middle
 }
 /* logo IC_LOGO.tpL */
@@ -991,19 +1001,23 @@ div.colorPicker-swatch {
 #inc:hover,#dec:hover,.regexbutton:hover {
 	background-color:#F00
 }
-.pollingenabled{
-	background:url(image?i=ICDIS);
+.pollingenabled {
+	background-image:url(image?i=ICSTOP);
+	background-repeat:no-repeat;
+	background-position:center;
 	background-color:#A00
 }
-.pollingenabled:hover{
-	background-color:#F00
-}
-.pollingdisabled{
-	background:url(image?i=ICENA);
+.pollingdisabled {
+	background-image:url(image?i=ICSTART);
+	background-repeat:no-repeat;
+	background-position:center;
 	background-color:#0A0
 }
-.pollingdisabled:hover{
-	background-color:#0D0
+.pollingenabled:hover {
+ 	background-color:#F00
+}
+.pollingdisabled:hover {
+ 	background-color:#0D0
 }
 #poll button {
 	margin-bottom:1px;
