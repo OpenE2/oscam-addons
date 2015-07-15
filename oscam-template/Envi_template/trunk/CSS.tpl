@@ -1001,6 +1001,12 @@ div.colorPicker-swatch {
 #inc:hover,#dec:hover,.regexbutton:hover {
 	background-color:#F00
 }
+#inc[disabled],
+#dec[disabled] {
+	color: #6D6C6D;
+	cursor: inherit;
+	background-color: #DDD;
+}
 .pollingenabled {
 	background-image:url(image?i=ICSTOP);
 	background-repeat:no-repeat;
@@ -1011,13 +1017,13 @@ div.colorPicker-swatch {
 	background-image:url(image?i=ICSTART);
 	background-repeat:no-repeat;
 	background-position:center;
-	background-color:#0A0
+	background-color:#A00
 }
 .pollingenabled:hover {
  	background-color:#F00
 }
 .pollingdisabled:hover {
- 	background-color:#0D0
+ 	background-color:#F00
 }
 #poll button {
 	margin-bottom:1px;
@@ -1350,7 +1356,7 @@ div.envi_info {
 	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 	   -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-	width: 630px;
+	width: 642px;
 	height: 376px;
 	border: 1px solid #DDD;
 	display: none;
@@ -1369,17 +1375,17 @@ div.envi_info {
 }
 .demo_changer .form_holder .form_holder_left  {
 	float: left;
-	width: 196px;
+	width: 200px;
 	margin: 0px 5px 0px 10px;
 }
 .demo_changer .form_holder .form_holder_center  {
 	float: left;
-	width: 196px;
+	width: 200px;
 	margin: 0px 5px 0px 5px;
 }
 .demo_changer .form_holder .form_holder_right  {
 	float: left;
-	width: 196px;
+	width: 200px;
 	margin: 0px 10px 0px 5px;
 }
 .demo_changer .form_holder_one {
@@ -1395,7 +1401,7 @@ div.envi_info {
 	position: absolute;
 	top: 1px;
 	left: 0;
-	width: 630px;
+	width: 642px;
 
 	/* BACKGROUND COLOR */
 	/* Old browsers */
@@ -1443,7 +1449,6 @@ div.envi_info {
 	font-weight: 700;
 	font-size: 11px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	transition: all 0.5s ease 0s;
 	color: #FFF;
 	padding: 1px 6px;
 	cursor:pointer;
@@ -1457,7 +1462,7 @@ div.envi_info {
 	background: #BD0000;
 }
 .openModalResetBox #resetindividual {
-	width: 150px;
+	width: 160px;
 	background: #BD0000;
 }
 .form_holder #show_ext,
@@ -1555,7 +1560,7 @@ div.envi_info {
 }
 div.footer .sectioninfo_detail li {
 	color: #FFF !important;
-	list-style-type: initial;
+	list-style-type: inherit;
 	margin-left: 10px;
 }
 
@@ -2186,7 +2191,6 @@ body.envi {
 .envi li.menu:hover a {
 	color:#F00423;
 	border-bottom: 2px solid #F00423;
-	transition:color 0.5s ease 0s
 }
 .envi li.menu_selected a {
 	color: #F00423;
@@ -2212,13 +2216,13 @@ body.envi {
 }
 
 .envi a:hover span.menu_icons {
-    display: initial;
+    display: inherit;
     position: relative;
     top: 2px;
-    right: initial;
+    right: inherit;
     padding: 0 4px 0 0;
     font-weight: normal;
-    text-align: initial;
+    text-align: inherit;
     background-color: transparent;
     border: none;
     color: #000;
@@ -2333,7 +2337,8 @@ body.envi {
 }
 /* emm.html */
 .envi table.writeemm {
-	margin-top: 0
+	margin-top: 0;
+	border-spacing: 0
 }
 /* emm_running.html */
 .envi table.emmrunning {
@@ -2347,6 +2352,11 @@ body.envi {
 }
 /* readerstats.html */
 .envi table.statsbalance {
+	border-spacing: 0px;
+	border-bottom: 1px solid #222
+}
+/* scanusb.html */
+.envi table.scanusb {
 	border-spacing: 0px;
 	border-bottom: 1px solid #222
 }
@@ -2379,6 +2389,12 @@ body.envi {
 /* userconfig.html */
 .envi table.config {
 	border-spacing: 0
+}
+/* ------- FAILBAN ------- */
+/* failban.html */
+.envi table.failban {
+	border-spacing: 0;
+	border-bottom: 1px solid #222
 }
 /* **************** 8. TABLE TR */
 /* rowcolors for users rows in unserconfig.html depend on status */
@@ -2462,6 +2478,13 @@ tr.scanusbsubhead td {
 .envi #servicesedit th:last-child {
 	border-right: medium none;
 }
+/* failban.html */
+.envi table.failban th {
+	border-right: 1px dotted #666;
+	background-color: #222;
+	color: #FFF;
+	border-top: 1px solid #FFF
+}
 /* Background color for th */
 .envi table.config th,
 .envi table.configreader th,
@@ -2537,9 +2560,21 @@ td {
 .envi .users tr.offline:nth-child(even) td {
 	background-color: #E6E6E6
 }
+.envi table.writeemm td {
+	border-bottom: 1px dotted #999
+}
+.envi table.writeemm td:first-child {
+	background-color: #D9D9D9
+}
 .envi table.writeemm tr:nth-last-child(-n+2) td {
 	background-color: transparent;
 	border-bottom: medium none;
+}
+.envi table.scanusb tr:nth-child(odd) td {
+	background-color: #F2F2F2
+}
+.envi table.scanusb tr:nth-child(even) td {
+	background-color: #E6E6E6
 }
 /* ------- USERS ------- */
 /* userconfig.html */
@@ -2613,6 +2648,16 @@ td {
 }
 .envi table.configservices td:first-child {
 	background-color: #D9D9D9;
+}
+/* ------- FAILBAN ------- */
+.envi table.failban td {
+	border-right: 1px dotted #999
+}
+.envi table.failban tr:nth-child(odd) td {
+	background-color: #F2F2F2
+}
+.envi table.failban tr:nth-child(even) td {
+	background-color: #E6E6E6
 }
 /* ------- OTHER SETTINGS ------- */
 /* Background color for TD if TH have class sorting-asc, sorting-desc */
@@ -2690,7 +2735,6 @@ div.groups {
 /* Services */
 .envi div.sidlistclose {
 	background-color: #BD0000;
-	transition: all 0.5s ease 0s
 }
 .envi div.sidlistclose:hover {
 	background-color: #000;
@@ -2744,7 +2788,6 @@ div.groups {
 	background-color: #000;
 	color: #FFF;
 	padding: 0px 2px;
-	transition: all 0.5s ease 0s;
 
 	/* BOX SHADOW */
 	-webkit-box-shadow: none;
@@ -2885,7 +2928,6 @@ div.groups {
 }
 .envi #inc:hover,  .envi #polling.pollingenabled:hover, .envi #dec:hover, .envi .regexbutton:hover {
 	background-color: #000;
-	transition: all 0.5s ease 0s
 }
 .envi #polling {
 	border-radius: 0;
@@ -3094,12 +3136,12 @@ div.groups {
 	height: 43px;
 }
 #back-top a:hover span {
-	position: initial;
-	top: initial;
-	right: initial;
-	padding: initial;
-	background-color: initial;
-	border: initial;
+	position: inherit;
+	top: inherit;
+	right: inherit;
+	padding: inherit;
+	background-color: inherit;
+	border: inherit;
 }
 #back-top span {
 	float: right;
@@ -3140,12 +3182,17 @@ div.groups {
 .infotable_border .configuser tbody tr:nth-last-child(3) td,
 .infotable_border table.statsbalance,
 .infotable_border #servicesedit,
-.infotable_border .configservices tbody tr:nth-last-child(3) td {
+.infotable_border .configservices tbody tr:nth-last-child(3) td,
+.infotable_border table.writeemm tr:nth-last-child(3) td {
 	border-bottom: 3px solid #000
 }
-.infotable_border table.infotable,
-.infotable_border table.stats {
-	border: 3px solid #222;
+.infotable_border table.infotable {
+	border: 3px solid #222
+}
+.infotable_border table.stats,
+.infotable_border table.scanusb,
+.infotable_border table.failban {
+	border-bottom: 3px solid #000
 }
 /* ==================================================================  ENVI TEMPLATE - BUTTON BORDER RADIUS */
 /* styleswitcher */
@@ -3166,11 +3213,11 @@ div.groups {
 }
 /* for icons with following Action */
 .border_radius img.icon {
-	border-radius: 4px;
+	border-radius: 4px
 }
 /* User-Page polling */
 .border_radius #inc, .border_radius #polling, .border_radius #dec, .border_radius .regexbutton {
-	border-radius: 4px;
+	border-radius: 4px !important
 }
 /* ==================================================================  ENVI TEMPLATE - NOTIFIER BORDER RADIUS */
 /* Settings for notifier border radius */
@@ -3190,11 +3237,13 @@ div.groups {
 	color: #FADDDE;
 	background: #BD0000;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background: -webkit-gradient(linear, left top, left bottom, from(#CE0303), to(#6B0508));
+	background: -webkit-linear-gradient(top, #CE0303 0%, #6B0508 100%);
 	/* Firefox */
-	background: -moz-linear-gradient(top,  #CE0303,  #6B0508);
-	/* IE6-9 */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#CE0303', endColorstr='#6B0508');
+	background: -moz-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #CE0303 0%, #6B0508 100%);
 }
 .plastic a:hover img.icon {
 	border: solid 1px #BA0000;
@@ -3202,28 +3251,51 @@ div.groups {
 	/* BACKGROUND COLOR */
 	background: #EB0000;
 }
-.plastic tr.disabled td:first-child img.icon,
-.plastic tr.disabledreader td:first-child img.icon {
-    border: solid 1px #003300;
+.plastic table.users td:first-child img.icon,
+.plastic table.readers td:first-child img.icon {
+    border: solid 1px #206100;
 
 	/* BACKGROUND COLOR */
 	/* Old browsers */
 	background: #0D9C02;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background: -webkit-gradient(linear, left top, left bottom, from(#0D9C02), to(#1A3C08));
+	background: -webkit-linear-gradient(top, #81D609 0%, #287900 100%);
 	/* Firefox */
-	background: -moz-linear-gradient(top,  #0D9C02,  #1A3C08);
+	background: -moz-linear-gradient(top, #81D609 0%, #287900 100%);
 	/* IE10+ */
-	background: -ms-linear-gradient(top, #0D9C02, #1A3C08);
+	background: -ms-linear-gradient(top, #81D609 0%, #287900 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background: linear-gradient(to top, #0D9C02, #1A3C08);
+	background: linear-gradient(to bottom, #81D609 0%, #287900 100%);
+}
+.plastic table.users td:first-child a:hover img.icon,
+.plastic table.readers td:first-child a:hover img.icon {
+	border: solid 1px #206100;
+
+	/* BACKGROUND COLOR */
+	background: #71bd08;
+}
+.plastic tr.disabled td:first-child img.icon,
+.plastic tr.disabledreader td:first-child img.icon {
+    border: solid 1px #4E4E4E;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	background: #4E4E4E;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-linear-gradient(top, #959595 0%, #4E4E4E 100%);
+	/* Firefox */
+	background: -moz-linear-gradient(top, #959595 0%, #4E4E4E 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #959595 0%, #4E4E4E 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #959595 0%, #4E4E4E 100%);
 }
 .plastic tr.disabled td:first-child a:hover img.icon,
 .plastic tr.disabledreader td:first-child a:hover img.icon {
-	border: solid 1px #005400;
+	border: solid 1px #4E4E4E;
 
 	/* BACKGROUND COLOR */
-	background: #17AB15;
+	background: #959595;
 }
 
 /* Main menu */
@@ -3232,11 +3304,11 @@ div.groups {
 	/* Old browsers */
 	background: #444;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background: -webkit-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -webkit-linear-gradient(top, #444 0%, #111 100%);
 	/* Firefox */
-	background: -moz-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -moz-linear-gradient(top, #444 0%, #111 100%);
 	/* IE10+ */
-	background: -ms-linear-gradient(bottom, #444 0%, #111 100%);
+	background: -ms-linear-gradient(top, #444 0%, #111 100%);
 	/* W3C Markup, IE10 Release Preview */
 	background: linear-gradient(to bottom, #444 0%, #111 100%);
 }
@@ -3248,21 +3320,24 @@ div.groups {
 .plastic #show_ext,
 .plastic #reset,
 .plastic #resetall,
-.plastic #resetindividual {
+.plastic #resetindividual,
+.plastic .regexbutton,
+.plastic #inc,
+.plastic #dec {
 	border: solid 1px #980C10;
 
 	/* BACKGROUND COLOR */
 	/* Old browsers */
 	color: #FADDDE;
-	background: #BD0000;
+	background: #CE0303;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background: -webkit-gradient(linear, left top, left bottom, from(#CE0303), to(#6B0508));
+	background: -webkit-linear-gradient(top, #CE0303 0%, #6B0508 100%);
 	/* Firefox */
-	background: -moz-linear-gradient(top,  #CE0303,  #6B0508);
+	background: -moz-linear-gradient(top, #CE0303 0%, #6B0508 100%);
 	/* IE10+ */
-	background: -ms-linear-gradient(top, #CE0303, #6B0508);
+	background: -ms-linear-gradient(top, #CE0303 0%, #6B0508 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background: linear-gradient(to top, #CE0303, #6B0508);
+	background: linear-gradient(to bottom, #CE0303 0%, #6B0508 100%);
 
 	/* TEXT SHADOW */
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -3272,24 +3347,28 @@ div.groups {
 }
 .plastic input[type="button"]:hover,
 .plastic input[type="submit"]:hover,
+.plastic #show_color:hover,
+.plastic #show_ext:hover,
 .plastic #reset:hover,
 .plastic #resetall:hover,
-.plastic #resetindividual:hover {
+.plastic #resetindividual:hover,
+.plastic .regexbutton:hover,
+.plastic #inc:hover,
+.plastic #dec:hover {
 	border: solid 1px #000;
-	transition: all 0s ease 0s;
 
 	/* BACKGROUND COLOR */
 	/* Old browsers */
 	color: #FFF;
 	background: #000;
 	/* Webkit (Chrome10+/Safari5.1+) */
-	background: -webkit-gradient(linear, left top, left bottom, from(#666C71), to(#454A4E));
+	background: -webkit-linear-gradient(top, #666C71 0%, #454A4E 100%);
 	/* Firefox */
-	background: -moz-linear-gradient(top,  #666C71,  #454A4E);
+	background: -moz-linear-gradient(top, #666C71 0%, #454A4E 100%);
 	/* IE10+ */
-	background: -ms-linear-gradient(top, #666C71, #454A4E);
+	background: -ms-linear-gradient(top, #666C71 0%, #454A4E 100%);
 	/* W3C Markup, IE10 Release Preview */
-	background: linear-gradient(to top, #666C71, #454A4E);
+	background: linear-gradient(to bottom, #666C71, #454A4E);
 
 	/* TEXT SHADOW */
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -3338,7 +3417,6 @@ div.groups {
 .colorstyle_1 div.sidlistclose:hover {
 	background-color: #000;
 	color: #16B6C6;
-	transition: all 0.5s ease 0s
 }
 .colorstyle_1 div.sidlistclose a {
 	color: #FFF
@@ -3355,14 +3433,12 @@ div.groups {
 .colorstyle_1 input[type=button],
 .colorstyle_1 input[type=submit] {
 	background: #16B6C6;
-	transition: color 0.5s ease, background-color 0.5s ease
 }
 /* Generaly hover settings for all buttons/submits */
 .colorstyle_1 input[type=button]:hover,
 .colorstyle_1 input[type=submit]:hover {
 	background: #000;
 	color: #16B6C6;
-	transition: all 0.5s ease
 }
 /* Buttons in StyleSwitcher */
 .colorstyle_1 .form_holder #show_color,
@@ -3379,34 +3455,51 @@ div.groups {
 .colorstyle_1 .openModalResetBox #resetindividual:hover {
 	background: #000;
 	color: #16B6C6;
-	transition: all 0.5s ease
 }
 /* Buttons if Plastic style is active */
 .colorstyle_1.plastic input[type="button"],
 .colorstyle_1.plastic input[type="submit"],
+.colorstyle_1.plastic .form_holder #show_color,
+.colorstyle_1.plastic .form_holder #show_ext,
 .colorstyle_1.plastic .form_holder #reset,
 .colorstyle_1.plastic .openModalResetBox #resetall,
 .colorstyle_1.plastic .openModalResetBox #resetindividual {
 	color: #FFF;
 	border: solid 1px #0076A3;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
 	background: #16B6C6;
-	background: -webkit-gradient(linear, left top, left bottom, from(#16B6C6), to(#0D6D75));
-	background: -moz-linear-gradient(top,  #16B6C6,  #0D6D75);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16B6C6', endColorstr='#0D6D75');
-	transition: none
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-linear-gradient(top, #16B6C6 0%, #0D6D75 100%);
+	/* Firefox */
+	background: -moz-linear-gradient(top, #16B6C6 0%, #0D6D75 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #16B6C6 0%, #0D6D75 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #16B6C6 0%, #0D6D75 100%);
 }
 .colorstyle_1.plastic input[type="button"]:hover,
 .colorstyle_1.plastic input[type="submit"]:hover,
+.colorstyle_1.plastic .form_holder #show_color:hover,
+.colorstyle_1.plastic .form_holder #show_ext:hover,
 .colorstyle_1.plastic .form_holder #reset:hover,
 .colorstyle_1.plastic .openModalResetBox #resetall:hover,
 .colorstyle_1.plastic .openModalResetBox #resetindividual:hover {
 	color: #16B6C6;
 	border: solid 1px #000;
+	
+	/* BACKGROUND COLOR */
+	/* Old browsers */
 	background: #666;
-	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
-	background: -moz-linear-gradient(top,  #666,  #000);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
-	transition: none
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-linear-gradient(top, #666 0%, #000 100%);
+	/* Firefox */
+	background: -moz-linear-gradient(top, #666 0%, #000 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #666 0%, #000 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #666 0%, #000 100%);
 }
 /* ------- COLORS FOR POLLING ------- */
 /* User-Page polling */
@@ -3421,12 +3514,15 @@ div.groups {
 }
 .colorstyle_1 #inc:hover,
 .colorstyle_1 #polling.pollingenabled:hover,
-.colorstyle_1 #dec:hover,
+.colorstyle_1 #dec:hover {
+	background-color: #0D6A73 !important;
+}
+
 .colorstyle_1 .regexbutton:hover {
 	background-color: #000 !important;
-	transition:all 0.5s ease;
 	color: #16B6C6;
 }
+
 /* ------- STYLESWITCHER ------- */
 .colorstyle_1 div.form_holder a.active {
 	color: #038AA5
@@ -3465,13 +3561,13 @@ div.groups {
 	background-color: #13A2AE
 }
 .colorstyle_1 a:hover img.icon {
-	background-color: #30D9E8
+	background-color: #0D6A73
 }
 /* Color for links */
 .colorstyle_1 a:link,
 .colorstyle_1 a:visited,
 .colorstyle_1 a:active {
-	color: #0E727B
+	color: #0B5E66
 }
 .colorstyle_1 a:hover {
 	color: #000
@@ -3483,14 +3579,14 @@ div.groups {
 	color: #000
 }
 .colorstyle_1 pre a:hover {
-	color: #0E727B
+	color: #0B5E66
 }
 /* Color links in config tables */
 .colorstyle_1 .config a,
 .colorstyle_1 .configreader a,
 .colorstyle_1 .configuser a,
 .colorstyle_1 .configservices a {
-	color: #0E727B
+	color: #0B5E66
 }
 .colorstyle_1 .config a:hover,
 .colorstyle_1 .configreader a:hover,
@@ -3573,7 +3669,7 @@ div.groups {
 .colorstyle_1 table.status tr.h:hover td,
 .colorstyle_1 table.status tr.r:hover td,
 .colorstyle_1 table.status tr.p:hover td  {
-	background-color: #D1E5EF !important
+	background-color: #E4ECF0 !important
 }
 .colorstyle_1 #dataTable tr:hover td.td-sorting {
 	background-color: #BDCFD9 !important
@@ -3633,7 +3729,6 @@ div.groups {
 .colorstyle_2 div.sidlistclose:hover {
 	background-color: #000;
 	color: #F60;
-	transition: all 0.5s ease 0s
 }
 .colorstyle_2 div.sidlistclose a {
 	color: #FFF
@@ -3650,14 +3745,12 @@ div.groups {
 .colorstyle_2 input[type=button],
 .colorstyle_2 input[type=submit] {
 	background: #F60;
-	transition: color 0.5s ease, background-color 0.5s ease
 }
 /* Generaly hover settings for all buttons/submits */
 .colorstyle_2 input[type=button]:hover,
 .colorstyle_2 input[type=submit]:hover {
 	background: #000;
 	color: #F60;
-	transition: all 0.5s ease
 }
 /* Buttons in StyleSwitcher */
 .colorstyle_2 .form_holder #show_color,
@@ -3674,34 +3767,51 @@ div.groups {
 .colorstyle_2 .openModalResetBox #resetindividual:hover {
 	background: #000;
 	color: #F60;
-	transition: all 0.5s ease
 }
 /* Buttons if Plastic style is active */
 .colorstyle_2.plastic input[type="button"],
 .colorstyle_2.plastic input[type="submit"],
+.colorstyle_2.plastic .form_holder #show_color,
+.colorstyle_2.plastic .form_holder #show_ext,
 .colorstyle_2.plastic .form_holder #reset,
 .colorstyle_2.plastic .openModalResetBox #resetall,
 .colorstyle_2.plastic .openModalResetBox #resetindividual {
 	color: #FFF;
 	border: solid 1px #B04600;
+	
+	/* BACKGROUND COLOR */
+	/* Old browsers */
 	background: #F60;
-	background: -webkit-gradient(linear, left top, left bottom, from(#F60), to(#B04600));
-	background: -moz-linear-gradient(top,  #F60,  #B04600);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F60', endColorstr='#B04600');
-	transition: none
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-linear-gradient(top, #F60 0%, #B04600 100%);
+	/* Firefox */
+	background: -moz-linear-gradient(top, #F60 0%, #B04600 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #F60 0%, #B04600 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #F60 0%, #B04600 100%);
 }
 .colorstyle_2.plastic input[type="button"]:hover,
 .colorstyle_2.plastic input[type="submit"]:hover,
+.colorstyle_2.plastic .form_holder #show_color:hover,
+.colorstyle_2.plastic .form_holder #show_ext:hover,
 .colorstyle_2.plastic .form_holder #reset:hover,
 .colorstyle_2.plastic .openModalResetBox #resetall:hover,
 .colorstyle_2.plastic .openModalResetBox #resetindividual:hover {
 	color: #F60;
 	border: solid 1px #000;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
 	background: #666;
-	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
-	background: -moz-linear-gradient(top,  #666,  #000);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#000');
-	transition: none
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: -webkit-linear-gradient(top, #666 0%, #000 100%);
+	/* Firefox */
+	background: -moz-linear-gradient(top, #666 0%, #000 100%);
+	/* IE10+ */
+	background: -ms-linear-gradient(top, #666 0%, #000 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: linear-gradient(to bottom, #666 0%, #000 100%);
 }
 /* ------- COLORS FOR POLLING ------- */
 /* User-Page polling */
@@ -3716,12 +3826,14 @@ div.groups {
 }
 .colorstyle_2 #inc:hover,
 .colorstyle_2 #polling.pollingenabled:hover,
-.colorstyle_2 #dec:hover,
+.colorstyle_2 #dec:hover {
+	background-color: #DB3700 !important;
+}
 .colorstyle_2 .regexbutton:hover {
 	background-color: #000 !important;
-	transition:all 0.5s ease;
 	color: #F60;
 }
+
 /* ------- STYLESWITCHER ------- */
 .colorstyle_2 div.form_holder a.active {
 	color: #F60
@@ -3910,7 +4022,7 @@ div.groups {
 /* **************** 11. DIV */
 /* footer.html */
 .colorstyle_2 div.footer {
-	background-image: initial;
+	background-image: inherit;
 	border-top: 10px solid #232323;
 	background-color: #333;
 	color: #D6D6D6;

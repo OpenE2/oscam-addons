@@ -407,8 +407,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1466</P>
-								<P><B>For oscam revision:</B> 10892 and above</P>
+								<P><B>Envi revision:</B> 1467</P>
+								<P><B>For oscam revision:</B> 10894 and above</P>
 								<TABLE>
 									<TR>
 										<TD><B>Wiki:</B></TD>
@@ -953,6 +953,7 @@
 								polling = 1;
 								$(":text[name='pintervall']").val('--');
 								$('#polling').attr('class','pollingdisabled');
+								$('#inc, #dec').attr('disabled','disabled');
 							}
 							if (!nostorage) {
 								sessionStorage.polling = polling;
@@ -971,6 +972,7 @@
 							polling = 0;
 							$(":text[name='pintervall']").val(pollintervall/1000);
 							$('#polling').attr('class','pollingenabled');
+							$('#inc, #dec').removeAttr('disabled');
 							clearTimeout(timer_ID);
 							timer_ID = setTimeout("waitForMsg()", pollintervall);
 						}
