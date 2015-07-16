@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1467</P>
+								<P><B>Envi revision:</B> 1468</P>
 								<P><B>For oscam revision:</B> 10894 and above</P>
 								<TABLE>
 									<TR>
@@ -598,7 +598,7 @@
 		<input id="resetall" value="Reset all value" type="reset" title="Reset all basic value (without extended settings)">
 	</DIV>
 </DIV>
-		<!--  START READER GRAPHS FUNCTION-->
+		<!-- START READER GRAPHS FUNCTION -->
 		
 		<DIV ID="openModal1" CLASS="modalDialog">
 			<DIV>
@@ -659,9 +659,9 @@
 		v?b:b.concat(a.max)),c=h.min.apply(h,a.min==v?b:b.concat(a.min)),d=this.prepare(a.width,a.height),l=d.width(),f=d.height(),j=e-c,a=a.padding,k=this.fill(),r=this.x=function(a){return a*l/b.length},s=this.y=function(a){return f-(j?(a-c)/j*f:1)},g=0;g<b.length;g++){var m=r(g+a),u=r(g+1-a)-m,i=b[g],p=s(i),n=p,o;j?0>i?n=s(h.min(e,0)):p=s(h.max(c,0)):o=1;o=p-n;0==o&&(o=1,0<e&&j&&n--);d.append(q("rect",{fill:k.call(this,i,g,b),x:m,y:n,width:u,height:o}))}})})(jQuery,document,Math);
 
 		</script>
-		<!--  END READER GRAPHS FUNCTION-->
+		<!-- END READER GRAPHS FUNCTION -->
 
-		<!--  START GEOAPI FUNCTION-->
+		<!-- START GEOAPI FUNCTION -->
 		<style type="text/css">
 			/* ============= GEOAPI Data */
 			.GeoResults {
@@ -1048,6 +1048,13 @@
 				}
 			});
 		</script>
-		<!--  END GEOAPI FUNCTION-->
+		<!-- END GEOAPI FUNCTION -->
+
+		<!-- START TEST SCRIPT -->
+		<script type="text/javascript">
+
+		</script>
+		<!-- END TEST SCRIPT -->
 </BODY>
 </HTML>
+	

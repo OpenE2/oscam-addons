@@ -2932,6 +2932,13 @@ div.groups {
 .envi #polling {
 	border-radius: 0;
 }
+.envi #inc[disabled],
+.envi #inc:hover[disabled],
+.envi #dec[disabled],
+.envi #dec:hover[disabled] {
+	background-color: #DDD !important
+}
+
 /* **************** 19. FILE MENU */
 /* For filemenu - change dropdown menu */
 .envi #nav ul.dropdown_nav li a {
@@ -3507,13 +3514,13 @@ div.groups {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc,
-.colorstyle_1 #polling.pollingenabled,
+.colorstyle_1 #polling,
 .colorstyle_1 #dec,
 .colorstyle_1 .regexbutton {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc:hover,
-.colorstyle_1 #polling.pollingenabled:hover,
+.colorstyle_1 #polling:hover,
 .colorstyle_1 #dec:hover {
 	background-color: #0D6A73 !important;
 }
@@ -3819,13 +3826,13 @@ div.groups {
 	background-color: #F60
 }
 .colorstyle_2 #inc,
-.colorstyle_2 #polling.pollingenabled,
+.colorstyle_2 #polling,
 .colorstyle_2 #dec,
 .colorstyle_2 .regexbutton {
 	background-color: #F60
 }
 .colorstyle_2 #inc:hover,
-.colorstyle_2 #polling.pollingenabled:hover,
+.colorstyle_2 #polling:hover,
 .colorstyle_2 #dec:hover {
 	background-color: #DB3700 !important;
 }

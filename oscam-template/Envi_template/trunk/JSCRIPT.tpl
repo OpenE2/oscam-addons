@@ -3256,6 +3256,16 @@ $(function() {
 		}
 	});
 });
+
+/* -------------- SHOW INFO IF INFOTABLE in status.html IS HIDDEN -------------- */
+$(function() {
+	$('a[href="#statusfooter"]').click(function(){
+		if ( $('.info').is( ":hidden" ) ) {
+			alert('Information tables can not be displayed.\nSet to display the information in the "Configuration -> WebIf".');
+		}
+	});
+});
+
 /* -------------- SCROLL TO TOP FUNCTION -------------- */
 $(function() {
 	// hide #back-top first
