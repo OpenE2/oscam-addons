@@ -168,7 +168,7 @@ a.debugl:hover, a.debugs:hover, a.sizeml:hover, a.sizems:hover {
 a.debugls:link, a.sizemls:link {
 	padding:1px 2px 2px
 }
-a.debugls:link, a.debugls:visited, a.sizemls:link, a.sizemls:visited {{
+a.debugls:link, a.debugls:visited, a.sizemls:link, a.sizemls:visited {
 	background-color:#A00;
 	color:#FFF
 }

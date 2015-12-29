@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1469</P>
+								<P><B>Envi revision:</B> 1470</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -857,9 +857,9 @@
 							/*
 							$.getJSON("http://www.telize.com/geoip/" + valueUSER, function(data) {
 
-							    var country_code	= data.country_code3;
-							    var continent_code 	= data.continent_code
-							    var country_name   	= data.country;
+							  var country_code	= data.country_code3;
+							  var continent_code 	= data.continent_code
+							  var country_name   	= data.country;
 								var region_name		= data.region;
 								var city 			= data.city;
 								var ip     			= data.ip;
