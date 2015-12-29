@@ -157,18 +157,18 @@ a:hover {
 	color:#FF9E5F
 }
 /* logpage_debugmenu.html */
-a.debugl:link {
+a.debugl:link, a.sizeml:link {
 	margin:0 1px
 }
-a.debugl:hover, a.debugs:hover {
+a.debugl:hover, a.debugs:hover, a.sizeml:hover, a.sizems:hover {
 	background-color:#A00;
 	color:#FFF
 }
 /* module-webif.c  */
-a.debugls:link {
+a.debugls:link, a.sizemls:link {
 	padding:1px 2px 2px
 }
-a.debugls:link, a.debugls:visited {
+a.debugls:link, a.debugls:visited, a.sizemls:link, a.sizemls:visited {{
 	background-color:#A00;
 	color:#FFF
 }
@@ -545,7 +545,9 @@ div.log, div#livelog, textarea.editor, div.sidlist {
 }
 div.log {
 	margin:20px 0 0;
-	padding:4px
+	padding:4px;
+	max-height:300px;
+	overflow:scroll;
 }
 /* module-webif.c class for services.html */
 div.sidlist {
@@ -618,7 +620,7 @@ div.info {
 /* debugmenu	- status_sdebug.html
  * logmenu		- file.html
 */
-div.debugmenu, div.logmenu {
+div.debugmenu, div.logmenu, div.logsizemenu {
 	font-size:12px;
 	line-height:16px;
 	margin-top:10px
@@ -2936,7 +2938,14 @@ div.groups {
 .envi #inc:hover[disabled],
 .envi #dec[disabled],
 .envi #dec:hover[disabled] {
-	background-color: #DDD !important
+	background-color: #DDD !important;
+
+	/* Disabled effect for plastic style */
+	background: #DDD !important;
+	border:none;
+	color: #6D6C6D;
+	text-shadow: none;
+	box-shadow:none;
 }
 
 /* **************** 19. FILE MENU */
@@ -3376,12 +3385,95 @@ div.groups {
 	background: -ms-linear-gradient(top, #666C71 0%, #454A4E 100%);
 	/* W3C Markup, IE10 Release Preview */
 	background: linear-gradient(to bottom, #666C71, #454A4E);
+}
+/* Settings for special button in pollinterval */
+.plastic #polling.pollingenabled {
+	border: solid 1px #980C10;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FADDDE;
+	background: #CE0303;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: url("image?i=ICSTOP"),-webkit-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* Firefox */
+	background: url("image?i=ICSTOP"),-moz-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* IE10+ */
+	background: url("image?i=ICSTOP"),-ms-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: url("image?i=ICSTOP"),linear-gradient(to bottom, #CE0303, #6B0508);
+
+	background-repeat:no-repeat;
+	background-position: center center;
 
 	/* TEXT SHADOW */
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.plastic #polling:hover.pollingenabled {
+	border: solid 1px #000;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FFF;
+	background: #000;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: url("image?i=ICSTOP"),-webkit-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* Firefox */
+	background: url("image?i=ICSTOP"),-moz-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* IE10+ */
+	background: url("image?i=ICSTOP"),-ms-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: url("image?i=ICSTOP"),linear-gradient(to bottom, #666C71, #454A4E);
+
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+.plastic #polling.pollingdisabled {
+	border: solid 1px #980C10;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FADDDE;
+	background: #CE0303;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: url("image?i=ICSTART"),-webkit-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* Firefox */
+	background: url("image?i=ICSTART"),-moz-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* IE10+ */
+	background: url("image?i=ICSTART"),-ms-linear-gradient(top, #CE0303 0%, #6B0508 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: url("image?i=ICSTART"),linear-gradient(to bottom, #CE0303, #6B0508);
+
+	background-repeat:no-repeat;
+	background-position: center center;
+
+	/* TEXT SHADOW */
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.plastic #polling:hover.pollingdisabled {
+	border: solid 1px #000;
+
+	/* BACKGROUND COLOR */
+	/* Old browsers */
+	color: #FFF;
+	background: #000;
+	/* Webkit (Chrome10+/Safari5.1+) */
+	background: url("image?i=ICSTART"),-webkit-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* Firefox */
+	background: url("image?i=ICSTART"),-moz-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* IE10+ */
+	background: url("image?i=ICSTART"),-ms-linear-gradient(top, #666C71 0%, #454A4E 100%);
+	/* W3C Markup, IE10 Release Preview */
+	background: url("image?i=ICSTART"),linear-gradient(to bottom, #666C71, #454A4E);
+
+	background-repeat:no-repeat;
+	background-position: center center;
 }
 
  /* ==================================================================  ENVI TEMPLATE - STYLE 1 */
@@ -3514,13 +3606,13 @@ div.groups {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc,
-.colorstyle_1 #polling,
+.colorstyle_1 #polling.pollingenabled,
 .colorstyle_1 #dec,
 .colorstyle_1 .regexbutton {
 	background-color: #16B6C6
 }
 .colorstyle_1 #inc:hover,
-.colorstyle_1 #polling:hover,
+.colorstyle_1 #polling.pollingenabled:hover,
 .colorstyle_1 #dec:hover {
 	background-color: #0D6A73 !important;
 }
@@ -3826,13 +3918,13 @@ div.groups {
 	background-color: #F60
 }
 .colorstyle_2 #inc,
-.colorstyle_2 #polling,
+.colorstyle_2 #polling.pollingenabled,
 .colorstyle_2 #dec,
 .colorstyle_2 .regexbutton {
 	background-color: #F60
 }
 .colorstyle_2 #inc:hover,
-.colorstyle_2 #polling:hover,
+.colorstyle_2 #polling.pollingenabled:hover,
 .colorstyle_2 #dec:hover {
 	background-color: #DB3700 !important;
 }

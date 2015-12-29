@@ -407,8 +407,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1468</P>
-								<P><B>For oscam revision:</B> 10894 and above</P>
+								<P><B>Envi revision:</B> 1469</P>
+								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
 										<TD><B>Wiki:</B></TD>
@@ -714,7 +714,7 @@
 			/* ============= GEOAPI ProgressBar */
 			#Geo_progressBar {
 				position: absolute;
-				left: 400px;
+				right: 470px;
 				top: 8px;
 				opacity: 0;
 			}
@@ -1050,11 +1050,14 @@
 		</script>
 		<!-- END GEOAPI FUNCTION -->
 
-		<!-- START TEST SCRIPT -->
+		<!-- START TEST SCRIPT AND STYLE -->
+		<style type="text/css">
+
+		</style>
 		<script type="text/javascript">
 
 		</script>
-		<!-- END TEST SCRIPT -->
+		<!-- END TEST SCRIPT AND STYLE -->
 </BODY>
 </HTML>
 	

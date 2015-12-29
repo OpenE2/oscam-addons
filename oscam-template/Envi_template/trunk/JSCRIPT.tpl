@@ -282,6 +282,15 @@ $(function () {
 
 	});
 
+	$(".sizemls a, .sizeml a").click(function () {
+		maxloglines = parseInt($(this).attr('sendval'));
+		$("#sizemfrom").text(' Switch displayed log lines from ' + maxloglines + ' to ');
+		for (var i = 32; i <= 512; i *= 2) {
+			$("#sizem" + i).attr('class', (maxloglines == i) ? 'sizemls' : 'sizeml');
+		}
+		return false;
+	});
+	
 	$(".debugls a, .debugl a").click(function () {
 		parameters = parameters + "&debug=" + $(this).attr('sendval');
 		return false;
@@ -957,9 +966,6 @@ function updateLogpage(data) {
 			}
 
 			if (!hiddenline) {
-				if ($("#livelogdata li").length >= maxloglines) {
-					$("#livelogdata li").eq(0).remove();
-				}
 				if ($("#livelog:hover").length) {
 					$('#livelog').stop(true);
 				} else {
@@ -969,6 +975,11 @@ function updateLogpage(data) {
 		}
 		parameters = "?lastid=" + item.id;
 	});
+
+	var len = $("#livelogdata li").length;
+	if (len > maxloglines) {
+		$("#livelogdata li").slice(0, len - maxloglines).remove();
+	}
 
 	// update footer
 	updateFooter(data);
