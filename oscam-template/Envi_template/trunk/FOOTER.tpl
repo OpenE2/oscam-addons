@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1470</P>
+								<P><B>Envi revision:</B> 1473</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -776,17 +776,15 @@
 			$(document).ready( function() {
 				if (document.URL.indexOf('status.html') > -1) {
 					/* ABOUT GEOAPI SERVICES
-					 *	1. http://ip-api.com/ system will automatically ban any IP addresses doing over 250 requests per minute.
-					 *		- Documentation on http://ip-api.com/docs/api:json
-					 *		- Perfect services
-					 *	2. https://freegeoip.net/ allowed up to 10,000 queries per hour by default
+					 *	1. https://freegeoip.net/ allowed up to 10,000 queries per hour by default
 					 *		- Little information
-					 *	3. http://www.telize.com/
-					 *	4. http://www.geoplugin.com/
-					 *	5. https://ipinfo.io/ are limited to 1,000 API requests per day
+					 *		- without error message
+					 *	2. http://www.telize.com/
+					 *	3. http://www.geoplugin.com/
+					 *	4. https://ipinfo.io/ are limited to 1,000 API requests per day
 					 * ----------------------------------------------------------------------------------------------------------
 					 * OTHER GEOAPI DATABASES
-					 * 	6. https://db-ip.com/ 
+					 * 	5. https://db-ip.com/ 
 					 *		- need api key
 					 *		- this key allows 2,000 queries per day
 					 * 
@@ -809,51 +807,35 @@
 							var valueUSER = $(this).text();
 							var incremental = i + 1;
 
-							// GeoLocation API 1 services (http://ip-api.com/ - 250 requests per minute.)
-							$.getJSON("http://ip-api.com/json/" + valueUSER + "?callback=?", function(data) {
-								var country_code 	= data.countryCode;
-								var country_name   	= data.country;
-								var region_name  	= data.regionName;
-								var city        	= data.city;
-								var ip     			= data.query;
-								var isp    			= data.isp;
-								var longitude		= data.lon;
-								var latitude		= data.lat;
-
-								var message     	= data.message;
-
-								if( typeof message === 'undefined' ) {
-									cell.append(
-										'<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  
-										'<TABLE ID="GeoResultsTABLE' + incremental + '" CLASS="GeoResultsTABLE">' +
-												'<TR><TD><B>Country:</B></TD><TD>' + country_name + '</TD></TR>' +
-												'<TR><TD><B>Region:</B></TD><TD>' + region_name + '</TD></TR>' +
-												'<TR><TD><B>City:</B></TD><TD>' + city + '</TD></TR>' +
-												'<TR><TD><B>ISP:</B></TD><TD>' + isp + '</TD></TR>' +
-												'<TR><TD><B>Longitude:</B></TD><TD>' + longitude + '</TD></TR>' +
-												'<TR><TD><B>Latitude:</B></TD><TD>' + latitude + '</TD></TR>' +
-										'</TABLE></A>'
-										);
-								} else {
-									cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + message +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">IP: ' + ip + '</SPAN></A>');
-								}
-					        });
-
-							// GeoLocation API 2 (https://freegeoip.net/ - 10,000 requests per hour)
-							/*
+							// GeoLocation API 1 (https://freegeoip.net/ - 10,000 requests per hour)
+							
 							$.get("https://freegeoip.net/json/" + valueUSER, function(data) {
 
-							    var country_code	= data.country_code;
-							    var country_name   	= data.country_name;
+							  var country_code	= data.country_code;
+							  var country_name  = data.country_name;
 								var region_name		= data.region_name;
-								var city 			= data.city;
+								var city 					= data.city;
 								var ip          	= data.ip;
+								var time_zone     = data.time_zone;
+								var latitude      = data.latitude;
+								var longitude     = data.longitude;
 							    
-								cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">Country: ' + country_name + '<BR>Region: ' + region_name + '<BR> City: ' + city + '<BR> IP: ' + ip + '</SPAN></A>');
+								cell.append(
+									'<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  
+									'<TABLE ID="GeoResultsTABLE' + incremental + '" CLASS="GeoResultsTABLE">' +
+											'<TR><TD><B>Country:</B></TD><TD>' + country_name + '</TD></TR>' +
+											'<TR><TD><B>Region:</B></TD><TD>' + region_name + '</TD></TR>' +
+											'<TR><TD><B>City:</B></TD><TD>' + city + '</TD></TR>' +
+											'<TR><TD><B>IP:</B></TD><TD>' + ip + '</TD></TR>' +
+											'<TR><TD><B>Timezone:</B></TD><TD>' + time_zone + '</TD></TR>' +
+											'<TR><TD><B>Longitude:</B></TD><TD>' + longitude + '</TD></TR>' +
+											'<TR><TD><B>Latitude:</B></TD><TD>' + latitude + '</TD></TR>' +
+									'</TABLE></A>'
+									);
 							}, "jsonp");
-							*/
+							
 
-							// GeoLocation API 3 (http://www.telize.com/)
+							// GeoLocation API 2 (http://www.telize.com/)
 							/*
 							$.getJSON("http://www.telize.com/geoip/" + valueUSER, function(data) {
 
