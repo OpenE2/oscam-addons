@@ -191,21 +191,21 @@
 								</TD>
 							</TR>
 							<TR>
-								<TD>Body link color:</TD>
+								<TD>Link color:</TD>
 								<TD STYLE="display: table; margin: 0px auto;">
 									<UL CLASS="linkcolorchange">
 										<LI ID="linkcolorchange_0" DATA-STYLE='linkcolorchange_0' TITLE="Default"></LI>
-										<LI ID="linkcolorchange_1" DATA-STYLE='linkcolorchange_1' TITLE="">
+										<LI ID="linkcolorchange_list" TITLE="">
 											<DIV ID="minipicker_wrapper" CLASS="minipicker_wrapper">
 												<UL CLASS="minipicker_linkcolorchange">
-													<LI ID="link_2" DATA-STYLE='linkcolorchange_2' TITLE="Color 1"></LI>
-													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 2"></LI>
-													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 3"></LI>
-													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 4"></LI>
-													<LI ID="link_6" DATA-STYLE='linkcolorchange_6' TITLE="Color 5"></LI>
-													<LI ID="link_7" DATA-STYLE='linkcolorchange_7' TITLE="Color 6"></LI>
-													<LI ID="link_8" DATA-STYLE='linkcolorchange_8' TITLE="Color 7"></LI>
-													<LI ID="link_9" DATA-STYLE='linkcolorchange_9' TITLE="Color 8"></LI>
+													<LI ID="link_1" DATA-STYLE='linkcolorchange_1' TITLE="Color 1 - Blue"></LI>
+													<LI ID="link_2" DATA-STYLE='linkcolorchange_2' TITLE="Color 2 - Orange"></LI>
+													<LI ID="link_3" DATA-STYLE='linkcolorchange_3' TITLE="Color 3 - Yellow"></LI>
+													<LI ID="link_4" DATA-STYLE='linkcolorchange_4' TITLE="Color 4 - Green"></LI>
+													<LI ID="link_5" DATA-STYLE='linkcolorchange_5' TITLE="Color 5 - Beige"></LI>
+													<LI ID="link_6" DATA-STYLE='linkcolorchange_6' TITLE="Color 6 - Cherry"></LI>
+													<LI ID="link_7" DATA-STYLE='linkcolorchange_7' TITLE="Color 7 - Celadon"></LI>
+													<LI ID="link_8" DATA-STYLE='linkcolorchange_8' TITLE="Color 8 - Brown"></LI>
 												</UL>
 											</DIV>
 										</LI>
@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1478</P>
+								<P><B>Envi revision:</B> 1479</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>

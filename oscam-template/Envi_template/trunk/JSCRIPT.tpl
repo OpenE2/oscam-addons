@@ -2423,6 +2423,9 @@ $(function(){
 	// Check Cookie after loading page
 		if (typeof $.cookie('BodyLinkColorCookieID') != 'undefined'){
 			$('#' + $.cookie("BodyLinkColorCookieID")).addClass('active');
+			if ($("li[id^='link_']").hasClass("active")) {
+				$("#linkcolorchange_list").addClass('active');
+			};
 		} else {
 			$('#linkcolorchange_0').addClass('active');
 		}
@@ -2447,8 +2450,14 @@ $(function(){
 
 	// SETTINGS for LI for Body link color
 		$('.linkcolorchange li').click(function () {
+			$("#linkcolorchange_0").removeClass('active');
 			$(this).siblings('li').removeClass('active');
 			$(this).addClass('active');
+			if ($("#linkcolorchange_0").hasClass("active")) {
+				$("li[id^='link_']").removeClass("active");
+			} else if ($("li[id^='link_']").hasClass("active")) {
+				$("#linkcolorchange_list").addClass('active');
+			};
 			$.cookie('BodyLinkColorCookieID', $(this).attr('id'), {
 				expires: 365,
 				path: '/'
@@ -2933,11 +2942,27 @@ $(function() {
 		var menuFontSize = $("#menufontsize option:selected").text();
 		var bodyFontFamily = $("#bodyfontfamily option:selected").text();
 		var bodyFontColor = $(".fontcolorchange li.active").attr('title');
+
+		if($('#linkcolorchange_0').hasClass('active')){
+			var bodyLinkColor = $("#linkcolorchange_0").attr('title');
+			/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
+			if(bodyLinkColor.length == 0) {
+				var bodyLinkColor= $("#linkcolorchange_0").attr('data-original-title');
+			}
+		} else {
+			var bodyLinkColor = $(".minipicker_linkcolorchange li.active").attr('title');
+			/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
+			if(bodyLinkColor.length == 0) {
+				var bodyLinkColor= $(".minipicker_linkcolorchange li.active").attr('data-original-title');
+			}
+		}
+
 		var rotateLogo = $("#rotatelogo").is(':checked') ? 'On' : 'Off';
 		var infotableBorder = $("#infotable_border").is(':checked') ? 'On' : 'Off';
 		var borderRadius = $("#border_radius").is(':checked') ? 'On' : 'Off';
 		var notifierRadius = $("#notifier_radius").is(':checked') ? 'On' : 'Off';
 		var plasticStyle = $("#plastic").is(':checked') ? 'On' : 'Off';
+
 		if($('.backchange li').hasClass('active')){
 			var backgroundBodyColor = $(".backchange li.active").attr('title');
 			/* Control if 'title' exist, if not than get title from 'data-title' (Boot Tooltip)*/
@@ -3016,6 +3041,7 @@ $(function() {
 			'Menu font size:           ' + menuFontSize + '\n' +
 			'Body font:                ' + bodyFontFamily + '\n' +
 			'Body font color:          ' + bodyFontColor + '\n' +	
+			'Link color:               ' + bodyLinkColor + '\n' +	
 			'\n' +
 			'Other settings\n' +
 			'--------------------------------------\n' +

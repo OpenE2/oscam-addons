@@ -1653,13 +1653,13 @@ ul.linkcolorchange li:hover,
 ul.linkcolorchange li.active {
 	border: 3px solid #F02
 }
-ul.linkcolorchange li#linkcolorchange_1 {
+ul.linkcolorchange li#linkcolorchange_list {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAABYlBMVEX/TTT/Ohn/MAVL/wA2/wD/JwD/WUIn/wD/GwD/VT0t/wD/HwD/Riv/QSRS/wZE/wA+/wD9/gC1tbX/wgC9vb2tra3/ygTl/wDi/wDg/wDF/wC+/wCf/wD/5wD/5QD/4wD/pADMzMz/bz//uTn/njX/6jH/gTH/0C7/mSf/eiP/Wx7/rQNw/wL/jgKO/wHB/wCo/wCk/wCH/wCC/wB5/wBo/wBh/wBV/wD/xgD/qAD/hgD/gQD/aQD/XwD/SwD/PwDa2tqlpaWcnJz/ikD/oj7/hjr/0jn/ajXp/zP9/jL/ZTD/tS/N/y3n/yv9/ir/YSr/tCez/yb/6SbL/yX/ziPn/yL9/iH/siCV/x+w/xz/lBz/6BvK/xn/zRn/dhjm/xX/rxV1/xP9/hL/VRL/kRGS/xCu/wz/6Az/cgzJ/wn/UQfl/wX/bgKs/wHI/wCa/wB9/wBb/wD/nwD/igD/ZAD/RQCI88vuAAAAEXRSTlPc3Nzc3Nz19fXg4ODc3Nzc3LbKYVoAAAC5SURBVAgdBcGxasJQFIDhv8fBii5iHaRDurgpOmiDWnEU3Ap5D6HvVRe3rkVUCiJkEYS+QKeaS27izfX4ffI4m04+GkG99bwchGUpASsAPqEk19dQAYC38VXY7wBFn/jeIB5GrTZAE2pCp/8FwB+qKpoXXH4VRcEI2zQEAAqL1PhJhwDRFKqibQ52viByeTgsi3Ge3Jp3kyTJuit4Chdbk9ps/xBL5RxwIs6y/PjvvXhuLwQ4ZxKhdwe3GU2mT45bywAAAABJRU5ErkJggg==);
 }
-#linkcolorchange_1 {
+#linkcolorchange_list {
 	position: relative;
 }
-#linkcolorchange_1:hover .minipicker_wrapper {
+#linkcolorchange_list:hover .minipicker_wrapper {
 	display: block;
 	position: absolute;
 }
@@ -1873,17 +1873,95 @@ li.colorstyle_4 {
     color: #A3A3A3 !important
 }
 /* **************** 5. BODY LINK COLOR SETTINGS */
+/* ------- Class 'linkcolorchange_1' ------- */
+/* Color for StyleSwitcher */
+[data-style="linkcolorchange_1"] {
+	background: #00AAA0 !important
+}
+/* Color for links */
+.linkcolorchange_1 a,
+.linkcolorchange_1 a:link,
+.linkcolorchange_1 a:visited,
+.linkcolorchange_1 a:active {
+	color: #00AAA0 !important
+}
+.linkcolorchange_1 a:hover {
+    color: #07726A !important
+}
+.linkcolorchange_1 #nav a {
+	color: #2E2E2E !important;
+}
+.linkcolorchange_1 #nav li.configmenu_selected > a:link,
+.linkcolorchange_1 #nav li.configmenu_selected > a:visited,
+.linkcolorchange_1 #nav li.configmenu_selected > a:active,
+.linkcolorchange_1 #nav li.configmenu > a:hover {
+	color: #00AAA0 !important
+}
+.linkcolorchange_1 li.menu a {
+	color: #FFF !important
+}
+.linkcolorchange_1 li.menu:hover a {
+	color: #00AAA0 !important
+}
+/* ------- Class 'linkcolorchange_2' ------- */
+/* Color for StyleSwitcher */
 [data-style="linkcolorchange_2"] {
-	background: #1ED5E6 !important
+	background: #FF9900 !important
 }
+/* Color for links */
+.linkcolorchange_2 a,
+.linkcolorchange_2 a:link,
+.linkcolorchange_2 a:visited,
+.linkcolorchange_2 a:active {
+	color: #FF9900 !important
+}
+.linkcolorchange_2 a:hover {
+    color: #CC7A00 !important
+}
+.linkcolorchange_2 #nav a {
+	color: #2E2E2E !important;
+}
+.linkcolorchange_2 #nav li.configmenu_selected > a:link,
+.linkcolorchange_2 #nav li.configmenu_selected > a:visited,
+.linkcolorchange_2 #nav li.configmenu_selected > a:active,
+.linkcolorchange_2 #nav li.configmenu > a:hover {
+	color: #FF9900 !important
+}
+.linkcolorchange_2 li.menu a {
+	color: #FFF !important
+}
+.linkcolorchange_2 li.menu:hover a {
+	color: #FF9900 !important
+}
+/* ------- Class 'linkcolorchange_3' ------- */
+/* Color for StyleSwitcher */
 [data-style="linkcolorchange_3"] {
-	background: #B32114 !important
+	background: #FC0 !important
 }
+/* ------- Class 'linkcolorchange_4' ------- */
+/* Color for StyleSwitcher */
 [data-style="linkcolorchange_4"] {
-	background: #7C170E !important
+	background: #2C6700 !important
 }
+/* ------- Class 'linkcolorchange_5' ------- */
+/* Color for StyleSwitcher */
 [data-style="linkcolorchange_5"] {
-	background: #B1FF3D !important
+	background: #BFA980 !important
+}
+/* ------- Class 'linkcolorchange_6' ------- */
+/* Color for StyleSwitcher */
+[data-style="linkcolorchange_6"] {
+	background: #911938 !important
+}
+/* ------- Class 'linkcolorchange_7' ------- */
+/* Color for StyleSwitcher */
+[data-style="linkcolorchange_7"] {
+	background: #74AEA1 !important
+}
+/* ------- Class 'linkcolorchange_8' ------- */
+/* Color for StyleSwitcher */
+[data-style="linkcolorchange_8"] {
+	background: #784E3D !important
 }
 /* **************** 6. SIMPLE COLOR PICKER */
 .minicolors {
