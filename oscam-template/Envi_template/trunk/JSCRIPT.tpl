@@ -3214,9 +3214,18 @@ $(function() {
 				$.removeCookie('fontcolor');
 				$.removeCookie('BodyFontColorCookieID');
 			}
-		// Reset settings in 'BODY LINK COLOR'
+		// Reset settings in 'LINK COLOR'
 			if( $('#reset_8').is(':checked')) {
-				
+				// Reset class in list of colors
+				$('#linkcolorchange_0, #linkcolorchange_list, li[id^="link_"]').removeClass("active");
+				$('#linkcolorchange_0').addClass('active');
+				// Remove class in 'body'
+				$('body').removeClass (function (index, css) {
+					return (css.match (/\blinkcolorchange_\S+/g) || []).join(' ');
+				});
+				// Clear cookie
+				$.removeCookie('linkcolor');
+				$.removeCookie('BodyLinkColorCookieID');
 			}
 		// Reset settings in 'ROTATE OSCAM LOGO'
 			if( $('#reset_9').is(':checked')) {
@@ -3272,6 +3281,7 @@ $(function() {
 			$('.backchange li').removeClass('active');
 			$('.patchange li').removeClass('active');
 			$('.fontcolorchange li').removeClass('active');
+			$('#linkcolorchange_0, #linkcolorchange_list, li[id^="link_"]').removeClass("active");
 			$('#rotatelogo').prop('checked', false);
 			$('#infotable_border').prop('checked', false);
 			$('#border_radius').prop('checked', false);
@@ -3282,6 +3292,7 @@ $(function() {
 			$('#back_0').addClass('active');
 			$('#pat_0').addClass('active');
 			$('#fontcolorchange_0').addClass('active');
+			$('#linkcolorchange_0').addClass('active');
 			// Set default input
 			$("#menufontfamily")[0].selectedIndex = 0;
 			$("#menufontsize")[0].selectedIndex = 1;

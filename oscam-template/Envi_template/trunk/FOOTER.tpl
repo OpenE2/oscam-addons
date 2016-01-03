@@ -30,7 +30,7 @@
 					<LI><B>Compiler:</B> ##CS_TARGET##</LI>
 				</UL>
 			</LI>
-			<LI CLASS="styleauthor">&copy;2014 - 2015 Designed by: <B></B></LI>
+			<LI CLASS="styleauthor">&copy;2014 - 2016 Designed by: <B></B></LI>
 			<LI><A NAME="statusfooter"></A></LI>
 		</UL>
 		<DIV id="console" style="width: 200px; color: #FFF; font: 12px monospace; overflow: auto; position: absolute; float: right; bottom: 0px; right: 70px; background: rgba(0,0,0,0.3); padding: 1em; margin: 1em 0px; height: 50px; text-align: left; text-transform: uppercase; visibility: hidden;"></DIV>
@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1479</P>
+								<P><B>Envi revision:</B> 1480</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -487,7 +487,7 @@
 				<TD><input type="checkbox" name="checkbox" id="reset_7" value="value"><label></label></TD>
 			</TR>
 			<TR>
-				<TD>Body link color settings</TD>
+				<TD>ink color settings</TD>
 				<TD><input type="checkbox" name="checkbox" id="reset_8" value="value"><label></label></TD>
 			</TR>
 			<TR>
