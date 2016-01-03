@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1477</P>
+								<P><B>Envi revision:</B> 1478</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -696,13 +696,36 @@
 			a:hover .GeoResultsTABLE{
 				display: block;
 				position: absolute;
-				top: 1em;
-				right: 2em;
+				top: -5.9em;
+				left: 2.4em;
 				padding: 4px;
 				text-align: left;
 				background-color: #FFC;
 				border: 1px solid #000;
 				color: #000
+			}
+			.GeoResultsTABLE:after, .GeoResultsTABLE:before {
+				right: 100%;
+				top: 50%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+			}
+
+			.GeoResultsTABLE:after {
+				border-color: rgba(255, 255, 204, 0);
+				border-right-color: #FFC;
+				border-width: 10px;
+				margin-top: -10px;
+			}
+			.GeoResultsTABLE:before {
+				border-color: rgba(0, 0, 0, 0);
+				border-right-color: #000;
+				border-width: 11px;
+				margin-top: -11px;
 			}
 			/* For Envi Template and Original WebIf */
 			table.status tr:hover table[id^="GeoResults"] tr td,
@@ -738,7 +761,7 @@
 			#progressBar div {
 				height: 100%;
 				color: #FFF;
-				text-align: right;
+				/* text-align: right; */
 				font-size: 10px;
 				line-height: 13px;
 				width: 0;
@@ -791,7 +814,7 @@
 					 *	5. http://www.geoplugin.com/
 					 *	6. https://ipinfo.io/ are limited to 1,000 API requests per day
 					 */
- 
+
 					// ================= GEOAPI FUNCTIONS
 					// Set variable, will be it use Geoapi function
 					var selector1 = '#tbodyc tr td.statuscol7';
@@ -833,7 +856,6 @@
 											'<TR><TD><B>Timezone:</B></TD><TD>' + time_zone + '</TD></TR>' +
 											'<TR><TD><B>Longitude:</B></TD><TD>' + longitude + '</TD></TR>' +
 											'<TR><TD><B>Latitude:</B></TD><TD>' + latitude + '</TD></TR>' +
-											'<TR><TD><B>Google maps:</B></TD><TD>' + latitude + longitude + '</TD></TR>' +
 									'</TABLE></A>'
 								);
 							}, "jsonp");
@@ -858,15 +880,15 @@
 					// Function for call function if button Odd/Even click
 						var count = 1;
 						$("#geoapibutton").click(function() {
-						    count++;
-						    var isEven = function(someNumber) {
-						        return (someNumber % 2 === 0) ? true : false;
-						    };
-						    if (isEven(count) === false) {
-						        doEven();
-						    } else if (isEven(count) === true) {
-						        doOdd();
-						    }
+							count++;
+							var isEven = function(someNumber) {
+								return (someNumber % 2 === 0) ? true : false;
+							};
+							if (isEven(count) === false) {
+								doEven();
+							} else if (isEven(count) === true) {
+								doOdd();
+							}
 						});
 
 					// If we run 'Pause Pollinterval' then hide GEOAPI
@@ -933,12 +955,7 @@
 					}
 
 					// ================= PROGRESSBAR
-					/* @see http://workshop.rs
-					 *
-					 * @param  {Number} percent
-					 * @param  {Number} $element progressBar DOM element
-					 */
-					// Create ProgressBar
+					// @see http://workshop.rs - Create ProgressBar
 					$('<div id="Geo_progressBar"><span>Loading Geodata from databases: </span><div id="progressBar" class="default"><div></div></div></div>').insertAfter('#Userheadline');
 					$('#tbodyc').css('position' , 'relative');
 					
