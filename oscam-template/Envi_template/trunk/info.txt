@@ -1,9 +1,9 @@
 #
 # INFO ABOUT REVISION
 # --------------------------------
-# Envi Revision:		1473
+# Envi Revision:		1477
 # Authors:				skyndas
-# Last Changed Date:	2015-12-29
+# Last Changed Date:	2016-01-03
 #
 # FILE LIST (This is a list of files that contain Template) 
 # ----------------------------------------------------------
@@ -15,4 +15,5 @@ CSS.tpl
 FOOTER.tpl
 HEADERSHORT.tpl
 JSCRIPT.tpl
+CLIENTHEADLINEBIT.tpl
 info.txt

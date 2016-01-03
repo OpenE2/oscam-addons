@@ -30,7 +30,7 @@
 					<LI><B>Compiler:</B> ##CS_TARGET##</LI>
 				</UL>
 			</LI>
-			<LI CLASS="styleauthor">&copy;2014 Designed by: <B></B></LI>
+			<LI CLASS="styleauthor">&copy;2014 - 2015 Designed by: <B></B></LI>
 			<LI><A NAME="statusfooter"></A></LI>
 		</UL>
 		<DIV id="console" style="width: 200px; color: #FFF; font: 12px monospace; overflow: auto; position: absolute; float: right; bottom: 0px; right: 70px; background: rgba(0,0,0,0.3); padding: 1em; margin: 1em 0px; height: 50px; text-align: left; text-transform: uppercase; visibility: hidden;"></DIV>
@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1473</P>
+								<P><B>Envi revision:</B> 1477</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -779,15 +779,17 @@
 					 *	1. https://freegeoip.net/ allowed up to 10,000 queries per hour by default
 					 *		- Little information
 					 *		- without error message
-					 *	2. http://www.telize.com/
-					 *	3. http://www.geoplugin.com/
-					 *	4. https://ipinfo.io/ are limited to 1,000 API requests per day
 					 * ----------------------------------------------------------------------------------------------------------
 					 * OTHER GEOAPI DATABASES
-					 * 	5. https://db-ip.com/ 
+					 * 	2. https://db-ip.com/ 
 					 *		- need api key
 					 *		- this key allows 2,000 queries per day
-					 * 
+					 * 	3. http://www.ipinfodb.com 
+					 *		- need api key
+					 *		- do not have a specific daily limit
+					 * 	4. http://tuq.in/tools/geo
+					 *	5. http://www.geoplugin.com/
+					 *	6. https://ipinfo.io/ are limited to 1,000 API requests per day
 					 */
  
 					// ================= GEOAPI FUNCTIONS
@@ -805,21 +807,22 @@
 						$(selectors).each(function (i) {
 							var cell = $(this);
 							var valueUSER = $(this).text();
+							var userIP = parseInt($(this).text());
 							var incremental = i + 1;
 
 							// GeoLocation API 1 (https://freegeoip.net/ - 10,000 requests per hour)
-							
+
 							$.get("https://freegeoip.net/json/" + valueUSER, function(data) {
 
-							  var country_code	= data.country_code;
-							  var country_name  = data.country_name;
+							  var country_code 	= data.country_code;
+							  var country_name	= data.country_name;
 								var region_name		= data.region_name;
 								var city 					= data.city;
-								var ip          	= data.ip;
-								var time_zone     = data.time_zone;
-								var latitude      = data.latitude;
-								var longitude     = data.longitude;
-							    
+								var ip 						= data.ip;
+								var time_zone 		= data.time_zone;
+								var latitude 			= data.latitude;
+								var longitude 		= data.longitude;
+
 								cell.append(
 									'<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  
 									'<TABLE ID="GeoResultsTABLE' + incremental + '" CLASS="GeoResultsTABLE">' +
@@ -830,48 +833,11 @@
 											'<TR><TD><B>Timezone:</B></TD><TD>' + time_zone + '</TD></TR>' +
 											'<TR><TD><B>Longitude:</B></TD><TD>' + longitude + '</TD></TR>' +
 											'<TR><TD><B>Latitude:</B></TD><TD>' + latitude + '</TD></TR>' +
+											'<TR><TD><B>Google maps:</B></TD><TD>' + latitude + longitude + '</TD></TR>' +
 									'</TABLE></A>'
-									);
+								);
 							}, "jsonp");
 							
-
-							// GeoLocation API 2 (http://www.telize.com/)
-							/*
-							$.getJSON("http://www.telize.com/geoip/" + valueUSER, function(data) {
-
-							  var country_code	= data.country_code3;
-							  var continent_code 	= data.continent_code
-							  var country_name   	= data.country;
-								var region_name		= data.region;
-								var city 			= data.city;
-								var ip     			= data.ip;
-								var isp          	= data.isp;
-								var longitude      	= data.longitude;
-								var latitude       	= data.latitude;
-
-								var code       		= data.code;
-								var message       	= data.message;
-
-								if( typeof country_code === 'undefined' && typeof continent_code === 'undefined' && typeof country_name === 'undefined') {
-									cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">privat range<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">IP: ' + ip + '</SPAN></A>');
-								} else if( typeof code === '401' ){
-									cell.append('<A ID="GeoResults' + incremental + '" CLASS="GeoResults">Code: ' + code +  '<SPAN ID="GeoResultsSPAN' + incremental + '" CLASS="GeoResultsSPAN">' + message + '</SPAN></A>');
-								} else {
-									cell.append(
-										'<A ID="GeoResults' + incremental + '" CLASS="GeoResults">' + country_code +  
-										'<TABLE ID="GeoResultsTABLE' + incremental + '" CLASS="GeoResultsTABLE">' +
-												'<TR><TD><B>Continent:</B></TD><TD>' + continent_code + '</TD></TR>' +
-												'<TR><TD><B>Country:</B></TD><TD>' + country_name + '</TD></TR>' +
-												'<TR><TD><B>Region:</B></TD><TD>' + region_name + '</TD></TR>' +
-												'<TR><TD><B>City:</B></TD><TD>' + city + '</TD></TR>' +
-												'<TR><TD><B>ISP:</B></TD><TD>' + isp + '</TD></TR>' +
-												'<TR><TD><B>Longitude:</B></TD><TD>' + longitude + '</TD></TR>' +
-												'<TR><TD><B>Latitude:</B></TD><TD>' + latitude + '</TD></TR>' +
-										'</TABLE></A>'
-										);
-								}
-							});
-							*/
 						});
 					};
 
@@ -881,8 +847,8 @@
 					}
 
 					// ================= GEOAPI BUTTON
-					// Create button
-						$('#Userheadline div').append('<input id="geoapibutton" value="Show GEOAPI" title="Show/Hide IP Location" type="button" style="width: 120px;">');
+					// Create Geoapi button
+						// Button is created in CLIENTHEADLINEBIT.tpl
 
 						$(function(){
 							/* Convert 'title' to 'boot_tooltip' */
@@ -925,7 +891,7 @@
 						var clientsCount = $(selector1).length
 						if ( clientsCount > clientsCount_max ) {
 							console.log ('Too many users: ' + clientsCount);
-							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount);
+							alert ('Too many users for loading from "freegeoip" databases: ' + clientsCount);
 						} else {
 							showGEO();
 							showProgressBar();
@@ -1002,12 +968,12 @@
 					// Check If  Geodata were displaying before the page is loaded
 						var geoapi = sessionStorage.getItem('geoapi');
 						// Write into web console
-						console.log(geoapi);
+						console.log('Geoapi value = : ' + geoapi);
 						// Check max count of clients
 						var clientsCount = $(selector1).length;
 						if ( clientsCount > clientsCount_max ) {
 							console.log ('Too many users: ' + clientsCount)
-							alert ('Too many users for loading from "ip-api" databases: ' + clientsCount)
+							alert ('Too many users for loading from "freegeoip" databases: ' + clientsCount)
 						} else {
 							// Check If  Geodata were displaying before the page is loaded
 							// geoapi = 1 (Yes, Geodata were displaying) 
@@ -1015,6 +981,9 @@
 							if (geoapi < 1 ) {
 								// Write into web console
 								console.log('GOEAPI Data are hidden after loading page');
+							} else if (geoapi == 1 && polling == 0) {
+								// Write into web console
+								console.log('Polling pause is active, GOEAPI Data are hidden after loading page');
 							} else {
 								// Set button 'geoapibutton' to Even click
 								count = 2;
