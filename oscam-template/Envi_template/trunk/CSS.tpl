@@ -2145,8 +2145,15 @@ li.colorstyle_4 {
 	top: 3px;
 	left: 3px;
 	width: 18px;
-	height: 18px;	
+	height: 18px;
 }
+	/* Text box settings of color picker if original webif is active */
+	.minicolors-theme-default .minicolors-swatch {
+		top: 3px;
+		left: 3px;
+		width: 18px;
+		height: 18px;
+	}
 .envi .minicolors-theme-default.minicolors-position-right .minicolors-swatch {
 	left: auto;
 	right: 5px;
@@ -2155,6 +2162,11 @@ li.colorstyle_4 {
 	width: auto;
 	display: inline-block;
 }
+	/* Text box settings of color picker if original webif is active */
+	.minicolors-theme-default.minicolors {
+		width: auto;
+		display: inline-block;
+	}
 .envi .minicolors-theme-default .minicolors-input {
 	height: 26px;
 	width: auto;
@@ -2163,6 +2175,10 @@ li.colorstyle_4 {
 	width: 92px;
 	font-size: 12px;
 }
+	/* Text box settings of color picker if original webif is active */
+	.minicolors-theme-default .minicolors-input {
+		padding-left: 26px;
+	}
 .envi .minicolors-theme-default.minicolors-position-right .minicolors-input {
 	padding-right: 26px;
 	padding-left: inherit;
@@ -2176,6 +2192,11 @@ li.colorstyle_4 {
 	border: 3px solid #E1E1E1;
 	width: 95px;
 }
+	/* Text box settings of color picker if original webif is active */
+	input[type="text"].color-picker {
+		border: 3px solid #E1E1E1;
+		width: 95px;
+	}
 .envi input[type="text"].color-picker:hover,
 .envi input[type="text"].color-picker.active {
 	border: 3px solid #F02;

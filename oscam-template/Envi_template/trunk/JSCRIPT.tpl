@@ -2536,47 +2536,48 @@ $(function(){
 	/* END - COOKIE BACKGROUND COLOR  */
 
 	/* START - CHANGE BACKGROUND COLOR  */
-		$("#colorpicker1").bind("click", function() {
-			// VARIABLE --------------------------------------
-				var val_ColorPicker = $(this).val();
-			// FUNCTION --------------------------------------
-				enviColorPicker("#colorpicker1");
-				// Check If Stylesheet exists
-					if ($("#enviColorPicker1").length > 0) {
-						$("#enviColorPicker1").html(
-							'body.envi { background-color:'+ val_ColorPicker +';background-image:none;}'
-						);
-					} else {
-						CreateStyleSheet_enviColorPicker('enviColorPicker1');
-						// Add css style to 'head'
-						$("#enviColorPicker1").html(
-							'body.envi { background-color:'+ val_ColorPicker +';background-image:none;}'
-						);
-					}
-		});
-
-		$("#colorpicker1").bind("change", function() {
+		$('body').on('click', '#colorpicker1',function(){
 			// VARIABLE --------------------------------------
 				var val_ColorPicker = $(this).val();
 				var split_ColorPicker = val_ColorPicker.replace('#', '');
+				var newRule = 'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
 			// FUNCTION --------------------------------------
+				enviColorPicker('#colorpicker1');
 				// Check If Stylesheet exists
-					if ($("#enviColorPicker1").length > 0) {
-						$("#enviColorPicker1").html(
-							'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
-						);
+					if ($('#enviColorPicker1').length > 0) {
+						// Add css style to 'head'
+						$('#enviColorPicker1').html(newRule);
 					} else {
 						CreateStyleSheet_enviColorPicker('enviColorPicker1');
 						// Add css style to 'head'
-						$("#enviColorPicker1").html(
-							'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
-						);
+						$('#enviColorPicker1').html(newRule);
 					}
 				// Set color from Color Picker to cookies
-				if(split_ColorPicker.length > 0){
-					$.cookie('ColorPicker1', split_ColorPicker, { expires: 365, path: '/' });
-					$.cookie('ColorPicker1_revert', split_ColorPicker, { expires: 365, path: '/' });
-				}
+					if(split_ColorPicker.length > 0){
+						$.cookie('ColorPicker1', split_ColorPicker, { expires: 365, path: '/' });
+						$.cookie('ColorPicker1_revert', split_ColorPicker, { expires: 365, path: '/' });
+					}
+		});
+		$('#colorpicker1').bind('change', function() {
+			// VARIABLE --------------------------------------
+				var val_ColorPicker = $(this).val();
+				var split_ColorPicker = val_ColorPicker.replace('#', '');
+				var newRule = 'body.envi { background-color: #'+ split_ColorPicker +';background-image:none;}'
+			// FUNCTION --------------------------------------
+				enviColorPicker('#colorpicker1');
+				// Check If Stylesheet exists
+					if ($('#enviColorPicker1').length > 0) {
+						$('#enviColorPicker1').html(newRule);
+					} else {
+						CreateStyleSheet_enviColorPicker('enviColorPicker1');
+						// Add css style to 'head'
+						$('#enviColorPicker1').html(newRule);
+					}
+				// Set color from Color Picker to cookies
+					if(split_ColorPicker.length > 0){
+						$.cookie('ColorPicker1', split_ColorPicker, { expires: 365, path: '/' });
+						$.cookie('ColorPicker1_revert', split_ColorPicker, { expires: 365, path: '/' });
+					}
 		});
 	/* END - CHANGE BACKGROUND COLOR  */
 
@@ -3309,10 +3310,12 @@ $(function() {
 			$("#menufontfamily")[0].selectedIndex = 0;
 			$("#menufontsize")[0].selectedIndex = 1;
 			$("#bodyfontfamily")[0].selectedIndex = 0;
+			$("#colorpicker1").removeClass('active');
 			// Set default style
-			$("#enviFontFamily").html('')
-			$("#enviFontSize").html('')
-			$("#enviBodyFontFamily").html('')
+			$("#enviFontFamily").remove();
+			$("#enviFontSize").remove();
+			$("#enviBodyFontFamily").remove();
+			$("#enviColorPicker1").remove();
 		}
 	});
 });
