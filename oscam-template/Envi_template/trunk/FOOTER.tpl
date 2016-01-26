@@ -407,7 +407,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1482</P>
+								<P><B>Envi revision:</B> 1483</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -797,7 +797,8 @@
 		</style>
 		<script>
 			$(document).ready( function() {
-				if (document.URL.indexOf('status.html') > -1) {
+				if (document.URL.indexOf('') > -1 ||
+						document.URL.indexOf('status.html') > -1) {
 					/* ABOUT GEOAPI SERVICES
 					 *	1. https://freegeoip.net/ allowed up to 10,000 queries per hour by default
 					 *		- Little information
