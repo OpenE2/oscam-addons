@@ -1663,6 +1663,7 @@ $(document).ready(function () {
 	poll_excluded = '';
 
 	// help wiki links
+	/*
 	if (typeof oscamconf != "undefined") {
 		var language = $('meta[http-equiv="language"]').attr("content");
 		var wikihref = "http://www.streamboard.tv/wiki/OSCam/" + language + "/Config/oscam." + oscamconf + "#";
@@ -1677,6 +1678,7 @@ $(document).ready(function () {
 			}
 		});
 	}
+	*/
 
 	// Title
 	var pagename = (typeof page != 'undefined' ? page : $(location).attr('pathname').replace(/.*\/|\.[^.]*$/g, ''));
@@ -2623,49 +2625,6 @@ $(function(){
 				}
 		});
 	/* END -  MAIN MENU CHANGE BACKGROUND COLOR  */
-
-/* =========== MAIN MENU FONT COLOR ======= */
-	
-	/* START -  MAIN MENU CHANGE FONT COLOR  */
-		$("body").on('click', "#colorpicker3",function(){
-			// VARIABLE --------------------------------------
-				var val_ColorPicker = $(this).val();
-				var newRule = ".envi li.menu a { color:" + val_ColorPicker + "}";
-			// FUNCTION --------------------------------------
-				enviColorPicker_ext("#colorpicker3");
-				// Check If Stylesheet exists
-					if ($("#enviColorPicker3").length > 0) {
-						// Add css style to 'head'
-						$("#enviColorPicker3").html(newRule);
-					} else {
-						CreateStyleSheet_enviColorPicker('enviColorPicker3');
-						// Add css style to 'head'
-						$("#enviColorPicker3").html(newRule);
-					}
-		});
-
-		$("#colorpicker3").bind("change", function() {
-			// VARIABLE --------------------------------------
-				var val_ColorPicker = $(this).val();
-				var split_ColorPicker = val_ColorPicker.replace('#', '');
-				var newRule = ".envi li.menu a { color:" + val_ColorPicker + "}";
-			// FUNCTION --------------------------------------
-				// Check If Stylesheet exists
-					if ($("#enviColorPicker3").length > 0) {
-						// Add css style to 'head'
-						$("#enviColorPicker3").html(newRule);
-					} else {
-						CreateStyleSheet_enviColorPicker('enviColorPicker3');
-						// Add css style to 'head'
-						$("#enviColorPicker3").html(newRule);
-					}
-				// Set color from Color Picker to cookies
-				if(split_ColorPicker.length > 0){
-					$.cookie('ColorPicker3', split_ColorPicker, { expires: 365, path: '/' });
-					$.cookie('ColorPicker3_revert', split_ColorPicker, { expires: 365, path: '/' });
-				}
-		});
-	/* END -  MAIN MENU CHANGE FONT COLOR  */
 	
 });	
 
@@ -3000,12 +2959,6 @@ $(function() {
 		/* Variable - Extended color settings */
 		var colorpicker2_val = $('#colorpicker2').val()
 			if (colorpicker2_val == '#000000') {colorpicker2_val = 'undefined'};
-		var colorpicker3_val = $('#colorpicker3').val()
-			if (colorpicker3_val == '#000000') {colorpicker3_val = 'undefined'};
-		var colorpicker4_val = $('#colorpicker4').val()
-			if (colorpicker4_val == '#000000') {colorpicker4_val = 'undefined'};
-		var colorpicker5_val = $('#colorpicker5').val()
-			if (colorpicker5_val == '#000000') {colorpicker5_val = 'undefined'};
 		var colorpicker6_val = $('#colorpicker6').val()
 			if (colorpicker6_val == '#000000') {colorpicker6_val = 'undefined'};
 		var colorpicker7_val = $('#colorpicker7').val()
@@ -3069,9 +3022,6 @@ $(function() {
 			'Main Menu color settings\n' +
 			'--------------------------------------\n' +
 			'Background color:         ' + colorpicker2_val + '\n' +
-			'Font color:               ' + colorpicker3_val + '\n' +
-			'Link color:               ' + colorpicker4_val + '\n' +
-			'Link:hover color:         ' + colorpicker5_val + '\n' +
 			'\n' +
 			'Submenu color settings\n' +
 			'--------------------------------------\n' +

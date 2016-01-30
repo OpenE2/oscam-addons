@@ -40,7 +40,8 @@
 			# 17. POLLING
 			# 19. FILE MENU
 			# 21. BOOT TOOLTIP
-			# 22. OTHER SETTINGS
+			# 22. JQUERY UI DIALOG
+			# 23. OTHER SETTINGS
 
 		== ENVI TEMPLATE - ROTATE OSCAM LOGO
 		== ENVI TEMPLATE - BORDER OF INFO TABLES
@@ -3138,7 +3139,15 @@ div.groups {
 	border-right: 5px solid #515151
 }
 
-/* **************** 22. OTHER SETTINGS */
+/* **************** 22. JQUERY UI DIALOG */
+.dialog-corner {
+	padding: 5px !important;
+}
+.dialog-corner,
+.dialog-corner .ui-corner-all {
+	border-radius: 0 !important;
+}
+/* **************** 23. OTHER SETTINGS */
 /* Coloring background TD for Searchterm */
 .envi .back_cell {
 	background-color: #E7F26F !important;

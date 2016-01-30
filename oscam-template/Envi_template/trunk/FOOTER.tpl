@@ -287,18 +287,6 @@
 								<label>Background color: </label>
 								<input type="text" id="colorpicker2" class="color-picker" data-position="top left" value="#000000">
 							</DIV>
-							<DIV CLASS="form-group">
-								<label>Font color: </label>
-								<input type="text" id="colorpicker3" class="color-picker" data-position="top left" value="#000000">
-							</DIV>
-							<DIV CLASS="form-group">
-								<label>Link color: </label>
-								<input type="text" id="colorpicker4" class="color-picker" data-position="top left" value="#000000">
-							</DIV>
-							<DIV CLASS="form-group">
-								<label>Link:hover color: </label>
-								<input type="text" id="colorpicker5" class="color-picker" data-position="top left" value="#000000">
-							</DIV>
 						</DIV>
 						<DIV CLASS="section-label">Submenu color settings
 							<DIV CLASS="sectioninfo">
@@ -397,6 +385,21 @@
 							</DIV>
 						</DIV>
 					</DIV>
+					<DIV CLASS="form_holder_bottom" style="float: left; width: 410px; margin: 0px 5px 0px 10px; clear: both;">
+						<DIV CLASS="section-label">
+							Envi Help
+						</DIV>
+						<DIV STYLE="text-align: left; padding-right: 10px;">
+							<DIV CLASS="form-group" STYLE="float: left; margin-right: 15px;">
+								<input id="enableenvihelp" type="checkbox" class="enableenvihelp" name="enableenvihelp">
+								<label for="enableenvihelp">Enable/Disable</label>
+							</DIV>
+							<DIV CLASS="form-group">
+								<label>Fallback webhost: </label>
+								<input type="text" id="fallbackhelpfilesurl" style="width: 200px;" value="http://envi.16mb.com/download/">
+							</DIV>
+						</DIV>
+					</DIV>
 				</DIV>
 				<DIV CLASS="form_holder_one" STYLE="position: absolute;bottom: 10px;">
 					<DIV CLASS="line"></DIV>
@@ -407,7 +410,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1483</P>
+								<P><B>Envi revision:</B> 1484</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -521,18 +524,6 @@
 						<TR>
 							<TD>Main Menu - Background color</TD>
 							<TD><input type="checkbox" name="checkbox" id="reset_14" value="value"><label></label></TD>
-						</TR>
-						<TR>
-							<TD>Main Menu - Font color</TD>
-							<TD><input type="checkbox" name="checkbox" id="reset_15" value="value"><label></label></TD>
-						</TR>
-						<TR>
-							<TD>Main Menu - Link color</TD>
-							<TD><input type="checkbox" name="checkbox" id="reset_16" value="value"><label></label></TD>
-						</TR>
-						<TR>
-							<TD>Main Menu - Link:hover color</TD>
-							<TD><input type="checkbox" name="checkbox" id="reset_17" value="value"><label></label></TD>
 						</TR>
 						<TR>
 							<TD>Submenu - Background color</TD>
@@ -1018,6 +1009,120 @@
 			});
 		</script>
 		<!-- END GEOAPI FUNCTION -->
+
+		<!-- START STREAMBOARD HELP -->
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
+
+		<script type='text/javascript'>
+
+		$(function () {
+				var urlExists = function(url, callback){
+					$.ajax({
+						type: 'HEAD',
+						url: url,
+						success: function () {  
+							console.log("Ajax - checking url ... url exists");
+							callback(true);
+						},
+						error: function () {
+							console.log("Ajax - checking url ... url does not exist");
+							callback(false);
+						}
+					});
+				};
+
+				var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" width="100%" height="100%" allowfullscreen></iframe>');
+				var dialog = $("<div></div>").append(iframe).appendTo("body").dialog({
+						autoOpen: false,
+						modal: false,
+						draggable: true,
+						resizable: false,
+						width: 800,
+						height: 300,
+						dialogClass: "dialog-corner", /* Custom class */
+				});
+
+				$('input.enableenvihelp').each(function() {
+					if ($.cookie('TemplateSwitch') == 'envi') {
+						var enablehelp = $.cookie($(this).attr('name'));
+						if (enablehelp && enablehelp == "true") {
+							$(this).prop('checked', enablehelp);
+						}
+					}
+				});
+
+				// Function if checkbox is changed
+				$('input.enableenvihelp').change(function() {
+					$.cookie($(this).attr('name'), $(this).prop('checked'), {
+						path: '/',
+						expires: 365
+					});
+				});
+
+				if ( $('input[name="enableenvihelp"]').is(':checked') ) {
+					$("form table a").on("click", function (e) {
+								e.preventDefault();
+								/* Basic URL for fallback help files */
+								var base_url = $('#fallbackhelpfilesurl').val()
+								/* Parameter from links to help */
+								if ($(this).data('p')) {
+									var parm = $(this).data('p');
+								} else {
+									var parm = $(this).parent().next().find("input,select,textarea").attr('name');
+								}
+								/* Whole fallback help files url  */
+								if(window.location.href.indexOf("global") > -1) {
+									var url = base_url + '/global/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("anticasc") > -1) {
+									var url = base_url + '/anticasc/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("cache") > -1) {
+									var url = base_url + '/cache/' + parm + '.html';
+								}
+								/* Other variable */
+								var file = parm + '.html';
+								var title = 'ENVI HELP';
+								
+								urlExists(url, function(success) {
+									if (success) {
+										iframe.attr({
+											src: url
+										});
+										dialog.dialog("option", "title", title).dialog("open");
+									} else {
+										alert('Streamboard HELP not exists');
+									}
+								});
+
+								// Console log
+								console.log("HELP file: " + file);
+								console.log("HELP url: " + url);
+
+						});
+				} else {
+					/* Script from original Webif */
+					if (typeof oscamconf != "undefined") {
+						var language = $('meta[http-equiv="language"]').attr("content");
+						var wikihref = "http://www.streamboard.tv/wiki/OSCam/" + language + "/Config/oscam." + oscamconf + "#";
+						$("form table a").click(function () {
+							if (!$(this).attr("href") && !$(this).attr("name")) {
+								if ($(this).data('p')) {
+									var parm = $(this).data('p');
+								} else {
+									var parm = $(this).parent().next().find("input,select,textarea").attr('name');
+								}
+								window.open(wikihref + parm);
+							}
+						});
+					}
+				}
+
+		});
+
+		</script>
+		<!-- END STREAMBOARD HELP -->
 
 		<!-- START TEST SCRIPT AND STYLE -->
 		<style type="text/css">
