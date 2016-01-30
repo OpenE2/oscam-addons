@@ -410,7 +410,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1487</P>
+								<P><B>Envi revision:</B> 1488</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -1072,14 +1072,18 @@
 									var parm = $(this).parent().next().find("input,select,textarea").attr('name');
 								}
 								/* Whole fallback help files url  */
-								if(window.location.href.indexOf("global") > -1) {
-									var url = base_url + '/global/' + parm + '.html';
+								if(window.location.href.indexOf("config") > -1 ||
+									 window.location.href.indexOf("config") > -1 &&
+									 window.location.href.indexOf("global") > -1) {
+									var url = base_url + 'global/' + parm + '.html';
 								}
-								if(window.location.href.indexOf("anticasc") > -1) {
-									var url = base_url + '/anticasc/' + parm + '.html';
+								if(window.location.href.indexOf("config") > -1 &&
+									 window.location.href.indexOf("anticasc") > -1) {
+									var url = base_url + 'anticasc/' + parm + '.html';
 								}
-								if(window.location.href.indexOf("cache") > -1) {
-									var url = base_url + '/cache/' + parm + '.html';
+								if(window.location.href.indexOf("config") > -1 &&
+									 window.location.href.indexOf("cache") > -1) {
+									var url = base_url + 'cache/' + parm + '.html';
 								}
 								/* Other variable */
 								var file = parm + '.html';
