@@ -410,7 +410,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1488</P>
+								<P><B>Envi revision:</B> 1489</P>
 								<P><B>For oscam revision:</B> 11203 and above</P>
 								<TABLE>
 									<TR>
@@ -1037,10 +1037,10 @@
 						autoOpen: false,
 						modal: false,
 						draggable: true,
-						resizable: false,
+						resizable: true,
 						width: 800,
 						height: 300,
-						dialogClass: "dialog-corner", /* Custom class */
+						dialogClass: "dialog-envi-style", /* Custom class */
 				});
 
 				$('input.enableenvihelp').each(function() {
@@ -1060,6 +1060,22 @@
 					});
 				});
 
+
+				/* Read a page's GET URL variables and return them as an associative array.
+				 * Example url - http://www.example.com/?me=myValue&name2=SomeOtherValue
+				 */
+				function getUrlVars() {
+				    var vars = [], hash;
+				    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				    for(var i = 0; i < hashes.length; i++)
+				    {
+				        hash = hashes[i].split('=');
+				        vars.push(hash[0]);
+				        vars[hash[0]] = hash[1];
+				    }
+				    return vars;
+				}
+
 				if ( $('input[name="enableenvihelp"]').is(':checked') ) {
 					$("form table a").on("click", function (e) {
 								e.preventDefault();
@@ -1071,19 +1087,57 @@
 								} else {
 									var parm = $(this).parent().next().find("input,select,textarea").attr('name');
 								}
+								/* Variable - Get part of url */
+								var part_url = getUrlVars()["part"];
 								/* Whole fallback help files url  */
-								if(window.location.href.indexOf("config") > -1 ||
-									 window.location.href.indexOf("config") > -1 &&
-									 window.location.href.indexOf("global") > -1) {
-									var url = base_url + 'global/' + parm + '.html';
+								if(window.location.href.indexOf('config') > -1 ||
+									 window.location.href.indexOf('config') > -1 && part_url == 'global') {
+									var url = base_url + 'config/global/' + parm + '.html';
 								}
-								if(window.location.href.indexOf("config") > -1 &&
-									 window.location.href.indexOf("anticasc") > -1) {
-									var url = base_url + 'anticasc/' + parm + '.html';
+								if(window.location.href.indexOf("config") > -1 && part_url == 'anticasc') {
+									var url = base_url + 'config/anticasc/' + parm + '.html';
 								}
-								if(window.location.href.indexOf("config") > -1 &&
-									 window.location.href.indexOf("cache") > -1) {
-									var url = base_url + 'cache/' + parm + '.html';
+								if(window.location.href.indexOf("config") > -1 && part_url == 'cache') {
+									var url = base_url + 'config/cache/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'loadbalancer') {
+									var url = base_url + 'config/loadbalancer/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'camd35') {
+									var url = base_url + 'config/camd35/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'camd35tcp') {
+									var url = base_url + 'config/camd35tcp/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'cccam') {
+									var url = base_url + 'config/cccam/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'newcamd') {
+									var url = base_url + 'config/newcamd/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'gbox') {
+									var url = base_url + 'config/gbox/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'radegast') {
+									var url = base_url + 'config/radegast/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'scam') {
+									var url = base_url + 'config/scam/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'serial') {
+									var url = base_url + 'config/serial/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'dvbapi') {
+									var url = base_url + 'config/dvbapi/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'lcd') {
+									var url = base_url + 'config/lcd/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'monitor') {
+									var url = base_url + 'config/monitor/' + parm + '.html';
+								}
+								if(window.location.href.indexOf("config") > -1 && part_url == 'webif') {
+									var url = base_url + 'config/webif/' + parm + '.html';
 								}
 								/* Other variable */
 								var file = parm + '.html';
@@ -1096,7 +1150,7 @@
 										});
 										dialog.dialog("option", "title", title).dialog("open");
 									} else {
-										alert('Streamboard HELP not exists');
+										alert('ENVI HELP not exists');
 									}
 								});
 
@@ -1106,7 +1160,7 @@
 
 						});
 				} else {
-					/* Script from original Webif */
+					/* Script from original Webif - Streamboard Help */
 					if (typeof oscamconf != "undefined") {
 						var language = $('meta[http-equiv="language"]').attr("content");
 						var wikihref = "http://www.streamboard.tv/wiki/OSCam/" + language + "/Config/oscam." + oscamconf + "#";

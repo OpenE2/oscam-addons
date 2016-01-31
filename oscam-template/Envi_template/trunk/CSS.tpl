@@ -3140,12 +3140,15 @@ div.groups {
 }
 
 /* **************** 22. JQUERY UI DIALOG */
-.dialog-corner {
+.dialog-envi-style {
 	padding: 5px !important;
 }
-.dialog-corner,
-.dialog-corner .ui-corner-all {
+.dialog-envi-style,
+.dialog-envi-style .ui-corner-all {
 	border-radius: 0 !important;
+}
+.dialog-envi-style .ui-widget-header {
+	border: none !important;
 }
 /* **************** 23. OTHER SETTINGS */
 /* Coloring background TD for Searchterm */
