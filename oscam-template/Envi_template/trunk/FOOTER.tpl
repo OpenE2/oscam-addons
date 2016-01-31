@@ -410,8 +410,8 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1489</P>
-								<P><B>For oscam revision:</B> 11203 and above</P>
+								<P><B>Envi revision:</B> 1490</P>
+								<P><B>For oscam revision:</B> 11210 and above</P>
 								<TABLE>
 									<TR>
 										<TD><B>Wiki:</B></TD>
