@@ -1,7 +1,7 @@
 #
 # INFO ABOUT REVISION
 # --------------------------------
-# Envi Revision:		1492
+# Envi Revision:		1493
 # Authors:				skyndas
 # Last Changed Date:	2016-02-01
 #
@@ -11,9 +11,10 @@
 # Right name of file is "name.suffix" or "name_of_file.suffix"
 # Bad name of file is e.g "name _ of _ file.suffix" or e.g. "name - of - file.suffix"
 #
+CLIENTHEADLINEBIT.tpl
 CSS.tpl
 FOOTER.tpl
 HEADERSHORT.tpl
 JSCRIPT.tpl
-CLIENTHEADLINEBIT.tpl
+JQUERY.tpl
 info.txt
