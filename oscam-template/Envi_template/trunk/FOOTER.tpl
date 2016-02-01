@@ -410,7 +410,7 @@
 								<A HREF="#close" TITLE="Close" CLASS="close">X</A>
 								<H2>Info about Envi Template</H2>
 								<HR>
-								<P><B>Envi revision:</B> 1491</P>
+								<P><B>Envi revision:</B> 1492</P>
 								<P><B>For oscam revision:</B> 11210 and above</P>
 								<TABLE>
 									<TR>
@@ -948,8 +948,8 @@
 		<!-- END GEOAPI FUNCTION -->
 
 		<!-- START STREAMBOARD HELP -->
-		<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
 
 		<script type='text/javascript'>
 
