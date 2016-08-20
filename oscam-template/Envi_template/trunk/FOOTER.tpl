@@ -396,7 +396,7 @@
 							</DIV>
 							<DIV CLASS="form-group">
 								<label>Fallback webhost: </label>
-								<input type="text" id="fallbackhelpfilesurl" style="width: 200px;" value="http://envi.16mb.com/download/">
+								<input type="text" id="fallbackhelpfilesurl" style="width: 200px;" value="//envi.16mb.com/download/">
 							</DIV>
 						</DIV>
 					</DIV>
@@ -948,7 +948,7 @@
 		<!-- END GEOAPI FUNCTION -->
 
 		<!-- START STREAMBOARD HELP -->
-		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
 
 		<script type='text/javascript'>
 
@@ -1078,7 +1078,7 @@
 								/* Other variable */
 								var file = parm + '.html';
 								var title = 'ENVI HELP';
-								
+
 								urlExists(url, function(success) {
 									if (success) {
 										iframe.attr({
